@@ -21,7 +21,8 @@ namespace BuildFeed.Controllers
             List<string> labs = new List<string>();
             labs.AddRange(Build.SelectBuildLabs(6, 4));
             labs.AddRange(Build.SelectBuildLabs(10, 0));
-            return labs.ToArray();
+
+            return labs.GroupBy(l => l).Select(l => l.Key).ToArray();
         }
 
         public IEnumerable<SearchResult> GetSearchResult(string query)
