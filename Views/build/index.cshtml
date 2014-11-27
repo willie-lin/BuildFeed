@@ -103,136 +103,27 @@
         </ul>
     </div>
     <div class="col-sm-3">
-        <div class="panel-group" id="filter-list">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#filter-clear">
-                            Clear filters
-                        </a>
-                    </h4>
-                </div>
-                <div id="filter-clear" class="panel-collapse collapse @(ViewBag.Action == "Index" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li>@Html.ActionLink("Clear Filters", "index", new { page = 1 })</li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="panel panel-default panel-search">
+            <div class="panel-body">
+                @Html.TextBox("search-input", "", new { @class = "form-control" })
             </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#filter-version">
-                            Filter by version
-                        </a>
-                    </h4>
-                </div>
-                <div id="filter-version" class="panel-collapse collapse @(ViewBag.Action == "Version" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach (BuildFeed.Models.BuildVersion ver in BuildFeed.Models.Build.SelectBuildVersions())
-                            {
-                                <li><a href="@Url.Action("version", new { minor = ver.Minor, major = ver.Major, page = 1 })">@string.Format("{0}.{1}", ver.Major, ver.Minor)</a></li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#filter-lab">
-                            Filter by lab
-                        </a>
-                    </h4>
-                </div>
-                <div id="filter-lab" class="panel-collapse collapse @(ViewBag.Action == "Lab" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach (string lab in BuildFeed.Models.Build.SelectBuildLabs())
-                            {
-                                <li>@Html.ActionLink(lab, "lab", new { lab = lab, page = 1 })</li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#filter-year">
-                            Filter by year
-                        </a>
-                    </h4>
-                </div>
-                <div id="filter-year" class="panel-collapse collapse @(ViewBag.Action == "Year" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach (int year in BuildFeed.Models.Build.SelectBuildYears())
-                            {
-                                <li>@Html.ActionLink(year.ToString(), "year", new { year = year, page = 1 })</li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#filter-source">
-                            Filter by source
-                        </a>
-                    </h4>
-                </div>
-                <div id="filter-source" class="panel-collapse collapse @(ViewBag.Action == "Source" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach (BuildFeed.Models.TypeOfSource s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().OrderBy(d => d.ToString()))
-                            {
-                                <li><a href="@Url.Action("source", new { source = s })">@Html.DisplayFor(TypeOfSource => s, "Enumeration")</a></li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>
-                        <a data-toggle="collapse" data-parent="#filter-list" href="#admin-actions">
-                            Website Administration
-                        </a>
-                    </h4>
-                </div>
-                <div id="admin-actions" class="panel-collapse collapse @(ViewBag.Action == "Source" ? "in" : "")">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                if (User.Identity.Name == "hounsell")
-                                {
-                                    <li>@Html.ActionLink("Administration", "index", new { controller = "base", area = "admin" })</li>
-                                    <li>&nbsp;</li>
-                                }
-                                <li>@Html.ActionLink("Add a build", "create", "build")</li>
-                                <li>&nbsp;</li>
-                                <li>@Html.ActionLink("Change your password", "password", "support")</li>
-                                <li>@Html.ActionLink("Log out", "logout", "support")</li>
-                            }
-                            else
-                            {
-                                <li>@Html.ActionLink("Log in", "login", "support")</li>
-                                <li>@Html.ActionLink("Register", "register", "support")</li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="list-group">
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.Identity.Name == "hounsell")
+                {
+                    @Html.ActionLink("Administration", "index", new { controller = "base", area = "admin" }, new { @class = "list-group-item" })
+                }
+                @Html.ActionLink("Add a build", "create", new { controller = "build" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Change your password", "password", new { controller = "support" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Log out", "logout", new { controller = "support" }, new { @class = "list-group-item" })
+            }
+            else
+            {
+                @Html.ActionLink("Log in", "login", new { controller = "support" }, new { @class = "list-group-item" })
+                @Html.ActionLink("Register", "register", new { controller = "support" }, new { @class = "list-group-item" })
+            }
         </div>
     </div>
 </div>
@@ -265,4 +156,16 @@
             <li class="disabled"><span>&raquo;</span></li>
         }
     </ul>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jsrender")
+    <script type="text/javascript" src="~/Scripts/bfs.js"></script>
+    <script id="result-template" type="text/x-jsrender">
+        <a href="{{:Url}}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{:Label}}</h4>
+            <p class="list-group-item-text">{{:Group}}</p>
+        </a>
+    </script>
 }

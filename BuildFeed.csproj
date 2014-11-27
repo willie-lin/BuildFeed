@@ -162,6 +162,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApiModel\SearchResult.cs" />
     <Compile Include="Models\Build.cs" />
     <Compile Include="Models\ViewModel\LoginUser.cs" />
     <Compile Include="Models\ViewModel\ChangePassword.cs" />
@@ -184,6 +185,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="content\tile\large.png" />
+    <Content Include="Scripts\bfs.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -224,7 +226,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
     <Folder Include="Areas\admin\Views\Shared\" />
-    <Folder Include="Models\ApiModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
