@@ -6,6 +6,9 @@
 *.user
 *.sln.docstates
 
+# Application Insights config
+ApplicationInsights.config
+
 # Publish Profiles
 [Pp]roperties/[Pp]ublish[Pp]rofiles/
 

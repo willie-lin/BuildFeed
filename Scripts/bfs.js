@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $("#search-input").change(function () {
+    $("#search-input").keyup(function () {
         var search = $(this);
         $(this).parent().find(".list-group").remove();
         $.ajax("/api/GetSearchResult/?query=" + $(this).val()).done(function (data) {

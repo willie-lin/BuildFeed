@@ -108,6 +108,12 @@
                 @Html.TextBox("search-input", "", new { @class = "form-control" })
             </div>
         </div>
+        @if (ViewBag.Action != "index")
+        {
+            <div class="list-group">
+                @Html.ActionLink("Return to full listing", "index", new { controller = "build", area = "", page = 1 }, new { @class = "list-group-item" })
+            </div>
+        }
         <div class="list-group">
             @if (User.Identity.IsAuthenticated)
             {

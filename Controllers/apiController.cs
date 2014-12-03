@@ -27,7 +27,38 @@ namespace BuildFeed.Controllers
 
         public IEnumerable<SearchResult> GetSearchResult(string query)
         {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return new SearchResult[0];
+            }
+
             List<SearchResult> results = new List<SearchResult>();
+
+            var sourceResults = from s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().Select(s => DisplayHelpers.GetDisplayTextForEnum(s))
+                                where s.Contains(query)
+                                orderby s.IndexOf(query) ascending
+                                select new SearchResult()
+                                {
+                                    Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s }),
+                                    Label = s.Replace(query, "<strong>" + query + "</strong>"),
+                                    Group = "Source"
+                                };
+
+            results.AddRange(sourceResults);
+
+
+            var versionResults = from v in Build.SelectBuildVersions()
+                                 where string.Format("{0}.{1}", v.Major, v.Minor).StartsWith(query)
+                                 orderby v.Major descending, v.Minor descending
+                                 select new SearchResult()
+                                 {
+                                     Url = Url.Route("Version Root", new { controller = "build", action = "version", major = v.Major, minor = v.Minor }),
+                                     Label = string.Format("{0}.{1}", v.Major, v.Minor).Replace(query, "<strong>" + query + "</strong>"),
+                                     Group = "Version"
+                                 };
+
+            results.AddRange(versionResults);
+
 
             var yearResults = from y in Build.SelectBuildYears()
                               where y.ToString().Contains(query)
@@ -67,6 +98,17 @@ namespace BuildFeed.Controllers
                                };
 
             results.AddRange(buildResults);
+
+
+            if (results.Count == 0)
+            {
+                results.Add(new SearchResult()
+                {
+                    Url = "/",
+                    Label = "No Results found",
+                    Group = ""
+                });
+            }
 
             return results.Take(6);
         }
