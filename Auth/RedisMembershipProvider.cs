@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 using System.Web.Security;
 using NServiceKit.DataAnnotations;
 using NServiceKit.DesignPatterns.Model;
@@ -16,6 +15,13 @@ namespace BuildFeed.Auth
 {
     public class RedisMembershipProvider : MembershipProvider
     {
+        private bool _enablePasswordReset = true;
+        private int _maxInvalidPasswordAttempts = 5;
+        private int _minRequiredNonAlphanumericCharacters = 1;
+        private int _minRequriedPasswordLength = 12;
+        private int _passwordAttemptWindow = 60;
+        private bool _requiresUniqueEmail = true;
+
         public override string ApplicationName
         {
             get { return ""; }
@@ -24,7 +30,7 @@ namespace BuildFeed.Auth
 
         public override bool EnablePasswordReset
         {
-            get { return true; }
+            get { return _enablePasswordReset; }
         }
 
         public override bool EnablePasswordRetrieval
@@ -34,22 +40,22 @@ namespace BuildFeed.Auth
 
         public override int MaxInvalidPasswordAttempts
         {
-            get { return 5; }
+            get { return _maxInvalidPasswordAttempts; }
         }
 
         public override int MinRequiredNonAlphanumericCharacters
         {
-            get { return 1; }
+            get { return _minRequiredNonAlphanumericCharacters; }
         }
 
         public override int MinRequiredPasswordLength
         {
-            get { return 12; }
+            get { return _minRequriedPasswordLength; }
         }
 
         public override int PasswordAttemptWindow
         {
-            get { return 60; }
+            get { return _passwordAttemptWindow; }
         }
 
         public override MembershipPasswordFormat PasswordFormat
@@ -69,7 +75,24 @@ namespace BuildFeed.Auth
 
         public override bool RequiresUniqueEmail
         {
-            get { return true; }
+            get { return _requiresUniqueEmail; }
+        }
+
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
+
+            base.Initialize(name, config);
+
+            _enablePasswordReset = tryReadBool(config["enablePasswordReset"], _enablePasswordReset);
+            _maxInvalidPasswordAttempts = tryReadInt(config["maxInvalidPasswordAttempts"], _maxInvalidPasswordAttempts);
+            _minRequiredNonAlphanumericCharacters = tryReadInt(config["minRequiredNonAlphanumericCharacters"], _minRequiredNonAlphanumericCharacters);
+            _minRequriedPasswordLength = tryReadInt(config["minRequriedPasswordLength"], _minRequriedPasswordLength);
+            _passwordAttemptWindow = tryReadInt(config["passwordAttemptWindow"], _passwordAttemptWindow);
+            _requiresUniqueEmail = tryReadBool(config["requiresUniqueEmail"], _requiresUniqueEmail);
         }
 
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
@@ -313,6 +336,32 @@ namespace BuildFeed.Auth
             }
         }
 
+        public void ChangeLockStatus(Guid Id, bool newStatus)
+        {
+            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            {
+                var client = rClient.As<RedisMember>();
+                var rm = client.GetById(Id);
+
+                if (rm != null)
+                {
+                    rm.IsLockedOut = newStatus;
+
+                    if (newStatus)
+                    {
+                        rm.LastLockoutDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        rm.LockoutWindowAttempts = 0;
+                        rm.LockoutWindowStart = DateTime.MinValue;
+                    }
+
+                    client.Store(rm);
+                }
+            }
+        }
+
         public override bool UnlockUser(string userName)
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
@@ -340,7 +389,7 @@ namespace BuildFeed.Auth
                 var client = rClient.As<RedisMember>();
                 var rm = client.GetAll().SingleOrDefault(m => m.UserName.ToLower() == username.ToLower());
 
-                if (rm == null || !rm.IsApproved)
+                if (rm == null || !(rm.IsApproved && !rm.IsLockedOut))
                 {
                     return false;
                 }
@@ -355,14 +404,56 @@ namespace BuildFeed.Auth
                     isFail |= (hash[i] != rm.PassHash[i]);
                 }
 
-                if(!isFail)
+                if (isFail)
+                {
+                    if (rm.LockoutWindowStart == DateTime.MinValue)
+                    {
+                        rm.LockoutWindowStart = DateTime.Now;
+                        rm.LockoutWindowAttempts = 1;
+                    }
+                    else
+                    {
+                        if (rm.LockoutWindowStart.AddMinutes(PasswordAttemptWindow) > DateTime.Now)
+                        {
+                            // still within window
+                            rm.LockoutWindowAttempts++;
+                            if (rm.LockoutWindowAttempts >= MaxInvalidPasswordAttempts)
+                            {
+                                rm.IsLockedOut = true;
+                            }
+                        }
+                        else
+                        {
+                            // outside of window, reset
+                            rm.LockoutWindowStart = DateTime.Now;
+                            rm.LockoutWindowAttempts = 1;
+                        }
+                    }
+                }
+                else
                 {
                     rm.LastLoginDate = DateTime.Now;
-                    client.Store(rm);
+                    rm.LockoutWindowStart = DateTime.MinValue;
+                    rm.LockoutWindowAttempts = 0;
                 }
+                client.Store(rm);
 
                 return !isFail;
             }
+        }
+
+        private static bool tryReadBool(string config, bool defaultValue)
+        {
+            bool temp = false;
+            bool success = bool.TryParse(config, out temp);
+            return success ? temp : defaultValue;
+        }
+
+        private static int tryReadInt(string config, int defaultValue)
+        {
+            int temp = 0;
+            bool success = int.TryParse(config, out temp);
+            return success ? temp : defaultValue;
         }
     }
 
@@ -398,5 +489,8 @@ namespace BuildFeed.Auth
         public DateTime LastActivityDate { get; set; }
         public DateTime LastLockoutDate { get; set; }
         public DateTime LastLoginDate { get; set; }
+
+        public DateTime LockoutWindowStart { get; set; }
+        public int LockoutWindowAttempts { get; set; }
     }
 }

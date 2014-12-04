@@ -18,6 +18,22 @@
 <h2>@Model.FullBuildString</h2>
 
 <div class="form-horizontal form-details">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="form-group">
+            <label class="control-label col-sm-2">Editor Actions</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    @Html.ActionLink("Edit", "edit", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
+
+                    @if (User.Identity.Name == "hounsell")
+                    {
+                        @Html.ActionLink("Delete", "delete", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                    }
+                </p>
+            </div>
+        </div>
+    }
     <div class="form-group">
         @Html.LabelFor(model => model.MajorVersion, new { @class = "control-label col-sm-2" })
         <div class="col-sm-10">
@@ -154,14 +170,6 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <a href="/" class="btn btn-info">Return to Listing</a>
-            @if (User.Identity.IsAuthenticated)
-            {
-                @Html.ActionLink("Edit", "edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-            }
-            @if (User.Identity.Name == "hounsell")
-            {
-                @Html.ActionLink("Delete", "delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
-            }
         </div>
     </div>
 </div>

@@ -17,6 +17,10 @@
         <td>
             Last Login Time
         </td>
+        <td>
+            Last Lockout Time
+        </td>
+        <th style="width:108px;"></th>
         <th style="width:108px;"></th>
     </tr>
 
@@ -32,14 +36,27 @@
             <td>
                 @Html.DisplayFor(modelItem => mu.LastLoginDate)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => mu.LastLockoutDate)
+            </td>
             <td class="text-right">
                 @if (mu.IsApproved)
                 {
                     @Html.ActionLink("Unapprove", "unapprove", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" })
-                    }
+                }
                 else
                 {
                     @Html.ActionLink("Approve", "approve", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
+                }
+            </td>
+            <td class="text-right">
+                @if (!mu.IsLockedOut)
+                {
+                    @Html.ActionLink("Lock", "lock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" })
+                }
+                else
+                {
+                    @Html.ActionLink("Unlock", "unlock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
                 }
             </td>
         </tr>

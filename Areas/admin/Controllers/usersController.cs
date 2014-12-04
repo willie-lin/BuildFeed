@@ -30,5 +30,19 @@ namespace BuildFeed.Areas.admin.Controllers
             provider.ChangeApproval(id, false);
             return RedirectToAction("Index");
         }
+
+        public ActionResult @lock(Guid id)
+        {
+            var provider = (Membership.Provider as RedisMembershipProvider);
+            provider.ChangeLockStatus(id, true);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult unlock(Guid id)
+        {
+            var provider = (Membership.Provider as RedisMembershipProvider);
+            provider.ChangeLockStatus(id, false);
+            return RedirectToAction("Index");
+        }
     }
 }

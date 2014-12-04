@@ -33,7 +33,13 @@ namespace BuildFeed.Controllers
 
                 if (isAuthenticated)
                 {
-                    FormsAuthentication.SetAuthCookie(ru.UserName, ru.RememberMe);
+                    int expiryLength = ru.RememberMe ? 129600 : 60;
+                    var ticket = new FormsAuthenticationTicket(ru.UserName, true, expiryLength);
+                    var encryptedTicket = FormsAuthentication.Encrypt(ticket);
+                    var cookieTicket = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                    cookieTicket.Expires = DateTime.Now.AddMinutes(expiryLength);
+                    cookieTicket.Path = FormsAuthentication.FormsCookiePath;
+                    Response.Cookies.Add(cookieTicket);
 
                     string returnUrl = string.IsNullOrEmpty(Request.QueryString["ReturnUrl"]) ? "/" : Request.QueryString["ReturnUrl"];
 
