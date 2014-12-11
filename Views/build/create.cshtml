@@ -207,7 +207,11 @@
 
 @section Scripts
 {
-    @Scripts.Render("~/bundles/jqueryval");
+    <script src="~/Scripts/trumbowyg/trumbowyg.min.js" type="text/javascript"></script>
+    <link href="~/Scripts/trumbowyg/ui/trumbowyg.min.css" rel="stylesheet" type="text/css" />
+
+    @Scripts.Render("~/bundles/jqueryval")
+
     <script>
         jQuery(function ($) {
             $.validator.addMethod('date',
@@ -228,6 +232,18 @@
         });
 
         $(function () {
+            var btnsGrps = $.trumbowyg.btnsGrps;
+
+            $("#@Html.IdFor(model => model.SourceDetails)").trumbowyg({
+                semantic: true,
+                autogrow: true,
+                btns: ['viewHTML',
+                       '|', 'strong', 'em',
+                       '|', 'link',
+                       '|', btnsGrps.justify,
+                       '|', btnsGrps.lists]
+            });
+
             $("#quickpaste").change(function () {
                 var regex = /([\d]{1,2})\.([\d]{1,2})\.([\d]{4,5})\.([\d]{1,5})\.([a-zA-Z0-9_]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
                 var result = regex.exec($("#quickpaste").val());

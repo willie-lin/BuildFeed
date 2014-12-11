@@ -9,6 +9,7 @@ using NServiceKit.DesignPatterns.Model;
 using NServiceKit.Redis;
 
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
+using System.Web.Mvc;
 
 namespace BuildFeed.Models
 {
@@ -58,6 +59,7 @@ namespace BuildFeed.Models
         public TypeOfSource SourceType { get; set; }
 
         [DisplayName("Source Details")]
+        [AllowHtml]
         public string SourceDetails { get; set; }
 
 
