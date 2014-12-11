@@ -35,8 +35,8 @@ namespace BuildFeed.Controllers
             List<SearchResult> results = new List<SearchResult>();
 
             var sourceResults = from s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().Select(s => DisplayHelpers.GetDisplayTextForEnum(s))
-                                where s.Contains(query)
-                                orderby s.IndexOf(query) ascending
+                                where s.ToLower().Contains(query.ToLower())
+                                orderby s.ToLower().IndexOf(query.ToLower()) ascending
                                 select new SearchResult()
                                 {
                                     Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s }),
@@ -77,8 +77,8 @@ namespace BuildFeed.Controllers
 
 
             var labResults = from l in Build.SelectBuildLabs()
-                             where l.Contains(query)
-                             orderby l.IndexOf(query) ascending
+                             where l.ToLower().Contains(query.ToLower())
+                             orderby l.ToLower().IndexOf(query.ToLower()) ascending
                              select new SearchResult()
                              {
                                  Url = Url.Route("Lab Root", new { controller = "build", action = "lab", lab = l }),
@@ -91,8 +91,8 @@ namespace BuildFeed.Controllers
 
 
             var buildResults = from b in Build.Select()
-                               where b.FullBuildString.Contains(query)
-                               orderby b.FullBuildString.IndexOf(query) ascending,
+                               where b.FullBuildString.ToLower().Contains(query.ToLower())
+                               orderby b.FullBuildString.ToLower().IndexOf(query.ToLower()) ascending,
                                        b.BuildTime descending
                                select new SearchResult()
                                {

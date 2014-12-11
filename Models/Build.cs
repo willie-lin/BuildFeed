@@ -202,7 +202,7 @@ namespace BuildFeed.Models
                 var client = rClient.As<Build>();
                 var results = client.GetAll().Where(b => b.BuildTime.HasValue)
                     .GroupBy(b => b.BuildTime.Value.Year)
-                    .Select(b => b.First().BuildTime.Value.Year)
+                    .Select(b => b.Key)
                     .OrderByDescending(y => y);
                 return results;
             }
@@ -217,7 +217,7 @@ namespace BuildFeed.Models
                 var results = client.GetAll()
                     .Where(b => !string.IsNullOrWhiteSpace(b.Lab))
                     .GroupBy(b => b.Lab.ToLower())
-                    .Select(b => b.First().Lab.ToLower())
+                    .Select(b => b.Key)
                     .OrderBy(s => s);
                 return results;
             }
@@ -234,7 +234,7 @@ namespace BuildFeed.Models
                     .Where(b => b.MajorVersion == major)
                     .Where(b => b.MinorVersion == minor)
                     .GroupBy(b => b.Lab.ToLower())
-                    .Select(b => b.First().Lab.ToLower())
+                    .Select(b => b.Key)
                     .OrderBy(s => s);
                 return results;
             }
