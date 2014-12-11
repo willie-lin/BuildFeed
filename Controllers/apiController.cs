@@ -41,6 +41,7 @@ namespace BuildFeed.Controllers
                                 {
                                     Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s }),
                                     Label = s.Replace(query, "<strong>" + query + "</strong>"),
+                                    Title = s,
                                     Group = "Source"
                                 };
 
@@ -54,6 +55,7 @@ namespace BuildFeed.Controllers
                                  {
                                      Url = Url.Route("Version Root", new { controller = "build", action = "version", major = v.Major, minor = v.Minor }),
                                      Label = string.Format("{0}.{1}", v.Major, v.Minor).Replace(query, "<strong>" + query + "</strong>"),
+                                     Title = "",
                                      Group = "Version"
                                  };
 
@@ -67,6 +69,7 @@ namespace BuildFeed.Controllers
                               {
                                   Url = Url.Route("Year Root", new { controller = "build", action = "year", year = y }),
                                   Label = y.ToString().Replace(query, "<strong>" + query + "</strong>"),
+                                  Title = "",
                                   Group = "Year"
                               };
 
@@ -80,6 +83,7 @@ namespace BuildFeed.Controllers
                              {
                                  Url = Url.Route("Lab Root", new { controller = "build", action = "lab", lab = l }),
                                  Label = l.Replace(query, "<strong>" + query + "</strong>"),
+                                 Title = l,
                                  Group = "Lab"
                              };
 
@@ -94,6 +98,7 @@ namespace BuildFeed.Controllers
                                {
                                    Url = Url.Route("Actions", new { controller = "build", action = "info", id = b.Id }),
                                    Label = b.FullBuildString.Replace(query, "<strong>" + query + "</strong>"),
+                                   Title = b.FullBuildString,
                                    Group = "Build"
                                };
 
