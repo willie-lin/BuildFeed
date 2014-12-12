@@ -110,7 +110,7 @@ namespace BuildFeed.Controllers
                 {
                     return View(build);
                 }
-                return RedirectToAction("index");
+                return RedirectToAction("info", new { id = build.Id });
             }
             else
             {
@@ -144,7 +144,7 @@ namespace BuildFeed.Controllers
                     return View();
                 }
 
-                return RedirectToAction("index");
+                return RedirectToAction("info", new { id = build.Id });
             }
             else
             {
