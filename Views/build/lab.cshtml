@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<BuildFeed.Models.Build>
 
 @{
-    ViewBag.Action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString().ToLower();
     ViewBag.Title = "BuildFeed";
 
 
@@ -10,47 +9,14 @@
         ViewBag.Title = string.Format("Page {1} | {0}", ViewBag.Title, ViewBag.PageNumber);
     }
 
-    switch (ViewBag.Action as string)
-    {
-        case "index":
-            ViewBag.Title = "BuildFeed | The collaborative build list";
-            break;
-        case "lab":
-            ViewBag.ItemId = ViewContext.Controller.ValueProvider.GetValue("lab").RawValue;
-            ViewBag.Title = string.Format("Builds from {1} | {0}", ViewBag.Title, ViewBag.ItemId);
-            break;
-        case "year":
-            ViewBag.ItemId = ViewContext.Controller.ValueProvider.GetValue("year").RawValue;
-            ViewBag.Title = string.Format("Builds from {1} | {0}", ViewBag.Title, ViewBag.ItemId);
-            break;
-        case "version":
-            ViewBag.ItemId = string.Format("{0}.{1}", ViewContext.Controller.ValueProvider.GetValue("major").RawValue, ViewContext.Controller.ValueProvider.GetValue("minor").RawValue);
-            ViewBag.Title = string.Format("Windows NT {1} | {0}", ViewBag.Title, ViewBag.ItemId);
-            break;
-        case "source":
-            ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(Enum.Parse(typeof(BuildFeed.Models.TypeOfSource), ViewContext.Controller.ValueProvider.GetValue("source").RawValue.ToString()));
-            ViewBag.Title = string.Format("{1} | {0}", ViewBag.Title, ViewBag.ItemId);
-            break;
-    }
+    ViewBag.ItemId = ViewContext.Controller.ValueProvider.GetValue("lab").RawValue;
+    ViewBag.Title = string.Format("Builds from {1} | {0}", ViewBag.Title, ViewBag.ItemId);
 }
 
 @section head
 {
-    @switch (ViewBag.Action as string)
-    {
-        case "index":
-            <meta name="description" content="BuildFeed is a collaborative build list for Microsoft Windows. Keep up to date with the latest Windows 10 builds or take a peek at the list back to 2000" />
-            <meta property="og:description" content="BuildFeed is a collaborative build list for Microsoft Windows. Keep up to date with the latest Windows 10 builds or take a peek at the list back to 2000" />
-            break;
-        case "lab":
-            <meta name="description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
-            <meta property="og:description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
-            break;
-        case "year":
-            <meta name="description" content="View a list of all Windows builds compiled in @ViewBag.ViewId, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed" />
-            <meta property="og:description" content="View a list of all Windows builds compiled in @ViewBag.ViewId, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed" />
-            break;
-    }
+    <meta name="description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
+    <meta property="og:description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
 }
 
 <div class="row">
@@ -108,12 +74,9 @@
                 @Html.TextBox("search-input", "", new { @class = "form-control" })
             </div>
         </div>
-        @if (ViewBag.Action != "index")
-        {
-            <div class="list-group">
-                @Html.ActionLink("Return to full listing", "index", new { controller = "build", area = "", page = 1 }, new { @class = "list-group-item" })
-            </div>
-        }
+        <div class="list-group">
+            @Html.ActionLink("Return to full listing", "index", new { controller = "build", area = "", page = 1 }, new { @class = "list-group-item" })
+        </div>
         <div class="list-group">
             @if (User.Identity.IsAuthenticated)
             {

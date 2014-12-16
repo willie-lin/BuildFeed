@@ -26,7 +26,7 @@
                 <p class="form-control-static">
                     @Html.ActionLink("Edit", "edit", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
 
-                    @if (User.Identity.Name == "hounsell")
+                    @if (Roles.IsUserInRole("Administrators"))
                     {
                         @Html.ActionLink("Delete", "delete", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
                     }

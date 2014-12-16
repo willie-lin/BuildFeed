@@ -1,11 +1,8 @@
-﻿using System;
+﻿using BuildFeed.Models;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.ServiceModel.Syndication;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BuildFeed.Models;
 using X.Web.RSS;
 using X.Web.RSS.Enumerators;
 using X.Web.RSS.Structure;
@@ -70,7 +67,7 @@ namespace BuildFeed.Controllers
                                  Title = build.FullBuildString,
                                  Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id }))),
                                  Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id })) },
-                                 // PubDate = build.Added - MUST FIX TO USE CORRECT FORMAT BEFORE RE-ENABLING
+                                 InternalPubDate = new RssDate(build.Added).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
                              }).ToList()
                 }
             };

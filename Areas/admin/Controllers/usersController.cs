@@ -8,13 +8,36 @@ using BuildFeed.Auth;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
-    [Authorize(Users = "hounsell")]
+    [Authorize(Roles = "Administrators")]
     public class usersController : Controller
     {
         // GET: admin/users
         public ActionResult index()
         {
             return View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));
+        }
+
+        public ActionResult admins()
+        {
+            List<MembershipUser> admins = new List<MembershipUser>();
+            foreach(var m in Roles.GetUsersInRole("Administrators"))
+            {
+                admins.Add(Membership.GetUser(m));
+            }
+
+            return View(admins.OrderByDescending(m => m.UserName));
+        }
+
+        public ActionResult promote(string id)
+        {
+            Roles.AddUserToRole(id, "Administrators");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult demote(string id)
+        {
+            Roles.RemoveUserFromRole(id, "Administrators");
+            return RedirectToAction("Index");
         }
 
         public ActionResult approve(Guid id)

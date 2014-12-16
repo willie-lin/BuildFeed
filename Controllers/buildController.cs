@@ -1,9 +1,6 @@
 ﻿using BuildFeed.Models;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BuildFeed.Controllers
@@ -152,7 +149,7 @@ namespace BuildFeed.Controllers
             }
         }
 
-        [Authorize(Users = "hounsell")]
+        [Authorize(Roles = "Administrators")]
         public ActionResult delete(long id)
         {
             Build.DeleteById(id);

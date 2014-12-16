@@ -226,28 +226,30 @@ namespace BuildFeed.Controllers
 
         public ActionResult xmlsitemap()
         {
+            XNamespace xn = XNamespace.Get("http://www.sitemaps.org/schemas/sitemap/0.9");
             List<XElement> xlist = new List<XElement>();
 
             // home page
-            XElement home = new XElement("url");
-            home.Add(new XElement("loc", Request.Url.GetLeftPart(UriPartial.Authority) + "/"));
-            home.Add(new XElement("changefreq", "daily"));
+            XElement home = new XElement(xn + "url");
+            home.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + "/"));
+            home.Add(new XElement(xn + "changefreq", "daily"));
             xlist.Add(home);
 
             foreach(var b in Build.Select())
             {
-                XElement url = new XElement("url");
-                url.Add(new XElement("loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("info", "build", new { id = b.Id })));
+                XElement url = new XElement(xn + "url");
+                url.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("info", "build", new { id = b.Id })));
                 if(b.Modified != DateTime.MinValue)
                 {
-                    url.Add(new XElement("lastmod", b.Modified.ToString("yyyy-MM-dd")));
+                    url.Add(new XElement(xn + "lastmod", b.Modified.ToString("yyyy-MM-dd")));
                 }
                 xlist.Add(url);
             }
 
-            XElement root = new XElement("urlset", xlist);
+            XDeclaration decl = new XDeclaration("1.0", "utf-8", "");
+            XElement root = new XElement(xn + "urlset", xlist);
 
-            XDocument xdoc = new XDocument(root);
+            XDocument xdoc = new XDocument(decl, root);
 
             Response.ContentType = "application/xml";
             xdoc.Save(Response.OutputStream);
