@@ -34,14 +34,14 @@ namespace BuildFeed.Controllers
 
             List<SearchResult> results = new List<SearchResult>();
 
-            var sourceResults = from s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().Select(s => DisplayHelpers.GetDisplayTextForEnum(s))
-                                where s.ToLower().Contains(query.ToLower())
-                                orderby s.ToLower().IndexOf(query.ToLower()) ascending
+            var sourceResults = from s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().Select(s => new { Text = DisplayHelpers.GetDisplayTextForEnum(s), Value = s })
+                                where s.Text.ToLower().Contains(query.ToLower())
+                                orderby s.Text.ToLower().IndexOf(query.ToLower()) ascending
                                 select new SearchResult()
                                 {
-                                    Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s }),
-                                    Label = s.Replace(query, "<strong>" + query + "</strong>"),
-                                    Title = s,
+                                    Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s.Value }),
+                                    Label = s.Text.Replace(query, "<strong>" + query + "</strong>"),
+                                    Title = s.Text,
                                     Group = "Source"
                                 };
 
