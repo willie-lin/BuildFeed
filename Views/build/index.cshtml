@@ -73,7 +73,7 @@
                     </div>
                     <div class="build-foot">
                         <span class="badge">@Html.DisplayFor(TypeOfSource => item.SourceType, "Enumeration")</span>
-                        @if (item.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
+                        @if ( (item.MajorVersion == 6 && item.MinorVersion == 4) || (item.MajorVersion == 10 && item.MinorVersion == 0) && item.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
                         {
                             <span class="badge">Flight Level: @Html.DisplayFor(TypeOfSource => item.FlightLevel, "Enumeration")</span>
                         }
