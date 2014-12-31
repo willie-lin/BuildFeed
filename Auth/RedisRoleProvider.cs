@@ -107,7 +107,7 @@ namespace BuildFeed.Auth
                 var users = uClient.GetByIds(userIds);
 
                 return (from u in users
-                        where u.UserName.Contains(usernameToMatch)
+                        where u.UserName.ToLower().Contains(usernameToMatch.ToLower())
                         select u.UserName).ToArray();
             }
         }
@@ -130,7 +130,7 @@ namespace BuildFeed.Auth
                 var client = rClient.As<RedisRole>();
                 var uClient = rClient.As<RedisMember>();
 
-                var user = uClient.GetAll().SingleOrDefault(u => u.UserName == username);
+                var user = uClient.GetAll().SingleOrDefault(u => u.UserName.ToLower() == username.ToLower());
 
                 if (user == null)
                 {
@@ -170,7 +170,7 @@ namespace BuildFeed.Auth
                 var client = rClient.As<RedisRole>();
                 var uClient = rClient.As<RedisMember>();
 
-                var user = uClient.GetAll().SingleOrDefault(u => u.UserName == username);
+                var user = uClient.GetAll().SingleOrDefault(u => u.UserName.ToLower() == username.ToLower());
 
                 if (user == null)
                 {
