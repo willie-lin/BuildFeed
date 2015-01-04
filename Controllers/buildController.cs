@@ -7,7 +7,7 @@ namespace BuildFeed.Controllers
 {
     public class buildController : Controller
     {
-        public static int pageSize { get { return 15; } }
+        public static int pageSize { get { return 20; } }
         //
         // GET: /build/
 

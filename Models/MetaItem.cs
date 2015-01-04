@@ -1,25 +1,22 @@
-﻿using BuildFeed;
-using NServiceKit.DataAnnotations;
+﻿using NServiceKit.DataAnnotations;
 using NServiceKit.DesignPatterns.Model;
 using NServiceKit.Redis;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
 {
     [DataObject]
-    public class LabMeta : IHasId<string>
+    public class MetaItem : IHasId<MetaItemKey>
     {
         [Key]
         [Index]
         [@Required]
-        public string Id { get; set; }
+        public MetaItemKey Id { get; set; }
 
         [DisplayName("Page Content")]
         [AllowHtml]
@@ -31,21 +28,21 @@ namespace BuildFeed.Models
 
 
         [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public static IEnumerable<LabMeta> Select()
+        public static IEnumerable<MetaItem> Select()
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 return client.GetAll();
             }
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static LabMeta SelectById(string id)
+        public static MetaItem SelectById(MetaItemKey id)
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 return client.GetById(id);
             }
         }
@@ -56,43 +53,45 @@ namespace BuildFeed.Models
 
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 var labs = Build.SelectBuildLabs();
 
-                var usedLabs = client.GetAll();
+                var usedLabs = from u in client.GetAll()
+                               where u.Id.Type == MetaType.Lab
+                               select u;
 
                 return from l in labs
-                       where !usedLabs.Any(ul => ul.Id == l)
+                       where !usedLabs.Any(ul => ul.Id.Value as string == l)
                        select l;
             }
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public static void Insert(LabMeta item)
+        public static void Insert(MetaItem item)
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 client.Store(item);
             }
         }
 
         [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public static void Update(LabMeta item)
+        public static void Update(MetaItem item)
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 client.Store(item);
             }
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public static void InsertAll(IEnumerable<LabMeta> items)
+        public static void InsertAll(IEnumerable<MetaItem> items)
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 client.StoreAll(items);
             }
         }
@@ -102,9 +101,22 @@ namespace BuildFeed.Models
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
-                var client = rClient.As<LabMeta>();
+                var client = rClient.As<MetaItem>();
                 client.DeleteById(id);
             }
         }
+    }
+
+    public struct MetaItemKey
+    {
+        public object Value { get; set; }
+        public MetaType Type { get; set; }
+    }
+
+    public enum MetaType
+    {
+        Lab,
+        Version,
+        Source
     }
 }

@@ -6,12 +6,12 @@
 
 @section head
 {
-    <meta name="description" content="@Model.FullBuildString. @Model.SourceDetails" />
+    <meta name="description" content="@Model.FullBuildString" />
     <link href="@Url.Action()" rel="canonical" />
     <meta property="og:title" content="@Model.FullBuildString" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Url.Action()" />
-    <meta property="og:description" content="@Model.SourceDetails, via BuildFeed." />
+    <meta property="og:description" content="@Model.FullBuildString, via BuildFeed." />
     <!--<meta property="og:image" content="" />-->
 }
 
@@ -65,21 +65,34 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Lab, new { @class = "control-label col-sm-2" })
         <div class="col-sm-10">
-            <p class="form-control-static">@Html.ActionLink(Model.Lab, "lab", new { lab = Model.Lab })</p>
+            <p class="form-control-static">
+                @Model.Lab<br />
+                <a href="@Url.Action("lab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds from @Model.Lab</a>
+            </p>
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.BuildTime, new { @class = "control-label col-sm-2" })
         <div class="col-sm-10">
-            <p class="form-control-static">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</p>
+            <p class="form-control-static">
+                @Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")
+                @if (Model.BuildTime.HasValue)
+                {
+                    <br />
+                    <a href="@Url.Action("year", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds compiled in @Model.BuildTime.Value.Year</a>
+                }
+            </p>
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.SourceType, new { @class = "control-label col-sm-2" })
         <div class="col-sm-10">
-            <p class="form-control-static">@Html.DisplayFor(model => model.SourceType, "Enumeration")</p>
+            <p class="form-control-static">
+                @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
+                <a href="@Url.Action("source", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds sourced from @Html.DisplayFor(model => model.SourceType, "Enumeration")</a>
+            </p>
         </div>
     </div>
 
@@ -90,7 +103,7 @@
         </div>
     </div>
 
-    @if ( (Model.MajorVersion == 6 && Model.MinorVersion == 4) || (Model.MajorVersion == 10 && Model.MinorVersion == 0) && Model.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
+    @if ((Model.MajorVersion == 6 && Model.MinorVersion == 4) || (Model.MajorVersion == 10 && Model.MinorVersion == 0) && Model.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
     {
         <div class="form-group">
             @Html.LabelFor(model => model.FlightLevel, new { @class = "control-label col-sm-2" })

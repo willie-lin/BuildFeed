@@ -73,6 +73,28 @@ li:last-child .build-foot
     margin-right: 0.12em;
 }
 
+.more-link
+{
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: 1px;
+    border-bottom: 1px dashed #41c0e5;
+    color: #31b0d5;
+}
+
+    .more-link .fa-sm
+    {
+        font-size: 11px;
+        vertical-align: 0px;
+    }
+
+    .more-link:hover
+    {
+        color: #30829e;
+        border-bottom-color: #50a2be;
+        text-decoration: none;
+    }
+
 .field-validation-error
 {
     color: #ff4136;
