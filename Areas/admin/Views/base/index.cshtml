@@ -1,15 +1,18 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Administration | BuildFeed";
 }
 
 <h2>Administration</h2>
 
 <ul>
-    <li>@Html.ActionLink("Manage users", "index", "users")</li>
+    <li>
+        @Html.ActionLink("Manage users", "index", "users")
+        <ul>
+            <li>@Html.ActionLink("View administrators", "admins")</li>
+        </ul>
+    </li>
     @if (User.Identity.Name == "hounsell")
     {
         <li>@Html.ActionLink("Initial setup", "setup")</li>
     }
 </ul>
-

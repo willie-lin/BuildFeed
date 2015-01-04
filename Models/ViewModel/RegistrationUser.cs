@@ -15,18 +15,18 @@ namespace BuildFeed.Models.ViewModel
 
         [Required]
         [MinLength(12)]
-        [DisplayName("Enter Password")]
+        [DisplayName("Enter password")]
         public string Password { get; set; }
 
         [Required]
         [MinLength(12)]
-        [DisplayName("Confirm Password")]
+        [DisplayName("Confirm password")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
         [Required]
         [EmailAddress]
-        [DisplayName("Email Address")]
+        [DisplayName("Email address")]
         public string EmailAddress { get; set; }
     }
 }

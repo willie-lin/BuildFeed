@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\admin\Controllers\baseController.cs" />
+    <Compile Include="Areas\admin\Controllers\metaController.cs" />
     <Compile Include="Auth\RedisRoleProvider.cs" />
     <Compile Include="Code\BuildDateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Models\MetaItem.cs" />
     <Compile Include="Models\ViewModel\LoginUser.cs" />
     <Compile Include="Models\ViewModel\ChangePassword.cs" />
+    <Compile Include="Models\ViewModel\QuestionForm.cs" />
     <Compile Include="Models\ViewModel\RegistrationUser.cs" />
     <Compile Include="Models\ViewModel\SitemapData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,13 +219,13 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\admin\Views\users\admins.cshtml" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="content\tile\large.png" />
     <Content Include="Scripts\bfs.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -276,6 +278,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -293,10 +296,13 @@
     <Content Include="Views\support\rss.cshtml" />
     <Content Include="Views\support\sitemap.cshtml" />
     <Content Include="Scripts\jsrender.min.js.map" />
+    <Content Include="Views\support\question.cshtml" />
+    <Content Include="Views\support\thanks_question.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
+    <Folder Include="Areas\admin\Views\meta\" />
     <Folder Include="Areas\admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

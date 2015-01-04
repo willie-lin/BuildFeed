@@ -27,13 +27,25 @@ namespace BuildFeed.Models
 
 
 
-        [DataObjectMethod(DataObjectMethodType.Select, true)]
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<MetaItem> Select()
         {
             using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 return client.GetAll();
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select, true)]
+        public static IEnumerable<MetaItem> SelectByType(MetaType type)
+        {
+            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            {
+                var client = rClient.As<MetaItem>();
+                return from t in client.GetAll()
+                       where t.Id.Type == type
+                       select t;
             }
         }
 

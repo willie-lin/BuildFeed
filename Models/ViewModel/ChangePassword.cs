@@ -11,17 +11,17 @@ namespace BuildFeed.Models.ViewModel
     {
         [Required]
         [MinLength(12)]
-        [DisplayName("Enter Old Password")]
+        [DisplayName("Enter current password")]
         public string OldPassword { get; set; }
 
         [Required]
         [MinLength(12)]
-        [DisplayName("Enter New Password")]
+        [DisplayName("Enter new password")]
         public string NewPassword { get; set; }
 
         [Required]
         [MinLength(12)]
-        [DisplayName("Confirm New Password")]
+        [DisplayName("Confirm new password")]
         [Compare("NewPassword")]
         public string ConfirmNewPassword { get; set; }
     }
