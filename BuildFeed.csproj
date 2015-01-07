@@ -203,6 +203,7 @@
     <Compile Include="Models\ViewModel\QuestionForm.cs" />
     <Compile Include="Models\ViewModel\RegistrationUser.cs" />
     <Compile Include="Models\ViewModel\SitemapData.cs" />
+    <Compile Include="Models\ViewModel\StatsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +224,10 @@
     <Content Include="content\tile\large.png" />
     <Content Include="Scripts\bfs.js" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\excanvas.compiled.js" />
+    <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
@@ -298,6 +303,7 @@
     <Content Include="Scripts\jsrender.min.js.map" />
     <Content Include="Views\support\question.cshtml" />
     <Content Include="Views\support\thanks_question.cshtml" />
+    <Content Include="Views\support\stats.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

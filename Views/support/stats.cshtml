@@ -1,0 +1,79 @@
+﻿@model BuildFeed.Models.ViewModel.StatsPage
+
+@{
+    ViewBag.Title = "Statistics | BuildFeed";
+}
+
+<h2>Statistics</h2>
+
+<h4>New additions to BuildFeed over the previous year</h4>
+<canvas id="stats-addition" width="960" height="320"></canvas>
+
+<h4>Builds compiled each quarter</h4>
+<canvas id="stats-compiled" width="960" height="320"></canvas>
+
+<h4>Recorded builds in each lab</h4>
+<p>Only labs with more than 10 recorded builds are included.</p>
+<canvas id="stats-labs" width="960" height="320"></canvas>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/Chart.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            Chart.defaults.global.responsive = true;
+            Chart.defaults.global.showTooltips = false;
+
+            Chart.defaults.Line.scaleShowGridLines = false;
+
+            var additionData = {
+                labels: [ @Html.Raw(string.Join(", ", Model.AdditionsByMonth.Select(m => m.Month % 4 != 1 ? "\"\"" : string.Format("\"Week {0}, {1}\"", m.Month, m.Year)).ToArray())) ],
+                datasets: [
+                    {
+                        label: "Additions to BuildFeed",
+                        fillColor: "#008cba",
+                        strokeColor: "#00526e",
+                        pointColor: "#00526e",
+                        pointStrokeColor: "#fff",
+                        data: [ @string.Join(", ", Model.AdditionsByMonth.Select(m => m.Count.ToString()).ToArray())]
+                    }
+                ]
+            };
+
+            var additionChart = new Chart(document.getElementById("stats-addition").getContext("2d")).Line(additionData, {});
+
+
+            var compiledData = {
+                labels: [ @Html.Raw(string.Join(", ", Model.CompilesByMonth.Select(m => string.Format("\"{0} {1}\"", System.Globalization.DateTimeFormatInfo.InvariantInfo.GetMonthName(m.Month), m.Year)).ToArray())) ],
+                datasets: [
+                    {
+                        label: "Builds compiled",
+                        fillColor: "#008cba",
+                        strokeColor: "#00526e",
+                        pointColor: "#00526e",
+                        pointStrokeColor: "#fff",
+                        data: [ @string.Join(", ", Model.CompilesByMonth.Select(m => m.Count.ToString()).ToArray())]
+                    }
+                ]
+            };
+
+            var compiledChart = new Chart(document.getElementById("stats-compiled").getContext("2d")).Line(compiledData, {});
+
+            var labData = {
+                labels: [ @Html.Raw(string.Join(", ", Model.BuildsByLab.Select(l => string.Format("\"{0}\"", l.Item1))))],
+                datasets: [
+                    {
+                        label: "Labs",
+                        fillColor: "#008cba",
+                        strokeColor: "#00526e",
+                        pointColor: "#00526e",
+                        pointStrokeColor: "#fff",
+                        data: [ @string.Join(", ", Model.BuildsByLab.Select(l => l.Item2.ToString()))]
+                    }
+                ]
+            };
+
+            var labChart = new Chart(document.getElementById("stats-labs").getContext("2d")).Bar(labData, {});
+        });
+    </script>
+}

@@ -133,7 +133,7 @@ namespace BuildFeed.Controllers
         [HttpPost]
         public async Task<ActionResult> question(QuestionForm qf)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 SmtpClient sc = new SmtpClient();
                 MailMessage mm = new MailMessage(ConfigurationManager.AppSettings["form:QuestionFromEmail"], ConfigurationManager.AppSettings["form:QuestionToEmail"]);
@@ -218,37 +218,37 @@ namespace BuildFeed.Controllers
                                  }).ToArray());
 
             actions.Add("Years", (from b in builds
-                                 where b.BuildTime.HasValue
-                                 group b by b.BuildTime.Value.Year into bv
-                                 orderby bv.Key
-                                 select new SitemapPagedAction()
-                                 {
-                                     Name = bv.Key.ToString(),
-                                     UrlParams = new RouteValueDictionary(new
-                                     {
-                                         controller = "build",
-                                         action = "year",
-                                         year = bv.Key,
-                                         page = 1
-                                     }),
-                                     Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
-                                 }).ToArray());
+                                  where b.BuildTime.HasValue
+                                  group b by b.BuildTime.Value.Year into bv
+                                  orderby bv.Key
+                                  select new SitemapPagedAction()
+                                  {
+                                      Name = bv.Key.ToString(),
+                                      UrlParams = new RouteValueDictionary(new
+                                      {
+                                          controller = "build",
+                                          action = "year",
+                                          year = bv.Key,
+                                          page = 1
+                                      }),
+                                      Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                  }).ToArray());
 
             actions.Add("Sources", (from b in builds
-                                 group b by b.SourceType into bv
-                                 orderby bv.Key
-                                 select new SitemapPagedAction()
-                                 {
-                                     Name = DisplayHelpers.GetDisplayTextForEnum(bv.Key),
-                                     UrlParams = new RouteValueDictionary(new
-                                     {
-                                         controller = "build",
-                                         action = "source",
-                                         source = bv.Key,
-                                         page = 1
-                                     }),
-                                     Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
-                                 }).ToArray());
+                                    group b by b.SourceType into bv
+                                    orderby bv.Key
+                                    select new SitemapPagedAction()
+                                    {
+                                        Name = DisplayHelpers.GetDisplayTextForEnum(bv.Key),
+                                        UrlParams = new RouteValueDictionary(new
+                                        {
+                                            controller = "build",
+                                            action = "source",
+                                            source = bv.Key,
+                                            page = 1
+                                        }),
+                                        Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                    }).ToArray());
 
             SitemapData model = new SitemapData()
             {
@@ -276,11 +276,11 @@ namespace BuildFeed.Controllers
             home.Add(new XElement(xn + "changefreq", "daily"));
             xlist.Add(home);
 
-            foreach(var b in Build.Select())
+            foreach (var b in Build.Select())
             {
                 XElement url = new XElement(xn + "url");
                 url.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("info", "build", new { id = b.Id })));
-                if(b.Modified != DateTime.MinValue)
+                if (b.Modified != DateTime.MinValue)
                 {
                     url.Add(new XElement(xn + "lastmod", b.Modified.ToString("yyyy-MM-dd")));
                 }
@@ -297,6 +297,62 @@ namespace BuildFeed.Controllers
 
 
             return new EmptyResult();
+        }
+
+        public ActionResult stats()
+        {
+            var builds = Build.Select();
+
+            List<MonthCount> Additions = new List<MonthCount>();
+            var rawAdditions = from b in builds
+                               where b.Added > DateTime.Now.AddYears(-1)
+                               group b by new { Year = b.Added.Year, Week = Convert.ToInt32(Math.Floor(b.Added.DayOfYear / 7m)) } into bm
+                               select new MonthCount()
+                               {
+                                   Month = bm.Key.Week,
+                                   Year = bm.Key.Year,
+                                   Count = bm.Count()
+                               };
+
+            for (int i = -52; i <= 0; i++)
+            {
+                DateTime dt = DateTime.Now.AddDays(i * 7);
+                Additions.Add(new MonthCount()
+                {
+                    Month = Convert.ToInt32(Math.Floor(dt.DayOfYear / 7m)),
+                    Year = dt.Year,
+                    Count = rawAdditions.SingleOrDefault(a => a.Month == Convert.ToInt32(Math.Floor(dt.DayOfYear / 7m)) && a.Year == dt.Year).Count
+                });
+            }
+
+            List<MonthCount> Compiles = new List<MonthCount>();
+            var rawCompiles = from b in builds
+                              where b.BuildTime.HasValue
+                              group b by new { Year = b.BuildTime.Value.Year, Month = Convert.ToInt32(Math.Floor((b.BuildTime.Value.Month - 0.1m) / 3m) * 3) + 1 } into bm
+                              select new MonthCount()
+                              {
+                                  Month = bm.Key.Month,
+                                  Year = bm.Key.Year,
+                                  Count = bm.Count()
+                              };
+
+
+            var rawLabCounts = from bl in (from b in builds
+                                           where !string.IsNullOrEmpty(b.Lab)
+                                           group b by b.Lab into bl
+                                           select bl)
+                               where bl.Count() > 9
+                               orderby bl.Count() descending
+                               select new Tuple<string, int>(bl.Key, bl.Count());
+
+            StatsPage m = new StatsPage()
+            {
+                AdditionsByMonth = Additions,
+                CompilesByMonth = rawCompiles.OrderBy(r => r.Year).ThenBy(r => r.Month),
+                BuildsByLab = rawLabCounts
+            };
+
+            return View(m);
         }
     }
 }
