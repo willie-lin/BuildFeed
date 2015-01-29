@@ -62,6 +62,9 @@ namespace BuildFeed.Models
         [AllowHtml]
         public string SourceDetails { get; set; }
 
+        [DisplayName("Leak or Release Date")]
+        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime? LeakDate { get; set; }
 
         [RegularExpression("http://betawiki\\.net/.+")]
         [DisplayName("BetaWiki (Client)")]

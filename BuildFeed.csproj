@@ -81,7 +81,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NServiceKit.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -91,8 +91,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceKit.Common.1.0.27\lib\net35\NServiceKit.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceKit.Redis">
-      <HintPath>..\packages\NServiceKit.Redis.1.0.7\lib\net35\NServiceKit.Redis.dll</HintPath>
+    <Reference Include="NServiceKit.Redis, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceKit.Redis.1.0.10\lib\net35\NServiceKit.Redis.dll</HintPath>
     </Reference>
     <Reference Include="NServiceKit.Text">
       <HintPath>..\packages\NServiceKit.Text.1.0.10\lib\net35\NServiceKit.Text.dll</HintPath>
@@ -179,7 +180,7 @@
     <Compile Include="Areas\admin\Controllers\baseController.cs" />
     <Compile Include="Areas\admin\Controllers\metaController.cs" />
     <Compile Include="Auth\RedisRoleProvider.cs" />
-    <Compile Include="Code\BuildDateTimeModelBinder.cs" />
+    <Compile Include="Code\DateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />

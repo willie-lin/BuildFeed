@@ -138,7 +138,7 @@ namespace BuildFeed.Controllers
                 }
                 catch
                 {
-                    return View();
+                    return View("create", build);
                 }
 
                 return RedirectToAction("info", new { id = build.Id });

@@ -79,6 +79,39 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
+        public async Task<ActionResult> leaked()
+        {
+            var builds = Build.Select().Where(b => b.LeakDate.HasValue).OrderByDescending(b => b.LeakDate.Value).Take(20);
+
+            RssDocument rdoc = new RssDocument()
+            {
+                Channel = new RssChannel()
+                {
+                    Title = "BuildFeed RSS - Recently Leaked",
+                    Description = "",
+                    Generator = "BuildFeed.net RSS Controller",
+                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    SkipHours = new List<Hour>(),
+                    SkipDays = new List<Day>(),
+
+                    Items = (from build in builds
+                             select new RssItem()
+                             {
+                                 Title = build.FullBuildString,
+                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id }))),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id })) },
+                                 InternalPubDate = new RssDate(build.LeakDate.Value).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
+                             }).ToList()
+                }
+            };
+
+            Response.ContentType = "application/rss+xml";
+
+            await Response.Output.WriteAsync(rdoc.ToXml());
+
+            return new EmptyResult();
+        }
+
 
         public async Task<ActionResult> version()
         {

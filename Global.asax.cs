@@ -14,10 +14,10 @@ namespace BuildFeed
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            BuildDateTimeModelBinder b = new BuildDateTimeModelBinder();
+            DateTimeModelBinder db = new DateTimeModelBinder();
 
-            ModelBinders.Binders.Add(typeof(DateTime), b);
-            ModelBinders.Binders.Add(typeof(DateTime?), b);
+            ModelBinders.Binders.Add(typeof(DateTime), db);
+            ModelBinders.Binders.Add(typeof(DateTime?), db);
         }
     }
 }
