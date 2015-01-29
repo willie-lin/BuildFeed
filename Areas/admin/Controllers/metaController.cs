@@ -1,4 +1,5 @@
-﻿using BuildFeed.Models;
+﻿using BuildFeed.Areas.admin.Models.ViewModel;
+using BuildFeed.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,58 @@ namespace BuildFeed.Areas.admin.Controllers
 
             var pendingLabs = MetaItem.SelectUnusedLabs();
 
-            return View();
+            return View(new MetaListing()
+            {
+                CurrentItems = from i in MetaItem.Select()
+                               group i by i.Id.Type into b
+                               select b,
+
+                NewItems = from i in (from l in MetaItem.SelectUnusedLabs()
+                                      select new MetaItem()
+                                      {
+                                          Id = new MetaItemKey()
+                                          {
+                                              Type = MetaType.Lab,
+                                              Value = l
+                                          }
+                                      })
+                           group i by i.Id.Type into b
+                           select b
+            });
+        }
+
+        public ActionResult create(MetaType type, string value)
+        {
+            return View(new MetaItem() { Id = new MetaItemKey() { Type = type, Value = value } });
+        }
+
+        [HttpPost]
+        public ActionResult create(MetaItem meta)
+        {
+            if (ModelState.IsValid)
+            {
+                MetaItem.Insert(meta);
+                return RedirectToAction("index");
+            }
+
+            return View(meta);
+        }
+
+        public ActionResult edit(MetaType type, string value)
+        {
+            return View("create", MetaItem.SelectById(new MetaItemKey() { Type = type, Value = value }));
+        }
+
+        [HttpPost]
+        public ActionResult edit(MetaItem meta)
+        {
+            if (ModelState.IsValid)
+            {
+                MetaItem.Update(meta);
+                return RedirectToAction("index");
+            }
+
+            return View("create", meta);
         }
     }
 }

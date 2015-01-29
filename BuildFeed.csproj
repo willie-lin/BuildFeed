@@ -179,6 +179,7 @@
   <ItemGroup>
     <Compile Include="Areas\admin\Controllers\baseController.cs" />
     <Compile Include="Areas\admin\Controllers\metaController.cs" />
+    <Compile Include="Areas\admin\Models\ViewModel\MetaListing.cs" />
     <Compile Include="Auth\RedisRoleProvider.cs" />
     <Compile Include="Code\DateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
@@ -220,6 +221,8 @@
     <Content Include="Areas\admin\Views\base\index.cshtml" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\admin\Views\users\admins.cshtml" />
+    <Content Include="Areas\admin\Views\meta\index.cshtml" />
+    <Content Include="Areas\admin\Views\meta\create.cshtml" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="content\tile\large.png" />
@@ -308,8 +311,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\admin\Models\" />
-    <Folder Include="Areas\admin\Views\meta\" />
     <Folder Include="Areas\admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

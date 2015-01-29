@@ -41,6 +41,8 @@ namespace BuildFeed.Controllers
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(pageSize));
 
+            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Lab, Value = lab });
+
             return View("index", pageBuilds);
         }
 

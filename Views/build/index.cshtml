@@ -43,8 +43,16 @@
             <meta property="og:description" content="BuildFeed is a collaborative build list for Microsoft Windows. Keep up to date with the latest Windows 10 builds or take a peek at the list back to 2000" />
             break;
         case "lab":
-            <meta name="description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
-            <meta property="og:description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
+            if (ViewBag.MetaItem != null)
+            {
+                <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
+                <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
+            }
+            else
+            {
+                <meta name="description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
+                <meta property="og:description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
+            }
             break;
         case "year":
             <meta name="description" content="View a list of all Windows builds compiled in @ViewBag.ViewId, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed" />
@@ -55,6 +63,27 @@
 
 <div class="row">
     <div class="col-sm-9">
+        @switch (ViewBag.Action as string)
+        {
+            case "lab":
+                <h2>@string.Format("Builds from {0}", ViewBag.ItemId)</h2>
+                break;
+            case "year":
+                <h2>@string.Format("Builds from {0}", ViewBag.ItemId)</h2>
+                break;
+            case "version":
+                <h2>@string.Format("Windows NT {0}", ViewBag.ItemId)</h2>
+                break;
+            case "source":
+                <h2>@ViewBag.ItemId)</h2>
+                break;
+        }
+        @if (ViewBag.PageNumber == 1 && ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
+        {
+            <h3>About</h3>
+            @Html.Raw(ViewBag.MetaItem.PageContent)
+            <h3>Listing</h3>
+        }
         <ul class="list-unstyled">
             @foreach (var item in Model)
             {

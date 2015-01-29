@@ -11,6 +11,9 @@
             <li>@Html.ActionLink("View administrators", "admins", "users")</li>
         </ul>
     </li>
+    <li>
+        @Html.ActionLink("Manage metadata", "index", "meta")
+    </li>
     @if (User.Identity.Name == "hounsell")
     {
         <li>@Html.ActionLink("Initial setup", "setup")</li>

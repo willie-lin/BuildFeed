@@ -163,6 +163,11 @@ label, .control-label, .help-block, .checkbox, .radio
     padding: 4px 9px;
 }
 
+.table-admin h4
+{
+    margin: .1em 0;
+}
+
 .table-admin > tbody > tr > th,
 .table-admin > tbody > tr > td
 {
