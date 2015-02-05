@@ -6,13 +6,20 @@
 
 @section head
 {
-    <meta name="description" content="@Model.FullBuildString" />
     <link href="@Url.Action()" rel="canonical" />
     <meta property="og:title" content="@Model.FullBuildString" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Url.Action()" />
-    <meta property="og:description" content="@Model.FullBuildString, via BuildFeed." />
-    <!--<meta property="og:image" content="" />-->
+    @if (Model.BuildTime.HasValue)
+    {
+        <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
+        <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
+    }
+    else
+    {
+        <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
+        <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
+    }
 }
 
 <h2>@Model.FullBuildString</h2>
@@ -198,7 +205,7 @@
                 var disqus_shortname = 'buildfeed';
                 var disqus_url = 'https://buildfeed.net' + '@Url.Action()';
 
-                (function() {
+                (function () {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -217,5 +224,5 @@
 
 @section scripts
 {
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 }
