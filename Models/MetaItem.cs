@@ -79,6 +79,25 @@ namespace BuildFeed.Models
             }
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IEnumerable<string> SelectUnusedVersions()
+        {
+
+            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            {
+                var client = rClient.As<MetaItem>();
+                var versions = Build.SelectBuildVersions();
+
+                var usedLabs = from u in client.GetAll()
+                               where u.Id.Type == MetaType.Version
+                               select u;
+
+                return from v in versions
+                       where !usedLabs.Any(ul => ul.Id.Value == v.ToString())
+                       select v.ToString();
+            }
+        }
+
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public static void Insert(MetaItem item)
         {

@@ -82,6 +82,8 @@
         {
             <h3>About</h3>
             @Html.Raw(ViewBag.MetaItem.PageContent)
+            <h3>Share</h3>
+            <div class="addthis_sharing_toolbox"></div>
             <h3>Listing</h3>
         }
         <ul class="list-unstyled">
@@ -204,4 +206,5 @@
             <p class="list-group-item-text">{{:Group}}</p>
         </a>
     </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 }

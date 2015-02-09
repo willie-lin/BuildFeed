@@ -209,6 +209,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -223,6 +224,7 @@
     <Content Include="Areas\admin\Views\users\admins.cshtml" />
     <Content Include="Areas\admin\Views\meta\index.cshtml" />
     <Content Include="Areas\admin\Views\meta\create.cshtml" />
+    <Content Include="yandex_702baad42b020be7.html" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="content\tile\large.png" />

@@ -24,6 +24,7 @@ namespace BuildFeed.Areas.admin.Controllers
             {
                 CurrentItems = from i in MetaItem.Select()
                                group i by i.Id.Type into b
+                               orderby b.Key.ToString()
                                select b,
 
                 NewItems = from i in (from l in MetaItem.SelectUnusedLabs()
@@ -34,8 +35,17 @@ namespace BuildFeed.Areas.admin.Controllers
                                               Type = MetaType.Lab,
                                               Value = l
                                           }
-                                      })
+                                      }).Concat(from v in MetaItem.SelectUnusedVersions()
+                                                select new MetaItem()
+                                                {
+                                                    Id = new MetaItemKey()
+                                                    {
+                                                        Type = MetaType.Version,
+                                                        Value = v
+                                                    }
+                                                })
                            group i by i.Id.Type into b
+                           orderby b.Key.ToString()
                            select b
             });
         }
