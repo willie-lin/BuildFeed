@@ -9,6 +9,9 @@
 # Application Insights config
 ApplicationInsights.config
 
+# SMTP configuration
+smtp.config
+
 # Publish Profiles
 [Pp]roperties/[Pp]ublish[Pp]rofiles/
 

@@ -25,6 +25,10 @@ $(function () {
                 content.append(item);
 
                 search.after(content);
+
+                $(".panel-search a.list-group-item").click(function () {
+                    ga('send', 'pageview', '/api/GetSearchResult/?query=' + $("#search-input").val());
+                });
             });
         }, 200);
     });
