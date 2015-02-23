@@ -310,7 +310,9 @@
     <Content Include="Views\support\question.cshtml" />
     <Content Include="Views\support\thanks_question.cshtml" />
     <Content Include="Views\support\stats.cshtml" />
-    <Content Include="smtp.config" />
+    <Content Include="smtp.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
