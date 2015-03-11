@@ -53,7 +53,7 @@ h1
     {
         border-radius: 4px;
         font-weight: normal;
-        color: #666 !important;
+        color: #fff !important;
     }
 
         .build-foot .badge:first-child
@@ -115,9 +115,10 @@ li:last-child .build-foot
     margin-bottom: 0;
 }
 
-.panel-search .list-group-item-heading
-{
+.panel-search .list-group-item-heading {
     overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 
