@@ -341,7 +341,7 @@ namespace BuildFeed.Controllers
                                            where !string.IsNullOrEmpty(b.Lab)
                                            group b by b.Lab into bl
                                            select bl)
-                               where bl.Count() > 9
+                               where bl.Count() > 19
                                orderby bl.Count() descending
                                select new Tuple<string, int>(bl.Key, bl.Count());
 
