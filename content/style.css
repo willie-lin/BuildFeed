@@ -15,15 +15,10 @@ h1
         color: #000;
     }
 
-.social-links
+#page-content
 {
-    margin: 30px 0 6px;
+    padding-top: 70px;
 }
-
-    .social-links a
-    {
-        margin-left: 1em;
-    }
 
 .build-head
 {

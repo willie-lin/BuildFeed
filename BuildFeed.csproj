@@ -193,6 +193,7 @@
     <Compile Include="Auth\RedisMembershipProvider.cs" />
     <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\buildController.cs" />
+    <Compile Include="Controllers\frontController.cs" />
     <Compile Include="Controllers\rssController.cs" />
     <Compile Include="Controllers\supportController.cs" />
     <Compile Include="Global.asax.cs">
@@ -314,6 +315,7 @@
     <Content Include="smtp.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\front\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

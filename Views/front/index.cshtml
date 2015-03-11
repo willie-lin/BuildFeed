@@ -1,0 +1,20 @@
+﻿@model IEnumerable<IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>>
+@{
+    ViewBag.Title = "BuildFeed";
+}
+
+<div class="row">
+    @foreach (var group in Model)
+    {
+        <div class="col-sm-2">
+            <h3>@group.Key.ToString()</h3>
+            <p>
+                @if(group.Any(k => k.BuildTime.HasValue))
+                {
+                    <span><i class="fa fa-calendar fa-fw"></i> @group.Max(k => k.BuildTime).Value.ToString("dd MMMM yyyy")</span><br />
+                }
+                <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() variants
+            </p>
+        </div>
+    }
+</div>

@@ -42,20 +42,19 @@
         ga('send', 'pageview');
     </script>
     <div class="container">
-        <header id="page-header">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h1>@Html.ActionLink("BuildFeed", "index", new { controller = "build", area = "", page = 1 })</h1>
-                </div>
-                <div class="col-sm-3 text-right">
-                    <p class="social-links">
-                        <a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-2x fa-twitter"></i></a>
-                        <a href="@Url.Action("stats", new { controller = "support", area = "" }) " title="Statistics"><i class="fa fa-2x fa-line-chart"></i></a>
-                        <a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-2x fa-rss"></i></a>
-                    </p>
+        <header id="page-header"></header>
+        <nav id="page-navigation" role="navigation">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="@Url.Action("stats", new { controller = "support", area = "" }) " title="Statistics"><i class="fa fa-line-chart"></i> Statistics</a></li>
+                        <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-rss"></i> RSS Feeds</a></li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </nav>
         <article id="page-content">
             <div class="row">
                 <div class="col-sm-12">

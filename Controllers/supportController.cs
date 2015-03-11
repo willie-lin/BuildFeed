@@ -167,6 +167,8 @@ namespace BuildFeed.Controllers
             return View();
         }
 
+        [Route("support/sitemap")]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult sitemap()
         {
             IEnumerable<Build> builds = Build.SelectInVersionOrder();
@@ -265,6 +267,8 @@ namespace BuildFeed.Controllers
             return View(model);
         }
 
+        [Route("support/xmlsitemap")]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult xmlsitemap()
         {
             XNamespace xn = XNamespace.Get("http://www.sitemaps.org/schemas/sitemap/0.9");
@@ -299,6 +303,8 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
+        [Route("support/stats")]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult stats()
         {
             var builds = Build.Select();
@@ -341,7 +347,7 @@ namespace BuildFeed.Controllers
                                            where !string.IsNullOrEmpty(b.Lab)
                                            group b by b.Lab into bl
                                            select bl)
-                               where bl.Count() > 19
+                               where bl.Count() > 24
                                orderby bl.Count() descending
                                select new Tuple<string, int>(bl.Key, bl.Count());
 

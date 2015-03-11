@@ -337,4 +337,19 @@ namespace BuildFeed.Models
             return string.Format("{0}.{1}", Major, Minor);
         }
     }
+
+    public struct BuildGroup
+    {
+        public byte Major { get; set; }
+        public byte Minor { get; set; }
+        public ushort Build { get; set; }
+        public ushort? Revision { get; set; }
+
+        public override string ToString()
+        {
+            return Revision.HasValue ?
+                string.Format("{0}.{1}.{2}.{3}", Major, Minor, Build, Revision.Value) :
+                string.Format("{0}.{1}.{2}", Major, Minor, Build);
+        }
+    }
 }
