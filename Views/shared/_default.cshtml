@@ -48,9 +48,9 @@
                 <div class="container">
                     @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
                         <li><a href="@Url.Action("stats", new { controller = "support", area = "" }) " title="Statistics"><i class="fa fa-line-chart"></i> Statistics</a></li>
                         <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-rss"></i> RSS Feeds</a></li>
+                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BuildFeed.Models.Build>
+@{
+    Layout = null;
+}
+
+<ul>
+    @foreach (var build in Model)
+    {
+        <li>@build.FullBuildString</li>
+    }
+</ul>

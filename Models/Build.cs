@@ -66,26 +66,6 @@ namespace BuildFeed.Models
         [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? LeakDate { get; set; }
 
-        [RegularExpression("http://betawiki\\.net/.+")]
-        [DisplayName("BetaWiki (Client)")]
-        public Uri BetaWikiUri { get; set; }
-
-        [RegularExpression("http://betawiki\\.net/.+")]
-        [DisplayName("BetaWiki (Server)")]
-        public Uri BetaWikiServerUri { get; set; }
-
-        [RegularExpression("http://www\\.betaarchive\\.com/wiki/.+")]
-        [DisplayName("BetaArchive Wiki")]
-        public Uri BetaArchiveUri { get; set; }
-
-        [RegularExpression("http://longhorn\\.ms/.+")]
-        [DisplayName("Longhorn.ms")]
-        public Uri LonghornMsUri { get; set; }
-
-        [RegularExpression("https://winworldpc\\.com/.+")]
-        [DisplayName("WinWorldPC Library")]
-        public Uri WinWorldPCUri { get; set; }
-
         [DisplayName("Flight Level")]
         [EnumDataType(typeof(LevelOfFlight))]
         public LevelOfFlight FlightLevel { get; set; }

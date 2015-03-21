@@ -20,6 +20,19 @@ h1
     padding-top: 70px;
 }
 
+.build-group-title
+{
+    font-size: 22px;
+}
+
+.build-group-title a
+{
+    font-size: 0.6em;
+    vertical-align: 3px;
+    display: inline-block;
+    margin-left: 0.3em;
+}
+
 .build-head
 {
     margin-bottom: 0.33em;

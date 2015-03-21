@@ -12,8 +12,7 @@ namespace BuildFeed.Controllers
 {
     public class rssController : Controller
     {
-        //
-        // GET: /rss/
+        [Route("rss/compiled")]
         public async Task<ActionResult> index()
         {
             var builds = Build.SelectInBuildOrder().Take(20);
@@ -46,6 +45,7 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
+        [Route("rss/added")]
         public async Task<ActionResult> added()
         {
             var builds = Build.Select().OrderByDescending(b => b.Added).Take(20);
@@ -79,6 +79,7 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
+        [Route("rss/leaked")]
         public async Task<ActionResult> leaked()
         {
             var builds = Build.Select().Where(b => b.LeakDate.HasValue).OrderByDescending(b => b.LeakDate.Value).Take(20);
@@ -112,7 +113,7 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
-
+        [Route("rss/version")]
         public async Task<ActionResult> version()
         {
             var builds = Build.SelectInVersionOrder()
@@ -147,7 +148,7 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
-
+        [Route("rss/flight/{id}")]
         public async Task<ActionResult> flight(LevelOfFlight id)
         {
             var builds = Build.SelectInBuildOrder()

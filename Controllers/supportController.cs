@@ -17,18 +17,14 @@ namespace BuildFeed.Controllers
 {
     public class supportController : Controller
     {
-        // GET: support
-        public ActionResult index()
-        {
-            return View();
-        }
-
+        [Route("login")]
         public ActionResult login()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("login")]
         public ActionResult login(LoginUser ru)
         {
             if (ModelState.IsValid)
@@ -56,12 +52,14 @@ namespace BuildFeed.Controllers
         }
 
         [Authorize]
+        [Route("password")]
         public ActionResult password()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("password")]
         public ActionResult password(ChangePassword cp)
         {
             if (ModelState.IsValid)
@@ -79,18 +77,21 @@ namespace BuildFeed.Controllers
             return View(cp);
         }
 
+        [Route("logout")]
         public ActionResult logout()
         {
             FormsAuthentication.SignOut();
             return Redirect("/");
         }
 
+        [Route("register")]
         public ActionResult register()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("register")]
         public ActionResult register(RegistrationUser ru)
         {
             if (ModelState.IsValid)
@@ -120,6 +121,7 @@ namespace BuildFeed.Controllers
             return View(ru);
         }
 
+        [Route("register")]
         public ActionResult thanks_register()
         {
             return View();
@@ -162,13 +164,16 @@ namespace BuildFeed.Controllers
             }
         }
 
+        [Route("rss")]
         public ActionResult rss()
         {
             return View();
         }
 
-        [Route("support/sitemap")]
+        [Route("sitemap")]
+        #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
+        #endif
         public ActionResult sitemap()
         {
             IEnumerable<Build> builds = Build.SelectInVersionOrder();
@@ -267,8 +272,10 @@ namespace BuildFeed.Controllers
             return View(model);
         }
 
-        [Route("support/xmlsitemap")]
+        [Route("xml-sitemap")]
+        #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
+        #endif
         public ActionResult xmlsitemap()
         {
             XNamespace xn = XNamespace.Get("http://www.sitemaps.org/schemas/sitemap/0.9");
@@ -303,8 +310,10 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
-        [Route("support/stats")]
+        [Route("statistics")]
+        #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
+        #endif
         public ActionResult stats()
         {
             var builds = Build.Select();

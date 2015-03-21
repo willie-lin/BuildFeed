@@ -7,13 +7,13 @@
     @foreach (var group in Model)
     {
         <div class="col-sm-2">
-            <h3>@group.Key.ToString()</h3>
+            <h3 class="build-group-title"><a href="#"><i class="fa fa-plus-square"></i></a> @group.Key.ToString()</h3>
             <p>
                 @if(group.Any(k => k.BuildTime.HasValue))
                 {
                     <span><i class="fa fa-calendar fa-fw"></i> @group.Max(k => k.BuildTime).Value.ToString("dd MMMM yyyy")</span><br />
                 }
-                <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() variants
+                <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() builds
             </p>
         </div>
     }
