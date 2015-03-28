@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>>
+@using Humanizer;
 @{
     ViewBag.Title = "BuildFeed";
 }
@@ -7,11 +8,19 @@
     @foreach (var group in Model)
     {
         <div class="col-sm-2">
-            <h3 class="build-group-title"><a href="#"><i class="fa fa-plus-square"></i></a> @group.Key.ToString()</h3>
+            <h3 class="build-group-title"><a href="#"><span class="icon"><i class="fa fa-plus-square"></i></span> @group.Key.ToString()</a></h3>
             <p>
-                @if(group.Any(k => k.BuildTime.HasValue))
+                @if (group.Any(k => k.BuildTime.HasValue))
                 {
-                    <span><i class="fa fa-calendar fa-fw"></i> @group.Max(k => k.BuildTime).Value.ToString("dd MMMM yyyy")</span><br />
+                    var maxDate = group.Max(k => k.BuildTime).Value;
+                    if (maxDate.AddDays(28) > DateTime.Now)
+                    {
+                        <span title="@maxDate.ToString("dd MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+                    }
+                    else
+                    {
+                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("dd MMMM yyyy")</span><br />
+                    }
                 }
                 <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() builds
             </p>

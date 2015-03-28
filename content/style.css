@@ -1,6 +1,6 @@
 ﻿body, h1, h2, h3
 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Hind', sans-serif;
 }
 
 h1
@@ -17,91 +17,22 @@ h1
 
 #page-content
 {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .build-group-title
 {
     font-size: 22px;
+    font-weight: 300;
 }
 
-.build-group-title a
+.build-group-title .icon
 {
     font-size: 0.6em;
     vertical-align: 3px;
     display: inline-block;
     margin-left: 0.3em;
 }
-
-.build-head
-{
-    margin-bottom: 0.33em;
-}
-
-    .build-head h3
-    {
-        margin: 0;
-        display: inline-block;
-    }
-
-    .build-head .btn
-    {
-        display: inline-block;
-        margin-right: 0.66em;
-        vertical-align: text-bottom;
-        padding: 2px 6px;
-    }
-
-.build-foot
-{
-    margin-bottom: 2em;
-}
-
-    .build-foot .badge
-    {
-        border-radius: 4px;
-        font-weight: normal;
-        color: #fff !important;
-    }
-
-        .build-foot .badge:first-child
-        {
-            min-width: 90px;
-        }
-
-li:last-child .build-foot
-{
-    margin-bottom: 0;
-}
-
-.fa-sm
-{
-    font-size: 0.7em;
-    vertical-align: 1px;
-    margin-right: 0.12em;
-}
-
-.more-link
-{
-    display: inline-block;
-    font-size: 13px;
-    vertical-align: 1px;
-    border-bottom: 1px dashed #41c0e5;
-    color: #31b0d5;
-}
-
-    .more-link .fa-sm
-    {
-        font-size: 11px;
-        vertical-align: 0px;
-    }
-
-    .more-link:hover
-    {
-        color: #30829e;
-        border-bottom-color: #50a2be;
-        text-decoration: none;
-    }
 
 .field-validation-error
 {
@@ -113,47 +44,9 @@ li:last-child .build-foot
     font-weight: bold;
 }
 
-.panel-heading h4
-{
-    margin: 0;
-}
-
-.panel-search .list-group
-{
-    margin-bottom: 0;
-}
-
-.panel-search .list-group-item-heading {
-    overflow: hidden;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-}
-
-    .panel-search .list-group-item-heading h4
-    {
-        font-size: 16px;
-    }
-
-    .panel-search .list-group-item-heading strong
-    {
-        font-weight: normal;
-    }
-
-.pagination
-{
-    font-weight: normal;
-}
-
-    .pagination > li > a,
-    .pagination > li > span
-    {
-        padding: 2px 7px;
-        margin-left: 2px;
-    }
-
 #page-footer
 {
+    font-size: 12px;
     margin-top: 1em;
 }
 
