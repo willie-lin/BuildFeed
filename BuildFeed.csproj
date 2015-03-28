@@ -158,7 +158,6 @@
     <Compile Include="Areas\admin\Controllers\baseController.cs" />
     <Compile Include="Areas\admin\Controllers\metaController.cs" />
     <Compile Include="Areas\admin\Models\ViewModel\MetaListing.cs" />
-    <Compile Include="Auth\RedisRoleProvider.cs" />
     <Compile Include="Code\DateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -167,7 +166,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
-    <Compile Include="Auth\RedisMembershipProvider.cs" />
     <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\buildController.cs" />
     <Compile Include="Controllers\frontController.cs" />
@@ -310,6 +308,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RedisAuth\RedisAuth.csproj">
+      <Project>{c6a16cf0-41da-4b90-918a-cb84a8c3f1e2}</Project>
+      <Name>RedisAuth</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
