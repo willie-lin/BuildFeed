@@ -8,18 +8,18 @@
     @foreach (var group in Model)
     {
         <div class="col-sm-2">
-            <h3 class="build-group-title"><a href="#"><span class="icon"><i class="fa fa-plus-square"></i></span> @group.Key.ToString()</a></h3>
+            <h3 class="build-group-title"><a href="@Url.Action("viewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })"><span class="icon"><i class="fa fa-plus-square"></i></span> @group.Key.ToString()</a></h3>
             <p>
                 @if (group.Any(k => k.BuildTime.HasValue))
                 {
                     var maxDate = group.Max(k => k.BuildTime).Value;
                     if (maxDate.AddDays(28) > DateTime.Now)
                     {
-                        <span title="@maxDate.ToString("dd MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+                        <span title="@maxDate.ToString("d MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
                     }
                     else
                     {
-                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("dd MMMM yyyy")</span><br />
+                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("d MMMM yyyy")</span><br />
                     }
                 }
                 <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() builds

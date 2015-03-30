@@ -38,14 +38,20 @@ namespace BuildFeed.Controllers
         public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
         {
             var builds = from b in Build.Select()
-                         where b.MajorVersion == major
-                         where b.MinorVersion == minor
-                         where b.Number == number
-                         where b.Revision == revision
-                         orderby b.BuildTime descending
-                         select b;
+                         group b by new BuildGroup()
+                         {
+                             Major = b.MajorVersion,
+                             Minor = b.MinorVersion,
+                             Build = b.Number,
+                             Revision = b.Revision
+                         } into bg
+                         where bg.Key.Major == major
+                         where bg.Key.Minor == minor
+                         where bg.Key.Build == number
+                         where bg.Key.Revision == revision
+                         select bg;
 
-            return PartialView(builds);
+            return builds.Count() == 1 ? View(builds.Single()) as ActionResult : Redirect("~/") as ActionResult;
         }
     }
 }

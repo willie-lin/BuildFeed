@@ -1,11 +1,30 @@
-﻿@model IEnumerable<BuildFeed.Models.Build>
+﻿@model IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>
+@using Humanizer;
 @{
-    Layout = null;
+    ViewBag.Title = string.Format("{0} | BuildFeed", Model.Key.ToString());
 }
 
-<ul>
-    @foreach (var build in Model)
+<h1>@Model.Key.ToString()</h1>
+
+<div class="row">
+    @foreach (var build in Model.OrderBy(b => b.BuildTime))
     {
-        <li>@build.FullBuildString</li>
+        <div class="col-sm-3">
+            <h3 class="build-group-title">@build.Lab</h3>
+            @if (build.BuildTime.HasValue)
+            {
+                <p>
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToString("d MMMM yyyy")</span><br />
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToString("h:mm tt")</span>
+                </p>
+            }
+
+            <p>
+                <a href="#" class="btn btn-info btn-xs">Info</a>
+                <a href="#" class="btn btn-primary btn-xs">Edit</a>
+                <a href="#" class="btn btn-danger btn-xs">Delete</a>
+            </p>
+        </div>
     }
-</ul>
+</div>
+
