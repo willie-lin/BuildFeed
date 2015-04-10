@@ -37,7 +37,7 @@ namespace BuildFeed.Controllers
         [Route("group/{major}.{minor}.{number}.{revision}")]
         public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
         {
-            var builds = from b in Build.Select()
+            var builds = (from b in Build.Select()
                          group b by new BuildGroup()
                          {
                              Major = b.MajorVersion,
@@ -49,9 +49,18 @@ namespace BuildFeed.Controllers
                          where bg.Key.Minor == minor
                          where bg.Key.Build == number
                          where bg.Key.Revision == revision
-                         select bg;
+                         select bg).Single();
 
-            return builds.Count() == 1 ? View(builds.Single()) as ActionResult : Redirect("~/") as ActionResult;
+            return builds.Count() == 1 ?
+                RedirectToAction("viewBuild", new { id = builds.Single().Id }) as ActionResult :
+                View(builds);
+        }
+
+        [Route("build/{id}")]
+        public ActionResult viewBuild(long id)
+        {
+            Build b = Build.SelectById(id);
+            return View(b);
         }
     }
 }
