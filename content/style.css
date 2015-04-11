@@ -34,6 +34,11 @@ h1
     margin-left: 0.3em;
 }
 
+.label-build-status
+{
+    padding-bottom: 0;
+}
+
 .field-validation-error
 {
     color: #ff4136;

@@ -11,14 +11,21 @@
     {
         <div class="col-sm-3">
             <h3 class="build-group-title">@build.Lab</h3>
-            @if (build.BuildTime.HasValue)
-            {
-                <p>
+            <p>
+                @if (build.BuildTime.HasValue)
+                {
                     <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToString("d MMMM yyyy")</span><br />
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToString("h:mm tt")</span>
-                </p>
-            }
-
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToString("h:mm tt")</span><br />
+                }
+                @if (build.IsLeaked)
+                {
+                    <span class="label label-success label-build-status">Public</span>
+                }
+                else
+                {
+                    <span class="label label-danger label-build-status">Private</span>
+                }
+            </p>
             <p>
                 <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>
                 <a href="#" class="btn btn-primary btn-xs">Edit</a>
@@ -27,4 +34,3 @@
         </div>
     }
 </div>
-
