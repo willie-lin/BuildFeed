@@ -5,15 +5,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="~/favicon.ico" />
-    <link rel="icon" href="~/favicon.ico">
+    <link rel="icon" href="~/favicon.ico" />
     <meta name="application-name" content="BuildFeed" />
 
+    @Styles.Render("~/content/css")
     <title>Error | BuildFeed</title>
     <script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
@@ -41,13 +43,17 @@
         ga('send', 'pageview');
     </script>
     <div class="container">
-        <header id="page-header">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>@Html.ActionLink("BuildFeed", "index", new { controller = "build", area = "", page = 1 })</h1>
+        <header id="page-header"></header>
+        <nav id="page-navigation" role="navigation">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </nav>
         <article id="page-content">
             <div class="row">
                 <div class="col-sm-12">
@@ -58,9 +64,14 @@
         </article>
         <footer id="page-footer">
             <div class="row">
-                <div class="col-sm-4 col-sm-offset-8 text-right">
+                <div class="col-sm-8">
                     <p>
-                        &copy; 2013 - @DateTime.Now.Year, BuildFeed<br />
+                        <a href="@Url.Action("sitemap", new { controller = "support" })">Sitemap</a>
+                    </p>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <p>
+                        &copy; 2013 - @DateTime.Now.Year.ToString(), BuildFeed<br />
                         Developed by <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a>
                     </p>
                 </div>
@@ -68,6 +79,6 @@
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

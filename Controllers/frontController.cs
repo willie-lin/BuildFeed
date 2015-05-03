@@ -69,17 +69,69 @@ namespace BuildFeed.Controllers
             return View(b);
         }
 
-        [Route("add/")]
+        [Route("add/"), Authorize]
         public ActionResult addBuild()
         {
             return View("editBuild");
         }
 
-        [Route("edit/{id}/")]
+        [Route("add/"), Authorize, HttpPost]
+        public ActionResult addBuild(Build build)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    build.Added = DateTime.Now;
+                    build.Modified = DateTime.Now;
+                    Build.Insert(build);
+                }
+                catch
+                {
+                    return View("editBuild", build);
+                }
+                return RedirectToAction("viewBuild", new { id = build.Id });
+            }
+            else
+            {
+                return View("editBuild", build);
+            }
+        }
+
+        [Route("edit/{id}/"), Authorize]
         public ActionResult editBuild(long id)
         {
             Build b = Build.SelectById(id);
             return View(b);
+        }
+
+        [Route("edit/{id}/"), Authorize, HttpPost]
+        public ActionResult editBuild(long id, Build build)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Build.Update(build);
+                }
+                catch
+                {
+                    return View(build);
+                }
+
+                return RedirectToAction("viewBuild", new { id = build.Id });
+            }
+            else
+            {
+                return View(build);
+            }
+        }
+
+        [Route("delete/{id}/"), Authorize(Roles = "Adminstrators")]
+        public ActionResult deleteBuild(long id)
+        {
+            Build.DeleteById(id);
+            return RedirectToAction("index");
         }
     }
 }

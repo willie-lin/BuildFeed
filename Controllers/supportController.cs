@@ -127,43 +127,6 @@ namespace BuildFeed.Controllers
             return View();
         }
 
-        public ActionResult question()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> question(QuestionForm qf)
-        {
-            if (ModelState.IsValid)
-            {
-                SmtpClient sc = new SmtpClient();
-                MailMessage mm = new MailMessage(ConfigurationManager.AppSettings["form:QuestionFromEmail"], ConfigurationManager.AppSettings["form:QuestionToEmail"]);
-                mm.Subject = "BuildFeed Question from " + qf.Name;
-                mm.ReplyToList.Add(qf.Email);
-
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("BuildFeed Question");
-                sb.AppendLine("==================");
-                sb.AppendLine();
-                sb.AppendFormat("Name: {0}\r\n", qf.Name);
-                sb.AppendFormat("Email: {0}\r\n", qf.Email);
-                sb.AppendLine();
-                sb.AppendLine("Question: ");
-                sb.AppendLine(qf.Comment);
-
-                mm.Body = sb.ToString();
-
-                await sc.SendMailAsync(mm);
-
-                return View("thanks_question");
-            }
-            else
-            {
-                return View(qf);
-            }
-        }
-
         [Route("rss")]
         public ActionResult rss()
         {
