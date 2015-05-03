@@ -1,12 +1,18 @@
 ﻿@model BuildFeed.Models.Build
-
 @{
-    ViewBag.Title = "Add a Build | BuildFeed";
+    ViewBag.Title = (string)(ViewContext.RouteData.Values["action"]) == "addBuild" ? "Add a Build | BuildFeed" : string.Format("Edit build {0} | BuildFeed", Model.FullBuildString);
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
 }
 
-<h2>Add a Build</h2>
+@if ((string)(ViewContext.RouteData.Values["action"]) == "addBuild")
+{
+    <h2>Add a Build</h2>
+}
+else
+{
+    <h2>Edit build @Model.FullBuildString</h2>
+}
 
 <div class="form-horizontal">
     <div class="form-group">
@@ -105,7 +111,7 @@
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-6">
-                        @Html.EditorFor(model => model.SourceType, "Enumeration")
+                        @Html.DropDownListFor(model => model.SourceType, EnumHelper.GetSelectList(typeof(BuildFeed.Models.TypeOfSource)), new { @class = "form-control" })
                     </div>
                 </div>
                 @Html.ValidationMessageFor(model => model.SourceType)
@@ -120,7 +126,7 @@
                         @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
                     </div>
                     <div class="col-sm-1">
-                        <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block">Today</button>
+                        <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">Today</button>
                     </div>
                 </div>
                 @Html.ValidationMessageFor(model => model.LeakDate)
@@ -144,70 +150,10 @@
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-6">
-                        @Html.EditorFor(model => model.FlightLevel, "Enumeration")
+                        @Html.DropDownListFor(model => model.FlightLevel, EnumHelper.GetSelectList(typeof(BuildFeed.Models.LevelOfFlight)), new { @class = "form-control" })
                     </div>
                 </div>
                 @Html.ValidationMessageFor(model => model.FlightLevel)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BetaWikiUri, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.BetaWikiUri, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.BetaWikiUri)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BetaWikiServerUri, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.BetaWikiServerUri, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.BetaWikiServerUri)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.WinWorldPCUri, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.WinWorldPCUri, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.WinWorldPCUri)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BetaArchiveUri, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.BetaArchiveUri, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.BetaArchiveUri)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LonghornMsUri, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.LonghornMsUri, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.LonghornMsUri)
             </div>
         </div>
 
@@ -259,16 +205,18 @@
                        '|', btnsGrps.lists]
             });
 
+            $(".trumbowyg").addClass("trumbowyg-black");
+
             $("#quickpaste").change(function () {
-                var regex = /([\d]{1,2})\.([\d]{1,2})\.([\d]{4,5})\.([\d]{1,5})\.([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
+                var regex = /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?\.([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
                 var result = regex.exec($("#quickpaste").val());
 
-                $("#MajorVersion").val(result[1]);
-                $("#MinorVersion").val(result[2]);
-                $("#Number").val(result[3]);
-                $("#Revision").val(result[4]);
-                $("#Lab").val(result[5]);
-                $("#BuildTime").val(result[6]);
+                $("#MajorVersion").val(result[2]);
+                $("#MinorVersion").val(result[3]);
+                $("#Number").val(result[4]);
+                $("#Revision").val(result[6]);
+                $("#Lab").val(result[7]);
+                $("#BuildTime").val(result[8]);
             });
         })
     </script>

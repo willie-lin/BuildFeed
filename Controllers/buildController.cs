@@ -13,13 +13,7 @@ namespace BuildFeed.Controllers
 
         public ActionResult index(int page = 1)
         {
-            var builds = Build.SelectInBuildOrder();
-            var pageBuilds = builds.Skip((page - 1) * pageSize).Take(pageSize);
-
-            ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(pageSize));
-
-            return View(pageBuilds);
+            return RedirectToAction("index", "front");
         }
 
         public ActionResult year(int year, int page = 1)
@@ -73,14 +67,7 @@ namespace BuildFeed.Controllers
 
         public ActionResult info(int id)
         {
-            Build b = Build.SelectById(id);
-
-            if(b == null)
-            {
-                return new HttpNotFoundResult();
-            }
-
-            return View(b);
+            return RedirectToAction("viewBuild", "front");
         }
 
         //

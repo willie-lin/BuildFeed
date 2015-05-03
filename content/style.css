@@ -26,13 +26,13 @@ h1
     font-weight: 300;
 }
 
-.build-group-title .icon
-{
-    font-size: 0.6em;
-    vertical-align: 3px;
-    display: inline-block;
-    margin-left: 0.3em;
-}
+    .build-group-title .icon
+    {
+        font-size: 0.6em;
+        vertical-align: 3px;
+        display: inline-block;
+        margin-left: 0.3em;
+    }
 
 .label-build-status
 {
@@ -65,6 +65,11 @@ label, .control-label, .help-block, .checkbox, .radio
     font-size: 14px;
 }
 
+.btn-reset
+{
+    padding: 9px 0 7px;
+}
+
 .table .btn
 {
     padding: 4px 9px;
@@ -81,7 +86,7 @@ label, .control-label, .help-block, .checkbox, .radio
     vertical-align: middle;
 }
 
-.trumbowyg-box.trumbowyg
+.trumbowyg-box.trumbowyg, .trumbowyg-editor.trumbowyg
 {
     margin: 0;
     width: 100%;

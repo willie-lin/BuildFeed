@@ -20,7 +20,7 @@ namespace BuildFeed.Areas.admin.Controllers
         public ActionResult admins()
         {
             List<MembershipUser> admins = new List<MembershipUser>();
-            foreach(var m in Roles.GetUsersInRole("Administrators"))
+            foreach (var m in Roles.GetUsersInRole("Administrators"))
             {
                 admins.Add(Membership.GetUser(m));
             }
@@ -66,6 +66,21 @@ namespace BuildFeed.Areas.admin.Controllers
             var provider = (Membership.Provider as RedisMembershipProvider);
             provider.ChangeLockStatus(id, false);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult cleanup()
+        {
+            var users = Membership.GetAllUsers();
+
+            foreach (MembershipUser user in users)
+            {
+                if(!user.IsApproved && (user.CreationDate.AddDays(30) < DateTime.Now))
+                {
+                    Membership.DeleteUser(user.UserName);
+                }
+            }
+
+            return RedirectToAction("index");
         }
     }
 }

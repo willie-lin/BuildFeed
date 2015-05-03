@@ -33,7 +33,7 @@
                     <label class="control-label col-sm-4">Editor Actions</label>
                     <div class="col-sm-8">
                         <p class="form-control-static">
-                            @Html.ActionLink("Edit", "edit", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
+                            @Html.ActionLink("Edit", "editBuild", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
 
                             @if (Roles.IsUserInRole("Administrators"))
                             {

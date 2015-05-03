@@ -23,6 +23,7 @@
     <ApplicationInsightsResourceId>/subscriptions/4af45631-0e5c-4253-9e38-d0c47f9c5b32/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/BuildFeed</ApplicationInsightsResourceId>
     <NuGetPackageImportStamp>ae3e548a</NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -192,6 +193,8 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
+    <Content Include="content\icons-2x.png" />
+    <Content Include="content\icons.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="content\style.css" />
@@ -207,6 +210,50 @@
     <Content Include="Areas\admin\Views\meta\create.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ca.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\cs.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\da.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\de.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\es.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\es_ar.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\fa.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\fi.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\fr.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\he.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\id.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\it.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ja.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ko.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\nl.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\pl.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\pt.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ro.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\rs.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\rs_latin.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ru.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\sk.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\tr.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\zh_cn.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.js" />
+    <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.js" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-black-2x.png" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-black.png" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-white-2x.png" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-white.png" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.css" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.min.css" />
+    <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.js" />
+    <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.min.js" />
+    <Content Include="Scripts\trumbowyg\trumbowyg.js" />
+    <Content Include="Scripts\trumbowyg\trumbowyg.min.js" />
+    <Content Include="Scripts\trumbowyg\ui\images\icons-black-2x.png" />
+    <Content Include="Scripts\trumbowyg\ui\images\icons-black.png" />
+    <Content Include="Scripts\trumbowyg\ui\images\icons-white-2x.png" />
+    <Content Include="Scripts\trumbowyg\ui\images\icons-white.png" />
+    <Content Include="Scripts\trumbowyg\ui\trumbowyg.css" />
+    <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="yandex_702baad42b020be7.html" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
@@ -225,40 +272,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jsrender.js" />
     <Content Include="Scripts\jsrender.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\ca.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\da.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\de.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\es.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\es_ar.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\fa.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\fi.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\fr.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\he.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\id.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\it.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\ko.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\pl.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\pt.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\ro.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\ru.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\tr.min.js" />
-    <Content Include="Scripts\trumbowyg\langs\zh_cn.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.js" />
-    <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-2x.png" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons.png" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.css" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.min.css" />
-    <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.js" />
-    <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.min.js" />
-    <Content Include="Scripts\trumbowyg\trumbowyg.js" />
-    <Content Include="Scripts\trumbowyg\trumbowyg.min.js" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons-2x.png" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons.png" />
-    <Content Include="Scripts\trumbowyg\ui\trumbowyg.css" />
-    <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="content\tile\square.png" />
     <Content Include="content\tile\tiny.png" />
@@ -276,7 +289,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\shared\error.cshtml" />
     <Content Include="Views\shared\_default.cshtml" />
-    <Content Include="Views\build\create.cshtml" />
+    <Content Include="Views\front\editBuild.cshtml" />
     <Content Include="Views\build\index.cshtml" />
     <Content Include="Views\shared\DisplayTemplates\Enumeration.cshtml" />
     <Content Include="Views\shared\EditorTemplates\Enumeration.cshtml" />
@@ -309,7 +322,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index-page.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jsrender\jsrender.d.ts" />
   </ItemGroup>
