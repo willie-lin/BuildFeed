@@ -69,6 +69,32 @@ namespace BuildFeed.Controllers
             return View(b);
         }
 
+        [Route("lab/{lab}/")]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewLab(string lab)
+        {
+            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Lab, Value = lab });
+            ViewBag.ItemId = lab;
+
+            var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()));
+            return View(builds);
+        }
+
+        [Route("source/{source}/")]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewSource(TypeOfSource source)
+        {
+            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Source, Value = source.ToString() });
+            ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
+
+            var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source);
+            return View(builds);
+        }
+
         [Route("add/"), Authorize]
         public ActionResult addBuild()
         {

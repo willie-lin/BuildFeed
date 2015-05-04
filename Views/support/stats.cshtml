@@ -29,7 +29,7 @@
             Chart.defaults.Line.scaleShowGridLines = false;
 
             var additionData = {
-                labels: [ @Html.Raw(string.Join(", ", Model.AdditionsByMonth.Select(m => m.Month % 4 != 1 ? "\"\"" : string.Format("\"Week {0}, {1}\"", m.Month, m.Year)).ToArray())) ],
+                labels: [ @Html.Raw(string.Join(", ", Model.AdditionsByMonth.Select(m => m.Month % 4 != 1 ? "\"\"" : string.Format("\"Week {0}, {1}\"", m.Month, m.Year)).ToArray()))],
                 datasets: [
                     {
                         label: "Additions to BuildFeed",
@@ -46,7 +46,7 @@
 
 
             var compiledData = {
-                labels: [ @Html.Raw(string.Join(", ", Model.CompilesByMonth.Select(m => string.Format("\"{0} {1}\"", System.Globalization.DateTimeFormatInfo.InvariantInfo.GetMonthName(m.Month), m.Year)).ToArray())) ],
+                labels: [ @Html.Raw(string.Join(", ", Model.CompilesByMonth.Select(m => string.Format("\"{0} {1}\"", System.Globalization.DateTimeFormatInfo.InvariantInfo.GetMonthName(m.Month), m.Year)).ToArray()))],
                 datasets: [
                     {
                         label: "Builds compiled",

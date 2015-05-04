@@ -76,7 +76,7 @@
                 <div class="col-sm-8">
                     <p class="form-control-static">
                         @Model.Lab<br />
-                        <a href="@Url.Action("lab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds from @Model.Lab</a>
+                        <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds from @Model.Lab</a>
                     </p>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                 @Html.LabelFor(model => model.SourceType, new { @class = "control-label" })
                 <p class="form-control-static">
                     @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
-                    <a href="@Url.Action("source", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds sourced from @Html.DisplayFor(model => model.SourceType, "Enumeration")</a>
+                    <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds sourced from @Html.DisplayFor(model => model.SourceType, "Enumeration")</a>
                 </p>
             </div>
 

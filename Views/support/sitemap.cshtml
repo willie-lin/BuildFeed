@@ -14,7 +14,7 @@
                 <ul id="sitemap-builds" class="collapse">
                     @foreach (var build in Model.Builds)
                     {
-                        <li>@Html.ActionLink(build.Name, "info", new { controller = "build", id = build.Id })</li>
+                        <li>@Html.ActionLink(build.Name, "viewBuild", new { controller = "front", id = build.Id })</li>
                     }
                 </ul>
             </li>

@@ -13,7 +13,7 @@ namespace BuildFeed.Controllers
 
         public ActionResult index(int page = 1)
         {
-            return RedirectToAction("index", "front");
+            return RedirectToActionPermanent("index", "front");
         }
 
         public ActionResult year(int year, int page = 1)
@@ -29,15 +29,7 @@ namespace BuildFeed.Controllers
 
         public ActionResult lab(string lab, int page = 1)
         {
-            var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()));
-            var pageBuilds = builds.Skip((page - 1) * pageSize).Take(pageSize);
-
-            ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(pageSize));
-
-            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Lab, Value = lab });
-
-            return View("index", pageBuilds);
+            return RedirectToActionPermanent("viewLab", "front", new { lab = lab });
         }
 
         public ActionResult version(int major, int minor, int page = 1)
@@ -67,7 +59,7 @@ namespace BuildFeed.Controllers
 
         public ActionResult info(int id)
         {
-            return RedirectToAction("viewBuild", "front", new { id = id });
+            return RedirectToActionPermanent("viewBuild", "front", new { id = id });
         }
     }
 }

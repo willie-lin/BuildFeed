@@ -307,6 +307,8 @@
     <Content Include="Views\front\index.cshtml" />
     <Content Include="Views\front\viewGroup.cshtml" />
     <Content Include="Views\front\viewBuild.cshtml" />
+    <Content Include="Views\front\viewLab.cshtml" />
+    <Content Include="Views\front\viewSource.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
