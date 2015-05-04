@@ -1,4 +1,5 @@
 ﻿using BuildFeed.Models;
+using BuildFeed.Models.ViewModel.Front;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,22 @@ namespace BuildFeed.Controllers
 {
     public class frontController : Controller
     {
-        private const int _pageSize = 25;
+        private const int _pageSize = 84;
 
-        [Route("")]
+        [Route("", Order = 1)]
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none")]
 #endif
         public ActionResult index()
+        {
+            return indexPage(1);
+        }
+
+        [Route("page-{page:int:min(2)}/", Order = 0)]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult indexPage(int page)
         {
             var buildGroups = from b in Build.Select()
                               group b by new BuildGroup()
@@ -30,8 +40,17 @@ namespace BuildFeed.Controllers
                                       bg.Key.Minor descending,
                                       bg.Key.Build descending,
                                       bg.Key.Revision descending
-                              select bg;
-            return View(buildGroups);
+                              select new FrontBuildGroup()
+                              {
+                                  Key = bg.Key,
+                                  LastBuild = bg.Max(m => m.BuildTime),
+                                  BuildCount = bg.Count()
+                              };
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(buildGroups.Count()) / Convert.ToDouble(_pageSize));
+
+            return View("index", buildGroups.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
         [Route("group/{major}.{minor}.{number}.{revision}/")]

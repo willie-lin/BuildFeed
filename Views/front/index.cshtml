@@ -1,18 +1,18 @@
-﻿@model IEnumerable<IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>>
+﻿@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
 @using Humanizer;
 @{
     ViewBag.Title = "BuildFeed";
 }
 
 <div class="row">
-    @foreach (var group in Model)
+    @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
     {
         <div class="col-sm-2">
             <h3 class="build-group-title"><a href="@Url.Action("viewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })"><span class="icon"><i class="fa fa-plus-square"></i></span> @group.Key.ToString()</a></h3>
             <p>
-                @if (group.Any(k => k.BuildTime.HasValue))
+                @if (group.LastBuild.HasValue)
                 {
-                    var maxDate = group.Max(k => k.BuildTime).Value;
+                    var maxDate = group.LastBuild.Value;
                     if (maxDate.AddDays(28) > DateTime.Now)
                     {
                         <span title="@maxDate.ToString("d MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
@@ -22,8 +22,45 @@
                         <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("d MMMM yyyy")</span><br />
                     }
                 }
-                <i class="fa fa-server fa-fw"></i>  @group.Count().ToString() builds
+                <i class="fa fa-server fa-fw"></i>  @group.BuildCount builds
             </p>
         </div>
     }
 </div>
+
+@if (ViewBag.PageCount > 1)
+{
+    <div class="text-center">
+        <ul class="pagination">
+            @if (ViewBag.PageNumber == 2)
+            {
+                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), "index")</li>
+            }
+            else if (ViewBag.PageNumber > 2)
+            {
+                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), "indexPage", new { page = ViewBag.PageNumber - 1 })</li>
+            }
+            else
+            {
+                <li class="disabled"><span>&laquo;</span></li>
+            }
+
+
+            <li @((1 == ViewBag.PageNumber) ? "class=active" : "")>@Html.ActionLink("1", "index")</li>
+            @for (int i = 2; i <= ViewBag.PageCount; i++)
+            {
+                <li @((i == ViewBag.PageNumber) ? "class=active" : "")>@Html.ActionLink(i.ToString(), "indexPage", new { page = i })</li>
+            }
+
+
+            @if (ViewBag.PageNumber < ViewBag.PageCount)
+            {
+                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), "indexPage", new { page = ViewBag.PageNumber + 1 })</li>
+            }
+            else
+            {
+                <li class="disabled"><span>&raquo;</span></li>
+            }
+        </ul>
+    </div>
+}

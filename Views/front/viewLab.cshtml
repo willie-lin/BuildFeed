@@ -30,8 +30,19 @@
 <div class="row">
     @foreach (var build in Model)
     {
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <h3 class="build-group-title">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</h3>
+            <p>
+                <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">Edit</a>
+                    if (Roles.IsUserInRole("Administrators"))
+                    {
+                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">Delete</a>
+                    }
+                }
+            </p>
             <p>
                 @if (build.BuildTime.HasValue)
                 {
@@ -48,11 +59,6 @@
                 {
                     <span class="label label-danger label-build-status">Unleaked</span>
                 }
-            </p>
-            <p>
-                <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>
-                <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">Edit</a>
-                <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">Delete</a>
             </p>
         </div>
     }

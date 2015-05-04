@@ -183,6 +183,7 @@
     <Compile Include="Models\ApiModel\SearchResult.cs" />
     <Compile Include="Models\Build.cs" />
     <Compile Include="Models\MetaItem.cs" />
+    <Compile Include="Models\ViewModel\Front\FrontBuildGroup.cs" />
     <Compile Include="Models\ViewModel\LoginUser.cs" />
     <Compile Include="Models\ViewModel\ChangePassword.cs" />
     <Compile Include="Models\ViewModel\QuestionForm.cs" />
@@ -313,7 +314,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Views\Shared\" />
-    <Folder Include="Models\ViewModel\Front\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -352,7 +352,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50468</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50468/</IISUrl>
+          <IISUrl>http://localhost:50505/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

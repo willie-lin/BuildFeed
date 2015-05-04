@@ -17,14 +17,13 @@ namespace BuildFeed.Controllers
 {
     public class supportController : Controller
     {
-        [Route("login")]
+        [Route("login/")]
         public ActionResult login()
         {
             return View();
         }
 
-        [HttpPost]
-        [Route("login")]
+        [HttpPost, Route("login/")]
         public ActionResult login(LoginUser ru)
         {
             if (ModelState.IsValid)
@@ -51,15 +50,13 @@ namespace BuildFeed.Controllers
             return View(ru);
         }
 
-        [Authorize]
-        [Route("password")]
+        [Authorize, Route("password/")]
         public ActionResult password()
         {
             return View();
         }
 
-        [HttpPost]
-        [Route("password")]
+        [HttpPost, Authorize, Route("password/")]
         public ActionResult password(ChangePassword cp)
         {
             if (ModelState.IsValid)
@@ -77,21 +74,20 @@ namespace BuildFeed.Controllers
             return View(cp);
         }
 
-        [Route("logout")]
+        [Route("logout/")]
         public ActionResult logout()
         {
             FormsAuthentication.SignOut();
             return Redirect("/");
         }
 
-        [Route("register")]
+        [Route("register/")]
         public ActionResult register()
         {
             return View();
         }
 
-        [HttpPost]
-        [Route("register")]
+        [HttpPost, Route("register/")]
         public ActionResult register(RegistrationUser ru)
         {
             if (ModelState.IsValid)
@@ -121,7 +117,7 @@ namespace BuildFeed.Controllers
             return View(ru);
         }
 
-        [Route("register")]
+        [Route("register/")]
         public ActionResult thanks_register()
         {
             return View();
@@ -133,7 +129,7 @@ namespace BuildFeed.Controllers
             return View();
         }
 
-        [Route("sitemap")]
+        [Route("sitemap/")]
         #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
         #endif
@@ -235,7 +231,7 @@ namespace BuildFeed.Controllers
             return View(model);
         }
 
-        [Route("xml-sitemap")]
+        [Route("xml-sitemap/")]
         #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
         #endif
@@ -273,7 +269,7 @@ namespace BuildFeed.Controllers
             return new EmptyResult();
         }
 
-        [Route("statistics")]
+        [Route("statistics/")]
         #if !DEBUG
         [OutputCache(Duration = 3600, VaryByParam = "none")]
         #endif
@@ -319,7 +315,7 @@ namespace BuildFeed.Controllers
                                            where !string.IsNullOrEmpty(b.Lab)
                                            group b by b.Lab into bl
                                            select bl)
-                               where bl.Count() > 24
+                               where bl.Count() > 49
                                orderby bl.Count() descending
                                select new Tuple<string, int>(bl.Key, bl.Count());
 
