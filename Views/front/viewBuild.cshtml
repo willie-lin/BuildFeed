@@ -89,7 +89,7 @@
                         {
                             <time datetime="@Model.BuildTime.Value.ToString("yyyy-MM-dd HH:mm")" title="@Model.BuildTime.Value.ToString("h:mm tt on dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</time>
                             <br />
-                            <a href="@Url.Action("year", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds compiled in @Model.BuildTime.Value.Year</a>
+                            <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds compiled in @Model.BuildTime.Value.Year</a>
                         }
                     </p>
                 </div>

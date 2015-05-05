@@ -22,6 +22,9 @@
                 Email Address
             </th>
             <td>
+                Registration Time
+            </td>
+            <td>
                 Last Login Time
             </td>
             <td>
@@ -40,6 +43,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => mu.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => mu.CreationDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => mu.LastLoginDate)

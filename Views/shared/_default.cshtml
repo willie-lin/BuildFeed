@@ -47,6 +47,18 @@
                 <div class="container">
                     @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
                     <ul class="nav navbar-nav navbar-right">
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="@Url.Action("login", new { controller = "support", area = "" }) " title="Log in"><i class="fa fa-user"></i> Log in</a></li>
+                        }
+                        else if (Roles.IsUserInRole("Administrators"))
+                        {
+                            <li><a href="@Url.Action("index", new { controller = "base", area = "admin" }) " title="Admin"><i class="fa fa-cogs"></i> Admin</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("logout", new { controller = "support", area = "" }) " title="Log out"><i class="fa fa-user"></i> Log out</a></li>
+                        }
                         <li><a href="@Url.Action("stats", new { controller = "support", area = "" }) " title="Statistics"><i class="fa fa-line-chart"></i> Statistics</a></li>
                         <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-rss"></i> RSS Feeds</a></li>
                         <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>

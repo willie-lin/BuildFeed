@@ -98,6 +98,25 @@ namespace BuildFeed.Models
             }
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IEnumerable<string> SelectUnusedYears()
+        {
+
+            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            {
+                var client = rClient.As<MetaItem>();
+                var years = Build.SelectBuildYears();
+
+                var usedYears = from u in client.GetAll()
+                               where u.Id.Type == MetaType.Year
+                               select u;
+
+                return from y in years
+                       where !usedYears.Any(ul => ul.Id.Value == y.ToString())
+                       select y.ToString();
+            }
+        }
+
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public static void Insert(MetaItem item)
         {
@@ -161,6 +180,7 @@ namespace BuildFeed.Models
     {
         Lab,
         Version,
-        Source
+        Source,
+        Year
     }
 }

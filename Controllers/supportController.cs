@@ -145,7 +145,7 @@ namespace BuildFeed.Controllers
                     action = "index",
                     page = 1
                 }),
-                Pages = (builds.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                Pages = (builds.Count() + (frontController._pageSize - 1)) / frontController._pageSize
             } });
 
             actions.Add("Versions", (from b in builds
@@ -163,7 +163,7 @@ namespace BuildFeed.Controllers
                                              minor = bv.Key.Minor,
                                              page = 1
                                          }),
-                                         Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                         Pages = (bv.Count() + (frontController._pageSize - 1)) / frontController._pageSize
                                      }).ToArray());
 
             actions.Add("Labs", (from b in builds
@@ -180,7 +180,7 @@ namespace BuildFeed.Controllers
                                          lab = bv.Key,
                                          page = 1
                                      }),
-                                     Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                     Pages = (bv.Count() + (frontController._pageSize - 1)) / frontController._pageSize
                                  }).ToArray());
 
             actions.Add("Years", (from b in builds
@@ -197,7 +197,7 @@ namespace BuildFeed.Controllers
                                           year = bv.Key,
                                           page = 1
                                       }),
-                                      Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                      Pages = (bv.Count() + (frontController._pageSize - 1)) / frontController._pageSize
                                   }).ToArray());
 
             actions.Add("Sources", (from b in builds
@@ -213,7 +213,7 @@ namespace BuildFeed.Controllers
                                             source = bv.Key,
                                             page = 1
                                         }),
-                                        Pages = (bv.Count() + (buildController.pageSize - 1)) / buildController.pageSize
+                                        Pages = (bv.Count() + (frontController._pageSize - 1)) / frontController._pageSize
                                     }).ToArray());
 
             SitemapData model = new SitemapData()

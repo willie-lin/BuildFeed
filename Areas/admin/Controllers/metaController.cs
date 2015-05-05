@@ -43,7 +43,15 @@ namespace BuildFeed.Areas.admin.Controllers
                                                         Type = MetaType.Version,
                                                         Value = v
                                                     }
-                                                })
+                                                }).Concat(from y in MetaItem.SelectUnusedYears()
+                                                          select new MetaItem()
+                                                          {
+                                                              Id = new MetaItemKey()
+                                                              {
+                                                                  Type = MetaType.Year,
+                                                                  Value = y
+                                                              }
+                                                          })
                            group i by i.Id.Type into b
                            orderby b.Key.ToString()
                            select b

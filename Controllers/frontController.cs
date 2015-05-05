@@ -11,7 +11,7 @@ namespace BuildFeed.Controllers
 {
     public class frontController : Controller
     {
-        private const int _pageSize = 84;
+        public const int _pageSize = 84;
 
         [Route("", Order = 1)]
 #if !DEBUG
@@ -111,6 +111,33 @@ namespace BuildFeed.Controllers
             ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
             var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source);
+            return View(builds);
+        }
+
+        [Route("year/{year}/")]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewYear(int year)
+        {
+            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Year, Value = year.ToString() });
+            ViewBag.ItemId = year.ToString();
+
+            var builds = Build.SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year);
+            return View(builds);
+        }
+
+        [Route("version/{major}.{minor}/")]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewVersion(int major, int minor)
+        {
+            string valueString = string.Format("{0}.{1}", major, minor);
+            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Version, Value = valueString });
+            ViewBag.ItemId = valueString;
+
+            var builds = Build.SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor);
             return View(builds);
         }
 
