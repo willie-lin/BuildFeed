@@ -258,6 +258,7 @@
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.css" />
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="yandex_702baad42b020be7.html" />
+    <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="content\tile\large.png" />
