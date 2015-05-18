@@ -183,5 +183,41 @@ namespace BuildFeed.Controllers
 
             return new EmptyResult();
         }
+
+        [Route("rss/lab/{lab}")]
+        public async Task<ActionResult> lab(string lab)
+        {
+            var builds = Build.SelectInBuildOrder()
+                .Where(b => b.Lab == lab)
+                .Take(20);
+
+
+            RssDocument rdoc = new RssDocument()
+            {
+                Channel = new RssChannel()
+                {
+                    Title = string.Format("BuildFeed RSS - {0} Lab", lab),
+                    Description = "",
+                    Generator = "BuildFeed.net RSS Controller",
+                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    SkipHours = new List<Hour>(),
+                    SkipDays = new List<Day>(),
+
+                    Items = (from build in builds
+                             select new RssItem()
+                             {
+                                 Title = build.FullBuildString,
+                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id }))),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("info", new { controller = "Build", id = build.Id })) },
+                             }).ToList()
+                }
+            };
+
+            Response.ContentType = "application/rss+xml";
+
+            await Response.Output.WriteAsync(rdoc.ToXml());
+
+            return new EmptyResult();
+        }
     }
 }

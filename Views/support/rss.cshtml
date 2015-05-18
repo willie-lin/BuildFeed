@@ -17,4 +17,13 @@
             <li><a href="@Url.Action("flight", new { controller = "rss", id = "high" })" title="High flight level"><i class="fa fa-sm fa-rss"></i> High flight level</a></li>
         </ul>
     </li>
+    <li>
+        <a href="#rss-labs" data-toggle="collapse">Labs</a>
+        <ul id="rss-labs" class="collapse">
+            @foreach (string lab in ViewBag.Labs)
+            {
+                <li><a href="@Url.Action("lab", new { controller = "rss", lab = lab })" title="@lab"><i class="fa fa-sm fa-rss"></i> @lab</a></li>
+            }
+        </ul>
+    </li>
 </ul>

@@ -126,6 +126,7 @@ namespace BuildFeed.Controllers
         [Route("rss")]
         public ActionResult rss()
         {
+            ViewBag.Labs = Build.SelectBuildLabs();
             return View();
         }
 
