@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using BuildFeed.Models;
 using BuildFeed.Models.ApiModel;
+using System.Web.Security;
 
 namespace BuildFeed.Controllers
 {
@@ -23,6 +24,24 @@ namespace BuildFeed.Controllers
             labs.AddRange(Build.SelectBuildLabs(10, 0));
 
             return labs.GroupBy(l => l).Select(l => l.Key).ToArray();
+        }
+
+        [HttpPost]
+        public bool AddWin10Builds(NewBuild apiModel)
+        {
+            if (apiModel == null)
+            {
+                return false;
+            }
+            if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
+            {
+                Build.InsertAll(apiModel.NewBuilds);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public IEnumerable<SearchResult> GetSearchResult(string query)
