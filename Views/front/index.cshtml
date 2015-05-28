@@ -27,40 +27,4 @@
         </div>
     }
 </div>
-
-@if (ViewBag.PageCount > 1)
-{
-    <div class="text-center">
-        <ul class="pagination">
-            @if (ViewBag.PageNumber == 2)
-            {
-                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), "index")</li>
-            }
-            else if (ViewBag.PageNumber > 2)
-            {
-                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), "indexPage", new { page = ViewBag.PageNumber - 1 })</li>
-            }
-            else
-            {
-                <li class="disabled"><span>&laquo;</span></li>
-            }
-
-
-            <li @((1 == ViewBag.PageNumber) ? "class=active" : "")>@Html.ActionLink("1", "index")</li>
-            @for (int i = 2; i <= ViewBag.PageCount; i++)
-            {
-                <li @((i == ViewBag.PageNumber) ? "class=active" : "")>@Html.ActionLink(i.ToString(), "indexPage", new { page = i })</li>
-            }
-
-
-            @if (ViewBag.PageNumber < ViewBag.PageCount)
-            {
-                <li>@Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), "indexPage", new { page = ViewBag.PageNumber + 1 })</li>
-            }
-            else
-            {
-                <li class="disabled"><span>&raquo;</span></li>
-            }
-        </ul>
-    </div>
-}
+@PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "index", ViewContext.RouteData.Values)

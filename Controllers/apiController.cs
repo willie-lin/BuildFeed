@@ -35,7 +35,16 @@ namespace BuildFeed.Controllers
             }
             if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
             {
-                Build.InsertAll(apiModel.NewBuilds);
+                Build.InsertAll(apiModel.NewBuilds.Select(nb => new Build()
+                {
+                    MajorVersion = nb.MajorVersion,
+                    MinorVersion = nb.MinorVersion,
+                    Number = nb.Number,
+                    Revision = nb.Revision,
+                    Lab = nb.Lab,
+                    BuildTime = nb.BuildTime,
+                    FlightLevel = nb.FlightLevel
+                }));
                 return true;
             }
             else

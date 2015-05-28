@@ -1,0 +1,57 @@
+﻿@using BuildFeed.Code
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Routing
+
+@helper PaginationBlock(int currentPage, int totalPages, string view, RouteValueDictionary rd)
+{
+string multiView = view + "Page";
+if (totalPages > 1)
+{
+        <div class="text-center">
+            <ul class="pagination">
+                @if (currentPage == 2)
+                {
+                    RouteValueDictionary rvd = new RouteValueDictionary(rd);
+                    rvd.Remove("page");
+                    <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, rvd)</li>
+                }
+                else if (currentPage > 2)
+                {
+                    RouteValueDictionary rvd = new RouteValueDictionary(rd);
+                    rvd["page"] = currentPage - 1;
+                    <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), multiView, rvd)</li>
+                }
+                else
+                {
+                    <li class="disabled"><span>&laquo;</span></li>
+                }
+
+
+                @{
+                    RouteValueDictionary rvdIndex = new RouteValueDictionary(rd);
+                    rvdIndex.Remove("page");
+                }
+                <li @((1 == currentPage) ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink("1", view)</li>
+                @for (int i = 2; i <= totalPages; i++)
+                {
+                    RouteValueDictionary rvd = new RouteValueDictionary(rd);
+                    rvd["page"] = i;
+                    <li @((i == currentPage) ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
+                }
+
+
+                @if (currentPage < totalPages)
+                {
+                    RouteValueDictionary rvd = new RouteValueDictionary(rd);
+                    rvd["page"] = currentPage + 1;
+                    <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), multiView, rvd)</li>
+                }
+                else
+                {
+                    <li class="disabled"><span>&raquo;</span></li>
+                }
+            </ul>
+        </div>
+                    }
+}

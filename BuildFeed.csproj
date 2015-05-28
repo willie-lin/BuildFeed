@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
+    <Compile Include="Code\MvcIntrinsics.cs" />
     <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\frontController.cs" />
     <Compile Include="Controllers\rssController.cs" />
@@ -212,6 +213,7 @@
     <Content Include="Areas\admin\Views\meta\create.cshtml" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="App_Code\PaginationHelpers.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

@@ -25,7 +25,7 @@
 <div class="row">
     @foreach (var build in Model)
     {
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <h3 class="build-group-title">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</h3>
             <p>
                 <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>
@@ -41,7 +41,7 @@
             <p>
                 @if (!string.IsNullOrEmpty(build.Lab))
                 {
-                    <span><i class="fa fa-code-fork fa-fw"></i> @build.Lab</span><br />
+                    <div class="no-wrapping" title="@build.Lab"><i class="fa fa-code-fork fa-fw"></i> @build.Lab</div>
                 }
                 @if (build.BuildTime.HasValue)
                 {
@@ -62,6 +62,7 @@
         </div>
     }
 </div>
+@PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewSource", ViewContext.RouteData.Values)
 @section scripts
 {
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>

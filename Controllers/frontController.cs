@@ -11,7 +11,7 @@ namespace BuildFeed.Controllers
 {
     public class frontController : Controller
     {
-        public const int _pageSize = 84;
+        public const int _pageSize = 96;
 
         [Route("", Order = 1)]
 #if !DEBUG
@@ -101,30 +101,56 @@ namespace BuildFeed.Controllers
             return View(builds);
         }
 
-        [Route("source/{source}/")]
+        [Route("source/{source}/", Order = 1)]
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none")]
 #endif
         public ActionResult viewSource(TypeOfSource source)
         {
+            return viewSourcePage(source, 1);
+        }
+
+        [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewSourcePage(TypeOfSource source, int page)
+        {
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Source, Value = source.ToString() });
             ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
             var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source);
-            return View(builds);
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+
+            return View("viewSource", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
-        [Route("year/{year}/")]
+        [Route("year/{year}/", Order = 1)]
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none")]
 #endif
         public ActionResult viewYear(int year)
         {
+            return viewYearPage(year, 1);
+        }
+
+        [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+#endif
+        public ActionResult viewYearPage(int year, int page)
+        {
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Year, Value = year.ToString() });
             ViewBag.ItemId = year.ToString();
 
             var builds = Build.SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year);
-            return View(builds);
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+
+            return View("viewYear", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
         [Route("version/{major}.{minor}/")]
