@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BuildFeed.Models.Build>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("Windows NT {0} | BuildFeed", ViewBag.ItemId);
+    ViewBag.Title = string.Format("Windows NT {0}{1} | BuildFeed", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(" | Page {0}", ViewBag.PageNumber));
 }
 
 @section head
@@ -10,6 +10,11 @@
     {
         <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
         <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
+    }
+
+    @if (ViewBag.PageNumber != 1)
+    {
+        <meta name="robots" content="noindex, follow" />
     }
 }
 

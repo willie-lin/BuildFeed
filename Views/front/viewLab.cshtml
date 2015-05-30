@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BuildFeed.Models.Build>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("Builds from {0} | BuildFeed", ViewBag.ItemId);
+    ViewBag.Title = string.Format("Builds from {0}{1} | BuildFeed", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(" | Page {0}", ViewBag.PageNumber));
 }
 
 @section head
@@ -15,6 +15,11 @@
     {
         <meta name="description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
         <meta property="og:description" content="Check out all the known builds to come out of the Windows development lab @ViewBag.ItemId through BuildFeed, a collaborative Windows build list" />
+    }
+
+    @if(ViewBag.PageNumber != 1)
+    {
+        <meta name="robots" content="noindex, follow" />
     }
 }
 
@@ -63,6 +68,7 @@
         </div>
     }
 </div>
+@PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewLab", ViewContext.RouteData.Values)
 @section scripts
 {
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>

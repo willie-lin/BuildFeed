@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BuildFeed.Models.Build>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("Builds from {0} | BuildFeed", ViewBag.ItemId);
+    ViewBag.Title = string.Format("Builds from {0}{1} | BuildFeed", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(" | Page {0}", ViewBag.PageNumber));
 }
 
 @section head
@@ -15,6 +15,11 @@
     {
         <meta name="description" content="View a list of all Windows builds compiled in @ViewBag.ViewId, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed" />
         <meta property="og:description" content="View a list of all Windows builds compiled in @ViewBag.ViewId, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed" />
+    }
+
+    @if (ViewBag.PageNumber != 1)
+    {
+        <meta name="robots" content="noindex, follow" />
     }
 }
 

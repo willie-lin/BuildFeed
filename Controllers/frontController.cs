@@ -24,7 +24,7 @@ namespace BuildFeed.Controllers
 
         [Route("page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "page")]
 #endif
         public ActionResult indexPage(int page)
         {
@@ -88,17 +88,30 @@ namespace BuildFeed.Controllers
             return View(b);
         }
 
-        [Route("lab/{lab}/")]
+        [Route("lab/{lab}/", Order = 1)]
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none")]
 #endif
         public ActionResult viewLab(string lab)
         {
+            return viewLabPage(lab, 1);
+        }
+
+        [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page")]
+#endif
+        public ActionResult viewLabPage(string lab, int page)
+        {
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Lab, Value = lab });
             ViewBag.ItemId = lab;
 
             var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()));
-            return View(builds);
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+
+            return View("viewLab", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
         [Route("source/{source}/", Order = 1)]
@@ -112,7 +125,7 @@ namespace BuildFeed.Controllers
 
         [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "page")]
 #endif
         public ActionResult viewSourcePage(TypeOfSource source, int page)
         {
@@ -138,7 +151,7 @@ namespace BuildFeed.Controllers
 
         [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "page")]
 #endif
         public ActionResult viewYearPage(int year, int page)
         {
