@@ -187,7 +187,7 @@ namespace BuildFeed.Controllers
             actions.Add("Years", (from b in builds
                                   where b.BuildTime.HasValue
                                   group b by b.BuildTime.Value.Year into bv
-                                  orderby bv.Key
+                                  orderby bv.Key descending
                                   select new SitemapPagedAction()
                                   {
                                       Name = bv.Key.ToString(),
@@ -219,11 +219,27 @@ namespace BuildFeed.Controllers
 
             SitemapData model = new SitemapData()
             {
-                Builds = (from b in builds
-                          select new SitemapDataBuild()
+                Builds = (from b in Build.Select()
+                          group b by new BuildGroup()
                           {
-                              Id = b.Id,
-                              Name = b.FullBuildString
+                              Major = b.MajorVersion,
+                              Minor = b.MinorVersion,
+                              Build = b.Number,
+                              Revision = b.Revision
+                          } into bg
+                          orderby bg.Key.Major descending,
+                                  bg.Key.Minor descending,
+                                  bg.Key.Build descending,
+                                  bg.Key.Revision descending
+                          select new SitemapDataBuildGroup()
+                          {
+                              Id = bg.Key,
+                              Builds = (from bgb in bg
+                                        select new SitemapDataBuild()
+                                        {
+                                            Id = bgb.Id,
+                                            Name = bgb.FullBuildString
+                                        }).ToArray()
                           }).ToArray(),
 
                 Actions = actions,
@@ -253,7 +269,7 @@ namespace BuildFeed.Controllers
             foreach (var b in Build.Select())
             {
                 XElement url = new XElement(xn + "url");
-                url.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("info", "build", new { id = b.Id })));
+                url.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("viewBuild", "front", new { id = b.Id })));
                 if (b.Modified != DateTime.MinValue)
                 {
                     url.Add(new XElement(xn + "lastmod", b.Modified.ToString("yyyy-MM-dd")));

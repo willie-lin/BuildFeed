@@ -50,6 +50,11 @@ namespace BuildFeed.Controllers
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(buildGroups.Count()) / Convert.ToDouble(_pageSize));
 
+            if (ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
+
             return View("index", buildGroups.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
@@ -111,6 +116,11 @@ namespace BuildFeed.Controllers
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
 
+            if (ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
+
             return View("viewLab", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
@@ -136,6 +146,11 @@ namespace BuildFeed.Controllers
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+
+            if (ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
 
             return View("viewSource", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
@@ -163,6 +178,11 @@ namespace BuildFeed.Controllers
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
 
+            if (ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
+
             return View("viewYear", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
@@ -175,7 +195,7 @@ namespace BuildFeed.Controllers
             return viewVersionPage(major, minor, 1);
         }
 
-        [Route("version/{major}.{minor}/", Order = 0)]
+        [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
@@ -186,7 +206,16 @@ namespace BuildFeed.Controllers
             ViewBag.ItemId = valueString;
 
             var builds = Build.SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor);
-            return View(builds);
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+
+            if(ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            return View("viewVersion", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
         [Route("add/"), Authorize]

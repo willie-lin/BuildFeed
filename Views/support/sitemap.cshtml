@@ -12,11 +12,20 @@
             <li>
                 <a href="#sitemap-builds" data-toggle="collapse">Builds</a>
                 <ul id="sitemap-builds" class="collapse">
-                    @foreach (var build in Model.Builds)
+                    @foreach (var buildGroup in Model.Builds)
                     {
-                        <li>@Html.ActionLink(build.Name, "viewBuild", new { controller = "front", id = build.Id })</li>
+                        <li>
+                            @Html.ActionLink(buildGroup.Id.ToString(), "viewGroup", new { controller = "front", major = buildGroup.Id.Major, minor = buildGroup.Id.Minor, number = buildGroup.Id.Build, revision = buildGroup.Id.Revision })
+                            <ul>
+                                @foreach (var build in buildGroup.Builds)
+                                {
+                                    <li>@Html.ActionLink(build.Name, "viewGroup", new { controller = "front", id = build.Id })</li>
+                                }
+                            </ul>
+                        </li>
                     }
                 </ul>
+
             </li>
             @foreach (var item in Model.Actions)
             {
