@@ -9,8 +9,8 @@
 <div class="row">
     @foreach (var build in Model.OrderBy(b => b.BuildTime))
     {
-        <div class="col-sm-3">
-            <h3 class="build-group-title">@build.Lab</h3>
+        <div class="col-sm-3 col-xs-6">
+            <h3 class="build-group-title no-wrapping" title="@build.Lab">@build.Lab</h3>
             <p>
                 <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>
                 @if (User.Identity.IsAuthenticated)

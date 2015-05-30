@@ -35,7 +35,7 @@
 <div class="row">
     @foreach (var build in Model)
     {
-        <div class="col-sm-2">
+        <div class="col-md-2 col-sm-3 col-xs-6">
             <h3 class="build-group-title">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</h3>
             <p>
                 <a href="@Url.Action("viewBuild", new { id = build.Id })" class="btn btn-info btn-xs">Info</a>

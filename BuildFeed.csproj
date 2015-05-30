@@ -212,7 +212,6 @@
     <Compile Include="Models\ViewModel\Front\FrontBuildGroup.cs" />
     <Compile Include="Models\ViewModel\LoginUser.cs" />
     <Compile Include="Models\ViewModel\ChangePassword.cs" />
-    <Compile Include="Models\ViewModel\QuestionForm.cs" />
     <Compile Include="Models\ViewModel\RegistrationUser.cs" />
     <Compile Include="Models\ViewModel\SitemapData.cs" />
     <Compile Include="Models\ViewModel\StatsPage.cs" />
@@ -322,7 +321,6 @@
     <Content Include="Views\shared\error.cshtml" />
     <Content Include="Views\shared\_default.cshtml" />
     <Content Include="Views\front\editBuild.cshtml" />
-    <Content Include="Views\build\index.cshtml" />
     <Content Include="Views\shared\DisplayTemplates\Enumeration.cshtml" />
     <Content Include="Views\support\register.cshtml" />
     <Content Include="Views\support\login.cshtml" />
