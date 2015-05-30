@@ -2,6 +2,10 @@
 var bfsTimeout;
 
 $(function () {
+    $("#page-navigation-search").click(function (event) {
+        event.preventDefault();
+        $("#search-modal").modal('show');
+    });
     $("#search-input").keyup(function () {
         var search = $(this);
         $(this).parent().find(".list-group").remove();
@@ -24,7 +28,7 @@ $(function () {
                 var item = template.render(data);
                 content.append(item);
 
-                search.after(content);
+                $("#search-results").html(content);
 
                 $(".panel-search a.list-group-item").click(function () {
                     ga('send', 'pageview', '/api/GetSearchResult/?query=' + $("#search-input").val());

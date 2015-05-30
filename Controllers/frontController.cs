@@ -15,7 +15,7 @@ namespace BuildFeed.Controllers
 
         [Route("", Order = 1)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult index()
         {
@@ -24,7 +24,7 @@ namespace BuildFeed.Controllers
 
         [Route("page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "page")]
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
         public ActionResult indexPage(int page)
         {
@@ -55,7 +55,7 @@ namespace BuildFeed.Controllers
 
         [Route("group/{major}.{minor}.{number}.{revision}/")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
         {
@@ -78,9 +78,9 @@ namespace BuildFeed.Controllers
                 View(builds);
         }
 
-        [Route("build/{id}/")]
+        [Route("build/{id}/", Name = "Build")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewBuild(long id)
         {
@@ -88,9 +88,9 @@ namespace BuildFeed.Controllers
             return View(b);
         }
 
-        [Route("lab/{lab}/", Order = 1)]
+        [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewLab(string lab)
         {
@@ -99,7 +99,7 @@ namespace BuildFeed.Controllers
 
         [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "page")]
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
         public ActionResult viewLabPage(string lab, int page)
         {
@@ -114,9 +114,9 @@ namespace BuildFeed.Controllers
             return View("viewLab", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
-        [Route("source/{source}/", Order = 1)]
+        [Route("source/{source}/", Order = 1, Name = "Source Root")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewSource(TypeOfSource source)
         {
@@ -125,7 +125,7 @@ namespace BuildFeed.Controllers
 
         [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "page")]
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
         public ActionResult viewSourcePage(TypeOfSource source, int page)
         {
@@ -140,9 +140,9 @@ namespace BuildFeed.Controllers
             return View("viewSource", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
-        [Route("year/{year}/", Order = 1)]
+        [Route("year/{year}/", Order = 1, Name = "Year Root")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewYear(int year)
         {
@@ -151,7 +151,7 @@ namespace BuildFeed.Controllers
 
         [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "page")]
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
         public ActionResult viewYearPage(int year, int page)
         {
@@ -166,11 +166,20 @@ namespace BuildFeed.Controllers
             return View("viewYear", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
         }
 
-        [Route("version/{major}.{minor}/")]
+        [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
 #if !DEBUG
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
         public ActionResult viewVersion(int major, int minor)
+        {
+            return viewVersionPage(major, minor, 1);
+        }
+
+        [Route("version/{major}.{minor}/", Order = 0)]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+#endif
+        public ActionResult viewVersionPage(int major, int minor, int page)
         {
             string valueString = string.Format("{0}.{1}", major, minor);
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Version, Value = valueString });

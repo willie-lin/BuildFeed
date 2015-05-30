@@ -10,6 +10,8 @@ namespace BuildFeed.Models.ViewModel
     {
         public SitemapDataBuild[] Builds { get; set; }
         public Dictionary<string, SitemapPagedAction[]> Actions { get; set; }
+
+        public string[] Labs { get; set; }
     }
 
     public class SitemapDataBuild

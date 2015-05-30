@@ -14,6 +14,12 @@ namespace BuildFeed
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapHttpRoute(
+                name: "API",
+                routeTemplate: "api/{action}/{id}",
+                defaults: new { controller = "api", action = "GetBuilds", id = UrlParameter.Optional }
+            );
+
             routes.AppendTrailingSlash = true;
 
             routes.MapMvcAttributeRoutes();

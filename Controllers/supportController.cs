@@ -131,9 +131,9 @@ namespace BuildFeed.Controllers
         }
 
         [Route("sitemap/")]
-        #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
-        #endif
+#if !DEBUG
+        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+#endif
         public ActionResult sitemap()
         {
             IEnumerable<Build> builds = Build.SelectInVersionOrder();
@@ -158,8 +158,8 @@ namespace BuildFeed.Controllers
                                          Name = string.Format("Windows NT {0}.{1}", bv.Key.Major, bv.Key.Minor),
                                          UrlParams = new RouteValueDictionary(new
                                          {
-                                             controller = "build",
-                                             action = "version",
+                                             controller = "front",
+                                             action = "viewVersion",
                                              major = bv.Key.Major,
                                              minor = bv.Key.Minor,
                                              page = 1
@@ -176,8 +176,8 @@ namespace BuildFeed.Controllers
                                      Name = bv.Key,
                                      UrlParams = new RouteValueDictionary(new
                                      {
-                                         controller = "build",
-                                         action = "lab",
+                                         controller = "front",
+                                         action = "viewLab",
                                          lab = bv.Key,
                                          page = 1
                                      }),
@@ -193,8 +193,8 @@ namespace BuildFeed.Controllers
                                       Name = bv.Key.ToString(),
                                       UrlParams = new RouteValueDictionary(new
                                       {
-                                          controller = "build",
-                                          action = "year",
+                                          controller = "front",
+                                          action = "viewYear",
                                           year = bv.Key,
                                           page = 1
                                       }),
@@ -209,8 +209,8 @@ namespace BuildFeed.Controllers
                                         Name = DisplayHelpers.GetDisplayTextForEnum(bv.Key),
                                         UrlParams = new RouteValueDictionary(new
                                         {
-                                            controller = "build",
-                                            action = "source",
+                                            controller = "front",
+                                            action = "viewSource",
                                             source = bv.Key,
                                             page = 1
                                         }),
@@ -226,16 +226,19 @@ namespace BuildFeed.Controllers
                               Name = b.FullBuildString
                           }).ToArray(),
 
-                Actions = actions
+                Actions = actions,
+                Labs = (from b in builds
+                        group b by b.Lab into lab
+                        select lab.Key).ToArray()
             };
 
             return View(model);
         }
 
         [Route("xml-sitemap/")]
-        #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
-        #endif
+#if !DEBUG
+        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+#endif
         public ActionResult xmlsitemap()
         {
             XNamespace xn = XNamespace.Get("http://www.sitemaps.org/schemas/sitemap/0.9");
@@ -271,9 +274,9 @@ namespace BuildFeed.Controllers
         }
 
         [Route("statistics/")]
-        #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
-        #endif
+#if !DEBUG
+        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+#endif
         public ActionResult stats()
         {
             var builds = Build.Select();

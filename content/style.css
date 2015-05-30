@@ -100,3 +100,27 @@ label, .control-label, .help-block, .checkbox, .radio
     margin: 0;
     width: 100%;
 }
+
+#search-results
+{
+    margin-top: 1em;
+}
+
+    #search-results .list-group-item
+    {
+        margin-bottom: 1em;
+    }
+
+    #search-results .list-group-item-heading
+    {
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+        #search-results .list-group-item-heading h4
+        {
+            font-size: 16px;
+        }

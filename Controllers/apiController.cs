@@ -67,7 +67,7 @@ namespace BuildFeed.Controllers
                                 orderby s.Text.ToLower().IndexOf(query.ToLower()) ascending
                                 select new SearchResult()
                                 {
-                                    Url = Url.Route("Source Root", new { controller = "build", action = "source", source = s.Value }),
+                                    Url = Url.Route("Source Root", new { controller = "front", action = "viewSource", source = s.Value }),
                                     Label = s.Text.Replace(query, "<strong>" + query + "</strong>"),
                                     Title = s.Text,
                                     Group = "Source"
@@ -81,7 +81,7 @@ namespace BuildFeed.Controllers
                                  orderby v.Major descending, v.Minor descending
                                  select new SearchResult()
                                  {
-                                     Url = Url.Route("Version Root", new { controller = "build", action = "version", major = v.Major, minor = v.Minor }),
+                                     Url = Url.Route("Version Root", new { controller = "front", action = "viewVersion", major = v.Major, minor = v.Minor }),
                                      Label = string.Format("{0}.{1}", v.Major, v.Minor).Replace(query, "<strong>" + query + "</strong>"),
                                      Title = "",
                                      Group = "Version"
@@ -95,7 +95,7 @@ namespace BuildFeed.Controllers
                               orderby y descending
                               select new SearchResult()
                               {
-                                  Url = Url.Route("Year Root", new { controller = "build", action = "year", year = y }),
+                                  Url = Url.Route("Year Root", new { controller = "front", action = "viewYear", year = y }),
                                   Label = y.ToString().Replace(query, "<strong>" + query + "</strong>"),
                                   Title = "",
                                   Group = "Year"
@@ -109,7 +109,7 @@ namespace BuildFeed.Controllers
                              orderby l.ToLower().IndexOf(query.ToLower()) ascending
                              select new SearchResult()
                              {
-                                 Url = Url.Route("Lab Root", new { controller = "build", action = "lab", lab = l }),
+                                 Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l }),
                                  Label = l.Replace(query, "<strong>" + query + "</strong>"),
                                  Title = l,
                                  Group = "Lab"
@@ -124,7 +124,7 @@ namespace BuildFeed.Controllers
                                        b.BuildTime descending
                                select new SearchResult()
                                {
-                                   Url = Url.Route("Actions", new { controller = "build", action = "info", id = b.Id }),
+                                   Url = Url.Route("Build", new { controller = "front", action = "viewBuild", id = b.Id }),
                                    Label = b.FullBuildString.Replace(query, "<strong>" + query + "</strong>"),
                                    Title = b.FullBuildString,
                                    Group = "Build"
@@ -143,7 +143,7 @@ namespace BuildFeed.Controllers
                 });
             }
 
-            return results.Take(6);
+            return results.Take(15);
         }
     }
 }
