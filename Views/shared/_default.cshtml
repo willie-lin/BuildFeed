@@ -45,28 +45,38 @@
         <nav id="page-navigation" role="navigation">
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
-                    @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="Log in"><i class="fa fa-user"></i> Log in</a></li>
-                        }
-                        else if (Roles.IsUserInRole("Administrators"))
-                        {
-                            <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="Admin"><i class="fa fa-cogs"></i> Admin</a></li>
-                            <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-plus-square"></i> Add build</a></li>
-                            <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-user"></i> Log out</a></li>
-                        }
-                        else
-                        {
-                            <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-plus-square"></i> Add build</a></li>
-                            <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-user"></i> Log out</a></li>
-                        }
-                        <li><a href="#" title="Search" id="page-navigation-search"><i class="fa fa-search"></i> Search</a></li>
-                        <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="Statistics"><i class="fa fa-line-chart"></i> Statistics</a></li>
-                        <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-rss"></i> RSS Feeds</a></li>
-                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-                    </ul>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navigation-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="collapse navbar-collapse" id="page-navigation-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="Log in"><i class="fa fa-user"></i> Log in</a></li>
+                            }
+                            else if (Roles.IsUserInRole("Administrators"))
+                            {
+                                <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="Admin"><i class="fa fa-cogs"></i> Admin</a></li>
+                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-plus-square"></i> Add build</a></li>
+                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-user"></i> Log out</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-plus-square"></i> Add build</a></li>
+                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-user"></i> Log out</a></li>
+                            }
+                            <li><a href="#" title="Search" id="page-navigation-search"><i class="fa fa-search"></i> Search</a></li>
+                            <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="Statistics"><i class="fa fa-line-chart"></i> Statistics</a></li>
+                            <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-rss"></i> RSS Feeds</a></li>
+                            <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
