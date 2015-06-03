@@ -23,7 +23,7 @@ namespace BuildFeed.Controllers
             labs.AddRange(Build.SelectBuildLabs(6, 4));
             labs.AddRange(Build.SelectBuildLabs(10, 0));
 
-            return labs.GroupBy(l => l).Select(l => l.Key).ToArray();
+            return labs.GroupBy(l => l).Select(l => l.Key).Where(l => !l.Any(c => c == '(')).ToArray();
         }
 
         [HttpPost]
