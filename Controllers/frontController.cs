@@ -276,7 +276,7 @@ namespace BuildFeed.Controllers
             }
         }
 
-        [Route("delete/{id}/"), Authorize(Roles = "Adminstrators")]
+        [Route("delete/{id}/"), Authorize(Roles = "Administrators")]
         public ActionResult deleteBuild(long id)
         {
             Build.DeleteById(id);
