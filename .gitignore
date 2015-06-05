@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+*.ide/
 
 # Application Insights config
 ApplicationInsights.config
@@ -194,7 +195,8 @@ FakesAssemblies/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
