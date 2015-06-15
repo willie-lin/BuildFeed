@@ -19,7 +19,7 @@
                             <ul>
                                 @foreach (var build in buildGroup.Builds)
                                 {
-                                    <li>@Html.ActionLink(build.Name, "viewGroup", new { controller = "front", id = build.Id })</li>
+                                    <li>@Html.ActionLink(build.Name, "viewBuild", new { controller = "front", id = build.Id })</li>
                                 }
                             </ul>
                         </li>
