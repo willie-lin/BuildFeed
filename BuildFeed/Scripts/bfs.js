@@ -10,13 +10,11 @@ $(function () {
         var search = $(this);
         $(this).parent().find(".list-group").remove();
 
-        if (typeof bfsTimeout != 'undefined')
-        {
+        if (typeof bfsTimeout != 'undefined') {
             clearTimeout(bfsTimeout);
         }
 
-        if (typeof bfsAjax != 'undefined' && bfsAjax.readyState != 4)
-        {
+        if (typeof bfsAjax != 'undefined' && bfsAjax.readyState != 4) {
             bfsAjax.abort();
         }
 
@@ -30,7 +28,7 @@ $(function () {
 
                 $("#search-results").html(content);
 
-                $(".panel-search a.list-group-item").click(function () {
+                $("#search-results a.list-group-item").click(function () {
                     ga('send', 'pageview', '/api/GetSearchResult/?query=' + $("#search-input").val());
                 });
             });

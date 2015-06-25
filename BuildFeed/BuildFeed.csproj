@@ -55,24 +55,24 @@
       <HintPath>..\packages\Humanizer.1.36.0\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=0.17.0.576, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.0.17.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.0.0.4220, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCollector, Version=0.17.0.587, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.DependencyCollector, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.DependencyCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry, Version=0.17.0.582, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector, Version=1.0.0.4231, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web, Version=0.17.0.582, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel, Version=0.17.0.582, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.0.17.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.1.0.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -89,9 +89,9 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NServiceKit.Common, Version=1.0.35.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NServiceKit.Common.1.0.35\lib\net35\NServiceKit.Common.dll</HintPath>
