@@ -10,15 +10,21 @@
     <meta property="og:title" content="@Model.FullBuildString" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Url.Action()" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@("@")buildfeed">
+    <meta name="twitter:title" content="@Model.FullBuildString | BuildFeed">
+    <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new { id = Model.Id })">
     @if (Model.BuildTime.HasValue)
     {
         <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
         <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
+        <meta name="twitter:description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy").">
     }
     else
     {
         <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
         <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
+        <meta name="twitter:description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process.">
     }
 }
 
@@ -148,7 +154,7 @@
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                 var disqus_shortname = 'buildfeed';
-                var disqus_url = 'https://buildfeed.net/actions/info/@Model.Id/' ;
+                var disqus_url = 'https://buildfeed.net/actions/info/@Model.Id/';
 
                 (function () {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

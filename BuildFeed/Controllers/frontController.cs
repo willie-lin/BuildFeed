@@ -1,7 +1,12 @@
-﻿using BuildFeed.Models;
+﻿using BuildFeed.Code;
+using BuildFeed.Models;
 using BuildFeed.Models.ViewModel.Front;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -91,6 +96,40 @@ namespace BuildFeed.Controllers
         {
             Build b = Build.SelectById(id);
             return View(b);
+        }
+
+        [Route("twitter/{id}/")]
+#if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [CustomContentType(ContentType = "image/png", Order = 2)]
+#endif
+        public ActionResult twitterCard(long id)
+        {
+            Build b = Build.SelectById(id);
+
+            using (Bitmap bm = new Bitmap(560, 300))
+            using (Graphics gr = Graphics.FromImage(bm))
+            {
+                GraphicsPath gp = new GraphicsPath();
+                gr.CompositingMode = CompositingMode.SourceOver;
+                gr.CompositingQuality = CompositingQuality.HighQuality;
+                gr.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                gr.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                gr.SmoothingMode = SmoothingMode.HighQuality;
+                gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                gr.FillRectangle(new SolidBrush(Color.FromArgb(0x30, 0x30, 0x30)), 0, 0, 560, 300);
+                gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 16, new Point(20, 20), StringFormat.GenericTypographic);
+                gp.AddString(string.Format("Windows NT {0}.{1} build", b.MajorVersion, b.MinorVersion), new FontFamily("Segoe UI"), 0, 24, new Point(20, 40), StringFormat.GenericTypographic);
+                gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 180, new Point(12, 20), StringFormat.GenericTypographic);
+                gp.AddString(string.Format("{0}", b.Lab), new FontFamily("Segoe UI"), 0, 40, new Point(16, 220), StringFormat.GenericTypographic);
+                gr.FillPath(Brushes.White, gp);
+
+                Response.ContentType = "image/png";
+                bm.Save(Response.OutputStream, ImageFormat.Png);
+            }
+
+            return new EmptyResult();
         }
 
         [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
@@ -210,7 +249,7 @@ namespace BuildFeed.Controllers
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
 
-            if(ViewBag.PageNumber > ViewBag.PageCount)
+            if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
