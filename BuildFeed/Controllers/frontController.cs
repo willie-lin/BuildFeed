@@ -2,21 +2,18 @@
 using BuildFeed.Models;
 using BuildFeed.Models.ViewModel.Front;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.UI;
 
 namespace BuildFeed.Controllers
 {
     public class frontController : Controller
     {
-        public const int _pageSize = 96;
+        public const int PAGE_SIZE = 96;
 
         [Route("", Order = 1)]
 #if !DEBUG
@@ -33,7 +30,7 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult indexPage(int page)
         {
-            var buildGroups = from b in Build.Select()
+            var buildGroups = (from b in Build.Select()
                               group b by new BuildGroup()
                               {
                                   Major = b.MajorVersion,
@@ -50,17 +47,17 @@ namespace BuildFeed.Controllers
                                   Key = bg.Key,
                                   LastBuild = bg.Max(m => m.BuildTime),
                                   BuildCount = bg.Count()
-                              };
+                              }).ToArray();
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(buildGroups.Count()) / Convert.ToDouble(_pageSize));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(buildGroups.Length) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
 
-            return View("index", buildGroups.Skip((page - 1) * _pageSize).Take(_pageSize));
+            return View("index", buildGroups.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
         }
 
         [Route("group/{major}.{minor}.{number}.{revision}/")]
@@ -120,9 +117,9 @@ namespace BuildFeed.Controllers
 
                 gr.FillRectangle(new SolidBrush(Color.FromArgb(0x30, 0x30, 0x30)), 0, 0, 560, 300);
                 gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 16, new Point(20, 20), StringFormat.GenericTypographic);
-                gp.AddString(string.Format("Windows NT {0}.{1} build", b.MajorVersion, b.MinorVersion), new FontFamily("Segoe UI"), 0, 24, new Point(20, 40), StringFormat.GenericTypographic);
+                gp.AddString($"Windows NT {b.MajorVersion}.{b.MinorVersion} build", new FontFamily("Segoe UI"), 0, 24, new Point(20, 40), StringFormat.GenericTypographic);
                 gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 180, new Point(12, 20), StringFormat.GenericTypographic);
-                gp.AddString(string.Format("{0}", b.Lab), new FontFamily("Segoe UI"), 0, 40, new Point(16, 220), StringFormat.GenericTypographic);
+                gp.AddString($"{b.Lab}", new FontFamily("Segoe UI"), 0, 40, new Point(16, 220), StringFormat.GenericTypographic);
                 gr.FillPath(Brushes.White, gp);
 
                 Response.ContentType = "image/png";
@@ -150,17 +147,17 @@ namespace BuildFeed.Controllers
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Lab, Value = lab });
             ViewBag.ItemId = lab;
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()));
+            var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower())).ToArray();
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
 
-            return View("viewLab", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
+            return View("viewLab", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
         }
 
         [Route("source/{source}/", Order = 1, Name = "Source Root")]
@@ -181,17 +178,17 @@ namespace BuildFeed.Controllers
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Source, Value = source.ToString() });
             ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source);
+            var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source).ToArray();
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
 
-            return View("viewSource", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
+            return View("viewSource", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
         }
 
         [Route("year/{year}/", Order = 1, Name = "Year Root")]
@@ -212,17 +209,17 @@ namespace BuildFeed.Controllers
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Year, Value = year.ToString() });
             ViewBag.ItemId = year.ToString();
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year);
+            var builds = Build.SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year).ToArray();
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
 
-            return View("viewYear", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
+            return View("viewYear", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
         }
 
         [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
@@ -240,21 +237,21 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult viewVersionPage(int major, int minor, int page)
         {
-            string valueString = string.Format("{0}.{1}", major, minor);
+            string valueString = $"{major}.{minor}";
             ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey() { Type = MetaType.Version, Value = valueString });
             ViewBag.ItemId = valueString;
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor);
+            var builds = Build.SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor).ToArray();
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count()) / Convert.ToDouble(_pageSize));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
                 return new HttpNotFoundResult();
             }
 
-            return View("viewVersion", builds.Skip((page - 1) * _pageSize).Take(_pageSize));
+            return View("viewVersion", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
         }
 
         [Route("add/"), Authorize]

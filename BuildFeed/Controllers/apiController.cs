@@ -1,11 +1,9 @@
-﻿using System;
+﻿using BuildFeed.Models;
+using BuildFeed.Models.ApiModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using BuildFeed.Models;
-using BuildFeed.Models.ApiModel;
 using System.Web.Security;
 
 namespace BuildFeed.Controllers
@@ -23,7 +21,7 @@ namespace BuildFeed.Controllers
             labs.AddRange(Build.SelectBuildLabs(6, 4));
             labs.AddRange(Build.SelectBuildLabs(10, 0));
 
-            return labs.GroupBy(l => l).Select(l => l.Key).Where(l => !l.Any(c => c == '(')).ToArray();
+            return labs.GroupBy(l => l).Select(l => l.Key).Where(l => l.All(c => c != '(')).ToArray();
         }
 
         [HttpPost]
@@ -62,9 +60,9 @@ namespace BuildFeed.Controllers
 
             List<SearchResult> results = new List<SearchResult>();
 
-            var sourceResults = from s in Enum.GetValues(typeof(BuildFeed.Models.TypeOfSource)).Cast<BuildFeed.Models.TypeOfSource>().Select(s => new { Text = DisplayHelpers.GetDisplayTextForEnum(s), Value = s })
+            var sourceResults = from s in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>().Select(s => new { Text = DisplayHelpers.GetDisplayTextForEnum(s), Value = s })
                                 where s.Text.ToLower().Contains(query.ToLower())
-                                orderby s.Text.ToLower().IndexOf(query.ToLower()) ascending
+                                orderby s.Text.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending
                                 select new SearchResult()
                                 {
                                     Url = Url.Route("Source Root", new { controller = "front", action = "viewSource", source = s.Value }),
@@ -77,12 +75,12 @@ namespace BuildFeed.Controllers
 
 
             var versionResults = from v in Build.SelectBuildVersions()
-                                 where string.Format("{0}.{1}", v.Major, v.Minor).StartsWith(query)
+                                 where $"{v.Major}.{v.Minor}".StartsWith(query)
                                  orderby v.Major descending, v.Minor descending
                                  select new SearchResult()
                                  {
                                      Url = Url.Route("Version Root", new { controller = "front", action = "viewVersion", major = v.Major, minor = v.Minor }),
-                                     Label = string.Format("{0}.{1}", v.Major, v.Minor).Replace(query, "<strong>" + query + "</strong>"),
+                                     Label = $"{v.Major}.{v.Minor}".Replace(query, "<strong>" + query + "</strong>"),
                                      Title = "",
                                      Group = "Version"
                                  };
@@ -106,7 +104,7 @@ namespace BuildFeed.Controllers
 
             var labResults = from l in Build.SelectBuildLabs()
                              where l.ToLower().Contains(query.ToLower())
-                             orderby l.ToLower().IndexOf(query.ToLower()) ascending
+                             orderby l.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending
                              select new SearchResult()
                              {
                                  Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l }),
@@ -120,7 +118,7 @@ namespace BuildFeed.Controllers
 
             var buildResults = from b in Build.Select()
                                where b.FullBuildString.ToLower().Contains(query.ToLower())
-                               orderby b.FullBuildString.ToLower().IndexOf(query.ToLower()) ascending,
+                               orderby b.FullBuildString.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending,
                                        b.BuildTime descending
                                select new SearchResult()
                                {

@@ -5,9 +5,9 @@
 
 @helper PaginationBlock(int currentPage, int totalPages, string view, RouteValueDictionary rd)
 {
-string multiView = view + "Page";
-if (totalPages > 1)
-{
+    string multiView = view + "Page";
+    if (totalPages > 1)
+    {
         <div class="text-center">
             <ul class="pagination">
                 @if (currentPage == 2)
@@ -53,5 +53,5 @@ if (totalPages > 1)
                 }
             </ul>
         </div>
-                    }
+     }
 }

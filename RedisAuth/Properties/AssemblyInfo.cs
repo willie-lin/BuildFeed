@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RedisAuth")]
+[assembly: AssemblyTitle("Redis Authentication")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RedisAuth")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("BuildFeed")]
+[assembly: AssemblyCopyright("Copyright © 2015, Thomas Hounsell")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

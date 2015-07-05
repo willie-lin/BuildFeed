@@ -24,7 +24,7 @@ namespace BuildFeed.Controllers
                     Title = "BuildFeed RSS - Recently Compiled",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -32,7 +32,7 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
                                  Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
                              }).ToList()
                 }
@@ -57,7 +57,7 @@ namespace BuildFeed.Controllers
                     Title = "BuildFeed RSS - Recently Added",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -65,8 +65,9 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
-                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
+                                                      },
                                  InternalPubDate = new RssDate(build.Added).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
                              }).ToList()
                 }
@@ -91,7 +92,7 @@ namespace BuildFeed.Controllers
                     Title = "BuildFeed RSS - Recently Leaked",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -99,8 +100,9 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
-                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
+                                                      },
                                  InternalPubDate = new RssDate(build.LeakDate.Value).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
                              }).ToList()
                 }
@@ -127,7 +129,7 @@ namespace BuildFeed.Controllers
                     Title = "BuildFeed RSS - Highest Version",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -135,8 +137,9 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
-                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
+                                                      },
                              }).ToList()
                 }
             };
@@ -160,10 +163,10 @@ namespace BuildFeed.Controllers
             {
                 Channel = new RssChannel()
                 {
-                    Title = string.Format("BuildFeed RSS - {0} Flight Level", id),
+                    Title = $"BuildFeed RSS - {id} Flight Level",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -171,8 +174,9 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
-                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
+                                                      },
                              }).ToList()
                 }
             };
@@ -196,10 +200,10 @@ namespace BuildFeed.Controllers
             {
                 Channel = new RssChannel()
                 {
-                    Title = string.Format("BuildFeed RSS - {0} Lab", lab),
+                    Title = $"BuildFeed RSS - {lab} Lab",
                     Description = "",
                     Generator = "BuildFeed.net RSS Controller",
-                    Link = new RssUrl(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)),
+                    Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
                     SkipHours = new List<Hour>(),
                     SkipDays = new List<Day>(),
 
@@ -207,8 +211,9 @@ namespace BuildFeed.Controllers
                              select new RssItem()
                              {
                                  Title = build.FullBuildString,
-                                 Link = new RssUrl(string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id }))),
-                                 Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "front", id = build.Id })) },
+                                 Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"),
+                                 Guid = new RssGuid() { IsPermaLink = true, Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
+                                                      },
                              }).ToList()
                 }
             };

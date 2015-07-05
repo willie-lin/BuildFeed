@@ -8,20 +8,10 @@ namespace BuildFeed.Code
 {
     public static class MvcIntrinsics
     {
-        public static System.Web.Mvc.HtmlHelper Html
-        {
-            get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html; }
-        }
+        public static System.Web.Mvc.HtmlHelper Html => ((System.Web.Mvc.WebViewPage) WebPageContext.Current.Page).Html;
 
-        public static System.Web.Mvc.AjaxHelper Ajax
-        {
-            get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Ajax; }
-        }
+        public static System.Web.Mvc.AjaxHelper Ajax => ((System.Web.Mvc.WebViewPage) WebPageContext.Current.Page).Ajax;
 
-        public static System.Web.Mvc.UrlHelper Url
-        {
-            get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Url; }
-        }
-
+        public static System.Web.Mvc.UrlHelper Url => ((System.Web.Mvc.WebViewPage) WebPageContext.Current.Page).Url;
     }
 }

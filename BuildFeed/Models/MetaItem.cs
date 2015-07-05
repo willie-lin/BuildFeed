@@ -74,7 +74,7 @@ namespace BuildFeed.Models
                                select u;
 
                 return from l in labs
-                       where !usedLabs.Any(ul => ul.Id.Value as string == l)
+                       where usedLabs.All(ul => ul.Id.Value != l)
                        select l;
             }
         }
@@ -93,7 +93,7 @@ namespace BuildFeed.Models
                                select u;
 
                 return from v in versions
-                       where !usedLabs.Any(ul => ul.Id.Value == v.ToString())
+                       where usedLabs.All(ul => ul.Id.Value != v.ToString())
                        select v.ToString();
             }
         }
@@ -112,7 +112,7 @@ namespace BuildFeed.Models
                                select u;
 
                 return from y in years
-                       where !usedYears.Any(ul => ul.Id.Value == y.ToString())
+                       where usedYears.All(ul => ul.Id.Value != y.ToString())
                        select y.ToString();
             }
         }
@@ -172,7 +172,7 @@ namespace BuildFeed.Models
 
         public override string ToString()
         {
-            return string.Format("{0}:{1}", Type, Value);
+            return $"{Type}:{Value}";
         }
     }
 

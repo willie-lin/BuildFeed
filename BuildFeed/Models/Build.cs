@@ -237,7 +237,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Update, true)]
         public static void Update(Build item)
         {
-            Build old = Build.SelectById(item.Id);
+            Build old = SelectById(item.Id);
             item.Added = old.Added;
             item.Modified = DateTime.Now;
 
@@ -314,7 +314,7 @@ namespace BuildFeed.Models
 
         public override string ToString()
         {
-            return string.Format("{0}.{1}", Major, Minor);
+            return $"{Major}.{Minor}";
         }
     }
 
@@ -328,8 +328,8 @@ namespace BuildFeed.Models
         public override string ToString()
         {
             return Revision.HasValue ?
-                string.Format("{0}.{1}.{2}.{3}", Major, Minor, Build, Revision.Value) :
-                string.Format("{0}.{1}.{2}", Major, Minor, Build);
+                       $"{Major}.{Minor}.{Build}.{Revision.Value}" :
+                       $"{Major}.{Minor}.{Build}";
         }
     }
 }

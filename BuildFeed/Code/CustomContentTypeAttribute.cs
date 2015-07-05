@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace BuildFeed.Code
 {
@@ -11,9 +7,6 @@ namespace BuildFeed.Code
     {
         public string ContentType { get; set; }
 
-        public override void OnResultExecuted(ResultExecutedContext filterContext)
-        {
-            filterContext.HttpContext.Response.ContentType = ContentType;
-        }
+        public override void OnResultExecuted(ResultExecutedContext filterContext) { filterContext.HttpContext.Response.ContentType = ContentType; }
     }
 }

@@ -35,23 +35,25 @@ namespace BuildFeed.Areas.admin.Controllers
                                               Type = MetaType.Lab,
                                               Value = l
                                           }
-                                      }).Concat(from v in MetaItem.SelectUnusedVersions()
-                                                select new MetaItem()
-                                                {
-                                                    Id = new MetaItemKey()
-                                                    {
-                                                        Type = MetaType.Version,
-                                                        Value = v
-                                                    }
-                                                }).Concat(from y in MetaItem.SelectUnusedYears()
-                                                          select new MetaItem()
-                                                          {
-                                                              Id = new MetaItemKey()
-                                                              {
-                                                                  Type = MetaType.Year,
-                                                                  Value = y
-                                                              }
-                                                          })
+                                      }).Concat(
+                                        from v in MetaItem.SelectUnusedVersions()
+                                        select new MetaItem()
+                                        {
+                                            Id = new MetaItemKey()
+                                            {
+                                                Type = MetaType.Version,
+                                                Value = v
+                                            }
+                                      }).Concat(
+                                        from y in MetaItem.SelectUnusedYears()
+                                        select new MetaItem()
+                                        {
+                                            Id = new MetaItemKey()
+                                            {
+                                                Type = MetaType.Year,
+                                                Value = y
+                                            }
+                                      })
                            group i by i.Id.Type into b
                            orderby b.Key.ToString()
                            select b

@@ -38,6 +38,7 @@ h1
 {
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -116,11 +117,12 @@ label, .control-label, .help-block, .checkbox, .radio
         overflow: hidden;
         -ms-text-overflow: ellipsis;
         -o-text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
 
-        #search-results .list-group-item-heading h4
+#search-results .list-group-item-heading h4
         {
             font-size: 16px;
         }
