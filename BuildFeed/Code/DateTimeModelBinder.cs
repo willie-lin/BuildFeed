@@ -16,7 +16,7 @@ namespace BuildFeed
                 success = DateTime.TryParseExact(value.AttemptedValue, "yyMMdd-HHmm", CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces, out retValue);
             }
 
-            return success ? retValue as DateTime? : null as DateTime?;
+            return success ? retValue as DateTime? : null;
         }
     }
 }

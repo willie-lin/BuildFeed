@@ -1,4 +1,4 @@
-﻿@model IEnumerable<System.Web.Security.MembershipUser>
+﻿@model IEnumerable<MembershipUser>
 
 @{
     ViewBag.Title = "Manage users | BuildFeed";
@@ -54,24 +54,18 @@
                     @Html.DisplayFor(modelItem => mu.LastLockoutDate)
                 </td>
                 <td class="text-right">
-                    @if (mu.IsApproved)
-                {
-                        @Html.ActionLink("Unapprove", "unapprove", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Approve", "approve", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
-                    }
+                    @(
+                    mu.IsApproved ?
+                    Html.ActionLink("Unapprove", "unapprove", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" }) :
+                    Html.ActionLink("Approve", "approve", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
+                    )
                 </td>
                 <td class="text-right">
-                    @if (!mu.IsLockedOut)
-                {
-                        @Html.ActionLink("Lock", "lock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Unlock", "unlock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
-                    }
+                    @(
+                    !mu.IsLockedOut ?
+                    Html.ActionLink("Lock", "lock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" }) :
+                    Html.ActionLink("Unlock", "unlock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
+                    )
                 </td>
             </tr>
         }

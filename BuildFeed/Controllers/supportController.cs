@@ -32,10 +32,10 @@ namespace BuildFeed.Controllers
                     var ticket = new FormsAuthenticationTicket(ru.UserName, true, expiryLength);
                     var encryptedTicket = FormsAuthentication.Encrypt(ticket);
                     var cookieTicket = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
-                                       {
-                                           Expires = DateTime.Now.AddMinutes(expiryLength),
-                                           Path = FormsAuthentication.FormsCookiePath
-                                       };
+                    {
+                        Expires = DateTime.Now.AddMinutes(expiryLength),
+                        Path = FormsAuthentication.FormsCookiePath
+                    };
                     Response.Cookies.Add(cookieTicket);
 
                     string returnUrl = string.IsNullOrEmpty(Request.QueryString["ReturnUrl"]) ? "/" : Request.QueryString["ReturnUrl"];
@@ -142,7 +142,7 @@ namespace BuildFeed.Controllers
             Dictionary<string, SitemapPagedAction[]> actions = new Dictionary<string, SitemapPagedAction[]>
             {
                 {
-                    "Pages", new SitemapPagedAction[]
+                    "Pages", new[]
                             {
                                 new SitemapPagedAction()
                                 {
@@ -325,14 +325,18 @@ namespace BuildFeed.Controllers
 
             List<MonthCount> additions = new List<MonthCount>();
             var rawAdditions = (from b in builds
-                               where b.Added > DateTime.Now.AddYears(-1)
-                               group b by new { Year = b.Added.Year, Week = Convert.ToInt32(Math.Floor(b.Added.DayOfYear / 7m)) } into bm
-                               select new MonthCount()
-                               {
-                                   Month = bm.Key.Week,
-                                   Year = bm.Key.Year,
-                                   Count = bm.Count()
-                               }).ToArray();
+                                where b.Added > DateTime.Now.AddYears(-1)
+                                group b by new
+                                {
+                                    Year = b.Added.Year,
+                                    Week = Convert.ToInt32(Math.Floor(b.Added.DayOfYear / 7m))
+                                } into bm
+                                select new MonthCount()
+                                {
+                                    Month = bm.Key.Week,
+                                    Year = bm.Key.Year,
+                                    Count = bm.Count()
+                                }).ToArray();
 
             for (int i = -52; i <= 0; i++)
             {
@@ -348,7 +352,11 @@ namespace BuildFeed.Controllers
             List<MonthCount> compiles = new List<MonthCount>();
             var rawCompiles = from b in builds
                               where b.BuildTime.HasValue
-                              group b by new { Year = b.BuildTime.Value.Year, Month = Convert.ToInt32(Math.Floor((b.BuildTime.Value.Month - 0.1m) / 3m) * 3) + 1 } into bm
+                              group b by new
+                              {
+                                  Year = b.BuildTime.Value.Year,
+                                  Month = Convert.ToInt32(Math.Floor((b.BuildTime.Value.Month - 0.1m) / 3m) * 3) + 1
+                              } into bm
                               select new MonthCount()
                               {
                                   Month = bm.Key.Month,

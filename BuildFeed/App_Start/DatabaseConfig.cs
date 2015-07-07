@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 
 namespace BuildFeed
 {
@@ -16,21 +12,21 @@ namespace BuildFeed
         {
             Host = ConfigurationManager.AppSettings["data:ServerHost"];
 
-            int _port;
-            bool success = int.TryParse(ConfigurationManager.AppSettings["data:ServerPort"], out _port);
-            if(!success)
-            {
-                _port = 6379; // redis default port
-            }
-            Port = _port;
-
-            long _db;
-            success = long.TryParse(ConfigurationManager.AppSettings["data:ServerDB"], out _db);
+            int port;
+            bool success = int.TryParse(ConfigurationManager.AppSettings["data:ServerPort"], out port);
             if (!success)
             {
-                _db = 0; // redis default db
+                port = 6379; // redis default port
             }
-            Database = _db;
+            Port = port;
+
+            long db;
+            success = long.TryParse(ConfigurationManager.AppSettings["data:ServerDB"], out db);
+            if (!success)
+            {
+                db = 0; // redis default db
+            }
+            Database = db;
         }
     }
 }

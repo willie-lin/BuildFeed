@@ -1,10 +1,7 @@
-﻿using BuildFeed.Areas.admin.Models.ViewModel;
-using BuildFeed.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using BuildFeed.Areas.admin.Models.ViewModel;
+using BuildFeed.Models;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
@@ -15,46 +12,48 @@ namespace BuildFeed.Areas.admin.Controllers
         public ActionResult index()
         {
             var currentItems = from i in MetaItem.Select()
-                               group i by i.Id.Type into b
+                               group i by i.Id.Type
+                               into b
                                select b;
 
             var pendingLabs = MetaItem.SelectUnusedLabs();
 
-            return View(new MetaListing()
+            return View(new MetaListing
             {
                 CurrentItems = from i in MetaItem.Select()
-                               group i by i.Id.Type into b
+                               group i by i.Id.Type
+                                           into b
                                orderby b.Key.ToString()
                                select b,
-
                 NewItems = from i in (from l in MetaItem.SelectUnusedLabs()
-                                      select new MetaItem()
+                                      select new MetaItem
                                       {
-                                          Id = new MetaItemKey()
+                                          Id = new MetaItemKey
                                           {
                                               Type = MetaType.Lab,
                                               Value = l
                                           }
-                                      }).Concat(
-                                        from v in MetaItem.SelectUnusedVersions()
-                                        select new MetaItem()
-                                        {
-                                            Id = new MetaItemKey()
-                                            {
-                                                Type = MetaType.Version,
-                                                Value = v
-                                            }
-                                      }).Concat(
-                                        from y in MetaItem.SelectUnusedYears()
-                                        select new MetaItem()
-                                        {
-                                            Id = new MetaItemKey()
-                                            {
-                                                Type = MetaType.Year,
-                                                Value = y
-                                            }
                                       })
-                           group i by i.Id.Type into b
+                                      .Concat(from v in MetaItem.SelectUnusedVersions()
+                                              select new MetaItem
+                                              {
+                                                  Id = new MetaItemKey
+                                                  {
+                                                      Type = MetaType.Version,
+                                                      Value = v
+                                                  }
+                                              })
+                                      .Concat(from y in MetaItem.SelectUnusedYears()
+                                              select new MetaItem
+                                              {
+                                                  Id = new MetaItemKey
+                                                  {
+                                                      Type = MetaType.Year,
+                                                      Value = y
+                                                  }
+                                              })
+                           group i by i.Id.Type
+                                       into b
                            orderby b.Key.ToString()
                            select b
             });
@@ -62,7 +61,14 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult create(MetaType type, string value)
         {
-            return View(new MetaItem() { Id = new MetaItemKey() { Type = type, Value = value } });
+            return View(new MetaItem
+            {
+                Id = new MetaItemKey
+                {
+                    Type = type,
+                    Value = value
+                }
+            });
         }
 
         [HttpPost]
@@ -79,7 +85,11 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult edit(MetaType type, string value)
         {
-            return View("create", MetaItem.SelectById(new MetaItemKey() { Type = type, Value = value }));
+            return View("create", MetaItem.SelectById(new MetaItemKey
+            {
+                Type = type,
+                Value = value
+            }));
         }
 
         [HttpPost]

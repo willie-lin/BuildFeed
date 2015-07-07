@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace BuildFeed
@@ -8,8 +7,8 @@ namespace BuildFeed
     {
         public static string GetDisplayTextForEnum(object o)
         {
-            var result = null as string;
-            var display = o.GetType()
+            string result = null as string;
+            DisplayAttribute display = o.GetType()
                            .GetMember(o.ToString()).First()
                            .GetCustomAttributes(false)
                            .OfType<DisplayAttribute>()

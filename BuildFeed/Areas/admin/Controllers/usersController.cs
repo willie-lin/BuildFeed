@@ -1,10 +1,8 @@
-﻿using RedisAuth;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using RedisAuth;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
@@ -14,16 +12,17 @@ namespace BuildFeed.Areas.admin.Controllers
         // GET: admin/users
         public ActionResult index()
         {
-            return View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));
+            return View(Membership.GetAllUsers()
+                        .Cast<MembershipUser>()
+                        .OrderByDescending(m => m.IsApproved)
+                        .ThenBy(m => m.UserName));
         }
 
         public ActionResult admins()
         {
-            List<MembershipUser> admins = new List<MembershipUser>();
-            foreach (var m in Roles.GetUsersInRole("Administrators"))
-            {
-                admins.Add(Membership.GetUser(m));
-            }
+            var admins = Roles.GetUsersInRole("Administrators")
+                        .Select(Membership.GetUser)
+                        .ToList();
 
             return View(admins.OrderByDescending(m => m.UserName));
         }
@@ -42,39 +41,39 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult approve(Guid id)
         {
-            var provider = (Membership.Provider as RedisMembershipProvider);
-            provider.ChangeApproval(id, true);
+            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            provider?.ChangeApproval(id, true);
             return RedirectToAction("Index");
         }
 
         public ActionResult unapprove(Guid id)
         {
-            var provider = (Membership.Provider as RedisMembershipProvider);
-            provider.ChangeApproval(id, false);
+            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            provider?.ChangeApproval(id, false);
             return RedirectToAction("Index");
         }
 
         public ActionResult @lock(Guid id)
         {
-            var provider = (Membership.Provider as RedisMembershipProvider);
-            provider.ChangeLockStatus(id, true);
+            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            provider?.ChangeLockStatus(id, true);
             return RedirectToAction("Index");
         }
 
         public ActionResult unlock(Guid id)
         {
-            var provider = (Membership.Provider as RedisMembershipProvider);
-            provider.ChangeLockStatus(id, false);
+            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            provider?.ChangeLockStatus(id, false);
             return RedirectToAction("Index");
         }
 
         public ActionResult cleanup()
         {
-            var users = Membership.GetAllUsers();
+            MembershipUserCollection users = Membership.GetAllUsers();
 
             foreach (MembershipUser user in users)
             {
-                if(!user.IsApproved && (user.CreationDate.AddDays(30) < DateTime.Now))
+                if (!user.IsApproved && (user.CreationDate.AddDays(30) < DateTime.Now))
                 {
                     Membership.DeleteUser(user.UserName);
                 }

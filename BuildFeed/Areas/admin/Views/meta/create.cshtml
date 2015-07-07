@@ -1,17 +1,17 @@
 ﻿@model BuildFeed.Models.MetaItem
 
 @{
-    ViewBag.Title = string.Format("Add metadata for {0} | BuildFeed", Model.Id.Value);
+    ViewBag.Title = $"Add metadata for {Model.Id.Value} | BuildFeed";
 }
 
-<h2>@string.Format("Add metadata for {0}", Model.Id.Value)</h2>
+<h2>@($"Add metadata for {Model.Id.Value}")</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    @Html.HiddenFor(model => model.Id.Type);
-    @Html.HiddenFor(model => model.Id.Value);
+    @Html.HiddenFor(model => model.Id.Type)
+    @Html.HiddenFor(model => model.Id.Value)
 
     <div class="form-horizontal">
         <div class="form-group">

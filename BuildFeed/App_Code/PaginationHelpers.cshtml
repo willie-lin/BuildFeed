@@ -14,12 +14,14 @@
                 {
                     RouteValueDictionary rvd = new RouteValueDictionary(rd);
                     rvd.Remove("page");
+
                     <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, rvd)</li>
                 }
                 else if (currentPage > 2)
                 {
                     RouteValueDictionary rvd = new RouteValueDictionary(rd);
                     rvd["page"] = currentPage - 1;
+
                     <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), multiView, rvd)</li>
                 }
                 else
@@ -37,6 +39,7 @@
                 {
                     RouteValueDictionary rvd = new RouteValueDictionary(rd);
                     rvd["page"] = i;
+
                     <li @((i == currentPage) ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
                 }
 
@@ -45,6 +48,7 @@
                 {
                     RouteValueDictionary rvd = new RouteValueDictionary(rd);
                     rvd["page"] = currentPage + 1;
+
                     <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), multiView, rvd)</li>
                 }
                 else
