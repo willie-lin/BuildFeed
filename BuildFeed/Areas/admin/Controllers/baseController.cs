@@ -23,5 +23,8 @@ namespace BuildFeed.Areas.admin.Controllers
 
             return RedirectToAction("index");
         }
+
+        [Authorize(Users = "hounsell")]
+        public ActionResult exception() { throw new System.Exception("This is a test exception"); }
     }
 }

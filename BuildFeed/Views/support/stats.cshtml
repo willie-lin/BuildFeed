@@ -13,7 +13,7 @@
 <canvas id="stats-compiled" width="960" height="320"></canvas>
 
 <h4>Recorded builds in each lab</h4>
-<p>Only labs with 50 or more recorded builds are included.</p>
+<p>Only labs with 100 or more recorded builds are included.</p>
 <canvas id="stats-labs" width="960" height="320"></canvas>
 
 @section scripts
@@ -22,7 +22,7 @@
     <script type="text/javascript">
         $(function () {
             Chart.defaults.global.responsive = true;
-            Chart.defaults.global.showTooltips = false;
+            //Chart.defaults.global.showTooltips = false;
             Chart.defaults.global.scaleFontFamily = "Hind, sans-serif";
             Chart.defaults.global.scaleFontColor = "#bbb";
 
@@ -59,7 +59,7 @@
                 ]
             };
 
-            var compiledChart = new Chart(document.getElementById("stats-compiled").getContext("2d")).Line(compiledData, {});
+            var compiledChart = new Chart(document.getElementById("stats-compiled").getContext("2d")).Line(compiledData, { scaleLabel: "<%= (Math.round(Math.pow(value, Math.E)/10)*10) %>", tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%=Math.round(Math.pow(value, Math.E))%>", scaleOverride: true, scaleSteps: 10, scaleStepWidth: 2, scaleStartValue: 1, scaleIntegersOnly: false, pointHitDetectionRadius: 0 });
 
             var labData = {
                 labels: [ @Html.Raw(string.Join(", ", Model.BuildsByLab.Select(l => string.Format("\"{0}\"", l.Item1))))],

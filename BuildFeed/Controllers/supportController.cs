@@ -119,7 +119,7 @@ namespace BuildFeed.Controllers
             return View(ru);
         }
 
-        [Route("register/")]
+        [Route("register/thanks/")]
         public ActionResult thanks_register()
         {
             return View();
@@ -350,6 +350,7 @@ namespace BuildFeed.Controllers
             }
 
             List<MonthCount> compiles = new List<MonthCount>();
+            double logScale = 1.0 / Math.E;
             var rawCompiles = from b in builds
                               where b.BuildTime.HasValue
                               group b by new
@@ -361,7 +362,7 @@ namespace BuildFeed.Controllers
                               {
                                   Month = bm.Key.Month,
                                   Year = bm.Key.Year,
-                                  Count = bm.Count()
+                                  Count = Math.Pow(Convert.ToDouble(bm.Count()), logScale)
                               };
 
 
@@ -369,7 +370,7 @@ namespace BuildFeed.Controllers
                                            where !string.IsNullOrEmpty(b.Lab)
                                            group b by b.Lab into bl
                                            select bl)
-                               where bl.Count() > 49
+                               where bl.Count() > 99
                                orderby bl.Count() descending
                                select new Tuple<string, int>(bl.Key, bl.Count());
 

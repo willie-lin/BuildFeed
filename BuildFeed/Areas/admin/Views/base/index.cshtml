@@ -16,6 +16,7 @@
     </li>
     @if (User.Identity.Name == "hounsell")
     {
+        <li>@Html.ActionLink("Exception test", "exception")</li>
         <li>@Html.ActionLink("Initial setup", "setup")</li>
     }
 </ul>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
     Layout = null;
 }
 
@@ -8,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="~/favicon.ico" />
@@ -57,8 +58,12 @@
         <article id="page-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>Error.</h2>
-                    <p>An error occurred while processing your request.</p>
+                    <h1>Error</h1>
+                    <p>Something's broke. Maybe it's because you did something weird. Probably it's because I did something weird. If you keep getting this error, take a screenshot and spam <a href="https://twitter.com/tomhounsell">me</a> on Twitter with it.
+                    </p>
+                    <p>Controller: <code>@Model.ControllerName</code></p>
+                    <p>Action: <code>@Model.ActionName</code></p>
+                    <p>Error: <code>@Model.Exception.Message</code></p>
                 </div>
             </div>
         </article>
@@ -68,13 +73,13 @@
                     <p>
                         &copy; 2013 - @DateTime.Now.Year.ToString(), BuildFeed<br />
                         Developed by <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                        Contribute on <a href="https://github.com/hounsell/BuildFeed" target="_blank">GitHub</a>
+                        Contribute on&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
                     </p>
                 </div>
             </div>
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

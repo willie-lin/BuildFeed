@@ -20,19 +20,22 @@ h1
     padding-top: 50px;
 }
 
-.build-group-title
+.build-group
 {
-    font-size: 21px;
-    font-weight: 300;
+    margin-bottom: 2em;
 }
 
-    .build-group-title .icon
-    {
-        font-size: 0.6em;
-        vertical-align: 3px;
-        display: inline-block;
-        margin-left: 0.3em;
-    }
+.build-group-title
+{
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 0 4px 0;
+}
+
+.build-group-p
+{
+    margin-bottom: 4px;
+}
 
 .no-wrapping
 {

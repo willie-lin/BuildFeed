@@ -7,11 +7,11 @@
 
 @if ((string)(ViewContext.RouteData.Values["action"]) == "addBuild")
 {
-    <h2>Add a Build</h2>
+    <h1>Add a Build</h1>
 }
 else
 {
-    <h2>Edit build @Model.FullBuildString</h2>
+    <h1>Edit build @Model.FullBuildString</h1>
 }
 
 <div class="form-horizontal">
