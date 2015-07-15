@@ -10,6 +10,7 @@ using NServiceKit.Redis;
 
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 using System.Web.Mvc;
+using BuildFeed.Local;
 
 namespace BuildFeed.Models
 {
@@ -22,51 +23,51 @@ namespace BuildFeed.Models
         public long Id { get; set; }
 
         [@Required]
-        [DisplayName("Major Version")]
+        [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
         public byte MajorVersion { get; set; }
 
         [@Required]
-        [DisplayName("Minor Version")]
+        [Display(ResourceType = typeof(Model), Name = "MinorVersion")]
         public byte MinorVersion { get; set; }
 
         [@Required]
-        [DisplayName("Build Number")]
+        [Display(ResourceType = typeof(Model), Name = "Number")]
         public ushort Number { get; set; }
 
-        [DisplayName("Build Revision")]
+        [Display(ResourceType = typeof(Model), Name = "Revision")]
         [DisplayFormat(ConvertEmptyStringToNull = true)]
         public ushort? Revision { get; set; }
 
-        [DisplayName("Lab String")]
+        [Display(ResourceType = typeof(Model), Name = "Lab")]
         public string Lab { get; set; }
 
-        [DisplayName("Build Time")]
+        [Display(ResourceType = typeof(Model), Name = "BuildTime")]
         [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
         public DateTime? BuildTime { get; set; }
 
 
         [@Required]
-        [DisplayName("Time Created")]
+        [Display(ResourceType = typeof(Model), Name = "Added")]
         public DateTime Added { get; set; }
 
         [@Required]
-        [DisplayName("Time Modified")]
+        [Display(ResourceType = typeof(Model), Name = "Modified")]
         public DateTime Modified { get; set; }
 
         [@Required]
-        [DisplayName("Source Type")]
+        [Display(ResourceType = typeof(Model), Name = "SourceType")]
         [EnumDataType(typeof(TypeOfSource))]
         public TypeOfSource SourceType { get; set; }
 
-        [DisplayName("Source Details")]
+        [Display(ResourceType = typeof(Model), Name = "SourceDetails")]
         [AllowHtml]
         public string SourceDetails { get; set; }
 
-        [DisplayName("Leak or Release Date")]
+        [Display(ResourceType = typeof(Model), Name = "LeakDate")]
         [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? LeakDate { get; set; }
 
-        [DisplayName("Flight Level")]
+        [Display(ResourceType = typeof(Model), Name = "FlightLevel")]
         [EnumDataType(typeof(LevelOfFlight))]
         public LevelOfFlight FlightLevel { get; set; }
 
@@ -271,39 +272,46 @@ namespace BuildFeed.Models
 
     public enum TypeOfSource
     {
-        [Display(Name = "Public Release")]
+        [Display(ResourceType = typeof(Model), Name = "PublicRelease")]
         PublicRelease,
 
-        [Display(Name = "Public Leak")]
+        [Display(ResourceType = typeof(Model), Name = "InternalLeak")]
         InternalLeak,
 
-        [Display(Name = "Update (GDR)")]
+        [Display(ResourceType = typeof(Model), Name = "UpdateGDR")]
         UpdateGDR,
 
-        [Display(Name = "Update (LDR)")]
+        [Display(ResourceType = typeof(Model), Name = "UpdateLDR")]
         UpdateLDR,
 
-        [Display(Name = "App Package")]
+        [Display(ResourceType = typeof(Model), Name = "AppPackage")]
         AppPackage,
 
-        [Display(Name = "Build Tools")]
+        [Display(ResourceType = typeof(Model), Name = "BuildTools")]
         BuildTools,
 
-        [Display(Name = "Documentation")]
+        [Display(ResourceType = typeof(Model), Name = "Documentation")]
         Documentation,
 
-        [Display(Name = "Logging")]
+        [Display(ResourceType = typeof(Model), Name = "Logging")]
         Logging,
 
-        [Display(Name = "Private Leak")]
+        [Display(ResourceType = typeof(Model), Name = "PrivateLeak")]
         PrivateLeak
     }
 
     public enum LevelOfFlight
     {
+        [Display(ResourceType = typeof(Model), Name = "FlightNone")]
         None = 0,
+
+        [Display(ResourceType = typeof(Model), Name = "FlightLow")]
         Low = 1,
+
+        [Display(ResourceType = typeof(Model), Name = "FlightMedium")]
         Medium = 2,
+
+        [Display(ResourceType = typeof(Model), Name = "FlightHigh")]
         High = 3
     }
 

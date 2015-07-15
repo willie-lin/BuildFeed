@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="~/favicon.ico" />
     <link rel="icon" href="~/favicon.ico" />
     <link rel="canonical" href="@Url.Action()" />
-    <meta name="application-name" content="BuildFeed" />
+    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
     @Styles.Render("~/content/css")
     <title>@ViewBag.Title</title>
@@ -47,34 +47,34 @@
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navigation-collapse">
-                            <span class="sr-only">Toggle navigation</span>
+                            <span class="sr-only">@BuildFeed.Local.Common.ToggleNavigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink(BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
                     </div>
                     <div class="collapse navbar-collapse" id="page-navigation-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             @if (!User.Identity.IsAuthenticated)
                             {
-                                <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="Log in"><i class="fa fa-fw fa-user"></i> Log in</a></li>
+                                <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogIn"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogIn</a></li>
                             }
                             else if (Roles.IsUserInRole("Administrators"))
                             {
-                                <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="Admin"><i class="fa fa-fw fa-cogs"></i> Admin</a></li>
-                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-fw fa-plus-square"></i> Add build</a></li>
-                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-fw fa-user"></i> Log out</a></li>
+                                <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="@BuildFeed.Local.Common.Admin"><i class="fa fa-fw fa-cogs"></i> @BuildFeed.Local.Common.Admin</a></li>
+                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                             }
                             else
                             {
-                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-fw fa-plus-square"></i> Add build</a></li>
-                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-fw fa-user"></i> Log out</a></li>
+                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                             }
-                            <li><a href="#" title="Search" id="page-navigation-search"><i class="fa fa-fw fa-search"></i> Search</a></li>
-                            <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="Statistics"><i class="fa fa-fw fa-line-chart"></i> Statistics</a></li>
-                            <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-fw fa-rss"></i> RSS Feeds</a></li>
-                            <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" title="Search" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
+                            <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
+                            <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
+                            <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
                         </ul>
                     </div>
                 </div>
@@ -91,14 +91,14 @@
             <div class="row">
                 <div class="col-sm-8">
                     <p>
-                        <a href="@Url.Action("sitemap", new { controller = "support" })">Sitemap</a>
+                        <a href="@Url.Action("sitemap", new { controller = "support" })">@BuildFeed.Local.Common.Sitemap</a>
                     </p>
                 </div>
                 <div class="col-sm-4 text-right">
                     <p>
-                        &copy; 2013 - @DateTime.Now.Year.ToString(), BuildFeed<br />
-                        Developed by <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                        Contribute on&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+                        &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
+                        @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
+                        @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
                     </p>
                 </div>
             </div>
@@ -109,14 +109,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Search BuildFeed...</h4>
+                    <h4 class="modal-title">@BuildFeed.Local.Common.SearchBuildFeed</h4>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6 col-sm-offset-3">
-                                @Html.Label("search-input", "Search query", new { @class = "sr-only" })
-                                @Html.TextBox("search-input", "", new { @class = "form-control", placeholder = "type to search..." })
+                                @Html.Label("search-input", BuildFeed.Local.Common.SearchQuery, new { @class = "sr-only" })
+                                @Html.TextBox("search-input", "", new { @class = "form-control", placeholder = BuildFeed.Local.Common.TypeToSearch })
                             </div>
                         </div>
                     </div>

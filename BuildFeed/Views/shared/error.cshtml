@@ -14,10 +14,10 @@
     <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="~/favicon.ico" />
     <link rel="icon" href="~/favicon.ico" />
-    <meta name="application-name" content="BuildFeed" />
+    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
     @Styles.Render("~/content/css")
-    <title>Error | BuildFeed</title>
+    <title>@BuildFeed.Local.Common.Error | @BuildFeed.Local.Common.SiteName</title>
     <script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
             function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
@@ -48,9 +48,9 @@
         <nav id="page-navigation" role="navigation">
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
-                    @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink(@BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +58,7 @@
         <article id="page-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Error</h1>
+                    <h1>@BuildFeed.Local.Common.Error</h1>
                     <p>Something's broke. Maybe it's because you did something weird. Probably it's because I did something weird. If you keep getting this error, take a screenshot and spam <a href="https://twitter.com/tomhounsell">me</a> on Twitter with it.
                     </p>
                     <p>Controller: <code>@Model.ControllerName</code></p>
@@ -71,9 +71,9 @@
             <div class="row">
                 <div class="col-sm-offset-8 col-sm-4 text-right">
                     <p>
-                        &copy; 2013 - @DateTime.Now.Year.ToString(), BuildFeed<br />
-                        Developed by <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                        Contribute on&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+                        &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
+                        @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
+                        @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
                     </p>
                 </div>
             </div>
