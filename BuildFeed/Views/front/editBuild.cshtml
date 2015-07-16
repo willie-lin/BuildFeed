@@ -1,22 +1,22 @@
 ﻿@model BuildFeed.Models.Build
 @{
-    ViewBag.Title = (string)(ViewContext.RouteData.Values["action"]) == "addBuild" ? "Add a Build | BuildFeed" : string.Format("Edit build {0} | BuildFeed", Model.FullBuildString);
+    ViewBag.Title = (string)(ViewContext.RouteData.Values["action"]) == "addBuild" ? string.Format("{0} | {1}", BuildFeed.Local.Front.AddABuild, BuildFeed.Local.Common.SiteName) : string.Format("{0} {1} | {2}", BuildFeed.Local.Front.EditBuild, Model.FullBuildString, BuildFeed.Local.Common.SiteName);
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
 }
 
 @if ((string)(ViewContext.RouteData.Values["action"]) == "addBuild")
 {
-    <h1>Add a Build</h1>
+    <h1>@BuildFeed.Local.Front.AddABuild</h1>
 }
 else
 {
-    <h1>Edit build @Model.FullBuildString</h1>
+    <h1>@BuildFeed.Local.Front.EditBuild @Model.FullBuildString</h1>
 }
 
 <div class="form-horizontal">
     <div class="form-group">
-        <label for="quickpaste" class="control-label col-sm-2">Quick-paste</label>
+        <label for="quickpaste" class="control-label col-sm-2">@BuildFeed.Local.Front.QuickPaste</label>
         <div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-6">
@@ -126,7 +126,7 @@ else
                         @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
                     </div>
                     <div class="col-sm-1">
-                        <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">Today</button>
+                        <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@BuildFeed.Local.Front.Today</button>
                     </div>
                 </div>
                 @Html.ValidationMessageFor(model => model.LeakDate)
@@ -160,7 +160,7 @@ else
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Submit Build" class="btn btn-primary" />
-                <a href="/" onclick="window.history.back(); return false;" class="btn btn-default">Return to Listing</a>
+                <a href="/" onclick="window.history.back(); return false;" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
             </div>
         </div>
     </div>

@@ -216,6 +216,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
+    <Compile Include="Local\Front.qps-ploc.Designer.cs">
+      <DependentUpon>Front.qps-ploc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Front.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Front.resx</DependentUpon>
+    </Compile>
     <Compile Include="Local\Model.qps-ploc.Designer.cs">
       <DependentUpon>Model.qps-ploc.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -392,6 +402,14 @@
     <EmbeddedResource Include="Local\Common.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.qps-ploc.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

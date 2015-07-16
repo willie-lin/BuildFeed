@@ -12,20 +12,14 @@
     <meta property="og:url" content="@Url.Action()" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@("@")buildfeed">
-    <meta name="twitter:title" content="@Model.FullBuildString | BuildFeed">
-    <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new { id = Model.Id })">
-    @if (Model.BuildTime.HasValue)
-    {
-        <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
-        <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy")." />
-        <meta name="twitter:description" content="Discover about Windows Build @Model.Number, from @Model.Lab and compiled on @Model.BuildTime.Value.ToString("d MMMM yyyy").">
+    <meta name="twitter:title" content="@Model.FullBuildString | @BuildFeed.Local.Common.SiteName">
+    <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new {id = Model.Id})">
+    @{
+        string metaDesc = Model.BuildTime.HasValue ? string.Format(BuildFeed.Local.Front.BuildMetaDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToString("d MMMM yyyy")) : string.Format(BuildFeed.Local.Front.BuildMetaNoDate, Model.Number, Model.Lab);
     }
-    else
-    {
-        <meta name="description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
-        <meta property="og:description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process." />
-        <meta name="twitter:description" content="Discover about Windows Build @Model.Number, from @Model.Lab. BuildFeed tracks Windows builds throughout the development process.">
-    }
+    <meta name="description" content="@metaDesc" />
+    <meta property="og:description" content="@metaDesc" />
+    <meta name="twitter:description" content="@metaDesc" />
 }
 
 <h1>@Model.FullBuildString</h1>
@@ -36,14 +30,14 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="form-group">
-                    <label class="control-label col-sm-4">Editor Actions</label>
+                    <label class="control-label col-sm-4">@BuildFeed.Local.Front.EditorActions</label>
                     <div class="col-sm-8">
                         <p class="form-control-static">
-                            @Html.ActionLink("Edit", "editBuild", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
+                            @Html.ActionLink(BuildFeed.Local.Front.Edit, "editBuild", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
 
                             @if (Roles.IsUserInRole("Administrators"))
                             {
-                                @Html.ActionLink("Delete", "deleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                                @Html.ActionLink(BuildFeed.Local.Front.Delete, "deleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
                             }
                         </p>
                     </div>
@@ -83,12 +77,12 @@
                     <p class="form-control-static">
                         @if (string.IsNullOrEmpty(Model.Lab))
                         {
-                            <em>No lab string</em>
+                            <em>@BuildFeed.Local.Front.NoLab</em>
                         }
                         else
                         {
                             @Model.Lab<br />
-                            <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds from @Model.Lab</a>
+                                <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
                         }
                     </p>
                 </div>
@@ -101,8 +95,8 @@
                         @if (Model.BuildTime.HasValue)
                         {
                             <time datetime="@Model.BuildTime.Value.ToString("yyyy-MM-dd HH:mm")" title="@Model.BuildTime.Value.ToString("h:mm tt on dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</time>
-                            <br />
-                            <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds compiled in @Model.BuildTime.Value.Year</a>
+                                <br />
+                                <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromYear, Model.BuildTime.Value.Year)</a>
                         }
                     </p>
                 </div>
@@ -115,7 +109,7 @@
                 @Html.LabelFor(model => model.SourceType, new { @class = "control-label" })
                 <p class="form-control-static">
                     @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
-                    <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> Find more builds sourced from @Html.DisplayFor(model => model.SourceType, "Enumeration")</a>
+                    <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromSource, DisplayHelpers.GetDisplayTextForEnum(Model.SourceType))</a>
                 </p>
             </div>
 
@@ -136,7 +130,7 @@
             }
 
             <div class="form-group">
-                <label class="control-label">Share</label>
+                <label class="control-label">@BuildFeed.Local.Front.Share</label>
                 <div class="addthis_sharing_toolbox"></div>
             </div>
             <div class="form-group">
@@ -149,7 +143,7 @@
 
 <div class="form-horizontal form-details">
     <div class="form-group">
-        <label class="control-label col-sm-2">Comments</label>
+        <label class="control-label col-sm-2">@BuildFeed.Local.Front.Comments</label>
         <div class="col-sm-10">
             <div id="disqus_thread"></div>
             <script type="text/javascript">
@@ -168,9 +162,9 @@
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
-            <a href="@Url.Action("viewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">Return to build overview</a>
+            <a href="@Url.Action("viewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">@BuildFeed.Local.Front.ReturnToOverview</a>
             &ensp;
-            <a href="@Url.Action("index")" class="btn btn-default">Return to build listing</a>
+            <a href="@Url.Action("index")" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
         </div>
     </div>
 </div>

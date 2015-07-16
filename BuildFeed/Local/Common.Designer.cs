@@ -124,6 +124,24 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to | Page {0}.
+        /// </summary>
+        public static string PageTitleSegment {
+            get {
+                return ResourceManager.GetString("PageTitleSegment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows NT.
+        /// </summary>
+        public static string ProductName {
+            get {
+                return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RSS feeds.
         /// </summary>
         public static string RssFeeds {

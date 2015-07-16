@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BuildFeed.Models.Build>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("{0}{1} | BuildFeed", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(" | Page {0}", ViewBag.PageNumber));
+    ViewBag.Title = string.Format("{0}{1} | {2}", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(BuildFeed.Local.Common.PageTitleSegment, ViewBag.PageNumber), @BuildFeed.Local.Common.SiteName);
 }
 
 @section head
@@ -21,12 +21,12 @@
 <h1>@ViewBag.ItemId</h1>
 @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
-    <h3>About</h3>
+    <h3>@BuildFeed.Local.Front.About</h3>
     @Html.Raw(ViewBag.MetaItem.PageContent)
 }
-<h3>Share</h3>
+<h3>@BuildFeed.Local.Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
-<h3>Listing</h3>
+<h3>@BuildFeed.Local.Front.Listing</h3>
 <div class="row">
     @foreach (var build in Model)
     {
@@ -35,10 +35,10 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <p>
-                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">Edit</a>
+                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
                     @if (Roles.IsUserInRole("Administrators"))
                     {
-                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">Delete</a>
+                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
                     }
                 </p>
             }
@@ -56,11 +56,11 @@
             <p>
                 @if (build.IsLeaked)
                 {
-                    <span class="label label-success label-build-status">Public</span>
+                    <span class="label label-success label-build-status">@BuildFeed.Local.Front.Public</span>
                 }
                 else
                 {
-                    <span class="label label-danger label-build-status">Private</span>
+                    <span class="label label-danger label-build-status">@BuildFeed.Local.Front.Private</span>
                 }
             </p>
         </div>

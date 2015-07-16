@@ -168,4 +168,10 @@
   <data name="TypeToSearch" xml:space="preserve">
     <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
   </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>[!!! Wïñδôωƨ NT  !!!]</value>
+  </data>
+  <data name="PageTitleSegment" xml:space="preserve">
+    <value>[!!! | Þáϱè {0}  !!!]</value>
+  </data>
 </root>

@@ -117,61 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>Add build</value>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="AddABuild" xml:space="preserve">
+    <value>Add a build</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>Contribute on</value>
+  <data name="BuildMetaDate" xml:space="preserve">
+    <value>Discover about Windows Build {0}, from {1} and compiled on {2}.</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>Developed by</value>
+  <data name="BuildMetaNoDate" xml:space="preserve">
+    <value>Discover about Windows Build {0}, from {1}. BuildFeed tracks Windows builds throughout the development process.</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
+  <data name="BuildsFrom" xml:space="preserve">
+    <value>Builds from</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Log in</value>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Search</value>
+  <data name="EditBuild" xml:space="preserve">
+    <value>Edit build</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Search BuildFeed...</value>
+  <data name="EditorActions" xml:space="preserve">
+    <value>Editor actions</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>Search query</value>
+  <data name="HomepageH1" xml:space="preserve">
+    <value>Windows NT build list</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+  <data name="LabMetaGeneric" xml:space="preserve">
+    <value>Check out all the known builds to come out of the Windows development lab {0} through BuildFeed, a collaborative Windows build list</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="Listing" xml:space="preserve">
+    <value>Listing</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Statistics</value>
+  <data name="MoreFromLab" xml:space="preserve">
+    <value>Find more builds from {0}</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Toggle navigation</value>
+  <data name="MoreFromSource" xml:space="preserve">
+    <value>Find more builds sourced from {0}</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="MoreFromYear" xml:space="preserve">
+    <value>Find more builds compiled in {0}</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>type to search...</value>
+  <data name="NoLab" xml:space="preserve">
+    <value>No lab string</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
+  <data name="Private" xml:space="preserve">
+    <value>Private</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Page {0}</value>
+  <data name="Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="QuickPaste" xml:space="preserve">
+    <value>Quick-paste</value>
+  </data>
+  <data name="ReturnToListing" xml:space="preserve">
+    <value>Return to build listing</value>
+  </data>
+  <data name="ReturnToOverview" xml:space="preserve">
+    <value>Return to build overview</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="xBuilds" xml:space="preserve">
+    <value>builds</value>
+  </data>
+  <data name="YearMetaGeneric" xml:space="preserve">
+    <value>View a list of all Windows builds compiled in {0}, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed</value>
   </data>
 </root>
