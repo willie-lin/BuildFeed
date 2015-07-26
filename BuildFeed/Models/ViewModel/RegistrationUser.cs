@@ -14,12 +14,12 @@ namespace BuildFeed.Models.ViewModel
         public string UserName { get; set; }
 
         [Required]
-        [MinLength(12)]
+        [MinLength(8)]
         [DisplayName("Enter password")]
         public string Password { get; set; }
 
         [Required]
-        [MinLength(12)]
+        [MinLength(8)]
         [DisplayName("Confirm password")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
