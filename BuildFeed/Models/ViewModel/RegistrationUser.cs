@@ -11,12 +11,12 @@ namespace BuildFeed.Models.ViewModel
         public string UserName { get; set; }
 
         [Required]
-        [MinLength(12)]
+        [MinLength(8)]
         [Display(ResourceType = typeof(Support), Name = "EnterPassword")]
         public string Password { get; set; }
 
         [Required]
-        [MinLength(12)]
+        [MinLength(8)]
         [Display(ResourceType = typeof(Support), Name = "ConfirmPassword")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
