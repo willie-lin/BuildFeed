@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 
 namespace BuildFeed
@@ -20,6 +22,15 @@ namespace BuildFeed
             }
 
             return result ?? o.ToString();
+        }
+
+        public static string ToLongDateWithoutDay(this DateTime dt)
+        {
+            string s = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
+            s = s.Replace("dddd", "").Replace("ddd", "");
+            s = s.Trim(new char[] {' ', ','});
+
+            return dt.ToString(s);
         }
     }
 }

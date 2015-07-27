@@ -26,11 +26,11 @@
                     var maxDate = group.LastBuild.Value;
                     if (maxDate.AddDays(28) > DateTime.Now)
                     {
-                        <span title="@maxDate.ToString("d MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+                        <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
                     }
                     else
                     {
-                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("d MMMM yyyy")</span><br />
+                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
                     }
                 }
                 <i class="fa fa-server fa-fw"></i>  @group.BuildCount @BuildFeed.Local.Front.xBuilds

@@ -24,8 +24,8 @@
             <p class="build-group-p">
                 @if (build.BuildTime.HasValue)
                 {
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToString("d MMMM yyyy")</span><br />
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToString("h:mm tt")</span>
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span><br />
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span>
                 }
             </p>
             <p>

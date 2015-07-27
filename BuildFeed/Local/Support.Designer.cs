@@ -22,14 +22,14 @@ namespace BuildFeed.Local {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Common {
+    public class Support {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Common() {
+        internal Support() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace BuildFeed.Local {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BuildFeed.Local.Common", typeof(Common).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BuildFeed.Local.Support", typeof(Support).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,173 +61,164 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add build.
+        ///   Looks up a localized string similar to Every account is validated by an Administrator, so be patient and check again later..
         /// </summary>
-        public static string AddBuild {
+        public static string AccountValidation {
             get {
-                return ResourceManager.GetString("AddBuild", resourceCulture);
+                return ResourceManager.GetString("AccountValidation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admin.
+        ///   Looks up a localized string similar to Change your password.
         /// </summary>
-        public static string Admin {
+        public static string ChangePassword {
             get {
-                return ResourceManager.GetString("Admin", resourceCulture);
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contribute on.
+        ///   Looks up a localized string similar to Confirm new password.
         /// </summary>
-        public static string ContributeOn {
+        public static string ConfirmNewPassword {
             get {
-                return ResourceManager.GetString("ContributeOn", resourceCulture);
+                return ResourceManager.GetString("ConfirmNewPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Developed by.
+        ///   Looks up a localized string similar to Confirm password.
         /// </summary>
-        public static string DevelopedBy {
+        public static string ConfirmPassword {
             get {
-                return ResourceManager.GetString("DevelopedBy", resourceCulture);
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Email address.
         /// </summary>
-        public static string Error {
+        public static string EmailAddress {
             get {
-                return ResourceManager.GetString("Error", resourceCulture);
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter current password.
+        /// </summary>
+        public static string EnterCurrentPassword {
+            get {
+                return ResourceManager.GetString("EnterCurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter new password.
+        /// </summary>
+        public static string EnterNewPassword {
+            get {
+                return ResourceManager.GetString("EnterNewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter password.
+        /// </summary>
+        public static string EnterPassword {
+            get {
+                return ResourceManager.GetString("EnterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highest version.
+        /// </summary>
+        public static string HighestVersion {
+            get {
+                return ResourceManager.GetString("HighestVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
-        public static string LogIn {
+        public static string Login {
             get {
-                return ResourceManager.GetString("LogIn", resourceCulture);
+                return ResourceManager.GetString("Login", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log out.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string LogOut {
+        public static string Password {
             get {
-                return ResourceManager.GetString("LogOut", resourceCulture);
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to | Page {0}.
+        ///   Looks up a localized string similar to Recently added.
         /// </summary>
-        public static string PageTitleSegment {
+        public static string RecentlyAdded {
             get {
-                return ResourceManager.GetString("PageTitleSegment", resourceCulture);
+                return ResourceManager.GetString("RecentlyAdded", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Windows NT.
+        ///   Looks up a localized string similar to Recently compiled.
         /// </summary>
-        public static string ProductName {
+        public static string RecentlyCompiled {
             get {
-                return ResourceManager.GetString("ProductName", resourceCulture);
+                return ResourceManager.GetString("RecentlyCompiled", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RSS feeds.
+        ///   Looks up a localized string similar to Recently leaked.
         /// </summary>
-        public static string RssFeeds {
+        public static string RecentlyLeaked {
             get {
-                return ResourceManager.GetString("RssFeeds", resourceCulture);
+                return ResourceManager.GetString("RecentlyLeaked", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Search {
+        public static string Register {
             get {
-                return ResourceManager.GetString("Search", resourceCulture);
+                return ResourceManager.GetString("Register", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search BuildFeed....
+        ///   Looks up a localized string similar to Remember me.
         /// </summary>
-        public static string SearchBuildFeed {
+        public static string RememberMe {
             get {
-                return ResourceManager.GetString("SearchBuildFeed", resourceCulture);
+                return ResourceManager.GetString("RememberMe", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search query.
+        ///   Looks up a localized string similar to Thank you for registering.
         /// </summary>
-        public static string SearchQuery {
+        public static string ThanksRegister {
             get {
-                return ResourceManager.GetString("SearchQuery", resourceCulture);
+                return ResourceManager.GetString("ThanksRegister", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sitemap.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
-        public static string Sitemap {
+        public static string UserName {
             get {
-                return ResourceManager.GetString("Sitemap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to BuildFeed.
-        /// </summary>
-        public static string SiteName {
-            get {
-                return ResourceManager.GetString("SiteName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistics.
-        /// </summary>
-        public static string Statistics {
-            get {
-                return ResourceManager.GetString("Statistics", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Toggle navigation.
-        /// </summary>
-        public static string ToggleNavigation {
-            get {
-                return ResourceManager.GetString("ToggleNavigation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Twitter.
-        /// </summary>
-        public static string Twitter {
-            get {
-                return ResourceManager.GetString("Twitter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to type to search....
-        /// </summary>
-        public static string TypeToSearch {
-            get {
-                return ResourceManager.GetString("TypeToSearch", resourceCulture);
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
     }

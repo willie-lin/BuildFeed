@@ -1,9 +1,9 @@
 ﻿@model BuildFeed.Models.ViewModel.SitemapData
 @{
-    ViewBag.Title = "Sitemap | BuildFeed";
+    ViewBag.Title = string.Format("{0} | {1}".BuildFeed.Local.Common.Sitemap, BuildFeed.Local.Common.SiteName);
 }
 
-<h2>Sitemap</h2>
+<h2>@BuildFeed.Local.Common.Sitemap</h2>
 
 <ul>
     <li>
@@ -64,21 +64,22 @@
                 </li>
             }
             <li>
-                <a href="#sitemap-rss" data-toggle="collapse">RSS Feeds</a>
+                <a href="#sitemap-rss" data-toggle="collapse">@BuildFeed.Local.Common.RssFeeds</a>
                 <ul id="sitemap-rss" class="collapse">
-                    <li><a href="@Url.Action("index", new { controller = "rss" })" title="Recently compiled"><i class="fa fa-sm fa-rss"></i> Recently compiled</a></li>
-                    <li><a href="@Url.Action("added", new { controller = "rss" })" title="Recently added to BuildFeed"><i class="fa fa-sm fa-rss"></i> Recently added to BuildFeed</a></li>
-                    <li><a href="@Url.Action("version", new { controller = "rss" })" title="Highest version"><i class="fa fa-sm fa-rss"></i> Highest version</a></li>
+                    <li><a href="@Url.Action("index", new { controller = "rss" })" title="@BuildFeed.Local.Support.RecentlyCompiled"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyCompiled</a></li>
+                    <li><a href="@Url.Action("leaked", new { controller = "rss" })" title="@BuildFeed.Local.Support.RecentlyLeaked"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyLeaked</a></li>
+                    <li><a href="@Url.Action("added", new { controller = "rss" })" title="@BuildFeed.Local.Support.RecentlyAdded"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyAdded</a></li>
+                    <li><a href="@Url.Action("version", new { controller = "rss" })" title="@BuildFeed.Local.Support.HighestVersion"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.HighestVersion</a></li>
                     <li>
-                        Flight levels
+                        @BuildFeed.Local.Model.FlightLevel
                         <ul>
-                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "low" })" title="Low flight level"><i class="fa fa-sm fa-rss"></i> Low flight level</a></li>
-                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "medium" })" title="Medium flight level"><i class="fa fa-sm fa-rss"></i> Medium flight level</a></li>
-                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "high" })" title="High flight level"><i class="fa fa-sm fa-rss"></i> High flight level</a></li>
+                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "low" })" title="@BuildFeed.Local.Model.FlightLow"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightLow</a></li>
+                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "medium" })" title="@BuildFeed.Local.Model.FlightMedium"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightMedium</a></li>
+                            <li><a href="@Url.Action("flight", new { controller = "rss", id = "high" })" title="@BuildFeed.Local.Model.FlightHigh"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightHigh</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#rss-labs" data-toggle="collapse">Labs</a>
+                        <a href="#rss-labs" data-toggle="collapse">@BuildFeed.Local.Model.Lab</a>
                         <ul id="rss-labs" class="collapse">
                             @foreach (string lab in Model.Labs)
                             {

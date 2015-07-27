@@ -1,12 +1,12 @@
 ﻿@model BuildFeed.Models.ViewModel.RegistrationUser
 
 @{
-    ViewBag.Title = "Register for an account | BuildFeed";
+    ViewBag.Title = string.Format("{0} | {1}", BuildFeed.Local.Support.Register, BuildFeed.Local.Common.SiteName);
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
 }
 
-<h2>Register for an account</h2>
+<h2>@BuildFeed.Local.Support.Register</h2>
 
 @using (Html.BeginForm())
 {
@@ -70,7 +70,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Register" class="btn btn-primary" />
+                <input type="submit" value="@BuildFeed.Local.Support.Register" class="btn btn-primary" />
             </div>
         </div>
     </div>

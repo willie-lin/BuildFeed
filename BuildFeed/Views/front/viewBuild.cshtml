@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="@Model.FullBuildString | @BuildFeed.Local.Common.SiteName">
     <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new {id = Model.Id})">
     @{
-        string metaDesc = Model.BuildTime.HasValue ? string.Format(BuildFeed.Local.Front.BuildMetaDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToString("d MMMM yyyy")) : string.Format(BuildFeed.Local.Front.BuildMetaNoDate, Model.Number, Model.Lab);
+        string metaDesc = Model.BuildTime.HasValue ? string.Format(BuildFeed.Local.Front.BuildMetaDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToLongDateWithoutDay()) : string.Format(BuildFeed.Local.Front.BuildMetaNoDate, Model.Number, Model.Lab);
     }
     <meta name="description" content="@metaDesc" />
     <meta property="og:description" content="@metaDesc" />
