@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mongo Authentication")]
+[assembly: AssemblyTitle("RedisMongoMigration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BuildFeed")]
-[assembly: AssemblyCopyright("Copyright © 2015, Thomas Hounsell")]
+[assembly: AssemblyProduct("RedisMongoMigration")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7c67bfb9-1b3b-4676-a58d-10573da82cfe")]
+[assembly: Guid("cd3c08cc-45bf-484b-a878-69614a4ea098")]
 
 // Version information for an assembly consists of the following four values:
 //
