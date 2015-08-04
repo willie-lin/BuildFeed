@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="5caadb66-1fc2-4492-b766-36354687120d" Version="0.1.0.0" Publisher="CN=Thomas" />
+  <mp:PhoneIdentity PhoneProductId="5caadb66-1fc2-4492-b766-36354687120d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>BuildFeedAppWestminster</DisplayName>
+    <PublisherDisplayName>Thomas Hounsell</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="https://buildfeed.net/">
+      <uap:VisualElements DisplayName="BuildFeed" Description="BuildFeed is a service which tracks known builds of Microsoft Windows." BackgroundColor="transparent" Square150x150Logo="images\tiles\square\150px.png" Square44x44Logo="images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" ShortName="BuildFeed" Square71x71Logo="images\tiles\square\71px.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="images\tiles\wide\620px.png" BackgroundColor="#272b30" />
+      </uap:VisualElements>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="https://buildfeed.net/" Type="include" WindowsRuntimeAccess="none" />
+      </uap:ApplicationContentUriRules>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

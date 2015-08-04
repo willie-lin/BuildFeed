@@ -115,7 +115,7 @@ namespace BuildFeed.Controllers
                     gr.SmoothingMode = SmoothingMode.HighQuality;
                     gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-                    gr.FillRectangle(new SolidBrush(Color.FromArgb(0x30, 0x30, 0x30)), 0, 0, 560, 300);
+                    gr.FillRectangle(new SolidBrush(Color.FromArgb(0x27, 0x2b, 0x30)), 0, 0, 560, 300);
                     gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int) FontStyle.Bold, 16, new Point(20, 20), StringFormat.GenericTypographic);
                     gp.AddString($"Windows NT {b.MajorVersion}.{b.MinorVersion} build", new FontFamily("Segoe UI"), 0, 24, new Point(20, 40), StringFormat.GenericTypographic);
                     gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 180, new Point(12, 20), StringFormat.GenericTypographic);

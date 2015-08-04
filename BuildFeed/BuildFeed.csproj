@@ -394,12 +394,6 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RedisAuth\RedisAuth.csproj">
-      <Project>{c6a16cf0-41da-4b90-918a-cb84a8c3f1e2}</Project>
-      <Name>RedisAuth</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Local\Common.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
@@ -430,6 +424,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Support.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MongoAuth\MongoAuth.csproj">
+      <Project>{7c67bfb9-1b3b-4676-a58d-10573da82cfe}</Project>
+      <Name>MongoAuth</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
