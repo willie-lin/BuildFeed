@@ -16,6 +16,9 @@ smtp.config
 # Publish Profiles
 [Pp]roperties/[Pp]ublish[Pp]rofiles/
 
+# VS Configuration
+.vs/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
