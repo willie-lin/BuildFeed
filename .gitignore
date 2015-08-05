@@ -7,6 +7,9 @@
 *.sln.docstates
 *.ide/
 
+# Store Association
+Package.StoreAssociation.xml
+
 # Application Insights config
 ApplicationInsights.config
 
