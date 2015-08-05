@@ -63,6 +63,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Redis\Build.cs" />
+    <Compile Include="Redis\MetaItem.cs" />
+    <Compile Include="Redis\RedisMember.cs" />
+    <Compile Include="Redis\RedisRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

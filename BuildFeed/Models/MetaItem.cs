@@ -31,7 +31,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<MetaItem> Select()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 return client.GetAll();
@@ -41,7 +41,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, true)]
         public static IEnumerable<MetaItem> SelectByType(MetaType type)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 return from t in client.GetAll()
@@ -53,7 +53,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static MetaItem SelectById(MetaItemKey id)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 return client.GetById(id);
@@ -64,7 +64,7 @@ namespace BuildFeed.Models
         public static IEnumerable<string> SelectUnusedLabs()
         {
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 var labs = Build.SelectBuildLabs();
@@ -83,7 +83,7 @@ namespace BuildFeed.Models
         public static IEnumerable<string> SelectUnusedVersions()
         {
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 var versions = Build.SelectBuildVersions();
@@ -102,7 +102,7 @@ namespace BuildFeed.Models
         public static IEnumerable<string> SelectUnusedYears()
         {
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 var years = Build.SelectBuildYears();
@@ -120,7 +120,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public static void Insert(MetaItem item)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 client.Store(item);
@@ -130,7 +130,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Update, true)]
         public static void Update(MetaItem item)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 client.Store(item);
@@ -140,7 +140,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
         public static void InsertAll(IEnumerable<MetaItem> items)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 client.StoreAll(items);
@@ -150,7 +150,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
         public static void DeleteById(long id)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<MetaItem>();
                 client.DeleteById(id);

@@ -4,9 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using NServiceKit.DataAnnotations;
-using NServiceKit.DesignPatterns.Model;
-using NServiceKit.Redis;
 
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 using System.Web.Mvc;
@@ -15,7 +12,7 @@ using BuildFeed.Local;
 namespace BuildFeed.Models
 {
     [DataObject]
-    public class Build : IHasId<long>
+    public class Build
     {
         [Key]
         [AutoIncrement]
@@ -116,7 +113,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, true)]
         public static IEnumerable<Build> Select()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 return client.GetAll();
@@ -126,7 +123,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static Build SelectById(long id)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 return client.GetById(id);
@@ -136,7 +133,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<Build> SelectInBuildOrder()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 return client.GetAll()
@@ -151,7 +148,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<Build> SelectInVersionOrder()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 return client.GetAll()
@@ -166,7 +163,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<BuildVersion> SelectBuildVersions()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 var results = client.GetAll()
@@ -181,7 +178,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<int> SelectBuildYears()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 var results = client.GetAll().Where(b => b.BuildTime.HasValue)
@@ -195,7 +192,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<string> SelectBuildLabs()
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 var results = client.GetAll()
@@ -210,7 +207,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IEnumerable<string> SelectBuildLabs(byte major, byte minor)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 var results = client.GetAll()
@@ -227,7 +224,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public static void Insert(Build item)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 item.Id = client.GetNextSequence();
@@ -242,7 +239,7 @@ namespace BuildFeed.Models
             item.Added = old.Added;
             item.Modified = DateTime.Now;
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 client.Store(item);
@@ -252,7 +249,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
         public static void InsertAll(IEnumerable<Build> items)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 client.StoreAll(items);
@@ -262,7 +259,7 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
         public static void DeleteById(long id)
         {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
+            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
                 client.DeleteById(id);
