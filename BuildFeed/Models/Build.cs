@@ -8,15 +8,16 @@ using System.Text;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 using System.Web.Mvc;
 using BuildFeed.Local;
+using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace BuildFeed.Models
 {
     [DataObject]
-    public class Build
+    public class BuildModel
     {
-        [Key]
-        [AutoIncrement]
-        [Index]
+        [Key, BsonId]
         public long Id { get; set; }
 
         [@Required]
@@ -109,121 +110,115 @@ namespace BuildFeed.Models
                 return sb.ToString();
             }
         }
+    }
+
+    public class Build
+    {
+        private const string _buildCollectionName = "builds";
+
+        private MongoClient _dbClient;
+        private IMongoCollection<BuildModel> _buildCollection;
+
+        public Build()
+        {
+            _dbClient = new MongoClient(new MongoClientSettings()
+            {
+                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+            });
+
+            _buildCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<BuildModel>(_buildCollectionName);
+        }
 
         [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public static IEnumerable<Build> Select()
+        public IEnumerable<BuildModel> Select()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                return client.GetAll();
-            }
+            var task = _buildCollection.Find(new BsonDocument()).ToListAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static Build SelectById(long id)
+        public BuildModel SelectById(long id)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                return client.GetById(id);
-            }
+            var task = _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<Build> SelectInBuildOrder()
+        public IEnumerable<BuildModel> SelectInBuildOrder()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                return client.GetAll()
-                    .OrderByDescending(b => b.BuildTime)
-                    .ThenByDescending(b => b.MajorVersion)
-                    .ThenByDescending(b => b.MinorVersion)
-                    .ThenByDescending(b => b.Number)
-                    .ThenByDescending(b => b.Revision);
-            }
+            var task = _buildCollection.Find(new BsonDocument())
+                .SortByDescending(b => b.BuildTime)
+                .ThenByDescending(b => b.MajorVersion)
+                .ThenByDescending(b => b.MinorVersion)
+                .ThenByDescending(b => b.Number)
+                .ThenByDescending(b => b.Revision)
+                .ToListAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<Build> SelectInVersionOrder()
+        public IEnumerable<BuildModel> SelectInVersionOrder()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                return client.GetAll()
-                    .OrderByDescending(b => b.MajorVersion)
-                    .ThenByDescending(b => b.MinorVersion)
-                    .ThenByDescending(b => b.Number)
-                    .ThenByDescending(b => b.Revision)
-                    .ThenByDescending(b => b.BuildTime);
-            }
+            var task = _buildCollection.Find(new BsonDocument())
+                .SortByDescending(b => b.MajorVersion)
+                .ThenByDescending(b => b.MinorVersion)
+                .ThenByDescending(b => b.Number)
+                .ThenByDescending(b => b.Revision)
+                .ThenByDescending(b => b.BuildTime)
+                .ToListAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<BuildVersion> SelectBuildVersions()
+        public IEnumerable<BuildVersion> SelectBuildVersions()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                var results = client.GetAll()
-                    .GroupBy(b => new BuildVersion() { Major = b.MajorVersion, Minor = b.MinorVersion })
-                    .Select(b => new BuildVersion() { Major = b.First().MajorVersion, Minor = b.First().MinorVersion })
-                    .OrderByDescending(y => y.Major)
-                    .ThenByDescending(y => y.Minor);
-                return results;
-            }
+            var task = _buildCollection.DistinctAsync(b => new BuildVersion() { Major = b.MajorVersion, Minor = b.MinorVersion }, b => true);
+            task.Wait();
+            var outTask = task.Result.ToListAsync();
+            outTask.Wait();
+            return outTask.Result
+                .OrderByDescending(y => y.Major)
+                .ThenByDescending(y => y.Minor);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<int> SelectBuildYears()
+        public IEnumerable<int> SelectBuildYears()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                var results = client.GetAll().Where(b => b.BuildTime.HasValue)
-                    .GroupBy(b => b.BuildTime.Value.Year)
-                    .Select(b => b.Key)
-                    .OrderByDescending(y => y);
-                return results;
-            }
+            var task = _buildCollection.DistinctAsync(b => b.BuildTime.Value.Year, b => b.BuildTime.HasValue);
+            task.Wait();
+            var outTask = task.Result.ToListAsync();
+            outTask.Wait();
+            return outTask.Result.OrderBy(b => b);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectBuildLabs()
+        public IEnumerable<string> SelectBuildLabs()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                var results = client.GetAll()
-                    .Where(b => !string.IsNullOrWhiteSpace(b.Lab))
-                    .GroupBy(b => b.Lab.ToLower())
-                    .Select(b => b.Key)
-                    .OrderBy(s => s);
-                return results;
-            }
+            var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab));
+            task.Wait();
+            var outTask = task.Result.ToListAsync();
+            outTask.Wait();
+            return outTask.Result.OrderBy(b => b);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectBuildLabs(byte major, byte minor)
+        public IEnumerable<string> SelectBuildLabs(byte major, byte minor)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                var results = client.GetAll()
-                    .Where(b => !string.IsNullOrWhiteSpace(b.Lab))
-                    .Where(b => b.MajorVersion == major)
-                    .Where(b => b.MinorVersion == minor)
-                    .GroupBy(b => b.Lab.ToLower())
-                    .Select(b => b.Key)
-                    .OrderBy(s => s);
-                return results;
-            }
+            var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab) && b.MajorVersion == major && b.MinorVersion == minor);
+            task.Wait();
+            var outTask = task.Result.ToListAsync();
+            outTask.Wait();
+            return outTask.Result.OrderBy(b => b);
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public static void Insert(Build item)
+        public void Insert(BuildModel item)
         {
+            item.Id =
             using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
             {
                 var client = rClient.As<Build>();
