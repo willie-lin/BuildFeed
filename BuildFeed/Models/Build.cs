@@ -78,6 +78,7 @@ namespace BuildFeed.Models
                     case TypeOfSource.PublicRelease:
                     case TypeOfSource.InternalLeak:
                     case TypeOfSource.UpdateGDR:
+                    case TypeOfSource.UpdateLDR:
                         return true;
                     default:
                         return false;
