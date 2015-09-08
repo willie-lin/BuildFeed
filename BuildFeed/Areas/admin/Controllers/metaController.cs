@@ -11,22 +11,22 @@ namespace BuildFeed.Areas.admin.Controllers
         // GET: admin/meta
         public ActionResult index()
         {
-            var currentItems = from i in MetaItem.Select()
+            var currentItems = from i in new MetaItem().Select()
                                group i by i.Id.Type
                                into b
                                select b;
 
-            var pendingLabs = MetaItem.SelectUnusedLabs();
+            var pendingLabs = new MetaItem().SelectUnusedLabs();
 
             return View(new MetaListing
             {
-                CurrentItems = from i in MetaItem.Select()
+                CurrentItems = from i in new MetaItem().Select()
                                group i by i.Id.Type
                                            into b
                                orderby b.Key.ToString()
                                select b,
-                NewItems = from i in (from l in MetaItem.SelectUnusedLabs()
-                                      select new MetaItem
+                NewItems = from i in (from l in new MetaItem().SelectUnusedLabs()
+                                      select new MetaItemModel
                                       {
                                           Id = new MetaItemKey
                                           {
@@ -34,8 +34,8 @@ namespace BuildFeed.Areas.admin.Controllers
                                               Value = l
                                           }
                                       })
-                                      .Concat(from v in MetaItem.SelectUnusedVersions()
-                                              select new MetaItem
+                                      .Concat(from v in new MetaItem().SelectUnusedVersions()
+                                              select new MetaItemModel
                                               {
                                                   Id = new MetaItemKey
                                                   {
@@ -43,8 +43,8 @@ namespace BuildFeed.Areas.admin.Controllers
                                                       Value = v
                                                   }
                                               })
-                                      .Concat(from y in MetaItem.SelectUnusedYears()
-                                              select new MetaItem
+                                      .Concat(from y in new MetaItem().SelectUnusedYears()
+                                              select new MetaItemModel
                                               {
                                                   Id = new MetaItemKey
                                                   {
@@ -61,7 +61,7 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult create(MetaType type, string value)
         {
-            return View(new MetaItem
+            return View(new MetaItemModel
             {
                 Id = new MetaItemKey
                 {
@@ -72,11 +72,11 @@ namespace BuildFeed.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult create(MetaItem meta)
+        public ActionResult create(MetaItemModel meta)
         {
             if (ModelState.IsValid)
             {
-                MetaItem.Insert(meta);
+                new MetaItem().Insert(meta);
                 return RedirectToAction("index");
             }
 
@@ -85,7 +85,7 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult edit(MetaType type, string value)
         {
-            return View("create", MetaItem.SelectById(new MetaItemKey
+            return View("create", new MetaItem().SelectById(new MetaItemKey
             {
                 Type = type,
                 Value = value
@@ -93,11 +93,11 @@ namespace BuildFeed.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult edit(MetaItem meta)
+        public ActionResult edit(MetaItemModel meta)
         {
             if (ModelState.IsValid)
             {
-                MetaItem.Update(meta);
+                new MetaItem().Update(meta);
                 return RedirectToAction("index");
             }
 

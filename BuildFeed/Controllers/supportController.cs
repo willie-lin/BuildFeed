@@ -128,7 +128,7 @@ namespace BuildFeed.Controllers
         [Route("rss")]
         public ActionResult rss()
         {
-            ViewBag.Labs = Build.SelectBuildLabs();
+            ViewBag.Labs = new Build().SelectBuildLabs();
             return View();
         }
 
@@ -138,7 +138,7 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult sitemap()
         {
-            var builds = Build.SelectInVersionOrder().ToArray();
+            var builds = new Build().SelectInVersionOrder();
             Dictionary<string, SitemapPagedAction[]> actions = new Dictionary<string, SitemapPagedAction[]>
             {
                 {
@@ -152,7 +152,7 @@ namespace BuildFeed.Controllers
                                                                                 action = "index",
                                                                                 page = 1
                                                                             }),
-                                    Pages = (builds.Length + (frontController.PAGE_SIZE - 1)) / frontController.PAGE_SIZE
+                                    Pages = (builds.Count() + (frontController.PAGE_SIZE - 1)) / frontController.PAGE_SIZE
                                 }
                             }
                 },
@@ -245,7 +245,7 @@ namespace BuildFeed.Controllers
 
             SitemapData model = new SitemapData()
             {
-                Builds = (from b in Build.Select()
+                Builds = (from b in new Build().Select()
                           group b by new BuildGroup()
                           {
                               Major = b.MajorVersion,
@@ -292,7 +292,7 @@ namespace BuildFeed.Controllers
             home.Add(new XElement(xn + "changefreq", "daily"));
             xlist.Add(home);
 
-            foreach (var b in Build.Select())
+            foreach (var b in new Build().Select())
             {
                 XElement url = new XElement(xn + "url");
                 url.Add(new XElement(xn + "loc", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Action("viewBuild", "front", new { id = b.Id })));
@@ -321,7 +321,7 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult stats()
         {
-            var builds = Build.Select().ToArray();
+            var builds = new Build().Select().ToArray();
 
             List<MonthCount> additions = new List<MonthCount>();
             var rawAdditions = (from b in builds

@@ -27,7 +27,7 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult indexPage(int page)
         {
-            var buildGroups = (from b in Build.Select()
+            var buildGroups = (from b in new Build().Select()
                                group b by new BuildGroup
                                           {
                                               Major = b.MajorVersion,
@@ -64,7 +64,7 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
         {
-            var builds = (from b in Build.Select()
+            var builds = (from b in new Build().Select()
                           group b by new BuildGroup
                                      {
                                          Major = b.MajorVersion,
@@ -88,9 +88,9 @@ namespace BuildFeed.Controllers
 #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-        public ActionResult viewBuild(long id)
+        public ActionResult viewBuild(Guid id)
         {
-            Build b = Build.SelectById(id);
+            BuildModel b = new Build().SelectById(id);
             return View(b);
         }
 
@@ -99,9 +99,9 @@ namespace BuildFeed.Controllers
         [OutputCache(Duration = 600, VaryByParam = "none")]
         [CustomContentType(ContentType = "image/png", Order = 2)]
 #endif
-        public ActionResult twitterCard(long id)
+        public ActionResult twitterCard(Guid id)
         {
-            Build b = Build.SelectById(id);
+            BuildModel b = new Build().SelectById(id);
 
             using (Bitmap bm = new Bitmap(560, 300))
             {
@@ -142,14 +142,14 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult viewLabPage(string lab, int page)
         {
-            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey
+            ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
                                                    {
                                                        Type = MetaType.Lab,
                                                        Value = lab
                                                    });
             ViewBag.ItemId = lab;
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower())).ToArray();
+            var builds = new Build().SelectInBuildOrder().Where(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower())).ToArray();
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
@@ -174,14 +174,14 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult viewSourcePage(TypeOfSource source, int page)
         {
-            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey
+            ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
                                                    {
                                                        Type = MetaType.Source,
                                                        Value = source.ToString()
                                                    });
             ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.SourceType == source).ToArray();
+            var builds = new Build().SelectInBuildOrder().Where(b => b.SourceType == source).ToArray();
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
@@ -206,14 +206,14 @@ namespace BuildFeed.Controllers
 #endif
         public ActionResult viewYearPage(int year, int page)
         {
-            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey
+            ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
                                                    {
                                                        Type = MetaType.Year,
                                                        Value = year.ToString()
                                                    });
             ViewBag.ItemId = year.ToString();
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year).ToArray();
+            var builds = new Build().SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year).ToArray();
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
@@ -239,14 +239,14 @@ namespace BuildFeed.Controllers
         public ActionResult viewVersionPage(int major, int minor, int page)
         {
             string valueString = $"{major}.{minor}";
-            ViewBag.MetaItem = MetaItem.SelectById(new MetaItemKey
+            ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
                                                    {
                                                        Type = MetaType.Version,
                                                        Value = valueString
                                                    });
             ViewBag.ItemId = valueString;
 
-            var builds = Build.SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor).ToArray();
+            var builds = new Build().SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor).ToArray();
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
@@ -263,7 +263,7 @@ namespace BuildFeed.Controllers
         public ActionResult addBuild() { return View("editBuild"); }
 
         [Route("add/"), Authorize, HttpPost]
-        public ActionResult addBuild(Build build)
+        public ActionResult addBuild(BuildModel build)
         {
             if (ModelState.IsValid)
             {
@@ -271,7 +271,7 @@ namespace BuildFeed.Controllers
                 {
                     build.Added = DateTime.Now;
                     build.Modified = DateTime.Now;
-                    Build.Insert(build);
+                    new Build().Insert(build);
                 }
                 catch
                 {
@@ -286,20 +286,20 @@ namespace BuildFeed.Controllers
         }
 
         [Route("edit/{id}/"), Authorize]
-        public ActionResult editBuild(long id)
+        public ActionResult editBuild(Guid id)
         {
-            Build b = Build.SelectById(id);
+            BuildModel b = new Build().SelectById(id);
             return View(b);
         }
 
         [Route("edit/{id}/"), Authorize, HttpPost]
-        public ActionResult editBuild(long id, Build build)
+        public ActionResult editBuild(long id, BuildModel build)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    Build.Update(build);
+                    new Build().Update(build);
                 }
                 catch
                 {
@@ -312,9 +312,9 @@ namespace BuildFeed.Controllers
         }
 
         [Route("delete/{id}/"), Authorize(Roles = "Administrators")]
-        public ActionResult deleteBuild(long id)
+        public ActionResult deleteBuild(Guid id)
         {
-            Build.DeleteById(id);
+            new Build().DeleteById(id);
             return RedirectToAction("index");
         }
     }

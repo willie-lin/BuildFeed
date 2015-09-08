@@ -18,7 +18,9 @@ namespace BuildFeed.Models
     public class BuildModel
     {
         [Key, BsonId]
-        public long Id { get; set; }
+        public Guid Id { get; set; }
+
+        public long? LegacyId { get; set; }
 
         [@Required]
         [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
@@ -139,9 +141,17 @@ namespace BuildFeed.Models
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public BuildModel SelectById(long id)
+        public BuildModel SelectById(Guid id)
         {
             var task = _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
+            task.Wait();
+            return task.Result;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public BuildModel SelectByLegacyId(long id)
+        {
+            var task = _buildCollection.Find(f => f.LegacyId == id).SingleOrDefaultAsync();
             task.Wait();
             return task.Result;
         }
@@ -219,47 +229,34 @@ namespace BuildFeed.Models
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public void Insert(BuildModel item)
         {
-            item.Id =
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                item.Id = client.GetNextSequence();
-                client.Store(item);
-            }
+            item.Id = Guid.NewGuid();
+            var task = _buildCollection.InsertOneAsync(item);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public static void Update(Build item)
+        public void Update(BuildModel item)
         {
-            Build old = SelectById(item.Id);
+            BuildModel old = SelectById(item.Id);
             item.Added = old.Added;
             item.Modified = DateTime.Now;
 
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                client.Store(item);
-            }
+            var task = _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public static void InsertAll(IEnumerable<Build> items)
+        public void InsertAll(IEnumerable<BuildModel> items)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                client.StoreAll(items);
-            }
+            var task = _buildCollection.InsertManyAsync(items);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
-        public static void DeleteById(long id)
+        public void DeleteById(Guid id)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<Build>();
-                client.DeleteById(id);
-            }
+            var task = _buildCollection.DeleteOneAsync(f => f.Id == id);
+            task.Wait();
         }
     }
 

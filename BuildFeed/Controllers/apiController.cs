@@ -10,16 +10,17 @@ namespace BuildFeed.Controllers
 {
     public class apiController : ApiController
     {
-        public IEnumerable<Build> GetBuilds()
+        public IEnumerable<BuildModel> GetBuilds()
         {
-            return Build.SelectInBuildOrder();
+            return new Build().SelectInBuildOrder();
         }
 
         public IEnumerable<string> GetWin10Labs()
         {
+            Build b = new Build();
             List<string> labs = new List<string>();
-            labs.AddRange(Build.SelectBuildLabs(6, 4));
-            labs.AddRange(Build.SelectBuildLabs(10, 0));
+            labs.AddRange(b.SelectBuildLabs(6, 4));
+            labs.AddRange(b.SelectBuildLabs(10, 0));
 
             return labs.GroupBy(l => l).Select(l => l.Key).Where(l => l.All(c => c != '(')).ToArray();
         }
@@ -33,7 +34,7 @@ namespace BuildFeed.Controllers
             }
             if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
             {
-                Build.InsertAll(apiModel.NewBuilds.Select(nb => new Build()
+                new Build().InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel()
                 {
                     MajorVersion = nb.MajorVersion,
                     MinorVersion = nb.MinorVersion,
@@ -74,7 +75,7 @@ namespace BuildFeed.Controllers
             results.AddRange(sourceResults);
 
 
-            var versionResults = from v in Build.SelectBuildVersions()
+            var versionResults = from v in new Build().SelectBuildVersions()
                                  where $"{v.Major}.{v.Minor}".StartsWith(query)
                                  orderby v.Major descending, v.Minor descending
                                  select new SearchResult()
@@ -88,7 +89,7 @@ namespace BuildFeed.Controllers
             results.AddRange(versionResults);
 
 
-            var yearResults = from y in Build.SelectBuildYears()
+            var yearResults = from y in new Build().SelectBuildYears()
                               where y.ToString().Contains(query)
                               orderby y descending
                               select new SearchResult()
@@ -102,7 +103,7 @@ namespace BuildFeed.Controllers
             results.AddRange(yearResults);
 
 
-            var labResults = from l in Build.SelectBuildLabs()
+            var labResults = from l in new Build().SelectBuildLabs()
                              where l.ToLower().Contains(query.ToLower())
                              orderby l.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending
                              select new SearchResult()
@@ -116,7 +117,7 @@ namespace BuildFeed.Controllers
             results.AddRange(labResults);
 
 
-            var buildResults = from b in Build.Select()
+            var buildResults = from b in new Build().Select()
                                where b.FullBuildString.ToLower().Contains(query.ToLower())
                                orderby b.FullBuildString.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending,
                                        b.BuildTime descending

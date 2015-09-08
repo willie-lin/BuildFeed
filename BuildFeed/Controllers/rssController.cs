@@ -15,7 +15,7 @@ namespace BuildFeed.Controllers
         [Route("rss/compiled")]
         public async Task<ActionResult> index()
         {
-            var builds = Build.SelectInBuildOrder().Take(20);
+            var builds = new Build().SelectInBuildOrder().Take(20);
 
             RssDocument rdoc = new RssDocument()
             {
@@ -48,7 +48,7 @@ namespace BuildFeed.Controllers
         [Route("rss/added")]
         public async Task<ActionResult> added()
         {
-            var builds = Build.Select().OrderByDescending(b => b.Added).Take(20);
+            var builds = new Build().Select().OrderByDescending(b => b.Added).Take(20);
 
             RssDocument rdoc = new RssDocument()
             {
@@ -83,7 +83,7 @@ namespace BuildFeed.Controllers
         [Route("rss/leaked")]
         public async Task<ActionResult> leaked()
         {
-            var builds = Build.Select().Where(b => b.LeakDate.HasValue).OrderByDescending(b => b.LeakDate.Value).Take(20);
+            var builds = new Build().Select().Where(b => b.LeakDate.HasValue).OrderByDescending(b => b.LeakDate.Value).Take(20);
 
             RssDocument rdoc = new RssDocument()
             {
@@ -118,7 +118,7 @@ namespace BuildFeed.Controllers
         [Route("rss/version")]
         public async Task<ActionResult> version()
         {
-            var builds = Build.SelectInVersionOrder()
+            var builds = new Build().SelectInVersionOrder()
                 .Take(20);
 
 
@@ -154,7 +154,7 @@ namespace BuildFeed.Controllers
         [Route("rss/flight/{id}")]
         public async Task<ActionResult> flight(LevelOfFlight id)
         {
-            var builds = Build.SelectInBuildOrder()
+            var builds = new Build().SelectInBuildOrder()
                 .Where(b => b.FlightLevel == id)
                 .Take(20);
 
@@ -191,7 +191,7 @@ namespace BuildFeed.Controllers
         [Route("rss/lab/{lab}")]
         public async Task<ActionResult> lab(string lab)
         {
-            var builds = Build.SelectInBuildOrder()
+            var builds = new Build().SelectInBuildOrder()
                 .Where(b => b.Lab == lab)
                 .Take(20);
 

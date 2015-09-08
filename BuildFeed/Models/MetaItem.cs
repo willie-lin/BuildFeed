@@ -1,6 +1,6 @@
-﻿using NServiceKit.DataAnnotations;
-using NServiceKit.DesignPatterns.Model;
-using NServiceKit.Redis;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +12,10 @@ using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 namespace BuildFeed.Models
 {
     [DataObject]
-    public class MetaItem : IHasId<MetaItemKey>
+    public class MetaItemModel
     {
         [Key]
-        [Index]
+        [BsonId]
         [@Required]
         public MetaItemKey Id { get; set; }
 
@@ -25,136 +25,114 @@ namespace BuildFeed.Models
 
         [DisplayName("Meta Description")]
         public string MetaDescription { get; set; }
+    }
 
+    public class MetaItem
+    {
+        private const string _metaCollectionName = "metaitem";
 
+        private MongoClient _dbClient;
+        private IMongoCollection<MetaItemModel> _metaCollection;
+
+        public MetaItem()
+        {
+            _dbClient = new MongoClient(new MongoClientSettings()
+            {
+                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+            });
+
+            _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
+        }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<MetaItem> Select()
+        public IEnumerable<MetaItemModel> Select()
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return client.GetAll();
-            }
+            var task = _metaCollection.Find(new BsonDocument()).ToListAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public static IEnumerable<MetaItem> SelectByType(MetaType type)
+        public IEnumerable<MetaItemModel> SelectByType(MetaType type)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return from t in client.GetAll()
-                       where t.Id.Type == type
-                       select t;
-            }
+            var task = _metaCollection.Find(f => f.Id.Type == type).ToListAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static MetaItem SelectById(MetaItemKey id)
+        public MetaItemModel SelectById(MetaItemKey id)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return client.GetById(id);
-            }
+            var task = _metaCollection.Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value).SingleOrDefaultAsync();
+            task.Wait();
+            return task.Result;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedLabs()
+        public IEnumerable<string> SelectUnusedLabs()
         {
+            var labs = new Build().SelectBuildLabs();
 
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var labs = Build.SelectBuildLabs();
+            var usedLabs = _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
+            usedLabs.Wait();
 
-                var usedLabs = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Lab
-                               select u;
-
-                return from l in labs
-                       where usedLabs.All(ul => ul.Id.Value != l)
-                       select l;
-            }
+            return from l in labs
+                   where usedLabs.Result.All(ul => ul.Id.Value != l)
+                   select l;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedVersions()
+        public IEnumerable<string> SelectUnusedVersions()
         {
+            var versions = new Build().SelectBuildVersions();
 
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var versions = Build.SelectBuildVersions();
+            var usedVersions = _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
+            usedVersions.Wait();
 
-                var usedLabs = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Version
-                               select u;
-
-                return from v in versions
-                       where usedLabs.All(ul => ul.Id.Value != v.ToString())
-                       select v.ToString();
-            }
+            return from v in versions
+                   where usedVersions.Result.All(ul => ul.Id.Value != v.ToString())
+                   select v.ToString();
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedYears()
+        public IEnumerable<string> SelectUnusedYears()
         {
+            var years = new Build().SelectBuildYears();
 
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var years = Build.SelectBuildYears();
+            var usedYears = _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
+            usedYears.Wait();
 
-                var usedYears = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Year
-                               select u;
-
-                return from y in years
-                       where usedYears.All(ul => ul.Id.Value != y.ToString())
-                       select y.ToString();
-            }
+            return from y in years
+                   where usedYears.Result.All(ul => ul.Id.Value != y.ToString())
+                   select y.ToString();
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public static void Insert(MetaItem item)
+        public void Insert(MetaItemModel item)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.Store(item);
-            }
+            var task = _metaCollection.InsertOneAsync(item);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public static void Update(MetaItem item)
+        public void Update(MetaItemModel item)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.Store(item);
-            }
+            var task = _metaCollection.ReplaceOneAsync(f => f.Id.Type == item.Id.Type && f.Id.Value == item.Id.Value, item);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public static void InsertAll(IEnumerable<MetaItem> items)
+        public void InsertAll(IEnumerable<MetaItemModel> items)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.StoreAll(items);
-            }
+            var task = _metaCollection.InsertManyAsync(items);
+            task.Wait();
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
-        public static void DeleteById(long id)
+        public void DeleteById(MetaItemKey id)
         {
-            using (RedisClient rClient = new RedisClient(MongoConfig.Host, MongoConfig.Port, db: MongoConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.DeleteById(id);
-            }
+            var task = _metaCollection.DeleteOneAsync(f => f.Id.Type == id.Type && f.Id.Value == id.Value);
+            task.Wait();
         }
     }
 
