@@ -1,4 +1,4 @@
-﻿@model BuildFeed.Models.Build
+﻿@model BuildFeed.Models.BuildModel
 @{
     ViewBag.Title = (string)(ViewContext.RouteData.Values["action"]) == "addBuild" ? string.Format("{0} | {1}", BuildFeed.Local.Front.AddABuild, BuildFeed.Local.Common.SiteName) : string.Format("{0} {1} | {2}", BuildFeed.Local.Front.EditBuild, Model.FullBuildString, BuildFeed.Local.Common.SiteName);
     Html.EnableClientValidation();

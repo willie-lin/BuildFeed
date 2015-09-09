@@ -1,333 +1,414 @@
-﻿using System;
+﻿using BuildFeed.Local;
+using BuildFeed.Models.ViewModel.Front;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-
-using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 using System.Web.Mvc;
-using BuildFeed.Local;
-using MongoDB.Driver;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
 {
-    [DataObject]
-    public class BuildModel
-    {
-        [Key, BsonId]
-        public Guid Id { get; set; }
+   [DataObject]
+   public class BuildModel
+   {
+      [Key, BsonId]
+      public Guid Id { get; set; }
 
-        public long? LegacyId { get; set; }
+      public long? LegacyId { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
-        public byte MajorVersion { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
+      public byte MajorVersion { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "MinorVersion")]
-        public byte MinorVersion { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "MinorVersion")]
+      public byte MinorVersion { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "Number")]
-        public ushort Number { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "Number")]
+      public ushort Number { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "Revision")]
-        [DisplayFormat(ConvertEmptyStringToNull = true)]
-        public ushort? Revision { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "Revision")]
+      [DisplayFormat(ConvertEmptyStringToNull = true)]
+      public ushort? Revision { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "Lab")]
-        public string Lab { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "Lab")]
+      public string Lab { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "BuildTime")]
-        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
-        public DateTime? BuildTime { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "BuildTime")]
+      [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
+      public DateTime? BuildTime { get; set; }
 
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "Added")]
-        public DateTime Added { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "Added")]
+      public DateTime Added { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "Modified")]
-        public DateTime Modified { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "Modified")]
+      public DateTime Modified { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(Model), Name = "SourceType")]
-        [EnumDataType(typeof(TypeOfSource))]
-        public TypeOfSource SourceType { get; set; }
+      [@Required]
+      [Display(ResourceType = typeof(Model), Name = "SourceType")]
+      [EnumDataType(typeof(TypeOfSource))]
+      public TypeOfSource SourceType { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "SourceDetails")]
-        [AllowHtml]
-        public string SourceDetails { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "SourceDetails")]
+      [AllowHtml]
+      public string SourceDetails { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "LeakDate")]
-        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime? LeakDate { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "LeakDate")]
+      [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+      public DateTime? LeakDate { get; set; }
 
-        [Display(ResourceType = typeof(Model), Name = "FlightLevel")]
-        [EnumDataType(typeof(LevelOfFlight))]
-        public LevelOfFlight FlightLevel { get; set; }
+      [Display(ResourceType = typeof(Model), Name = "FlightLevel")]
+      [EnumDataType(typeof(LevelOfFlight))]
+      public LevelOfFlight FlightLevel { get; set; }
 
-        public bool IsLeaked
-        {
-            get
+      public bool IsLeaked
+      {
+         get
+         {
+            switch (SourceType)
             {
-                switch (SourceType)
-                {
-                    case TypeOfSource.PublicRelease:
-                    case TypeOfSource.InternalLeak:
-                    case TypeOfSource.UpdateGDR:
-                    case TypeOfSource.UpdateLDR:
-                        return true;
-                    default:
-                        return false;
-                }
+               case TypeOfSource.PublicRelease:
+               case TypeOfSource.InternalLeak:
+               case TypeOfSource.UpdateGDR:
+               case TypeOfSource.UpdateLDR:
+                  return true;
+               default:
+                  return false;
             }
-        }
+         }
+      }
 
-        public string FullBuildString
-        {
-            get
+      public string FullBuildString
+      {
+         get
+         {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0}.{1}.{2}", MajorVersion, MinorVersion, Number);
+
+            if (Revision.HasValue)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat("{0}.{1}.{2}", MajorVersion, MinorVersion, Number);
-
-                if (Revision.HasValue)
-                {
-                    sb.AppendFormat(".{0}", Revision);
-                }
-
-                if (!string.IsNullOrWhiteSpace(Lab))
-                {
-                    sb.AppendFormat(".{0}", Lab);
-                }
-
-                if (BuildTime.HasValue)
-                {
-                    sb.AppendFormat(".{0:yyMMdd-HHmm}", BuildTime);
-                }
-
-                return sb.ToString();
+               sb.AppendFormat(".{0}", Revision);
             }
-        }
-    }
 
-    public class Build
-    {
-        private const string _buildCollectionName = "builds";
-
-        private MongoClient _dbClient;
-        private IMongoCollection<BuildModel> _buildCollection;
-
-        public Build()
-        {
-            _dbClient = new MongoClient(new MongoClientSettings()
+            if (!string.IsNullOrWhiteSpace(Lab))
             {
-                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-            });
+               sb.AppendFormat(".{0}", Lab);
+            }
 
-            _buildCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<BuildModel>(_buildCollectionName);
-        }
+            if (BuildTime.HasValue)
+            {
+               sb.AppendFormat(".{0:yyMMdd-HHmm}", BuildTime);
+            }
 
-        [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public IEnumerable<BuildModel> Select()
-        {
-            var task = _buildCollection.Find(new BsonDocument()).ToListAsync();
-            task.Wait();
-            return task.Result;
-        }
+            return sb.ToString();
+         }
+      }
+   }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public BuildModel SelectById(Guid id)
-        {
-            var task = _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
-            task.Wait();
-            return task.Result;
-        }
+   public class Build
+   {
+      private const string _buildCollectionName = "builds";
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public BuildModel SelectByLegacyId(long id)
-        {
-            var task = _buildCollection.Find(f => f.LegacyId == id).SingleOrDefaultAsync();
-            task.Wait();
-            return task.Result;
-        }
+      private MongoClient _dbClient;
+      private IMongoCollection<BuildModel> _buildCollection;
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<BuildModel> SelectInBuildOrder()
-        {
-            var task = _buildCollection.Find(new BsonDocument())
-                .SortByDescending(b => b.BuildTime)
-                .ThenByDescending(b => b.MajorVersion)
-                .ThenByDescending(b => b.MinorVersion)
-                .ThenByDescending(b => b.Number)
-                .ThenByDescending(b => b.Revision)
-                .ToListAsync();
-            task.Wait();
-            return task.Result;
-        }
+      public Build()
+      {
+         _dbClient = new MongoClient(new MongoClientSettings()
+         {
+            Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+         });
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<BuildModel> SelectInVersionOrder()
-        {
-            var task = _buildCollection.Find(new BsonDocument())
-                .SortByDescending(b => b.MajorVersion)
-                .ThenByDescending(b => b.MinorVersion)
-                .ThenByDescending(b => b.Number)
-                .ThenByDescending(b => b.Revision)
-                .ThenByDescending(b => b.BuildTime)
-                .ToListAsync();
-            task.Wait();
-            return task.Result;
-        }
+         _buildCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<BuildModel>(_buildCollectionName);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<BuildVersion> SelectBuildVersions()
-        {
-            var task = _buildCollection.DistinctAsync(b => new BuildVersion() { Major = b.MajorVersion, Minor = b.MinorVersion }, b => true);
-            task.Wait();
-            var outTask = task.Result.ToListAsync();
-            outTask.Wait();
-            return outTask.Result
-                .OrderByDescending(y => y.Major)
-                .ThenByDescending(y => y.Minor);
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public List<BuildModel> Select()
+      {
+         var task = _buildCollection.Find(new BsonDocument()).ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<int> SelectBuildYears()
-        {
-            var task = _buildCollection.DistinctAsync(b => b.BuildTime.Value.Year, b => b.BuildTime.HasValue);
-            task.Wait();
-            var outTask = task.Result.ToListAsync();
-            outTask.Wait();
-            return outTask.Result.OrderBy(b => b);
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<FrontBuildGroup> SelectBuildGroups(int limit, int skip)
+      {
+         var pipeline = _buildCollection.Aggregate()
+            .Group(b => new BuildGroup()
+            {
+               Major = b.MajorVersion,
+               Minor = b.MinorVersion,
+               Build = b.Number,
+               Revision = b.Revision
+            },
+            bg => new FrontBuildGroup()
+            {
+               Key = bg.Key,
+               BuildCount = bg.Count(),
+               LastBuild = bg.Max(b => b.BuildTime)
+            })
+            .SortByDescending(b => b.Key.Major)
+            .ThenByDescending(b => b.Key.Minor)
+            .ThenByDescending(b => b.Key.Build)
+            .ThenByDescending(b => b.Key.Revision)
+            .Skip(skip)
+            .Limit(limit);
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<string> SelectBuildLabs()
-        {
-            var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab));
-            task.Wait();
-            var outTask = task.Result.ToListAsync();
-            outTask.Wait();
-            return outTask.Result.OrderBy(b => b);
-        }
+         var task = pipeline.ToListAsync();
+         task.Wait();
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<string> SelectBuildLabs(byte major, byte minor)
-        {
-            var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab) && b.MajorVersion == major && b.MinorVersion == minor);
-            task.Wait();
-            var outTask = task.Result.ToListAsync();
-            outTask.Wait();
-            return outTask.Result.OrderBy(b => b);
-        }
+         return task.Result;
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public void Insert(BuildModel item)
-        {
-            item.Id = Guid.NewGuid();
-            var task = _buildCollection.InsertOneAsync(item);
-            task.Wait();
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public int SelectBuildGroupsCount()
+      {
+         var pipeline = _buildCollection.Aggregate()
+            .Group(b => new BuildGroup()
+            {
+               Major = b.MajorVersion,
+               Minor = b.MinorVersion,
+               Build = b.Number,
+               Revision = b.Revision
+            },
+            bg => new BsonDocument());
 
-        [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public void Update(BuildModel item)
-        {
-            BuildModel old = SelectById(item.Id);
-            item.Added = old.Added;
-            item.Modified = DateTime.Now;
+         var task = pipeline.ToListAsync();
+         task.Wait();
 
-            var task = _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
-            task.Wait();
-        }
+         return task.Result.Count();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public void InsertAll(IEnumerable<BuildModel> items)
-        {
-            var task = _buildCollection.InsertManyAsync(items);
-            task.Wait();
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public Tuple<BuildGroup, IEnumerable<BuildModel>> SelectSingleBuildGroup(BuildGroup bGroup)
+      {
+         var pipeline = _buildCollection.Aggregate()
+            .Match(b => b.MajorVersion == bGroup.Major)
+            .Match(b => b.MinorVersion == bGroup.Minor)
+            .Match(b => b.Number == bGroup.Build)
+            .Match(b => b.Revision == bGroup.Revision)
+            .SortByDescending(b => b.BuildTime);
 
-        [DataObjectMethod(DataObjectMethodType.Delete, true)]
-        public void DeleteById(Guid id)
-        {
-            var task = _buildCollection.DeleteOneAsync(f => f.Id == id);
-            task.Wait();
-        }
-    }
+         var task = pipeline.ToListAsync();
+         task.Wait();
 
-    public enum TypeOfSource
-    {
-        [Display(ResourceType = typeof(Model), Name = "PublicRelease")]
-        PublicRelease,
+         return new Tuple<BuildGroup, IEnumerable<BuildModel>>(bGroup, task.Result);
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "InternalLeak")]
-        InternalLeak,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public BuildModel SelectById(Guid id)
+      {
+         var task = _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "UpdateGDR")]
-        UpdateGDR,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public BuildModel SelectByLegacyId(long id)
+      {
+         var task = _buildCollection.Find(f => f.LegacyId == id).SingleOrDefaultAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "UpdateLDR")]
-        UpdateLDR,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<BuildModel> SelectInBuildOrder()
+      {
+         var task = _buildCollection.Find(new BsonDocument())
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "AppPackage")]
-        AppPackage,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<BuildModel> SelectLabInBuildOrder(string lab, int skip, int limit)
+      {
+         var task = _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .Skip(skip)
+             .Limit(limit)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "BuildTools")]
-        BuildTools,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<BuildModel> SelectInVersionOrder()
+      {
+         var task = _buildCollection.Find(new BsonDocument())
+             .SortByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .ThenByDescending(b => b.BuildTime)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "Documentation")]
-        Documentation,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<BuildVersion> SelectBuildVersions()
+      {
+         var task = _buildCollection.DistinctAsync(b => new BuildVersion() { Major = b.MajorVersion, Minor = b.MinorVersion }, b => true);
+         task.Wait();
+         var outTask = task.Result.ToListAsync();
+         outTask.Wait();
+         return outTask.Result
+             .OrderByDescending(y => y.Major)
+             .ThenByDescending(y => y.Minor);
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "Logging")]
-        Logging,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<int> SelectBuildYears()
+      {
+         var task = _buildCollection.DistinctAsync(b => b.BuildTime.Value.Year, b => b.BuildTime.HasValue);
+         task.Wait();
+         var outTask = task.Result.ToListAsync();
+         outTask.Wait();
+         return outTask.Result.OrderBy(b => b);
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "PrivateLeak")]
-        PrivateLeak
-    }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<string> SelectBuildLabs()
+      {
+         var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab));
+         task.Wait();
+         var outTask = task.Result.ToListAsync();
+         outTask.Wait();
+         return outTask.Result.OrderBy(b => b);
+      }
 
-    public enum LevelOfFlight
-    {
-        [Display(ResourceType = typeof(Model), Name = "FlightNone")]
-        None = 0,
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public IEnumerable<string> SelectBuildLabs(byte major, byte minor)
+      {
+         var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab) && b.MajorVersion == major && b.MinorVersion == minor);
+         task.Wait();
+         var outTask = task.Result.ToListAsync();
+         outTask.Wait();
+         return outTask.Result.OrderBy(b => b);
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "FlightLow")]
-        Low = 1,
+      [DataObjectMethod(DataObjectMethodType.Insert, true)]
+      public void Insert(BuildModel item)
+      {
+         item.Id = Guid.NewGuid();
+         var task = _buildCollection.InsertOneAsync(item);
+         task.Wait();
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "FlightMedium")]
-        Medium = 2,
+      [DataObjectMethod(DataObjectMethodType.Insert, false)]
+      public void InsertAll(IEnumerable<BuildModel> items)
+      {
+         var task = _buildCollection.InsertManyAsync(items);
+         task.Wait();
+      }
 
-        [Display(ResourceType = typeof(Model), Name = "FlightHigh")]
-        High = 3
-    }
+      [DataObjectMethod(DataObjectMethodType.Update, true)]
+      public void Update(BuildModel item)
+      {
+         BuildModel old = SelectById(item.Id);
+         item.Added = old.Added;
+         item.Modified = DateTime.Now;
 
-    public struct BuildVersion
-    {
-        public byte Major { get; set; }
-        public byte Minor { get; set; }
+         var task = _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
+         task.Wait();
+      }
 
-        public override string ToString()
-        {
-            return $"{Major}.{Minor}";
-        }
-    }
+      [DataObjectMethod(DataObjectMethodType.Delete, true)]
+      public void DeleteById(Guid id)
+      {
+         var task = _buildCollection.DeleteOneAsync(f => f.Id == id);
+         task.Wait();
+      }
+   }
 
-    public struct BuildGroup
-    {
-        public byte Major { get; set; }
-        public byte Minor { get; set; }
-        public ushort Build { get; set; }
-        public ushort? Revision { get; set; }
+   public enum TypeOfSource
+   {
+      [Display(ResourceType = typeof(Model), Name = "PublicRelease")]
+      PublicRelease,
 
-        public override string ToString()
-        {
-            return Revision.HasValue ?
-                       $"{Major}.{Minor}.{Build}.{Revision.Value}" :
-                       $"{Major}.{Minor}.{Build}";
-        }
-    }
+      [Display(ResourceType = typeof(Model), Name = "InternalLeak")]
+      InternalLeak,
+
+      [Display(ResourceType = typeof(Model), Name = "UpdateGDR")]
+      UpdateGDR,
+
+      [Display(ResourceType = typeof(Model), Name = "UpdateLDR")]
+      UpdateLDR,
+
+      [Display(ResourceType = typeof(Model), Name = "AppPackage")]
+      AppPackage,
+
+      [Display(ResourceType = typeof(Model), Name = "BuildTools")]
+      BuildTools,
+
+      [Display(ResourceType = typeof(Model), Name = "Documentation")]
+      Documentation,
+
+      [Display(ResourceType = typeof(Model), Name = "Logging")]
+      Logging,
+
+      [Display(ResourceType = typeof(Model), Name = "PrivateLeak")]
+      PrivateLeak
+   }
+
+   public enum LevelOfFlight
+   {
+      [Display(ResourceType = typeof(Model), Name = "FlightNone")]
+      None = 0,
+
+      [Display(ResourceType = typeof(Model), Name = "FlightLow")]
+      Low = 1,
+
+      [Display(ResourceType = typeof(Model), Name = "FlightMedium")]
+      Medium = 2,
+
+      [Display(ResourceType = typeof(Model), Name = "FlightHigh")]
+      High = 3
+   }
+
+   public struct BuildVersion
+   {
+      public byte Major { get; set; }
+      public byte Minor { get; set; }
+
+      public override string ToString()
+      {
+         return $"{Major}.{Minor}";
+      }
+   }
+
+   public class BuildGroup
+   {
+      public byte Major { get; set; }
+      public byte Minor { get; set; }
+      public ushort Build { get; set; }
+      public ushort? Revision { get; set; }
+
+      public override string ToString()
+      {
+         return Revision.HasValue ?
+                    $"{Major}.{Minor}.{Build}.{Revision.Value}" :
+                    $"{Major}.{Minor}.{Build}";
+      }
+   }
 }

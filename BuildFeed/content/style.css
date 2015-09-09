@@ -125,7 +125,17 @@ label, .control-label, .help-block, .checkbox, .radio
         white-space: nowrap;
     }
 
-#search-results .list-group-item-heading h4
+        #search-results .list-group-item-heading h4
         {
             font-size: 16px;
         }
+
+#haackroutedebugger
+{
+    color: #000;
+}
+
+    #haackroutedebugger h1, #haackroutedebugger h2, #haackroutedebugger h3
+    {
+        text-shadow: none;
+    }

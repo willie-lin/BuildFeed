@@ -1,13 +1,13 @@
-﻿@model IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>
+﻿@model Tuple<BuildFeed.Models.BuildGroup, IEnumerable<BuildFeed.Models.BuildModel>>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("{0} | {1}", Model.Key.ToString(), BuildFeed.Local.Common.SiteName);
+    ViewBag.Title = string.Format("{0} | {1}", Model.Item1.ToString(), BuildFeed.Local.Common.SiteName);
 }
 
-<h1>@Model.Key.ToString()</h1>
+<h1>@Model.Item1.ToString()</h1>
 
 <div class="row">
-    @foreach (var build in Model.OrderBy(b => b.BuildTime))
+    @foreach (var build in Model.Item2)
     {
         <div class="col-sm-3 col-xs-6 build-group">
             <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("viewBuild", new {id = build.Id})">@build.Lab</a></h3>
