@@ -174,4 +174,22 @@
   <data name="PageTitleSegment" xml:space="preserve">
     <value>[!!! | Þáϱè {0}  !!!]</value>
   </data>
+  <data name="SearchBuild" xml:space="preserve">
+    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓôřè !!!]</value>
+  </data>
+  <data name="SearchLab" xml:space="preserve">
+    <value>[!!! £áβ  !!!]</value>
+  </data>
+  <data name="SearchSource" xml:space="preserve">
+    <value>[!!! §ôúrçè l !!!]</value>
+  </data>
+  <data name="SearchVersion" xml:space="preserve">
+    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  </data>
+  <data name="SearchYear" xml:space="preserve">
+    <value>[!!! Ýèář  !!!]</value>
+  </data>
 </root>

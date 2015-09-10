@@ -160,6 +160,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Build.
+        /// </summary>
+        public static string SearchBuild {
+            get {
+                return ResourceManager.GetString("SearchBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search BuildFeed....
         /// </summary>
         public static string SearchBuildFeed {
@@ -169,11 +178,56 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No results found.
+        /// </summary>
+        public static string SearchEmpty {
+            get {
+                return ResourceManager.GetString("SearchEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lab.
+        /// </summary>
+        public static string SearchLab {
+            get {
+                return ResourceManager.GetString("SearchLab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search query.
         /// </summary>
         public static string SearchQuery {
             get {
                 return ResourceManager.GetString("SearchQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string SearchSource {
+            get {
+                return ResourceManager.GetString("SearchSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string SearchVersion {
+            get {
+                return ResourceManager.GetString("SearchVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string SearchYear {
+            get {
+                return ResourceManager.GetString("SearchYear", resourceCulture);
             }
         }
         

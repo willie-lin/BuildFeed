@@ -1,4 +1,5 @@
 ﻿using BuildFeed.Local;
+using BuildFeed.Models.ApiModel;
 using BuildFeed.Models.ViewModel.Front;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -350,45 +351,97 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<BuildVersion> SelectBuildVersions()
+      public List<BuildVersion> SelectBuildVersions()
       {
-         var task = _buildCollection.DistinctAsync(b => new BuildVersion() { Major = b.MajorVersion, Minor = b.MinorVersion }, b => true);
+         var task = _buildCollection.Aggregate()
+            .Group(b => new BuildVersion()
+            {
+               Major = b.MajorVersion,
+               Minor = b.MinorVersion,
+            },
+            // incoming bullshit hack
+            bg => new Tuple<BuildVersion>(bg.Key))
+            .SortByDescending(b => b.Item1.Major)
+            .ThenByDescending(b => b.Item1.Minor)
+            .ToListAsync();
+
          task.Wait();
-         var outTask = task.Result.ToListAsync();
-         outTask.Wait();
-         return outTask.Result
-             .OrderByDescending(y => y.Major)
-             .ThenByDescending(y => y.Minor);
+
+         // work ourselves out of aforementioned bullshit hack
+         return task.Result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public IEnumerable<int> SelectBuildYears()
       {
-         var task = _buildCollection.DistinctAsync(b => b.BuildTime.Value.Year, b => b.BuildTime.HasValue);
+         var task = _buildCollection.Aggregate()
+            .Match(b => b.BuildTime != null)
+            .Group(b => ((DateTime)b.BuildTime).Year,
+            // incoming bullshit hack
+            bg => new Tuple<int>(bg.Key))
+            .SortByDescending(b => b.Item1)
+            .ToListAsync();
+
          task.Wait();
-         var outTask = task.Result.ToListAsync();
-         outTask.Wait();
-         return outTask.Result.OrderBy(b => b);
+
+         // work ourselves out of aforementioned bullshit hack
+         return task.Result.Select(b => b.Item1).ToList();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<string> SearchBuildLabs(string query)
+      {
+         var task = _buildCollection.Aggregate()
+            .Match(b => b.Lab != null)
+            .Match(b => b.Lab != "")
+            .Match(b => b.Lab.ToLower().Contains(query.ToLower()))
+            .Group(b => b.Lab.ToLower(),
+            // incoming bullshit hack
+            bg => new Tuple<string>(bg.Key))
+            .ToListAsync();
+
+         task.Wait();
+
+         // work ourselves out of aforementioned bullshit hack
+         return task.Result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public IEnumerable<string> SelectBuildLabs()
       {
-         var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab));
+         var task = _buildCollection.Aggregate()
+            .Match(b => b.Lab != null)
+            .Match(b => b.Lab != "")
+            .Group(b => b.Lab.ToLower(),
+            // incoming bullshit hack
+            bg => new Tuple<string>(bg.Key))
+            .SortBy(b => b.Item1)
+            .ToListAsync();
+
          task.Wait();
-         var outTask = task.Result.ToListAsync();
-         outTask.Wait();
-         return outTask.Result.OrderBy(b => b);
+
+         // work ourselves out of aforementioned bullshit hack
+         return task.Result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public IEnumerable<string> SelectBuildLabs(byte major, byte minor)
       {
-         var task = _buildCollection.DistinctAsync(b => b.Lab.ToLower(), b => !string.IsNullOrWhiteSpace(b.Lab) && b.MajorVersion == major && b.MinorVersion == minor);
+         var task = _buildCollection.Aggregate()
+            .Match(b => b.MajorVersion == major)
+            .Match(b => b.MinorVersion == minor)
+            .Match(b => b.Lab != null)
+            .Match(b => b.Lab != "")
+            .Group(b => b.Lab.ToLower(),
+            // incoming bullshit hack
+            bg => new Tuple<string>(bg.Key))
+            .SortBy(b => b.Item1)
+            .ToListAsync();
+
          task.Wait();
-         var outTask = task.Result.ToListAsync();
-         outTask.Wait();
-         return outTask.Result.OrderBy(b => b);
+
+         // work ourselves out of aforementioned bullshit hack
+         return task.Result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, true)]
@@ -470,10 +523,20 @@ namespace BuildFeed.Models
       High = 3
    }
 
-   public struct BuildVersion
+   public class BuildVersion
    {
       public byte Major { get; set; }
       public byte Minor { get; set; }
+
+      public BuildVersion()
+      {
+      }
+
+      public BuildVersion(byte major, byte minor)
+      {
+         Major = major;
+         Minor = minor;
+      }
 
       public override string ToString()
       {

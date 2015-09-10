@@ -174,4 +174,22 @@
   <data name="PageTitleSegment" xml:space="preserve">
     <value>| Page {0}</value>
   </data>
+  <data name="SearchBuild" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>No results found</value>
+  </data>
+  <data name="SearchLab" xml:space="preserve">
+    <value>Lab</value>
+  </data>
+  <data name="SearchSource" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="SearchVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="SearchYear" xml:space="preserve">
+    <value>Year</value>
+  </data>
 </root>
