@@ -1,19 +1,24 @@
-﻿using System;
+﻿using BuildFeed.Models;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Linq;
 using System.Web.Mvc;
-using BuildFeed.Code;
-using BuildFeed.Models;
-using BuildFeed.Models.ViewModel.Front;
 
 namespace BuildFeed.Controllers
 {
    public class frontController : Controller
    {
       public const int PAGE_SIZE = 96;
+
+      private Build bModel;
+
+      public frontController() : base()
+      {
+         bModel = new Build();
+      }
 
       [Route("", Order = 1)]
 #if !DEBUG
@@ -27,7 +32,6 @@ namespace BuildFeed.Controllers
 #endif
       public ActionResult indexPage(int page)
       {
-         Build bModel = new Build();
          var buildGroups = bModel.SelectBuildGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
@@ -35,7 +39,7 @@ namespace BuildFeed.Controllers
             Convert.ToDouble(bModel.SelectBuildGroupsCount()) /
             Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageCount != 0 && ViewBag.PageNumber > ViewBag.PageCount)
+         if (ViewBag.PageNumber > ViewBag.PageCount)
          {
             return new HttpNotFoundResult();
          }
@@ -49,7 +53,6 @@ namespace BuildFeed.Controllers
 #endif
       public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
       {
-         Build bModel = new Build();
          var builds = bModel.SelectSingleBuildGroup(new BuildGroup()
          {
             Major = major,
@@ -69,7 +72,7 @@ namespace BuildFeed.Controllers
 #endif
       public ActionResult viewBuild(Guid id)
       {
-         BuildModel b = new Build().SelectById(id);
+         BuildModel b = bModel.SelectById(id);
          return View(b);
       }
 
@@ -80,7 +83,7 @@ namespace BuildFeed.Controllers
 #endif
       public ActionResult twitterCard(Guid id)
       {
-         BuildModel b = new Build().SelectById(id);
+         BuildModel b = bModel.SelectById(id);
 
          using (Bitmap bm = new Bitmap(560, 300))
          {
@@ -128,10 +131,10 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = lab;
 
-         var builds = new Build().SelectLabInBuildOrder(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = bModel.SelectLab(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Count) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -160,17 +163,17 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
-         var builds = new Build().SelectInBuildOrder().Where(b => b.SourceType == source).ToArray();
+         var builds = bModel.SelectSource(source, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
             return new HttpNotFoundResult();
          }
 
-         return View("viewSource", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
+         return View("viewSource", builds);
       }
 
       [Route("year/{year}/", Order = 1, Name = "Year Root")]
@@ -192,17 +195,17 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = year.ToString();
 
-         var builds = new Build().SelectInBuildOrder().Where(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year).ToArray();
+         var builds = bModel.SelectYear(year, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
             return new HttpNotFoundResult();
          }
 
-         return View("viewYear", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
+         return View("viewYear", builds);
       }
 
       [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
@@ -225,17 +228,17 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = valueString;
 
-         var builds = new Build().SelectInBuildOrder().Where(b => b.MajorVersion == major && b.MinorVersion == minor).ToArray();
+         var builds = bModel.SelectVersion(major, minor, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(builds.Length) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
             return new HttpNotFoundResult();
          }
 
-         return View("viewVersion", builds.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE));
+         return View("viewVersion", builds);
       }
 
       [Route("add/"), Authorize]

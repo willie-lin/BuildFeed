@@ -222,7 +222,7 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<BuildModel> SelectInBuildOrder()
+      public List<BuildModel> SelectInBuildOrder()
       {
          var task = _buildCollection.Find(new BsonDocument())
              .SortByDescending(b => b.BuildTime)
@@ -236,7 +236,21 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectLabInBuildOrder(string lab, int skip, int limit)
+      public List<BuildModel> SelectInVersionOrder()
+      {
+         var task = _buildCollection.Find(new BsonDocument())
+             .SortByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .ThenByDescending(b => b.BuildTime)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<BuildModel> SelectLab(string lab, int skip, int limit)
       {
          var task = _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
              .SortByDescending(b => b.BuildTime)
@@ -252,15 +266,85 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<BuildModel> SelectInVersionOrder()
+      public long SelectLabCount(string lab)
       {
-         var task = _buildCollection.Find(new BsonDocument())
-             .SortByDescending(b => b.MajorVersion)
+         var task = _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
+            .CountAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<BuildModel> SelectSource(TypeOfSource source, int skip, int limit)
+      {
+         var task = _buildCollection.Find(b => b.SourceType == source)
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
              .ThenByDescending(b => b.Number)
              .ThenByDescending(b => b.Revision)
-             .ThenByDescending(b => b.BuildTime)
+             .Skip(skip)
+             .Limit(limit)
              .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public long SelectSourceCount(TypeOfSource source)
+      {
+         var task = _buildCollection.Find(b => b.SourceType == source)
+            .CountAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<BuildModel> SelectYear(int year, int skip, int limit)
+      {
+         var task = _buildCollection.Find(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year)
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .Skip(skip)
+             .Limit(limit)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public long SelectYearCount(int year)
+      {
+         var task = _buildCollection.Find(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year)
+            .CountAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public List<BuildModel> SelectVersion(int major, int minor, int skip, int limit)
+      {
+         var task = _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .Skip(skip)
+             .Limit(limit)
+             .ToListAsync();
+         task.Wait();
+         return task.Result;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public long SelectVersionCount(int major, int minor)
+      {
+         var task = _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+            .CountAsync();
          task.Wait();
          return task.Result;
       }
@@ -344,31 +428,31 @@ namespace BuildFeed.Models
    public enum TypeOfSource
    {
       [Display(ResourceType = typeof(Model), Name = "PublicRelease")]
-      PublicRelease,
+      PublicRelease = 0,
 
       [Display(ResourceType = typeof(Model), Name = "InternalLeak")]
-      InternalLeak,
+      InternalLeak = 1,
 
       [Display(ResourceType = typeof(Model), Name = "UpdateGDR")]
-      UpdateGDR,
+      UpdateGDR = 2,
 
       [Display(ResourceType = typeof(Model), Name = "UpdateLDR")]
-      UpdateLDR,
+      UpdateLDR = 3,
 
       [Display(ResourceType = typeof(Model), Name = "AppPackage")]
-      AppPackage,
+      AppPackage = 4,
 
       [Display(ResourceType = typeof(Model), Name = "BuildTools")]
-      BuildTools,
+      BuildTools = 5,
 
       [Display(ResourceType = typeof(Model), Name = "Documentation")]
-      Documentation,
+      Documentation = 6,
 
       [Display(ResourceType = typeof(Model), Name = "Logging")]
-      Logging,
+      Logging = 7,
 
       [Display(ResourceType = typeof(Model), Name = "PrivateLeak")]
-      PrivateLeak
+      PrivateLeak = 8
    }
 
    public enum LevelOfFlight

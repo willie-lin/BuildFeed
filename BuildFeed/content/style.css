@@ -1,141 +1,167 @@
 ﻿body, h1, h2, h3
 {
-    font-family: 'Hind', sans-serif;
+   font-family: 'Hind', sans-serif;
 }
 
 h1
 {
-    font-size: 48px;
-    font-weight: 300;
+   font-size: 48px;
+   font-weight: 300;
 }
 
-    h1 a
-    {
-        text-decoration: none;
-        color: #000;
-    }
+   h1 a
+   {
+      text-decoration: none;
+      color: #000;
+   }
 
 #page-content
 {
-    padding-top: 50px;
+   padding-top: 50px;
 }
 
 .build-group
 {
-    margin-bottom: 2em;
+   margin-bottom: 2em;
 }
 
 .build-group-title
 {
-    font-size: 24px;
-    font-weight: 300;
-    margin: 0 0 4px 0;
+   font-size: 24px;
+   font-weight: 300;
+   margin: 0 0 4px 0;
 }
 
 .build-group-p
 {
-    margin-bottom: 4px;
+   margin-bottom: 4px;
 }
 
 .no-wrapping
 {
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    -moz-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+   -ms-text-overflow: ellipsis;
+   -o-text-overflow: ellipsis;
+   -moz-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
 }
 
 .label-build-status
 {
-    padding-bottom: 0;
+   padding-bottom: 0;
 }
 
 .field-validation-error
 {
-    color: #ff4136;
+   color: #ff4136;
 }
 
 .form-details label
 {
-    font-weight: bold;
+   font-weight: bold;
 }
 
 #page-footer
 {
-    font-size: 12px;
-    margin-top: 3em;
+   font-size: 12px;
+   margin-top: 3em;
 }
 
 .form-horizontal .control-label
 {
-    padding-top: 8px;
+   padding-top: 8px;
 }
 
 label, .control-label, .help-block, .checkbox, .radio
 {
-    font-size: 14px;
+   font-size: 14px;
 }
 
 .btn-reset
 {
-    padding: 9px 0 7px;
+   padding: 9px 0 7px;
 }
 
 .table .btn
 {
-    padding: 4px 9px;
+   padding: 4px 9px;
 }
 
 .table-admin h4
 {
-    margin: .1em 0;
+   margin: .1em 0;
 }
 
 .table-admin > tbody > tr > th,
 .table-admin > tbody > tr > td
 {
-    vertical-align: middle;
+   vertical-align: middle;
 }
 
 .trumbowyg-box.trumbowyg, .trumbowyg-editor.trumbowyg
 {
-    margin: 0;
-    width: 100%;
+   margin: 0;
+   width: 100%;
 }
 
 #search-results
 {
-    margin-top: 1em;
+   margin-top: 1em;
 }
 
-    #search-results .list-group-item
-    {
-        margin-bottom: 1em;
-    }
+   #search-results .list-group-item
+   {
+      margin-bottom: 1em;
+   }
 
-    #search-results .list-group-item-heading
-    {
-        overflow: hidden;
-        -ms-text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        -moz-text-overflow: ellipsis;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+   #search-results .list-group-item-heading
+   {
+      overflow: hidden;
+      -ms-text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      -moz-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
 
-        #search-results .list-group-item-heading h4
-        {
-            font-size: 16px;
-        }
+      #search-results .list-group-item-heading h4
+      {
+         font-size: 16px;
+      }
 
 #haackroutedebugger
 {
-    color: #000;
+   color: #000;
 }
 
-    #haackroutedebugger h1, #haackroutedebugger h2, #haackroutedebugger h3
-    {
-        text-shadow: none;
-    }
+   #haackroutedebugger h1, #haackroutedebugger h2, #haackroutedebugger h3
+   {
+      text-shadow: none;
+   }
+
+
+@media (max-width: 767px)
+{
+}
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+   .col-sm-2.build-group:nth-child(6n+1),
+   .col-sm-3.build-group:nth-child(4n+1)
+   {
+      clear: left;
+   }
+}
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+   .col-md-2.build-group:nth-child(6n+1)
+   {
+      clear: left;
+   }
+}
+
+@media (min-width: 1200px)
+{
+}
