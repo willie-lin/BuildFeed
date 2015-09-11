@@ -2,106 +2,114 @@
 using System.Web.Mvc;
 using BuildFeed.Areas.admin.Models.ViewModel;
 using BuildFeed.Models;
+using System.Threading.Tasks;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
-    [Authorize(Roles = "Administrators")]
-    public class metaController : Controller
-    {
-        // GET: admin/meta
-        public ActionResult index()
-        {
-            var currentItems = from i in new MetaItem().Select()
-                               group i by i.Id.Type
-                               into b
-                               select b;
+   [Authorize(Roles = "Administrators")]
+   public class metaController : Controller
+   {
+      private MetaItem mModel;
 
-            var pendingLabs = new MetaItem().SelectUnusedLabs();
+      public metaController() : base()
+      {
+         mModel = new MetaItem();
+      }
 
-            return View(new MetaListing
-            {
-                CurrentItems = from i in new MetaItem().Select()
-                               group i by i.Id.Type
-                                           into b
-                               orderby b.Key.ToString()
-                               select b,
-                NewItems = from i in (from l in new MetaItem().SelectUnusedLabs()
-                                      select new MetaItemModel
-                                      {
-                                          Id = new MetaItemKey
-                                          {
-                                              Type = MetaType.Lab,
-                                              Value = l
-                                          }
-                                      })
-                                      .Concat(from v in new MetaItem().SelectUnusedVersions()
-                                              select new MetaItemModel
-                                              {
-                                                  Id = new MetaItemKey
-                                                  {
-                                                      Type = MetaType.Version,
-                                                      Value = v
-                                                  }
-                                              })
-                                      .Concat(from y in new MetaItem().SelectUnusedYears()
-                                              select new MetaItemModel
-                                              {
-                                                  Id = new MetaItemKey
-                                                  {
-                                                      Type = MetaType.Year,
-                                                      Value = y
-                                                  }
-                                              })
+      // GET: admin/meta
+      public async Task<ActionResult> index()
+      {
+         var currentItems = from i in await mModel.Select()
+                            group i by i.Id.Type
+                            into b
+                            select b;
+
+         var pendingLabs = mModel.SelectUnusedLabs();
+
+         return View(new MetaListing
+         {
+            CurrentItems = from i in await mModel.Select()
                            group i by i.Id.Type
-                                       into b
+                                        into b
                            orderby b.Key.ToString()
-                           select b
-            });
-        }
+                           select b,
+            NewItems = from i in (from l in await mModel.SelectUnusedLabs()
+                                  select new MetaItemModel
+                                  {
+                                     Id = new MetaItemKey
+                                     {
+                                        Type = MetaType.Lab,
+                                        Value = l
+                                     }
+                                  })
+                                  .Concat(from v in await mModel.SelectUnusedVersions()
+                                          select new MetaItemModel
+                                          {
+                                             Id = new MetaItemKey
+                                             {
+                                                Type = MetaType.Version,
+                                                Value = v
+                                             }
+                                          })
+                                  .Concat(from y in await mModel.SelectUnusedYears()
+                                          select new MetaItemModel
+                                          {
+                                             Id = new MetaItemKey
+                                             {
+                                                Type = MetaType.Year,
+                                                Value = y
+                                             }
+                                          })
+                       group i by i.Id.Type
+                                    into b
+                       orderby b.Key.ToString()
+                       select b
+         });
+      }
 
-        public ActionResult create(MetaType type, string value)
-        {
-            return View(new MetaItemModel
+      public ActionResult create(MetaType type, string value)
+      {
+         return View(new MetaItemModel
+         {
+            Id = new MetaItemKey
             {
-                Id = new MetaItemKey
-                {
-                    Type = type,
-                    Value = value
-                }
-            });
-        }
-
-        [HttpPost]
-        public ActionResult create(MetaItemModel meta)
-        {
-            if (ModelState.IsValid)
-            {
-                new MetaItem().Insert(meta);
-                return RedirectToAction("index");
+               Type = type,
+               Value = value
             }
+         });
+      }
 
-            return View(meta);
-        }
+      [HttpPost]
+      public async Task<ActionResult> create(MetaItemModel meta)
+      {
+         if (ModelState.IsValid)
+         {
+            await mModel.Insert(meta);
+            return RedirectToAction("index");
+         }
 
-        public ActionResult edit(MetaType type, string value)
-        {
-            return View("create", new MetaItem().SelectById(new MetaItemKey
-            {
-                Type = type,
-                Value = value
-            }));
-        }
+         return View(meta);
+      }
 
-        [HttpPost]
-        public ActionResult edit(MetaItemModel meta)
-        {
-            if (ModelState.IsValid)
-            {
-                new MetaItem().Update(meta);
-                return RedirectToAction("index");
-            }
+      public async Task<ActionResult> edit(MetaType type, string value)
+      {
+         return View("create", await mModel.SelectById(new MetaItemKey
+         {
+            Type = type,
+            Value = value
+         }));
+      }
 
-            return View("create", meta);
-        }
-    }
+      [HttpPost]
+      public async Task<ActionResult> edit(MetaItemModel meta)
+      {
+         if (ModelState.IsValid)
+         {
+            await mModel.Update(meta);
+            return RedirectToAction("index");
+         }
+
+         return View("create", meta);
+      }
+   }
 }

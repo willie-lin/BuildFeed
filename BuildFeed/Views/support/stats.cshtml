@@ -6,14 +6,14 @@
 
 <h2>@BuildFeed.Local.Common.Statistics</h2>
 
-<h4>New additions to BuildFeed over the previous year</h4>
+<h4>@BuildFeed.Local.Support.StatsNewAdditions</h4>
 <canvas id="stats-addition" width="960" height="320"></canvas>
 
-<h4>Builds compiled each quarter</h4>
+<h4>@BuildFeed.Local.Support.StatsCompiled</h4>
 <canvas id="stats-compiled" width="960" height="320"></canvas>
 
-<h4>Recorded builds in each lab</h4>
-<p>Only labs with 100 or more recorded builds are included.</p>
+<h4>@BuildFeed.Local.Support.StatsLab</h4>
+<p>@BuildFeed.Local.Support.StatsLabIncluded</p>
 <canvas id="stats-labs" width="960" height="320"></canvas>
 
 @section scripts
@@ -29,10 +29,10 @@
             Chart.defaults.Line.scaleShowGridLines = false;
 
             var additionData = {
-                labels: [ @Html.Raw(string.Join(", ", Model.AdditionsByMonth.Select(m => m.Month % 4 != 1 ? "\"\"" : string.Format("\"Week {0}, {1}\"", m.Month, m.Year)).ToArray()))],
+                labels: [ @Html.Raw(string.Join(", ", Model.AdditionsByMonth.Select(m => m.Month % 4 != 1 ? "\"\"" : string.Format("\"{0} {1}, {2}\"", BuildFeed.Local.Support.Week, m.Month, m.Year)).ToArray()))],
                 datasets: [
                     {
-                        label: "Additions to BuildFeed",
+                        label: "@BuildFeed.Local.Support.AdditionsToBuildFeed",
                         fillColor: "#008cba",
                         strokeColor: "#00526e",
                         pointColor: "#00526e",
@@ -46,10 +46,10 @@
 
 
             var compiledData = {
-                labels: [ @Html.Raw(string.Join(", ", Model.CompilesByMonth.Select(m => string.Format("\"{0} {1}\"", System.Globalization.DateTimeFormatInfo.InvariantInfo.GetMonthName(m.Month), m.Year)).ToArray()))],
+                labels: [ @Html.Raw(string.Join(", ", Model.CompilesByMonth.Select(m => string.Format("\"{0} {1}\"", System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(m.Month), m.Year)).ToArray()))],
                 datasets: [
                     {
-                        label: "Builds compiled",
+                        label: "@BuildFeed.Local.Support.BuildsCompiled",
                         fillColor: "#008cba",
                         strokeColor: "#00526e",
                         pointColor: "#00526e",
@@ -65,7 +65,7 @@
                 labels: [ @Html.Raw(string.Join(", ", Model.BuildsByLab.Select(l => string.Format("\"{0}\"", l.Item1))))],
                 datasets: [
                     {
-                        label: "Labs",
+                        label: "@BuildFeed.Local.Support.Labs",
                         fillColor: "#008cba",
                         strokeColor: "#00526e",
                         pointColor: "#00526e",

@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BuildFeed.Controllers
@@ -24,19 +25,19 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult index() { return indexPage(1); }
+      public async Task<ActionResult> index() { return await indexPage(1); }
 
       [Route("page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
-      public ActionResult indexPage(int page)
+      public async Task<ActionResult> indexPage(int page)
       {
-         var buildGroups = bModel.SelectBuildGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
+         var buildGroups = await bModel.SelectBuildGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(
-            Convert.ToDouble(bModel.SelectBuildGroupsCount()) /
+            Convert.ToDouble(await bModel.SelectBuildGroupsCount()) /
             Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
@@ -51,9 +52,9 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
+      public async Task<ActionResult> viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
       {
-         var builds = bModel.SelectSingleBuildGroup(new BuildGroup()
+         var builds = await bModel.SelectSingleBuildGroup(new BuildGroup()
          {
             Major = major,
             Minor = minor,
@@ -70,9 +71,9 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewBuild(Guid id)
+      public async Task<ActionResult> viewBuild(Guid id)
       {
-         BuildModel b = bModel.SelectById(id);
+         BuildModel b = await bModel.SelectById(id);
          return View(b);
       }
 
@@ -81,9 +82,9 @@ namespace BuildFeed.Controllers
       [OutputCache(Duration = 600, VaryByParam = "none")]
       [CustomContentType(ContentType = "image/png", Order = 2)]
 #endif
-      public ActionResult twitterCard(Guid id)
+      public async Task<ActionResult> twitterCard(Guid id)
       {
-         BuildModel b = bModel.SelectById(id);
+         BuildModel b = await bModel.SelectById(id);
 
          using (Bitmap bm = new Bitmap(560, 300))
          {
@@ -116,13 +117,13 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewLab(string lab) { return viewLabPage(lab, 1); }
+      public async Task<ActionResult> viewLab(string lab) { return await viewLabPage(lab, 1); }
 
       [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewLabPage(string lab, int page)
+      public async Task<ActionResult> viewLabPage(string lab, int page)
       {
          ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
          {
@@ -131,10 +132,10 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = lab;
 
-         var builds = bModel.SelectLab(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await bModel.SelectLab(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -148,13 +149,13 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewSource(TypeOfSource source) { return viewSourcePage(source, 1); }
+      public async Task<ActionResult> viewSource(TypeOfSource source) { return await viewSourcePage(source, 1); }
 
       [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewSourcePage(TypeOfSource source, int page)
+      public async Task<ActionResult> viewSourcePage(TypeOfSource source, int page)
       {
          ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
          {
@@ -163,10 +164,10 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
-         var builds = bModel.SelectSource(source, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await bModel.SelectSource(source, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -180,13 +181,13 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewYear(int year) { return viewYearPage(year, 1); }
+      public async Task<ActionResult> viewYear(int year) { return await viewYearPage(year, 1); }
 
       [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewYearPage(int year, int page)
+      public async Task<ActionResult> viewYearPage(int year, int page)
       {
          ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
          {
@@ -195,10 +196,10 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = year.ToString();
 
-         var builds = bModel.SelectYear(year, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await bModel.SelectYear(year, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(await bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -212,13 +213,13 @@ namespace BuildFeed.Controllers
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewVersion(int major, int minor) { return viewVersionPage(major, minor, 1); }
+      public async Task<ActionResult> viewVersion(int major, int minor) { return await viewVersionPage(major, minor, 1); }
 
       [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public ActionResult viewVersionPage(int major, int minor, int page)
+      public async Task<ActionResult> viewVersionPage(int major, int minor, int page)
       {
          string valueString = $"{major}.{minor}";
          ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
@@ -228,10 +229,10 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = valueString;
 
-         var builds = bModel.SelectVersion(major, minor, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await bModel.SelectVersion(major, minor, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -245,7 +246,7 @@ namespace BuildFeed.Controllers
       public ActionResult addBuild() { return View("editBuild"); }
 
       [Route("add/"), Authorize, HttpPost]
-      public ActionResult addBuild(BuildModel build)
+      public async Task<ActionResult> addBuild(BuildModel build)
       {
          if (ModelState.IsValid)
          {
@@ -253,7 +254,7 @@ namespace BuildFeed.Controllers
             {
                build.Added = DateTime.Now;
                build.Modified = DateTime.Now;
-               new Build().Insert(build);
+               await bModel.Insert(build);
             }
             catch
             {
@@ -268,20 +269,20 @@ namespace BuildFeed.Controllers
       }
 
       [Route("edit/{id}/"), Authorize]
-      public ActionResult editBuild(Guid id)
+      public async Task<ActionResult> editBuild(Guid id)
       {
-         BuildModel b = new Build().SelectById(id);
+         BuildModel b = await bModel.SelectById(id);
          return View(b);
       }
 
       [Route("edit/{id}/"), Authorize, HttpPost]
-      public ActionResult editBuild(long id, BuildModel build)
+      public async Task<ActionResult> editBuild(long id, BuildModel build)
       {
          if (ModelState.IsValid)
          {
             try
             {
-               new Build().Update(build);
+               await bModel.Update(build);
             }
             catch
             {
@@ -294,9 +295,9 @@ namespace BuildFeed.Controllers
       }
 
       [Route("delete/{id}/"), Authorize(Roles = "Administrators")]
-      public ActionResult deleteBuild(Guid id)
+      public async Task<ActionResult> deleteBuild(Guid id)
       {
-         new Build().DeleteById(id);
+         await bModel.DeleteById(id);
          return RedirectToAction("index");
       }
    }

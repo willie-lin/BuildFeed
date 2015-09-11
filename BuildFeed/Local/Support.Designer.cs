@@ -70,6 +70,24 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additions to BuildFeed.
+        /// </summary>
+        public static string AdditionsToBuildFeed {
+            get {
+                return ResourceManager.GetString("AdditionsToBuildFeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Builds Compiled.
+        /// </summary>
+        public static string BuildsCompiled {
+            get {
+                return ResourceManager.GetString("BuildsCompiled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change your password.
         /// </summary>
         public static string ChangePassword {
@@ -142,6 +160,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Labs.
+        /// </summary>
+        public static string Labs {
+            get {
+                return ResourceManager.GetString("Labs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string Login {
@@ -205,6 +232,42 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Builds compiled each quarter.
+        /// </summary>
+        public static string StatsCompiled {
+            get {
+                return ResourceManager.GetString("StatsCompiled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recorded builds in each lab.
+        /// </summary>
+        public static string StatsLab {
+            get {
+                return ResourceManager.GetString("StatsLab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only labs with 100 or more recorded builds are included..
+        /// </summary>
+        public static string StatsLabIncluded {
+            get {
+                return ResourceManager.GetString("StatsLabIncluded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New additions to BuildFeed over the previous year.
+        /// </summary>
+        public static string StatsNewAdditions {
+            get {
+                return ResourceManager.GetString("StatsNewAdditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for registering.
         /// </summary>
         public static string ThanksRegister {
@@ -219,6 +282,15 @@ namespace BuildFeed.Local {
         public static string UserName {
             get {
                 return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Week.
+        /// </summary>
+        public static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
             }
         }
     }

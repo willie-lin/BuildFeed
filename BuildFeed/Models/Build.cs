@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
@@ -134,17 +135,35 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
-      public List<BuildModel> Select()
+      public async Task<List<BuildModel>> Select()
       {
-         var task = _buildCollection.Find(new BsonDocument()).ToListAsync();
-         task.Wait();
-         return task.Result;
+         return await _buildCollection.Find(new BsonDocument()).ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public async Task<List<BuildModel>> SelectLatest(int limit, int skip)
+      {
+         return await _buildCollection.Find(new BsonDocument())
+            .SortByDescending(b => b.Added)
+            .Skip(skip)
+            .Limit(limit)
+            .ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public async Task<List<BuildModel>> SelectLatestLeaked(int limit, int skip)
+      {
+         return await _buildCollection.Find(b => b.Added != null)
+            .SortByDescending(b => b.Added)
+            .Skip(skip)
+            .Limit(limit)
+            .ToListAsync();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<FrontBuildGroup> SelectBuildGroups(int limit, int skip)
+      public async Task<List<FrontBuildGroup>> SelectBuildGroups(int limit, int skip)
       {
-         var pipeline = _buildCollection.Aggregate()
+         return await _buildCollection.Aggregate()
             .Group(b => new BuildGroup()
             {
                Major = b.MajorVersion,
@@ -163,16 +182,12 @@ namespace BuildFeed.Models
             .ThenByDescending(b => b.Key.Build)
             .ThenByDescending(b => b.Key.Revision)
             .Skip(skip)
-            .Limit(limit);
-
-         var task = pipeline.ToListAsync();
-         task.Wait();
-
-         return task.Result;
+            .Limit(limit)
+            .ToListAsync();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
-      public int SelectBuildGroupsCount()
+      public async Task<int> SelectBuildGroupsCount()
       {
          var pipeline = _buildCollection.Aggregate()
             .Group(b => new BuildGroup()
@@ -184,14 +199,11 @@ namespace BuildFeed.Models
             },
             bg => new BsonDocument());
 
-         var task = pipeline.ToListAsync();
-         task.Wait();
-
-         return task.Result.Count();
+         return (await pipeline.ToListAsync()).Count;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public Tuple<BuildGroup, IEnumerable<BuildModel>> SelectSingleBuildGroup(BuildGroup bGroup)
+      public async Task<Tuple<BuildGroup, List<BuildModel>>> SelectSingleBuildGroup(BuildGroup bGroup)
       {
          var pipeline = _buildCollection.Aggregate()
             .Match(b => b.MajorVersion == bGroup.Major)
@@ -200,60 +212,78 @@ namespace BuildFeed.Models
             .Match(b => b.Revision == bGroup.Revision)
             .SortByDescending(b => b.BuildTime);
 
-         var task = pipeline.ToListAsync();
-         task.Wait();
-
-         return new Tuple<BuildGroup, IEnumerable<BuildModel>>(bGroup, task.Result);
+         return new Tuple<BuildGroup, List<BuildModel>>(bGroup, await pipeline.ToListAsync());
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public BuildModel SelectById(Guid id)
+      public async Task<BuildModel> SelectById(Guid id)
       {
-         var task = _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
-         task.Wait();
-         return task.Result;
+         return await _buildCollection.Find(f => f.Id == id).SingleOrDefaultAsync();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public BuildModel SelectByLegacyId(long id)
+      public async Task<BuildModel> SelectByLegacyId(long id)
       {
-         var task = _buildCollection.Find(f => f.LegacyId == id).SingleOrDefaultAsync();
-         task.Wait();
-         return task.Result;
+         return await _buildCollection.Find(f => f.LegacyId == id).SingleOrDefaultAsync();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectInBuildOrder()
+      public async Task<List<BuildModel>> SelectInBuildOrder()
       {
-         var task = _buildCollection.Find(new BsonDocument())
+         return await _buildCollection.Find(new BsonDocument())
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
              .ThenByDescending(b => b.Number)
              .ThenByDescending(b => b.Revision)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
+
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectInVersionOrder()
+      public async Task<List<BuildModel>> SelectInBuildOrder(int limit, int skip)
       {
-         var task = _buildCollection.Find(new BsonDocument())
+         return await _buildCollection.Find(new BsonDocument())
+             .SortByDescending(b => b.BuildTime)
+             .ThenByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .Skip(skip)
+             .Limit(limit)
+             .ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectInVersionOrder()
+      {
+         return await _buildCollection.Find(new BsonDocument())
              .SortByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
              .ThenByDescending(b => b.Number)
              .ThenByDescending(b => b.Revision)
              .ThenByDescending(b => b.BuildTime)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectLab(string lab, int skip, int limit)
+      public async Task<List<BuildModel>> SelectInVersionOrder(int limit, int skip)
       {
-         var task = _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
+         return await _buildCollection.Find(new BsonDocument())
+             .SortByDescending(b => b.MajorVersion)
+             .ThenByDescending(b => b.MinorVersion)
+             .ThenByDescending(b => b.Number)
+             .ThenByDescending(b => b.Revision)
+             .ThenByDescending(b => b.BuildTime)
+             .Skip(skip)
+             .Limit(limit)
+             .ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectFlight(LevelOfFlight flight, int limit, int skip)
+      {
+         return await _buildCollection.Find(b => b.FlightLevel == flight)
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -262,23 +292,12 @@ namespace BuildFeed.Models
              .Skip(skip)
              .Limit(limit)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public long SelectLabCount(string lab)
+      public async Task<List<BuildModel>> SelectLab(string lab, int skip, int limit)
       {
-         var task = _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
-            .CountAsync();
-         task.Wait();
-         return task.Result;
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectSource(TypeOfSource source, int skip, int limit)
-      {
-         var task = _buildCollection.Find(b => b.SourceType == source)
+         return await _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -287,23 +306,19 @@ namespace BuildFeed.Models
              .Skip(skip)
              .Limit(limit)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public long SelectSourceCount(TypeOfSource source)
+      public async Task<long> SelectLabCount(string lab)
       {
-         var task = _buildCollection.Find(b => b.SourceType == source)
+         return await _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
             .CountAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectYear(int year, int skip, int limit)
+      public async Task<List<BuildModel>> SelectSource(TypeOfSource source, int skip, int limit)
       {
-         var task = _buildCollection.Find(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year)
+         return await _buildCollection.Find(b => b.SourceType == source)
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -312,23 +327,44 @@ namespace BuildFeed.Models
              .Skip(skip)
              .Limit(limit)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public long SelectYearCount(int year)
+      public async Task<long> SelectSourceCount(TypeOfSource source)
       {
-         var task = _buildCollection.Find(b => b.BuildTime.HasValue && b.BuildTime.Value.Year == year)
+         return await _buildCollection.Find(b => b.SourceType == source)
             .CountAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildModel> SelectVersion(int major, int minor, int skip, int limit)
+      public async Task<List<BuildModel>> SelectYear(int year, int skip, int limit)
       {
-         var task = _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+         return await _buildCollection.Find(b => b.BuildTime != null &&
+         (b.BuildTime > new DateTime(year, 1, 1, 0, 0, 0)) &&
+         (b.BuildTime < new DateTime(year, 12, 31, 23, 59, 59)))
+            .SortByDescending(b => b.BuildTime)
+            .ThenByDescending(b => b.MajorVersion)
+            .ThenByDescending(b => b.MinorVersion)
+            .ThenByDescending(b => b.Number)
+            .ThenByDescending(b => b.Revision)
+            .Skip(skip)
+            .Limit(limit)
+            .ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<long> SelectYearCount(int year)
+      {
+         return await _buildCollection.Find(b => b.BuildTime != null &&
+         (b.BuildTime > new DateTime(year, 1, 1, 0, 0, 0)) &&
+         (b.BuildTime < new DateTime(year, 12, 31, 23, 59, 59)))
+            .CountAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectVersion(int major, int minor, int skip, int limit)
+      {
+         return await _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -337,23 +373,19 @@ namespace BuildFeed.Models
              .Skip(skip)
              .Limit(limit)
              .ToListAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public long SelectVersionCount(int major, int minor)
+      public async Task<long> SelectVersionCount(int major, int minor)
       {
-         var task = _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+         return await _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
             .CountAsync();
-         task.Wait();
-         return task.Result;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<BuildVersion> SelectBuildVersions()
+      public async Task<List<BuildVersion>> SelectBuildVersions()
       {
-         var task = _buildCollection.Aggregate()
+         var result = await _buildCollection.Aggregate()
             .Group(b => new BuildVersion()
             {
                Major = b.MajorVersion,
@@ -365,16 +397,14 @@ namespace BuildFeed.Models
             .ThenByDescending(b => b.Item1.Minor)
             .ToListAsync();
 
-         task.Wait();
-
          // work ourselves out of aforementioned bullshit hack
-         return task.Result.Select(b => b.Item1).ToList();
+         return result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<int> SelectBuildYears()
+      public async Task<List<int>> SelectBuildYears()
       {
-         var task = _buildCollection.Aggregate()
+         var result = await _buildCollection.Aggregate()
             .Match(b => b.BuildTime != null)
             .Group(b => ((DateTime)b.BuildTime).Year,
             // incoming bullshit hack
@@ -382,16 +412,14 @@ namespace BuildFeed.Models
             .SortByDescending(b => b.Item1)
             .ToListAsync();
 
-         task.Wait();
-
          // work ourselves out of aforementioned bullshit hack
-         return task.Result.Select(b => b.Item1).ToList();
+         return result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public List<string> SearchBuildLabs(string query)
+      public async Task<List<string>> SearchBuildLabs(string query)
       {
-         var task = _buildCollection.Aggregate()
+         var result = await _buildCollection.Aggregate()
             .Match(b => b.Lab != null)
             .Match(b => b.Lab != "")
             .Match(b => b.Lab.ToLower().Contains(query.ToLower()))
@@ -400,16 +428,14 @@ namespace BuildFeed.Models
             bg => new Tuple<string>(bg.Key))
             .ToListAsync();
 
-         task.Wait();
-
          // work ourselves out of aforementioned bullshit hack
-         return task.Result.Select(b => b.Item1).ToList();
+         return result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<string> SelectBuildLabs()
+      public async Task<List<string>> SelectBuildLabs()
       {
-         var task = _buildCollection.Aggregate()
+         var result = await _buildCollection.Aggregate()
             .Match(b => b.Lab != null)
             .Match(b => b.Lab != "")
             .Group(b => b.Lab.ToLower(),
@@ -418,16 +444,14 @@ namespace BuildFeed.Models
             .SortBy(b => b.Item1)
             .ToListAsync();
 
-         task.Wait();
-
          // work ourselves out of aforementioned bullshit hack
-         return task.Result.Select(b => b.Item1).ToList();
+         return result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public IEnumerable<string> SelectBuildLabs(byte major, byte minor)
+      public async Task<List<string>> SelectBuildLabs(byte major, byte minor)
       {
-         var task = _buildCollection.Aggregate()
+         var result = await _buildCollection.Aggregate()
             .Match(b => b.MajorVersion == major)
             .Match(b => b.MinorVersion == minor)
             .Match(b => b.Lab != null)
@@ -438,43 +462,37 @@ namespace BuildFeed.Models
             .SortBy(b => b.Item1)
             .ToListAsync();
 
-         task.Wait();
-
          // work ourselves out of aforementioned bullshit hack
-         return task.Result.Select(b => b.Item1).ToList();
+         return result.Select(b => b.Item1).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, true)]
-      public void Insert(BuildModel item)
+      public async Task Insert(BuildModel item)
       {
          item.Id = Guid.NewGuid();
-         var task = _buildCollection.InsertOneAsync(item);
-         task.Wait();
+         await _buildCollection.InsertOneAsync(item);
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
-      public void InsertAll(IEnumerable<BuildModel> items)
+      public async Task InsertAll(IEnumerable<BuildModel> items)
       {
-         var task = _buildCollection.InsertManyAsync(items);
-         task.Wait();
+         await _buildCollection.InsertManyAsync(items);
       }
 
       [DataObjectMethod(DataObjectMethodType.Update, true)]
-      public void Update(BuildModel item)
+      public async Task Update(BuildModel item)
       {
-         BuildModel old = SelectById(item.Id);
+         BuildModel old = await SelectById(item.Id);
          item.Added = old.Added;
          item.Modified = DateTime.Now;
 
-         var task = _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
-         task.Wait();
+         await _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
       }
 
       [DataObjectMethod(DataObjectMethodType.Delete, true)]
-      public void DeleteById(Guid id)
+      public async Task DeleteById(Guid id)
       {
-         var task = _buildCollection.DeleteOneAsync(f => f.Id == id);
-         task.Wait();
+         await _buildCollection.DeleteOneAsync(f => f.Id == id);
       }
    }
 

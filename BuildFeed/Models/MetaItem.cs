@@ -6,159 +6,164 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
 {
-    [DataObject]
-    public class MetaItemModel
-    {
-        [Key]
-        [BsonId]
-        [@Required]
-        public MetaItemKey Id { get; set; }
+   [DataObject]
+   public class MetaItemModel
+   {
+      [Key]
+      [BsonId]
+      [@Required]
+      public MetaItemKey Id { get; set; }
 
-        [DisplayName("Page Content")]
-        [AllowHtml]
-        public string PageContent { get; set; }
+      [DisplayName("Page Content")]
+      [AllowHtml]
+      public string PageContent { get; set; }
 
-        [DisplayName("Meta Description")]
-        public string MetaDescription { get; set; }
-    }
+      [DisplayName("Meta Description")]
+      public string MetaDescription { get; set; }
+   }
 
-    public class MetaItem
-    {
-        private const string _metaCollectionName = "metaitem";
+   public class MetaItem
+   {
+      private const string _metaCollectionName = "metaitem";
 
-        private MongoClient _dbClient;
-        private IMongoCollection<MetaItemModel> _metaCollection;
+      private MongoClient _dbClient;
+      private IMongoCollection<MetaItemModel> _metaCollection;
+      private Build bModel;
 
-        public MetaItem()
-        {
-            _dbClient = new MongoClient(new MongoClientSettings()
-            {
-                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-            });
+      public MetaItem()
+      {
+         _dbClient = new MongoClient(new MongoClientSettings()
+         {
+            Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+         });
 
-            _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
-        }
+         _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
+         bModel = new Build();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<MetaItemModel> Select()
-        {
-            var task = _metaCollection.Find(new BsonDocument()).ToListAsync();
-            task.Wait();
-            return task.Result;
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<MetaItemModel>> Select()
+      {
+         return await _metaCollection
+            .Find(new BsonDocument())
+            .ToListAsync();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public IEnumerable<MetaItemModel> SelectByType(MetaType type)
-        {
-            var task = _metaCollection.Find(f => f.Id.Type == type).ToListAsync();
-            task.Wait();
-            return task.Result;
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public async Task<IEnumerable<MetaItemModel>> SelectByType(MetaType type)
+      {
+         return await _metaCollection
+            .Find(f => f.Id.Type == type)
+            .ToListAsync();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public MetaItemModel SelectById(MetaItemKey id)
-        {
-            var task = _metaCollection.Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value).SingleOrDefaultAsync();
-            task.Wait();
-            return task.Result;
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<MetaItemModel> SelectById(MetaItemKey id)
+      {
+         return await _metaCollection
+            .Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value)
+            .SingleOrDefaultAsync();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<string> SelectUnusedLabs()
-        {
-            var labs = new Build().SelectBuildLabs();
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedLabs()
+      {
+         var labs = await bModel.SelectBuildLabs();
 
-            var usedLabs = _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
-            usedLabs.Wait();
+         var usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
 
-            return from l in labs
-                   where usedLabs.Result.All(ul => ul.Id.Value != l)
-                   select l;
-        }
+         return from l in labs
+                where usedLabs.All(ul => ul.Id.Value != l)
+                select l;
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<string> SelectUnusedVersions()
-        {
-            var versions = new Build().SelectBuildVersions();
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedVersions()
+      {
+         var versions = await bModel.SelectBuildVersions();
 
-            var usedVersions = _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
-            usedVersions.Wait();
+         var usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
 
-            return from v in versions
-                   where usedVersions.Result.All(ul => ul.Id.Value != v.ToString())
-                   select v.ToString();
-        }
+         return from v in versions
+                where usedVersions.All(ul => ul.Id.Value != v.ToString())
+                select v.ToString();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public IEnumerable<string> SelectUnusedYears()
-        {
-            var years = new Build().SelectBuildYears();
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedYears()
+      {
+         var years = await bModel.SelectBuildYears();
 
-            var usedYears = _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
-            usedYears.Wait();
+         var usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
 
-            return from y in years
-                   where usedYears.Result.All(ul => ul.Id.Value != y.ToString())
-                   select y.ToString();
-        }
+         return from y in years
+                where usedYears.All(ul => ul.Id.Value != y.ToString())
+                select y.ToString();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public void Insert(MetaItemModel item)
-        {
-            var task = _metaCollection.InsertOneAsync(item);
-            task.Wait();
-        }
+      [DataObjectMethod(DataObjectMethodType.Insert, true)]
+      public async Task Insert(MetaItemModel item)
+      {
+         await _metaCollection
+            .InsertOneAsync(item);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public void Update(MetaItemModel item)
-        {
-            var task = _metaCollection.ReplaceOneAsync(f => f.Id.Type == item.Id.Type && f.Id.Value == item.Id.Value, item);
-            task.Wait();
-        }
+      [DataObjectMethod(DataObjectMethodType.Update, true)]
+      public async Task Update(MetaItemModel item)
+      {
+         await _metaCollection
+            .ReplaceOneAsync(f => f.Id.Type == item.Id.Type && f.Id.Value == item.Id.Value, item);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public void InsertAll(IEnumerable<MetaItemModel> items)
-        {
-            var task = _metaCollection.InsertManyAsync(items);
-            task.Wait();
-        }
+      [DataObjectMethod(DataObjectMethodType.Insert, false)]
+      public async Task InsertAll(IEnumerable<MetaItemModel> items)
+      {
+         await _metaCollection
+            .InsertManyAsync(items);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Delete, true)]
-        public void DeleteById(MetaItemKey id)
-        {
-            var task = _metaCollection.DeleteOneAsync(f => f.Id.Type == id.Type && f.Id.Value == id.Value);
-            task.Wait();
-        }
-    }
+      [DataObjectMethod(DataObjectMethodType.Delete, true)]
+      public async Task DeleteById(MetaItemKey id)
+      {
+         await _metaCollection
+            .DeleteOneAsync(f => f.Id.Type == id.Type && f.Id.Value == id.Value);
+      }
+   }
 
-    public struct MetaItemKey
-    {
-        public string Value { get; set; }
-        public MetaType Type { get; set; }
+   public class MetaItemKey
+   {
+      public string Value { get; set; }
+      public MetaType Type { get; set; }
 
-        public MetaItemKey(string id)
-        {
-            var items = id.Split(':');
-            Type = (MetaType)Enum.Parse(typeof(MetaType), items[0]);
-            Value = items[1];
-        }
+      public MetaItemKey()
+      {
 
-        public override string ToString()
-        {
-            return $"{Type}:{Value}";
-        }
-    }
+      }
 
-    public enum MetaType
-    {
-        Lab,
-        Version,
-        Source,
-        Year
-    }
+      public MetaItemKey(string id)
+      {
+         var items = id.Split(':');
+         Type = (MetaType)Enum.Parse(typeof(MetaType), items[0]);
+         Value = items[1];
+      }
+
+      public override string ToString()
+      {
+         return $"{Type}:{Value}";
+      }
+   }
+
+   public enum MetaType
+   {
+      Lab,
+      Version,
+      Source,
+      Year
+   }
 }

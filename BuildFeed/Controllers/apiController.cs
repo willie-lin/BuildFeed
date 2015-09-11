@@ -4,6 +4,7 @@ using BuildFeed.Models.ApiModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Security;
 
@@ -18,22 +19,22 @@ namespace BuildFeed.Controllers
          bModel = new Build();
       }
 
-      public IEnumerable<BuildModel> GetBuilds()
+      public async Task<IEnumerable<BuildModel>> GetBuilds()
       {
-         return bModel.SelectInBuildOrder();
+         return await bModel.SelectInBuildOrder();
       }
 
-      public IEnumerable<string> GetWin10Labs()
+      public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();
-         labs.AddRange(bModel.SelectBuildLabs(6, 4));
-         labs.AddRange(bModel.SelectBuildLabs(10, 0));
+         labs.AddRange(await bModel.SelectBuildLabs(6, 4));
+         labs.AddRange(await bModel.SelectBuildLabs(10, 0));
 
          return labs.GroupBy(l => l).Select(l => l.Key).Where(l => l.All(c => c != '(')).ToArray();
       }
 
       [HttpPost]
-      public bool AddWin10Builds(NewBuild apiModel)
+      public async Task<bool> AddWin10Builds(NewBuild apiModel)
       {
          if (apiModel == null)
          {
@@ -41,7 +42,7 @@ namespace BuildFeed.Controllers
          }
          if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
          {
-            bModel.InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel()
+            await bModel.InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel()
             {
                MajorVersion = nb.MajorVersion,
                MinorVersion = nb.MinorVersion,
@@ -59,7 +60,7 @@ namespace BuildFeed.Controllers
          }
       }
 
-      public IEnumerable<SearchResult> GetSearchResult(string query)
+      public async Task<IEnumerable<SearchResult>> GetSearchResult(string query)
       {
          if (string.IsNullOrWhiteSpace(query))
          {
@@ -82,7 +83,7 @@ namespace BuildFeed.Controllers
          results.AddRange(sourceResults);
 
 
-         var versionResults = from v in bModel.SelectBuildVersions()
+         var versionResults = from v in await bModel.SelectBuildVersions()
                               where $"{v.Major}.{v.Minor}".StartsWith(query)
                               orderby v.Major descending, v.Minor descending
                               select new SearchResult()
@@ -96,7 +97,7 @@ namespace BuildFeed.Controllers
          results.AddRange(versionResults);
 
 
-         var yearResults = from y in bModel.SelectBuildYears()
+         var yearResults = from y in await bModel.SelectBuildYears()
                            where y.ToString().Contains(query)
                            orderby y descending
                            select new SearchResult()
@@ -110,7 +111,7 @@ namespace BuildFeed.Controllers
          results.AddRange(yearResults);
 
 
-         var labResults = from l in bModel.SearchBuildLabs(query)
+         var labResults = from l in await bModel.SearchBuildLabs(query)
                           orderby l.IndexOf(query.ToLower()) ascending,
                                   l.Length ascending
                           select new SearchResult()
@@ -124,7 +125,7 @@ namespace BuildFeed.Controllers
          results.AddRange(labResults);
 
 
-         var buildResults = from b in bModel.Select()
+         var buildResults = from b in await bModel.Select()
                             where b.FullBuildString.ToLower().Contains(query.ToLower())
                             orderby b.FullBuildString.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending,
                                     b.BuildTime descending
