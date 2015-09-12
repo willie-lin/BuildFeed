@@ -223,6 +223,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Local\Common.pt-br.Designer.cs">
+      <DependentUpon>Common.pt-br.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Common.sk.Designer.cs">
       <DependentUpon>Common.sk.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -273,6 +278,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Front.pt-br.Designer.cs">
+      <DependentUpon>Front.pt-br.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Front.sk.Designer.cs">
       <DependentUpon>Front.sk.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -318,6 +328,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Model.pt-br.Designer.cs">
+      <DependentUpon>Model.pt-br.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Model.sk.Designer.cs">
       <DependentUpon>Model.sk.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -360,6 +375,11 @@
     </Compile>
     <Compile Include="Local\Model.qps-ploc.Designer.cs">
       <DependentUpon>Model.qps-ploc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.pt-br.Designer.cs">
+      <DependentUpon>Support.pt-br.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -562,6 +582,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Local\Common.pt-br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.pt-br.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.sk.Designer.cs</LastGenOutput>
@@ -602,6 +626,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.pt-br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.pt-br.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.sk.Designer.cs</LastGenOutput>
@@ -637,6 +665,11 @@
     <EmbeddedResource Include="Local\Front.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.pt-br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.pt-br.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -682,6 +715,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Model.qps-ploc.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.pt-br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.pt-br.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
