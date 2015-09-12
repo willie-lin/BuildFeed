@@ -531,14 +531,20 @@ namespace BuildFeed.Models
       [Display(ResourceType = typeof(Model), Name = "FlightNone")]
       None = 0,
 
-      [Display(ResourceType = typeof(Model), Name = "FlightLow")]
-      Low = 1,
+      [Display(ResourceType = typeof(Model), Name = "FlightWIS")]
+      WIS = 1,
 
-      [Display(ResourceType = typeof(Model), Name = "FlightMedium")]
-      Medium = 2,
+      [Display(ResourceType = typeof(Model), Name = "FlightWIF")]
+      WIF = 2,
 
-      [Display(ResourceType = typeof(Model), Name = "FlightHigh")]
-      High = 3
+      [Display(ResourceType = typeof(Model), Name = "FlightOSG")]
+      OSG = 3,
+
+      [Display(ResourceType = typeof(Model), Name = "FlightMSIT")]
+      MSIT = 4,
+
+      [Display(ResourceType = typeof(Model), Name = "FlightCanary")]
+      Canary = 5
    }
 
    public class BuildVersion

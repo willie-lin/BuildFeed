@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓôřè₥  !!!]</value>
+    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓôř !!!]</value>
+    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓôřè₥ !!!]</value>
+    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓôřè₥ !!!]</value>
+    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓôřè !!!]</value>
+    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ ℓôř !!!]</value>
+    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
   </data>
   <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓôřè₥  !!!]</value>
+    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓôřè !!!]</value>
+    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ ℓôř !!!]</value>
+    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓôřè !!!]</value>
+    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
   </data>
   <data name="Labs" xml:space="preserve">
-    <value>[!!! £áβƨ  !!!]</value>
+    <value>[!!! £áβƨ !!!]</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ ℓ !!!]</value>
+    <value>[!!! £ôϱ ïñ  !!!]</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ ℓ !!!]</value>
+    <value>[!!! Þáƨƨωôřδ  !!!]</value>
   </data>
   <data name="RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ ℓôř !!!]</value>
+    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
   </data>
   <data name="RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓôřè !!!]</value>
+    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
   </data>
   <data name="RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓôřè !!!]</value>
+    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř ℓ !!!]</value>
+    <value>[!!! Rèϱïƨƭèř  !!!]</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è ℓô !!!]</value>
+    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓôřè₥ ï !!!]</value>
+    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓô !!!]</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓôřè₥ ï !!!]</value>
+    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓô !!!]</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
-    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ !!!]</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè !!!]</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓôřè₥ ï !!!]</value>
+    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è ℓ !!!]</value>
+    <value>[!!! Ûƨèřñá₥è  !!!]</value>
   </data>
   <data name="Week" xml:space="preserve">
-    <value>[!!! Wèèƙ  !!!]</value>
+    <value>[!!! Wèèƙ !!!]</value>
   </data>
 </root>

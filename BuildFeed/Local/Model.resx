@@ -132,20 +132,26 @@
   <data name="Documentation" xml:space="preserve">
     <value>Documentation</value>
   </data>
-  <data name="FlightHigh" xml:space="preserve">
-    <value>High</value>
+  <data name="FlightCanary" xml:space="preserve">
+    <value>Canary</value>
   </data>
   <data name="FlightLevel" xml:space="preserve">
     <value>Flight level</value>
   </data>
-  <data name="FlightLow" xml:space="preserve">
-    <value>Low</value>
-  </data>
-  <data name="FlightMedium" xml:space="preserve">
-    <value>Medium</value>
+  <data name="FlightMSIT" xml:space="preserve">
+    <value>Microsoft Internal</value>
   </data>
   <data name="FlightNone" xml:space="preserve">
     <value>None</value>
+  </data>
+  <data name="FlightOSG" xml:space="preserve">
+    <value>Operating Systems Group</value>
+  </data>
+  <data name="FlightWIF" xml:space="preserve">
+    <value>Windows Insider Fast</value>
+  </data>
+  <data name="FlightWIS" xml:space="preserve">
+    <value>Windows Insider Slow</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
     <value>Public leak</value>

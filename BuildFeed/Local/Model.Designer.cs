@@ -106,11 +106,11 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to High.
+        ///   Looks up a localized string similar to Canary.
         /// </summary>
-        public static string FlightHigh {
+        public static string FlightCanary {
             get {
-                return ResourceManager.GetString("FlightHigh", resourceCulture);
+                return ResourceManager.GetString("FlightCanary", resourceCulture);
             }
         }
         
@@ -124,20 +124,11 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low.
+        ///   Looks up a localized string similar to Microsoft Internal.
         /// </summary>
-        public static string FlightLow {
+        public static string FlightMSIT {
             get {
-                return ResourceManager.GetString("FlightLow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Medium.
-        /// </summary>
-        public static string FlightMedium {
-            get {
-                return ResourceManager.GetString("FlightMedium", resourceCulture);
+                return ResourceManager.GetString("FlightMSIT", resourceCulture);
             }
         }
         
@@ -147,6 +138,33 @@ namespace BuildFeed.Local {
         public static string FlightNone {
             get {
                 return ResourceManager.GetString("FlightNone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operating Systems Group.
+        /// </summary>
+        public static string FlightOSG {
+            get {
+                return ResourceManager.GetString("FlightOSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Insider Fast.
+        /// </summary>
+        public static string FlightWIF {
+            get {
+                return ResourceManager.GetString("FlightWIF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Insider Slow.
+        /// </summary>
+        public static string FlightWIS {
+            get {
+                return ResourceManager.GetString("FlightWIS", resourceCulture);
             }
         }
         
