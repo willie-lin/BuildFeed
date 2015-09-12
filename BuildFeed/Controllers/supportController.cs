@@ -134,9 +134,9 @@ namespace BuildFeed.Controllers
       }
 
       [Route("rss")]
-      public ActionResult rss()
+      public async Task<ActionResult> rss()
       {
-         ViewBag.Labs = bModel.SelectBuildLabs();
+         ViewBag.Labs = await bModel.SelectBuildLabs();
          return View();
       }
 

@@ -1,4 +1,4 @@
-﻿@model Tuple<BuildFeed.Models.BuildGroup, IEnumerable<BuildFeed.Models.BuildModel>>
+﻿@model Tuple<BuildFeed.Models.BuildGroup, List<BuildFeed.Models.BuildModel>>
 @using Humanizer;
 @{
     ViewBag.Title = string.Format("{0} | {1}", Model.Item1.ToString(), BuildFeed.Local.Common.SiteName);

@@ -12,9 +12,11 @@
     <li>
         @BuildFeed.Local.Model.FlightLevel
         <ul>
-            <li><a href="@Url.Action("flight", new { controller = "rss", id = "low" })" title="@BuildFeed.Local.Model.FlightLow"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightLow</a></li>
-            <li><a href="@Url.Action("flight", new { controller = "rss", id = "medium" })" title="@BuildFeed.Local.Model.FlightMedium"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightMedium</a></li>
-            <li><a href="@Url.Action("flight", new { controller = "rss", id = "high" })" title="@BuildFeed.Local.Model.FlightHigh"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightHigh</a></li>
+            <li><a href="@Url.Action("flight", new { controller = "rss", id = "wis" })" title="@BuildFeed.Local.Model.FlightWIS"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightWIS</a></li>
+            <li><a href="@Url.Action("flight", new { controller = "rss", id = "wif" })" title="@BuildFeed.Local.Model.FlightWIF"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightWIF</a></li>
+            <li><a href="@Url.Action("flight", new { controller = "rss", id = "osg" })" title="@BuildFeed.Local.Model.FlightOSG"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightOSG</a></li>
+           <li><a href="@Url.Action("flight", new { controller = "rss", id = "msit" })" title="@BuildFeed.Local.Model.FlightMSIT"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightMSIT</a></li>
+           <li><a href="@Url.Action("flight", new { controller = "rss", id = "canary" })" title="@BuildFeed.Local.Model.FlightCanary"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightCanary</a></li>
         </ul>
     </li>
     <li>
