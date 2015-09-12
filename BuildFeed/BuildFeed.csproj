@@ -223,45 +223,125 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Local\Common.en-gb.Designer.cs">
+      <DependentUpon>Common.en-gb.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.en-us.Designer.cs">
+      <DependentUpon>Common.en-us.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.nl-nl.Designer.cs">
+      <DependentUpon>Common.nl-nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.ar-sa.Designer.cs">
+      <DependentUpon>Common.ar-sa.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.Designer.cs">
+      <DependentUpon>Common.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Common.qps-ploc.Designer.cs">
       <DependentUpon>Common.qps-ploc.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Local\Common.Designer.cs">
+    <Compile Include="Local\Front.en-gb.Designer.cs">
+      <DependentUpon>Front.en-gb.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Local\Front.nl-nl.Designer.cs">
+      <DependentUpon>Front.nl-nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Front.ar-sa.Designer.cs">
+      <DependentUpon>Front.ar-sa.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Front.Designer.cs">
+      <DependentUpon>Front.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Local\Front.qps-ploc.Designer.cs">
       <DependentUpon>Front.qps-ploc.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Local\Front.Designer.cs">
+    <Compile Include="Local\Front.en-us.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Front.resx</DependentUpon>
+      <DependentUpon>Front.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Local\Model.en-gb.Designer.cs">
+      <DependentUpon>Model.en-gb.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.nl-nl.Designer.cs">
+      <DependentUpon>Model.nl-nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.ar-sa.Designer.cs">
+      <DependentUpon>Model.ar-sa.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.Designer.cs">
+      <DependentUpon>Model.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Local\Model.qps-ploc.Designer.cs">
       <DependentUpon>Model.qps-ploc.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Local\Model.Designer.cs">
+    <Compile Include="Local\Model.en-us.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.resx</DependentUpon>
+      <DependentUpon>Model.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Local\Support.en-gb.Designer.cs">
+      <DependentUpon>Support.en-gb.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.nl-nl.Designer.cs">
+      <DependentUpon>Support.nl-nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.ar-sa.Designer.cs">
+      <DependentUpon>Support.ar-sa.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.Designer.cs">
+      <DependentUpon>Support.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Local\Support.qps-ploc.Designer.cs">
       <DependentUpon>Support.qps-ploc.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Local\Support.Designer.cs">
+    <Compile Include="Local\Support.en-us.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Support.resx</DependentUpon>
+      <DependentUpon>Support.en-us.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\ApiModel\NewBuild.cs" />
     <Compile Include="Models\ApiModel\SearchResult.cs" />
@@ -416,25 +496,67 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Local\Common.qps-ploc.resx">
+    <EmbeddedResource Include="Local\Common.en-gb.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
+      <LastGenOutput>Common.en-gb.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.en-us.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.nl-nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.nl-nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.ar-sa.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.ar-sa.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Local\Front.qps-ploc.resx">
+    <EmbeddedResource Include="Local\Common.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+      <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.en-gb.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.en-gb.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.nl-nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.nl-nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.ar-sa.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.ar-sa.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Local\Model.qps-ploc.resx">
+    <EmbeddedResource Include="Local\Front.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Model.qps-ploc.Designer.cs</LastGenOutput>
+      <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.en-us.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.en-gb.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.en-gb.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.nl-nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.nl-nl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.ar-sa.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.ar-sa.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.resx">
@@ -442,13 +564,39 @@
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Local\Support.qps-ploc.resx">
+    <EmbeddedResource Include="Local\Model.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Support.qps-ploc.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.qps-ploc.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.en-us.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.en-gb.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.en-gb.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.nl-nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.nl-nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.ar-sa.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.ar-sa.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Support.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.qps-ploc.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.en-us.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="AddABuild" xml:space="preserve">
+    <value>Add a build</value>
   </data>
-  <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="BuildMetaDate" xml:space="preserve">
+    <value>Discover about Windows Build {0}, from {1} and compiled on {2}.</value>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="BuildMetaNoDate" xml:space="preserve">
+    <value>Discover about Windows Build {0}, from {1}. BuildFeed tracks Windows builds throughout the development process.</value>
   </data>
-  <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="BuildsFrom" xml:space="preserve">
+    <value>Builds from</value>
   </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
   </data>
-  <data name="EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
   </data>
-  <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="EditBuild" xml:space="preserve">
+    <value>Edit build</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="EditorActions" xml:space="preserve">
+    <value>Editor actions</value>
   </data>
-  <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="HomepageH1" xml:space="preserve">
+    <value>Windows NT build list</value>
   </data>
-  <data name="Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="LabMetaGeneric" xml:space="preserve">
+    <value>Check out all the known builds to come out of the Windows development lab {0} through BuildFeed, a collaborative Windows build list</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Listing" xml:space="preserve">
+    <value>Listing</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="MoreFromLab" xml:space="preserve">
+    <value>Find more builds from {0}</value>
   </data>
-  <data name="RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="MoreFromSource" xml:space="preserve">
+    <value>Find more builds sourced from {0}</value>
   </data>
-  <data name="RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="MoreFromYear" xml:space="preserve">
+    <value>Find more builds compiled in {0}</value>
   </data>
-  <data name="RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="NoLab" xml:space="preserve">
+    <value>No lab string</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Private" xml:space="preserve">
+    <value>Private</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Public" xml:space="preserve">
+    <value>Public</value>
   </data>
-  <data name="StatsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓô !!!]</value>
+  <data name="QuickPaste" xml:space="preserve">
+    <value>Quick-paste</value>
   </data>
-  <data name="StatsLab" xml:space="preserve">
-    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓô !!!]</value>
+  <data name="ReturnToListing" xml:space="preserve">
+    <value>Return to build listing</value>
   </data>
-  <data name="StatsLabIncluded" xml:space="preserve">
-    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ !!!]</value>
+  <data name="ReturnToOverview" xml:space="preserve">
+    <value>Return to build overview</value>
   </data>
-  <data name="StatsNewAdditions" xml:space="preserve">
-    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè !!!]</value>
+  <data name="Share" xml:space="preserve">
+    <value>Share</value>
   </data>
-  <data name="ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
   </data>
-  <data name="UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="xBuilds" xml:space="preserve">
+    <value>builds</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="YearMetaGeneric" xml:space="preserve">
+    <value>View a list of all Windows builds compiled in {0}, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed</value>
   </data>
 </root>

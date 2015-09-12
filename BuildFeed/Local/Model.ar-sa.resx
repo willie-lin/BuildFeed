@@ -117,82 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Added" xml:space="preserve">
+    <value>وقت التصنيع</value>
   </data>
-  <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="AppPackage" xml:space="preserve">
+    <value>حزمة خاصة بتطبيق</value>
   </data>
-  <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="BuildTime" xml:space="preserve">
+    <value>تاريخ ووقت النسخة</value>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="BuildTools" xml:space="preserve">
+    <value>أدوات النسخة</value>
   </data>
-  <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Documentation" xml:space="preserve">
+    <value>مستندات</value>
   </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="FlightCanary" xml:space="preserve">
+    <value>المستوى الأولي (Canary)</value>
   </data>
-  <data name="EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="FlightLevel" xml:space="preserve">
+    <value>مستوى النسخة</value>
   </data>
-  <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="FlightMSIT" xml:space="preserve">
+    <value>مستوى موظفي مايكروسوفت الداخلي (MSIT)</value>
   </data>
-  <data name="EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="FlightNone" xml:space="preserve">
+    <value>بدون</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="FlightOSG" xml:space="preserve">
+    <value>مستوى مجموعة نظام التشغيل (OSG)</value>
   </data>
-  <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="FlightWIF" xml:space="preserve">
+    <value>نسخ المختبرين - المستوى السريع WIF</value>
   </data>
-  <data name="Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="FlightWIS" xml:space="preserve">
+    <value>نسخ المختبرين - المستوى البطيء WIS</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="InternalLeak" xml:space="preserve">
+    <value>تسريب عام للنسخة</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="Lab" xml:space="preserve">
+    <value>سلسلة المختبر</value>
   </data>
-  <data name="RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="LeakDate" xml:space="preserve">
+    <value>تاريخ ووقت التسريب أو النشر</value>
   </data>
-  <data name="RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Logging" xml:space="preserve">
+    <value>من السجلات</value>
   </data>
-  <data name="RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="MajorVersion" xml:space="preserve">
+    <value>رقم النسخة الرئيسي</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="MinorVersion" xml:space="preserve">
+    <value>رقم النسخة الفرعي</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Modified" xml:space="preserve">
+    <value>وقت التعديل</value>
   </data>
-  <data name="StatsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓô !!!]</value>
+  <data name="Number" xml:space="preserve">
+    <value>رقم النسخة</value>
   </data>
-  <data name="StatsLab" xml:space="preserve">
-    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓô !!!]</value>
+  <data name="PrivateLeak" xml:space="preserve">
+    <value>نسخة خاصة غير مسربة</value>
   </data>
-  <data name="StatsLabIncluded" xml:space="preserve">
-    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ !!!]</value>
+  <data name="PublicRelease" xml:space="preserve">
+    <value>نسخة عامة</value>
   </data>
-  <data name="StatsNewAdditions" xml:space="preserve">
-    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè !!!]</value>
+  <data name="Revision" xml:space="preserve">
+    <value>رقم مرجع بناء النسخة</value>
   </data>
-  <data name="ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="SourceDetails" xml:space="preserve">
+    <value>تفاصيل المصدر</value>
   </data>
-  <data name="UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="SourceType" xml:space="preserve">
+    <value>نوع المصدر</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="UpdateGDR" xml:space="preserve">
+    <value>تحديث GDR</value>
+  </data>
+  <data name="UpdateLDR" xml:space="preserve">
+    <value>تحديث LDR</value>
   </data>
 </root>

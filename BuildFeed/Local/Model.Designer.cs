@@ -61,7 +61,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time created.
+        ///   Looks up a localized string similar to [!!! Tï₥è çřèáƭèδ  !!!].
         /// </summary>
         public static string Added {
             get {
@@ -70,7 +70,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to App package.
+        ///   Looks up a localized string similar to [!!! Âƥƥ ƥáçƙáϱè  !!!].
         /// </summary>
         public static string AppPackage {
             get {
@@ -79,7 +79,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Build time.
+        ///   Looks up a localized string similar to [!!! ßúïℓδ ƭï₥è  !!!].
         /// </summary>
         public static string BuildTime {
             get {
@@ -88,7 +88,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Build tools.
+        ///   Looks up a localized string similar to [!!! ßúïℓδ ƭôôℓƨ  !!!].
         /// </summary>
         public static string BuildTools {
             get {
@@ -97,7 +97,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documentation.
+        ///   Looks up a localized string similar to [!!! Ðôçú₥èñƭáƭïôñ  !!!].
         /// </summary>
         public static string Documentation {
             get {
@@ -106,7 +106,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Canary.
+        ///   Looks up a localized string similar to [!!! Çáñář¥  !!!].
         /// </summary>
         public static string FlightCanary {
             get {
@@ -115,7 +115,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flight level.
+        ///   Looks up a localized string similar to [!!! Fℓïϱλƭ ℓèƲèℓ  !!!].
         /// </summary>
         public static string FlightLevel {
             get {
@@ -124,7 +124,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Internal.
+        ///   Looks up a localized string similar to [!!! Mïçřôƨôƒƭ Ìñƭèřñáℓ ℓ !!!].
         /// </summary>
         public static string FlightMSIT {
             get {
@@ -133,7 +133,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to None.
+        ///   Looks up a localized string similar to [!!! Nôñè !!!].
         /// </summary>
         public static string FlightNone {
             get {
@@ -142,7 +142,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operating Systems Group.
+        ///   Looks up a localized string similar to [!!! Óƥèřáƭïñϱ §¥ƨƭè₥ƨ Gřôúƥ ℓ !!!].
         /// </summary>
         public static string FlightOSG {
             get {
@@ -151,7 +151,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Windows Insider Fast.
+        ///   Looks up a localized string similar to [!!! Wïñδôωƨ Ìñƨïδèř Fáƨƭ ℓ !!!].
         /// </summary>
         public static string FlightWIF {
             get {
@@ -160,7 +160,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Windows Insider Slow.
+        ///   Looks up a localized string similar to [!!! Wïñδôωƨ Ìñƨïδèř §ℓôω ℓ !!!].
         /// </summary>
         public static string FlightWIS {
             get {
@@ -169,7 +169,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Public leak.
+        ///   Looks up a localized string similar to [!!! Þúβℓïç ℓèáƙ  !!!].
         /// </summary>
         public static string InternalLeak {
             get {
@@ -178,7 +178,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lab string.
+        ///   Looks up a localized string similar to [!!! £áβ ƨƭřïñϱ  !!!].
         /// </summary>
         public static string Lab {
             get {
@@ -187,7 +187,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leak or release date.
+        ///   Looks up a localized string similar to [!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!].
         /// </summary>
         public static string LeakDate {
             get {
@@ -196,7 +196,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logging.
+        ///   Looks up a localized string similar to [!!! £ôϱϱïñϱ  !!!].
         /// </summary>
         public static string Logging {
             get {
@@ -205,7 +205,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Major version.
+        ///   Looks up a localized string similar to [!!! MáJôř Ʋèřƨïôñ  !!!].
         /// </summary>
         public static string MajorVersion {
             get {
@@ -214,7 +214,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minor version.
+        ///   Looks up a localized string similar to [!!! Mïñôř Ʋèřƨïôñ  !!!].
         /// </summary>
         public static string MinorVersion {
             get {
@@ -223,7 +223,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time modified.
+        ///   Looks up a localized string similar to [!!! Tï₥è ₥ôδïƒïèδ  !!!].
         /// </summary>
         public static string Modified {
             get {
@@ -232,7 +232,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Build number.
+        ///   Looks up a localized string similar to [!!! ßúïℓδ ñú₥βèř  !!!].
         /// </summary>
         public static string Number {
             get {
@@ -241,7 +241,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Private leak.
+        ///   Looks up a localized string similar to [!!! ÞřïƲáƭè ℓèáƙ  !!!].
         /// </summary>
         public static string PrivateLeak {
             get {
@@ -250,7 +250,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Public release.
+        ///   Looks up a localized string similar to [!!! Þúβℓïç řèℓèáƨè  !!!].
         /// </summary>
         public static string PublicRelease {
             get {
@@ -259,7 +259,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Build revision.
+        ///   Looks up a localized string similar to [!!! ßúïℓδ řèƲïƨïôñ  !!!].
         /// </summary>
         public static string Revision {
             get {
@@ -268,7 +268,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Source details.
+        ///   Looks up a localized string similar to [!!! §ôúřçè δèƭáïℓƨ  !!!].
         /// </summary>
         public static string SourceDetails {
             get {
@@ -277,7 +277,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Source type.
+        ///   Looks up a localized string similar to [!!! §ôúřçè ƭ¥ƥè  !!!].
         /// </summary>
         public static string SourceType {
             get {
@@ -286,7 +286,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update (GDR).
+        ///   Looks up a localized string similar to [!!! Ûƥδáƭè (GÐR)  !!!].
         /// </summary>
         public static string UpdateGDR {
             get {
@@ -295,7 +295,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update (LDR).
+        ///   Looks up a localized string similar to [!!! Ûƥδáƭè (£ÐR)  !!!].
         /// </summary>
         public static string UpdateLDR {
             get {

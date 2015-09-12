@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+    <value>لم يتم تفعيل حسابك بعد. يرجى العلم بأن كل حساب يتم تدقيقه من قبل طاقم الإدارة قبل تفعيله. يرجى المراجعة لاحقاً</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>إضافات إلى BuildFeed</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>النسخ المصنعة</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>تغيير كلمة السر</value>
   </data>
   <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>إعادة تأكيد كلمة السر الجديدة</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>إعادة تأكيد كلمة السر</value>
   </data>
   <data name="EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+    <value>البريد الإلكتروني</value>
   </data>
   <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>أدخل كلمة السر الحالية</value>
   </data>
   <data name="EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>أدخل كلمة السر الجديدة</value>
   </data>
   <data name="EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+    <value>أدخل كلمة السر</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+    <value>أعلى إصدار</value>
   </data>
   <data name="Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+    <value>المختبرات</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>تسجيل الدخول</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+    <value>كلمة السر</value>
   </data>
   <data name="RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+    <value>أضيفت مؤخراً</value>
   </data>
   <data name="RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>تم تصنيعها مؤخراً</value>
   </data>
   <data name="RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+    <value>تم تسريبها مؤخراً</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+    <value>التسجيل</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+    <value>تذكرني</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓô !!!]</value>
+    <value>نسخ مصنعة كل ربع سنة</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓô !!!]</value>
+    <value>النسخ المسجلة تحت كل مختبر</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
-    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ !!!]</value>
+    <value>فقط المختبرات التي تحتوي على 100 نسخة أو أكثر تدخل في النتائج</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè !!!]</value>
+    <value>الإضافات الجديدة على BuildFeed مقارنة بالسنة السابقة</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+    <value>نشكركم على التسجيل لدى الموقع</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+    <value>اسم المستخدم</value>
   </data>
   <data name="Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+    <value>أسبوع</value>
   </data>
 </root>

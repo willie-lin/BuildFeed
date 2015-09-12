@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="About" xml:space="preserve">
+    <value>عن الموقع</value>
   </data>
-  <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="AddABuild" xml:space="preserve">
+    <value>إضافة نسخة جديدة</value>
   </data>
-  <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="BuildMetaDate" xml:space="preserve">
+    <value>استكشف نسخة الويندوز بناء {0} من المختبر {1} والتي تم تركيبها في {2}</value>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="BuildMetaNoDate" xml:space="preserve">
+    <value>استكشف نسخة الويندوز بناء {0} من المختبر {1} والتي تم تركيبها في {2}. يقوم موقع BuildFeed بتتبع نسخ الويندوز المتنوعة من مختلف المختبرات خلال مراحل تطويره.</value>
   </data>
-  <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="BuildsFrom" xml:space="preserve">
+    <value>نسخ من المختبر</value>
   </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Comments" xml:space="preserve">
+    <value>ملاحظات</value>
   </data>
-  <data name="EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
   </data>
-  <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
   </data>
-  <data name="EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="EditBuild" xml:space="preserve">
+    <value>تعديل النسخة</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="EditorActions" xml:space="preserve">
+    <value>إجراءات المعدل</value>
   </data>
-  <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="HomepageH1" xml:space="preserve">
+    <value>لائحة بنسخ ويندوز NT</value>
   </data>
-  <data name="Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="LabMetaGeneric" xml:space="preserve">
+    <value>استكشف كل النسخ الموثوقة والمعروفة الصادرة من مختبر الويندوز {0} عبر BuildFeed ، وهو موقع مخصص لنشر لوائح نسخ الويندوز المتعددة.</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Listing" xml:space="preserve">
+    <value>لائحة</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="MoreFromLab" xml:space="preserve">
+    <value>استكشف نسخ إضافية من {0}</value>
   </data>
-  <data name="RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="MoreFromSource" xml:space="preserve">
+    <value>استكشف نسخ إضافية مصدرها من {0}</value>
   </data>
-  <data name="RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="MoreFromYear" xml:space="preserve">
+    <value>استكشف نسخ إضافية تم بناؤها في {0}</value>
   </data>
-  <data name="RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="NoLab" xml:space="preserve">
+    <value>لايوجد مختبر</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Private" xml:space="preserve">
+    <value>خاص/سري</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Public" xml:space="preserve">
+    <value>عام</value>
   </data>
-  <data name="StatsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ çô₥ƥïℓèδ èáçλ 9úářƭèř ℓô !!!]</value>
+  <data name="QuickPaste" xml:space="preserve">
+    <value>لصق سريع</value>
   </data>
-  <data name="StatsLab" xml:space="preserve">
-    <value>[!!! Rèçôřδèδ βúïℓδƨ ïñ èáçλ ℓáβ ℓô !!!]</value>
+  <data name="ReturnToListing" xml:space="preserve">
+    <value>عودة إلى لائحة النسخ</value>
   </data>
-  <data name="StatsLabIncluded" xml:space="preserve">
-    <value>[!!! Óñℓ¥ ℓáβƨ ωïƭλ 100 ôř ₥ôřè řèçôřδèδ βúïℓδƨ ářè ïñçℓúδèδ. ℓôřè₥ !!!]</value>
+  <data name="ReturnToOverview" xml:space="preserve">
+    <value>عودة إلى تفاصيل النسخة</value>
   </data>
-  <data name="StatsNewAdditions" xml:space="preserve">
-    <value>[!!! Nèω áδδïƭïôñƨ ƭô ßúïℓδFèèδ ôƲèř ƭλè ƥřèƲïôúƨ ¥èář ℓôřè !!!]</value>
+  <data name="Share" xml:space="preserve">
+    <value>مشاركة</value>
   </data>
-  <data name="ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Today" xml:space="preserve">
+    <value>اليوم</value>
   </data>
-  <data name="UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="xBuilds" xml:space="preserve">
+    <value>نسخ</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="YearMetaGeneric" xml:space="preserve">
+    <value>إظهار لائحة بكل النسخ المطوّرة منذ {0} واكتشف كيف تطور الويندوز بشكل تدريجي منذ ذلك الوقت ، عبر لائحة منظمة من قبل الموقع BuildFeed.</value>
   </data>
 </root>
