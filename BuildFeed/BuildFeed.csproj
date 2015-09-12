@@ -425,13 +425,16 @@
     <Content Include="browserconfig.xml" />
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
+    <Content Include="content\tile\large.png" />
+    <Content Include="content\tile\square.png" />
+    <Content Include="content\tile\tiny.png" />
+    <Content Include="content\tile\wide.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="content\style.css" />
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\users\index.cshtml" />
     <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
-    <Content Include="content\tile\wide.png" />
     <Content Include="content\Web.config" />
     <Content Include="Areas\admin\Views\base\index.cshtml" />
     <Content Include="ApplicationInsights.config">
@@ -501,7 +504,6 @@
     <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
     <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
-    <Content Include="content\tile\large.png" />
     <Content Include="Scripts\bfs.js" />
     <Content Include="Scripts\excanvas.compiled.js" />
     <Content Include="Scripts\excanvas.js" />
@@ -509,8 +511,6 @@
     <Content Include="Scripts\jsrender.js" />
     <Content Include="Scripts\jsrender.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="content\tile\square.png" />
-    <Content Include="content\tile\tiny.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
