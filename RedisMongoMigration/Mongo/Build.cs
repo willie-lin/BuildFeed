@@ -24,7 +24,7 @@ namespace RedisMongoMigration.Mongo
       public TypeOfSource SourceType { get; set; }
       public string SourceDetails { get; set; }
       public DateTime? LeakDate { get; set; }
-      public LevelOfFlight FlightLevel { get; set; }
+      public MongoLevelOfFlight FlightLevel { get; set; }
 
       public bool IsLeaked
       {
@@ -106,5 +106,15 @@ namespace RedisMongoMigration.Mongo
          var task = _buildCollection.InsertManyAsync(items);
          task.Wait();
       }
+   }
+
+   public enum MongoLevelOfFlight
+   {
+      None = 0,
+      WIS = 1,
+      WIF = 2,
+      OSG = 3,
+      MSIT = 4,
+      Canary = 5
    }
 }

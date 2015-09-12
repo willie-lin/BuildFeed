@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MBuildModel = RedisMongoMigration.Mongo.BuildModel;
 using MBuild = RedisMongoMigration.Mongo.Build;
 using RBuild = RedisMongoMigration.Redis.Build;
+using MongoLevelOfFlight = RedisMongoMigration.Mongo.MongoLevelOfFlight;
+using RedisLevelOfFlight = RedisMongoMigration.Redis.RedisLevelOfFlight;
 
 namespace RedisMongoMigration
 {
@@ -33,12 +35,25 @@ namespace RedisMongoMigration
                             SourceType = b.SourceType,
                             SourceDetails = b.SourceDetails,
                             LeakDate = b.LeakDate,
-                            FlightLevel = b.FlightLevel
+                            FlightLevel = ExchangeFlights(b.FlightLevel)
                          };
          MBuild m = new MBuild();
          m.InsertAll(newBuilds);
          Console.WriteLine("Builds: Complete");
          Console.ReadKey();
+      }
+
+      static MongoLevelOfFlight ExchangeFlights(RedisLevelOfFlight flight)
+      {
+         switch (flight)
+         {
+            case RedisLevelOfFlight.Low:
+               return MongoLevelOfFlight.WIS;
+            case RedisLevelOfFlight.High:
+               return MongoLevelOfFlight.OSG;
+            default:
+               return MongoLevelOfFlight.None;
+         }
       }
    }
 }

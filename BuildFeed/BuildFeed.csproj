@@ -399,6 +399,7 @@
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="App_Code\PaginationHelpers.cshtml" />
+    <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

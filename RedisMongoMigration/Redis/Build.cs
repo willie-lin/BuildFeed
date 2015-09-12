@@ -28,7 +28,7 @@ namespace RedisMongoMigration.Redis
         public TypeOfSource SourceType { get; set; }
         public string SourceDetails { get; set; }
         public DateTime? LeakDate { get; set; }
-        public LevelOfFlight FlightLevel { get; set; }
+        public RedisLevelOfFlight FlightLevel { get; set; }
 
         public bool IsLeaked
         {
@@ -80,5 +80,13 @@ namespace RedisMongoMigration.Redis
             return client.GetAll();
          }
       }
+   }
+
+   public enum RedisLevelOfFlight
+   {
+      None = 0,
+      Low = 1,
+      Medium = 2,
+      High = 3
    }
 }

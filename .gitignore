@@ -18,6 +18,7 @@ smtp.config
 
 # Publish Profiles
 [Pp]roperties/[Pp]ublish[Pp]rofiles/
+*.pubxml
 
 # VS Configuration
 .vs/
