@@ -117,79 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>Add build</value>
+  <data name="AccountValidation" xml:space="preserve">
+    <value>Elk account wordt gevalideerd door een beheerder, wees geduldig en controleer later opnieuw</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="AdditionsToBuildFeed" xml:space="preserve">
+    <value>Toevoegingen aan BuildFeed</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>Contribute on</value>
+  <data name="BuildsCompiled" xml:space="preserve">
+    <value>Builds gecompileerd</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>Developed by</value>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Verander je wachtwoord</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Bevestig je nieuwe wachtwoord</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Log in</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Bevestig je wachtwoord</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>E-mail</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Vul je huidige wachtwoord in</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Search</value>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Vul je nieuwe wachtwoord in</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Search BuildFeed...</value>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Vul je wachtwoord in</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>Search query</value>
+  <data name="HighestVersion" xml:space="preserve">
+    <value>Hoogste versie</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+  <data name="Labs" xml:space="preserve">
+    <value>Labs</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="Login" xml:space="preserve">
+    <value>Inloggen</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Statistics</value>
+  <data name="Password" xml:space="preserve">
+    <value>Wachtwoord</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Toggle navigation</value>
+  <data name="RecentlyAdded" xml:space="preserve">
+    <value>Recent toegevoegd</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="RecentlyCompiled" xml:space="preserve">
+    <value>Recent gecompileerd</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>type to search...</value>
+  <data name="RecentlyLeaked" xml:space="preserve">
+    <value>Recent gelekt</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
+  <data name="Register" xml:space="preserve">
+    <value>Registreer</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Page {0}</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Onthoud mij</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Build</value>
+  <data name="StatsCompiled" xml:space="preserve">
+    <value>Builds gecompileerd in elk kwartaal</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>No results found</value>
+  <data name="StatsLab" xml:space="preserve">
+    <value>Gedocumenteerde builds in elk lab</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Lab</value>
+  <data name="StatsLabIncluded" xml:space="preserve">
+    <value>Alleen labs met meer dan 100 builds zijn opgenomen</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Source</value>
+  <data name="StatsNewAdditions" xml:space="preserve">
+    <value>Nieuwe toevoegingen aan BuildFeed van het afgelopen jaar</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Version</value>
+  <data name="ThanksRegister" xml:space="preserve">
+    <value>Bedankt voor het registreren</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Year</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Gebruikernaam</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Week</value>
   </data>
 </root>

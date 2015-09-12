@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountValidation" xml:space="preserve">
-    <value>Elk account wordt gevalideerd door een beheerder, wees geduldig en controleer later opnieuw</value>
+    <value>Svaki račun je validiran od strane administratora tako da molimo za strpljenje i probajte kasnije.</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>Toevoegingen aan BuildFeed</value>
+    <value>Dodaci BuildFeed-u</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd</value>
+    <value>Kompajlirane verzije</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
-    <value>Verander je wachtwoord</value>
+    <value>Promijeni lozinku</value>
   </data>
   <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>Bevestig je nieuwe wachtwoord</value>
+    <value>Potvrdi novu lozinku</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
-    <value>Bevestig je wachtwoord</value>
+    <value>Potvrdi lozinku</value>
   </data>
   <data name="EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Mail adresa</value>
   </data>
   <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>Voer je huidige wachtwoord in</value>
+    <value>Unesi trenutnu lozinku</value>
   </data>
   <data name="EnterNewPassword" xml:space="preserve">
-    <value>Voer je nieuwe wachtwoord in</value>
+    <value>Unesi novu lozinku</value>
   </data>
   <data name="EnterPassword" xml:space="preserve">
-    <value>Voer je wachtwoord in</value>
+    <value>Unesi lozinku</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>Hoogste versie</value>
+    <value>Najviša verzija</value>
   </data>
   <data name="Labs" xml:space="preserve">
-    <value>Labs</value>
+    <value>Grane</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>Prijava</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Wachtwoord</value>
+    <value>Lozinka</value>
   </data>
   <data name="RecentlyAdded" xml:space="preserve">
-    <value>Recent toegevoegd</value>
+    <value>Nedavno dodano</value>
   </data>
   <data name="RecentlyCompiled" xml:space="preserve">
-    <value>Recent gecompileerd</value>
+    <value>Nedavno kompajlirano</value>
   </data>
   <data name="RecentlyLeaked" xml:space="preserve">
-    <value>Recent gelekt</value>
+    <value>Nedavno procurilo</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Registreer</value>
+    <value>Registracija</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>Onthoud mij</value>
+    <value>Zapamti me</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd elk kwartaal</value>
+    <value>Verzije kompajlirane svaki kvartal</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>Gedocumenteerde builds in elk lab</value>
+    <value>Zabilježene verzije u svakoj grani</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
-    <value>Alleen labs met meer dan 100 builds zijn opgenomen</value>
+    <value>Prikazane su samo grane sa više od 100 verzija</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>Nieuwe toevoegingen aan BuildFeed van het afgelopen jaar</value>
+    <value>Nove verzije dodane u zadnjih godinu dana</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
-    <value>Bedankt voor het registreren</value>
+    <value>Hvala na registraciji</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>Gebruikernaam</value>
+    <value>Korisničko ime</value>
   </data>
   <data name="Week" xml:space="preserve">
-    <value>Week</value>
+    <value>Tjedan</value>
   </data>
 </root>

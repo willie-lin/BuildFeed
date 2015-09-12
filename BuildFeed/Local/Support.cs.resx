@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
+  <data name="AccountValidation" xml:space="preserve">
+    <value>Každý účet je ověřován správcem. Buďte prosím trpěliví a podívejte se znovu za chvíli.</value>
   </data>
-  <data name="AddABuild" xml:space="preserve">
-    <value>Add a build</value>
+  <data name="AdditionsToBuildFeed" xml:space="preserve">
+    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
   </data>
-  <data name="BuildMetaDate" xml:space="preserve">
-    <value>Discover about Windows Build {0}, from {1} and compiled on {2}.</value>
+  <data name="BuildsCompiled" xml:space="preserve">
+    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
   </data>
-  <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>Discover about Windows Build {0}, from {1}. BuildFeed tracks Windows builds throughout the development process.</value>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Změnit heslo</value>
   </data>
-  <data name="BuildsFrom" xml:space="preserve">
-    <value>Builds from</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Potvrďte nové heslo</value>
   </data>
-  <data name="Comments" xml:space="preserve">
-    <value>Comments</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Potvrďte heslo</value>
   </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>E-mail</value>
   </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Zadejte stávající heslo</value>
   </data>
-  <data name="EditBuild" xml:space="preserve">
-    <value>Edit build</value>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Zadejte nové heslo</value>
   </data>
-  <data name="EditorActions" xml:space="preserve">
-    <value>Editor actions</value>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Zadejte heslo</value>
   </data>
-  <data name="HomepageH1" xml:space="preserve">
-    <value>Windows NT build list</value>
+  <data name="HighestVersion" xml:space="preserve">
+    <value>Nejvyšší verze</value>
   </data>
-  <data name="LabMetaGeneric" xml:space="preserve">
-    <value>Check out all the known builds to come out of the Windows development lab {0} through BuildFeed, a collaborative Windows build list</value>
+  <data name="Labs" xml:space="preserve">
+    <value>Větve</value>
   </data>
-  <data name="Listing" xml:space="preserve">
-    <value>Listing</value>
+  <data name="Login" xml:space="preserve">
+    <value>Přihlásit se</value>
   </data>
-  <data name="MoreFromLab" xml:space="preserve">
-    <value>Find more builds from {0}</value>
+  <data name="Password" xml:space="preserve">
+    <value>Heslo</value>
   </data>
-  <data name="MoreFromSource" xml:space="preserve">
-    <value>Find more builds sourced from {0}</value>
+  <data name="RecentlyAdded" xml:space="preserve">
+    <value>Nedávno přidáno</value>
   </data>
-  <data name="MoreFromYear" xml:space="preserve">
-    <value>Find more builds compiled in {0}</value>
+  <data name="RecentlyCompiled" xml:space="preserve">
+    <value>Nedávno zkompilováno</value>
   </data>
-  <data name="NoLab" xml:space="preserve">
-    <value>No lab string</value>
+  <data name="RecentlyLeaked" xml:space="preserve">
+    <value>Nedávno leaknuto</value>
   </data>
-  <data name="Private" xml:space="preserve">
-    <value>Private</value>
+  <data name="Register" xml:space="preserve">
+    <value>Zaregistrovat se</value>
   </data>
-  <data name="Public" xml:space="preserve">
-    <value>Public</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Zapamatovat</value>
   </data>
-  <data name="QuickPaste" xml:space="preserve">
-    <value>Quick-paste</value>
+  <data name="StatsCompiled" xml:space="preserve">
+    <value>Zkompilované buildy v každém čtvrtletí</value>
   </data>
-  <data name="ReturnToListing" xml:space="preserve">
-    <value>Return to build listing</value>
+  <data name="StatsLab" xml:space="preserve">
+    <value>Zaznamenané buildy v každé větvi</value>
   </data>
-  <data name="ReturnToOverview" xml:space="preserve">
-    <value>Return to build overview</value>
+  <data name="StatsLabIncluded" xml:space="preserve">
+    <value>Zahrnuty jsou pouze větve s více než 100 nebo více zaznamenanými buildy.</value>
   </data>
-  <data name="Share" xml:space="preserve">
-    <value>Share</value>
+  <data name="StatsNewAdditions" xml:space="preserve">
+    <value>Nové záznamy v BuildFeedu v předešlém roce</value>
   </data>
-  <data name="Today" xml:space="preserve">
-    <value>Today</value>
+  <data name="ThanksRegister" xml:space="preserve">
+    <value>Děkujeme za registraci</value>
   </data>
-  <data name="xBuilds" xml:space="preserve">
-    <value>builds</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Uživatelské jméno</value>
   </data>
-  <data name="YearMetaGeneric" xml:space="preserve">
-    <value>View a list of all Windows builds compiled in {0}, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed</value>
+  <data name="Week" xml:space="preserve">
+    <value>Týden</value>
   </data>
 </root>

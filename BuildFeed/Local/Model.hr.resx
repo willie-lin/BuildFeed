@@ -117,82 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountValidation" xml:space="preserve">
-    <value>لم يتم تفعيل حسابك بعد. يرجى العلم بأن كل حساب يتم تدقيقه من قبل طاقم الإدارة قبل تفعيله. يرجى المراجعة لاحقاً</value>
+  <data name="Added" xml:space="preserve">
+    <value>Stvoreno</value>
   </data>
-  <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>إضافات إلى BuildFeed</value>
+  <data name="AppPackage" xml:space="preserve">
+    <value>Paket aplikacije</value>
   </data>
-  <data name="BuildsCompiled" xml:space="preserve">
-    <value>النسخ المصنعة</value>
+  <data name="BuildTime" xml:space="preserve">
+    <value>Vrijeme izrade</value>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>تغيير كلمة السر</value>
+  <data name="BuildTools" xml:space="preserve">
+    <value>Alati za izradu</value>
   </data>
-  <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>إعادة تأكيد كلمة السر الجديدة</value>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentacija</value>
   </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>إعادة تأكيد كلمة السر</value>
+  <data name="FlightCanary" xml:space="preserve">
+    <value>Canary</value>
   </data>
-  <data name="EmailAddress" xml:space="preserve">
-    <value>البريد الإلكتروني</value>
+  <data name="FlightLevel" xml:space="preserve">
+    <value>Razina leta</value>
   </data>
-  <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>أدخل كلمة السر الحالية</value>
+  <data name="FlightMSIT" xml:space="preserve">
+    <value>Microsoft Interni</value>
   </data>
-  <data name="EnterNewPassword" xml:space="preserve">
-    <value>أدخل كلمة السر الجديدة</value>
+  <data name="FlightNone" xml:space="preserve">
+    <value>Ništa</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>أدخل كلمة السر</value>
+  <data name="FlightOSG" xml:space="preserve">
+    <value>Grupa Operacijskog sustava</value>
   </data>
-  <data name="HighestVersion" xml:space="preserve">
-    <value>أعلى إصدار</value>
+  <data name="FlightWIF" xml:space="preserve">
+    <value>Windows Insider Brzi</value>
   </data>
-  <data name="Labs" xml:space="preserve">
-    <value>المختبرات</value>
+  <data name="FlightWIS" xml:space="preserve">
+    <value>Windows Insider Spori</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="InternalLeak" xml:space="preserve">
+    <value>Javno procurio</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>كلمة السر</value>
+  <data name="Lab" xml:space="preserve">
+    <value>Linija grane</value>
   </data>
-  <data name="RecentlyAdded" xml:space="preserve">
-    <value>أضيفت مؤخراً</value>
+  <data name="LeakDate" xml:space="preserve">
+    <value>Datum kad je procurio / objavljen</value>
   </data>
-  <data name="RecentlyCompiled" xml:space="preserve">
-    <value>تم تصنيعها مؤخراً</value>
+  <data name="Logging" xml:space="preserve">
+    <value>Zapisivanje</value>
   </data>
-  <data name="RecentlyLeaked" xml:space="preserve">
-    <value>تم تسريبها مؤخراً</value>
+  <data name="MajorVersion" xml:space="preserve">
+    <value>Glavna verzija</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>التسجيل</value>
+  <data name="MinorVersion" xml:space="preserve">
+    <value>Sporedna verzija</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>تذكرني</value>
+  <data name="Modified" xml:space="preserve">
+    <value>Vrijeme izmjene</value>
   </data>
-  <data name="StatsCompiled" xml:space="preserve">
-    <value>نسخ مصنعة كل ربع سنة</value>
+  <data name="Number" xml:space="preserve">
+    <value>Broj verzije</value>
   </data>
-  <data name="StatsLab" xml:space="preserve">
-    <value>النسخ المسجلة تحت كل مختبر</value>
+  <data name="PrivateLeak" xml:space="preserve">
+    <value>Verzija koja je privatno procurila</value>
   </data>
-  <data name="StatsLabIncluded" xml:space="preserve">
-    <value>فقط المختبرات التي تحتوي على 100 نسخة أو أكثر تدخل في النتائج</value>
+  <data name="PublicRelease" xml:space="preserve">
+    <value>Javno pušteno</value>
   </data>
-  <data name="StatsNewAdditions" xml:space="preserve">
-    <value>الإضافات الجديدة على BuildFeed مقارنة بالسنة السابقة</value>
+  <data name="Revision" xml:space="preserve">
+    <value>Revizija verzije</value>
   </data>
-  <data name="ThanksRegister" xml:space="preserve">
-    <value>نشكركم على التسجيل لدى الموقع</value>
+  <data name="SourceDetails" xml:space="preserve">
+    <value>Detalji o izvoru</value>
   </data>
-  <data name="UserName" xml:space="preserve">
-    <value>اسم المستخدم</value>
+  <data name="SourceType" xml:space="preserve">
+    <value>Vrsta izvora</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>أسبوع</value>
+  <data name="UpdateGDR" xml:space="preserve">
+    <value>Nadogradnja (GDR)</value>
+  </data>
+  <data name="UpdateLDR" xml:space="preserve">
+    <value>Nadogradnja (LDR)</value>
   </data>
 </root>

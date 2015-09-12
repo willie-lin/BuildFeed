@@ -117,79 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>إضافة نسخة جديدة</value>
+  <data name="Added" xml:space="preserve">
+    <value>Přidáno</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>الإدارة</value>
+  <data name="AppPackage" xml:space="preserve">
+    <value>Balíček aplikace</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>ساهم في التطوير</value>
+  <data name="BuildTime" xml:space="preserve">
+    <value>Čas sestavení</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>طورت من قبل</value>
+  <data name="BuildTools" xml:space="preserve">
+    <value>Build tools</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>خطأ</value>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentace</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="FlightCanary" xml:space="preserve">
+    <value>Canary</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>تسجيل الخروج</value>
+  <data name="FlightLevel" xml:space="preserve">
+    <value>Stupeň flight</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>محتوى RSS</value>
+  <data name="FlightMSIT" xml:space="preserve">
+    <value>Uvnitř Microsoftu</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>بحث</value>
+  <data name="FlightNone" xml:space="preserve">
+    <value>Žádný</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>بحث في BuildFeed</value>
+  <data name="FlightOSG" xml:space="preserve">
+    <value>Skupina Operating Systems</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>صيغة البحث</value>
+  <data name="FlightWIF" xml:space="preserve">
+    <value>Rychlý aktualizační kanál Windows Insider</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>خريطة الموقع</value>
+  <data name="FlightWIS" xml:space="preserve">
+    <value>Pomalý aktualizační kanál Windows Insider</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="InternalLeak" xml:space="preserve">
+    <value>Veřejný leak</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>الإحصائيات</value>
+  <data name="Lab" xml:space="preserve">
+    <value>Větev</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>تبديل الصفحات</value>
+  <data name="LeakDate" xml:space="preserve">
+    <value>Datum leaku nebo vydání</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="Logging" xml:space="preserve">
+    <value>Logging</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>اكتب لبدء البحث</value>
+  <data name="MajorVersion" xml:space="preserve">
+    <value>Hlavní verze</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>ويندوز NT</value>
+  <data name="MinorVersion" xml:space="preserve">
+    <value>Vedlejší verze</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| صفحة {0}</value>
+  <data name="Modified" xml:space="preserve">
+    <value>Čas úpravy</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>النسخة</value>
+  <data name="Number" xml:space="preserve">
+    <value>Číslo buildu</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>لايوجد أي نتائج</value>
+  <data name="PrivateLeak" xml:space="preserve">
+    <value>Soukromý únik</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>المختبر</value>
+  <data name="PublicRelease" xml:space="preserve">
+    <value>Veřejné vydání</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>المصدر</value>
+  <data name="Revision" xml:space="preserve">
+    <value>Revize buildu</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>الإصدار</value>
+  <data name="SourceDetails" xml:space="preserve">
+    <value>Detaily o zdroji</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>السنة</value>
+  <data name="SourceType" xml:space="preserve">
+    <value>Druh zdroje</value>
+  </data>
+  <data name="UpdateGDR" xml:space="preserve">
+    <value>Aktualizace (GDR)</value>
+  </data>
+  <data name="UpdateLDR" xml:space="preserve">
+    <value>Aktualizace (LDR)</value>
   </data>
 </root>

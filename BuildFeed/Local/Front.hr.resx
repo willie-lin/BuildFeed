@@ -117,85 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Added" xml:space="preserve">
-    <value>Time created</value>
+  <data name="About" xml:space="preserve">
+    <value>O</value>
   </data>
-  <data name="AppPackage" xml:space="preserve">
-    <value>App package</value>
+  <data name="AddABuild" xml:space="preserve">
+    <value>Dodaj verziju</value>
   </data>
-  <data name="BuildTime" xml:space="preserve">
-    <value>Build time</value>
+  <data name="BuildMetaDate" xml:space="preserve">
+    <value>Saznaj o Windows verziji {0}, od {1} i kompajliranu {2}</value>
   </data>
-  <data name="BuildTools" xml:space="preserve">
-    <value>Build tools</value>
+  <data name="BuildMetaNoDate" xml:space="preserve">
+    <value>Saznaj o Windows verziji {0}, od {1}. BuildFeed prati verzije Windowsa koje nastaju tijekom razvijanja.</value>
   </data>
-  <data name="Documentation" xml:space="preserve">
-    <value>Documentation</value>
+  <data name="BuildsFrom" xml:space="preserve">
+    <value>Verzije od</value>
   </data>
-  <data name="FlightCanary" xml:space="preserve">
-    <value>Canary</value>
+  <data name="Comments" xml:space="preserve">
+    <value>Komentari</value>
   </data>
-  <data name="FlightLevel" xml:space="preserve">
-    <value>Flight level</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Izbriši</value>
   </data>
-  <data name="FlightMSIT" xml:space="preserve">
-    <value>Microsoft Internal</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Promijeni</value>
   </data>
-  <data name="FlightNone" xml:space="preserve">
-    <value>None</value>
+  <data name="EditBuild" xml:space="preserve">
+    <value>Promijeni verziju</value>
   </data>
-  <data name="FlightOSG" xml:space="preserve">
-    <value>Operating Systems Group</value>
+  <data name="EditorActions" xml:space="preserve">
+    <value>Akcije editora</value>
   </data>
-  <data name="FlightWIF" xml:space="preserve">
-    <value>Windows Insider Fast</value>
+  <data name="HomepageH1" xml:space="preserve">
+    <value>Lista Windows NT verzija</value>
   </data>
-  <data name="FlightWIS" xml:space="preserve">
-    <value>Windows Insider Slow</value>
+  <data name="LabMetaGeneric" xml:space="preserve">
+    <value>Pogledaj sve poznate verzije Windowsa iz grane {0} u BuildFeedu, javno održavanom listom Windows verzija</value>
   </data>
-  <data name="InternalLeak" xml:space="preserve">
-    <value>Public leak</value>
+  <data name="Listing" xml:space="preserve">
+    <value>Popis</value>
   </data>
-  <data name="Lab" xml:space="preserve">
-    <value>Lab string</value>
+  <data name="MoreFromLab" xml:space="preserve">
+    <value>Nađi više verzija od {0}</value>
   </data>
-  <data name="LeakDate" xml:space="preserve">
-    <value>Leak or release date</value>
+  <data name="MoreFromSource" xml:space="preserve">
+    <value>Nađi više verzija od {0} koje su nastale od istog izvora</value>
   </data>
-  <data name="Logging" xml:space="preserve">
-    <value>Logging</value>
+  <data name="MoreFromYear" xml:space="preserve">
+    <value>Nađi više verzija koje su kompajlirane od {0}</value>
   </data>
-  <data name="MajorVersion" xml:space="preserve">
-    <value>Major version</value>
+  <data name="NoLab" xml:space="preserve">
+    <value>Nema naziva grane</value>
   </data>
-  <data name="MinorVersion" xml:space="preserve">
-    <value>Minor version</value>
+  <data name="Private" xml:space="preserve">
+    <value>Privatni</value>
   </data>
-  <data name="Modified" xml:space="preserve">
-    <value>Time modified</value>
+  <data name="Public" xml:space="preserve">
+    <value>Javni</value>
   </data>
-  <data name="Number" xml:space="preserve">
-    <value>Build number</value>
+  <data name="QuickPaste" xml:space="preserve">
+    <value>Brzo zalijepi</value>
   </data>
-  <data name="PrivateLeak" xml:space="preserve">
-    <value>Private leak</value>
+  <data name="ReturnToListing" xml:space="preserve">
+    <value>Povratak na listu verzija</value>
   </data>
-  <data name="PublicRelease" xml:space="preserve">
-    <value>Public release</value>
+  <data name="ReturnToOverview" xml:space="preserve">
+    <value>Povratak na pregled verzija</value>
   </data>
-  <data name="Revision" xml:space="preserve">
-    <value>Build revision</value>
+  <data name="Share" xml:space="preserve">
+    <value>Podijeli</value>
   </data>
-  <data name="SourceDetails" xml:space="preserve">
-    <value>Source details</value>
+  <data name="Today" xml:space="preserve">
+    <value>Danas</value>
   </data>
-  <data name="SourceType" xml:space="preserve">
-    <value>Source type</value>
+  <data name="xBuilds" xml:space="preserve">
+    <value>verzije</value>
   </data>
-  <data name="UpdateGDR" xml:space="preserve">
-    <value>Update (GDR)</value>
-  </data>
-  <data name="UpdateLDR" xml:space="preserve">
-    <value>Update (LDR)</value>
+  <data name="YearMetaGeneric" xml:space="preserve">
+    <value>Pogledaj listu svih Windows verzija kompajliranih u {0} i pogledaj kako je prolazio razvoj Windowsa kroz vrijeme preko javno održavane liste - BuildFeed</value>
   </data>
 </root>

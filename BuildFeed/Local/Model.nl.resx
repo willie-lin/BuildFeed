@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Added" xml:space="preserve">
-    <value>Tijd gemaakt</value>
+    <value>Gemaakt op</value>
   </data>
   <data name="AppPackage" xml:space="preserve">
     <value>Applicatie pakket</value>
@@ -139,7 +139,7 @@
     <value>Flight niveau</value>
   </data>
   <data name="FlightMSIT" xml:space="preserve">
-    <value>Microsoft Internal</value>
+    <value>Microsoft Intern</value>
   </data>
   <data name="FlightNone" xml:space="preserve">
     <value>Geen</value>
@@ -148,10 +148,10 @@
     <value>Operating System Groep</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
-    <value>Windows Insider Fast</value>
+    <value>Windows Insider Snel</value>
   </data>
   <data name="FlightWIS" xml:space="preserve">
-    <value>Windows Insider Slow</value>
+    <value>Windows Insider Langzaam</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
     <value>Publiekelijke lek</value>
@@ -172,7 +172,7 @@
     <value>Onderversie</value>
   </data>
   <data name="Modified" xml:space="preserve">
-    <value>Tijd aangepast</value>
+    <value>Aangepast op</value>
   </data>
   <data name="Number" xml:space="preserve">
     <value>Buildnummer</value>

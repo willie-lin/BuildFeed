@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>عن الموقع</value>
+    <value>Over</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
-    <value>إضافة نسخة جديدة</value>
+    <value>Build toevoegen</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>استكشف نسخة الويندوز بناء {0} من المختبر {1} والتي تم تركيبها في {2}</value>
+    <value>Ontdek over Windows build {0} van {1} gecompileerd op {2}.</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>استكشف نسخة الويندوز بناء {0} من المختبر {1} والتي تم تركيبها في {2}. يقوم موقع BuildFeed بتتبع نسخ الويندوز المتنوعة من مختلف المختبرات خلال مراحل تطويره.</value>
+    <value>Ontdek over Windows build {0} van {1}. BuildFeed houdt het ontwikkelprocess van Windows builds in de gaten</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>نسخ من المختبر</value>
+    <value>Builds van</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>ملاحظات</value>
+    <value>Commentaar</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>حذف</value>
+    <value>Verwijderen</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>تعديل</value>
+    <value>Bewerken</value>
   </data>
   <data name="EditBuild" xml:space="preserve">
-    <value>تعديل النسخة</value>
+    <value>Build bewerken</value>
   </data>
   <data name="EditorActions" xml:space="preserve">
-    <value>إجراءات المعدل</value>
+    <value>Redacteur acties</value>
   </data>
   <data name="HomepageH1" xml:space="preserve">
-    <value>لائحة بنسخ ويندوز NT</value>
+    <value>Windows NT buildlijst</value>
   </data>
   <data name="LabMetaGeneric" xml:space="preserve">
-    <value>استكشف كل النسخ الموثوقة والمعروفة الصادرة من مختبر الويندوز {0} عبر BuildFeed ، وهو موقع مخصص لنشر لوائح نسخ الويندوز المتعددة.</value>
+    <value>Bekijk alle Windows builds van het lab {0} via BuildFeed, een Windows buildlist lijst</value>
   </data>
   <data name="Listing" xml:space="preserve">
-    <value>لائحة</value>
+    <value>Lijst</value>
   </data>
   <data name="MoreFromLab" xml:space="preserve">
-    <value>استكشف نسخ إضافية من {0}</value>
+    <value>Vind meer builds van {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>استكشف نسخ إضافية مصدرها من {0}</value>
+    <value>Vind meer builds bronnen van {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
-    <value>استكشف نسخ إضافية تم بناؤها في {0}</value>
+    <value>Vind meer builds gecompileerd in {0}</value>
   </data>
   <data name="NoLab" xml:space="preserve">
-    <value>لايوجد مختبر</value>
+    <value>Geen lab informatie</value>
   </data>
   <data name="Private" xml:space="preserve">
-    <value>خاص/سري</value>
+    <value>Prive</value>
   </data>
   <data name="Public" xml:space="preserve">
-    <value>عام</value>
+    <value>Publiek</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>لصق سريع</value>
+    <value>Snel plakken</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
-    <value>عودة إلى لائحة النسخ</value>
+    <value>Terug naar de buildlijst</value>
   </data>
   <data name="ReturnToOverview" xml:space="preserve">
-    <value>عودة إلى تفاصيل النسخة</value>
+    <value>Terug naar het buildoverzicht</value>
   </data>
   <data name="Share" xml:space="preserve">
-    <value>مشاركة</value>
+    <value>Delen</value>
   </data>
   <data name="Today" xml:space="preserve">
-    <value>اليوم</value>
+    <value>Vandaag</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>نسخ</value>
+    <value>Builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
-    <value>إظهار لائحة بكل النسخ المطوّرة منذ {0} واكتشف كيف تطور الويندوز بشكل تدريجي منذ ذلك الوقت ، عبر لائحة منظمة من قبل الموقع BuildFeed.</value>
+    <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows buildlist lijst</value>
   </data>
 </root>

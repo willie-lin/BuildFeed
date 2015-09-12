@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Over</value>
+    <value>[!!! Âβôúƭ  !!!]</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
-    <value>Build toevoegen</value>
+    <value>Přidat build</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1} gecompileerd op {2}.</value>
+    <value>Objevte Windows build {0} z {1}, zkompilovaný {2}.</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1}. BuildFeed houdt het ontwikkelprocess van Windows builds in de gaten</value>
+    <value>Objevte Windows build {0} z {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>Builds van</value>
+    <value>Buildy z</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>Commentaar</value>
+    <value>Komentáře</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Verwijderen</value>
+    <value>Odstranit</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Bewerken</value>
+    <value>Upravit</value>
   </data>
   <data name="EditBuild" xml:space="preserve">
-    <value>Build bewerken</value>
+    <value>Upravit build</value>
   </data>
   <data name="EditorActions" xml:space="preserve">
-    <value>Editor acties</value>
+    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
   </data>
   <data name="HomepageH1" xml:space="preserve">
-    <value>Windows NT buildlijst</value>
+    <value>Seznam buildů Windows NT</value>
   </data>
   <data name="LabMetaGeneric" xml:space="preserve">
-    <value>Bekijk alle Windows builds van het lab {0} via BuildFeed, een Windows buildlist lijst</value>
+    <value>Podívejte se na všechny známé buildy Windows z větve {0} na BuildFeedu, společném seznamu buildů Windows</value>
   </data>
   <data name="Listing" xml:space="preserve">
-    <value>Lijst</value>
+    <value>Výpis</value>
   </data>
   <data name="MoreFromLab" xml:space="preserve">
-    <value>Vind meer builds van {0}</value>
+    <value>Hledat další buildy z {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>Vind meer builds bronnen van {0}</value>
+    <value>Hledat další buildy nalezené přes {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
-    <value>Vind meer builds gecompileerd in {0}</value>
+    <value>Hledat další buildy zkompilované v roce {0}</value>
   </data>
   <data name="NoLab" xml:space="preserve">
-    <value>Geen lab informatie</value>
+    <value>Žádná větev</value>
   </data>
   <data name="Private" xml:space="preserve">
-    <value>Prive</value>
+    <value>Soukromý</value>
   </data>
   <data name="Public" xml:space="preserve">
-    <value>Publiek</value>
+    <value>Veřejný</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>Snel plakken</value>
+    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
-    <value>Terug naar de buildlijst</value>
+    <value>Vrátit se k výpisu buildů</value>
   </data>
   <data name="ReturnToOverview" xml:space="preserve">
-    <value>Terug naar het buildoverzicht</value>
+    <value>Vrátit se k přehledu buildů</value>
   </data>
   <data name="Share" xml:space="preserve">
-    <value>Delen</value>
+    <value>Sdílet</value>
   </data>
   <data name="Today" xml:space="preserve">
-    <value>Vandaag</value>
+    <value>Dnes</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>Builds</value>
+    <value>buildů</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
-    <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows buildlist lijst</value>
+    <value>Podívejte se na seznam všech buildů Windows zkompilovaných v roce {0} na BuildFeedu, společném seznamu buildů Windows</value>
   </data>
 </root>

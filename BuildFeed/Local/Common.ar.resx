@@ -118,78 +118,78 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddBuild" xml:space="preserve">
-    <value>Build toevoegen</value>
+    <value>إضافة نسخة جديدة</value>
   </data>
   <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>الإدارة</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>Bijdragen aan</value>
+    <value>ساهم في التطوير</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
-    <value>Ontwikkeld door</value>
+    <value>طوّرت من قبل</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fout</value>
+    <value>خطأ</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>تسجيل الدخول</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Uitloggen</value>
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="PageTitleSegment" xml:space="preserve">
+    <value>| صفحة {0}</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>ويندوز NT</value>
   </data>
   <data name="RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+    <value>محتوى RSS</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Zoeken</value>
+    <value>بحث</value>
+  </data>
+  <data name="SearchBuild" xml:space="preserve">
+    <value>النسخة</value>
   </data>
   <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Zoeken in BuildFeed</value>
+    <value>بحث في BuildFeed</value>
+  </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>لايوجد أي نتائج</value>
+  </data>
+  <data name="SearchLab" xml:space="preserve">
+    <value>المختبر</value>
   </data>
   <data name="SearchQuery" xml:space="preserve">
-    <value>Zoekopdracht</value>
+    <value>صيغة البحث</value>
+  </data>
+  <data name="SearchSource" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="SearchVersion" xml:space="preserve">
+    <value>الإصدار</value>
+  </data>
+  <data name="SearchYear" xml:space="preserve">
+    <value>السنة</value>
   </data>
   <data name="Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+    <value>خريطة الموقع</value>
   </data>
   <data name="SiteName" xml:space="preserve">
     <value>BuildFeed</value>
   </data>
   <data name="Statistics" xml:space="preserve">
-    <value>Statistieken</value>
+    <value>الإحصائيات</value>
   </data>
   <data name="ToggleNavigation" xml:space="preserve">
-    <value>Toggle navigatie</value>
+    <value>تبديل الصفحات</value>
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>Typ om te zoeken</value>
-  </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
-  </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Pagina {0}</value>
-  </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Build</value>
-  </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>Geen resultaten gevonden</value>
-  </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Lab</value>
-  </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Bron</value>
-  </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Versie</value>
-  </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Jaar</value>
+    <value>اكتب لبدء البحث...</value>
   </data>
 </root>
