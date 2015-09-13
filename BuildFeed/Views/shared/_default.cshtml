@@ -1,5 +1,8 @@
-﻿<!DOCTYPE html>
-<html dir="@(System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")">
+﻿@{
+   bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+}
+<!DOCTYPE html>
+<html dir="@(IsRTL ? "rtl" : "ltr")">
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width" />
@@ -13,6 +16,10 @@
    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
    @Styles.Render("~/content/css")
+   @if(IsRTL)
+   {
+      Styles.Render("~/content/rtl");
+   }
    <title>@ViewBag.Title</title>
    @RenderSection("head", false)
    <script type="text/javascript">
@@ -89,10 +96,10 @@
       </article>
       <footer id="page-footer">
          <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8 text-left">
                <p>
                   <a href="@Url.Action("sitemap", new { controller = "support" })">@BuildFeed.Local.Common.Sitemap</a><br />
-                  <i class="fa fa-language"></i>&ensp;                  @System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
+                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
                </p>
             </div>
             <div class="col-sm-4 text-right">

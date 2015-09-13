@@ -1,85 +1,94 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 @{
-    Layout = null;
+   bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
-
 <!DOCTYPE html>
-<html>
+<html dir="@(IsRTL ? "rtl" : "ltr")">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="~/favicon.ico" />
-    <link rel="icon" href="~/favicon.ico" />
-    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
+   <link rel="shortcut icon" href="~/favicon.ico" />
+   <link rel="icon" href="~/favicon.ico" />
+   <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
-    @Styles.Render("~/content/css")
-    <title>@BuildFeed.Local.Common.Error | @BuildFeed.Local.Common.SiteName</title>
-    <script type="text/javascript">
-        var appInsights = window.appInsights || function (config) {
-            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
-        }({
-            instrumentationKey: "4632419f-7a2f-4ab5-8374-34384b650f42"
-        });
+   @Styles.Render("~/content/css")
+   @if (IsRTL)
+   {
+      Styles.Render("~/content/rtl");
+   }
+   <title>@BuildFeed.Local.Common.Error | @BuildFeed.Local.Common.SiteName</title>
+   <script type="text/javascript">
+      var appInsights = window.appInsights || function (config) {
+         function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+      }({
+         instrumentationKey: "4632419f-7a2f-4ab5-8374-34384b650f42"
+      });
 
-        window.appInsights = appInsights;
-        appInsights.trackPageView();
-    </script>
+      window.appInsights = appInsights;
+      appInsights.trackPageView();
+   </script>
 </head>
 <body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+   <script>
+      (function (i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-55417692-1', 'auto');
-        ga('require', 'displayfeatures');
-        ga('require', 'linkid', 'linkid.js');
-        ga('send', 'pageview');
-    </script>
-    <div class="container">
-        <header id="page-header"></header>
-        <nav id="page-navigation" role="navigation">
-            <div class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    @Html.ActionLink(@BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
-                    </ul>
-                </div>
+      ga('create', 'UA-55417692-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+   </script>
+   <div class="container">
+      <header id="page-header"></header>
+      <nav id="page-navigation" role="navigation">
+         <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+               @Html.ActionLink(@BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
+               </ul>
             </div>
-        </nav>
-        <article id="page-content">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>@BuildFeed.Local.Common.Error</h1>
-                    <p>Something's broke. Maybe it's because you did something weird. Probably it's because I did something weird. If you keep getting this error, take a screenshot and spam <a href="https://twitter.com/tomhounsell">me</a> on Twitter with it.
-                    </p>
-                    <p>Controller: <code>@Model.ControllerName</code></p>
-                    <p>Action: <code>@Model.ActionName</code></p>
-                    <p>Error: <code>@Model.Exception.Message</code></p>
-                </div>
+         </div>
+      </nav>
+      <article id="page-content">
+         <div class="row">
+            <div class="col-sm-12">
+               <h1>@BuildFeed.Local.Common.Error</h1>
+               <p>
+                  Something's broke. Maybe it's because you did something weird. Probably it's because I did something weird. If you keep getting this error, take a screenshot and spam <a href="https://twitter.com/tomhounsell">me</a> on Twitter with it.
+               </p>
+               <p>Controller: <code>@Model.ControllerName</code></p>
+               <p>Action: <code>@Model.ActionName</code></p>
+               <p>Error: <code>@Model.Exception.Message</code></p>
             </div>
-        </article>
-        <footer id="page-footer">
-            <div class="row">
-                <div class="col-sm-offset-8 col-sm-4 text-right">
-                    <p>
-                        &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
-                        @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                        @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
-                    </p>
-                </div>
+         </div>
+      </article>
+      <footer id="page-footer">
+         <div class="row">
+            <div class="col-sm-8 text-left">
+               <p>
+                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
+               </p>
             </div>
-        </footer>
-    </div>
-    @Scripts.Render("~/bundles/jquery")
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            <div class="col-sm-4 text-right">
+               <p>
+                  &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
+                  @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
+                  @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+               </p>
+            </div>
+         </div>
+      </footer>
+   </div>
+   @Scripts.Render("~/bundles/jquery")
+   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
