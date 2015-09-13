@@ -130,7 +130,7 @@
     <value>استكشف نسخة الويندوز بناء {0} من المختبر {1} والتي تم تركيبها في {2}. يقوم موقع BuildFeed بتتبع نسخ الويندوز المتنوعة من مختلف المختبرات خلال مراحل تطويره.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>نسخ من المختبر</value>
+    <value>نسخ من المختبر {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
     <value>ملاحظات</value>
