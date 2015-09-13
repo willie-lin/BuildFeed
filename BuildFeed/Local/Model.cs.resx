@@ -127,7 +127,7 @@
     <value>Čas sestavení</value>
   </data>
   <data name="BuildTools" xml:space="preserve">
-    <value>Build tools</value>
+    <value>Nástroje pro kompilaci</value>
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Dokumentace</value>
@@ -145,7 +145,7 @@
     <value>Žádný</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>Skupina Operating Systems</value>
+    <value>Skupina operačních systemů (OSG)</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
     <value>Rychlý aktualizační kanál Windows Insider</value>

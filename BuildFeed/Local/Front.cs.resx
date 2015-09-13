@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+    <value>O</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
     <value>Přidat build</value>
@@ -130,7 +130,7 @@
     <value>Objevte Windows build {0} z {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>Buildy z</value>
+    <value>Buildy z {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
     <value>Komentáře</value>
@@ -145,7 +145,7 @@
     <value>Upravit build</value>
   </data>
   <data name="EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+    <value>Akce editoru</value>
   </data>
   <data name="HomepageH1" xml:space="preserve">
     <value>Seznam buildů Windows NT</value>
@@ -175,7 +175,7 @@
     <value>Veřejný</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+    <value>Rychlé vložení</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
     <value>Vrátit se k výpisu buildů</value>

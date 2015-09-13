@@ -391,5 +391,11 @@ namespace BuildFeed.Controllers
 
          return View(m);
       }
+
+      [Route("credits/")]
+      public ActionResult credits()
+      {
+         return View();
+      }
    }
 }

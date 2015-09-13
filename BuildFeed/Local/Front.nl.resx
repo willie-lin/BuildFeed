@@ -130,7 +130,7 @@
     <value>Ontdek over Windows build {0} van {1}. BuildFeed houdt het ontwikkelprocess van Windows builds in de gaten</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>Builds van</value>
+    <value>Builds van {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
     <value>Commentaar</value>
@@ -190,7 +190,7 @@
     <value>Vandaag</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>Builds</value>
+    <value>builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows buildlist lijst</value>

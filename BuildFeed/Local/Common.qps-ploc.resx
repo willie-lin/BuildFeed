@@ -126,6 +126,9 @@
   <data name="ContributeOn" xml:space="preserve">
     <value>[!!! Çôñƭřïβúƭè ôñ  !!!]</value>
   </data>
+  <data name="Credits" xml:space="preserve">
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
+  </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>[!!! ÐèƲèℓôƥèδ β¥  !!!]</value>
   </data>
@@ -138,17 +141,41 @@
   <data name="LogOut" xml:space="preserve">
     <value>[!!! £ôϱ ôúƭ  !!!]</value>
   </data>
+  <data name="PageTitleSegment" xml:space="preserve">
+    <value>[!!! | Þáϱè {0}  !!!]</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>[!!! Wïñδôωƨ NT  !!!]</value>
+  </data>
   <data name="RssFeeds" xml:space="preserve">
     <value>[!!! R§§ ƒèèδƨ  !!!]</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>[!!! §èářçλ  !!!]</value>
   </data>
+  <data name="SearchBuild" xml:space="preserve">
+    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  </data>
   <data name="SearchBuildFeed" xml:space="preserve">
     <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
   </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  </data>
+  <data name="SearchLab" xml:space="preserve">
+    <value>[!!! £áβ  !!!]</value>
+  </data>
   <data name="SearchQuery" xml:space="preserve">
     <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  </data>
+  <data name="SearchSource" xml:space="preserve">
+    <value>[!!! §ôúrçè l !!!]</value>
+  </data>
+  <data name="SearchVersion" xml:space="preserve">
+    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  </data>
+  <data name="SearchYear" xml:space="preserve">
+    <value>[!!! Ýèář  !!!]</value>
   </data>
   <data name="Sitemap" xml:space="preserve">
     <value>[!!! §ïƭè₥áƥ  !!!]</value>
@@ -167,29 +194,5 @@
   </data>
   <data name="TypeToSearch" xml:space="preserve">
     <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
-  </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>[!!! Wïñδôωƨ NT  !!!]</value>
-  </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
-  </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
-  </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
-  </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
-  </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
-  </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
-  </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
   </data>
 </root>

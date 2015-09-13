@@ -97,7 +97,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ßúïℓδƨ ƒřô₥  !!!].
+        ///   Looks up a localized string similar to [!!! ßúïℓδƨ ƒřô₥ {0}  !!!].
         /// </summary>
         public static string BuildsFrom {
             get {

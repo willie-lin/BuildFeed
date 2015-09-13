@@ -124,7 +124,10 @@
     <value>Admin</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>Bijdragen aan</value>
+    <value>Bijdragen via</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>Ontwikkeld door</value>
@@ -190,6 +193,6 @@
     <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>Typ om te zoeken</value>
+    <value>Typ om te zoeken...</value>
   </data>
 </root>

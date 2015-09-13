@@ -126,6 +126,9 @@
   <data name="ContributeOn" xml:space="preserve">
     <value>Contribute on</value>
   </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>Developed by</value>
   </data>
@@ -138,17 +141,41 @@
   <data name="LogOut" xml:space="preserve">
     <value>Log out</value>
   </data>
+  <data name="PageTitleSegment" xml:space="preserve">
+    <value>| Page {0}</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Windows NT</value>
+  </data>
   <data name="RssFeeds" xml:space="preserve">
     <value>RSS feeds</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="SearchBuild" xml:space="preserve">
+    <value>Build</value>
+  </data>
   <data name="SearchBuildFeed" xml:space="preserve">
     <value>Search BuildFeed...</value>
   </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>No results found</value>
+  </data>
+  <data name="SearchLab" xml:space="preserve">
+    <value>Lab</value>
+  </data>
   <data name="SearchQuery" xml:space="preserve">
     <value>Search query</value>
+  </data>
+  <data name="SearchSource" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="SearchVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="SearchYear" xml:space="preserve">
+    <value>Year</value>
   </data>
   <data name="Sitemap" xml:space="preserve">
     <value>Sitemap</value>
@@ -167,29 +194,5 @@
   </data>
   <data name="TypeToSearch" xml:space="preserve">
     <value>type to search...</value>
-  </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
-  </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Page {0}</value>
-  </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Build</value>
-  </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>No results found</value>
-  </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Lab</value>
-  </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Source</value>
-  </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Version</value>
-  </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Year</value>
   </data>
 </root>

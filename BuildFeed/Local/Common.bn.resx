@@ -126,6 +126,9 @@
   <data name="ContributeOn" xml:space="preserve">
     <value>সাহায্য করুন </value>
   </data>
+  <data name="Credits" xml:space="preserve">
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
+  </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>উন্নত করেছেন </value>
   </data>

@@ -124,7 +124,10 @@
     <value>الإدارة</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>ساهم في التطوير</value>
+    <value>ساهم في التطوير على</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>طوّرت من قبل</value>

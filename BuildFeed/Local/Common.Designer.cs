@@ -88,6 +88,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [!!! Çřèδïƭƨ  !!!].
+        /// </summary>
+        public static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [!!! ÐèƲèℓôƥèδ β¥  !!!].
         /// </summary>
         public static string DevelopedBy {

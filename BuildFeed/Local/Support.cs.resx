@@ -121,10 +121,10 @@
     <value>Každý účet je ověřován správcem. Buďte prosím trpěliví a podívejte se znovu za chvíli.</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>Nové záznamy v BuildFeedu</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>Zkompilovaných buildů</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
     <value>Změnit heslo</value>
@@ -139,7 +139,7 @@
     <value>E-mail</value>
   </data>
   <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>Zadejte stávající heslo</value>
+    <value>Zadejte současné heslo</value>
   </data>
   <data name="EnterNewPassword" xml:space="preserve">
     <value>Zadejte nové heslo</value>
@@ -172,7 +172,7 @@
     <value>Zaregistrovat se</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>Zapamatovat</value>
+    <value>Zapamatovat si mě</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
     <value>Zkompilované buildy v každém čtvrtletí</value>

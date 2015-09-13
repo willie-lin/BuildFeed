@@ -1,79 +1,79 @@
 ﻿@model IEnumerable<BuildFeed.Models.BuildModel>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("{0} {1}{2} | {3}", BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(BuildFeed.Local.Common.PageTitleSegment, ViewBag.PageNumber), BuildFeed.Local.Common.SiteName);
+   ViewBag.Title = string.Format("{0}{1} | {2}", string.Format(BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId), ViewBag.PageNumber == 1 ? "" : string.Format(BuildFeed.Local.Common.PageTitleSegment, ViewBag.PageNumber), BuildFeed.Local.Common.SiteName);
 }
 
 @section head
 {
-    @if (ViewBag.MetaItem != null)
-    {
-        <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
-        <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
-    }
-    else
-    {
-        string metaDesc = string.Format(BuildFeed.Local.Front.YearMetaGeneric, ViewBag.ItemId);
-        <meta name="description" content="@metaDesc" />
-        <meta property="og:description" content="@metaDesc" />
-    }
+   @if (ViewBag.MetaItem != null)
+   {
+      <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
+      <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
+   }
+   else
+   {
+      string metaDesc = string.Format(BuildFeed.Local.Front.YearMetaGeneric, ViewBag.ItemId);
+      <meta name="description" content="@metaDesc" />
+      <meta property="og:description" content="@metaDesc" />
+   }
 
-    @if (ViewBag.PageNumber != 1)
-    {
-        <meta name="robots" content="noindex, follow" />
-    }
+   @if (ViewBag.PageNumber != 1)
+   {
+      <meta name="robots" content="noindex, follow" />
+   }
 }
 
-<h1>@string.Format("Builds from {0}", ViewBag.ItemId)</h1>
-@if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
-{
-    <h3>@BuildFeed.Local.Front.About</h3>
-    @Html.Raw(ViewBag.MetaItem.PageContent)
-}
-<h3>@BuildFeed.Local.Front.Share</h3>
-<div class="addthis_sharing_toolbox"></div>
-<h3>@BuildFeed.Local.Front.Listing</h3>
-<div class="row">
-    @foreach (var build in Model)
-    {
-        <div class="col-md-2 col-sm-3 col-xs-6 build-group">
+<h1>@string.Format(BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId)</h1>
+   @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
+   {
+      <h3>@BuildFeed.Local.Front.About</h3>
+      @Html.Raw(ViewBag.MetaItem.PageContent)
+   }
+   <h3>@BuildFeed.Local.Front.Share</h3>
+   <div class="addthis_sharing_toolbox"></div>
+   <h3>@BuildFeed.Local.Front.Listing</h3>
+   <div class="row">
+      @foreach (var build in Model)
+      {
+         <div class="col-md-2 col-sm-3 col-xs-6 build-group">
             <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("viewBuild", new {id = build.Id})">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</a></h3>
             @if (User.Identity.IsAuthenticated)
             {
-                <p>
-                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
-                    @if (Roles.IsUserInRole("Administrators"))
-                    {
-                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
-                    }
-                </p>
+               <p>
+                  <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
+                  @if (Roles.IsUserInRole("Administrators"))
+                  {
+                     <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
+                  }
+               </p>
             }
             <p class="build-group-p">
-                @if (!string.IsNullOrEmpty(build.Lab))
-                {
-                    <span class="no-wrapping" title="@build.Lab"><i class="fa fa-code-fork fa-fw"></i> @build.Lab</span><br />
-                }
-                @if (build.BuildTime.HasValue)
-                {
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span><br />
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span><br />
-                }
+               @if (!string.IsNullOrEmpty(build.Lab))
+               {
+                  <span class="no-wrapping" title="@build.Lab"><i class="fa fa-code-fork fa-fw"></i> @build.Lab</span><br />
+               }
+               @if (build.BuildTime.HasValue)
+               {
+                  <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span><br />
+                  <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span><br />
+               }
             </p>
             <p>
-                @if (build.IsLeaked)
-                {
-                    <span class="label label-success label-build-status">@BuildFeed.Local.Front.Public</span>
-                }
-                else
-                {
-                    <span class="label label-danger label-build-status">@BuildFeed.Local.Front.Private</span>
-                }
+               @if (build.IsLeaked)
+               {
+                  <span class="label label-success label-build-status">@BuildFeed.Local.Front.Public</span>
+               }
+               else
+               {
+                  <span class="label label-danger label-build-status">@BuildFeed.Local.Front.Private</span>
+               }
             </p>
-        </div>
-    }
-</div>
-@PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewYear", ViewContext.RouteData.Values)
-@section scripts
+         </div>
+      }
+   </div>
+   @PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewYear", ViewContext.RouteData.Values)
+   @section scripts
 {
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
-}
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
+   }

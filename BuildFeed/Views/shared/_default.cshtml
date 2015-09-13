@@ -64,7 +64,7 @@
                      {
                         <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="@BuildFeed.Local.Common.Admin"><i class="fa fa-fw fa-cogs"></i> @BuildFeed.Local.Common.Admin</a></li>
                         <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
-                              <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
+                        <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      else
                      {
@@ -92,7 +92,7 @@
             <div class="col-sm-8">
                <p>
                   <a href="@Url.Action("sitemap", new { controller = "support" })">@BuildFeed.Local.Common.Sitemap</a><br />
-                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName
+                  <i class="fa fa-language"></i>&ensp;                  @System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
                </p>
             </div>
             <div class="col-sm-4 text-right">
