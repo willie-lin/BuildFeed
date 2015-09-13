@@ -122,10 +122,10 @@ else
             @Html.LabelFor(model => model.LeakDate, new { @class = "control-label col-sm-2" })
             <div class="col-sm-10">
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@BuildFeed.Local.Front.Today</button>
                     </div>
                 </div>

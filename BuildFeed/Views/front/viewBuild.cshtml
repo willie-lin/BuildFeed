@@ -1,175 +1,185 @@
 ﻿@model BuildFeed.Models.BuildModel
 
 @{
-    ViewBag.Title = Model.FullBuildString + " | BuildFeed";
+   ViewBag.Title = Model.FullBuildString + " | BuildFeed";
 }
 
 @section head
 {
-    <link href="@Url.Action()" rel="canonical" />
-    <meta property="og:title" content="@Model.FullBuildString" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="@Url.Action()" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@("@")buildfeed">
-    <meta name="twitter:title" content="@Model.FullBuildString | @BuildFeed.Local.Common.SiteName">
-    <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new {id = Model.Id})">
-    @{
-        string metaDesc = Model.BuildTime.HasValue ? string.Format(BuildFeed.Local.Front.BuildMetaDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToLongDateWithoutDay()) : string.Format(BuildFeed.Local.Front.BuildMetaNoDate, Model.Number, Model.Lab);
-    }
-    <meta name="description" content="@metaDesc" />
-    <meta property="og:description" content="@metaDesc" />
-    <meta name="twitter:description" content="@metaDesc" />
+   <link href="@Url.Action()" rel="canonical" />
+   <meta property="og:title" content="@Model.FullBuildString" />
+   <meta property="og:type" content="website" />
+   <meta property="og:url" content="@Url.Action()" />
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@("@")buildfeed">
+   <meta name="twitter:title" content="@Model.FullBuildString | @BuildFeed.Local.Common.SiteName">
+   <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Action("twitterCard", new {id = Model.Id})">
+   @{
+      string metaDesc = Model.BuildTime.HasValue ? string.Format(BuildFeed.Local.Front.BuildMetaDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToLongDateWithoutDay()) : string.Format(BuildFeed.Local.Front.BuildMetaNoDate, Model.Number, Model.Lab);
+   }
+   <meta name="description" content="@metaDesc" />
+   <meta property="og:description" content="@metaDesc" />
+   <meta name="twitter:description" content="@metaDesc" />
 }
 
 <h1 dir="ltr">@Model.FullBuildString</h1>
 
 <div class="row">
-    <div class="col-sm-6">
-        <div class="form-horizontal form-details">
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div class="form-group">
-                    <label class="control-label col-sm-4">@BuildFeed.Local.Front.EditorActions</label>
-                    <div class="col-sm-8">
-                        <p class="form-control-static">
-                            @Html.ActionLink(BuildFeed.Local.Front.Edit, "editBuild", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
-
-                            @if (Roles.IsUserInRole("Administrators"))
-                            {
-                                @Html.ActionLink(BuildFeed.Local.Front.Delete, "deleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
-                            }
-                        </p>
-                    </div>
-                </div>
-            }
+   <div class="col-sm-6">
+      <div class="form-horizontal form-details">
+         @if (User.Identity.IsAuthenticated)
+         {
             <div class="form-group">
-                @Html.LabelFor(model => model.MajorVersion, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">@Html.DisplayFor(model => model.MajorVersion)</p>
-                </div>
-            </div>
+               <label class="control-label col-sm-4">@BuildFeed.Local.Front.EditorActions</label>
+               <div class="col-sm-8">
+                  <p class="form-control-static">
+                     @Html.ActionLink(BuildFeed.Local.Front.Edit, "editBuild", new { id = Model.Id }, new { @class = "btn btn-default btn-xs" })
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.MinorVersion, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">@Html.DisplayFor(model => model.MinorVersion)</p>
-                </div>
+                     @if (Roles.IsUserInRole("Administrators"))
+                     {
+                        @Html.ActionLink(BuildFeed.Local.Front.Delete, "deleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                     }
+                  </p>
+               </div>
             </div>
+         }
+         <div class="form-group">
+            @Html.LabelFor(model => model.MajorVersion, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">@Html.DisplayFor(model => model.MajorVersion)</p>
+            </div>
+         </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Number, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">@Html.DisplayFor(model => model.Number)</p>
-                </div>
+         <div class="form-group">
+            @Html.LabelFor(model => model.MinorVersion, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">@Html.DisplayFor(model => model.MinorVersion)</p>
             </div>
+         </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Revision, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">@Html.DisplayFor(model => model.Revision)</p>
-                </div>
+         <div class="form-group">
+            @Html.LabelFor(model => model.Number, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">@Html.DisplayFor(model => model.Number)</p>
             </div>
+         </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Lab, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">
-                        @if (string.IsNullOrEmpty(Model.Lab))
-                        {
-                            <em>@BuildFeed.Local.Front.NoLab</em>
-                        }
-                        else
-                        {
-                            @Model.Lab<br />
-                                <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
-                        }
-                    </p>
-                </div>
+         <div class="form-group">
+            @Html.LabelFor(model => model.Revision, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">@Html.DisplayFor(model => model.Revision)</p>
             </div>
+         </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.BuildTime, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-8">
-                    <p class="form-control-static">
-                        @if (Model.BuildTime.HasValue)
-                        {
-                            <time datetime="@Model.BuildTime.Value.ToString("yyyy-MM-dd HH:mm")" title="@Model.BuildTime.Value.ToString("h:mm tt on dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</time>
-                                <br />
-                                <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromYear, Model.BuildTime.Value.Year)</a>
-                        }
-                    </p>
-                </div>
+         <div class="form-group">
+            @Html.LabelFor(model => model.Lab, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">
+                  @if (string.IsNullOrEmpty(Model.Lab))
+                  {
+                     <em>@BuildFeed.Local.Front.NoLab</em>
+                  }
+                  else
+                  {
+                     @Model.Lab<br />
+                     <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
+                  }
+               </p>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-details">
-            <div class="form-group">
-                @Html.LabelFor(model => model.SourceType, new { @class = "control-label" })
-                <p class="form-control-static">
-                    @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
-                    <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromSource, DisplayHelpers.GetDisplayTextForEnum(Model.SourceType))</a>
-                </p>
-            </div>
+         </div>
 
-            @if (Model.LeakDate.HasValue)
-            {
-                <div class="form-group">
-                    @Html.LabelFor(model => model.LeakDate, new { @class = "control-label" })
-                    <div class="form-control-static"><time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToString("dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.LeakDate, "{0:dd/MM/yyyy}")</time></div>
-                </div>
-            }
-
-            @if ((Model.MajorVersion == 6 && Model.MinorVersion == 4) || (Model.MajorVersion == 10 && Model.MinorVersion == 0) && Model.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
-            {
-                <div class="form-group">
-                    @Html.LabelFor(model => model.FlightLevel, new { @class = "control-label" })
-                    <p class="form-control-static">@Html.DisplayFor(model => model.FlightLevel, "Enumeration")</p>
-                </div>
-            }
-
-            <div class="form-group">
-                <label class="control-label">@BuildFeed.Local.Front.Share</label>
-                <div class="addthis_sharing_toolbox"></div>
+         <div class="form-group">
+            @Html.LabelFor(model => model.BuildTime, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <p class="form-control-static">
+                  @if (Model.BuildTime.HasValue)
+                  {
+                     <time datetime="@Model.BuildTime.Value.ToString("yyyy-MM-dd HH:mm")" title="@Model.BuildTime.Value.ToString("h:mm tt on dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</time>
+                     <br />
+                     <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromYear, Model.BuildTime.Value.Year)</a>
+                  }
+               </p>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.SourceDetails, new { @class = "control-label" })
-                <div class="form-control-static">@Html.Raw(Model.SourceDetails)</div>
+         </div>
+      </div>
+   </div>
+   <div class="col-sm-6">
+      <div class="form-horizontal form-details">
+         <div class="form-group">
+            @Html.LabelFor(model => model.SourceType, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+               <div class="form-control-static">
+                  @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
+                  <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromSource, DisplayHelpers.GetDisplayTextForEnum(Model.SourceType))</a>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+
+         @if (Model.LeakDate.HasValue)
+         {
+            <div class="form-group">
+               @Html.LabelFor(model => model.LeakDate, new { @class = "control-label col-sm-4" })
+               <div class="col-sm-8">
+                  <div class="form-control-static"><time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToString("dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.LeakDate, "{0:dd/MM/yyyy}")</time></div>
+               </div>
+            </div>
+         }
+
+         @if ((Model.MajorVersion == 6 && Model.MinorVersion == 4) || (Model.MajorVersion == 10 && Model.MinorVersion == 0) && Model.FlightLevel != BuildFeed.Models.LevelOfFlight.None)
+         {
+            <div class="form-group">
+               @Html.LabelFor(model => model.FlightLevel, new { @class = "control-label col-sm-4" })
+               <div class="col-sm-8">
+                  <div class="form-control-static">@Html.DisplayFor(model => model.FlightLevel, "Enumeration")</div>
+               </div>
+            </div>
+         }
+      </div>
+      <div class="form-details">
+         <div class="form-group">
+            <label class="control-label">@BuildFeed.Local.Front.Share</label>
+            <div class="addthis_sharing_toolbox"></div>
+         </div>
+         @if (!string.IsNullOrWhiteSpace(Model.SourceDetails))
+         {
+            <div class="form-group">
+               @Html.LabelFor(model => model.SourceDetails, new { @class = "control-label" })
+               <div class="form-control-static">@Html.Raw(Model.SourceDetails)</div>
+            </div>
+         }
+      </div>
+   </div>
 </div>
 
 <div class="form-horizontal form-details">
-    <div class="form-group">
-        <label class="control-label col-sm-2">@BuildFeed.Local.Front.Comments</label>
-        <div class="col-sm-10">
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'buildfeed';
-                var disqus_url = 'https://buildfeed.net/actions/info/@Model.Id/';
+   <div class="form-group">
+      <label class="control-label col-sm-2">@BuildFeed.Local.Front.Comments</label>
+      <div class="col-sm-10">
+         <div id="disqus_thread"></div>
+         <script type="text/javascript">
+            var disqus_shortname = 'buildfeed';
+            var disqus_url = 'https://buildfeed.net/actions/info/@Model.Id/';
 
-                (function () {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-    </div>
+            (function () {
+               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+         </script>
+         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+   </div>
 
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-8">
-            <a href="@Url.Action("viewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">@BuildFeed.Local.Front.ReturnToOverview</a>
-            &ensp;
-            <a href="@Url.Action("index")" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
-        </div>
-    </div>
+   <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+         <a href="@Url.Action("viewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">@BuildFeed.Local.Front.ReturnToOverview</a>
+         &ensp;
+         <a href="@Url.Action("index")" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
+      </div>
+   </div>
 </div>
 
 @section scripts
 {
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
+   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 }

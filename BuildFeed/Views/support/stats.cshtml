@@ -22,9 +22,8 @@
     <script type="text/javascript">
         $(function () {
             Chart.defaults.global.responsive = true;
-            //Chart.defaults.global.showTooltips = false;
             Chart.defaults.global.scaleFontFamily = "Hind, sans-serif";
-            Chart.defaults.global.scaleFontColor = "#bbb";
+            Chart.defaults.global.scaleFontColor = "#ccc";
 
             Chart.defaults.Line.scaleShowGridLines = false;
 
@@ -42,7 +41,9 @@
                 ]
             };
 
-            var additionChart = new Chart(document.getElementById("stats-addition").getContext("2d")).Line(additionData, {});
+           var additionChart = new Chart(document.getElementById("stats-addition").getContext("2d")).Line(additionData, {
+              pointHitDetectionRadius: 0
+           });
 
 
             var compiledData = {
@@ -59,7 +60,16 @@
                 ]
             };
 
-            var compiledChart = new Chart(document.getElementById("stats-compiled").getContext("2d")).Line(compiledData, { scaleLabel: "<%= (Math.round(Math.pow(value, Math.E)/10)*10) %>", tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%=Math.round(Math.pow(value, Math.E))%>", scaleOverride: true, scaleSteps: 10, scaleStepWidth: 2, scaleStartValue: 1, scaleIntegersOnly: false, pointHitDetectionRadius: 0 });
+           var compiledChart = new Chart(document.getElementById("stats-compiled").getContext("2d")).Line(compiledData, {
+              scaleLabel: "<%= (Math.round(Math.pow(value, Math.E)/10)*10) %>",
+              tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%=Math.round(Math.pow(value, Math.E))%>",
+              scaleOverride: true,
+              scaleSteps: 10,
+              scaleStepWidth: 2,
+              scaleStartValue: 1,
+              scaleIntegersOnly: false,
+              pointHitDetectionRadius: 0
+           });
 
             var labData = {
                 labels: [ @Html.Raw(string.Join(", ", Model.BuildsByLab.Select(l => string.Format("\"{0}\"", l.Item1))))],
@@ -75,7 +85,9 @@
                 ]
             };
 
-            var labChart = new Chart(document.getElementById("stats-labs").getContext("2d")).Bar(labData, {});
+           var labChart = new Chart(document.getElementById("stats-labs").getContext("2d")).Bar(labData, {
+              pointHitDetectionRadius: 0
+           });
         });
     </script>
 }

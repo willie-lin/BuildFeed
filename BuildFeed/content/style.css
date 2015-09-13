@@ -64,7 +64,7 @@ h1
 
 .credits-list dd + dt
 {
-   margin-top: 1em;
+   margin-top: 1.5em;
 }
 
 #page-footer
@@ -108,6 +108,11 @@ label, .control-label, .help-block, .checkbox, .radio
 {
    margin: 0;
    width: 100%;
+}
+
+.trumbowyg-black .trumbowyg-dropdown button
+{
+   color: #fff !important;
 }
 
 #search-results

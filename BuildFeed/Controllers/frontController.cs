@@ -69,7 +69,7 @@ namespace BuildFeed.Controllers
                     View(builds);
       }
 
-      [Route("build/{id}/", Name = "Build")]
+      [Route("build/{id:guid}/", Name = "Build")]
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
@@ -77,6 +77,13 @@ namespace BuildFeed.Controllers
       {
          BuildModel b = await bModel.SelectById(id);
          return View(b);
+      }
+
+      [Route("build/{id:long}/", Name = "Build (Legacy)")]
+      public async Task<ActionResult> viewBuild(long id)
+      {
+         BuildModel b = await bModel.SelectByLegacyId(id);
+         return RedirectToAction("viewBuild", new { id = b.Id });
       }
 
       [Route("twitter/{id}/")]
