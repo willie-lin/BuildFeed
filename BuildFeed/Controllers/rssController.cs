@@ -208,7 +208,7 @@ namespace BuildFeed.Controllers
       [Route("rss/lab/{lab}")]
       public async Task<ActionResult> lab(string lab)
       {
-         var builds = await bModel.SelectLab(lab, RSS_SIZE, 0);
+         var builds = await bModel.SelectLab(lab, 0, RSS_SIZE);
 
 
          RssDocument rdoc = new RssDocument()

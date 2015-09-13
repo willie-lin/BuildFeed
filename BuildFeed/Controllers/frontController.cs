@@ -15,10 +15,12 @@ namespace BuildFeed.Controllers
       public const int PAGE_SIZE = 96;
 
       private Build bModel;
+      private MetaItem mModel;
 
       public frontController() : base()
       {
          bModel = new Build();
+         mModel = new MetaItem();
       }
 
       [Route("", Order = 1)]
@@ -125,7 +127,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> viewLabPage(string lab, int page)
       {
-         ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
+         ViewBag.MetaItem = await mModel.SelectById(new MetaItemKey
          {
             Type = MetaType.Lab,
             Value = lab
@@ -157,7 +159,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> viewSourcePage(TypeOfSource source, int page)
       {
-         ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
+         ViewBag.MetaItem = await mModel.SelectById(new MetaItemKey
          {
             Type = MetaType.Source,
             Value = source.ToString()
@@ -189,7 +191,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> viewYearPage(int year, int page)
       {
-         ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
+         ViewBag.MetaItem = await mModel.SelectById(new MetaItemKey
          {
             Type = MetaType.Year,
             Value = year.ToString()
@@ -222,7 +224,7 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> viewVersionPage(int major, int minor, int page)
       {
          string valueString = $"{major}.{minor}";
-         ViewBag.MetaItem = new MetaItem().SelectById(new MetaItemKey
+         ViewBag.MetaItem = await mModel.SelectById(new MetaItemKey
          {
             Type = MetaType.Version,
             Value = valueString

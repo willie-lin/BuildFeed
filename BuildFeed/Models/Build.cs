@@ -153,8 +153,8 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, true)]
       public async Task<List<BuildModel>> SelectLatestLeaked(int limit, int skip)
       {
-         return await _buildCollection.Find(b => b.Added != null)
-            .SortByDescending(b => b.Added)
+         return await _buildCollection.Find(b => b.LeakDate != null)
+            .SortByDescending(b => b.LeakDate)
             .Skip(skip)
             .Limit(limit)
             .ToListAsync();
