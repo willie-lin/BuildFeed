@@ -160,13 +160,13 @@
     <value>Κωδικός</value>
   </data>
   <data name="RecentlyAdded" xml:space="preserve">
-    <value>Προστέθηκε προσφάτως</value>
+    <value>Προστέθηκαν πρόσφατα</value>
   </data>
   <data name="RecentlyCompiled" xml:space="preserve">
-    <value>Έγινε compile προσφάτως</value>
+    <value>Έγιναν compile πρόσφατα</value>
   </data>
   <data name="RecentlyLeaked" xml:space="preserve">
-    <value>Διέρρευσε προσφάτως</value>
+    <value>Διέρρευσαν πρόσφατα</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Εγγραφή</value>
@@ -175,7 +175,7 @@
     <value>Θυμήσου με</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>Builds που έγιναν compile κάθε τέταρτο</value>
+    <value>Builds που έγιναν compile κάθε τέταρτο του χρόνου</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
     <value>Καταγεγραμμένα builds σε κάθε lab</value>
@@ -184,7 +184,7 @@
     <value>Μόνο labs με 100 ή περισσότερα καταγεγραμμένα builds περιλαμβάνονται.</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>Νέες προσθήκες στο BuildFeed στον προηγούμενο χρόνο</value>
+    <value>Νέες προσθήκες στο BuildFeed τον προηγούμενο χρόνο</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
     <value>Ευχαριστούμε για την εγγραφή</value>

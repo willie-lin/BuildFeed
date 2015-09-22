@@ -136,7 +136,7 @@
     <value>Canary</value>
   </data>
   <data name="FlightLevel" xml:space="preserve">
-    <value>Flight niveau</value>
+    <value>Vlucht niveau</value>
   </data>
   <data name="FlightMSIT" xml:space="preserve">
     <value>Microsoft Intern</value>
@@ -145,7 +145,7 @@
     <value>Geen</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>Operating System Groep</value>
+    <value>Besturingssysteem Groep (OSG)</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
     <value>Windows Insider Snel</value>
@@ -175,7 +175,7 @@
     <value>Aangepast op</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>Buildnummer</value>
+    <value>Build nummer</value>
   </data>
   <data name="PrivateLeak" xml:space="preserve">
     <value>Prive lek</value>
@@ -184,13 +184,13 @@
     <value>Publiekelijke release</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Build herziening</value>
+    <value>Build revisie</value>
   </data>
   <data name="SourceDetails" xml:space="preserve">
-    <value>Bron informatie</value>
+    <value>Bron details</value>
   </data>
   <data name="SourceType" xml:space="preserve">
-    <value>Bron type</value>
+    <value>Bron soort</value>
   </data>
   <data name="UpdateGDR" xml:space="preserve">
     <value>Update (GDR)</value>

@@ -124,7 +124,7 @@
     <value>Пакет приложения</value>
   </data>
   <data name="BuildTime" xml:space="preserve">
-    <value>Время сборки</value>
+    <value>Время компиляции</value>
   </data>
   <data name="BuildTools" xml:space="preserve">
     <value>Инструменты</value>
@@ -145,19 +145,19 @@
     <value>Нет</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>Operating Systems Group</value>
+    <value>Группа разработчиков ОС</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
-    <value>Windows Insider Fast</value>
+    <value>Windows Insider — быстрый</value>
   </data>
   <data name="FlightWIS" xml:space="preserve">
-    <value>Windows Insider Slow</value>
+    <value>Windows Insider — медленный</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
     <value>Публичная утечка</value>
   </data>
   <data name="Lab" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+    <value>Лаборатория</value>
   </data>
   <data name="LeakDate" xml:space="preserve">
     <value>Дата релиза или утечки</value>
@@ -184,7 +184,7 @@
     <value>Публичный релиз</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Ревизия сборки</value>
+    <value>Ревизия</value>
   </data>
   <data name="SourceDetails" xml:space="preserve">
     <value>Описание источника</value>

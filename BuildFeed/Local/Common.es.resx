@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddBuild" xml:space="preserve">
-    <value>Adicionar compilación</value>
+    <value>Añadir compilación</value>
   </data>
   <data name="Admin" xml:space="preserve">
     <value>Administrador</value>
@@ -127,7 +127,7 @@
     <value>Contribuir en</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>Créditos</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>Desarrollado por</value>
@@ -136,10 +136,10 @@
     <value>Error</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>Entrar</value>
+    <value>Iniciar sesión</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Salir</value>
+    <value>Cerrar sesión</value>
   </data>
   <data name="PageTitleSegment" xml:space="preserve">
     <value>| Página {0}</value>
@@ -163,10 +163,10 @@
     <value>Ningun resultado encontrado</value>
   </data>
   <data name="SearchLab" xml:space="preserve">
-    <value>Laboratório</value>
+    <value>Laboratorio</value>
   </data>
   <data name="SearchQuery" xml:space="preserve">
-    <value>Termines de la búsqueda</value>
+    <value>Criterios de busqueda</value>
   </data>
   <data name="SearchSource" xml:space="preserve">
     <value>Fuente</value>
@@ -193,6 +193,6 @@
     <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>toque para buscar...</value>
+    <value>escriba para buscar...</value>
   </data>
 </root>

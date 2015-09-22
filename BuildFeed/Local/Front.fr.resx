@@ -124,10 +124,10 @@
     <value>Ajouter une build</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>En apprendre plus sur la Build {0}, de {1] et compilée en {2}.</value>
+    <value>En apprendre plus sur la Build {0}, de {1} et compilée en {2}.</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>En apprendre plus sur la Build {0}, de {1]. BuildFeed suit les builds Windows au cours de leur développement.</value>
+    <value>En apprendre plus sur la Build {0}, de {1}. BuildFeed suit les builds Windows au cours de leur développement.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
     <value>Builds de {0}</value>

@@ -124,13 +124,13 @@
     <value>Διαχειριστής</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>Προσφορά σε</value>
+    <value>Προσφορά στο</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>Μνεία</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
-    <value>Αναπτύχθηκε από</value>
+    <value>Αναπτύχθηκε από τον</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Σφάλμα</value>

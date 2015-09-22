@@ -154,7 +154,7 @@
     <value>Labs</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Identifiant</value>
+    <value>Se connecter</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Mot de passe</value>
@@ -169,7 +169,7 @@
     <value>Récemment fuité</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Inscription</value>
+    <value>S'inscrire</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Se souvenir de moi</value>

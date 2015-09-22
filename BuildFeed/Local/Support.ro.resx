@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>Добавить сборку</value>
+  <data name="AccountValidation" xml:space="preserve">
+    <value>Fiecare cont est validat de un Administrator, deci aveți răbdare și verificați din nou mai târziu.</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Администратор</value>
+  <data name="AdditionsToBuildFeed" xml:space="preserve">
+    <value>Adaosuri la BuilFeed</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>Помочь в разработке на</value>
+  <data name="BuildsCompiled" xml:space="preserve">
+    <value>Build-uri compilate</value>
   </data>
-  <data name="Credits" xml:space="preserve">
-    <value>авторы перевода</value>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Schimbați parola</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>Автор:</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmare parolă nouă</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmare parolă</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Вход</value>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Adresă E-mail</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Выход</value>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Introduceți parola curentă</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Страница {0}</value>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Introduceți parola nouă</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Introduceți parola</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>Лента RSS</value>
+  <data name="HighestVersion" xml:space="preserve">
+    <value>Versiunea cea mai mare</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Поиск</value>
+  <data name="Labs" xml:space="preserve">
+    <value>Lab-uri</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Сборка</value>
+  <data name="Login" xml:space="preserve">
+    <value>Logare</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Поиск по сайту</value>
+  <data name="Password" xml:space="preserve">
+    <value>Parolă</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>Ничего не найдено</value>
+  <data name="RecentlyAdded" xml:space="preserve">
+    <value>Adăugate recent</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Лаборотория</value>
+  <data name="RecentlyCompiled" xml:space="preserve">
+    <value>Compilate recent</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>Поисковый запрос</value>
+  <data name="RecentlyLeaked" xml:space="preserve">
+    <value>Leak recent</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Источник</value>
+  <data name="Register" xml:space="preserve">
+    <value>Înregistrare</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Версия</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Ține-mă minte</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Год</value>
+  <data name="StatsCompiled" xml:space="preserve">
+    <value>Build-uri compilate în fiecare trimestru</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>Карта сайта</value>
+  <data name="StatsLab" xml:space="preserve">
+    <value>Build-uri înregistrate în fiecare lab</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="StatsLabIncluded" xml:space="preserve">
+    <value>Numai lab-uri cu 100 sau mai multe build-uri înregistrate sunt incluse.</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Статистика</value>
+  <data name="StatsNewAdditions" xml:space="preserve">
+    <value>Noi adăugari la BuildFeed din cursul anului precedent</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Включить навигацию</value>
+  <data name="ThanksRegister" xml:space="preserve">
+    <value>Mulțumin pentru înregistrare</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Nume utilizator</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>Введите запрос…</value>
+  <data name="Week" xml:space="preserve">
+    <value>Săptămâna</value>
   </data>
 </root>

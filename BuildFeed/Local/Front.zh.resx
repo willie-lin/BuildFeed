@@ -190,7 +190,7 @@
     <value>今天</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>版本</value>
+    <value>个版本</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>通过基于社区协作的 Windows 版本列表 BuildFeed，查看在{0}年编译的所有Windows版本列表，以及 Windows 是怎样随着时间推移不断开发的</value>

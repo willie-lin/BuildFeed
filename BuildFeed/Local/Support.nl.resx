@@ -121,7 +121,7 @@
     <value>Elk account wordt gevalideerd door een beheerder, wees geduldig en controleer later opnieuw</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>Toevoegingen aan BuildFeed</value>
+    <value>Aanvullingen aan BuildFeed</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
     <value>Builds gecompileerd</value>
@@ -175,10 +175,10 @@
     <value>Onthoud mij</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd in elk kwartaal</value>
+    <value>Builds gecompileerd per kwartaal</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>Gedocumenteerde builds in elk lab</value>
+    <value>Opgenomen builds per lab</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
     <value>Alleen labs met meer dan 100 builds zijn opgenomen</value>

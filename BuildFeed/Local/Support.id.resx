@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>Добавить сборку</value>
+  <data name="AccountValidation" xml:space="preserve">
+    <value>Setiap akun divalidasi oleh Administrator, silakan tunggu beberapa saat dan coba lagi</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Администратор</value>
+  <data name="AdditionsToBuildFeed" xml:space="preserve">
+    <value>Tambahan untuk BuildFeed</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>Помочь в разработке на</value>
+  <data name="BuildsCompiled" xml:space="preserve">
+    <value>Build dikompilasi</value>
   </data>
-  <data name="Credits" xml:space="preserve">
-    <value>авторы перевода</value>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Ganti sandi</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>Автор:</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Konfirmasi sandi baru</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Konfirmasi sandi</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Вход</value>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Alamat Email</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Выход</value>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Masukkan sandi lama</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Страница {0}</value>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Masukkan sandi baru</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Masukkan sandi</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>Лента RSS</value>
+  <data name="HighestVersion" xml:space="preserve">
+    <value>Versi yang lebih tinggi</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Поиск</value>
+  <data name="Labs" xml:space="preserve">
+    <value>Labs</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Сборка</value>
+  <data name="Login" xml:space="preserve">
+    <value>Masuk</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Поиск по сайту</value>
+  <data name="Password" xml:space="preserve">
+    <value>Sandi</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>Ничего не найдено</value>
+  <data name="RecentlyAdded" xml:space="preserve">
+    <value>Baru saja ditambahkan</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Лаборотория</value>
+  <data name="RecentlyCompiled" xml:space="preserve">
+    <value>Baru saja dikompilasi</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>Поисковый запрос</value>
+  <data name="RecentlyLeaked" xml:space="preserve">
+    <value>Baru saja bocor</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Источник</value>
+  <data name="Register" xml:space="preserve">
+    <value>Daftar</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Версия</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Ingatkan saya</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Год</value>
+  <data name="StatsCompiled" xml:space="preserve">
+    <value>Build dikompilasi tiap empat</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>Карта сайта</value>
+  <data name="StatsLab" xml:space="preserve">
+    <value>Build yang direkam di setiap lab</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="StatsLabIncluded" xml:space="preserve">
+    <value>Hanya Labs dengan 100 build atau lebih build yang direkam yang dimasukkan</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Статистика</value>
+  <data name="StatsNewAdditions" xml:space="preserve">
+    <value>Tambahan baru untuk BuildFeed sejak tahun sebelumnya</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Включить навигацию</value>
+  <data name="ThanksRegister" xml:space="preserve">
+    <value>Terima kasih telah mendaftar</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Nama pengguna</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>Введите запрос…</value>
+  <data name="Week" xml:space="preserve">
+    <value>Pekan</value>
   </data>
 </root>

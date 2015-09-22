@@ -121,19 +121,19 @@
     <value>Sobre</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
-    <value>Adicionar una compilación</value>
+    <value>Añadir una compilación</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>Descubre sobre la compilación {0}</value>
+    <value>Descubre sobre la compilación {0}, de {1} y compilada en {2}.</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>Descubra sobre la compilación {0} de Windows, de {1}. BuildFeed rastrea las compilaciones de Windows al decorrer del processo de desarrollo.</value>
+    <value>Descubra sobre la compilación {0} de Windows, de {1}. BuildFeed rastrea las compilaciones de Windows a lo largo del processo de desarrollo.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>Compilaciones desde {0}</value>
+    <value>Compilaciones de {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>Comentários</value>
+    <value>Comentarios</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Borrar</value>
@@ -166,7 +166,7 @@
     <value>Vea más compilaciones compiladas en {0}</value>
   </data>
   <data name="NoLab" xml:space="preserve">
-    <value>Sin informaciones sobre el laboratório</value>
+    <value>Sin cadena de laboratorio</value>
   </data>
   <data name="Private" xml:space="preserve">
     <value>Privada</value>
@@ -175,13 +175,13 @@
     <value>Pública</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>Pegar rapidamente</value>
+    <value>Pegar rápidamente</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
-    <value>Volver para la lista de compilaciones</value>
+    <value>Volver a la lista de compilaciones</value>
   </data>
   <data name="ReturnToOverview" xml:space="preserve">
-    <value>Volver para la visión general</value>
+    <value>Volver a la vista general</value>
   </data>
   <data name="Share" xml:space="preserve">
     <value>Compartir</value>
@@ -190,7 +190,7 @@
     <value>Hoy</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>Compilaciones desde</value>
+    <value>Compilaciones</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Vea una lista de todas las compilaciones de Windows hechas en {0}, y vea como Windows se desarrolló con el tiempo, con la lista colaborativa de compilaciones, BuildFeed</value>

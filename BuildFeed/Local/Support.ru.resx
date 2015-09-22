@@ -121,7 +121,7 @@
     <value>Каждый аккаунт проверяется администратором, пожалуйста, дождитесь рассмотрения</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>Новое на BuildFeed</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
     <value>Сборок скомпилировано</value>
@@ -148,7 +148,7 @@
     <value>Введите пароль</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+    <value>Самые новые</value>
   </data>
   <data name="Labs" xml:space="preserve">
     <value>Лаборатории</value>

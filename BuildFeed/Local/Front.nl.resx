@@ -151,7 +151,7 @@
     <value>Windows NT buildlijst</value>
   </data>
   <data name="LabMetaGeneric" xml:space="preserve">
-    <value>Bekijk alle Windows builds van het lab {0} via BuildFeed, een Windows buildlist lijst</value>
+    <value>Bekijk alle Windows builds van het lab {0} via BuildFeed, een Windows build lijst</value>
   </data>
   <data name="Listing" xml:space="preserve">
     <value>Lijst</value>
@@ -160,7 +160,7 @@
     <value>Vind meer builds van {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>Vind meer builds bronnen van {0}</value>
+    <value>Vind meer builds afkomsting van {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
     <value>Vind meer builds gecompileerd in {0}</value>
@@ -178,10 +178,10 @@
     <value>Snel plakken</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
-    <value>Terug naar de buildlijst</value>
+    <value>Terug naar de build lijst</value>
   </data>
   <data name="ReturnToOverview" xml:space="preserve">
-    <value>Terug naar het buildoverzicht</value>
+    <value>Terug naar het build overzicht</value>
   </data>
   <data name="Share" xml:space="preserve">
     <value>Delen</value>
@@ -193,6 +193,6 @@
     <value>builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
-    <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows buildlist lijst</value>
+    <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows build lijst</value>
   </data>
 </root>

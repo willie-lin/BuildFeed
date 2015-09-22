@@ -117,82 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>Добавить сборку</value>
+  <data name="Added" xml:space="preserve">
+    <value>Tanggal dibuat</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Администратор</value>
+  <data name="AppPackage" xml:space="preserve">
+    <value>Paket aplikasi</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>Помочь в разработке на</value>
+  <data name="BuildTime" xml:space="preserve">
+    <value>Waktu build</value>
   </data>
-  <data name="Credits" xml:space="preserve">
-    <value>авторы перевода</value>
+  <data name="BuildTools" xml:space="preserve">
+    <value>Alat build</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>Автор:</value>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentasi</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+  <data name="FlightCanary" xml:space="preserve">
+    <value>Canary</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Вход</value>
+  <data name="FlightLevel" xml:space="preserve">
+    <value>Level terbang</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Выход</value>
+  <data name="FlightMSIT" xml:space="preserve">
+    <value>Microsoft Internal</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Страница {0}</value>
+  <data name="FlightNone" xml:space="preserve">
+    <value>Tidak ada</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Windows NT</value>
+  <data name="FlightOSG" xml:space="preserve">
+    <value>Grup Sistem Operasi</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>Лента RSS</value>
+  <data name="FlightWIF" xml:space="preserve">
+    <value>Windows Insider- Cepat</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Поиск</value>
+  <data name="FlightWIS" xml:space="preserve">
+    <value>Windows Insider- Lambat</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>Сборка</value>
+  <data name="InternalLeak" xml:space="preserve">
+    <value>Kebocoran publik</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>Поиск по сайту</value>
+  <data name="Lab" xml:space="preserve">
+    <value>Lab string</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>Ничего не найдено</value>
+  <data name="LeakDate" xml:space="preserve">
+    <value>Bocor atau tanggal rilis</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>Лаборотория</value>
+  <data name="Logging" xml:space="preserve">
+    <value>Logging</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>Поисковый запрос</value>
+  <data name="MajorVersion" xml:space="preserve">
+    <value>Versi utama</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>Источник</value>
+  <data name="MinorVersion" xml:space="preserve">
+    <value>Versi minor</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>Версия</value>
+  <data name="Modified" xml:space="preserve">
+    <value>Tanggal dimodifikasi</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>Год</value>
+  <data name="Number" xml:space="preserve">
+    <value>Nomor build</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>Карта сайта</value>
+  <data name="PrivateLeak" xml:space="preserve">
+    <value>Kebocoran privat</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="PublicRelease" xml:space="preserve">
+    <value>Rilis publik</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Статистика</value>
+  <data name="Revision" xml:space="preserve">
+    <value>Revisi build</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Включить навигацию</value>
+  <data name="SourceDetails" xml:space="preserve">
+    <value>Detail build</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="SourceType" xml:space="preserve">
+    <value>Tipe detail</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>Введите запрос…</value>
+  <data name="UpdateGDR" xml:space="preserve">
+    <value>Pembaruan (GDR)</value>
+  </data>
+  <data name="UpdateLDR" xml:space="preserve">
+    <value>Pembaruan (LDR)</value>
   </data>
 </root>

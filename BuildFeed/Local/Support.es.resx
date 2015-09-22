@@ -121,13 +121,13 @@
     <value>Todas las cuentas son verificadas por un administrator. Tenga paciencia y vuelva más tarde.</value>
   </data>
   <data name="AdditionsToBuildFeed" xml:space="preserve">
-    <value>Novidades en BuildFeed</value>
+    <value>Novedades en BuildFeed</value>
   </data>
   <data name="BuildsCompiled" xml:space="preserve">
     <value>Compilaciones hechas</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
-    <value>Alterar contraseña</value>
+    <value>Cambiar contraseña</value>
   </data>
   <data name="ConfirmNewPassword" xml:space="preserve">
     <value>Confirmar nueva contraseña</value>
@@ -136,22 +136,22 @@
     <value>Confirmar contraseña</value>
   </data>
   <data name="EmailAddress" xml:space="preserve">
-    <value>Correo electronico</value>
+    <value>Correo electrónico</value>
   </data>
   <data name="EnterCurrentPassword" xml:space="preserve">
-    <value>Toque la contraseña actual</value>
+    <value>Ingrese la contraseña actual</value>
   </data>
   <data name="EnterNewPassword" xml:space="preserve">
-    <value>Toque la nueva contraseña</value>
+    <value>Ingrese la nueva contraseña</value>
   </data>
   <data name="EnterPassword" xml:space="preserve">
-    <value>Toque la seña</value>
+    <value>Ingrese la contraseña</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>La versión mayor</value>
+    <value>Versión mayor</value>
   </data>
   <data name="Labs" xml:space="preserve">
-    <value>Laboratórios</value>
+    <value>Laboratorios</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Entrar</value>
@@ -160,37 +160,37 @@
     <value>Contraseña</value>
   </data>
   <data name="RecentlyAdded" xml:space="preserve">
-    <value>Adicionadas recién</value>
+    <value>Añadidas recientemente</value>
   </data>
   <data name="RecentlyCompiled" xml:space="preserve">
-    <value>Compiladas recién</value>
+    <value>Compiladas recientemente</value>
   </data>
   <data name="RecentlyLeaked" xml:space="preserve">
-    <value>Escapadas recién</value>
+    <value>Filtradas recientemente</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Inscripción</value>
+    <value>Registrarse</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>Recordar</value>
+    <value>Recordarme</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
     <value>Compilaciones hechas en cada trimestre</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>Compilaciones registradas en cada laboratório</value>
+    <value>Compilaciones registradas en cada laboratorio</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
-    <value>Son inclusos solo los laboratórios con 100 o más compialciones.</value>
+    <value>Solo se incluyen los laboratorios con 100 o más compilaciones.</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>Novidades en BuildFeed en relación con el año anterior</value>
+    <value>Novedades en BuildFeed con relación al año anterior</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
-    <value>Gracias para haberse registrado</value>
+    <value>Gracias por haberse registrado</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>Nombre del usuário</value>
+    <value>Nombre de usuario</value>
   </data>
   <data name="Week" xml:space="preserve">
     <value>Semana</value>

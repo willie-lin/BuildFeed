@@ -136,13 +136,13 @@
     <value>Canary</value>
   </data>
   <data name="FlightLevel" xml:space="preserve">
-    <value>Nível de flight</value>
+    <value>Nivel de vuelo</value>
   </data>
   <data name="FlightMSIT" xml:space="preserve">
     <value>Interno de Microsoft</value>
   </data>
   <data name="FlightNone" xml:space="preserve">
-    <value>Ningun resultado encontrado</value>
+    <value>Ninguno</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
     <value>Grupo de Sistemas Operativos</value>
@@ -154,13 +154,13 @@
     <value>Windows Insider - Lento</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
-    <value>Escape público</value>
+    <value>Filtración pública</value>
   </data>
   <data name="Lab" xml:space="preserve">
-    <value>Informaciones sobre la compilación</value>
+    <value>Cadena de laboratorio</value>
   </data>
   <data name="LeakDate" xml:space="preserve">
-    <value>Fecha del escape o lanzamiento</value>
+    <value>Fecha de filtración o lanzamiento</value>
   </data>
   <data name="Logging" xml:space="preserve">
     <value>Registro</value>
@@ -172,13 +172,13 @@
     <value>Versión menor</value>
   </data>
   <data name="Modified" xml:space="preserve">
-    <value>Hora de alteración</value>
+    <value>Hora de modificación</value>
   </data>
   <data name="Number" xml:space="preserve">
     <value>Número de compilación</value>
   </data>
   <data name="PrivateLeak" xml:space="preserve">
-    <value>Escape privado</value>
+    <value>Filtración privado</value>
   </data>
   <data name="PublicRelease" xml:space="preserve">
     <value>Lanzamiento público</value>
@@ -196,6 +196,6 @@
     <value>Actualización (GDR)</value>
   </data>
   <data name="UpdateLDR" xml:space="preserve">
-    <value>Actualicazión (LDR)</value>
+    <value>Actualización (LDR)</value>
   </data>
 </root>
