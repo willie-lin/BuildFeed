@@ -216,6 +216,7 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
     <Compile Include="Code\LocalController.cs" />
+    <Compile Include="Code\SiteLocale.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
     <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\frontController.cs" />
@@ -223,6 +224,16 @@
     <Compile Include="Controllers\supportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Local\Common.id.Designer.cs">
+      <DependentUpon>Common.id.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.ro.Designer.cs">
+      <DependentUpon>Common.ro.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Local\Common.sl.Designer.cs">
       <DependentUpon>Common.sl.resx</DependentUpon>
@@ -334,6 +345,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Front.id.Designer.cs">
+      <DependentUpon>Front.id.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Front.ro.Designer.cs">
+      <DependentUpon>Front.ro.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Front.sl.Designer.cs">
       <DependentUpon>Front.sl.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -439,6 +460,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Model.id.Designer.cs">
+      <DependentUpon>Model.id.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.ro.Designer.cs">
+      <DependentUpon>Model.ro.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Model.sl.Designer.cs">
       <DependentUpon>Model.sl.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -541,6 +572,16 @@
     </Compile>
     <Compile Include="Local\Model.qps-ploc.Designer.cs">
       <DependentUpon>Model.qps-ploc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.id.Designer.cs">
+      <DependentUpon>Support.id.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.ro.Designer.cs">
+      <DependentUpon>Support.ro.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -806,6 +847,14 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Local\Common.id.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.id.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.sl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.sl.Designer.cs</LastGenOutput>
@@ -894,6 +943,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.id.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.id.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.sl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.sl.Designer.cs</LastGenOutput>
@@ -977,6 +1034,16 @@
     <EmbeddedResource Include="Local\Front.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.id.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.id.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.ro.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.sl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -1082,6 +1149,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Model.qps-ploc.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.id.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.id.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.sl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
