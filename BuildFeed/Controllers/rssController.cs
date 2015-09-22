@@ -1,4 +1,5 @@
-﻿using BuildFeed.Models;
+﻿using BuildFeed.Code;
+using BuildFeed.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using X.Web.RSS.Structure.Validators;
 
 namespace BuildFeed.Controllers
 {
-   public class rssController : Controller
+   public class rssController : LocalController
    {
       private Build bModel;
       private const int RSS_SIZE = 20;

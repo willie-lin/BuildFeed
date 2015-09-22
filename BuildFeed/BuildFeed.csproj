@@ -215,6 +215,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
+    <Compile Include="Code\LocalController.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
     <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\frontController.cs" />

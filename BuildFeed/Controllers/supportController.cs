@@ -1,4 +1,5 @@
-﻿using BuildFeed.Models;
+﻿using BuildFeed.Code;
+using BuildFeed.Models;
 using BuildFeed.Models.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Xml.Linq;
 
 namespace BuildFeed.Controllers
 {
-   public class supportController : Controller
+   public class supportController : LocalController
    {
       private Build bModel;
 

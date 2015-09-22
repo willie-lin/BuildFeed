@@ -1,4 +1,5 @@
-﻿using BuildFeed.Models;
+﻿using BuildFeed.Code;
+using BuildFeed.Models;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -7,10 +8,11 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace BuildFeed.Controllers
 {
-   public class frontController : Controller
+   public class frontController : LocalController
    {
       public const int PAGE_SIZE = 96;
 
