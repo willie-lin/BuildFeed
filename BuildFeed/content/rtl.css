@@ -2,3 +2,40 @@
 {
    text-align: left;
 }
+
+.pagination > li > a,
+.pagination > li > span
+{
+   float: right;
+}
+
+h1[dir=ltr]
+{
+   text-align: right;
+}
+
+@media (min-width: 768px)
+{
+   .navbar-header
+   {
+      float: right;
+   }
+
+   .navbar-nav > li
+   {
+      float: right;
+   }
+
+   .navbar-right
+   {
+      float: left !important;
+      margin-left: -15px;
+      margin-right: 0;
+   }
+
+      .navbar-right .dropdown-menu
+      {
+         right: auto;
+         left: 0;
+      }
+}

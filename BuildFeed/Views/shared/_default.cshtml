@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Globalization;
+@{
    bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
 <!DOCTYPE html>
@@ -16,9 +17,9 @@
    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
    @Styles.Render("~/content/css")
-   @if(IsRTL)
+   @if (IsRTL)
    {
-      Styles.Render("~/content/rtl");
+      @Styles.Render("~/content/rtl")
    }
    <title>@ViewBag.Title</title>
    @RenderSection("head", false)
@@ -78,10 +79,36 @@
                         <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
                         <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
-                     <li><a href="#" title="Search" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
+                     <li><a href="#" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
                      <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
                      <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
                      <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
+                     <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i>&ensp;<span class="caret"></span></a>
+                        <ul id="lang-switcher" class="dropdown-menu">
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ar" ? "active" : "")"><a href="#" data-lang="ar">@CultureInfo.GetCultureInfo("ar").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "bn" ? "active" : "")"><a href="#" data-lang="bn">@CultureInfo.GetCultureInfo("bn").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "cs" ? "active" : "")"><a href="#" data-lang="cs">@CultureInfo.GetCultureInfo("cs").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "de" ? "active" : "")"><a href="#" data-lang="de">@CultureInfo.GetCultureInfo("de").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "el" ? "active" : "")"><a href="#" data-lang="el">@CultureInfo.GetCultureInfo("el").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en" ? "active" : "")"><a href="#" data-lang="en">@CultureInfo.GetCultureInfo("en").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es" ? "active" : "")"><a href="#" data-lang="es">@CultureInfo.GetCultureInfo("es").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "fi" ? "active" : "")"><a href="#" data-lang="fi">@CultureInfo.GetCultureInfo("fi").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "fr" ? "active" : "")"><a href="#" data-lang="fr">@CultureInfo.GetCultureInfo("fr").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "hr" ? "active" : "")"><a href="#" data-lang="hr">@CultureInfo.GetCultureInfo("hr").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "it" ? "active" : "")"><a href="#" data-lang="it">@CultureInfo.GetCultureInfo("it").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "nl" ? "active" : "")"><a href="#" data-lang="nl">@CultureInfo.GetCultureInfo("nl").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "pt" ? "active" : "")"><a href="#" data-lang="pt">@CultureInfo.GetCultureInfo("pt").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "pt-br" ? "active" : "")"><a href="#" data-lang="pt-br">@CultureInfo.GetCultureInfo("pt-br").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "qps-ploc" ? "active" : "")"><a href="#" data-lang="qps-ploc">@CultureInfo.GetCultureInfo("qps-ploc").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ru" ? "active" : "")"><a href="#" data-lang="ru">@CultureInfo.GetCultureInfo("ru").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "sk" ? "active" : "")"><a href="#" data-lang="sk">@CultureInfo.GetCultureInfo("sk").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "sl" ? "active" : "")"><a href="#" data-lang="en">@CultureInfo.GetCultureInfo("sl").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "sv" ? "active" : "")"><a href="#" data-lang="en">@CultureInfo.GetCultureInfo("sv").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "zh-cn" ? "active" : "")"><a href="#" data-lang="zh-cn">@CultureInfo.GetCultureInfo("zh-cn").NativeName</a></li>
+                           <li class="@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "zh-tw" ? "active" : "")"><a href="#" data-lang="zh-tw">@CultureInfo.GetCultureInfo("zh-tw").NativeName</a></li>
+                        </ul>
+                     </li>
                   </ul>
                </div>
             </div>
