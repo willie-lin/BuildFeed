@@ -5,11 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeed", "BuildFeed\BuildFeed.csproj", "{CDDCF754-ECAA-4A66-ADAA-62957A57A51B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5AA81F70-C567-49FF-9323-E3200BF06E4E}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisAuth", "RedisAuth\RedisAuth.csproj", "{C6A16CF0-41DA-4B90-918A-CB84A8C3F1E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoAuth", "MongoAuth\MongoAuth.csproj", "{7C67BFB9-1B3B-4676-A58D-10573DA82CFE}"
