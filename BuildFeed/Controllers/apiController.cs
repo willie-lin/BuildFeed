@@ -116,7 +116,7 @@ namespace BuildFeed.Controllers
                                   l.Length ascending
                           select new SearchResult()
                           {
-                             Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l }),
+                             Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l.Replace('/', '-') }),
                              Label = l.Replace(query, $"<strong>{query}</strong>"),
                              Title = l,
                              Group = Common.SearchLab

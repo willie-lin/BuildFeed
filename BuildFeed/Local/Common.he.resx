@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddBuild" xml:space="preserve">
-    <value>إضافة نسخة جديدة</value>
+    <value>הוספת בילד</value>
   </data>
   <data name="Admin" xml:space="preserve">
-    <value>الإدارة</value>
+    <value>Admin</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>ساهم في التطوير على</value>
+    <value>סיוע בפיתוח ב</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>المساهمات ولائحة الشكر</value>
+    <value>תודות</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
-    <value>طوّرت من قبل</value>
+    <value>פותח על-ידי</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>خطأ</value>
+    <value>שגיאה</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+    <value>כניסה</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>تسجيل الخروج</value>
+    <value>יציאה</value>
   </data>
   <data name="PageTitleSegment" xml:space="preserve">
-    <value>| صفحة {0}</value>
+    <value>| דף {0}</value>
   </data>
   <data name="ProductName" xml:space="preserve">
-    <value>ويندوز NT</value>
+    <value>Windows NT</value>
   </data>
   <data name="RssFeeds" xml:space="preserve">
-    <value>محتوى RSS</value>
+    <value>RSS feeds</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>بحث</value>
+    <value>חיפוש</value>
   </data>
   <data name="SearchBuild" xml:space="preserve">
-    <value>النسخة</value>
+    <value>בילד</value>
   </data>
   <data name="SearchBuildFeed" xml:space="preserve">
-    <value>بحث في BuildFeed</value>
+    <value>חיפוש ב-BuildFeed</value>
   </data>
   <data name="SearchEmpty" xml:space="preserve">
-    <value>لايوجد أي نتائج</value>
+    <value>לא נמצאו תוצאות</value>
   </data>
   <data name="SearchLab" xml:space="preserve">
-    <value>المختبر</value>
+    <value>מעבדה</value>
   </data>
   <data name="SearchQuery" xml:space="preserve">
-    <value>صيغة البحث</value>
+    <value>מחרוזת חיפוש</value>
   </data>
   <data name="SearchSource" xml:space="preserve">
-    <value>المصدر</value>
+    <value>מקור</value>
   </data>
   <data name="SearchVersion" xml:space="preserve">
-    <value>الإصدار</value>
+    <value>גירסה</value>
   </data>
   <data name="SearchYear" xml:space="preserve">
-    <value>السنة</value>
+    <value>שנה</value>
   </data>
   <data name="Sitemap" xml:space="preserve">
-    <value>خريطة الموقع</value>
+    <value>מפת אתר</value>
   </data>
   <data name="SiteName" xml:space="preserve">
     <value>BuildFeed</value>
   </data>
   <data name="Statistics" xml:space="preserve">
-    <value>الإحصائيات</value>
+    <value>סטטיסטיקה</value>
   </data>
   <data name="ToggleNavigation" xml:space="preserve">
-    <value>تبديل الصفحات</value>
+    <value>הפעלת ניווט</value>
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>اكتب لبدء البحث...</value>
+    <value>הקלד לחיפוש...</value>
   </data>
 </root>

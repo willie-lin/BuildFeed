@@ -316,7 +316,8 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<long> SelectLabCount(string lab)
       {
-         return await _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
+         string labUrl = lab.Replace('/', '-').ToLower();
+         return await _buildCollection.Find(b => b.Lab != null && b.LabUrl == labUrl)
             .CountAsync();
       }
 

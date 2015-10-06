@@ -15,6 +15,7 @@ namespace BuildFeed.Code
          new SiteLocale("es"),
          new SiteLocale("fi"),
          new SiteLocale("fr"),
+         new SiteLocale("he"),
          new SiteLocale("hr"),
          new SiteLocale("id"),
          new SiteLocale("it"),

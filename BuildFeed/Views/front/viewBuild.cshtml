@@ -82,7 +82,7 @@
                   else
                   {
                      @Model.Lab<br />
-                     <a href="@Url.Action("viewLab", new { lab = Model.Lab })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
+                     <a href="@Url.Action("viewLab", new { lab = Model.LabUrl })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
                   }
                </p>
             </div>

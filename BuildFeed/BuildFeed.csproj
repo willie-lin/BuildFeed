@@ -221,6 +221,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Local\Common.he.Designer.cs">
+      <DependentUpon>Common.he.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Common.id.Designer.cs">
       <DependentUpon>Common.id.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -341,6 +346,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Front.he.Designer.cs">
+      <DependentUpon>Front.he.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Front.id.Designer.cs">
       <DependentUpon>Front.id.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -456,6 +466,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Model.he.Designer.cs">
+      <DependentUpon>Model.he.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Model.id.Designer.cs">
       <DependentUpon>Model.id.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -568,6 +583,11 @@
     </Compile>
     <Compile Include="Local\Model.qps-ploc.Designer.cs">
       <DependentUpon>Model.qps-ploc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.he.Designer.cs">
+      <DependentUpon>Support.he.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -844,6 +864,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Local\Common.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.he.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.id.Designer.cs</LastGenOutput>
@@ -940,6 +964,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.qps-ploc.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.he.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.id.Designer.cs</LastGenOutput>
@@ -1031,6 +1059,11 @@
     <EmbeddedResource Include="Local\Front.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.he.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -1146,6 +1179,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Model.qps-ploc.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.he.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

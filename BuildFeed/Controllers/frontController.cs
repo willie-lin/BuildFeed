@@ -141,10 +141,10 @@ namespace BuildFeed.Controllers
             Type = MetaType.Lab,
             Value = lab
          });
-         ViewBag.ItemId = lab;
 
          var builds = await bModel.SelectLab(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
 
+         ViewBag.ItemId = builds.First().Lab;
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 

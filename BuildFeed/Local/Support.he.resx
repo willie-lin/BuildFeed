@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddBuild" xml:space="preserve">
-    <value>إضافة نسخة جديدة</value>
+  <data name="AccountValidation" xml:space="preserve">
+    <value>כל חשבון נבדק על ידי מנהל האתר. היאזר בסבלנות וחזור מאוחר יותר.</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>الإدارة</value>
+  <data name="AdditionsToBuildFeed" xml:space="preserve">
+    <value>מה חדש ב- BuildFeed</value>
   </data>
-  <data name="ContributeOn" xml:space="preserve">
-    <value>ساهم في التطوير على</value>
+  <data name="BuildsCompiled" xml:space="preserve">
+    <value>מספר הבילדים שהודרו</value>
   </data>
-  <data name="Credits" xml:space="preserve">
-    <value>المساهمات ولائحة الشكر</value>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>שינוי סיסמה</value>
   </data>
-  <data name="DevelopedBy" xml:space="preserve">
-    <value>طوّرت من قبل</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>אשר סיסמה חדשה</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>خطأ</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>אשר סיסמה</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>כתובת דוא"ל</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>تسجيل الخروج</value>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>סיסמה נוכחית</value>
   </data>
-  <data name="PageTitleSegment" xml:space="preserve">
-    <value>| صفحة {0}</value>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>סיסמה חדשה</value>
   </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>ويندوز NT</value>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>הקש סיסמה</value>
   </data>
-  <data name="RssFeeds" xml:space="preserve">
-    <value>محتوى RSS</value>
+  <data name="HighestVersion" xml:space="preserve">
+    <value>החדשים ביותר</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>بحث</value>
+  <data name="Labs" xml:space="preserve">
+    <value>מעבדות</value>
   </data>
-  <data name="SearchBuild" xml:space="preserve">
-    <value>النسخة</value>
+  <data name="Login" xml:space="preserve">
+    <value>כניסה</value>
   </data>
-  <data name="SearchBuildFeed" xml:space="preserve">
-    <value>بحث في BuildFeed</value>
+  <data name="Password" xml:space="preserve">
+    <value>סיסמה</value>
   </data>
-  <data name="SearchEmpty" xml:space="preserve">
-    <value>لايوجد أي نتائج</value>
+  <data name="RecentlyAdded" xml:space="preserve">
+    <value>נוספו לאחרונה</value>
   </data>
-  <data name="SearchLab" xml:space="preserve">
-    <value>المختبر</value>
+  <data name="RecentlyCompiled" xml:space="preserve">
+    <value>הודרו לאחרונה</value>
   </data>
-  <data name="SearchQuery" xml:space="preserve">
-    <value>صيغة البحث</value>
+  <data name="RecentlyLeaked" xml:space="preserve">
+    <value>זלגו לאחרונה</value>
   </data>
-  <data name="SearchSource" xml:space="preserve">
-    <value>المصدر</value>
+  <data name="Register" xml:space="preserve">
+    <value>רישום</value>
   </data>
-  <data name="SearchVersion" xml:space="preserve">
-    <value>الإصدار</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>זכור אותי</value>
   </data>
-  <data name="SearchYear" xml:space="preserve">
-    <value>السنة</value>
+  <data name="StatsCompiled" xml:space="preserve">
+    <value>בילדים שהודרו בכל רבעון</value>
   </data>
-  <data name="Sitemap" xml:space="preserve">
-    <value>خريطة الموقع</value>
+  <data name="StatsLab" xml:space="preserve">
+    <value>בילדים לפי מעבדה</value>
   </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>BuildFeed</value>
+  <data name="StatsLabIncluded" xml:space="preserve">
+    <value>מוצגות מעבדות עם מעל 100 בילדים רשומים בלבד</value>
   </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>الإحصائيات</value>
+  <data name="StatsNewAdditions" xml:space="preserve">
+    <value>הוספות חדשות ל-BuildFeed בשנה האחרונה</value>
   </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>تبديل الصفحات</value>
+  <data name="ThanksRegister" xml:space="preserve">
+    <value>תודה על ההרשמה</value>
   </data>
-  <data name="Twitter" xml:space="preserve">
-    <value>Twitter</value>
+  <data name="UserName" xml:space="preserve">
+    <value>שם משתמש</value>
   </data>
-  <data name="TypeToSearch" xml:space="preserve">
-    <value>اكتب لبدء البحث...</value>
+  <data name="Week" xml:space="preserve">
+    <value>שבוע</value>
   </data>
 </root>
