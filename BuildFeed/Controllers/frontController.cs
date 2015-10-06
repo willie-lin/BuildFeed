@@ -287,7 +287,7 @@ namespace BuildFeed.Controllers
       }
 
       [Route("edit/{id}/"), Authorize, HttpPost]
-      public async Task<ActionResult> editBuild(long id, BuildModel build)
+      public async Task<ActionResult> editBuild(Guid id, BuildModel build)
       {
          if (ModelState.IsValid)
          {

@@ -73,6 +73,8 @@ namespace BuildFeed.Models
       [EnumDataType(typeof(LevelOfFlight))]
       public LevelOfFlight FlightLevel { get; set; }
 
+      public string LabUrl { get; set; }
+
       public bool IsLeaked
       {
          get
@@ -115,6 +117,8 @@ namespace BuildFeed.Models
             return sb.ToString();
          }
       }
+
+      public string GenerateLabUrl() => Lab.Replace('/', '-').ToLower();
    }
 
    public class Build
@@ -297,7 +301,8 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectLab(string lab, int skip, int limit)
       {
-         return await _buildCollection.Find(b => b.Lab != null && (b.Lab.ToLower() == lab.ToLower()))
+         string labUrl = lab.Replace('/', '-').ToLower();
+         return await _buildCollection.Find(b => b.Lab != null && b.LabUrl == labUrl)
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -470,12 +475,19 @@ namespace BuildFeed.Models
       public async Task Insert(BuildModel item)
       {
          item.Id = Guid.NewGuid();
+         item.LabUrl = item.GenerateLabUrl();
          await _buildCollection.InsertOneAsync(item);
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
       public async Task InsertAll(IEnumerable<BuildModel> items)
       {
+         foreach(var item in items)
+         {
+            item.Id = Guid.NewGuid();
+            item.LabUrl = item.GenerateLabUrl();
+         }
+
          await _buildCollection.InsertManyAsync(items);
       }
 
@@ -485,6 +497,7 @@ namespace BuildFeed.Models
          BuildModel old = await SelectById(item.Id);
          item.Added = old.Added;
          item.Modified = DateTime.Now;
+         item.LabUrl = item.GenerateLabUrl();
 
          await _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);
       }
