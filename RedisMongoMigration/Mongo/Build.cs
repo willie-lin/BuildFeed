@@ -26,6 +26,8 @@ namespace RedisMongoMigration.Mongo
       public DateTime? LeakDate { get; set; }
       public MongoLevelOfFlight FlightLevel { get; set; }
 
+      public string LabUrl { get; set; }
+
       public bool IsLeaked
       {
          get
@@ -68,6 +70,8 @@ namespace RedisMongoMigration.Mongo
             return sb.ToString();
          }
       }
+
+      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-').ToLower();
    }
 
    public class Build

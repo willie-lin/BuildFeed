@@ -118,7 +118,7 @@ namespace BuildFeed.Models
          }
       }
 
-      public string GenerateLabUrl() => Lab.Replace('/', '-').ToLower();
+      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-').ToLower();
    }
 
    public class Build
