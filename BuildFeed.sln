@@ -13,6 +13,8 @@ Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "BuildFeedApp-Westminster", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisMongoMigration", "RedisMongoMigration\RedisMongoMigration.csproj", "{CD3C08CC-45BF-484B-A878-69614A4EA098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeedApp-Full", "BuildFeedApp-Full\BuildFeedApp-Full.csproj", "{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,26 @@ Global
 		{CD3C08CC-45BF-484B-A878-69614A4EA098}.Release|x64.Build.0 = Release|Any CPU
 		{CD3C08CC-45BF-484B-A878-69614A4EA098}.Release|x86.ActiveCfg = Release|Any CPU
 		{CD3C08CC-45BF-484B-A878-69614A4EA098}.Release|x86.Build.0 = Release|Any CPU
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|ARM.Build.0 = Debug|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x64.ActiveCfg = Debug|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x64.Build.0 = Debug|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x64.Deploy.0 = Debug|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x86.ActiveCfg = Debug|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x86.Build.0 = Debug|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Debug|x86.Deploy.0 = Debug|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|Any CPU.ActiveCfg = Release|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|ARM.ActiveCfg = Release|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|ARM.Build.0 = Release|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|ARM.Deploy.0 = Release|ARM
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x64.ActiveCfg = Release|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x64.Build.0 = Release|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x64.Deploy.0 = Release|x64
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x86.ActiveCfg = Release|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x86.Build.0 = Release|x86
+		{5370D7B3-CF04-47D4-B7D3-402B35ABF8E8}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
