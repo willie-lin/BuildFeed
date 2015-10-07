@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace BuildFeedApp_Full
+namespace BuildFeedApp
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -28,9 +28,6 @@ namespace BuildFeedApp_Full
         /// </summary>
         public App()
         {
-         Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
-            Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
-            Microsoft.ApplicationInsights.WindowsCollectors.Session);
          this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
