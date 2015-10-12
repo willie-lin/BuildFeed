@@ -19,7 +19,7 @@ $(function () {
       }
 
       bfsTimeout = setTimeout(function (object) {
-         bfsAjax = $.ajax("/api/GetSearchResult/?query=" + $("#search-input").val()).done(function (data) {
+         bfsAjax = $.ajax("/api/GetSearchResult/" + $("#search-input").val() + '/').done(function (data) {
             var template = $.templates("#result-template");
             var content = $("<div class='list-group'></div>");
 
@@ -29,7 +29,7 @@ $(function () {
             $("#search-results").html(content);
 
             $("#search-results a.list-group-item").click(function () {
-               ga('send', 'pageview', '/api/GetSearchResult/?query=' + $("#search-input").val());
+               ga('send', 'pageview', '/api/GetSearchResult/' + $("#search-input").val() + '/');
             });
          });
       }, 200);

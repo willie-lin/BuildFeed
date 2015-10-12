@@ -16,7 +16,7 @@
          </ListView.ItemTemplate>
          <ListView.ItemsPanel>
             <ItemsPanelTemplate>
-               <ItemsWrapGrid ScrollViewer.HorizontalScrollMode="Enabled" />
+               <ItemsStackPanel Orientation="Vertical" />
             </ItemsPanelTemplate>
          </ListView.ItemsPanel>
       </ListView>

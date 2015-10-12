@@ -19,21 +19,22 @@ namespace BuildFeed.Controllers
          bModel = new Build();
       }
 
-      public async Task<IEnumerable<BuildModel>> GetBuilds()
-      {
-         return await bModel.SelectInBuildOrder();
-      }
-
+      [Route("/api/GetWin10Labs/")]
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();
          labs.AddRange(await bModel.SelectBuildLabs(6, 4));
          labs.AddRange(await bModel.SelectBuildLabs(10, 0));
 
-         return labs.GroupBy(l => l).Select(l => l.Key).Where(l => l.All(c => c != '(')).ToArray();
+         return labs
+            .GroupBy(l => l)
+            .Select(l => l.Key)
+            .Where(l => l.All(c => c != '('))
+            .ToArray();
       }
 
       [HttpPost]
+      [Route("/api/AddWin10Builds/")]
       public async Task<bool> AddWin10Builds(NewBuild apiModel)
       {
          if (apiModel == null)
@@ -60,6 +61,7 @@ namespace BuildFeed.Controllers
          }
       }
 
+      [Route("/api/GetSearchResult/{query}/")]
       public async Task<IEnumerable<SearchResult>> GetSearchResult(string query)
       {
          if (string.IsNullOrWhiteSpace(query))
