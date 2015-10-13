@@ -143,7 +143,7 @@ namespace BuildFeed.Controllers
 
       [Route("sitemap/")]
 #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+//      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
       public async Task<ActionResult> sitemap()
       {
@@ -288,7 +288,7 @@ namespace BuildFeed.Controllers
 
       [Route("xml-sitemap/")]
 #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+//      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
       public async Task<ActionResult> xmlsitemap()
       {
@@ -326,7 +326,7 @@ namespace BuildFeed.Controllers
 
       [Route("statistics/")]
 #if !DEBUG
-        [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+//      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
       public async Task<ActionResult> stats()
       {
