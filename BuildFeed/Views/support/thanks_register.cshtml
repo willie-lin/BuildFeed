@@ -1,7 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Thank you for registering | BuildFeed";
+    ViewBag.Title = string.Format("{0} | {1}", BuildFeed.Local.Support.ThanksRegister, BuildFeed.Local.Common.SiteName);
 }
 
-<h2>Thank you for registering with BuildFeed</h2>
-<p>Every account is validated by an Administrator, so be patient and check again later.</p>
+<h2>@BuildFeed.Local.Support.ThanksRegister</h2>
+<p>@BuildFeed.Local.Support.AccountValidation</p>

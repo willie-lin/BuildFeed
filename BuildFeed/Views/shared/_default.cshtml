@@ -1,142 +1,160 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@using System.Globalization;
+@{
+   bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+}
+<!DOCTYPE html>
+<html dir="@(IsRTL ? "rtl" : "ltr")">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Hind:300,700,400" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="~/favicon.ico" />
-    <link rel="icon" href="~/favicon.ico" />
-    <link rel="canonical" href="@Url.Action()" />
-    <meta name="application-name" content="BuildFeed" />
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link href="//fonts.googleapis.com/css?family=Hind:300,700,400&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+   <link rel="shortcut icon" href="~/favicon.ico" />
+   <link rel="icon" href="~/favicon.ico" />
+   <link rel="canonical" href="@Url.Action()" />
+   <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
-    @Styles.Render("~/content/css")
-    <title>@ViewBag.Title</title>
-    @RenderSection("head", false)
-    <script type="text/javascript">
-        var appInsights = window.appInsights || function (config) {
-            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
-        }({
-            instrumentationKey: "4632419f-7a2f-4ab5-8374-34384b650f42"
-        });
+   @Styles.Render("~/content/css")
+   @if (IsRTL)
+   {
+      @Styles.Render("~/content/rtl")
+   }
+   <title>@ViewBag.Title</title>
+   @RenderSection("head", false)
+   <script type="text/javascript">
+      var appInsights = window.appInsights || function (config) {
+         function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+      }({
+         instrumentationKey: "4632419f-7a2f-4ab5-8374-34384b650f42"
+      });
 
-        window.appInsights = appInsights;
-        appInsights.trackPageView();
-    </script>
+      window.appInsights = appInsights;
+      appInsights.trackPageView();
+   </script>
 </head>
 <body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+   <script>
+      (function (i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-55417692-1', 'auto');
-        ga('require', 'displayfeatures');
-        ga('require', 'linkid', 'linkid.js');
-        ga('send', 'pageview');
-    </script>
-    <div class="container">
-        <header id="page-header"></header>
-        <nav id="page-navigation" role="navigation">
-            <div class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navigation-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        @Html.ActionLink("BuildFeed", "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
-                    </div>
-                    <div class="collapse navbar-collapse" id="page-navigation-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            @if (!User.Identity.IsAuthenticated)
-                            {
-                                <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="Log in"><i class="fa fa-fw fa-user"></i> Log in</a></li>
-                            }
-                            else if (Roles.IsUserInRole("Administrators"))
-                            {
-                                <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="Admin"><i class="fa fa-fw fa-cogs"></i> Admin</a></li>
-                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-fw fa-plus-square"></i> Add build</a></li>
-                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-fw fa-user"></i> Log out</a></li>
-                            }
-                            else
-                            {
-                                <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="Add a new build"><i class="fa fa-fw fa-plus-square"></i> Add build</a></li>
-                                <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="Log out"><i class="fa fa-fw fa-user"></i> Log out</a></li>
-                            }
-                            <li><a href="#" title="Search" id="page-navigation-search"><i class="fa fa-fw fa-search"></i> Search</a></li>
-                            <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="Statistics"><i class="fa fa-fw fa-line-chart"></i> Statistics</a></li>
-                            <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="RSS Feeds"><i class="fa fa-fw fa-rss"></i> RSS Feeds</a></li>
-                            <li><a href="https://twitter.com/buildfeed" title="Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+      ga('create', 'UA-55417692-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+   </script>
+   <div class="container">
+      <header id="page-header"></header>
+      <nav id="page-navigation" role="navigation">
+         <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navigation-collapse">
+                     <span class="sr-only">@BuildFeed.Local.Common.ToggleNavigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                  </button>
+                  @Html.ActionLink(BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+               </div>
+               <div class="collapse navbar-collapse" id="page-navigation-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                     @if (!User.Identity.IsAuthenticated)
+                     {
+                        <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogIn"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogIn</a></li>
+                     }
+                     else if (Roles.IsUserInRole("Administrators"))
+                     {
+                        <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="@BuildFeed.Local.Common.Admin"><i class="fa fa-fw fa-cogs"></i> @BuildFeed.Local.Common.Admin</a></li>
+                        <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
+                     }
+                     else
+                     {
+                        <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
+                     }
+                     <li><a href="#" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
+                     <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
+                     <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
+                     <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
+                     <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i>&ensp;<span class="caret"></span></a>
+                        <ul id="lang-switcher" class="dropdown-menu">
+                           @foreach(var locale in BuildFeed.Code.SiteLocale.AvailableLocales)
+                           {
+                              <li><a href="#" data-lang="@locale.LocaleId">@locale.DisplayName</a></li>
+                           }
                         </ul>
-                    </div>
-                </div>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </nav>
-        <article id="page-content">
-            <div class="row">
-                <div class="col-sm-12">
-                    @RenderBody()
-                </div>
+         </div>
+      </nav>
+      <article id="page-content">
+         <div class="row">
+            <div class="col-sm-12">
+               @RenderBody()
             </div>
-        </article>
-        <footer id="page-footer">
-            <div class="row">
-                <div class="col-sm-8">
-                    <p>
-                        <a href="@Url.Action("sitemap", new { controller = "support" })">Sitemap</a>
-                    </p>
-                </div>
-                <div class="col-sm-4 text-right">
-                    <p>
-                        &copy; 2013 - @DateTime.Now.Year.ToString(), BuildFeed<br />
-                        Developed by <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                        Contribute on&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
-                    </p>
-                </div>
+         </div>
+      </article>
+      <footer id="page-footer">
+         <div class="row">
+            <div class="col-sm-8 text-left">
+               <p>
+                  <a href="@Url.Action("sitemap", new { controller = "support" })">@BuildFeed.Local.Common.Sitemap</a><br />
+                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
+               </p>
             </div>
-        </footer>
-    </div>
-    <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Search BuildFeed...</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3">
-                                @Html.Label("search-input", "Search query", new { @class = "sr-only" })
-                                @Html.TextBox("search-input", "", new { @class = "form-control", placeholder = "type to search..." })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" id="search-results"></div>
-                </div>
+            <div class="col-sm-4 text-right">
+               <p>
+                  &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
+                  @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
+                  @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+               </p>
             </div>
-        </div>
-    </div>
-    @Scripts.Render("~/bundles/jquery")
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    @Scripts.Render("~/bundles/jsrender")
-    <script type="text/javascript" src="~/Scripts/bfs.js"></script>
-    @RenderSection("scripts", required: false)
-    <script id="result-template" type="text/x-jsrender">
-        <div class="col-sm-4">
-            <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
-                <h4 class="list-group-item-heading">{{:Label}}</h4>
-                <p class="list-group-item-text">{{:Group}}</p>
-            </a>
-        </div>
-    </script>
+         </div>
+      </footer>
+   </div>
+   <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title">@BuildFeed.Local.Common.SearchBuildFeed</h4>
+            </div>
+            <div class="modal-body">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-6 col-sm-offset-3">
+                        @Html.Label("search-input", BuildFeed.Local.Common.SearchQuery, new { @class = "sr-only" })
+                        @Html.TextBox("search-input", "", new { @class = "form-control", placeholder = BuildFeed.Local.Common.TypeToSearch })
+                     </div>
+                  </div>
+               </div>
+               <div class="row" id="search-results"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   @Scripts.Render("~/bundles/jquery")
+   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   @Scripts.Render("~/bundles/jsrender")
+   <script type="text/javascript" src="~/Scripts/bfs.js"></script>
+   @RenderSection("scripts", required: false)
+   <script id="result-template" type="text/x-jsrender">
+      <div class="col-sm-4">
+         <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
+            <h4 class="list-group-item-heading">{{:Label}}</h4>
+            <p class="list-group-item-text">{{:Group}}</p>
+         </a>
+      </div>
+   </script>
 </body>
 </html>

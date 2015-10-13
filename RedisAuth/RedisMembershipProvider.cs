@@ -16,9 +16,9 @@ namespace RedisAuth
     public class RedisMembershipProvider : MembershipProvider
     {
         private bool _enablePasswordReset = true;
-        private int _maxInvalidPasswordAttempts = 5;
+        private int _maxInvalidPasswordAttempts = 3;
         private int _minRequiredNonAlphanumericCharacters = 1;
-        private int _minRequriedPasswordLength = 12;
+        private int _minRequriedPasswordLength = 8;
         private int _passwordAttemptWindow = 60;
         private bool _requiresUniqueEmail = true;
 

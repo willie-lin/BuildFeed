@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using BuildFeed.Local;
 
 namespace BuildFeed.Models.ViewModel
 {
     public class LoginUser
     {
         [Required]
-        [DisplayName("Username")]
+        [Display(ResourceType = typeof(Support), Name = "UserName")]
         public string UserName { get; set; }
 
         [Required]
-        [DisplayName("Password")]
+        [Display(ResourceType = typeof(Support), Name = "Password")]
         public string Password { get; set; }
 
-        [DisplayName("Remember me")]
+        [Display(ResourceType = typeof(Support), Name = "RememberMe")]
         public bool RememberMe { get; set; }
     }
 }

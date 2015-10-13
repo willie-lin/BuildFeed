@@ -1,5 +1,5 @@
 /**
- * Trumbowyg v2.0.0-beta.2 - A lightweight WYSIWYG editor
+ * Trumbowyg v2.0.0-beta.4 - A lightweight WYSIWYG editor
  * Colors plugin stylesheet for Trumbowyg editor
  * ------------------------
  * @link http://alex-d.github.io/Trumbowyg
@@ -10,7 +10,7 @@
  */
 
 .foreColor-trumbowyg-dropdown, .backColor-trumbowyg-dropdown {
-  width: 264px;
+  width: 276px;
   padding: 7px 5px; }
   .foreColor-trumbowyg-dropdown button, .backColor-trumbowyg-dropdown button {
     display: block;

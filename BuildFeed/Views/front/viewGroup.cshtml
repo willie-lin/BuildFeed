@@ -1,41 +1,41 @@
-﻿@model IGrouping<BuildFeed.Models.BuildGroup, BuildFeed.Models.Build>
+﻿@model Tuple<BuildFeed.Models.BuildGroup, List<BuildFeed.Models.BuildModel>>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("{0} | BuildFeed", Model.Key.ToString());
+    ViewBag.Title = string.Format("{0} | {1}", Model.Item1.ToString(), BuildFeed.Local.Common.SiteName);
 }
 
-<h1>@Model.Key.ToString()</h1>
+<h1>@Model.Item1.ToString()</h1>
 
 <div class="row">
-    @foreach (var build in Model.OrderBy(b => b.BuildTime))
+    @foreach (var build in Model.Item2)
     {
         <div class="col-sm-3 col-xs-6 build-group">
             <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("viewBuild", new {id = build.Id})">@build.Lab</a></h3>
             @if (User.Identity.IsAuthenticated)
             {
                 <p>
-                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">Edit</a>
+                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
                     @if (Roles.IsUserInRole("Administrators"))
                     {
-                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">Delete</a>
+                        <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
                     }
                 </p>
             }
             <p class="build-group-p">
                 @if (build.BuildTime.HasValue)
                 {
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToString("d MMMM yyyy")</span><br />
-                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToString("h:mm tt")</span>
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span><br />
+                    <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span>
                 }
             </p>
             <p>
                 @if (build.IsLeaked)
                 {
-                    <span class="label label-success label-build-status">Public</span>
+                    <span class="label label-success label-build-status">@BuildFeed.Local.Front.Public</span>
                 }
                 else
                 {
-                    <span class="label label-danger label-build-status">Private</span>
+                    <span class="label label-danger label-build-status">@BuildFeed.Local.Front.Private</span>
                 }
             </p>
         </div>

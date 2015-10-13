@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using BuildFeed.Local;
 
 namespace BuildFeed.Models.ViewModel
 {
     public class ChangePassword
     {
         [Required]
-        [MinLength(12)]
-        [DisplayName("Enter current password")]
+        [MinLength(8)]
+        [Display(ResourceType = typeof(Support), Name = "EnterCurrentPassword")]
         public string OldPassword { get; set; }
 
         [Required]
-        [MinLength(12)]
-        [DisplayName("Enter new password")]
+        [MinLength(8)]
+        [Display(ResourceType = typeof(Support), Name = "EnterNewPassword")]
         public string NewPassword { get; set; }
 
         [Required]
-        [MinLength(12)]
-        [DisplayName("Confirm new password")]
+        [MinLength(8)]
+        [Display(ResourceType = typeof(Support), Name = "ConfirmNewPassword")]
         [Compare("NewPassword")]
         public string ConfirmNewPassword { get; set; }
     }

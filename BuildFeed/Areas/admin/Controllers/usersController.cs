@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MongoAuth;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using RedisAuth;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
@@ -41,28 +41,28 @@ namespace BuildFeed.Areas.admin.Controllers
 
         public ActionResult approve(Guid id)
         {
-            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            MongoMembershipProvider provider = (Membership.Provider as MongoMembershipProvider);
             provider?.ChangeApproval(id, true);
             return RedirectToAction("Index");
         }
 
         public ActionResult unapprove(Guid id)
         {
-            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            MongoMembershipProvider provider = (Membership.Provider as MongoMembershipProvider);
             provider?.ChangeApproval(id, false);
             return RedirectToAction("Index");
         }
 
         public ActionResult @lock(Guid id)
         {
-            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            MongoMembershipProvider provider = (Membership.Provider as MongoMembershipProvider);
             provider?.ChangeLockStatus(id, true);
             return RedirectToAction("Index");
         }
 
         public ActionResult unlock(Guid id)
         {
-            RedisMembershipProvider provider = (Membership.Provider as RedisMembershipProvider);
+            MongoMembershipProvider provider = (Membership.Provider as MongoMembershipProvider);
             provider?.ChangeLockStatus(id, false);
             return RedirectToAction("Index");
         }

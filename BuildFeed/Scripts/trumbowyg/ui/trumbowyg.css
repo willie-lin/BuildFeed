@@ -1,5 +1,5 @@
 /**
- * Trumbowyg v2.0.0-beta.2 - A lightweight WYSIWYG editor
+ * Trumbowyg v2.0.0-beta.4 - A lightweight WYSIWYG editor
  * Default stylesheet for Trumbowyg editor
  * ------------------------
  * @link http://alex-d.github.io/Trumbowyg
@@ -8,6 +8,11 @@
  *         Twitter : @AlexandreDemode
  *         Website : alex-d.fr
  */
+
+.trumbowyg-box *, .trumbowyg-box *::before, .trumbowyg-box *::after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 .trumbowyg-box, .trumbowyg-editor {
   display: block;
@@ -46,7 +51,10 @@
   display: block;
   overflow: auto;
   border: none;
-  white-space: normal; }
+  white-space: normal;
+  font-size: 14px;
+  font-family: "Inconsolata", "Consolas", "Courier", "Courier New", sans-serif;
+  line-height: 18px; }
 
 .trumbowyg-box.trumbowyg-editor-visible .trumbowyg-textarea {
   position: absolute;
@@ -55,7 +63,8 @@
   width: 25%;
   min-height: 0 !important;
   padding: 0 !important;
-  background: none; }
+  background: none;
+  opacity: 0; }
 
 .trumbowyg-box.trumbowyg-editor-hidden .trumbowyg-textarea {
   display: block; }
@@ -147,8 +156,10 @@
   left: 50%;
   margin-left: -260px;
   width: 520px;
-  height: 290px;
-  overflow: hidden; }
+  height: 350px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
 
 .trumbowyg-modal-box {
   position: absolute;
@@ -156,10 +167,11 @@
   left: 50%;
   margin-left: -250px;
   width: 500px;
-  height: 275px;
+  padding-bottom: 45px;
   z-index: 1;
   background-color: #FFF;
   text-align: center;
+  font-size: 14px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 3px;
           box-shadow: rgba(0, 0, 0, 0.2) 0 2px 3px;
   -webkit-backface-visibility: hidden;
@@ -200,11 +212,11 @@
               transition: all 0.15; }
       .trumbowyg-modal-box label .trumbowyg-input-infos span {
         display: block;
-        color: #859fa5;
+        color: #69878e;
         background-color: #fbfcfc;
         border: 1px solid #DEDEDE;
-        padding: 0 2%;
-        width: 19.5%; }
+        padding: 0 7px;
+        width: 137px; }
       .trumbowyg-modal-box label .trumbowyg-input-infos span.trumbowyg-msg-error {
         color: #e74c3c; }
     .trumbowyg-modal-box label.trumbowyg-input-error input, .trumbowyg-modal-box label.trumbowyg-input-error textarea {
@@ -215,13 +227,13 @@
       position: absolute;
       top: 0;
       right: 0;
-      height: 25px;
-      line-height: 25px;
+      height: 27px;
+      line-height: 27px;
       border: 1px solid #DEDEDE;
       background: transparent;
-      width: 72%;
-      padding: 0 2%;
-      margin: 0 0 0 23%;
+      font-size: 14px;
+      width: 340px;
+      padding: 0 7px;
       -webkit-transition: all 0.15s;
               transition: all 0.15s; }
       .trumbowyg-modal-box label input:hover, .trumbowyg-modal-box label input:focus {

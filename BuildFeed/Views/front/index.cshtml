@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
 @using Humanizer;
 @{
-    ViewBag.Title = "BuildFeed";
+    ViewBag.Title = BuildFeed.Local.Common.SiteName;
 }
 @section head
 {
@@ -11,10 +11,10 @@
     }
 }
 
-<h1>Windows NT build list</h1>
-<h3>Share</h3>
+<h1>@BuildFeed.Local.Front.HomepageH1</h1>
+<h3>@BuildFeed.Local.Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
-<h3>Listing</h3>
+<h3>@BuildFeed.Local.Front.Listing</h3>
 <div class="row">
     @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
     {
@@ -26,14 +26,14 @@
                     var maxDate = group.LastBuild.Value;
                     if (maxDate.AddDays(28) > DateTime.Now)
                     {
-                        <span title="@maxDate.ToString("d MMMM yyyy")"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+                        <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
                     }
                     else
                     {
-                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToString("d MMMM yyyy")</span><br />
+                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
                     }
                 }
-                <i class="fa fa-server fa-fw"></i>  @group.BuildCount builds
+                <i class="fa fa-server fa-fw"></i>  @group.BuildCount @BuildFeed.Local.Front.xBuilds
             </p>
         </div>
     }

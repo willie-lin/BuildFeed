@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using BuildFeed.Local;
 
 namespace BuildFeed.Models.ViewModel
 {
     public class RegistrationUser
     {
         [Required]
-        [DisplayName("Username")]
+        [Display(ResourceType = typeof(Support), Name ="UserName")]
         public string UserName { get; set; }
 
         [Required]
-        [MinLength(12)]
-        [DisplayName("Enter password")]
+        [MinLength(8)]
+        [Display(ResourceType = typeof(Support), Name = "EnterPassword")]
         public string Password { get; set; }
 
         [Required]
-        [MinLength(12)]
-        [DisplayName("Confirm password")]
+        [MinLength(8)]
+        [Display(ResourceType = typeof(Support), Name = "ConfirmPassword")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
         [Required]
         [EmailAddress]
-        [DisplayName("Email address")]
+        [Display(ResourceType = typeof(Support), Name = "EmailAddress")]
         public string EmailAddress { get; set; }
     }
 }

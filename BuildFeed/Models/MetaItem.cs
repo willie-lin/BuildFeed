@@ -1,186 +1,169 @@
-﻿using NServiceKit.DataAnnotations;
-using NServiceKit.DesignPatterns.Model;
-using NServiceKit.Redis;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
 {
-    [DataObject]
-    public class MetaItem : IHasId<MetaItemKey>
-    {
-        [Key]
-        [Index]
-        [@Required]
-        public MetaItemKey Id { get; set; }
+   [DataObject]
+   public class MetaItemModel
+   {
+      [Key]
+      [BsonId]
+      [@Required]
+      public MetaItemKey Id { get; set; }
 
-        [DisplayName("Page Content")]
-        [AllowHtml]
-        public string PageContent { get; set; }
+      [DisplayName("Page Content")]
+      [AllowHtml]
+      public string PageContent { get; set; }
 
-        [DisplayName("Meta Description")]
-        public string MetaDescription { get; set; }
+      [DisplayName("Meta Description")]
+      public string MetaDescription { get; set; }
+   }
 
+   public class MetaItem
+   {
+      private const string _metaCollectionName = "metaitem";
 
+      private MongoClient _dbClient;
+      private IMongoCollection<MetaItemModel> _metaCollection;
+      private Build bModel;
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<MetaItem> Select()
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return client.GetAll();
-            }
-        }
+      public MetaItem()
+      {
+         _dbClient = new MongoClient(new MongoClientSettings()
+         {
+            Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+         });
 
-        [DataObjectMethod(DataObjectMethodType.Select, true)]
-        public static IEnumerable<MetaItem> SelectByType(MetaType type)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return from t in client.GetAll()
-                       where t.Id.Type == type
-                       select t;
-            }
-        }
+         _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
+         bModel = new Build();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static MetaItem SelectById(MetaItemKey id)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                return client.GetById(id);
-            }
-        }
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<MetaItemModel>> Select()
+      {
+         return await _metaCollection
+            .Find(new BsonDocument())
+            .ToListAsync();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedLabs()
-        {
+      [DataObjectMethod(DataObjectMethodType.Select, true)]
+      public async Task<IEnumerable<MetaItemModel>> SelectByType(MetaType type)
+      {
+         return await _metaCollection
+            .Find(f => f.Id.Type == type)
+            .ToListAsync();
+      }
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var labs = Build.SelectBuildLabs();
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<MetaItemModel> SelectById(MetaItemKey id)
+      {
+         return await _metaCollection
+            .Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value)
+            .SingleOrDefaultAsync();
+      }
 
-                var usedLabs = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Lab
-                               select u;
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedLabs()
+      {
+         var labs = await bModel.SelectBuildLabs();
 
-                return from l in labs
-                       where usedLabs.All(ul => ul.Id.Value != l)
-                       select l;
-            }
-        }
+         var usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedVersions()
-        {
+         return from l in labs
+                where usedLabs.All(ul => ul.Id.Value != l)
+                select l;
+      }
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var versions = Build.SelectBuildVersions();
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedVersions()
+      {
+         var versions = await bModel.SelectBuildVersions();
 
-                var usedLabs = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Version
-                               select u;
+         var usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
 
-                return from v in versions
-                       where usedLabs.All(ul => ul.Id.Value != v.ToString())
-                       select v.ToString();
-            }
-        }
+         return from v in versions
+                where usedVersions.All(ul => ul.Id.Value != v.ToString())
+                select v.ToString();
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IEnumerable<string> SelectUnusedYears()
-        {
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<IEnumerable<string>> SelectUnusedYears()
+      {
+         var years = await bModel.SelectBuildYears();
 
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                var years = Build.SelectBuildYears();
+         var usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
 
-                var usedYears = from u in client.GetAll()
-                               where u.Id.Type == MetaType.Year
-                               select u;
+         return from y in years
+                where usedYears.All(ul => ul.Id.Value != y.ToString())
+                select y.ToString();
+      }
 
-                return from y in years
-                       where usedYears.All(ul => ul.Id.Value != y.ToString())
-                       select y.ToString();
-            }
-        }
+      [DataObjectMethod(DataObjectMethodType.Insert, true)]
+      public async Task Insert(MetaItemModel item)
+      {
+         await _metaCollection
+            .InsertOneAsync(item);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, true)]
-        public static void Insert(MetaItem item)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.Store(item);
-            }
-        }
+      [DataObjectMethod(DataObjectMethodType.Update, true)]
+      public async Task Update(MetaItemModel item)
+      {
+         await _metaCollection
+            .ReplaceOneAsync(f => f.Id.Type == item.Id.Type && f.Id.Value == item.Id.Value, item);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public static void Update(MetaItem item)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.Store(item);
-            }
-        }
+      [DataObjectMethod(DataObjectMethodType.Insert, false)]
+      public async Task InsertAll(IEnumerable<MetaItemModel> items)
+      {
+         await _metaCollection
+            .InsertManyAsync(items);
+      }
 
-        [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public static void InsertAll(IEnumerable<MetaItem> items)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.StoreAll(items);
-            }
-        }
+      [DataObjectMethod(DataObjectMethodType.Delete, true)]
+      public async Task DeleteById(MetaItemKey id)
+      {
+         await _metaCollection
+            .DeleteOneAsync(f => f.Id.Type == id.Type && f.Id.Value == id.Value);
+      }
+   }
 
-        [DataObjectMethod(DataObjectMethodType.Delete, true)]
-        public static void DeleteById(long id)
-        {
-            using (RedisClient rClient = new RedisClient(DatabaseConfig.Host, DatabaseConfig.Port, db: DatabaseConfig.Database))
-            {
-                var client = rClient.As<MetaItem>();
-                client.DeleteById(id);
-            }
-        }
-    }
+   public class MetaItemKey
+   {
+      public string Value { get; set; }
+      public MetaType Type { get; set; }
 
-    public struct MetaItemKey
-    {
-        public string Value { get; set; }
-        public MetaType Type { get; set; }
+      public MetaItemKey()
+      {
 
-        public MetaItemKey(string id)
-        {
-            var items = id.Split(':');
-            Type = (MetaType)Enum.Parse(typeof(MetaType), items[0]);
-            Value = items[1];
-        }
+      }
 
-        public override string ToString()
-        {
-            return $"{Type}:{Value}";
-        }
-    }
+      public MetaItemKey(string id)
+      {
+         var items = id.Split(':');
+         Type = (MetaType)Enum.Parse(typeof(MetaType), items[0]);
+         Value = items[1];
+      }
 
-    public enum MetaType
-    {
-        Lab,
-        Version,
-        Source,
-        Year
-    }
+      public override string ToString()
+      {
+         return $"{Type}:{Value}";
+      }
+   }
+
+   public enum MetaType
+   {
+      Lab,
+      Version,
+      Source,
+      Year
+   }
 }

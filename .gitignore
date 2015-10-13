@@ -7,6 +7,9 @@
 *.sln.docstates
 *.ide/
 
+# Store Association
+Package.StoreAssociation.xml
+
 # Application Insights config
 ApplicationInsights.config
 
@@ -15,6 +18,10 @@ smtp.config
 
 # Publish Profiles
 [Pp]roperties/[Pp]ublish[Pp]rofiles/
+*.pubxml
+
+# VS Configuration
+.vs/
 
 # Build results
 [Dd]ebug/
