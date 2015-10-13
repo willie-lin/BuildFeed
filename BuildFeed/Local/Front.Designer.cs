@@ -61,7 +61,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Âβôúƭ  !!!].
+        ///   Looks up a localized string similar to About.
         /// </summary>
         public static string About {
             get {
@@ -70,7 +70,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Âδδ á βúïℓδ  !!!].
+        ///   Looks up a localized string similar to Add a build.
         /// </summary>
         public static string AddABuild {
             get {
@@ -79,7 +79,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!].
+        ///   Looks up a localized string similar to Discover about Windows Build {0}, from {1} and compiled on {2}..
         /// </summary>
         public static string BuildMetaDate {
             get {
@@ -88,7 +88,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!].
+        ///   Looks up a localized string similar to Discover about Windows Build {0}, from {1}. BuildFeed tracks Windows builds throughout the development process..
         /// </summary>
         public static string BuildMetaNoDate {
             get {
@@ -97,7 +97,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ßúïℓδƨ ƒřô₥ {0}  !!!].
+        ///   Looks up a localized string similar to Builds from {0}.
         /// </summary>
         public static string BuildsFrom {
             get {
@@ -106,7 +106,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Çô₥₥èñƭƨ  !!!].
+        ///   Looks up a localized string similar to Comments.
         /// </summary>
         public static string Comments {
             get {
@@ -115,7 +115,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Ðèℓèƭè  !!!].
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
             get {
@@ -124,7 +124,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Éδïƭ !!!].
+        ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
             get {
@@ -133,7 +133,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Éδïƭ βúïℓδ  !!!].
+        ///   Looks up a localized string similar to Edit build.
         /// </summary>
         public static string EditBuild {
             get {
@@ -142,7 +142,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Éδïƭôř áçƭïôñƨ  !!!].
+        ///   Looks up a localized string similar to Editor actions.
         /// </summary>
         public static string EditorActions {
             get {
@@ -151,7 +151,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Wïñδôωƨ NT βúïℓδ ℓïƨƭ ℓ !!!].
+        ///   Looks up a localized string similar to Windows NT build list.
         /// </summary>
         public static string HomepageH1 {
             get {
@@ -160,7 +160,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!].
+        ///   Looks up a localized string similar to Check out all the known builds to come out of the Windows development lab {0} through BuildFeed, a collaborative Windows build list.
         /// </summary>
         public static string LabMetaGeneric {
             get {
@@ -169,7 +169,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! £ïƨƭïñϱ  !!!].
+        ///   Looks up a localized string similar to Listing.
         /// </summary>
         public static string Listing {
             get {
@@ -178,7 +178,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!].
+        ///   Looks up a localized string similar to Find more builds from {0}.
         /// </summary>
         public static string MoreFromLab {
             get {
@@ -187,7 +187,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!].
+        ///   Looks up a localized string similar to Find more builds sourced from {0}.
         /// </summary>
         public static string MoreFromSource {
             get {
@@ -196,7 +196,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!].
+        ///   Looks up a localized string similar to Find more builds compiled in {0}.
         /// </summary>
         public static string MoreFromYear {
             get {
@@ -205,7 +205,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Nô ℓáβ ƨƭřïñϱ  !!!].
+        ///   Looks up a localized string similar to No lab string.
         /// </summary>
         public static string NoLab {
             get {
@@ -214,7 +214,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ÞřïƲáƭè  !!!].
+        ///   Looks up a localized string similar to Private.
         /// </summary>
         public static string Private {
             get {
@@ -223,7 +223,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Þúβℓïç  !!!].
+        ///   Looks up a localized string similar to Public.
         /// </summary>
         public static string Public {
             get {
@@ -232,7 +232,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Qúïçƙ-ƥáƨƭè  !!!].
+        ///   Looks up a localized string similar to Quick-paste.
         /// </summary>
         public static string QuickPaste {
             get {
@@ -241,7 +241,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!].
+        ///   Looks up a localized string similar to Return to build listing.
         /// </summary>
         public static string ReturnToListing {
             get {
@@ -250,7 +250,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!].
+        ///   Looks up a localized string similar to Return to build overview.
         /// </summary>
         public static string ReturnToOverview {
             get {
@@ -259,7 +259,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §λářè  !!!].
+        ///   Looks up a localized string similar to Share.
         /// </summary>
         public static string Share {
             get {
@@ -268,7 +268,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Tôδá¥  !!!].
+        ///   Looks up a localized string similar to Today.
         /// </summary>
         public static string Today {
             get {
@@ -277,7 +277,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! βúïℓδƨ  !!!].
+        ///   Looks up a localized string similar to builds.
         /// </summary>
         public static string xBuilds {
             get {
@@ -286,7 +286,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!].
+        ///   Looks up a localized string similar to View a list of all Windows builds compiled in {0}, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed.
         /// </summary>
         public static string YearMetaGeneric {
             get {

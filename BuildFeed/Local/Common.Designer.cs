@@ -61,7 +61,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Âδδ βúïℓδ  !!!].
+        ///   Looks up a localized string similar to Add build.
         /// </summary>
         public static string AddBuild {
             get {
@@ -70,7 +70,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Âδ₥ïñ  !!!].
+        ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string Admin {
             get {
@@ -79,7 +79,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Çôñƭřïβúƭè ôñ  !!!].
+        ///   Looks up a localized string similar to Contribute on.
         /// </summary>
         public static string ContributeOn {
             get {
@@ -88,7 +88,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Çřèδïƭƨ  !!!].
+        ///   Looks up a localized string similar to Credits.
         /// </summary>
         public static string Credits {
             get {
@@ -97,7 +97,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ÐèƲèℓôƥèδ β¥  !!!].
+        ///   Looks up a localized string similar to Developed by.
         /// </summary>
         public static string DevelopedBy {
             get {
@@ -106,7 +106,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Éřřôř  !!!].
+        ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
             get {
@@ -115,7 +115,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! £ôϱ ïñ  !!!].
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string LogIn {
             get {
@@ -124,7 +124,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! £ôϱ ôúƭ  !!!].
+        ///   Looks up a localized string similar to Log out.
         /// </summary>
         public static string LogOut {
             get {
@@ -133,7 +133,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! | Þáϱè {0}  !!!].
+        ///   Looks up a localized string similar to | Page {0}.
         /// </summary>
         public static string PageTitleSegment {
             get {
@@ -142,7 +142,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Wïñδôωƨ NT  !!!].
+        ///   Looks up a localized string similar to Windows NT.
         /// </summary>
         public static string ProductName {
             get {
@@ -151,7 +151,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! R§§ ƒèèδƨ  !!!].
+        ///   Looks up a localized string similar to RSS feeds.
         /// </summary>
         public static string RssFeeds {
             get {
@@ -160,7 +160,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §èářçλ  !!!].
+        ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string Search {
             get {
@@ -169,7 +169,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ßúïℓδ ℓ !!!].
+        ///   Looks up a localized string similar to Build.
         /// </summary>
         public static string SearchBuild {
             get {
@@ -178,7 +178,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §èářçλ ßúïℓδFèèδ... ℓ !!!].
+        ///   Looks up a localized string similar to Search BuildFeed....
         /// </summary>
         public static string SearchBuildFeed {
             get {
@@ -187,7 +187,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!].
+        ///   Looks up a localized string similar to No results found.
         /// </summary>
         public static string SearchEmpty {
             get {
@@ -196,7 +196,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! £áβ  !!!].
+        ///   Looks up a localized string similar to Lab.
         /// </summary>
         public static string SearchLab {
             get {
@@ -205,7 +205,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §èářçλ 9úèř¥  !!!].
+        ///   Looks up a localized string similar to Search query.
         /// </summary>
         public static string SearchQuery {
             get {
@@ -214,7 +214,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §ôúrçè l !!!].
+        ///   Looks up a localized string similar to Source.
         /// </summary>
         public static string SearchSource {
             get {
@@ -223,7 +223,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Vèřƨïôñ ℓ !!!].
+        ///   Looks up a localized string similar to Version.
         /// </summary>
         public static string SearchVersion {
             get {
@@ -232,7 +232,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Ýèář  !!!].
+        ///   Looks up a localized string similar to Year.
         /// </summary>
         public static string SearchYear {
             get {
@@ -241,7 +241,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §ïƭè₥áƥ  !!!].
+        ///   Looks up a localized string similar to Sitemap.
         /// </summary>
         public static string Sitemap {
             get {
@@ -250,7 +250,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ßúïℓδFèèδ  !!!].
+        ///   Looks up a localized string similar to BuildFeed.
         /// </summary>
         public static string SiteName {
             get {
@@ -259,7 +259,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! §ƭáƭïƨƭïçƨ  !!!].
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string Statistics {
             get {
@@ -268,7 +268,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!].
+        ///   Looks up a localized string similar to Toggle navigation.
         /// </summary>
         public static string ToggleNavigation {
             get {
@@ -277,7 +277,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Tωïƭƭèř  !!!].
+        ///   Looks up a localized string similar to Twitter.
         /// </summary>
         public static string Twitter {
             get {
@@ -286,7 +286,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!].
+        ///   Looks up a localized string similar to type to search....
         /// </summary>
         public static string TypeToSearch {
             get {

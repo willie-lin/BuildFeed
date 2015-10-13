@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddBuild" xml:space="preserve">
-    <value>[!!! Âδδ βúïℓδ  !!!]</value>
+    <value>Add build</value>
   </data>
   <data name="Admin" xml:space="preserve">
-    <value>[!!! Âδ₥ïñ  !!!]</value>
+    <value>Admin</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ  !!!]</value>
+    <value>Contribute on</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>Credits</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥  !!!]</value>
+    <value>Developed by</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>[!!! Éřřôř  !!!]</value>
+    <value>Error</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>Log in</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>[!!! £ôϱ ôúƭ  !!!]</value>
+    <value>Log out</value>
   </data>
   <data name="PageTitleSegment" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
+    <value>| Page {0}</value>
   </data>
   <data name="ProductName" xml:space="preserve">
-    <value>[!!! Wïñδôωƨ NT  !!!]</value>
+    <value>Windows NT</value>
   </data>
   <data name="RssFeeds" xml:space="preserve">
-    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
+    <value>RSS feeds</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+    <value>Search</value>
   </data>
   <data name="SearchBuild" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+    <value>Build</value>
   </data>
   <data name="SearchBuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+    <value>Search BuildFeed...</value>
   </data>
   <data name="SearchEmpty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+    <value>No results found</value>
   </data>
   <data name="SearchLab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+    <value>Lab</value>
   </data>
   <data name="SearchQuery" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+    <value>Search query</value>
   </data>
   <data name="SearchSource" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+    <value>Source</value>
   </data>
   <data name="SearchVersion" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+    <value>Version</value>
   </data>
   <data name="SearchYear" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+    <value>Year</value>
   </data>
   <data name="Sitemap" xml:space="preserve">
-    <value>[!!! §ïƭè₥áƥ  !!!]</value>
+    <value>Sitemap</value>
   </data>
   <data name="SiteName" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ  !!!]</value>
+    <value>BuildFeed</value>
   </data>
   <data name="Statistics" xml:space="preserve">
-    <value>[!!! §ƭáƭïƨƭïçƨ  !!!]</value>
+    <value>Statistics</value>
   </data>
   <data name="ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+    <value>Toggle navigation</value>
   </data>
   <data name="Twitter" xml:space="preserve">
-    <value>[!!! Tωïƭƭèř  !!!]</value>
+    <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+    <value>type to search...</value>
   </data>
 </root>

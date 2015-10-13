@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+    <value>About</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
-    <value>[!!! Âδδ á βúïℓδ  !!!]</value>
+    <value>Add a build</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+    <value>Discover about Windows Build {0}, from {1} and compiled on {2}.</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+    <value>Discover about Windows Build {0}, from {1}. BuildFeed tracks Windows builds throughout the development process.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+    <value>Builds from {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>[!!! Çô₥₥èñƭƨ  !!!]</value>
+    <value>Comments</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+    <value>Delete</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>[!!! Éδïƭ !!!]</value>
+    <value>Edit</value>
   </data>
   <data name="EditBuild" xml:space="preserve">
-    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
+    <value>Edit build</value>
   </data>
   <data name="EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+    <value>Editor actions</value>
   </data>
   <data name="HomepageH1" xml:space="preserve">
-    <value>[!!! Wïñδôωƨ NT βúïℓδ ℓïƨƭ ℓ !!!]</value>
+    <value>Windows NT build list</value>
   </data>
   <data name="LabMetaGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+    <value>Check out all the known builds to come out of the Windows development lab {0} through BuildFeed, a collaborative Windows build list</value>
   </data>
   <data name="Listing" xml:space="preserve">
-    <value>[!!! £ïƨƭïñϱ  !!!]</value>
+    <value>Listing</value>
   </data>
   <data name="MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+    <value>Find more builds from {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+    <value>Find more builds sourced from {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+    <value>Find more builds compiled in {0}</value>
   </data>
   <data name="NoLab" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+    <value>No lab string</value>
   </data>
   <data name="Private" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè  !!!]</value>
+    <value>Private</value>
   </data>
   <data name="Public" xml:space="preserve">
-    <value>[!!! Þúβℓïç  !!!]</value>
+    <value>Public</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+    <value>Quick-paste</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
+    <value>Return to build listing</value>
   </data>
   <data name="ReturnToOverview" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
+    <value>Return to build overview</value>
   </data>
   <data name="Share" xml:space="preserve">
-    <value>[!!! §λářè  !!!]</value>
+    <value>Share</value>
   </data>
   <data name="Today" xml:space="preserve">
-    <value>[!!! Tôδá¥  !!!]</value>
+    <value>Today</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>[!!! βúïℓδƨ  !!!]</value>
+    <value>builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+    <value>View a list of all Windows builds compiled in {0}, and watch how Windows developed steadily over time, through the collaborative build list, BuildFeed</value>
   </data>
 </root>

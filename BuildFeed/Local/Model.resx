@@ -118,84 +118,84 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+    <value>Time created</value>
   </data>
   <data name="AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+    <value>App package</value>
   </data>
   <data name="BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+    <value>Build time</value>
   </data>
   <data name="BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+    <value>Build tools</value>
   </data>
   <data name="Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+    <value>Documentation</value>
   </data>
   <data name="FlightCanary" xml:space="preserve">
-    <value>[!!! Çáñář¥  !!!]</value>
+    <value>Canary</value>
   </data>
   <data name="FlightLevel" xml:space="preserve">
-    <value>[!!! Fℓïϱλƭ ℓèƲèℓ  !!!]</value>
+    <value>Flight level</value>
   </data>
   <data name="FlightMSIT" xml:space="preserve">
-    <value>[!!! Mïçřôƨôƒƭ Ìñƭèřñáℓ ℓ !!!]</value>
+    <value>Microsoft Internal</value>
   </data>
   <data name="FlightNone" xml:space="preserve">
-    <value>[!!! Nôñè !!!]</value>
+    <value>None</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>[!!! Óƥèřáƭïñϱ §¥ƨƭè₥ƨ Gřôúƥ ℓ !!!]</value>
+    <value>Operating Systems Group</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
-    <value>[!!! Wïñδôωƨ Ìñƨïδèř Fáƨƭ ℓ !!!]</value>
+    <value>Windows Insider Fast</value>
   </data>
   <data name="FlightWIS" xml:space="preserve">
-    <value>[!!! Wïñδôωƨ Ìñƨïδèř §ℓôω ℓ !!!]</value>
+    <value>Windows Insider Slow</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+    <value>Public leak</value>
   </data>
   <data name="Lab" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+    <value>Lab string</value>
   </data>
   <data name="LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+    <value>Leak or release date</value>
   </data>
   <data name="Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+    <value>Logging</value>
   </data>
   <data name="MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+    <value>Major version</value>
   </data>
   <data name="MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+    <value>Minor version</value>
   </data>
   <data name="Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+    <value>Time modified</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+    <value>Build number</value>
   </data>
   <data name="PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+    <value>Private leak</value>
   </data>
   <data name="PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+    <value>Public release</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+    <value>Build revision</value>
   </data>
   <data name="SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+    <value>Source details</value>
   </data>
   <data name="SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+    <value>Source type</value>
   </data>
   <data name="UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+    <value>Update (GDR)</value>
   </data>
   <data name="UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+    <value>Update (LDR)</value>
   </data>
 </root>
