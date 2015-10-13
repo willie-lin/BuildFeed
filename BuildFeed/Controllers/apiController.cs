@@ -19,7 +19,6 @@ namespace BuildFeed.Controllers
          bModel = new Build();
       }
 
-      [Route("/api/GetWin10Labs/")]
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();
@@ -34,7 +33,6 @@ namespace BuildFeed.Controllers
       }
 
       [HttpPost]
-      [Route("/api/AddWin10Builds/")]
       public async Task<bool> AddWin10Builds(NewBuild apiModel)
       {
          if (apiModel == null)
@@ -61,10 +59,9 @@ namespace BuildFeed.Controllers
          }
       }
 
-      [Route("/api/GetSearchResult/{query}/")]
-      public async Task<IEnumerable<SearchResult>> GetSearchResult(string query)
+      public async Task<IEnumerable<SearchResult>> GetSearchResult(string id)
       {
-         if (string.IsNullOrWhiteSpace(query))
+         if (string.IsNullOrWhiteSpace(id))
          {
             return new SearchResult[0];
          }
@@ -72,12 +69,12 @@ namespace BuildFeed.Controllers
          List<SearchResult> results = new List<SearchResult>();
 
          var sourceResults = from s in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>().Select(s => new { Text = DisplayHelpers.GetDisplayTextForEnum(s), Value = s })
-                             where s.Text.ToLower().Contains(query.ToLower())
-                             orderby s.Text.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending
+                             where s.Text.ToLower().Contains(id.ToLower())
+                             orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
                              select new SearchResult()
                              {
                                 Url = Url.Route("Source Root", new { controller = "front", action = "viewSource", source = s.Value }),
-                                Label = s.Text.Replace(query, "<strong>" + query + "</strong>"),
+                                Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
                                 Title = s.Text,
                                 Group = Common.SearchSource
                              };
@@ -86,12 +83,12 @@ namespace BuildFeed.Controllers
 
 
          var versionResults = from v in await bModel.SelectBuildVersions()
-                              where $"{v.Major}.{v.Minor}".StartsWith(query)
+                              where $"{v.Major}.{v.Minor}".StartsWith(id)
                               orderby v.Major descending, v.Minor descending
                               select new SearchResult()
                               {
                                  Url = Url.Route("Version Root", new { controller = "front", action = "viewVersion", major = v.Major, minor = v.Minor }),
-                                 Label = $"{v.Major}.{v.Minor}".Replace(query, "<strong>" + query + "</strong>"),
+                                 Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
                                  Title = "",
                                  Group = Common.SearchVersion
                               };
@@ -100,12 +97,12 @@ namespace BuildFeed.Controllers
 
 
          var yearResults = from y in await bModel.SelectBuildYears()
-                           where y.ToString().Contains(query)
+                           where y.ToString().Contains(id)
                            orderby y descending
                            select new SearchResult()
                            {
                               Url = Url.Route("Year Root", new { controller = "front", action = "viewYear", year = y }),
-                              Label = y.ToString().Replace(query, "<strong>" + query + "</strong>"),
+                              Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
                               Title = "",
                               Group = Common.SearchYear
                            };
@@ -113,13 +110,13 @@ namespace BuildFeed.Controllers
          results.AddRange(yearResults);
 
 
-         var labResults = from l in await bModel.SearchBuildLabs(query)
-                          orderby l.IndexOf(query.ToLower()) ascending,
+         var labResults = from l in await bModel.SearchBuildLabs(id)
+                          orderby l.IndexOf(id.ToLower()) ascending,
                                   l.Length ascending
                           select new SearchResult()
                           {
                              Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l.Replace('/', '-') }),
-                             Label = l.Replace(query, $"<strong>{query}</strong>"),
+                             Label = l.Replace(id, $"<strong>{id}</strong>"),
                              Title = l,
                              Group = Common.SearchLab
                           };
@@ -128,13 +125,13 @@ namespace BuildFeed.Controllers
 
 
          var buildResults = from b in await bModel.Select()
-                            where b.FullBuildString.ToLower().Contains(query.ToLower())
-                            orderby b.FullBuildString.ToLower().IndexOf(query.ToLower(), StringComparison.Ordinal) ascending,
+                            where b.FullBuildString.ToLower().Contains(id.ToLower())
+                            orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending,
                                     b.BuildTime descending
                             select new SearchResult()
                             {
                                Url = Url.Route("Build", new { controller = "front", action = "viewBuild", id = b.Id }),
-                               Label = b.FullBuildString.Replace(query, $"<strong>{query}</strong>"),
+                               Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
                                Title = b.FullBuildString,
                                Group = Common.SearchBuild
                             };

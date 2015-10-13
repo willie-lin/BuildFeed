@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using MBuildModel = RedisMongoMigration.Mongo.BuildModel;
 using MBuild = RedisMongoMigration.Mongo.Build;
 using RBuild = RedisMongoMigration.Redis.Build;
+using MMetaItemModel = RedisMongoMigration.Mongo.MetaItemModel;
+using MMetaItem = RedisMongoMigration.Mongo.MetaItem;
+using RMetaItem = RedisMongoMigration.Redis.MetaItem;
 using MongoLevelOfFlight = RedisMongoMigration.Mongo.MongoLevelOfFlight;
 using RedisLevelOfFlight = RedisMongoMigration.Redis.RedisLevelOfFlight;
 using MMemberModel = RedisMongoMigration.Mongo.MemberModel;
@@ -47,6 +50,21 @@ namespace RedisMongoMigration
          MBuild mb = new MBuild();
          mb.InsertAll(builds);
          Console.WriteLine("Builds: Complete");
+
+         var metas = from b in RMetaItem.Select()
+                      select new MMetaItemModel()
+                      {
+                         Id = new MetaItemKey()
+                         {
+                            Type = b.Id.Type,
+                            Value = b.Id.Value
+                         },
+                         MetaDescription = b.MetaDescription,
+                         PageContent = b.PageContent
+                      };
+         MMetaItem mmi = new MMetaItem();
+         mmi.InsertAll(metas);
+         Console.WriteLine("Meta Item: Complete");
 
          var members = from r in RMember.Select()
                        select new MMemberModel()
