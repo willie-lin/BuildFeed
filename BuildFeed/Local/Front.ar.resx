@@ -190,7 +190,7 @@
     <value>اليوم</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>نسخ/نسخة</value>
+    <value>{0} نسخ/نسخة</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>إظهار قائمة بكل النسخ المطوّرة منذ {0} واكتشف كيف تطور الويندوز بشكل تدريجي منذ ذلك الوقت ، وذلك عبر هذه القائمة المنظمة من قبل الموقع BuildFeed.</value>

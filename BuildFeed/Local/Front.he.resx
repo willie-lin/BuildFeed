@@ -190,7 +190,7 @@
     <value>היום</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>בילדים</value>
+    <value>{0} בילדים</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>הצג רשימה של כל הבילדים שהודרו ב {0}, וצפה כיצד Windows מפותח עם הזמן הודות למאמץ המשותף ב, BuildFeed</value>

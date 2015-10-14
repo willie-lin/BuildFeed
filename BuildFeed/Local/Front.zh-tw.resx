@@ -190,7 +190,7 @@
     <value>今天</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>個組建</value>
+    <value>{0} 個組建</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>透過 BuildFeed，一個基於社群協作的 Windows 組建列表，查看所有來自於 Windows 開發 Lab {0} 之所有已知組建的詳情，並從中觀察 Windows 隨著時間的發展。</value>

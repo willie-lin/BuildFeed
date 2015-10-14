@@ -190,7 +190,7 @@
     <value>Danes</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>Različic</value>
+    <value>{0} Različic</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Poglej seznam vseh Windows različic, grajenih v {0} in opazuj, kako se je Windows počasi razvijal skozi čas, z uporabo prostega seznama BuildFeed</value>

@@ -190,7 +190,7 @@
     <value>Danas</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>verzije</value>
+    <value>{0} verzije</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Pogledaj listu svih Windows verzija kompajliranih u {0} i pogledaj kako je prolazio razvoj Windowsa kroz vrijeme preko javno održavane liste - BuildFeed</value>

@@ -277,7 +277,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to builds.
+        ///   Looks up a localized string similar to {0} builds.
         /// </summary>
         public static string xBuilds {
             get {

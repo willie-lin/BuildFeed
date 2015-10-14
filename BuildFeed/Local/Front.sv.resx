@@ -190,7 +190,7 @@
     <value>Idag</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>builds</value>
+    <value>{0} builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Se en lista över alla Windows-builds kompilerade  {0}, och se hur Windows utvecklades över tid, genom buildlistan BuildFeed</value>

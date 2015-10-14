@@ -190,7 +190,7 @@
     <value>Hoje</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>Compilações a partir de</value>
+    <value>{0} Compilações a partir de</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Veja uma lista de todas as compilações do Windows feitas em {0}, e veja como o Windows desenvolveu-se com o tempo, com a lista colaborativa de compilações, BuildFeed</value>

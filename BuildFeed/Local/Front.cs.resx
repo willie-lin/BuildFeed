@@ -190,7 +190,7 @@
     <value>Dnes</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>buildů</value>
+    <value>{0} buildů</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Podívejte se na seznam všech buildů Windows zkompilovaných v roce {0} na BuildFeedu, společném seznamu buildů Windows</value>

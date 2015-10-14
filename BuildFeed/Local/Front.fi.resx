@@ -190,7 +190,7 @@
     <value>Tänään</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>koontiversiota</value>
+    <value>{0} koontiversiota</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Katso lista kaikista Windowsin koontiversioista vuodelta {0}, ja katso kuinka Windows kehittyi vakaasti ajan myötä käyttäen BuildFeediä, yhteistyöhön perustuvaa koontiversiolistaa.</value>

@@ -190,7 +190,7 @@
     <value>Vandaag</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>builds</value>
+    <value>{0} builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Bekijk alle Windows builds gecompileerd in {0} via BuildFeed, een Windows build lijst</value>

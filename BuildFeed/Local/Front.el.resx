@@ -190,7 +190,7 @@
     <value>Σήμερα</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>builds</value>
+    <value>{0} builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Δείτε μια λίστα όλων των builds των Windows που έγιναν compile στο {0} και δείτε πως τα Windows αναπτύχθηκαν σταθερά με τον χρόνο, μέσα από την συνεργατική λίστα builds των Windows, το BuildFeed</value>

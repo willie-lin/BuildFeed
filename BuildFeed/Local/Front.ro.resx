@@ -190,7 +190,7 @@
     <value>Azi</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>build-uri</value>
+    <value>{0} build-uri</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Vizualizați o listă a tuturor build-urilor Windows compilate în {0}, și urmăriți cum Windows s-a dezvoltat constant peste timp, prin lista colaborativă de build-uri, BuildFeed</value>

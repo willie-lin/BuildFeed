@@ -190,7 +190,7 @@
     <value>Сегодня</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>сборок</value>
+    <value>сборок: {0}</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Взгляните на все известные сборки Windows, собранные в {0} году с помощью BuildFeed, списка сборок Windows, собранного энтузиастами</value>
