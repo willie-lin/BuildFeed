@@ -19,6 +19,12 @@ namespace BuildFeed.Controllers
          bModel = new Build();
       }
 
+      public async Task<BuildModel[]> GetBuilds(int skip, int limit = 20)
+      {
+         var builds = await bModel.SelectInBuildOrder(limit, skip);
+         return builds.ToArray();
+      }
+
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();
