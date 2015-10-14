@@ -497,7 +497,7 @@ namespace BuildFeed.Models
       {
          BuildModel old = await SelectById(item.Id);
          item.Added = old.Added;
-         item.Modified = DateTime.Now;
+         item.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
          item.LabUrl = item.GenerateLabUrl();
 
          await _buildCollection.ReplaceOneAsync(f => f.Id == item.Id, item);

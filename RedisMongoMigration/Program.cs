@@ -36,13 +36,13 @@ namespace RedisMongoMigration
                          Number = b.Number,
                          Revision = b.Revision,
                          Lab = b.Lab,
-                         BuildTime = b.BuildTime,
+                         BuildTime = b.BuildTime.HasValue ? DateTime.SpecifyKind(b.BuildTime.Value, DateTimeKind.Utc) as DateTime? : null as DateTime?,
 
-                         Added = b.Added,
-                         Modified = b.Modified,
+                         Added = DateTime.SpecifyKind(b.Added, DateTimeKind.Utc),
+                         Modified = DateTime.SpecifyKind(b.Modified, DateTimeKind.Utc),
                          SourceType = b.SourceType,
                          SourceDetails = b.SourceDetails,
-                         LeakDate = b.LeakDate,
+                         LeakDate = b.LeakDate.HasValue ? DateTime.SpecifyKind(b.LeakDate.Value, DateTimeKind.Utc) as DateTime? : null as DateTime?,
                          FlightLevel = ExchangeFlights(b.FlightLevel),
 
                          LabUrl = b.GenerateLabUrl()

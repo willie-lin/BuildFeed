@@ -263,8 +263,16 @@ namespace BuildFeed.Controllers
          {
             try
             {
-               build.Added = DateTime.Now;
-               build.Modified = DateTime.Now;
+               build.Added = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
+               build.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
+               if (build.BuildTime.HasValue)
+               {
+                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               }
+               if (build.LeakDate.HasValue)
+               {
+                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               }
                await bModel.Insert(build);
             }
             catch
@@ -293,6 +301,14 @@ namespace BuildFeed.Controllers
          {
             try
             {
+               if (build.BuildTime.HasValue)
+               {
+                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               }
+               if (build.LeakDate.HasValue)
+               {
+                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               }
                await bModel.Update(build);
             }
             catch
