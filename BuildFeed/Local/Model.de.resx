@@ -121,13 +121,13 @@
     <value>Hinzugefügt am</value>
   </data>
   <data name="AppPackage" xml:space="preserve">
-    <value>Programm Paket</value>
+    <value>Programmpaket</value>
   </data>
   <data name="BuildTime" xml:space="preserve">
-    <value>Build Zeit</value>
+    <value>Build-Zeit</value>
   </data>
   <data name="BuildTools" xml:space="preserve">
-    <value>Build Werkzeuge</value>
+    <value>Build-Werkzeuge</value>
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Dokumentation</value>
@@ -145,7 +145,7 @@
     <value>Kein</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>Betriebssystem Gruppe</value>
+    <value>Betriebssystem-Gruppe</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
     <value>Windows Insider Schnell</value>
@@ -157,7 +157,7 @@
     <value>Öffentlicher Leak</value>
   </data>
   <data name="Lab" xml:space="preserve">
-    <value>Lab string</value>
+    <value>Lab-String</value>
   </data>
   <data name="LeakDate" xml:space="preserve">
     <value>Leak- oder Veröffentlichungsdatum</value>
@@ -166,10 +166,10 @@
     <value>Logging</value>
   </data>
   <data name="MajorVersion" xml:space="preserve">
-    <value>Major Version</value>
+    <value>Hauptversion</value>
   </data>
   <data name="MinorVersion" xml:space="preserve">
-    <value>Minor Version</value>
+    <value>Nebenversion</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Geändert am</value>
@@ -184,18 +184,18 @@
     <value>Öffentliche Version</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Build Revision</value>
+    <value>Buildrevision</value>
   </data>
   <data name="SourceDetails" xml:space="preserve">
-    <value>Quellen Details</value>
+    <value>Quellendetails</value>
   </data>
   <data name="SourceType" xml:space="preserve">
-    <value>Quellen Typ</value>
+    <value>Quellentyp</value>
   </data>
   <data name="UpdateGDR" xml:space="preserve">
-    <value>GDR Update</value>
+    <value>Update (GDR)</value>
   </data>
   <data name="UpdateLDR" xml:space="preserve">
-    <value>LDR Update</value>
+    <value>Update (LDR)</value>
   </data>
 </root>

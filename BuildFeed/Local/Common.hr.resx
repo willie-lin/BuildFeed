@@ -124,13 +124,13 @@
     <value>Administrator</value>
   </data>
   <data name="ContributeOn" xml:space="preserve">
-    <value>Doprinos</value>
+    <value>Pomogni u izradi</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>Zasluge</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
-    <value>Razvijeno od</value>
+    <value>Izradio</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Greška</value>
@@ -193,6 +193,6 @@
     <value>Twitter</value>
   </data>
   <data name="TypeToSearch" xml:space="preserve">
-    <value>Piši za pretragu...</value>
+    <value>Pretraži...</value>
   </data>
 </root>

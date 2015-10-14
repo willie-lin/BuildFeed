@@ -190,7 +190,7 @@
     <value>Oggi</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>BuildFeed</value>
+    <value>builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Vedi una lista di tutti i build Windows fatti il {0}, e vedi come Windows si è sviluppato con il tempo, con la lista collaborative di build, BuildFeed</value>

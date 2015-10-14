@@ -121,7 +121,7 @@
     <value>Über</value>
   </data>
   <data name="AddABuild" xml:space="preserve">
-    <value>Eine Build hinzufügen</value>
+    <value>Einen Build hinzufügen</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
     <value>Entdecke Windows Build {0}, von {1} und kompiliert am {2}</value>
@@ -145,28 +145,28 @@
     <value>Build bearbeiten</value>
   </data>
   <data name="EditorActions" xml:space="preserve">
-    <value>Editor aktionen</value>
+    <value>Editor-Aktionen</value>
   </data>
   <data name="HomepageH1" xml:space="preserve">
-    <value>Windows NT Build Liste</value>
+    <value>Windows NT Build-Liste</value>
   </data>
   <data name="LabMetaGeneric" xml:space="preserve">
-    <value>Entdecke alle bekannten Builds aus dem Windows development lab {0} durch BuildFeed, eine kollaborative Windows build Liste.</value>
+    <value>Entdecke alle bekannten Builds aus dem Windows Development Lab {0} durch BuildFeed, eine kollaborative Windows build Liste.</value>
   </data>
   <data name="Listing" xml:space="preserve">
     <value>Übersicht</value>
   </data>
   <data name="MoreFromLab" xml:space="preserve">
-    <value>Mehr builds von {0}</value>
+    <value>Mehr Builds von {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>Mehr builds mit Quellenangabe {0}</value>
+    <value>Mehr Builds mit Quellenangabe {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
-    <value>Mehr {0} kompilierte builds</value>
+    <value>Mehr {0} kompilierte Builds</value>
   </data>
   <data name="NoLab" xml:space="preserve">
-    <value>Kein lab string</value>
+    <value>Kein Lab-String</value>
   </data>
   <data name="Private" xml:space="preserve">
     <value>Privat</value>
@@ -175,7 +175,7 @@
     <value>Öffentlich</value>
   </data>
   <data name="QuickPaste" xml:space="preserve">
-    <value>Schnell-einfügen</value>
+    <value>Schnelles Einfügen</value>
   </data>
   <data name="ReturnToListing" xml:space="preserve">
     <value>Zurück zur Build Liste</value>
@@ -190,7 +190,7 @@
     <value>Heute</value>
   </data>
   <data name="xBuilds" xml:space="preserve">
-    <value>builds</value>
+    <value>Builds</value>
   </data>
   <data name="YearMetaGeneric" xml:space="preserve">
     <value>Siehe dir mit Hilfe von BuildFeed eine Liste aller Windows Builds an, die in {0} kompiliert wurden und beobachte, wie sich Windows stetig weiterentwickelt hat</value>

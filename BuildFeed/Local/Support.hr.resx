@@ -148,7 +148,7 @@
     <value>Unesi lozinku</value>
   </data>
   <data name="HighestVersion" xml:space="preserve">
-    <value>Najviša verzija</value>
+    <value>Zadnja verzija</value>
   </data>
   <data name="Labs" xml:space="preserve">
     <value>Grane</value>
@@ -184,7 +184,7 @@
     <value>Prikazane su samo grane sa više od 100 verzija</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>Nove verzije dodane u zadnjih godinu dana</value>
+    <value>Verzije dodane u posljednjih godinu dana</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
     <value>Hvala na registraciji</value>

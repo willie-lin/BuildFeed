@@ -124,10 +124,10 @@
     <value>Dodaj verziju</value>
   </data>
   <data name="BuildMetaDate" xml:space="preserve">
-    <value>Saznaj o Windows verziji {0}, od {1} i kompajliranu {2}</value>
+    <value>Saznaj o Windows verziji {0}, od {1} i kompajliranu {2}</value>
   </data>
   <data name="BuildMetaNoDate" xml:space="preserve">
-    <value>Saznaj o Windows verziji {0}, od {1}. BuildFeed prati verzije Windowsa koje nastaju tijekom razvijanja.</value>
+    <value>Saznaj o Windows verziji {0}, od {1}. BuildFeed prati verzije Windowsa koje nastaju tijekom razvijanja.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
     <value>Verzije od {0}</value>
