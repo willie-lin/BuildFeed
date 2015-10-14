@@ -33,7 +33,7 @@
                         <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
                     }
                 }
-                <i class="fa fa-server fa-fw"></i>  @group.BuildCount @BuildFeed.Local.Front.xBuilds
+                <i class="fa fa-server fa-fw"></i>  @string.Format(BuildFeed.Local.Front.xBuilds, group.BuildCount)
             </p>
         </div>
     }
