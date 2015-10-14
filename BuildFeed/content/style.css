@@ -164,7 +164,7 @@ label, .control-label, .help-block, .checkbox, .radio
    }
 }
 
-@media (min-width: 992px) and (max-width: 1199px)
+@media (min-width: 992px)
 {
    .col-md-2.build-group:nth-child(6n+1)
    {
