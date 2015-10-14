@@ -19,7 +19,7 @@ namespace BuildFeed.Controllers
          bModel = new Build();
       }
 
-      public async Task<BuildModel[]> GetBuilds(int skip, int limit = 20)
+      public async Task<BuildModel[]> GetBuilds(int limit = 20, int skip = 0)
       {
          var builds = await bModel.SelectInBuildOrder(limit, skip);
          return builds.ToArray();

@@ -723,11 +723,11 @@
     <Content Include="browserconfig.xml" />
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
+    <Content Include="content\tile\wide.png" />
     <Content Include="content\tile\large.png" />
-    <Content Include="content\rtl.css" />
     <Content Include="content\tile\square.png" />
     <Content Include="content\tile\tiny.png" />
-    <Content Include="content\tile\wide.png" />
+    <Content Include="content\rtl.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="content\style.css" />
