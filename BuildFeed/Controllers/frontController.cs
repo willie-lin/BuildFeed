@@ -254,7 +254,15 @@ namespace BuildFeed.Controllers
       }
 
       [Route("add/"), Authorize]
-      public ActionResult addBuild() { return View("editBuild"); }
+      public ActionResult addBuild()
+      {
+         BuildModel b = new BuildModel()
+         {
+            SourceType = TypeOfSource.PrivateLeak,
+            FlightLevel = LevelOfFlight.None
+         };
+         return View("editBuild", b);
+      }
 
       [Route("add/"), Authorize, HttpPost]
       public async Task<ActionResult> addBuild(BuildModel build)
