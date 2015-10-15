@@ -29,9 +29,10 @@ namespace BuildFeedApp
          this.InitializeComponent();
       }
 
-      private async void Page_Loaded(object sender, RoutedEventArgs e)
+      private void Page_Loaded(object sender, RoutedEventArgs e)
       {
-         lvContent.ItemsSource = await ApiCache.GetApi<Build[]>("http://vnext.buildfeed.net/api");
+         var item = new IncrementalBuilds();
+         lvContent.ItemsSource = item;
       }
    }
 }
