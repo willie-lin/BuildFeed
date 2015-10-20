@@ -78,6 +78,7 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> viewBuild(Guid id)
       {
          BuildModel b = await bModel.SelectById(id);
+         if (b == null) return new HttpNotFoundResult();
          return View(b);
       }
 
@@ -85,17 +86,19 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> viewBuild(long id)
       {
          BuildModel b = await bModel.SelectByLegacyId(id);
+         if (b == null) return new HttpNotFoundResult();
          return RedirectToAction("viewBuild", new { id = b.Id });
       }
 
-      [Route("twitter/{id}/")]
+      [Route("twitter/{id:guid}/", Name = "Twitter")]
 #if !DEBUG
-//      [OutputCache(Duration = 600, VaryByParam = "none")]
+//    [OutputCache(Duration = 600, VaryByParam = "none")]
       [CustomContentType(ContentType = "image/png", Order = 2)]
 #endif
       public async Task<ActionResult> twitterCard(Guid id)
       {
          BuildModel b = await bModel.SelectById(id);
+         if (b == null) return new HttpNotFoundResult();
 
          using (Bitmap bm = new Bitmap(560, 300))
          {
@@ -122,6 +125,14 @@ namespace BuildFeed.Controllers
          }
 
          return new EmptyResult();
+      }
+
+      [Route("twitter/{id:long}/", Name = "Twitter (Legacy)")]
+      public async Task<ActionResult> twitterCard(long id)
+      {
+         BuildModel b = await bModel.SelectByLegacyId(id);
+         if (b == null) return new HttpNotFoundResult();
+         return RedirectToAction("twitterCard", new { id = b.Id });
       }
 
       [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
