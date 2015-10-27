@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeedApp-Full", "BuildF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoTimeFix", "MongoTimeFix\MongoTimeFix.csproj", "{B7EC3C45-E5CE-4AD5-B303-65D865F12454}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{53344C34-3493-4D0E-8425-FB18C0CC59D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{938956E0-6FA0-4432-A238-DAE704686F26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -156,5 +160,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6A16CF0-41DA-4B90-918A-CB84A8C3F1E2} = {53344C34-3493-4D0E-8425-FB18C0CC59D0}
+		{7C67BFB9-1B3B-4676-A58D-10573DA82CFE} = {53344C34-3493-4D0E-8425-FB18C0CC59D0}
+		{CD3C08CC-45BF-484B-A878-69614A4EA098} = {938956E0-6FA0-4432-A238-DAE704686F26}
+		{B7EC3C45-E5CE-4AD5-B303-65D865F12454} = {938956E0-6FA0-4432-A238-DAE704686F26}
 	EndGlobalSection
 EndGlobal
