@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
+  <data name="AddABuild" xml:space="preserve">
+    <value>Dodaj build</value>
+  </data>
+  <data name="BuildMetaDate" xml:space="preserve">
+    <value>Odkryj informacje o Windows Build {0}, z {1} i skompilowane w {2}.</value>
+  </data>
+  <data name="BuildMetaNoDate" xml:space="preserve">
+    <value>Odkryj informacje o Windows Build {0}, z {1}. BuildFeed śledzi buildy Windowsa w trakcie całego procesu rozwiju.</value>
+  </data>
+  <data name="BuildsFrom" xml:space="preserve">
+    <value>Buildy z {0}</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Komentarze</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="EditBuild" xml:space="preserve">
+    <value>Edytuj build</value>
+  </data>
+  <data name="EditorActions" xml:space="preserve">
+    <value>Edytor akcje</value>
+  </data>
+  <data name="HomepageH1" xml:space="preserve">
+    <value>Lista buildów Windows NT</value>
+  </data>
+  <data name="LabMetaGeneric" xml:space="preserve">
+    <value>Obejrzyj wszystkie znane buildy wychodzące z Windows development lab {0} przez BuildFeed, wpólna lista buildów Windowsa</value>
+  </data>
+  <data name="Listing" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="MoreFromLab" xml:space="preserve">
+    <value>Znajdź więcej buildów z {0}</value>
+  </data>
+  <data name="MoreFromSource" xml:space="preserve">
+    <value>Znajdź więcej buildów ze źródła {0}</value>
+  </data>
+  <data name="MoreFromYear" xml:space="preserve">
+    <value>Znajdź więcej buildów skompilowanych w {0}</value>
+  </data>
+  <data name="NoLab" xml:space="preserve">
+    <value>Brak nazwy Labu</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Prywatny</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Publiczny</value>
+  </data>
+  <data name="QuickPaste" xml:space="preserve">
+    <value>Szybkie wklejanie</value>
+  </data>
+  <data name="ReturnToListing" xml:space="preserve">
+    <value>Powrót do listy buildów</value>
+  </data>
+  <data name="ReturnToOverview" xml:space="preserve">
+    <value>Powrót do informacji o buildzie</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Udostępnij</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Dzisiaj</value>
+  </data>
+  <data name="xBuilds" xml:space="preserve">
+    <value>{0} buildów</value>
+  </data>
+  <data name="YearMetaGeneric" xml:space="preserve">
+    <value>Zobacz listę wszystkich buildów Windowsa skompilowanych w {0} i zobacz jak Windows rozwijał się w czasie, dzięki liście buildów, BuildFeed</value>
+  </data>
+</root>

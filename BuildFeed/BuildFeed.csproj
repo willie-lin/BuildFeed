@@ -231,6 +231,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Common.pl.Designer.cs">
+      <DependentUpon>Common.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Common.tr.Designer.cs">
+      <DependentUpon>Common.tr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Common.ro.Designer.cs">
       <DependentUpon>Common.ro.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -356,6 +366,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Front.pl.Designer.cs">
+      <DependentUpon>Front.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Front.tr.Designer.cs">
+      <DependentUpon>Front.tr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Front.ro.Designer.cs">
       <DependentUpon>Front.ro.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -463,6 +483,16 @@
     </Compile>
     <Compile Include="Local\Front.qps-ploc.Designer.cs">
       <DependentUpon>Front.qps-ploc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.pl.Designer.cs">
+      <DependentUpon>Model.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.tr.Designer.cs">
+      <DependentUpon>Model.tr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -593,6 +623,16 @@
     </Compile>
     <Compile Include="Local\Support.id.Designer.cs">
       <DependentUpon>Support.id.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.pl.Designer.cs">
+      <DependentUpon>Support.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.tr.Designer.cs">
+      <DependentUpon>Support.tr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -872,6 +912,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.id.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.tr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.tr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.ro.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.ro.Designer.cs</LastGenOutput>
@@ -972,6 +1020,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.id.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.tr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.tr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.ro.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.ro.Designer.cs</LastGenOutput>
@@ -1059,6 +1115,16 @@
     <EmbeddedResource Include="Local\Front.qps-ploc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.qps-ploc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.tr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.tr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.he.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -1187,6 +1253,14 @@
     <EmbeddedResource Include="Local\Support.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Support.id.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.tr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.tr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.ro.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -20,6 +20,7 @@ namespace BuildFeed.Code
          new SiteLocale("id"),
          new SiteLocale("it"),
          new SiteLocale("nl"),
+         new SiteLocale("pl"),
          new SiteLocale("pt"),
          new SiteLocale("pt-br"),
          new SiteLocale("qps-ploc"),
@@ -28,6 +29,7 @@ namespace BuildFeed.Code
          new SiteLocale("sk"),
          new SiteLocale("sl"),
          new SiteLocale("sv"),
+         new SiteLocale("tr"),
          new SiteLocale("zh-cn"),
          new SiteLocale("zh-tw")
       };
