@@ -74,7 +74,7 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedLabs()
       {
-         var labs = await bModel.SelectBuildLabs();
+         var labs = await bModel.SelectLabs();
 
          var usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
 
@@ -86,7 +86,7 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedVersions()
       {
-         var versions = await bModel.SelectBuildVersions();
+         var versions = await bModel.SelectVersions();
 
          var usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
 
@@ -98,7 +98,7 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedYears()
       {
-         var years = await bModel.SelectBuildYears();
+         var years = await bModel.SelectYears();
 
          var usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
 

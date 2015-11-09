@@ -768,7 +768,17 @@
     </Compile>
     <Compile Include="Models\ApiModel\NewBuild.cs" />
     <Compile Include="Models\ApiModel\SearchResult.cs" />
-    <Compile Include="Models\Build.cs" />
+    <Compile Include="Models\Build\Build-Source.cs" />
+    <Compile Include="Models\Build\Build-Year.cs" />
+    <Compile Include="Models\Build\Build-Lab.cs" />
+    <Compile Include="Models\Build\Build-Version.cs" />
+    <Compile Include="Models\Build\Build-Group.cs" />
+    <Compile Include="Models\Build\Build.cs" />
+    <Compile Include="Models\Build\BuildGroup.cs" />
+    <Compile Include="Models\Build\BuildModel.cs" />
+    <Compile Include="Models\Build\BuildVersion.cs" />
+    <Compile Include="Models\Build\LevelOfFlight.cs" />
+    <Compile Include="Models\Build\TypeOfSource.cs" />
     <Compile Include="Models\MetaItem.cs" />
     <Compile Include="Models\ViewModel\Front\FrontBuildGroup.cs" />
     <Compile Include="Models\ViewModel\LoginUser.cs" />

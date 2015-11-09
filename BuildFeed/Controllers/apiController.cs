@@ -28,8 +28,8 @@ namespace BuildFeed.Controllers
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();
-         labs.AddRange(await bModel.SelectBuildLabs(6, 4));
-         labs.AddRange(await bModel.SelectBuildLabs(10, 0));
+         labs.AddRange(await bModel.SelectLabs(6, 4));
+         labs.AddRange(await bModel.SelectLabs(10, 0));
 
          return labs
             .GroupBy(l => l)
@@ -88,7 +88,7 @@ namespace BuildFeed.Controllers
          results.AddRange(sourceResults);
 
 
-         var versionResults = from v in await bModel.SelectBuildVersions()
+         var versionResults = from v in await bModel.SelectVersions()
                               where $"{v.Major}.{v.Minor}".StartsWith(id)
                               orderby v.Major descending, v.Minor descending
                               select new SearchResult()
@@ -102,7 +102,7 @@ namespace BuildFeed.Controllers
          results.AddRange(versionResults);
 
 
-         var yearResults = from y in await bModel.SelectBuildYears()
+         var yearResults = from y in await bModel.SelectYears()
                            where y.ToString().Contains(id)
                            orderby y descending
                            select new SearchResult()

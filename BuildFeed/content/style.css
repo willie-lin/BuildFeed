@@ -15,6 +15,14 @@ h1
       color: #000;
    }
 
+@media(max-width: 480px)
+{
+   h1
+   {
+      font-size: 40px;
+   }
+}
+
 #page-content
 {
    padding-top: 50px;
@@ -43,6 +51,12 @@ h1
    text-overflow: ellipsis;
    overflow: hidden;
    white-space: nowrap;
+}
+
+.eager-wrapping
+{
+   -ms-word-wrap: break-word;
+   word-wrap: break-word;
 }
 
 .label-build-status

@@ -137,7 +137,7 @@ namespace BuildFeed.Controllers
       [Route("rss")]
       public async Task<ActionResult> rss()
       {
-         ViewBag.Labs = await bModel.SelectBuildLabs();
+         ViewBag.Labs = await bModel.SelectLabs();
          return View();
       }
 
@@ -157,8 +157,8 @@ namespace BuildFeed.Controllers
                                 {
                                     UrlParams = new RouteValueDictionary(new
                                                                             {
-                                                                                controller = "build",
-                                                                                action = "index",
+                                                                                controller = "front",
+                                                                                action = "indexPage",
                                                                                 page = 1
                                                                             }),
                                     Pages = (builds.Count() + (frontController.PAGE_SIZE - 1)) / frontController.PAGE_SIZE
@@ -394,9 +394,6 @@ namespace BuildFeed.Controllers
       }
 
       [Route("credits/")]
-      public ActionResult credits()
-      {
-         return View();
-      }
+      public ActionResult credits() => View();
    }
 }
