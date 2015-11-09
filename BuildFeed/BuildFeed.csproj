@@ -236,6 +236,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Common.ko.Designer.cs">
+      <DependentUpon>Common.ko.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Common.tr.Designer.cs">
       <DependentUpon>Common.tr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -371,6 +376,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Local\Front.ko.Designer.cs">
+      <DependentUpon>Front.ko.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Local\Front.tr.Designer.cs">
       <DependentUpon>Front.tr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -488,6 +498,11 @@
     </Compile>
     <Compile Include="Local\Model.pl.Designer.cs">
       <DependentUpon>Model.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Model.ko.Designer.cs">
+      <DependentUpon>Model.ko.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -628,6 +643,11 @@
     </Compile>
     <Compile Include="Local\Support.pl.Designer.cs">
       <DependentUpon>Support.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Local\Support.ko.Designer.cs">
+      <DependentUpon>Support.ko.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -916,6 +936,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.pl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Common.ko.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.ko.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Common.tr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.tr.Designer.cs</LastGenOutput>
@@ -1024,6 +1048,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.pl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Local\Front.ko.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Front.ko.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Local\Front.tr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Front.tr.Designer.cs</LastGenOutput>
@@ -1119,6 +1147,11 @@
     <EmbeddedResource Include="Local\Model.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Model.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Model.ko.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Model.ko.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Model.tr.resx">
@@ -1257,6 +1290,10 @@
     <EmbeddedResource Include="Local\Support.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Support.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local\Support.ko.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.ko.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Local\Support.tr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
