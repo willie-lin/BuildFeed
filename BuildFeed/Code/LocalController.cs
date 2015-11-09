@@ -17,7 +17,7 @@ namespace BuildFeed.Code
                CultureInfo.CurrentCulture = ci;
                CultureInfo.CurrentUICulture = ci;
             }
-            catch(CultureNotFoundException cnex)
+            catch(CultureNotFoundException)
             {
 
             }

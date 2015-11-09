@@ -4,15 +4,15 @@ namespace BuildFeed
 {
    internal static class MongoConfig
    {
-      public static string Host { get; private set; }
-      public static int Port { get; private set; }
-      public static string Database { get; private set; }
+      public static string Host { get; }
+      public static int Port { get; }
+      public static string Database { get; }
 
       static MongoConfig()
       {
-         Host = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoHost"])
-            ? ConfigurationManager.AppSettings["data:MongoHost"]
-            : "localhost";
+         Host = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoHost"]) ?
+            ConfigurationManager.AppSettings["data:MongoHost"] :
+            "localhost";
 
          int _port;
          bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out _port);
@@ -22,9 +22,9 @@ namespace BuildFeed
          }
          Port = _port;
 
-         Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])
-            ? ConfigurationManager.AppSettings["data:MongoDB"]
-            : "MongoAuth";
+         Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"]) ?
+            ConfigurationManager.AppSettings["data:MongoDB"] :
+            "MongoAuth";
       }
    }
 }

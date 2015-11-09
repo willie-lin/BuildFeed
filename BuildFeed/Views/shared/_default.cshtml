@@ -1,16 +1,16 @@
 ﻿@using System.Globalization;
 @{
-   bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+   bool IsRTL = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
 <!DOCTYPE html>
-<html dir="@(IsRTL ? "rtl" : "ltr")">
+<html dir="@(IsRTL ? "rtl" : "ltr")" lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet" />
    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-   <link href="//fonts.googleapis.com/css?family=Hind:300,700,400&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+   <link href="//fonts.googleapis.com/css?family=Rajdhani:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
    <link rel="shortcut icon" href="~/favicon.ico" />
    <link rel="icon" href="~/favicon.ico" />
    <link rel="canonical" href="@Url.Action()" />

@@ -1,12 +1,12 @@
 ﻿body, h1, h2, h3
 {
-   font-family: 'Hind', sans-serif;
+   font-family: 'Rajdhani', sans-serif;
+   font-size: 16px;
 }
 
 h1
 {
-   font-size: 48px;
-   font-weight: 300;
+   font-size: 56px;
 }
 
    h1 a
@@ -27,8 +27,7 @@ h1
 
 .build-group-title
 {
-   font-size: 24px;
-   font-weight: 300;
+   font-size: 25px;
    margin: 0 0 4px 0;
 }
 
@@ -41,7 +40,6 @@ h1
 {
    -ms-text-overflow: ellipsis;
    -o-text-overflow: ellipsis;
-   -moz-text-overflow: ellipsis;
    text-overflow: ellipsis;
    overflow: hidden;
    white-space: nowrap;
@@ -59,8 +57,19 @@ h1
 
 .form-details label
 {
+   font-size: 16px;
+   font-weight: normal;
+}
+
+.form-details .form-control-static
+{
    font-weight: bold;
 }
+
+   .form-details .form-control-static a.more-link
+   {
+      font-weight: normal;
+   }
 
 .credits-list dd + dt
 {
@@ -69,7 +78,7 @@ h1
 
 #page-footer
 {
-   font-size: 12px;
+   font-size: 13px;
    margin-top: 3em;
 }
 
@@ -86,6 +95,11 @@ label, .control-label, .help-block, .checkbox, .radio
 .btn-reset
 {
    padding: 9px 0 7px;
+}
+
+.btn-xs
+{
+   font-size: 13px;
 }
 
 .table .btn
@@ -130,7 +144,6 @@ label, .control-label, .help-block, .checkbox, .radio
       overflow: hidden;
       -ms-text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
-      -moz-text-overflow: ellipsis;
       text-overflow: ellipsis;
       white-space: nowrap;
    }
