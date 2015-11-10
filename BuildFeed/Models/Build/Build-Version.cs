@@ -54,19 +54,22 @@ namespace BuildFeed.Models
       public async Task<List<BuildVersion>> SelectVersions()
       {
          var result = await _buildCollection.Aggregate()
-            .Group(b => new BuildVersion()
-            {
-               Major = b.MajorVersion,
-               Minor = b.MinorVersion,
-            },
-            // incoming bullshit hack
-            bg => new Tuple<BuildVersion>(bg.Key))
-            .SortByDescending(b => b.Item1.Major)
-            .ThenByDescending(b => b.Item1.Minor)
+            // the group method in mongodb's c# driver sucks balls and throws a hissy fit over far too much.
+            .Group(b => new BuildVersion(b.MajorVersion, b.MinorVersion), bg => new BsonDocument())
             .ToListAsync();
 
          // work ourselves out of aforementioned bullshit hack
-         return result.Select(b => b.Item1).ToList();
+         var typed = from r in result
+                     select new BuildVersion
+                     {
+                        Major = (byte)result.First()["_id"]["Major"].ToInt32(),
+                        Minor = (byte)result.First()["_id"]["Minor"].ToInt32()
+                     };
+
+         return (from t in typed
+                 orderby t.Major descending,
+                         t.Minor descending
+                 select t).ToList();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
