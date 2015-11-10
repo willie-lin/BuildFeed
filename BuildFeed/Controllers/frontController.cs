@@ -58,7 +58,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
       {
-         var builds = await bModel.SelectSingleBuildGroup(new BuildGroup()
+         var builds = await bModel.SelectBuildGroup(new BuildGroup()
          {
             Major = major,
             Minor = minor,

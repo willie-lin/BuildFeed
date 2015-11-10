@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
 @using Humanizer;
 @{
-    ViewBag.Title = BuildFeed.Local.Common.SiteName;
+   ViewBag.Title = BuildFeed.Local.Common.SiteName;
 }
 @section head
 {
-    @if (ViewBag.PageNumber != 1)
-    {
-        <meta name="robots" content="noindex, follow" />
-    }
+   @if (ViewBag.PageNumber == 1)
+   {
+      <meta name="description" content="BuildFeed tracks builds of Microsoft Windows NT, using a variety of sources. We're the best place to follow the latest builds as they become known." />
+   }
+   else
+   {
+      <meta name="robots" content="noindex, follow" />
+   }
 }
 
 <h1>@BuildFeed.Local.Front.HomepageH1</h1>
@@ -16,30 +20,30 @@
 <div class="addthis_sharing_toolbox"></div>
 <h3>@BuildFeed.Local.Front.Listing</h3>
 <div class="row">
-    @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
-    {
-        <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-            <h3 class="build-group-title"><a href="@Url.Action("viewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })">@group.Key.ToString()</a></h3>
-            <p>
-                @if (group.LastBuild.HasValue)
-                {
-                    var maxDate = group.LastBuild.Value;
-                    if (maxDate.AddDays(28) > DateTime.Now)
-                    {
-                        <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
-                    }
-                    else
-                    {
-                        <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
-                    }
-                }
-                <i class="fa fa-server fa-fw"></i>  @string.Format(BuildFeed.Local.Front.xBuilds, group.BuildCount)
-            </p>
-        </div>
-    }
+   @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
+   {
+      <div class="col-md-2 col-sm-3 col-xs-6 build-group">
+         <h3 class="build-group-title"><a href="@Url.Action("viewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })">@group.Key.ToString()</a></h3>
+         <p>
+            @if (group.LastBuild.HasValue)
+            {
+               var maxDate = group.LastBuild.Value;
+               if (maxDate.AddDays(28) > DateTime.Now)
+               {
+                  <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+               }
+               else
+               {
+                  <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
+               }
+            }
+            <i class="fa fa-server fa-fw"></i>  @string.Format(BuildFeed.Local.Front.xBuilds, group.BuildCount)
+         </p>
+      </div>
+   }
 </div>
 @PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "index", ViewContext.RouteData.Values)
 @section scripts
 {
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
+   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 }

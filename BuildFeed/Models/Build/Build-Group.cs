@@ -12,6 +12,19 @@ namespace BuildFeed.Models
    public partial class Build
    {
       [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<Tuple<BuildGroup, List<BuildModel>>> SelectBuildGroup(BuildGroup bGroup)
+      {
+         var pipeline = _buildCollection.Aggregate()
+            .Match(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bGroup.Major))
+            .Match(Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bGroup.Minor))
+            .Match(Builders<BuildModel>.Filter.Eq(b => b.Number, bGroup.Build))
+            .Match(Builders<BuildModel>.Filter.Eq(b => b.Revision, bGroup.Revision))
+            .SortByDescending(b => b.BuildTime);
+
+         return new Tuple<BuildGroup, List<BuildModel>>(bGroup, await pipeline.ToListAsync());
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<FrontBuildGroup>> SelectBuildGroups(int limit, int skip)
       {
          return await _buildCollection.Aggregate()
@@ -51,19 +64,6 @@ namespace BuildFeed.Models
             bg => new BsonDocument());
 
          return (await pipeline.ToListAsync()).Count;
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<Tuple<BuildGroup, List<BuildModel>>> SelectSingleBuildGroup(BuildGroup bGroup)
-      {
-         var pipeline = _buildCollection.Aggregate()
-            .Match(b => b.MajorVersion == bGroup.Major)
-            .Match(b => b.MinorVersion == bGroup.Minor)
-            .Match(b => b.Number == bGroup.Build)
-            .Match(b => b.Revision == bGroup.Revision)
-            .SortByDescending(b => b.BuildTime);
-
-         return new Tuple<BuildGroup, List<BuildModel>>(bGroup, await pipeline.ToListAsync());
       }
    }
 }
