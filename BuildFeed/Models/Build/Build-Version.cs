@@ -39,7 +39,8 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectVersion(int major, int minor, int skip, int limit)
       {
-         return await _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+         byte bMajor = Convert.ToByte(major), bMinor = Convert.ToByte(minor);
+         var test = await _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bMajor), Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bMinor)))
              .SortByDescending(b => b.BuildTime)
              .ThenByDescending(b => b.MajorVersion)
              .ThenByDescending(b => b.MinorVersion)
@@ -48,6 +49,7 @@ namespace BuildFeed.Models
              .Skip(skip)
              .Limit(limit)
              .ToListAsync();
+         return test;
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
@@ -75,7 +77,8 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<long> SelectVersionCount(int major, int minor)
       {
-         return await _buildCollection.Find(b => b.MajorVersion == major && b.MinorVersion == minor)
+         byte bMajor = Convert.ToByte(major), bMinor = Convert.ToByte(minor);
+         return await _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bMajor), Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bMinor)))
             .CountAsync();
       }
    }
