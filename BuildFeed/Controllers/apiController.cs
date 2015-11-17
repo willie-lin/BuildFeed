@@ -1,6 +1,7 @@
 ﻿using BuildFeed.Local;
 using BuildFeed.Models;
 using BuildFeed.Models.ApiModel;
+using BuildFeed.Models.ViewModel.Front;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,25 @@ namespace BuildFeed.Controllers
       {
          var builds = await bModel.SelectInBuildOrder(limit, skip);
          return builds.ToArray();
+      }
+
+      public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 20)
+      {
+         var bgroups = await bModel.SelectBuildGroups(limit, skip);
+         return bgroups.ToArray();
+      }
+
+      public async Task<BuildModel[]> GetBuildsForBuildGroup(byte major, byte minor, ushort number, ushort? revision = null)
+      {
+         var builds = await bModel.SelectBuildGroup(new BuildGroup()
+         {
+            Major = major,
+            Minor = minor,
+            Build = number,
+            Revision = revision
+         });
+
+         return builds.Item2.ToArray();
       }
 
       public async Task<IEnumerable<string>> GetWin10Labs()

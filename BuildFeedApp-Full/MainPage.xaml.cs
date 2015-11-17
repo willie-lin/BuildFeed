@@ -24,6 +24,8 @@ namespace BuildFeedApp
    /// </summary>
    public sealed partial class MainPage : Page
    {
+      public int BuildModel { get; private set; }
+
       public MainPage()
       {
          this.InitializeComponent();
@@ -31,8 +33,20 @@ namespace BuildFeedApp
 
       private void Page_Loaded(object sender, RoutedEventArgs e)
       {
-         var item = new IncrementalBuilds();
-         lvContent.ItemsSource = item;
+         var item = new IncrementalBuildGroups();
+         lvGroups.ItemsSource = item;
+      }
+
+      private async void lvGroups_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      {
+         FrontBuildGroup fbg = lvGroups.SelectedValue as FrontBuildGroup;
+         lvBuilds.ItemsSource = await ApiCache.GetApi<Build[]>($"https://buildfeed.net/api/GetBuildsForBuildGroup?major={fbg.Key.Major}&minor={fbg.Key.Minor}&number={fbg.Key.Build}&revision={fbg.Key.Revision}");
+      }
+
+      private void lvBuilds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      {
+         Build b = lvBuilds.SelectedValue as Build;
+         spDetails.DataContext = b;
       }
    }
 }

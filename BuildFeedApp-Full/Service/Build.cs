@@ -43,6 +43,8 @@ namespace BuildFeedApp.Service
          }
       }
 
+      public string DateString => BuildTime.HasValue ? BuildTime.Value.ToString("yyMMdd-HHmm") : "";
+
       public string FullBuildString
       {
          get
@@ -68,6 +70,25 @@ namespace BuildFeedApp.Service
             return sb.ToString();
          }
       }
+   }
+
+   public class FrontBuildGroup
+   {
+      public BuildGroup Key { get; set; }
+      public DateTime? LastBuild { get; set; }
+      public int BuildCount { get; set; }
+   }
+
+   public class BuildGroup
+   {
+      public byte Major { get; set; }
+      public byte Minor { get; set; }
+      public ushort Build { get; set; }
+      public ushort? Revision { get; set; }
+
+      public override string ToString() => Revision.HasValue ?
+           $"{Major}.{Minor}.{Build}.{Revision.Value}" :
+           $"{Major}.{Minor}.{Build}";
    }
 
    public enum TypeOfSource
