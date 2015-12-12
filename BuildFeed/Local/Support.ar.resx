@@ -175,16 +175,16 @@
     <value>تذكرني</value>
   </data>
   <data name="StatsCompiled" xml:space="preserve">
-    <value>نسخ مصنعة كل ربع سنة</value>
+    <value>عدد النسخ المنتجة لكل ربع سنة</value>
   </data>
   <data name="StatsLab" xml:space="preserve">
-    <value>النسخ المسجلة تحت كل مختبر</value>
+    <value>عدد النسخ المصنعة بناءً على المختبر الصادرة منه</value>
   </data>
   <data name="StatsLabIncluded" xml:space="preserve">
-    <value>فقط المختبرات التي تحتوي على 100 نسخة أو أكثر تدخل في النتائج</value>
+    <value>فقط المختبرات التي تحتوي على 100 نسخة أو أكثر تدخل في النتائج أدناه</value>
   </data>
   <data name="StatsNewAdditions" xml:space="preserve">
-    <value>الإضافات الجديدة على BuildFeed مقارنة بالسنة السابقة</value>
+    <value>عدد الإضافات الجديدة على BuildFeed مقارنة بالسنة السابقة</value>
   </data>
   <data name="ThanksRegister" xml:space="preserve">
     <value>شكراً لكم على التسجيل في الموقع</value>
