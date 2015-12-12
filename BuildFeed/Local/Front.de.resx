@@ -157,13 +157,13 @@
     <value>Übersicht</value>
   </data>
   <data name="MoreFromLab" xml:space="preserve">
-    <value>Mehr Builds von {0}</value>
+    <value>Weitere Builds von {0}</value>
   </data>
   <data name="MoreFromSource" xml:space="preserve">
-    <value>Mehr Builds mit Quellenangabe {0}</value>
+    <value>Weitere Builds mit Quellenangabe {0}</value>
   </data>
   <data name="MoreFromYear" xml:space="preserve">
-    <value>Mehr {0} kompilierte Builds</value>
+    <value>Weitere Builds die {0} kompiliert wurden</value>
   </data>
   <data name="NoLab" xml:space="preserve">
     <value>Kein Lab-String</value>
