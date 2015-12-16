@@ -130,7 +130,7 @@
     <value>Entdecke Windows Build {0}, von {1}. BuildFeed verfolgt Windows Builds über ihren Entwicklungszeitraum.</value>
   </data>
   <data name="BuildsFrom" xml:space="preserve">
-    <value>Builds von</value>
+    <value>Builds von {0}</value>
   </data>
   <data name="Comments" xml:space="preserve">
     <value>Kommentare</value>
