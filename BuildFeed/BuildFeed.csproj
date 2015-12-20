@@ -792,6 +792,7 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
+    <Content Include="content\card\Redstone.png" />
     <Content Include="content\card\Threshold2.png" />
     <Content Include="content\card\Threshold.png" />
     <Content Include="content\icons-2x.png" />
