@@ -80,7 +80,7 @@ namespace BuildFeed.Controllers
                               IsPermaLink = true,
                               Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "front", id = build.Id })}"
                            },
-                           Category = GetCategoryForBuild(build),
+                           Category = new RssCategory() { Text = build.Family.ToString() },
                            InternalPubDate = new RssDate(build.Added).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
                         }).ToList()
             }
@@ -243,24 +243,6 @@ namespace BuildFeed.Controllers
          await Response.Output.WriteAsync(rdoc.ToXml());
 
          return new EmptyResult();
-      }
-
-      private static RssCategory GetCategoryForBuild(BuildModel b)
-      {
-         if(b.Number >= 11000)
-         {
-            return new RssCategory() { Text = "Redstone" };
-         }
-         else if(b.Number >= 10500)
-         {
-            return new RssCategory() { Text = "Threshold2" };
-         }
-         else if (b.Number >= 9700)
-         {
-            return new RssCategory() { Text = "Threshold" };
-         }
-
-         return null;
       }
    }
 }

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -92,7 +93,7 @@ namespace BuildFeed.Controllers
 
       [Route("twitter/{id:guid}/", Name = "Twitter")]
 #if !DEBUG
-//    [OutputCache(Duration = 600, VaryByParam = "none")]
+      [OutputCache(Duration = 600, VaryByParam = "none")]
       [CustomContentType(ContentType = "image/png", Order = 2)]
 #endif
       public async Task<ActionResult> twitterCard(Guid id)
@@ -100,7 +101,10 @@ namespace BuildFeed.Controllers
          BuildModel b = await bModel.SelectById(id);
          if (b == null) return new HttpNotFoundResult();
 
-         using (Bitmap bm = new Bitmap(560, 300))
+         string path = Path.Combine(Server.MapPath("~/content/card/"), $"{b.Family}.png");
+         bool backExists = System.IO.File.Exists(path);
+
+         using (Bitmap bm = backExists ? new Bitmap(path) : new Bitmap(1120, 600))
          {
             using (Graphics gr = Graphics.FromImage(bm))
             {
@@ -112,11 +116,15 @@ namespace BuildFeed.Controllers
                gr.SmoothingMode = SmoothingMode.HighQuality;
                gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-               gr.FillRectangle(new SolidBrush(Color.FromArgb(0x27, 0x2b, 0x30)), 0, 0, 560, 300);
-               gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 16, new Point(20, 20), StringFormat.GenericTypographic);
-               gp.AddString($"Windows NT {b.MajorVersion}.{b.MinorVersion} build", new FontFamily("Segoe UI"), 0, 24, new Point(20, 40), StringFormat.GenericTypographic);
-               gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 180, new Point(12, 20), StringFormat.GenericTypographic);
-               gp.AddString($"{b.Lab}", new FontFamily("Segoe UI"), 0, 40, new Point(16, 220), StringFormat.GenericTypographic);
+               if (!backExists)
+               {
+                  gr.FillRectangle(new SolidBrush(Color.FromArgb(0x27, 0x2b, 0x30)), 0, 0, 1120, 600);
+               }
+
+               gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 32, new Point(40, 32), StringFormat.GenericTypographic);
+               gp.AddString($"{DisplayHelpers.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
+               gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96), StringFormat.GenericTypographic);
+               gp.AddString(b.BuildTime.HasValue ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}" : $"{b.Lab}", new FontFamily("Segoe UI"), 0, 44, new Point(40, 440), StringFormat.GenericTypographic);
                gr.FillPath(Brushes.White, gp);
 
                Response.ContentType = "image/png";

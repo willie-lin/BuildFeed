@@ -111,6 +111,42 @@ namespace BuildFeed.Models
          }
       }
 
+      public ProjectFamily Family
+      {
+         get
+         {
+            if (Number >= 11000)
+            {
+               return ProjectFamily.Redstone;
+            }
+            else if (Number >= 10500)
+            {
+               return ProjectFamily.Threshold2;
+            }
+            else if (Number >= 9700)
+            {
+               return ProjectFamily.Threshold;
+            }
+            else if (Number >= 9250)
+            {
+               return ProjectFamily.Windows81;
+            }
+            else if (Number >= 7650)
+            {
+               return ProjectFamily.Windows8;
+            }
+            else if(Number >= 6020)
+            {
+               return ProjectFamily.Windows7;
+            }
+            else if(MajorVersion == 6)
+            {
+               return ProjectFamily.Longhorn;
+            }
+            return ProjectFamily.None;
+         }
+      }
+
       public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-').ToLower();
    }
 }

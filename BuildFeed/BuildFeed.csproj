@@ -778,6 +778,7 @@
     <Compile Include="Models\Build\BuildModel.cs" />
     <Compile Include="Models\Build\BuildVersion.cs" />
     <Compile Include="Models\Build\LevelOfFlight.cs" />
+    <Compile Include="Models\Build\ProjectFamily.cs" />
     <Compile Include="Models\Build\TypeOfSource.cs" />
     <Compile Include="Models\MetaItem.cs" />
     <Compile Include="Models\ViewModel\Front\FrontBuildGroup.cs" />
@@ -791,6 +792,8 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
+    <Content Include="content\card\Threshold2.png" />
+    <Content Include="content\card\Threshold.png" />
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
     <Content Include="content\tile\wide.png" />
