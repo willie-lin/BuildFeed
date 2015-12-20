@@ -42,7 +42,7 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<string>> SelectLabs(byte major, byte minor)
+      public async Task<List<string>> SelectLabs(uint major, uint minor)
       {
          var result = await _buildCollection.Aggregate()
             .Match(b => b.MajorVersion == major)

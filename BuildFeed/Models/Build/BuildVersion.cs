@@ -3,10 +3,10 @@
 
    public struct BuildVersion
    {
-      public byte Major { get; set; }
-      public byte Minor { get; set; }
+      public uint Major { get; set; }
+      public uint Minor { get; set; }
 
-      public BuildVersion(byte major, byte minor)
+      public BuildVersion(uint major, uint minor)
       {
          Major = major;
          Minor = minor;

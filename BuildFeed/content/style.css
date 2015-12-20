@@ -1,6 +1,10 @@
 ﻿body, h1, h2, h3
 {
    font-family: 'Rajdhani', sans-serif;
+}
+
+body
+{
    font-size: 16px;
 }
 
@@ -61,7 +65,7 @@ h1
 
 .label-build-status
 {
-   padding-bottom: 0;
+   padding-bottom: 1px;
 }
 
 .field-validation-error

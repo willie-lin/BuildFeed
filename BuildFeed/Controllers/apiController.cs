@@ -32,7 +32,7 @@ namespace BuildFeed.Controllers
          return bgroups.ToArray();
       }
 
-      public async Task<BuildModel[]> GetBuildsForBuildGroup(byte major, byte minor, ushort number, ushort? revision = null)
+      public async Task<BuildModel[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
       {
          var builds = await bModel.SelectBuildGroup(new BuildGroup()
          {

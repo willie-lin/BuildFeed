@@ -37,7 +37,7 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<BuildModel>> SelectVersion(int major, int minor, int skip, int limit)
+      public async Task<List<BuildModel>> SelectVersion(uint major, uint minor, int skip, int limit)
       {
          byte bMajor = Convert.ToByte(major), bMinor = Convert.ToByte(minor);
          var test = await _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bMajor), Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bMinor)))
@@ -64,8 +64,8 @@ namespace BuildFeed.Models
          var typed = from r in result
                      select new BuildVersion
                      {
-                        Major = (byte)result.First()["_id"]["Major"].ToInt32(),
-                        Minor = (byte)result.First()["_id"]["Minor"].ToInt32()
+                        Major = (uint)r["_id"]["Major"].ToInt32(),
+                        Minor = (uint)r["_id"]["Minor"].ToInt32()
                      };
 
          return (from t in typed
@@ -75,10 +75,9 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<long> SelectVersionCount(int major, int minor)
+      public async Task<long> SelectVersionCount(uint major, uint minor)
       {
-         byte bMajor = Convert.ToByte(major), bMinor = Convert.ToByte(minor);
-         return await _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bMajor), Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bMinor)))
+         return await _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, major), Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, minor)))
             .CountAsync();
       }
    }

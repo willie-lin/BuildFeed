@@ -57,7 +57,7 @@ namespace BuildFeed.Controllers
 #if !DEBUG
 //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> viewGroup(byte major, byte minor, ushort number, ushort? revision = null)
+      public async Task<ActionResult> viewGroup(uint major, uint minor, uint number, uint? revision = null)
       {
          var builds = await bModel.SelectBuildGroup(new BuildGroup()
          {
@@ -243,13 +243,13 @@ namespace BuildFeed.Controllers
 #if !DEBUG
 //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> viewVersion(int major, int minor) { return await viewVersionPage(major, minor, 1); }
+      public async Task<ActionResult> viewVersion(uint major, uint minor) { return await viewVersionPage(major, minor, 1); }
 
       [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
 //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> viewVersionPage(int major, int minor, int page)
+      public async Task<ActionResult> viewVersionPage(uint major, uint minor, int page)
       {
          string valueString = $"{major}.{minor}";
          ViewBag.MetaItem = await mModel.SelectById(new MetaItemKey

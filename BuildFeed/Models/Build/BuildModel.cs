@@ -19,19 +19,19 @@ namespace BuildFeed.Models
 
       [@Required]
       [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
-      public byte MajorVersion { get; set; }
+      public uint MajorVersion { get; set; }
 
       [@Required]
       [Display(ResourceType = typeof(Model), Name = "MinorVersion")]
-      public byte MinorVersion { get; set; }
+      public uint MinorVersion { get; set; }
 
       [@Required]
       [Display(ResourceType = typeof(Model), Name = "Number")]
-      public ushort Number { get; set; }
+      public uint Number { get; set; }
 
       [Display(ResourceType = typeof(Model), Name = "Revision")]
       [DisplayFormat(ConvertEmptyStringToNull = true)]
-      public ushort? Revision { get; set; }
+      public uint? Revision { get; set; }
 
       [Display(ResourceType = typeof(Model), Name = "Lab")]
       public string Lab { get; set; }
@@ -93,19 +93,13 @@ namespace BuildFeed.Models
             sb.AppendFormat("{0}.{1}.{2}", MajorVersion, MinorVersion, Number);
 
             if (Revision.HasValue)
-            {
                sb.AppendFormat(".{0}", Revision);
-            }
 
             if (!string.IsNullOrWhiteSpace(Lab))
-            {
                sb.AppendFormat(".{0}", Lab);
-            }
 
             if (BuildTime.HasValue)
-            {
                sb.AppendFormat(".{0:yyMMdd-HHmm}", BuildTime);
-            }
 
             return sb.ToString();
          }
@@ -135,11 +129,11 @@ namespace BuildFeed.Models
             {
                return ProjectFamily.Windows8;
             }
-            else if(Number >= 6020)
+            else if (Number >= 6020)
             {
                return ProjectFamily.Windows7;
             }
-            else if(MajorVersion == 6)
+            else if (MajorVersion == 6)
             {
                return ProjectFamily.Longhorn;
             }
