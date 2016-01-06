@@ -180,7 +180,7 @@ namespace MongoAuth
       public override bool DeleteUser(string username, bool deleteAllRelatedData)
       {
          var task = _memberCollection
-             .DeleteOneAsync(m => m.UserName.ToLower() == username);
+             .DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
          task.Wait();
 
          return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;

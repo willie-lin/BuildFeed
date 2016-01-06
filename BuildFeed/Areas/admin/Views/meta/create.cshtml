@@ -22,7 +22,10 @@
                   @Html.TextAreaFor(model => model.MetaDescription, new { @class = "form-control", rows = "2" })
                </div>
             </div>
-            @Html.ValidationMessageFor(model => model.MetaDescription)
+            <div class="help-block">
+               <span id="meta-count">0</span> characters
+               @Html.ValidationMessageFor(model => model.MetaDescription)
+            </div>
          </div>
       </div>
 
@@ -34,7 +37,9 @@
                   @Html.TextAreaFor(model => model.PageContent, new { @class = "form-control" })
                </div>
             </div>
-            @Html.ValidationMessageFor(model => model.PageContent)
+            <div class="help-block">
+               @Html.ValidationMessageFor(model => model.PageContent)
+            </div>
          </div>
       </div>
 
@@ -54,6 +59,20 @@
    @Scripts.Render("~/bundles/jqueryval")
 
    <script type="text/javascript">
+      function updateMetaCount() {
+         var count = document.getElementById("@Html.IdFor(model => model.MetaDescription)").value.length;
+         $("#meta-count").text(count.toFixed(0));
+         if (count == 0) {
+            $("#meta-count").attr("class", "");
+         }
+         else if (count < 160) {
+            $("#meta-count").attr("class", "text-success");
+         }
+         else {
+            $("#meta-count").attr("class", "text-danger");
+         }
+      }
+
       $(function () {
          var btnsGrps = $.trumbowyg.btnsGrps;
 
@@ -66,6 +85,12 @@
                    '|', btnsGrps.justify,
                    '|', btnsGrps.lists]
          });
-      })
+
+         $("#@Html.IdFor(model => model.MetaDescription)").keyup(function () {
+            updateMetaCount();
+         });
+
+         updateMetaCount();
+      });
    </script>
 }
