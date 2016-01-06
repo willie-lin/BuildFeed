@@ -14,7 +14,7 @@ namespace BuildFeed.Controllers
    public class rssController : LocalController
    {
       private Build bModel;
-      private const int RSS_SIZE = 20;
+      private const int RSS_SIZE = 25;
 
       public rssController() : base()
       {

@@ -133,9 +133,29 @@ namespace BuildFeed.Models
             {
                return ProjectFamily.Windows7;
             }
+            else if (MajorVersion == 6 && Number >= 5000)
+            {
+               return ProjectFamily.WindowsVista;
+            }
             else if (MajorVersion == 6)
             {
                return ProjectFamily.Longhorn;
+            }
+            else if (MajorVersion == 5 && Number >= 3000)
+            {
+               return ProjectFamily.Server2003;
+            }
+            else if (MajorVersion == 5 && Number >= 2205)
+            {
+               return ProjectFamily.WindowsXP;
+            }
+            else if (MajorVersion == 5 && MinorVersion == 50)
+            {
+               return ProjectFamily.Neptune;
+            }
+            else if (MajorVersion == 5)
+            {
+               return ProjectFamily.Windows2000;
             }
             return ProjectFamily.None;
          }
