@@ -45,7 +45,7 @@
             <p class="build-group-p">
                 @if (!string.IsNullOrEmpty(build.Lab))
                 {
-                    <span class="no-wrapping" title="@build.Lab"><i class="fa fa-code-fork fa-fw"></i> @build.Lab</span><br />
+                    <div class="no-wrapping" title="@build.Lab"><i class="fa fa-code-fork fa-fw"></i> @build.Lab</div>
                 }
                 @if (build.BuildTime.HasValue)
                 {
