@@ -26,6 +26,23 @@ namespace BuildFeed.Models
          _buildCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<BuildModel>(_buildCollectionName);
       }
 
+      public async Task SetupIndexes()
+      {
+         var indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
+         if(!indexes.Any(i => i["name"] == "_idx_group"))
+         {
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Combine(
+               Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
+               Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
+               Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
+               Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)
+               ), new CreateIndexOptions()
+               {
+                  Name = "_idx_group"
+               });
+         }
+      }
+
       [DataObjectMethod(DataObjectMethodType.Select, true)]
       public async Task<List<BuildModel>> Select()
       {

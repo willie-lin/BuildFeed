@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿using BuildFeed.Models;
+using System.Configuration;
+using System.Threading.Tasks;
 
 namespace BuildFeed
 {
@@ -25,6 +27,12 @@ namespace BuildFeed
          Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"]) ?
             ConfigurationManager.AppSettings["data:MongoDB"] :
             "MongoAuth";
+      }
+
+      public static void SetupIndexes()
+      {
+         Build b = new Build();
+         b.SetupIndexes();
       }
    }
 }

@@ -14,11 +14,14 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<Tuple<BuildGroup, List<BuildModel>>> SelectBuildGroup(BuildGroup bGroup)
       {
-         var pipeline = _buildCollection.Aggregate()
-            .Match(Builders<BuildModel>.Filter.Eq(b => b.MajorVersion, bGroup.Major))
-            .Match(Builders<BuildModel>.Filter.Eq(b => b.MinorVersion, bGroup.Minor))
-            .Match(Builders<BuildModel>.Filter.Eq(b => b.Number, bGroup.Build))
-            .Match(Builders<BuildModel>.Filter.Eq(b => b.Revision, bGroup.Revision))
+         var pipeline = _buildCollection
+            .Find(new BsonDocument
+            {
+               { "MajorVersion", BsonValue.Create(bGroup.Major) },
+               { "MinorVersion", BsonValue.Create(bGroup.Minor) },
+               { "Number", BsonValue.Create(bGroup.Build) },
+               { "Revision", BsonValue.Create(bGroup.Revision) },
+            })
             .SortByDescending(b => b.BuildTime);
 
          return new Tuple<BuildGroup, List<BuildModel>>(bGroup, await pipeline.ToListAsync());

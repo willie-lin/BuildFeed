@@ -23,6 +23,8 @@ namespace BuildFeed
 
          ModelBinders.Binders.Add(typeof(DateTime), db);
          ModelBinders.Binders.Add(typeof(DateTime?), db);
+
+         MongoConfig.SetupIndexes();
       }
 
       public override string GetVaryByCustomString(HttpContext context, string custom)
