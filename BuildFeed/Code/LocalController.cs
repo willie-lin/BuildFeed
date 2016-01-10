@@ -13,7 +13,7 @@ namespace BuildFeed.Code
          {
             try
             {
-               CultureInfo ci = new CultureInfo(cookie.Value);
+               CultureInfo ci = CultureInfo.GetCultureInfo(cookie.Value);
                CultureInfo.CurrentCulture = ci;
                CultureInfo.CurrentUICulture = ci;
             }

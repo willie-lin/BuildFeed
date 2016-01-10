@@ -41,6 +41,14 @@ namespace BuildFeed.Models
                   Name = "_idx_group"
                });
          }
+
+         if (!indexes.Any(i => i["name"] == "_idx_legacy"))
+         {
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId), new CreateIndexOptions()
+            {
+               Name = "_idx_legacy"
+            });
+         }
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
