@@ -1,10 +1,10 @@
-﻿using BuildFeed.Local;
-using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Web.Mvc;
+using BuildFeed.Local;
+using MongoDB.Bson.Serialization.Attributes;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
@@ -93,13 +93,19 @@ namespace BuildFeed.Models
             sb.AppendFormat("{0}.{1}.{2}", MajorVersion, MinorVersion, Number);
 
             if (Revision.HasValue)
+            {
                sb.AppendFormat(".{0}", Revision);
+            }
 
             if (!string.IsNullOrWhiteSpace(Lab))
+            {
                sb.AppendFormat(".{0}", Lab);
+            }
 
             if (BuildTime.HasValue)
+            {
                sb.AppendFormat(".{0:yyMMdd-HHmm}", BuildTime);
+            }
 
             return sb.ToString();
          }
@@ -113,47 +119,47 @@ namespace BuildFeed.Models
             {
                return ProjectFamily.Redstone;
             }
-            else if (Number >= 10500)
+            if (Number >= 10500)
             {
                return ProjectFamily.Threshold2;
             }
-            else if (Number >= 9700)
+            if (Number >= 9700)
             {
                return ProjectFamily.Threshold;
             }
-            else if (Number >= 9250)
+            if (Number >= 9250)
             {
                return ProjectFamily.Windows81;
             }
-            else if (Number >= 7650)
+            if (Number >= 7650)
             {
                return ProjectFamily.Windows8;
             }
-            else if (Number >= 6020)
+            if (Number >= 6020)
             {
                return ProjectFamily.Windows7;
             }
-            else if (MajorVersion == 6 && Number >= 5000)
+            if (MajorVersion == 6 && Number >= 5000)
             {
                return ProjectFamily.WindowsVista;
             }
-            else if (MajorVersion == 6)
+            if (MajorVersion == 6)
             {
                return ProjectFamily.Longhorn;
             }
-            else if (MajorVersion == 5 && Number >= 3000)
+            if (MajorVersion == 5 && Number >= 3000)
             {
                return ProjectFamily.Server2003;
             }
-            else if (MajorVersion == 5 && Number >= 2205)
+            if (MajorVersion == 5 && Number >= 2205)
             {
                return ProjectFamily.WindowsXP;
             }
-            else if (MajorVersion == 5 && MinorVersion == 50)
+            if (MajorVersion == 5 && MinorVersion == 50)
             {
                return ProjectFamily.Neptune;
             }
-            else if (MajorVersion == 5)
+            if (MajorVersion == 5)
             {
                return ProjectFamily.Windows2000;
             }
@@ -161,6 +167,7 @@ namespace BuildFeed.Models
          }
       }
 
-      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-').ToLower();
+      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-')
+                                                   .ToLower();
    }
 }

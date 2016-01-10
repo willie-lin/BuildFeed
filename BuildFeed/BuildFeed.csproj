@@ -750,11 +750,11 @@
     </Compile>
     <Compile Include="Models\ApiModel\NewBuild.cs" />
     <Compile Include="Models\ApiModel\SearchResult.cs" />
+    <Compile Include="Models\Build\Build-Group.cs" />
     <Compile Include="Models\Build\Build-Source.cs" />
+    <Compile Include="Models\Build\Build-Version.cs" />
     <Compile Include="Models\Build\Build-Year.cs" />
     <Compile Include="Models\Build\Build-Lab.cs" />
-    <Compile Include="Models\Build\Build-Version.cs" />
-    <Compile Include="Models\Build\Build-Group.cs" />
     <Compile Include="Models\Build\Build.cs" />
     <Compile Include="Models\Build\BuildGroup.cs" />
     <Compile Include="Models\Build\BuildModel.cs" />
@@ -882,7 +882,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\shared\error.cshtml" />
     <Content Include="Views\shared\_default.cshtml" />
-    <Content Include="Views\front\editBuild.cshtml" />
+    <Content Include="Views\front\EditBuild.cshtml" />
     <Content Include="Views\shared\DisplayTemplates\Enumeration.cshtml" />
     <Content Include="Views\support\register.cshtml" />
     <Content Include="Views\support\login.cshtml" />
@@ -895,9 +895,9 @@
     <Content Include="smtp.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\front\index.cshtml" />
+    <Content Include="Views\front\Index.cshtml" />
     <Content Include="Views\front\viewGroup.cshtml" />
-    <Content Include="Views\front\viewBuild.cshtml" />
+    <Content Include="Views\front\ViewBuild.cshtml" />
     <Content Include="Views\front\viewLab.cshtml" />
     <Content Include="Views\front\viewSource.cshtml" />
     <Content Include="Views\front\viewYear.cshtml" />

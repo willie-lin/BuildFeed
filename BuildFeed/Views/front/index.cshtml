@@ -23,7 +23,7 @@
    @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
    {
       <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title"><a href="@Url.Action("viewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })">@group.Key.ToString()</a></h3>
+         <h3 class="build-group-title"><a href="@Url.Action("ViewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })">@group.Key.ToString()</a></h3>
          <p>
             @if (group.LastBuild.HasValue)
             {

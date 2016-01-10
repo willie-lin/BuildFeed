@@ -22,19 +22,20 @@ namespace BuildFeed.Controllers
 
       public async Task<BuildModel[]> GetBuilds(int limit = 20, int skip = 0)
       {
-         var builds = await bModel.SelectInBuildOrder(limit, skip);
-         return builds.ToArray();
+         throw new NotImplementedException();
+         //   var builds = await bModel.SelectInBuildOrder(limit, skip);
+         //   return builds.ToArray();
       }
 
       public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 20)
       {
-         var bgroups = await bModel.SelectBuildGroups(limit, skip);
+         var bgroups = await bModel.SelectAllGroups(limit, skip);
          return bgroups.ToArray();
       }
 
       public async Task<BuildModel[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
       {
-         var builds = await bModel.SelectBuildGroup(new BuildGroup()
+         var builds = await bModel.SelectGroup(new BuildGroup()
          {
             Major = major,
             Minor = minor,
@@ -42,20 +43,21 @@ namespace BuildFeed.Controllers
             Revision = revision
          });
 
-         return builds.Item2.ToArray();
+         return builds.ToArray();
       }
 
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
-         List<string> labs = new List<string>();
-         labs.AddRange(await bModel.SelectLabs(6, 4));
-         labs.AddRange(await bModel.SelectLabs(10, 0));
+         throw new NotImplementedException();
+         //List<string> labs = new List<string>();
+         //labs.AddRange(await bModel.SelectLabs(6, 4));
+         //labs.AddRange(await bModel.SelectLabs(10, 0));
 
-         return labs
-            .GroupBy(l => l)
-            .Select(l => l.Key)
-            .Where(l => l.All(c => c != '('))
-            .ToArray();
+         //return labs
+         //   .GroupBy(l => l)
+         //   .Select(l => l.Key)
+         //   .Where(l => l.All(c => c != '('))
+         //   .ToArray();
       }
 
       [HttpPost]
@@ -99,7 +101,7 @@ namespace BuildFeed.Controllers
                              orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
                              select new SearchResult()
                              {
-                                Url = Url.Route("Source Root", new { controller = "front", action = "viewSource", source = s.Value }),
+                                Url = Url.Route("Source Root", new { controller = "Front", action = "ViewSource", source = s.Value }),
                                 Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
                                 Title = s.Text,
                                 Group = Common.SearchSource
@@ -108,12 +110,12 @@ namespace BuildFeed.Controllers
          results.AddRange(sourceResults);
 
 
-         var versionResults = from v in await bModel.SelectVersions()
+         var versionResults = from v in await bModel.SelectAllVersions()
                               where $"{v.Major}.{v.Minor}".StartsWith(id)
                               orderby v.Major descending, v.Minor descending
                               select new SearchResult()
                               {
-                                 Url = Url.Route("Version Root", new { controller = "front", action = "viewVersion", major = v.Major, minor = v.Minor }),
+                                 Url = Url.Route("Version Root", new { controller = "Front", action = "ViewVersion", major = v.Major, minor = v.Minor }),
                                  Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
                                  Title = "",
                                  Group = Common.SearchVersion
@@ -122,12 +124,12 @@ namespace BuildFeed.Controllers
          results.AddRange(versionResults);
 
 
-         var yearResults = from y in await bModel.SelectYears()
+         var yearResults = from y in await bModel.SelectAllYears()
                            where y.ToString().Contains(id)
                            orderby y descending
                            select new SearchResult()
                            {
-                              Url = Url.Route("Year Root", new { controller = "front", action = "viewYear", year = y }),
+                              Url = Url.Route("Year Root", new { controller = "Front", action = "ViewYear", year = y }),
                               Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
                               Title = "",
                               Group = Common.SearchYear
@@ -136,18 +138,18 @@ namespace BuildFeed.Controllers
          results.AddRange(yearResults);
 
 
-         var labResults = from l in await bModel.SearchBuildLabs(id)
-                          orderby l.IndexOf(id.ToLower()) ascending,
-                                  l.Length ascending
-                          select new SearchResult()
-                          {
-                             Url = Url.Route("Lab Root", new { controller = "front", action = "viewLab", lab = l.Replace('/', '-') }),
-                             Label = l.Replace(id, $"<strong>{id}</strong>"),
-                             Title = l,
-                             Group = Common.SearchLab
-                          };
+         //var labResults = from l in await bModel.SearchBuildLabs(id)
+         //                 orderby l.IndexOf(id.ToLower()) ascending,
+         //                         l.Length ascending
+         //                 select new SearchResult()
+         //                 {
+         //                    Url = Url.Route("Lab Root", new { controller = "Front", action = "ViewLab", lab = l.Replace('/', '-') }),
+         //                    Label = l.Replace(id, $"<strong>{id}</strong>"),
+         //                    Title = l,
+         //                    Group = Common.SearchLab
+         //                 };
 
-         results.AddRange(labResults);
+         //results.AddRange(labResults);
 
 
          var buildResults = from b in await bModel.Select()
@@ -156,7 +158,7 @@ namespace BuildFeed.Controllers
                                     b.BuildTime descending
                             select new SearchResult()
                             {
-                               Url = Url.Route("Build", new { controller = "front", action = "viewBuild", id = b.Id }),
+                               Url = Url.Route("Build", new { controller = "Front", action = "ViewBuild", id = b.Id }),
                                Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
                                Title = b.FullBuildString,
                                Group = Common.SearchBuild

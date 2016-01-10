@@ -15,11 +15,11 @@
                @foreach (var buildGroup in Model.Builds)
                {
                   <li>
-                     @Html.ActionLink(buildGroup.Id.ToString(), "viewGroup", new { controller = "front", major = buildGroup.Id.Major, minor = buildGroup.Id.Minor, number = buildGroup.Id.Build, revision = buildGroup.Id.Revision })
+                     @Html.ActionLink(buildGroup.Id.ToString(), "ViewGroup", new { controller = "Front", major = buildGroup.Id.Major, minor = buildGroup.Id.Minor, number = buildGroup.Id.Build, revision = buildGroup.Id.Revision })
                      <ul>
                         @foreach (var build in buildGroup.Builds)
                         {
-                           <li>@Html.ActionLink(build.Name, "viewBuild", new { controller = "front", id = build.Id })</li>
+                           <li>@Html.ActionLink(build.Name, "viewBuild", new { controller = "Front", id = build.Id })</li>
                         }
                      </ul>
                   </li>

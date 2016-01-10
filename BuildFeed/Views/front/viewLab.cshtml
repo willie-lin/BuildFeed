@@ -44,7 +44,7 @@
                <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
                @if (Roles.IsUserInRole("Administrators"))
                {
-                  <a href="@Url.Action("deleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
+                  <a href="@Url.Action("DeleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>
                }
             </p>
          }

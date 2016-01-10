@@ -1,6 +1,5 @@
 ﻿namespace BuildFeed.Models
 {
-
    public struct BuildVersion
    {
       public uint Major { get; set; }

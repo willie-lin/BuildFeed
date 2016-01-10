@@ -1,5 +1,5 @@
-﻿using BuildFeed.Local;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using BuildFeed.Local;
 
 namespace BuildFeed.Models
 {

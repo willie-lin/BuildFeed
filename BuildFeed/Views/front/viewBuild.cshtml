@@ -37,7 +37,7 @@
 
                      @if (Roles.IsUserInRole("Administrators"))
                      {
-                        @Html.ActionLink(BuildFeed.Local.Front.Delete, "deleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                        @Html.ActionLink(BuildFeed.Local.Front.Delete, "DeleteBuild", new { id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
                      }
                   </p>
                </div>
@@ -82,7 +82,7 @@
                   else
                   {
                      @Model.Lab<br />
-                     <a href="@Url.Action("viewLab", new { lab = Model.LabUrl })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
+                     <a href="@Url.Action("ViewLab", new { lab = Model.LabUrl })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromLab, Model.Lab)</a>
                   }
                </p>
             </div>
@@ -96,7 +96,7 @@
                   {
                      <time datetime="@Model.BuildTime.Value.ToString("yyyy-MM-dd HH:mm")" title="@Model.BuildTime.Value.ToString("h:mm tt on dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")</time>
                      <br />
-                     <a href="@Url.Action("viewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromYear, Model.BuildTime.Value.Year)</a>
+                     <a href="@Url.Action("ViewYear", new { year = Model.BuildTime.Value.Year })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromYear, Model.BuildTime.Value.Year)</a>
                   }
                </p>
             </div>
@@ -110,7 +110,7 @@
             <div class="col-sm-8">
                <div class="form-control-static">
                   @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
-                  <a href="@Url.Action("viewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromSource, DisplayHelpers.GetDisplayTextForEnum(Model.SourceType))</a>
+                  <a href="@Url.Action("ViewSource", new { source = Model.SourceType })" class="more-link"><i class="fa fa-plus-square-o fa-sm"></i> @string.Format(BuildFeed.Local.Front.MoreFromSource, DisplayHelpers.GetDisplayTextForEnum(Model.SourceType))</a>
                </div>
             </div>
          </div>
@@ -172,9 +172,9 @@
 
    <div class="form-group">
       <div class="col-sm-offset-2 col-sm-8">
-         <a href="@Url.Action("viewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">@BuildFeed.Local.Front.ReturnToOverview</a>
+         <a href="@Url.Action("ViewGroup", new { major = Model.MajorVersion, minor = Model.MinorVersion, number = Model.Number, revision = Model.Revision })" class="btn btn-default">@BuildFeed.Local.Front.ReturnToOverview</a>
          &ensp;
-         <a href="@Url.Action("index")" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
+         <a href="@Url.Action("Index")" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
       </div>
    </div>
 </div>

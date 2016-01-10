@@ -60,7 +60,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                   </button>
-                  @Html.ActionLink(BuildFeed.Local.Common.SiteName, "index", new { controller = "front", area = "" }, new { @class = "navbar-brand" })
+                  @Html.ActionLink(BuildFeed.Local.Common.SiteName, "Index", new { controller = "Front", area = "" }, new { @class = "navbar-brand" })
                </div>
                <div class="collapse navbar-collapse" id="page-navigation-collapse">
                   <ul class="nav navbar-nav navbar-right">
@@ -71,12 +71,12 @@
                      else if (Roles.IsUserInRole("Administrators"))
                      {
                         <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="@BuildFeed.Local.Common.Admin"><i class="fa fa-fw fa-cogs"></i> @BuildFeed.Local.Common.Admin</a></li>
-                        <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("addBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
                         <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      else
                      {
-                        <li><a href="@Url.Action("addBuild", new { controller = "front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("addBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
                         <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      <li><a href="#" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
