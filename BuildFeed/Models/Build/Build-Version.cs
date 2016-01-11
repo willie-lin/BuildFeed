@@ -2,18 +2,84 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace BuildFeed.Models
 {
    public partial class Build
    {
-      public async Task<BuildVersion[]> SelectAllVersions(int limit = -1, int skip = 0) { throw new NotImplementedException(); }
+      public async Task<BuildVersion[]> SelectAllVersions(int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection.Aggregate()
+                                     .Group(new BsonDocument(
+                                               "_id", new BsonDocument
+                                                      {
+                                                         new BsonElement(nameof(BuildVersion.Major), $"${nameof(BuildModel.MajorVersion)}"),
+                                                         new BsonElement(nameof(BuildVersion.Minor), $"${nameof(BuildModel.MinorVersion)}")
+                                                      }))
+                                     .Sort(new BsonDocument
+                                           {
+                                              new BsonElement($"_id.{nameof(BuildVersion.Major)}", -1),
+                                              new BsonElement($"_id.{nameof(BuildVersion.Minor)}", -1)
+                                           })
+                                     .Skip(skip);
 
-      public async Task<int> SelectAllVersionsCount() { throw new NotImplementedException(); }
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
 
-      public async Task<List<BuildModel>> SelectVersion(uint major, uint minor, int limit = -1, int skip = 0) { throw new NotImplementedException(); }
+         var grouping = await query.ToListAsync();
 
-      public async Task<int> SelectVersionCount(uint major, uint minor) { throw new NotImplementedException(); }
+         return (from g in grouping
+                 select new BuildVersion
+                        {
+                           Major = (uint) g["_id"].AsBsonDocument[nameof(BuildVersion.Major)].AsInt32,
+                           Minor = (uint) g["_id"].AsBsonDocument[nameof(BuildVersion.Minor)].AsInt32
+                        }).ToArray();
+      }
+
+      public async Task<long> SelectAllVersionsCount()
+      {
+         var query = await _buildCollection.Aggregate()
+                                           .Group(new BsonDocument(
+                                                     "_id", new BsonDocument
+                                                            {
+                                                               new BsonElement(nameof(BuildVersion.Major),
+                                                                               $"${nameof(BuildModel.MajorVersion)}"),
+                                                               new BsonElement(nameof(BuildVersion.Minor),
+                                                                               $"${nameof(BuildModel.MinorVersion)}")
+                                                            }))
+                                           .ToListAsync();
+         return query.Count;
+      }
+
+      public async Task<List<BuildModel>> SelectVersion(uint major, uint minor, int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection.Find(new BsonDocument
+                                           {
+                                              new BsonElement(nameof(BuildModel.MajorVersion), major),
+                                              new BsonElement(nameof(BuildModel.MinorVersion), minor)
+                                           })
+                                     .Sort(sortByOrder)
+                                     .Skip(skip);
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      public async Task<long> SelectVersionCount(uint major, uint minor)
+      {
+         return await _buildCollection.CountAsync(new BsonDocument
+                                                  {
+                                                     new BsonElement(nameof(BuildModel.MajorVersion), major),
+                                                     new BsonElement(nameof(BuildModel.MinorVersion), minor)
+                                                  });
+      }
    }
 }

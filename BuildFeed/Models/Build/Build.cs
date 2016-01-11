@@ -11,6 +11,17 @@ namespace BuildFeed.Models
    public partial class Build
    {
       private const string BUILD_COLLECTION_NAME = "builds";
+      private static readonly BsonDocument sortByDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
+
+      private static readonly BsonDocument sortByOrder = new BsonDocument
+                                                         {
+                                                            new BsonElement(nameof(BuildModel.MajorVersion), -1),
+                                                            new BsonElement(nameof(BuildModel.MinorVersion), -1),
+                                                            new BsonElement(nameof(BuildModel.Number), -1),
+                                                            new BsonElement(nameof(BuildModel.Revision), -1),
+                                                            new BsonElement(nameof(BuildModel.BuildTime), -1)
+                                                         };
+
       private readonly IMongoCollection<BuildModel> _buildCollection;
       private readonly IMongoDatabase _buildDatabase;
       private readonly MongoClient _dbClient;
@@ -19,9 +30,9 @@ namespace BuildFeed.Models
       {
          _dbClient = new MongoClient
             (new MongoClientSettings
-            {
-               Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-            });
+             {
+                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+             });
 
          _buildDatabase = _dbClient.GetDatabase(MongoConfig.Database);
          _buildCollection = _buildDatabase.GetCollection<BuildModel>(BUILD_COLLECTION_NAME);
@@ -32,26 +43,21 @@ namespace BuildFeed.Models
          var indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
          if (indexes.All(i => i["name"] != "_idx_group"))
          {
-            await _buildCollection.Indexes.CreateOneAsync
-               (Builders<BuildModel>.IndexKeys.Combine
-                   (
-                      Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
-                      Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
-                      Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
-                      Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)
-                   ), new CreateIndexOptions
-                   {
-                      Name = "_idx_group"
-                   });
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
+                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
+                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
+                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)), new CreateIndexOptions
+                                                                                                                                                              {
+                                                                                                                                                                 Name = "_idx_group"
+                                                                                                                                                              });
          }
 
          if (indexes.All(i => i["name"] != "_idx_legacy"))
          {
-            await _buildCollection.Indexes.CreateOneAsync
-               (Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId), new CreateIndexOptions
-               {
-                  Name = "_idx_legacy"
-               });
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId), new CreateIndexOptions
+                                                                                                                     {
+                                                                                                                        Name = "_idx_legacy"
+                                                                                                                     });
          }
       }
 

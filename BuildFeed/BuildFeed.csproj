@@ -896,12 +896,12 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\front\Index.cshtml" />
-    <Content Include="Views\front\viewGroup.cshtml" />
+    <Content Include="Views\front\ViewGroup.cshtml" />
     <Content Include="Views\front\ViewBuild.cshtml" />
-    <Content Include="Views\front\viewLab.cshtml" />
-    <Content Include="Views\front\viewSource.cshtml" />
-    <Content Include="Views\front\viewYear.cshtml" />
-    <Content Include="Views\front\viewVersion.cshtml" />
+    <Content Include="Views\front\ViewLab.cshtml" />
+    <Content Include="Views\front\ViewSource.cshtml" />
+    <Content Include="Views\front\ViewYear.cshtml" />
+    <Content Include="Views\front\ViewVersion.cshtml" />
     <Content Include="Views\support\credits.cshtml" />
   </ItemGroup>
   <ItemGroup>

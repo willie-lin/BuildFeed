@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BuildFeed.Models.ViewModel.Front;
@@ -34,17 +33,15 @@ namespace BuildFeed.Models
                                               new BsonElement($"_id.{nameof(BuildGroup.Minor)}", -1),
                                               new BsonElement($"_id.{nameof(BuildGroup.Build)}", -1),
                                               new BsonElement($"_id.{nameof(BuildGroup.Revision)}", -1)
-                                           });
+                                           })
+                                     .Skip(skip);
 
          if (limit > 0)
          {
-            query = query
-               .Limit(limit);
+            query = query.Limit(limit);
          }
 
-         var grouping = await query
-                                 .Skip(skip)
-                                 .ToListAsync();
+         var grouping = await query.ToListAsync();
 
          return (from g in grouping
                  select new FrontBuildGroup
@@ -54,14 +51,14 @@ namespace BuildFeed.Models
                                     Major = (uint) g["_id"].AsBsonDocument[nameof(BuildGroup.Major)].AsInt32,
                                     Minor = (uint) g["_id"].AsBsonDocument[nameof(BuildGroup.Minor)].AsInt32,
                                     Build = (uint) g["_id"].AsBsonDocument[nameof(BuildGroup.Build)].AsInt32,
-                                    Revision = (uint) g["_id"].AsBsonDocument[nameof(BuildGroup.Revision)].AsInt32
+                                    Revision = (uint?) g["_id"].AsBsonDocument[nameof(BuildGroup.Revision)].AsNullableInt32
                                  },
                            LastBuild = g["date"].ToNullableUniversalTime(),
                            BuildCount = g["count"].AsInt32
                         }).ToArray();
       }
 
-      public async Task<int> SelectAllGroupsCount()
+      public async Task<long> SelectAllGroupsCount()
       {
          var grouping = await _buildCollection.Aggregate()
                                               .Group(
@@ -80,8 +77,41 @@ namespace BuildFeed.Models
          return grouping.Count;
       }
 
-      public async Task<List<BuildModel>> SelectGroup(BuildGroup group, int limit = -1, int skip = 0) { throw new NotImplementedException(); }
+      public async Task<List<BuildModel>> SelectGroup(BuildGroup group, int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection.Find(
+                                           new BsonDocument
+                                           {
+                                              new BsonElement(nameof(BuildModel.MajorVersion), group.Major),
+                                              new BsonElement(nameof(BuildModel.MinorVersion), group.Minor),
+                                              new BsonElement(nameof(BuildModel.Number), group.Build),
+                                              new BsonElement(nameof(BuildModel.Revision), group.Revision)
+                                           })
+                                     .Sort(
+                                           new BsonDocument
+                                           {
+                                              new BsonElement(nameof(BuildModel.BuildTime), -1)
+                                           })
+                                     .Skip(skip);
 
-      public async Task<List<BuildModel>> SelectGroupCount(BuildGroup group) { throw new NotImplementedException(); }
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      public async Task<long> SelectGroupCount(BuildGroup group)
+      {
+         return await _buildCollection.CountAsync(
+                                                  new BsonDocument
+                                                  {
+                                                     new BsonElement(nameof(BuildModel.MajorVersion), group.Major),
+                                                     new BsonElement(nameof(BuildModel.MinorVersion), group.Minor),
+                                                     new BsonElement(nameof(BuildModel.Number), group.Build),
+                                                     new BsonElement(nameof(BuildModel.Revision), group.Revision)
+                                                  });
+      }
    }
 }

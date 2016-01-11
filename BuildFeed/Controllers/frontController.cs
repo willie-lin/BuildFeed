@@ -1,6 +1,4 @@
-﻿using BuildFeed.Code;
-using BuildFeed.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -10,17 +8,19 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BuildFeed.Code;
+using BuildFeed.Models;
 
 namespace BuildFeed.Controllers
 {
    public class FrontController : LocalController
    {
-      private const int PAGE_SIZE = 96;
+      private const int PAGE_SIZE = 72;
 
       private readonly Build _bModel;
       private readonly MetaItem _mModel;
 
-      public FrontController() : base()
+      public FrontController()
       {
          _bModel = new Build();
          _mModel = new MetaItem();
@@ -42,8 +42,8 @@ namespace BuildFeed.Controllers
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(
-            Convert.ToDouble(await _bModel.SelectAllGroupsCount()) /
-            Convert.ToDouble(PAGE_SIZE));
+                                          Convert.ToDouble(await _bModel.SelectAllGroupsCount()) /
+                                          Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -59,7 +59,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> ViewGroup(uint major, uint minor, uint number, uint? revision = null)
       {
-         BuildGroup bg = new BuildGroup()
+         BuildGroup bg = new BuildGroup
                          {
                             Major = major,
                             Minor = minor,
@@ -69,9 +69,13 @@ namespace BuildFeed.Controllers
 
          var builds = await _bModel.SelectGroup(bg);
 
-         return builds.Count() == 1 ?
-                    RedirectToAction(nameof(ViewBuild), new { id = builds.Single().Id }) as ActionResult :
-                    View(new Tuple<BuildGroup, List<BuildModel>>(bg, builds));
+         return builds.Count() == 1
+                   ? RedirectToAction(nameof(ViewBuild), new
+                                                         {
+                                                            id = builds.Single()
+                                                                       .Id
+                                                         }) as ActionResult
+                   : View(new Tuple<BuildGroup, List<BuildModel>>(bg, builds));
       }
 
       [Route("build/{id:guid}/", Name = "Build")]
@@ -81,7 +85,10 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewBuild(Guid id)
       {
          BuildModel b = await _bModel.SelectById(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
          return View(b);
       }
 
@@ -89,8 +96,14 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewBuild(long id)
       {
          BuildModel b = await _bModel.SelectByLegacyId(id);
-         if (b == null) return new HttpNotFoundResult();
-         return RedirectToAction(nameof(ViewBuild), new { id = b.Id });
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
+         return RedirectToAction(nameof(ViewBuild), new
+                                                    {
+                                                       id = b.Id
+                                                    });
       }
 
       [Route("twitter/{id:guid}/", Name = "Twitter")]
@@ -101,7 +114,10 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> TwitterCard(Guid id)
       {
          BuildModel b = await _bModel.SelectById(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
 
          string path = Path.Combine(Server.MapPath("~/content/card/"), $"{b.Family}.png");
          bool backExists = System.IO.File.Exists(path);
@@ -123,10 +139,14 @@ namespace BuildFeed.Controllers
                   gr.FillRectangle(new SolidBrush(Color.FromArgb(0x27, 0x2b, 0x30)), 0, 0, 1120, 600);
                }
 
-               gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 32, new Point(40, 32), StringFormat.GenericTypographic);
-               gp.AddString($"{DisplayHelpers.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
-               gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96), StringFormat.GenericTypographic);
-               gp.AddString(b.BuildTime.HasValue ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}" : $"{b.Lab}", new FontFamily("Segoe UI"), 0, 44, new Point(40, 440), StringFormat.GenericTypographic);
+               gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int) FontStyle.Bold, 32, new Point(40, 32),
+                            StringFormat.GenericTypographic);
+               gp.AddString($"{DisplayHelpers.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})",
+                            new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
+               gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96),
+                            StringFormat.GenericTypographic);
+               gp.AddString(b.BuildTime.HasValue ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}" : $"{b.Lab}",
+                            new FontFamily("Segoe UI"), 0, 44, new Point(40, 440), StringFormat.GenericTypographic);
                gr.FillPath(Brushes.White, gp);
 
                Response.ContentType = "image/png";
@@ -141,8 +161,14 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> TwitterCard(long id)
       {
          BuildModel b = await _bModel.SelectByLegacyId(id);
-         if (b == null) return new HttpNotFoundResult();
-         return RedirectToAction(nameof(TwitterCard), new { id = b.Id });
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
+         return RedirectToAction(nameof(TwitterCard), new
+                                                      {
+                                                         id = b.Id
+                                                      });
       }
 
       [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
@@ -158,14 +184,15 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewLabPage(string lab, int page)
       {
          ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
-         {
-            Type = MetaType.Lab,
-            Value = lab
-         });
+                                                     {
+                                                        Type = MetaType.Lab,
+                                                        Value = lab
+                                                     });
 
-         var builds = await _bModel.SelectLab(lab, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
-         ViewBag.ItemId = builds.First().Lab;
+         ViewBag.ItemId = builds.FirstOrDefault()
+            ?.Lab;
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
@@ -190,13 +217,13 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewSourcePage(TypeOfSource source, int page)
       {
          ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
-         {
-            Type = MetaType.Source,
-            Value = source.ToString()
-         });
+                                                     {
+                                                        Type = MetaType.Source,
+                                                        Value = source.ToString()
+                                                     });
          ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
 
-         var builds = await _bModel.SelectSource(source, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
@@ -222,13 +249,13 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewYearPage(int year, int page)
       {
          ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
-         {
-            Type = MetaType.Year,
-            Value = year.ToString()
-         });
+                                                     {
+                                                        Type = MetaType.Year,
+                                                        Value = year.ToString()
+                                                     });
          ViewBag.ItemId = year.ToString();
 
-         var builds = await _bModel.SelectYear(year, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
@@ -255,13 +282,13 @@ namespace BuildFeed.Controllers
       {
          string valueString = $"{major}.{minor}";
          ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
-         {
-            Type = MetaType.Version,
-            Value = valueString
-         });
+                                                     {
+                                                        Type = MetaType.Version,
+                                                        Value = valueString
+                                                     });
          ViewBag.ItemId = valueString;
 
-         var builds = await _bModel.SelectVersion(major, minor, (page - 1) * PAGE_SIZE, PAGE_SIZE);
+         var builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
@@ -277,11 +304,11 @@ namespace BuildFeed.Controllers
       [Route("add/"), Authorize]
       public ActionResult AddBuild()
       {
-         BuildModel b = new BuildModel()
-         {
-            SourceType = TypeOfSource.PrivateLeak,
-            FlightLevel = LevelOfFlight.None
-         };
+         BuildModel b = new BuildModel
+                        {
+                           SourceType = TypeOfSource.PrivateLeak,
+                           FlightLevel = LevelOfFlight.None
+                        };
          return View("EditBuild", b);
       }
 
@@ -309,9 +336,9 @@ namespace BuildFeed.Controllers
                return View("EditBuild", build);
             }
             return RedirectToAction(nameof(ViewBuild), new
-            {
-               id = build.Id
-            });
+                                                       {
+                                                          id = build.Id
+                                                       });
          }
          return View("EditBuild", build);
       }
@@ -345,7 +372,10 @@ namespace BuildFeed.Controllers
                return View(build);
             }
 
-            return RedirectToAction(nameof(ViewBuild), new { id = build.Id });
+            return RedirectToAction(nameof(ViewBuild), new
+                                                       {
+                                                          id = build.Id
+                                                       });
          }
          return View(build);
       }
