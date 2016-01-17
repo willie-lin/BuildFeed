@@ -10,9 +10,16 @@ namespace BuildFeed.Models
 {
    public partial class Build
    {
-      public async Task<TypeOfSource[]> SelectAllSources(int limit = -1, int skip = 0) { throw new NotImplementedException(); }
+      public Task<TypeOfSource[]> SelectAllSources(int limit = -1, int skip = 0)
+      {
+         return Task.Run(() => Enum.GetValues(typeof(TypeOfSource)) as TypeOfSource[]);
+      }
 
-      public async Task<long> SelectAllSourcesCount() { throw new NotImplementedException(); }
+      public Task<long> SelectAllSourcesCount()
+      {
+         return Task.Run(() => Enum.GetValues(typeof(TypeOfSource))
+                                   .LongLength);
+      }
 
       public async Task<List<BuildModel>> SelectSource(TypeOfSource source, int limit = -1, int skip = 0)
       {

@@ -1,10 +1,10 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 @{
    Layout = null;
-   bool IsRTL = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+   bool isRtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
 <!DOCTYPE html>
-<html dir="@(IsRTL ? "rtl" : "ltr")">
+<html dir="@(isRtl ? "rtl" : "ltr")">
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width" />
@@ -17,9 +17,9 @@
    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
    @Styles.Render("~/content/css")
-   @if (IsRTL)
+   @if (isRtl)
    {
-      Styles.Render("~/content/rtl");
+      @Styles.Render("~/content/rtl");
    }
    <title>@BuildFeed.Local.Common.Error | @BuildFeed.Local.Common.SiteName</title>
    <script type="text/javascript">
@@ -76,7 +76,7 @@
          <div class="row">
             <div class="col-sm-8 text-left">
                <p>
-                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
+                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("Credits", new { controller = "Support" })">@BuildFeed.Local.Common.Credits</a>)
                </p>
             </div>
             <div class="col-sm-4 text-right">

@@ -1,7 +1,7 @@
 ﻿@model Tuple<BuildFeed.Models.BuildGroup, List<BuildFeed.Models.BuildModel>>
 @using Humanizer;
 @{
-    ViewBag.Title = string.Format("{0} | {1}", Model.Item1.ToString(), BuildFeed.Local.Common.SiteName);
+    ViewBag.Title = $"{Model.Item1} | {BuildFeed.Local.Common.SiteName}";
 }
 
 <h1>@Model.Item1.ToString()</h1>
@@ -10,11 +10,11 @@
     @foreach (var build in Model.Item2)
     {
         <div class="col-sm-3 col-xs-6 build-group">
-            <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("viewBuild", new {id = build.Id})">@build.Lab</a></h3>
+            <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("ViewBuild", new {id = build.Id})">@(string.IsNullOrEmpty(build.Lab) ? "{Unknown}" : build.Lab)</a></h3>
             @if (User.Identity.IsAuthenticated)
             {
                 <p>
-                    <a href="@Url.Action("editBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
+                    <a href="@Url.Action("EditBuild", new { id = build.Id })" class="btn btn-primary btn-xs">@BuildFeed.Local.Front.Edit</a>
                     @if (Roles.IsUserInRole("Administrators"))
                     {
                         <a href="@Url.Action("DeleteBuild", new { id = build.Id })" class="btn btn-danger btn-xs">@BuildFeed.Local.Front.Delete</a>

@@ -11,7 +11,9 @@ namespace BuildFeed.Models
    public partial class Build
    {
       private const string BUILD_COLLECTION_NAME = "builds";
-      private static readonly BsonDocument sortByDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
+      private static readonly BsonDocument sortByCompileDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
+      private static readonly BsonDocument sortByAddedDate = new BsonDocument(nameof(BuildModel.Added), -1);
+      private static readonly BsonDocument sortByLeakedDate = new BsonDocument(nameof(BuildModel.LeakDate), -1);
 
       private static readonly BsonDocument sortByOrder = new BsonDocument
                                                          {
@@ -59,6 +61,14 @@ namespace BuildFeed.Models
                                                                                                                         Name = "_idx_legacy"
                                                                                                                      });
          }
+
+         if (indexes.All(i => i["name"] != "_idx_lab"))
+         {
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.Lab), new CreateIndexOptions
+            {
+               Name = "_idx_lab"
+            });
+         }
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
@@ -82,6 +92,70 @@ namespace BuildFeed.Models
          return await _buildCollection
                          .Find(Builders<BuildModel>.Filter.Eq(b => b.LegacyId, id))
                          .SingleOrDefaultAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectBuildsByOrder(int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection
+            .Find(new BsonDocument())
+            .Sort(sortByOrder)
+            .Skip(skip);
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection
+            .Find(new BsonDocument())
+            .Sort(sortByCompileDate)
+            .Skip(skip);
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectBuildsByAddedDate(int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection
+            .Find(new BsonDocument())
+            .Sort(sortByAddedDate)
+            .Skip(skip);
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<BuildModel>> SelectBuildsByLeakedDate(int limit = -1, int skip = 0)
+      {
+         var query = _buildCollection
+            .Find(new BsonDocument())
+            .Sort(sortByLeakedDate)
+            .Skip(skip);
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, true)]

@@ -37,7 +37,7 @@
    @foreach (var build in Model)
    {
       <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("viewBuild", new {id = build.Id})">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</a></h3>
+         <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("ViewBuild", new {id = build.Id})">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</a></h3>
          @if (User.Identity.IsAuthenticated)
             {
             <p>

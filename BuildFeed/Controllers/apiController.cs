@@ -11,31 +11,30 @@ using System.Web.Security;
 
 namespace BuildFeed.Controllers
 {
-   public class apiController : ApiController
+   public class ApiController : System.Web.Http.ApiController
    {
-      private Build bModel;
+      private readonly Build _bModel;
 
-      public apiController() : base()
+      public ApiController() : base()
       {
-         bModel = new Build();
+         _bModel = new Build();
       }
 
       public async Task<BuildModel[]> GetBuilds(int limit = 20, int skip = 0)
       {
-         throw new NotImplementedException();
-         //   var builds = await bModel.SelectInBuildOrder(limit, skip);
-         //   return builds.ToArray();
+         var builds = await _bModel.SelectBuildsByOrder(limit, skip);
+         return builds.ToArray();
       }
 
       public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 20)
       {
-         var bgroups = await bModel.SelectAllGroups(limit, skip);
+         var bgroups = await _bModel.SelectAllGroups(limit, skip);
          return bgroups.ToArray();
       }
 
       public async Task<BuildModel[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
       {
-         var builds = await bModel.SelectGroup(new BuildGroup()
+         var builds = await _bModel.SelectGroup(new BuildGroup()
          {
             Major = major,
             Minor = minor,
@@ -48,16 +47,15 @@ namespace BuildFeed.Controllers
 
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
-         throw new NotImplementedException();
-         //List<string> labs = new List<string>();
-         //labs.AddRange(await bModel.SelectLabs(6, 4));
-         //labs.AddRange(await bModel.SelectLabs(10, 0));
+         List<string> labs = new List<string>();
+         labs.AddRange(await _bModel.SelectLabsForVersion(6, 4));
+         labs.AddRange(await _bModel.SelectLabsForVersion(10, 0));
 
-         //return labs
-         //   .GroupBy(l => l)
-         //   .Select(l => l.Key)
-         //   .Where(l => l.All(c => c != '('))
-         //   .ToArray();
+         return labs
+            .GroupBy(l => l)
+            .Select(l => l.Key)
+            .Where(l => l.All(c => c != '('))
+            .ToArray();
       }
 
       [HttpPost]
@@ -69,7 +67,7 @@ namespace BuildFeed.Controllers
          }
          if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
          {
-            await bModel.InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel()
+            await _bModel.InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel()
             {
                MajorVersion = nb.MajorVersion,
                MinorVersion = nb.MinorVersion,
@@ -81,10 +79,7 @@ namespace BuildFeed.Controllers
             }));
             return true;
          }
-         else
-         {
-            return false;
-         }
+         return false;
       }
 
       public async Task<IEnumerable<SearchResult>> GetSearchResult(string id)
@@ -110,7 +105,7 @@ namespace BuildFeed.Controllers
          results.AddRange(sourceResults);
 
 
-         var versionResults = from v in await bModel.SelectAllVersions()
+         var versionResults = from v in await _bModel.SelectAllVersions()
                               where $"{v.Major}.{v.Minor}".StartsWith(id)
                               orderby v.Major descending, v.Minor descending
                               select new SearchResult()
@@ -124,7 +119,7 @@ namespace BuildFeed.Controllers
          results.AddRange(versionResults);
 
 
-         var yearResults = from y in await bModel.SelectAllYears()
+         var yearResults = from y in await _bModel.SelectAllYears()
                            where y.ToString().Contains(id)
                            orderby y descending
                            select new SearchResult()
@@ -138,21 +133,19 @@ namespace BuildFeed.Controllers
          results.AddRange(yearResults);
 
 
-         //var labResults = from l in await bModel.SearchBuildLabs(id)
-         //                 orderby l.IndexOf(id.ToLower()) ascending,
-         //                         l.Length ascending
-         //                 select new SearchResult()
-         //                 {
-         //                    Url = Url.Route("Lab Root", new { controller = "Front", action = "ViewLab", lab = l.Replace('/', '-') }),
-         //                    Label = l.Replace(id, $"<strong>{id}</strong>"),
-         //                    Title = l,
-         //                    Group = Common.SearchLab
-         //                 };
+         var labResults = from l in await _bModel.SearchLabs(id)
+                          select new SearchResult()
+                          {
+                             Url = Url.Route("Lab Root", new { controller = "Front", action = "ViewLab", lab = l.Replace('/', '-') }),
+                             Label = l.Replace(id, $"<strong>{id}</strong>"),
+                             Title = l,
+                             Group = Common.SearchLab
+                          };
 
-         //results.AddRange(labResults);
+         results.AddRange(labResults);
 
 
-         var buildResults = from b in await bModel.Select()
+         var buildResults = from b in await _bModel.Select()
                             where b.FullBuildString.ToLower().Contains(id.ToLower())
                             orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending,
                                     b.BuildTime descending

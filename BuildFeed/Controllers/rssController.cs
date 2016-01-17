@@ -1,10 +1,11 @@
 ﻿using System;
-using BuildFeed.Code;
-using BuildFeed.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BuildFeed.Code;
+using BuildFeed.Models;
 using X.Web.RSS;
 using X.Web.RSS.Enumerators;
 using X.Web.RSS.Structure;
@@ -12,244 +13,242 @@ using X.Web.RSS.Structure.Validators;
 
 namespace BuildFeed.Controllers
 {
-   public class rssController : LocalController
+   public class RssController : LocalController
    {
-      private Build bModel;
       private const int RSS_SIZE = 25;
+      private readonly Build _bModel;
 
-      public rssController() : base()
-      {
-         bModel = new Build();
-      }
+      public RssController() { _bModel = new Build(); }
 
       [Route("rss/compiled")]
-      public async Task<ActionResult> index()
+      public async Task<ActionResult> Index()
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectInBuildOrder(RSS_SIZE, 0);
+         var builds = await _bModel.SelectBuildsByCompileDate(RSS_SIZE, 0);
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = "BuildFeed RSS - Recently Compiled",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+         RssDocument rdoc = new RssDocument
+                            {
+                               Channel = new RssChannel
+                                         {
+                                            Title = "BuildFeed RSS - Recently Compiled",
+                                            Description = "",
+                                            Generator = "BuildFeed.net RSS Controller",
+                                            Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+                                            SkipHours = new List<Hour>(),
+                                            SkipDays = new List<Day>(),
+                                            Items = (from build in builds
+                                                     select new RssItem
+                                                            {
+                                                               Title = build.FullBuildString,
+                                                               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                                                               Guid = new RssGuid
+                                                                      {
+                                                                         IsPermaLink = true,
+                                                                         Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                                                                      }
+                                                            }).ToList()
+                                         }
+                            };
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid() { IsPermaLink = true, Value = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Action("viewBuild", new { controller = "Front", id = build.Id })) },
-         //               }).ToList()
-         //   }
-         //};
-
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+                {
+                   Content = rdoc.ToXml(),
+                   ContentType = "application/rss+xml",
+                   ContentEncoding = Encoding.UTF8
+                };
       }
 
       [Route("rss/added")]
-      public async Task<ActionResult> added()
+      public async Task<ActionResult> Added()
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectLatest(RSS_SIZE, 0);
+         var builds = await _bModel.SelectBuildsByAddedDate(RSS_SIZE, 0);
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = "BuildFeed RSS - Recently Added",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+         RssDocument rdoc = new RssDocument()
+         {
+            Channel = new RssChannel()
+            {
+               Title = "BuildFeed RSS - Recently Added",
+               Description = "",
+               Generator = "BuildFeed.net RSS Controller",
+               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+               SkipHours = new List<Hour>(),
+               SkipDays = new List<Day>(),
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid()
-         //                  {
-         //                     IsPermaLink = true,
-         //                     Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"
-         //                  },
-         //                  Category = new RssCategory() { Text = build.Family.ToString() },
-         //                  InternalPubDate = new RssDate(build.Added).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
-         //               }).ToList()
-         //   }
-         //};
+               Items = (from build in builds
+                        select new RssItem()
+                        {
+                           Title = build.FullBuildString,
+                           Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                           Guid = new RssGuid()
+                           {
+                              IsPermaLink = true,
+                              Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                           },
+                           Category = new RssCategory() { Text = build.Family.ToString() },
+                           InternalPubDate = new RssDate(build.Added).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
+                        }).ToList()
+            }
+         };
 
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+         {
+            Content = rdoc.ToXml(),
+            ContentType = "application/rss+xml",
+            ContentEncoding = Encoding.UTF8
+         };
       }
 
       [Route("rss/leaked")]
-      public async Task<ActionResult> leaked()
+      public async Task<ActionResult> Leaked()
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectLatestLeaked(RSS_SIZE, 0);
+         var builds = await _bModel.SelectBuildsByLeakedDate(RSS_SIZE, 0);
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = "BuildFeed RSS - Recently Leaked",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+         RssDocument rdoc = new RssDocument()
+         {
+            Channel = new RssChannel()
+            {
+               Title = "BuildFeed RSS - Recently Leaked",
+               Description = "",
+               Generator = "BuildFeed.net RSS Controller",
+               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+               SkipHours = new List<Hour>(),
+               SkipDays = new List<Day>(),
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid()
-         //                  {
-         //                     IsPermaLink = true,
-         //                     Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"
-         //                  },
-         //                  InternalPubDate = new RssDate(build.LeakDate.Value).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
-         //               }).ToList()
-         //   }
-         //};
+               Items = (from build in builds
+                        select new RssItem()
+                        {
+                           Title = build.FullBuildString,
+                           Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                           Guid = new RssGuid()
+                           {
+                              IsPermaLink = true,
+                              Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                           },
+                           InternalPubDate = new RssDate(build.LeakDate.Value).DateStringISO8601 // bit of a dirty hack to work around problem in X.Web.RSS with the date format.
+                        }).ToList()
+            }
+         };
 
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+         {
+            Content = rdoc.ToXml(),
+            ContentType = "application/rss+xml",
+            ContentEncoding = Encoding.UTF8
+         };
       }
 
       [Route("rss/version")]
-      public async Task<ActionResult> version()
+      public async Task<ActionResult> Version()
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectInVersionOrder(RSS_SIZE, 0);
+         var builds = await _bModel.SelectBuildsByOrder(RSS_SIZE, 0);
 
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = "BuildFeed RSS - Highest Version",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+         RssDocument rdoc = new RssDocument()
+         {
+            Channel = new RssChannel()
+            {
+               Title = "BuildFeed RSS - Highest Version",
+               Description = "",
+               Generator = "BuildFeed.net RSS Controller",
+               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+               SkipHours = new List<Hour>(),
+               SkipDays = new List<Day>(),
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid()
-         //                  {
-         //                     IsPermaLink = true,
-         //                     Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"
-         //                  },
-         //               }).ToList()
-         //   }
-         //};
+               Items = (from build in builds
+                        select new RssItem()
+                        {
+                           Title = build.FullBuildString,
+                           Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                           Guid = new RssGuid()
+                           {
+                              IsPermaLink = true,
+                              Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                           },
+                        }).ToList()
+            }
+         };
 
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+         {
+            Content = rdoc.ToXml(),
+            ContentType = "application/rss+xml",
+            ContentEncoding = Encoding.UTF8
+         };
       }
 
       [Route("rss/flight/{id}")]
-      public async Task<ActionResult> flight(LevelOfFlight id)
+      public async Task<ActionResult> Flight(LevelOfFlight id)
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectFlight(id, RSS_SIZE, 0);
+         var builds = await _bModel.SelectFlight(id, RSS_SIZE, 0);
 
+         RssDocument rdoc = new RssDocument()
+         {
+            Channel = new RssChannel()
+            {
+               Title = $"BuildFeed RSS - {id} Flight Level",
+               Description = "",
+               Generator = "BuildFeed.net RSS Controller",
+               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+               SkipHours = new List<Hour>(),
+               SkipDays = new List<Day>(),
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = $"BuildFeed RSS - {id} Flight Level",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+               Items = (from build in builds
+                        select new RssItem()
+                        {
+                           Title = build.FullBuildString,
+                           Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                           Guid = new RssGuid()
+                           {
+                              IsPermaLink = true,
+                              Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                           },
+                        }).ToList()
+            }
+         };
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid()
-         //                  {
-         //                     IsPermaLink = true,
-         //                     Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"
-         //                  },
-         //               }).ToList()
-         //   }
-         //};
-
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+         {
+            Content = rdoc.ToXml(),
+            ContentType = "application/rss+xml",
+            ContentEncoding = Encoding.UTF8
+         };
       }
 
       [Route("rss/lab/{lab}")]
-      public async Task<ActionResult> lab(string lab)
+      public async Task<ActionResult> Lab(string lab)
       {
-         throw new NotImplementedException();
-         //var builds = await bModel.SelectLab(lab, 0, RSS_SIZE);
+         var builds = await _bModel.SelectLab(lab, RSS_SIZE, 0);
 
+         RssDocument rdoc = new RssDocument()
+         {
+            Channel = new RssChannel()
+            {
+               Title = $"BuildFeed RSS - {lab} Lab",
+               Description = "",
+               Generator = "BuildFeed.net RSS Controller",
+               Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
+               SkipHours = new List<Hour>(),
+               SkipDays = new List<Day>(),
 
-         //RssDocument rdoc = new RssDocument()
-         //{
-         //   Channel = new RssChannel()
-         //   {
-         //      Title = $"BuildFeed RSS - {lab} Lab",
-         //      Description = "",
-         //      Generator = "BuildFeed.net RSS Controller",
-         //      Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}"),
-         //      SkipHours = new List<Hour>(),
-         //      SkipDays = new List<Day>(),
+               Items = (from build in builds
+                        select new RssItem()
+                        {
+                           Title = build.FullBuildString,
+                           Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"),
+                           Guid = new RssGuid()
+                           {
+                              IsPermaLink = true,
+                              Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("ViewBuild", new { controller = "Front", id = build.Id })}"
+                           },
+                        }).ToList()
+            }
+         };
 
-         //      Items = (from build in builds
-         //               select new RssItem()
-         //               {
-         //                  Title = build.FullBuildString,
-         //                  Link = new RssUrl($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"),
-         //                  Guid = new RssGuid()
-         //                  {
-         //                     IsPermaLink = true,
-         //                     Value = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action("viewBuild", new { controller = "Front", id = build.Id })}"
-         //                  },
-         //               }).ToList()
-         //   }
-         //};
-
-         //Response.ContentType = "application/rss+xml";
-
-         //await Response.Output.WriteAsync(rdoc.ToXml());
-
-         //return new EmptyResult();
+         return new ContentResult
+         {
+            Content = rdoc.ToXml(),
+            ContentType = "application/rss+xml",
+            ContentEncoding = Encoding.UTF8
+         };
       }
    }
 }

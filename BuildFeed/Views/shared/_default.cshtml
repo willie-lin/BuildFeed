@@ -1,9 +1,9 @@
 ﻿@using System.Globalization;
 @{
-   bool IsRTL = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+   bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
 <!DOCTYPE html>
-<html dir="@(IsRTL ? "rtl" : "ltr")" lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html dir="@(isRtl ? "rtl" : "ltr")" lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width" />
@@ -17,7 +17,7 @@
    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
    @Styles.Render("~/content/css")
-   @if (IsRTL)
+   @if (isRtl)
    {
       @Styles.Render("~/content/rtl")
    }
@@ -66,22 +66,22 @@
                   <ul class="nav navbar-nav navbar-right">
                      @if (!User.Identity.IsAuthenticated)
                      {
-                        <li><a href="@Url.Action("login", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogIn"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogIn</a></li>
+                        <li><a href="@Url.Action("Login", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.LogIn"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogIn</a></li>
                      }
                      else if (Roles.IsUserInRole("Administrators"))
                      {
                         <li><a href="@Url.Action("index", new { controller = "base", area = "admin" })" title="@BuildFeed.Local.Common.Admin"><i class="fa fa-fw fa-cogs"></i> @BuildFeed.Local.Common.Admin</a></li>
-                        <li><a href="@Url.Action("addBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
-                        <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
+                        <li><a href="@Url.Action("AddBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("Logout", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      else
                      {
-                        <li><a href="@Url.Action("addBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
-                        <li><a href="@Url.Action("logout", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
+                        <li><a href="@Url.Action("AddBuild", new { controller = "Front", area = "" })" title="@BuildFeed.Local.Common.AddBuild"><i class="fa fa-fw fa-plus-square"></i> @BuildFeed.Local.Common.AddBuild</a></li>
+                        <li><a href="@Url.Action("Logout", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      <li><a href="#" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
-                     <li><a href="@Url.Action("stats", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
-                     <li><a href="@Url.Action("rss", new { controller = "support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
+                     <li><a href="@Url.Action("Stats", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
+                     <li><a href="@Url.Action("Rss", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
                      <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
                      <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i>&ensp;<span class="caret"></span></a>
@@ -108,8 +108,8 @@
          <div class="row">
             <div class="col-sm-8 text-left">
                <p>
-                  <a href="@Url.Action("sitemap", new { controller = "support" })">@BuildFeed.Local.Common.Sitemap</a><br />
-                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("credits", new { controller = "support" })">@BuildFeed.Local.Common.Credits</a>)
+                  <a href="@Url.Action("Sitemap", new { controller = "Support" })">@BuildFeed.Local.Common.Sitemap</a><br />
+                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("Credits", new { controller = "Support" })">@BuildFeed.Local.Common.Credits</a>)
                </p>
             </div>
             <div class="col-sm-4 text-right">

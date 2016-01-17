@@ -1,7 +1,7 @@
 ﻿@model BuildFeed.Models.ViewModel.LoginUser
 
 @{
-    ViewBag.Title = string.Format("{0} | {1}", BuildFeed.Local.Support.Login, BuildFeed.Local.Common.SiteName);
+    ViewBag.Title = $"{BuildFeed.Local.Support.Login} | {BuildFeed.Local.Common.SiteName}";
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
 }
@@ -57,7 +57,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="@BuildFeed.Local.Support.Login" class="btn btn-primary" />
-                @Html.ActionLink(BuildFeed.Local.Support.Register, "register", new { controller = "support" }, new { @class = "btn btn-default" })
+               @Html.ActionLink(BuildFeed.Local.Support.Register, "register", new { controller = "Support" }, new { @class = "btn btn-default" })
             </div>
         </div>
     </div>

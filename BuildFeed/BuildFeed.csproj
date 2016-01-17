@@ -196,10 +196,10 @@
     <Compile Include="Code\LocalController.cs" />
     <Compile Include="Code\SiteLocale.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
-    <Compile Include="Controllers\apiController.cs" />
-    <Compile Include="Controllers\frontController.cs" />
-    <Compile Include="Controllers\rssController.cs" />
-    <Compile Include="Controllers\supportController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\FrontController.cs" />
+    <Compile Include="Controllers\RssController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -751,6 +751,7 @@
     <Compile Include="Models\ApiModel\NewBuild.cs" />
     <Compile Include="Models\ApiModel\SearchResult.cs" />
     <Compile Include="Models\Build\Build-Group.cs" />
+    <Compile Include="Models\Build\Build-Flights.cs" />
     <Compile Include="Models\Build\Build-Source.cs" />
     <Compile Include="Models\Build\Build-Version.cs" />
     <Compile Include="Models\Build\Build-Year.cs" />
