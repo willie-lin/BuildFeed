@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -34,7 +35,7 @@ namespace BuildFeed
             case "userName":
                return context.User.Identity.Name.ToLower();
             case "lang":
-               return context.Request.Cookies["lang"].Value;
+               return context.Request.Cookies["lang"]?.Value ?? CultureInfo.CurrentUICulture.IetfLanguageTag;
          }
 
          return "";
