@@ -37,10 +37,26 @@ h1
    margin-bottom: 2em;
 }
 
+@media(max-width:767px)
+{
+   .build-group:nth-child(2n+1)
+   {
+      clear: left;
+   }
+}
+
 .build-group-title
 {
    font-size: 25px;
    margin: 0 0 4px 0;
+}
+
+@media (max-width:480px)
+{
+   .build-group-title
+   {
+      font-size: 22px;
+   }
 }
 
 .build-group-p

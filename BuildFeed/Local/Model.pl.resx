@@ -145,7 +145,7 @@
     <value>Żaden</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>Geupa systemu operacyjnego</value>
+    <value>Grupa systemu operacyjnego</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
     <value>Windows Insider Fast</value>

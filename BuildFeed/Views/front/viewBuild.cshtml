@@ -144,7 +144,7 @@
          {
             <div class="form-group">
                @Html.LabelFor(model => model.SourceDetails, new { @class = "control-label" })
-               <div class="form-control-static">@Html.Raw(Model.SourceDetails)</div>
+               <div class="form-control-static eager-wrapping">@Html.Raw(Model.SourceDetails)</div>
             </div>
          }
       </div>

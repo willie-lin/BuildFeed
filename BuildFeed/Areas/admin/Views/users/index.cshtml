@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MembershipUser>
+﻿@using Humanizer
+@model IEnumerable<MembershipUser>
 
 @{
     ViewBag.Title = "Manage users | BuildFeed";
@@ -39,19 +40,19 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => mu.UserName)
+                    @mu.UserName
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => mu.Email)
+                   <a href="mailto:@mu.Email">@mu.Email</a>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => mu.CreationDate)
+                   @(mu.CreationDate == default(DateTime) ? "Never" : mu.CreationDate.Humanize())
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => mu.LastLoginDate)
+                   @(mu.LastLoginDate == default(DateTime) ? "Never" : mu.LastLoginDate.Humanize())
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => mu.LastLockoutDate)
+                   @(mu.LastLockoutDate == default(DateTime) ? "Never" : mu.LastLockoutDate.Humanize())
                 </td>
                 <td class="text-right">
                     @(
