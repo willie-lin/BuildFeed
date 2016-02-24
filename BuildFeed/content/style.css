@@ -32,6 +32,21 @@ h1
    padding-top: 50px;
 }
 
+.at-share-tbx-element .at-share-btn
+{
+   margin-left: 8px !important;
+}
+
+   .at-share-tbx-element .at-share-btn:first-child
+   {
+      margin-left: 0 !important;
+   }
+
+.at_flat_counter
+{
+   vertical-align: 33% !important;
+}
+
 .build-group
 {
    margin-bottom: 2em;
