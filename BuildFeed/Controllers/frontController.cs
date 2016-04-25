@@ -53,7 +53,8 @@ namespace BuildFeed.Controllers
          return View("Index", buildGroups);
       }
 
-      [Route("group/{major}.{minor}.{number}.{revision}/")]
+      [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
+      [Route("group/{major}.{minor}.{number}/", Order = 5)] // for when there is no revision
 #if !DEBUG
 //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
