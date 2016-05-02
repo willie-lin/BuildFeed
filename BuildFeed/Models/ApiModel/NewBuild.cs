@@ -21,6 +21,5 @@ namespace BuildFeed.Models.ApiModel
         public uint? Revision { get; set; }
         public string Lab { get; set; }
         public DateTime? BuildTime { get; set; }
-        public LevelOfFlight FlightLevel { get; set; }
     }
 }

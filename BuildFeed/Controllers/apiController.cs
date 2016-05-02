@@ -74,8 +74,11 @@ namespace BuildFeed.Controllers
                Number = nb.Number,
                Revision = nb.Revision,
                Lab = nb.Lab,
-               BuildTime = nb.BuildTime,
-               FlightLevel = nb.FlightLevel
+               BuildTime = nb.BuildTime.HasValue ? DateTime.SpecifyKind(nb.BuildTime.Value, DateTimeKind.Utc) : null as DateTime?,
+               Added = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+               Modified = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+               SourceType = TypeOfSource.PrivateLeak,
+               FlightLevel = LevelOfFlight.None
             }));
             return true;
          }
