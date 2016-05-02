@@ -170,14 +170,17 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
       public async Task InsertAll(IEnumerable<BuildModel> items)
       {
+         List<BuildModel> generatedItems = new List<BuildModel>();
          foreach (BuildModel item in items)
          {
             item.Id = Guid.NewGuid();
             item.LabUrl = item.GenerateLabUrl();
+
+            generatedItems.Add(item);
          }
 
          await _buildCollection
-            .InsertManyAsync(items);
+            .InsertManyAsync(generatedItems);
       }
 
       [DataObjectMethod(DataObjectMethodType.Update, true)]
