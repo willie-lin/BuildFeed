@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Web.Mvc;
 using BuildFeed.Local;
+using HtmlAgilityPack;
 using MongoDB.Bson.Serialization.Attributes;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
@@ -173,5 +174,24 @@ namespace BuildFeed.Models
 
       public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-')
                                                    .ToLower();
+
+      public string SourceDetailsFiltered
+      {
+         get
+         {
+            HtmlDocument hDoc = new HtmlDocument();
+            hDoc.LoadHtml($"<div>{SourceDetails}</div>");
+            if (string.IsNullOrWhiteSpace(hDoc.DocumentNode.InnerText))
+            {
+               return "";
+            }
+            if (Uri.IsWellFormedUriString(hDoc.DocumentNode.InnerText, UriKind.Absolute))
+            {
+               Uri uri = new Uri(hDoc.DocumentNode.InnerText, UriKind.Absolute);
+               return $"<a href=\"{uri}\" target=\"_blank\">External link <i class=\"fa fa-external-link\"></i></a>";
+            }
+            return SourceDetails;
+         }
+      }
    }
 }

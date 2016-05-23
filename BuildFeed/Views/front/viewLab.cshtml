@@ -24,7 +24,7 @@
    }
 }
 
-<h1>@string.Format(BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId)</h1>
+<h1 class="eager-wrapping">@string.Format(BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId)</h1>
 @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
    <h3>@BuildFeed.Local.Front.About</h3>

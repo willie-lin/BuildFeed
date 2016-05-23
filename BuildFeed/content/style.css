@@ -31,13 +31,13 @@ h1
 {
    h1
    {
-      font-size: 40px;
+      font-size: 36px;
    }
 }
 
 h3
 {
-   font-size: 32px;
+   font-size: 30px;
    margin: 1em 0 0.4em;
 }
 
@@ -81,9 +81,9 @@ h3
 
 .build-group-title
 {
-   font-size: 26px;
-   font-weight: normal;
-   letter-spacing: -2px;
+   font-size: 27px;
+   font-weight: 300;
+   letter-spacing: -1px;
    margin: 0 0 8px 0;
 }
 
@@ -91,12 +91,13 @@ h3
 {
    .build-group-title
    {
-      font-size: 22px;
+      font-size: 24px;
    }
 }
 
 .build-group-p
 {
+   color: rgba(255, 255, 255, 0.7);
    margin-bottom: 5px;
 }
 
@@ -131,14 +132,25 @@ h3
    font-weight: normal;
 }
 
-.form-details .form-control-static
+.form-details
 {
-   font-weight: bold;
+   margin-top: 2em;
 }
 
-   .form-details .form-control-static a.more-link
+   .form-details .form-control-static
    {
-      font-weight: normal;
+      font-weight: bold;
+      color: #eaeaea;
+   }
+
+      .form-details .form-control-static .more-link
+      {
+         font-weight: normal;
+      }
+
+   .form-details .row
+   {
+      margin-bottom: 0.5em;
    }
 
 .credits-list dd + dt
