@@ -1,13 +1,15 @@
-﻿@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
-@using Humanizer;
+﻿@using BuildFeed.Local
+@using BuildFeed.Models.ViewModel.Front
+@using Humanizer
+@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
 @{
-   ViewBag.Title = BuildFeed.Local.Common.SiteName;
+   ViewBag.Title = Common.SiteName;
 }
 @section head
 {
    @if (ViewBag.PageNumber == 1)
    {
-      <meta name="description" content="BuildFeed tracks builds of Microsoft Windows NT, using a variety of sources. We're the best place to follow the latest builds as they become known." />
+      <meta name="description" content="Learn what Gabe Aul won&apos;t tell you - Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
    }
    else
    {
@@ -15,35 +17,46 @@
    }
 }
 
-<h1>@BuildFeed.Local.Front.HomepageH1</h1>
-<h3>@BuildFeed.Local.Front.Share</h3>
+<h1>@Front.HomepageH1</h1>
+<h3>@Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
-<h3>@BuildFeed.Local.Front.Listing</h3>
+<h3>@Front.Listing</h3>
 <div class="row">
-   @foreach (BuildFeed.Models.ViewModel.Front.FrontBuildGroup group in Model)
+   @foreach (FrontBuildGroup group in Model)
    {
       <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title"><a href="@Url.Action("ViewGroup", new { major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision })">@group.Key.ToString()</a></h3>
-         <p>
-            @if (group.LastBuild.HasValue)
-            {
-               var maxDate = group.LastBuild.Value;
-               if (maxDate.AddDays(28) > DateTime.Now)
-               {
-                  <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span><br />
+         <h3 class="build-group-title">
+            <a href="@Url.Action("ViewGroup", new
+                     {
+                        major = group.Key.Major,
+                        minor = group.Key.Minor,
+                        number = group.Key.Build,
+                        revision = group.Key.Revision
+                     })">
+               @group.Key.ToString()</a>
+         </h3>
+         @if (group.LastBuild.HasValue)
+         {
+            <p class="build-group-p">
+               @{
+                  DateTime maxDate = group.LastBuild.Value;
+                  if (maxDate.AddDays(28) > DateTime.Now)
+                  {
+                     <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
+                     <br />
+                  }
+                  else
+                  {
+                     <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
+                     <br />
+                  }
                }
-               else
-               {
-                  <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span><br />
-               }
-            }
-            <i class="fa fa-server fa-fw"></i>  @string.Format(BuildFeed.Local.Front.xBuilds, group.BuildCount)
+            </p>
+         }
+         <p class="build-group-p">
+            <i class="fa fa-server fa-fw"></i> @string.Format(Front.xBuilds, group.BuildCount)
          </p>
       </div>
    }
 </div>
-@PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "Index", ViewContext.RouteData.Values)
-@section scripts
-{
-   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
-}
+@PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, "Index", ViewContext.RouteData.Values)

@@ -45,6 +45,12 @@ namespace BuildFeed.Controllers
          return builds.ToArray();
       }
 
+      public async Task<BuildModel[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
+      {
+         var builds = await _bModel.SelectLab(lab, limit, skip);
+         return builds.ToArray();
+      }
+
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
          List<string> labs = new List<string>();

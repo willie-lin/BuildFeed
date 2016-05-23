@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "content/style.css",
+    "inputFiles": [
+      "content/style.css"
+    ]
+  },
+  {
+    "outputFileName": "content/rtl.css",
+    "inputFiles": [
+      "content/rtl.css"
+    ]
+  }
+]

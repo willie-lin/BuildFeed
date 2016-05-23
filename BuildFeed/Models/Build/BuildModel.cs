@@ -115,6 +115,10 @@ namespace BuildFeed.Models
       {
          get
          {
+            if (Number >= 14800)
+            {
+               return ProjectFamily.Redstone2;
+            }
             if (Number >= 11000)
             {
                return ProjectFamily.Redstone;

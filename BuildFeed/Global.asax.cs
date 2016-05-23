@@ -11,6 +11,9 @@ namespace BuildFeed
    {
       protected void Application_Start()
       {
+         // Disable ASP.NET MVC version header
+         MvcHandler.DisableMvcResponseHeader = true;
+
          // Don't bother looking for the legacy aspx view engine.
          ViewEngines.Engines.Clear();
          ViewEngines.Engines.Add(new RazorViewEngine());

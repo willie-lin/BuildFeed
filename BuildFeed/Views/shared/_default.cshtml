@@ -10,16 +10,15 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css" rel="stylesheet" />
    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
-   <link href="//fonts.googleapis.com/css?family=Rajdhani:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
    <link rel="shortcut icon" href="~/favicon.ico" />
    <link rel="icon" href="~/favicon.ico" />
    <link rel="canonical" href="@Url.Action()" />
    <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
 
-   @Styles.Render("~/content/css")
+   <link href="/content/style.min.css" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
-      @Styles.Render("~/content/rtl")
+      <link href="/content/rtl.min.css" rel="stylesheet" type="text/css" />
    }
    <title>@ViewBag.Title</title>
    @RenderSection("head", false)
@@ -80,7 +79,7 @@
                         <li><a href="@Url.Action("Logout", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.LogOut"><i class="fa fa-fw fa-user"></i> @BuildFeed.Local.Common.LogOut</a></li>
                      }
                      <li><a href="#" id="page-navigation-search" title="@BuildFeed.Local.Common.Search"><i class="fa fa-fw fa-search"></i> @BuildFeed.Local.Common.Search</a></li>
-                     <li><a href="@Url.Action("Stats", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>
+                     @*<li><a href="@Url.Action("Stats", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.Statistics"><i class="fa fa-fw fa-line-chart"></i> @BuildFeed.Local.Common.Statistics</a></li>*@
                      <li><a href="@Url.Action("Rss", new { controller = "Support", area = "" })" title="@BuildFeed.Local.Common.RssFeeds"><i class="fa fa-fw fa-rss"></i> @BuildFeed.Local.Common.RssFeeds</a></li>
                      <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
                      <li>
@@ -148,7 +147,7 @@
    @Scripts.Render("~/bundles/jsrender")
    <script type="text/javascript" src="~/Scripts/bfs.js"></script>
    @RenderSection("scripts", required: false)
-   <script id="result-template" type="text/x-jsrender">
+<script id="result-template" type="text/x-jsrender">
       <div class="col-sm-4">
          <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
             <h4 class="list-group-item-heading">{{:Label}}</h4>
@@ -156,5 +155,6 @@
          </a>
       </div>
    </script>
+   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 </body>
 </html>

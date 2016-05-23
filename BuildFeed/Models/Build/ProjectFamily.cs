@@ -40,6 +40,9 @@ namespace BuildFeed.Models
       Threshold2,
 
       [Display(Name = "Redstone")]
-      Redstone
+      Redstone,
+
+      [Display(Name = "Redstone 2")]
+      Redstone2
    }
 }

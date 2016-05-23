@@ -15,12 +15,6 @@ namespace BuildFeed
 
          bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
              "~/Scripts/jquery.validate*"));
-
-         bundles.Add(new StyleBundle("~/content/css").Include(
-             "~/content/style.css"));
-
-         bundles.Add(new StyleBundle("~/content/rtl").Include(
-             "~/content/rtl.css"));
       }
    }
 }
