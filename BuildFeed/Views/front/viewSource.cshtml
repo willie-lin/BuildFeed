@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<BuildFeed.Models.BuildModel>
+@using BuildFeed.Code
 @using Humanizer;
 @{
     ViewBag.Title = string.Format("{0}{1} | {2}", ViewBag.ItemId, ViewBag.PageNumber == 1 ? "" : string.Format(BuildFeed.Local.Common.PageTitleSegment, ViewBag.PageNumber), @BuildFeed.Local.Common.SiteName);

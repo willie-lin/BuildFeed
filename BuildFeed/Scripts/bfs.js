@@ -1,44 +1,26 @@
-﻿var bfsAjax;
-var bfsTimeout;
-
-$(function() {
-   $("#page-navigation-search").click(function(event) {
-      event.preventDefault();
-      $("#search-modal").modal("show");
-   });
-   $("#search-input").keyup(function() {
-      $(this).parent().find(".list-group").remove();
-
-      if (typeof bfsTimeout != "undefined") {
-         clearTimeout(bfsTimeout);
-      }
-
-      if (typeof bfsAjax != "undefined" && bfsAjax.readyState != 4) {
-         bfsAjax.abort();
-      }
-
-      bfsTimeout = setTimeout(function(object) {
-         bfsAjax = $.ajax("/api/GetSearchResult/" + $("#search-input").val() + "/").done(function(data) {
-            var template = $.templates("#result-template");
-            var content = $("<div class='list-group'></div>");
-
-            var item = template.render(data);
-            content.append(item);
-
-            $("#search-results").html(content);
-
-            $("#search-results a.list-group-item").click(function() {
-               ga("send", "pageview", "/api/GetSearchResult/" + $("#search-input").val() + "/");
-            });
-         });
-      }, 200);
-   });
-
-   $("#lang-switcher a").click(function(event) {
-      event.preventDefault();
-      var lang = $(this).data("lang");
-      document.cookie = "lang=" + lang + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-
-      location.reload(true);
-   });
-});
+var BuildFeed;
+(function (BuildFeed) {
+    function DropdownClick(ev) {
+        ev.preventDefault();
+        var link = this;
+        var menus = link.parentElement.getElementsByClassName("dropdown-menu");
+        if (menus.length > 0) {
+            menus[0].classList.toggle("open");
+        }
+    }
+    BuildFeed.DropdownClick = DropdownClick;
+    function BuildFeedSetup(ev) {
+        var ddParents = document.getElementsByClassName("dropdown-parent");
+        for (var i = 0; i < ddParents.length; i++) {
+            for (var j = 0; j < ddParents[i].childNodes.length; j++) {
+                var el = ddParents[i].childNodes[j];
+                if (el.nodeName === "A") {
+                    el.addEventListener("click", DropdownClick);
+                }
+            }
+        }
+    }
+    BuildFeed.BuildFeedSetup = BuildFeedSetup;
+})(BuildFeed || (BuildFeed = {}));
+window.addEventListener("load", BuildFeed.BuildFeedSetup);
+//# sourceMappingURL=bfs.js.map

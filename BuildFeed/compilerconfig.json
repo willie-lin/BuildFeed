@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "content/default.css",
+    "inputFile": "content/default.scss"
+  },
+  {
+    "outputFile": "content/rtl.css",
+    "inputFile": "content/rtl.scss"
+  },
+  {
+    "outputFile": "content/dark.css",
+    "inputFile": "content/dark.scss"
+  }
+]

@@ -1,14 +1,8 @@
 [
   {
-    "outputFileName": "content/style.css",
+    "outputFileName": "Scripts/bfs.js",
     "inputFiles": [
-      "content/style.css"
-    ]
-  },
-  {
-    "outputFileName": "content/rtl.css",
-    "inputFiles": [
-      "content/rtl.css"
+      "Scripts/bfs.js"
     ]
   }
 ]

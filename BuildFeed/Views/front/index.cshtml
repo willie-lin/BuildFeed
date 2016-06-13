@@ -1,4 +1,6 @@
-﻿@using BuildFeed.Local
+﻿@using BuildFeed.Code
+@using BuildFeed.Controllers
+@using BuildFeed.Local
 @using BuildFeed.Models.ViewModel.Front
 @using Humanizer
 @model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
@@ -18,22 +20,15 @@
 }
 
 <h1>@Front.HomepageH1</h1>
-<h3>@Front.Share</h3>
-<div class="addthis_sharing_toolbox"></div>
 <h3>@Front.Listing</h3>
-<div class="row">
+<div class="build-group-listing">
    @foreach (FrontBuildGroup group in Model)
    {
-      <div class="col-md-2 col-sm-3 col-xs-6 build-group">
+      <div class="build-group">
          <h3 class="build-group-title">
-            <a href="@Url.Action("ViewGroup", new
-                     {
-                        major = group.Key.Major,
-                        minor = group.Key.Minor,
-                        number = group.Key.Build,
-                        revision = group.Key.Revision
-                     })">
-               @group.Key.ToString()</a>
+            <a href="@Url.Action(nameof(FrontController.ViewGroup), new {major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision})">
+               @group.Key.ToString()
+            </a>
          </h3>
          @if (group.LastBuild.HasValue)
          {
@@ -43,12 +38,10 @@
                   if (maxDate.AddDays(28) > DateTime.Now)
                   {
                      <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
-                     <br />
                   }
                   else
                   {
                      <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
-                     <br />
                   }
                }
             </p>
@@ -59,4 +52,4 @@
       </div>
    }
 </div>
-@PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, "Index", ViewContext.RouteData.Values)
+@PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, nameof(FrontController.Index), ViewContext.RouteData.Values)

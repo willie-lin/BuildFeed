@@ -1,4 +1,5 @@
 ﻿@model Tuple<BuildFeed.Models.BuildGroup, List<BuildFeed.Models.BuildModel>>
+@using BuildFeed.Code
 @using Humanizer;
 @{
     ViewBag.Title = $"{Model.Item1} | {BuildFeed.Local.Common.SiteName}";

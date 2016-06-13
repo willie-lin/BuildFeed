@@ -195,4 +195,16 @@
   <data name="TypeToSearch" xml:space="preserve">
     <value>type to search...</value>
   </data>
+  <data name="ThemeDark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="ThemeLight" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="NavigationTheme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="NavigationLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
 </root>

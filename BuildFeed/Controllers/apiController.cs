@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Security;
+using BuildFeed.Code;
 
 namespace BuildFeed.Controllers
 {
@@ -100,7 +101,7 @@ namespace BuildFeed.Controllers
 
          List<SearchResult> results = new List<SearchResult>();
 
-         var sourceResults = from s in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>().Select(s => new { Text = DisplayHelpers.GetDisplayTextForEnum(s), Value = s })
+         var sourceResults = from s in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>().Select(s => new { Text = MvcExtensions.GetDisplayTextForEnum(s), Value = s })
                              where s.Text.ToLower().Contains(id.ToLower())
                              orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
                              select new SearchResult()

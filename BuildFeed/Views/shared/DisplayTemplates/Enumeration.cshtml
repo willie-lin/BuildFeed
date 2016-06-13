@@ -1,5 +1,6 @@
 ﻿@using System.ComponentModel.DataAnnotations
+@using BuildFeed.Code
 
 @model Enum
 
-@DisplayHelpers.GetDisplayTextForEnum(ViewData.Model)
+@MvcExtensions.GetDisplayTextForEnum(ViewData.Model)

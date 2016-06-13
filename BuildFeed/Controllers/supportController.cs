@@ -24,10 +24,7 @@ namespace BuildFeed.Controllers
       }
 
       [Route("login/")]
-      public ActionResult Login()
-      {
-         return View();
-      }
+      public ActionResult Login() => View();
 
       [HttpPost, Route("login/")]
       public ActionResult Login(LoginUser ru)
@@ -226,7 +223,7 @@ namespace BuildFeed.Controllers
                                                                               orderby bv.Key
                                                                               select new SitemapPagedAction()
                                                                                      {
-                                                                                        Name = DisplayHelpers.GetDisplayTextForEnum(bv.Key),
+                                                                                        Name = MvcExtensions.GetDisplayTextForEnum(bv.Key),
                                                                                         UrlParams = new RouteValueDictionary(new
                                                                                                                              {
                                                                                                                                 controller = "Front",
@@ -318,75 +315,6 @@ namespace BuildFeed.Controllers
          xdoc.Save(Response.OutputStream);
 
          return new EmptyResult();
-      }
-
-      [Route("statistics/")]
-#if !DEBUG
-//      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
-#endif
-      public async Task<ActionResult> Stats()
-      {
-         var builds = await _bModel.Select();
-
-         List<MonthCount> additions = new List<MonthCount>();
-         var rawAdditions = (from b in builds
-                             where b.Added > DateTime.Now.AddYears(-1)
-                             group b by new
-                             {
-                                Year = b.Added.Year,
-                                Week = Convert.ToInt32(Math.Floor(b.Added.DayOfYear / 7m))
-                             } into bm
-                             select new MonthCount()
-                             {
-                                Month = bm.Key.Week,
-                                Year = bm.Key.Year,
-                                Count = bm.Count()
-                             }).ToArray();
-
-         for (int i = -52; i <= 0; i++)
-         {
-            DateTime dt = DateTime.Now.AddDays(i * 7);
-            additions.Add(new MonthCount()
-            {
-               Month = Convert.ToInt32(Math.Floor(dt.DayOfYear / 7m)),
-               Year = dt.Year,
-               Count = rawAdditions.SingleOrDefault(a => a.Month == Convert.ToInt32(Math.Floor(dt.DayOfYear / 7m)) && a.Year == dt.Year).Count
-            });
-         }
-
-         List<MonthCount> compiles = new List<MonthCount>();
-         double logScale = 1.0 / Math.E;
-         var rawCompiles = from b in builds
-                           where b.BuildTime.HasValue
-                           group b by new
-                           {
-                              Year = b.BuildTime.Value.Year,
-                              Month = Convert.ToInt32(Math.Floor((b.BuildTime.Value.Month - 0.1m) / 3m) * 3) + 1
-                           } into bm
-                           select new MonthCount()
-                           {
-                              Month = bm.Key.Month,
-                              Year = bm.Key.Year,
-                              Count = Math.Pow(Convert.ToDouble(bm.Count()), logScale)
-                           };
-
-
-         var rawLabCounts = from bl in (from b in builds
-                                        where !string.IsNullOrEmpty(b.Lab)
-                                        group b by b.Lab into bl
-                                        select bl)
-                            where bl.Count() > 99
-                            orderby bl.Count() descending
-                            select new Tuple<string, int>(bl.Key, bl.Count());
-
-         StatsPage m = new StatsPage()
-         {
-            AdditionsByMonth = additions,
-            CompilesByMonth = rawCompiles.OrderBy(r => r.Year).ThenBy(r => r.Month),
-            BuildsByLab = rawLabCounts
-         };
-
-         return View(m);
       }
 
       [Route("credits/")]

@@ -142,7 +142,7 @@ namespace BuildFeed.Controllers
 
                gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int) FontStyle.Bold, 32, new Point(40, 32),
                             StringFormat.GenericTypographic);
-               gp.AddString($"{DisplayHelpers.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})",
+               gp.AddString($"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})",
                             new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
                gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96),
                             StringFormat.GenericTypographic);
@@ -222,7 +222,7 @@ namespace BuildFeed.Controllers
                                                         Type = MetaType.Source,
                                                         Value = source.ToString()
                                                      });
-         ViewBag.ItemId = DisplayHelpers.GetDisplayTextForEnum(source);
+         ViewBag.ItemId = MvcExtensions.GetDisplayTextForEnum(source);
 
          var builds = await _bModel.SelectSource(source, PageSize, (page - 1) * PageSize);
 
