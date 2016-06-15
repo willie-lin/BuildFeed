@@ -8,6 +8,7 @@
 /// <reference path="jquery-2.2.3.js" />
 /// <reference path="jquery-2.2.3.min.js" />
 /// <reference path="jsrender.min.js" />
+/// <reference path="shill.js" />
 /// <reference path="trumbowyg/langs/ar.min.js" />
 /// <reference path="trumbowyg/langs/ca.min.js" />
 /// <reference path="trumbowyg/langs/cs.min.js" />

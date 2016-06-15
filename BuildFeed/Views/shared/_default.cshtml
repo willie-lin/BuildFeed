@@ -142,12 +142,22 @@
          </div>
       </div>
    </div>
+   @if(Request.Cookies["no_shill"]?.Value != "true")
+   {
+      <div class="shill-eu">
+         <a href="#" class="shill-eu-close"><i class="fa fa-close"></i></a>
+         <a href="https://twitter.com/search?q=Brexit" target="_blank" rel="nofollow">
+            <span class="shill-eu-msg">BuildFeed backs #Brexit</span>
+            <img src="https://d3n8a8pro7vhmx.cloudfront.net/voteleave/pages/2318/attachments/original/1458756579/vl-fb-profile-red.png" alt="United Kingdom" />
+         </a>
+      </div>
+   }
    @Scripts.Render("~/bundles/jquery")
    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    @Scripts.Render("~/bundles/jsrender")
    <script type="text/javascript" src="~/Scripts/bfs.js"></script>
    @RenderSection("scripts", required: false)
-   <script id="result-template" type="text/x-jsrender">
+<script id="result-template" type="text/x-jsrender">
       <div class="col-sm-4">
          <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
             <h4 class="list-group-item-heading">{{:Label}}</h4>
@@ -155,6 +165,7 @@
          </a>
       </div>
    </script>
+   <script type="text/javascript" src="~/Scripts/shill.min.js"></script>
    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 </body>
 </html>
