@@ -10,11 +10,5 @@
     "inputFiles": [
       "content/rtl.css"
     ]
-  },
-  {
-    "outputFileName": "Scripts/shill.js",
-    "inputFiles": [
-      "Scripts/shill.js"
-    ]
   }
 ]

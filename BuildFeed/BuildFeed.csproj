@@ -824,10 +824,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\shill.js" />
-    <Content Include="Scripts\shill.min.js">
-      <DependentUpon>shill.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\trumbowyg\langs\ar.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ca.min.js" />
     <Content Include="Scripts\trumbowyg\langs\cs.min.js" />
