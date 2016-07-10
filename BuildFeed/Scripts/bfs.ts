@@ -4,13 +4,8 @@
    {
       ev.preventDefault();
 
-      var link = this as HTMLAnchorElement;
-      var menus = link.parentElement.getElementsByClassName("dropdown-menu");
-
-      if (menus.length > 0)
-      {
-         menus[0].classList.toggle("open");
-      }
+      const link = this as HTMLAnchorElement;
+      link.parentElement.classList.toggle("open");
    }
 
    export function BuildFeedSetup(ev: Event)

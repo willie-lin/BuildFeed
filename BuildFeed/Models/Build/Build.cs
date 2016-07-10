@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using BuildFeed.Models.ViewModel.Front;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -11,18 +13,18 @@ namespace BuildFeed.Models
    public partial class Build
    {
       private const string BUILD_COLLECTION_NAME = "builds";
-      private static readonly BsonDocument sortByCompileDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
       private static readonly BsonDocument sortByAddedDate = new BsonDocument(nameof(BuildModel.Added), -1);
+      private static readonly BsonDocument sortByCompileDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
       private static readonly BsonDocument sortByLeakedDate = new BsonDocument(nameof(BuildModel.LeakDate), -1);
 
       private static readonly BsonDocument sortByOrder = new BsonDocument
-                                                         {
-                                                            new BsonElement(nameof(BuildModel.MajorVersion), -1),
-                                                            new BsonElement(nameof(BuildModel.MinorVersion), -1),
-                                                            new BsonElement(nameof(BuildModel.Number), -1),
-                                                            new BsonElement(nameof(BuildModel.Revision), -1),
-                                                            new BsonElement(nameof(BuildModel.BuildTime), -1)
-                                                         };
+      {
+         new BsonElement(nameof(BuildModel.MajorVersion), -1),
+         new BsonElement(nameof(BuildModel.MinorVersion), -1),
+         new BsonElement(nameof(BuildModel.Number), -1),
+         new BsonElement(nameof(BuildModel.Revision), -1),
+         new BsonElement(nameof(BuildModel.BuildTime), -1)
+      };
 
       private readonly IMongoCollection<BuildModel> _buildCollection;
       private readonly IMongoDatabase _buildDatabase;
@@ -30,11 +32,10 @@ namespace BuildFeed.Models
 
       public Build()
       {
-         _dbClient = new MongoClient
-            (new MongoClientSettings
-             {
-                Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-             });
+         _dbClient = new MongoClient(new MongoClientSettings
+         {
+            Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
+         });
 
          _buildDatabase = _dbClient.GetDatabase(MongoConfig.Database);
          _buildCollection = _buildDatabase.GetCollection<BuildModel>(BUILD_COLLECTION_NAME);
@@ -42,24 +43,21 @@ namespace BuildFeed.Models
 
       public async Task SetupIndexes()
       {
-         var indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
+         List<BsonDocument> indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
          if (indexes.All(i => i["name"] != "_idx_group"))
          {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
-                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
-                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
-                                                                                                 Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)), new CreateIndexOptions
-                                                                                                                                                              {
-                                                                                                                                                                 Name = "_idx_group"
-                                                                                                                                                              });
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion), Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion), Builders<BuildModel>.IndexKeys.Descending(b => b.Number), Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)), new CreateIndexOptions
+            {
+               Name = "_idx_group"
+            });
          }
 
          if (indexes.All(i => i["name"] != "_idx_legacy"))
          {
             await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId), new CreateIndexOptions
-                                                                                                                     {
-                                                                                                                        Name = "_idx_legacy"
-                                                                                                                     });
+            {
+               Name = "_idx_legacy"
+            });
          }
 
          if (indexes.All(i => i["name"] != "_idx_lab"))
@@ -72,35 +70,18 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
-      public async Task<List<BuildModel>> Select()
-      {
-         return await _buildCollection.Find(new BsonDocument())
-                                      .ToListAsync();
-      }
+      public async Task<List<BuildModel>> Select() => await _buildCollection.Find(new BsonDocument()).ToListAsync();
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<BuildModel> SelectById(Guid id)
-      {
-         return await _buildCollection
-                         .Find(Builders<BuildModel>.Filter.Eq(b => b.Id, id))
-                         .SingleOrDefaultAsync();
-      }
+      public async Task<BuildModel> SelectById(Guid id) => await _buildCollection.Find(Builders<BuildModel>.Filter.Eq(b => b.Id, id)).SingleOrDefaultAsync();
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<BuildModel> SelectByLegacyId(long id)
-      {
-         return await _buildCollection
-                         .Find(Builders<BuildModel>.Filter.Eq(b => b.LegacyId, id))
-                         .SingleOrDefaultAsync();
-      }
+      public async Task<BuildModel> SelectByLegacyId(long id) => await _buildCollection.Find(Builders<BuildModel>.Filter.Eq(b => b.LegacyId, id)).SingleOrDefaultAsync();
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectBuildsByOrder(int limit = -1, int skip = 0)
       {
-         var query = _buildCollection
-            .Find(new BsonDocument())
-            .Sort(sortByOrder)
-            .Skip(skip);
+         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByOrder).Skip(skip);
 
          if (limit > 0)
          {
@@ -111,12 +92,39 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<FrontPage> SelectFrontPage()
+      {
+         FrontPage fp = new FrontPage();
+
+         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
+         {
+            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:OSGLab"] }
+         }).Sort(sortByCompileDate).Limit(1);
+
+         fp.CurrentOsg = (await query.ToListAsync())[0];
+
+         query = _buildCollection.Find(new BsonDocument
+         {
+            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:InsiderLab"] },
+            { nameof(BuildModel.SourceType), TypeOfSource.PublicRelease }
+         }).Sort(sortByCompileDate).Limit(1);
+
+         fp.CurrentInsider = (await query.ToListAsync())[0];
+
+         query = _buildCollection.Find(new BsonDocument
+         {
+            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:ReleaseLab"] }
+         }).Sort(sortByCompileDate).Limit(1);
+
+         fp.CurrentRelease = (await query.ToListAsync())[0];
+
+         return fp;
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
       {
-         var query = _buildCollection
-            .Find(new BsonDocument())
-            .Sort(sortByCompileDate)
-            .Skip(skip);
+         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);
 
          if (limit > 0)
          {
@@ -129,10 +137,7 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectBuildsByAddedDate(int limit = -1, int skip = 0)
       {
-         var query = _buildCollection
-            .Find(new BsonDocument())
-            .Sort(sortByAddedDate)
-            .Skip(skip);
+         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByAddedDate).Skip(skip);
 
          if (limit > 0)
          {
@@ -145,10 +150,7 @@ namespace BuildFeed.Models
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<BuildModel>> SelectBuildsByLeakedDate(int limit = -1, int skip = 0)
       {
-         var query = _buildCollection
-            .Find(new BsonDocument())
-            .Sort(sortByLeakedDate)
-            .Skip(skip);
+         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByLeakedDate).Skip(skip);
 
          if (limit > 0)
          {
@@ -163,8 +165,7 @@ namespace BuildFeed.Models
       {
          item.Id = Guid.NewGuid();
          item.LabUrl = item.GenerateLabUrl();
-         await _buildCollection
-            .InsertOneAsync(item);
+         await _buildCollection.InsertOneAsync(item);
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
@@ -179,8 +180,7 @@ namespace BuildFeed.Models
             generatedItems.Add(item);
          }
 
-         await _buildCollection
-            .InsertManyAsync(generatedItems);
+         await _buildCollection.InsertManyAsync(generatedItems);
       }
 
       [DataObjectMethod(DataObjectMethodType.Update, true)]
@@ -191,15 +191,10 @@ namespace BuildFeed.Models
          item.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
          item.LabUrl = item.GenerateLabUrl();
 
-         await _buildCollection
-            .ReplaceOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, item.Id), item);
+         await _buildCollection.ReplaceOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, item.Id), item);
       }
 
       [DataObjectMethod(DataObjectMethodType.Delete, true)]
-      public async Task DeleteById(Guid id)
-      {
-         await _buildCollection
-            .DeleteOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, id));
-      }
+      public async Task DeleteById(Guid id) { await _buildCollection.DeleteOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, id)); }
    }
 }

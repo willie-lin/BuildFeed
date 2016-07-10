@@ -150,7 +150,7 @@ namespace BuildFeed.Controllers
                                                                                                                          action = "Index",
                                                                                                                          page = 1
                                                                                                                       }),
-                                                                                 Pages = (builds.Count + (FrontController.PageSize - 1)) / FrontController.PageSize
+                                                                                 Pages = (builds.Count + (FrontController.PAGE_SIZE - 1)) / FrontController.PAGE_SIZE
                                                                               }
                                                                            }
                                                                },
@@ -175,7 +175,7 @@ namespace BuildFeed.Controllers
                                                                                                                                  minor = bv.Key.Minor,
                                                                                                                                  page = 1
                                                                                                                               }),
-                                                                                         Pages = (bv.Count() + (FrontController.PageSize - 1)) / FrontController.PageSize
+                                                                                         Pages = (bv.Count() + (FrontController.PAGE_SIZE - 1)) / FrontController.PAGE_SIZE
                                                                                       }).ToArray()
                                                                },
                                                                {
@@ -194,7 +194,7 @@ namespace BuildFeed.Controllers
                                                                                                                              lab = bv.Key,
                                                                                                                              page = 1
                                                                                                                           }),
-                                                                                     Pages = (bv.Count() + (FrontController.PageSize - 1)) / FrontController.PageSize
+                                                                                     Pages = (bv.Count() + (FrontController.PAGE_SIZE - 1)) / FrontController.PAGE_SIZE
                                                                                   }).ToArray()
                                                                },
                                                                {
@@ -213,7 +213,7 @@ namespace BuildFeed.Controllers
                                                                                                                               year = bv.Key,
                                                                                                                               page = 1
                                                                                                                            }),
-                                                                                      Pages = (bv.Count() + (FrontController.PageSize - 1)) / FrontController.PageSize
+                                                                                      Pages = (bv.Count() + (FrontController.PAGE_SIZE - 1)) / FrontController.PAGE_SIZE
                                                                                    }).ToArray()
                                                                },
                                                                {
@@ -231,7 +231,7 @@ namespace BuildFeed.Controllers
                                                                                                                                 source = bv.Key,
                                                                                                                                 page = 1
                                                                                                                              }),
-                                                                                        Pages = (bv.Count() + (FrontController.PageSize - 1)) / FrontController.PageSize
+                                                                                        Pages = (bv.Count() + (FrontController.PAGE_SIZE - 1)) / FrontController.PAGE_SIZE
                                                                                      }).ToArray()
                                                                }
                                                             };

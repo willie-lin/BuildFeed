@@ -3,10 +3,7 @@ var BuildFeed;
     function DropdownClick(ev) {
         ev.preventDefault();
         var link = this;
-        var menus = link.parentElement.getElementsByClassName("dropdown-menu");
-        if (menus.length > 0) {
-            menus[0].classList.toggle("open");
-        }
+        link.parentElement.classList.toggle("open");
     }
     BuildFeed.DropdownClick = DropdownClick;
     function BuildFeedSetup(ev) {

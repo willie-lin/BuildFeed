@@ -90,7 +90,7 @@ namespace BuildFeed.Models
                                      .Sort(
                                            new BsonDocument
                                            {
-                                              new BsonElement(nameof(BuildModel.BuildTime), -1)
+                                              new BsonElement(nameof(BuildModel.BuildTime), 1)
                                            })
                                      .Skip(skip);
 

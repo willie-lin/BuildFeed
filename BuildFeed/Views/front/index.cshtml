@@ -1,55 +1,56 @@
-﻿@using BuildFeed.Code
-@using BuildFeed.Controllers
-@using BuildFeed.Local
-@using BuildFeed.Models.ViewModel.Front
-@using Humanizer
-@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
+﻿@model BuildFeed.Models.ViewModel.Front.FrontPage
 @{
-   ViewBag.Title = Common.SiteName;
+   ViewBag.Title = $"{BuildFeed.Local.Common.SiteName}";
 }
-@section head
+@section Head
 {
-   @if (ViewBag.PageNumber == 1)
-   {
-      <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
-   }
-   else
-   {
-      <meta name="robots" content="noindex, follow" />
-   }
+   <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
 }
 
-<h1>@Front.HomepageH1</h1>
-<h3>@Front.Listing</h3>
-<div class="build-group-listing">
-   @foreach (FrontBuildGroup group in Model)
-   {
-      <div class="build-group">
-         <h3 class="build-group-title">
-            <a href="@Url.Action(nameof(FrontController.ViewGroup), new {major = group.Key.Major, minor = group.Key.Minor, number = group.Key.Build, revision = group.Key.Revision})">
-               @group.Key.ToString()
-            </a>
-         </h3>
-         @if (group.LastBuild.HasValue)
-         {
-            <p class="build-group-p">
-               @{
-                  DateTime maxDate = group.LastBuild.Value;
-                  if (maxDate.AddDays(28) > DateTime.Now)
-                  {
-                     <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
-                  }
-                  else
-                  {
-                     <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
-                  }
-               }
-            </p>
-         }
-         <p class="build-group-p">
-            <i class="fa fa-server fa-fw"></i> @string.Format(Front.xBuilds, group.BuildCount)
-         </p>
+<h1>@BuildFeed.Local.Common.SiteName</h1>
+
+<h3>Latest Builds</h3>
+<div class="latest-flex">
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentOsg.Id
+            })" class="latest-flex-item latest-flex-red">
+      <h3 class="latest-flex-title">Current OSG</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentOsg.MajorVersion).@(Model.CurrentOsg.MinorVersion).@(Model.CurrentOsg.Number).@(Model.CurrentOsg.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentOsg.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentOsg.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
       </div>
-   }
+   </a>
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentInsider.Id
+            })" class="latest-flex-item latest-flex-yellow">
+      <h3 class="latest-flex-title">Current Insider</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentInsider.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
+      </div>
+   </a>
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentRelease.Id
+            })" class="latest-flex-item latest-flex-green">
+      <h3 class="latest-flex-title">Current Release</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentRelease.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
+      </div>
+   </a>
 </div>
-@PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, nameof(FrontController.Index), ViewContext.RouteData.Values)
+<a href="@Url.Action("IndexPage", new { Page = 1})" class="latest-full">See the full Windows build listing...</a>
+<h3>@BuildFeed.Local.Front.Share</h3>
+<div class="addthis_sharing_toolbox"></div>
+<br />
+<h3>Frequently asked questions</h3>
+<h4>Who runs BuildFeed? Is this supported by Microsoft?</h4>
+<p>BuildFeed is ran and maintained by a group of enthusiasts, without the support of Microsoft. We've certainly had sources shut down by changes at Microsoft in the past, and I'm sure we will in the future.</p>
+<h4>How does BuildFeed get its data?</h4>
+<p>Nice try, Donna, but I'm not falling for this one. Suffice to say, we have a range of sources, and it is our intent that all builds posted on BuildFeed are an absolute certainty. That said, we are human and sometimes we cock up. If you have reason to think a build listed on BuildFeed is not correct, please <a href="#">get in touch</a> with us.</p>

@@ -1,8 +1,20 @@
 [
   {
-    "outputFileName": "Scripts/bfs.js",
+    "outputFileName": "Scripts/bfs.min.js",
     "inputFiles": [
       "Scripts/bfs.js"
+    ]
+  },
+  {
+    "outputFileName": "content/default.min.css",
+    "inputFiles": [
+      "content/default.css"
+    ]
+  },
+  {
+    "outputFileName": "content/dark.min.css",
+    "inputFiles": [
+      "content/dark.css"
     ]
   }
 ]

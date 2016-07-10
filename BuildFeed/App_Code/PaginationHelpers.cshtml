@@ -3,10 +3,10 @@
 @using BuildFeed.Code
 @helper PaginationBlock(int currentPage, int totalPages, string view, RouteValueDictionary rd)
 {
-   string multiView = view + "Page";
+string multiView = view + "Page";
 
-   if (totalPages > 1)
-   {
+if (totalPages > 1)
+{
       <div class="text-center">
          <ul class="pagination">
             @if (currentPage == 2)
@@ -22,14 +22,17 @@
                firstRvd.Remove("page");
                <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, firstRvd)</li>
 
-               RouteValueDictionary rvd = new RouteValueDictionary(rd);
-               rvd["page"] = currentPage - 1;
+               RouteValueDictionary rvd = new RouteValueDictionary(rd)
+               {
+                  ["page"] = currentPage - 1
+               };
                <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&lsaquo;"), multiView, rvd)</li>
             }
             else
             {
                <li class="disabled">
-                  <span>&laquo;</span></li>
+                  <span>&laquo;</span>
+               </li>
                <li class="disabled">
                   <span>&lsaquo;</span>
                </li>
@@ -39,7 +42,7 @@
             @{
                RouteValueDictionary rvdIndex = new RouteValueDictionary(rd);
                rvdIndex.Remove("page");
-               IEnumerable<int> pages = new int[0];
+               IEnumerable<int> pages;
             }
 
             @if (totalPages <= 7)
@@ -61,40 +64,40 @@
 
             @foreach (int i in pages)
             {
-               if (i == 1)
+               RouteValueDictionary rvd = new RouteValueDictionary(rd)
                {
-                  <li @(1 == currentPage ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink("1", view)</li>
-               }
-               else
-               {
-                  RouteValueDictionary rvd = new RouteValueDictionary(rd);
-                  rvd["page"] = i;
+                  ["page"] = i
+               };
 
-                  <li @(i == currentPage ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
-               }
+               <li @(i == currentPage ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
             }
 
 
             @if (currentPage < totalPages)
             {
-               RouteValueDictionary rvd = new RouteValueDictionary(rd);
-               rvd["page"] = currentPage + 1;
+               RouteValueDictionary rvd = new RouteValueDictionary(rd)
+               {
+                  ["page"] = currentPage + 1
+               };
 
                <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&rsaquo;"), multiView, rvd)</li>
 
-               RouteValueDictionary lastRvd = new RouteValueDictionary(rd);
-               lastRvd["page"] = totalPages;
+               RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
+               {
+                  ["page"] = totalPages
+               };
                <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), multiView, lastRvd)</li>
             }
             else
             {
                <li class="disabled">
-                  <span>&rsaquo;</span></li>
+                  <span>&rsaquo;</span>
+               </li>
                <li class="disabled">
                   <span>&raquo;</span>
                </li>
             }
          </ul>
       </div>
-   }
+    }
 }

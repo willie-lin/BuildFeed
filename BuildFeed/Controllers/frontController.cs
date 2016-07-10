@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Code;
 using BuildFeed.Models;
+using BuildFeed.Models.ViewModel.Front;
 
 namespace BuildFeed.Controllers
 {
    public class FrontController : LocalController
    {
-      public const int PageSize = 72;
+      public const int PAGE_SIZE = 72;
 
       private readonly Build _bModel;
       private readonly MetaItem _mModel;
@@ -28,29 +29,33 @@ namespace BuildFeed.Controllers
 
       [Route("", Order = 1)]
 #if !DEBUG
-//      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> Index() { return await IndexPage(1); }
+      public async Task<ActionResult> Index()
+      {
+         FrontPage fp = await _bModel.SelectFrontPage();
+         return View("Index", fp);
+      }
 
-      [Route("page-{page:int:min(2)}/", Order = 0)]
+      [Route("page-{page:int:min(1)}/", Order = 0)]
 #if !DEBUG
 //      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
 #endif
       public async Task<ActionResult> IndexPage(int page)
       {
-         var buildGroups = await _bModel.SelectAllGroups(PageSize, (page - 1) * PageSize);
+         var buildGroups = await _bModel.SelectAllGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(
                                           Convert.ToDouble(await _bModel.SelectAllGroupsCount()) /
-                                          Convert.ToDouble(PageSize));
+                                          Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
             return new HttpNotFoundResult();
          }
 
-         return View("Index", buildGroups);
+         return View("Pages", buildGroups);
       }
 
       [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
@@ -190,12 +195,12 @@ namespace BuildFeed.Controllers
                                                         Value = lab
                                                      });
 
-         var builds = await _bModel.SelectLab(lab, PageSize, (page - 1) * PageSize);
+         var builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.ItemId = builds.FirstOrDefault()
             ?.Lab;
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PageSize));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -224,10 +229,10 @@ namespace BuildFeed.Controllers
                                                      });
          ViewBag.ItemId = MvcExtensions.GetDisplayTextForEnum(source);
 
-         var builds = await _bModel.SelectSource(source, PageSize, (page - 1) * PageSize);
+         var builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PageSize));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -256,10 +261,10 @@ namespace BuildFeed.Controllers
                                                      });
          ViewBag.ItemId = year.ToString();
 
-         var builds = await _bModel.SelectYear(year, PageSize, (page - 1) * PageSize);
+         var builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PageSize));
+         ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
@@ -289,10 +294,10 @@ namespace BuildFeed.Controllers
                                                      });
          ViewBag.ItemId = valueString;
 
-         var builds = await _bModel.SelectVersion(major, minor, PageSize, (page - 1) * PageSize);
+         var builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
-         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PageSize));
+         ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
 
          if (ViewBag.PageNumber > ViewBag.PageCount)
          {
