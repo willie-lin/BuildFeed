@@ -1,6 +1,6 @@
 ﻿@model BuildFeed.Models.ViewModel.Front.FrontPage
 @{
-   ViewBag.Title = $"{BuildFeed.Local.Common.SiteName}";
+   ViewBag.Title = $"{BuildFeed.Local.Common.SiteName} | Windows 10 Build Tracker";
 }
 @section Head
 {
@@ -13,13 +13,13 @@
 <div class="latest-flex">
    <a href="@Url.Action("ViewBuild", new
             {
-               Model.CurrentOsg.Id
+               Model.CurrentCanary.Id
             })" class="latest-flex-item latest-flex-red">
-      <h3 class="latest-flex-title">Current OSG</h3>
+      <h3 class="latest-flex-title">Current Canary</h3>
       <div class="latest-flex-detail">
-         <p class="latest-flex-build">@(Model.CurrentOsg.MajorVersion).@(Model.CurrentOsg.MinorVersion).@(Model.CurrentOsg.Number).@(Model.CurrentOsg.Revision)</p>
-         <p class="latest-flex-lab">@Model.CurrentOsg.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentOsg.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
+         <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentCanary.BuildTime.Value.ToString("HH:mmtt, dddd dd MMMM yyyy")</p>
       </div>
    </a>
    <a href="@Url.Action("ViewBuild", new
@@ -30,7 +30,7 @@
       <div class="latest-flex-detail">
          <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
          <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentInsider.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
+         <p class="latest-flex-time">@Model.CurrentInsider.BuildTime.Value.ToString("HH:mmtt, dddd dd MMMM yyyy")</p>
       </div>
    </a>
    <a href="@Url.Action("ViewBuild", new
@@ -41,7 +41,7 @@
       <div class="latest-flex-detail">
          <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
          <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentRelease.BuildTime.Value.ToString("HH:mm tt on dddd, dd MMMM yyyy")</p>
+         <p class="latest-flex-time">@Model.CurrentRelease.BuildTime.Value.ToString("HH:mmtt, dddd dd MMMM yyyy")</p>
       </div>
    </a>
 </div>
@@ -49,7 +49,7 @@
 <h3>@BuildFeed.Local.Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
 <br />
-<h3>Frequently asked questions</h3>
+<h3>About BuildFeed</h3>
 <h4>Who runs BuildFeed? Is this supported by Microsoft?</h4>
 <p>BuildFeed is ran and maintained by a group of enthusiasts, without the support of Microsoft. We've certainly had sources shut down by changes at Microsoft in the past, and I'm sure we will in the future.</p>
 <h4>How does BuildFeed get its data?</h4>

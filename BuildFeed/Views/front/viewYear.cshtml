@@ -35,12 +35,13 @@
 }
 <h3>@Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
+<br />
 <h3>@Front.Listing</h3>
-<div class="row">
+<div class="build-group-listing">
    @foreach (BuildModel build in Model)
    {
-      <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title no-wrapping" title="@build.Lab">
+      <div class="build-group">
+         <h3 class="build-group-title" title="@($"{build.MajorVersion}.{build.MinorVersion}.{build.Number}.{build.Revision}")">
             <a href="@Url.Action("ViewBuild", new
                                               {
                                                  id = build.Id
@@ -50,7 +51,7 @@
          </h3>
          @if (User.Identity.IsAuthenticated)
          {
-            <p>
+            <p class="build-group-p">
                <a href="@Url.Action("EditBuild", new
                                                  {
                                                     id = build.Id
@@ -80,7 +81,7 @@
                <br/>
             }
          </p>
-         <p>
+         <p class="build-group-p">
             @if (build.IsLeaked)
             {
                <span class="label label-success label-build-status">@Front.Public</span>
@@ -92,5 +93,8 @@
          </p>
       </div>
    }
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
 </div>
 @PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, "viewYear", ViewContext.RouteData.Values)

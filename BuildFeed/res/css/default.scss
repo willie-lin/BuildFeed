@@ -158,6 +158,11 @@ article
       font-weight: 300;
       text-align: center;
       margin: 0 0 #{(1em / 3)};
+
+      &.eager-wrapping
+      {
+         font-size: 4em;
+      }
    }
 
    h3
@@ -165,7 +170,7 @@ article
       font-size: 2em;
       font-weight: bold;
       padding: 0 0 #{(1em / 3)};
-      margin: 0 0 #{(2em / 3)};
+      margin: #{(1em / 3)} 0 #{(2em / 3)};
       text-transform: uppercase;
       letter-spacing: #{(1em / 4)};
       border-bottom: 1px solid;
@@ -182,8 +187,7 @@ article
 
       .build-group
       {
-         width: calc(#{(100% / 6)} - 1.5em);
-         min-width: 160px;
+         width: 160px;
          flex-grow: 1;
          margin: 0 0.75em 1em;
          box-sizing: border-box;
@@ -209,8 +213,7 @@ article
 
       .build-group-empty
       {
-         width: calc(#{(100% / 6)} - 1.5em);
-         min-width: 160px;
+         width: 160px;
          flex-grow: 1;
          margin: 0 0.75em;
          box-sizing: border-box;
@@ -225,19 +228,17 @@ article
    -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
    justify-content: space-between;
-   margin-right: -1em;
+   margin: 2em -2em 0 0;
 
    .latest-flex-item
    {
-      width: calc(#{(100% / 3)} - 1em);
-      min-width: 200px;
+      width: 240px;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       background: #fff;
-      margin-bottom: 2em;
       flex-grow: 1;
-      margin-right: 1em;
+      margin: 0 2em 2em 0;
 
       h3.latest-flex-title
       {
@@ -247,37 +248,38 @@ article
          font-size: 1.25em;
          font-weight: normal;
          text-align: center;
-         padding: 0.5em;
+         padding: 0.4em 0.5em;
+         margin: -1px;
          color: #fff;
       }
 
       &.latest-flex-red
       {
-         border: 1px solid #c00;
+         border: #{(1em / 6)} solid #FF2626;
 
          h3.latest-flex-title
          {
-            background: #c00;
+            background: #FF2626;
          }
       }
 
       &.latest-flex-yellow
       {
-         border: 1px solid #cc0;
+         border: #{(1em / 6)} solid #FF9F19;
 
          h3.latest-flex-title
          {
-            background: #cc0;
+            background: #FF9F19;
          }
       }
 
       &.latest-flex-green
       {
-         border: 1px solid #0c0;
+         border: #{(1em / 6)} solid #12B23F;
 
          h3.latest-flex-title
          {
-            background: #0c0;
+            background: #12B23F;
          }
       }
 
@@ -289,14 +291,19 @@ article
 
          .latest-flex-build
          {
-            font-size: 2.5em;
-            margin: 0.5em 0 0.25em;
+            font-size: #{(7em / 3)};
+            margin: #{(1em / 3)} 0 #{(1em / 6)};
          }
 
          .latest-flex-lab
-            {
+         {
             font-size: 1.5em;
             margin: 0 0 0.5em;
+         }
+
+         .latest-flex-time
+         {
+            margin: 0 0 0.75em;
          }
       }
    }
@@ -305,12 +312,12 @@ article
 .latest-full
 {
    display: block;
-   background: #00c;
+   background: #1274B2;
    font-weight: normal;
    text-align: center;
    color: #fff;
    margin: 0 0 2em;
-   padding: 0.5em;
+   padding: #{(2em / 3)};
 }
 
 ul.pagination
@@ -350,12 +357,16 @@ footer#page-footer
    .footer-flex
    {
       display: flex;
+      -ms-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
 
       .footer-flex-item
       {
          width: 50%;
          min-width: 200px;
          text-align: center;
+         flex-grow: 1;
 
          &:last-child
          {

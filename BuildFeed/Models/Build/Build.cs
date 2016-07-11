@@ -101,7 +101,7 @@ namespace BuildFeed.Models
             { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:OSGLab"] }
          }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentOsg = (await query.ToListAsync())[0];
+         fp.CurrentCanary = (await query.ToListAsync())[0];
 
          query = _buildCollection.Find(new BsonDocument
          {

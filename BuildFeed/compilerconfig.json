@@ -1,17 +1,14 @@
-[
+﻿[
   {
-    "outputFile": "content/default.css",
-    "inputFile": "content/default.scss",
-    "sourceMap": false
+    "outputFile": "res/css/default.css",
+    "inputFile": "res/css/default.scss"
   },
   {
-    "outputFile": "content/rtl.css",
-    "inputFile": "content/rtl.scss",
-    "sourceMap": false
+    "outputFile": "res/css/dark.css",
+    "inputFile": "res/css/dark.scss"
   },
   {
-    "outputFile": "content/dark.css",
-    "inputFile": "content/dark.scss",
-    "sourceMap": false
+    "outputFile": "res/css/rtl.css",
+    "inputFile": "res/css/rtl.scss"
   }
 ]

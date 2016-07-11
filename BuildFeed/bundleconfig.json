@@ -1,20 +1,26 @@
 [
   {
+    "outputFileName": "res/css/dark.min.css",
+    "inputFiles": [
+      "res/css/dark.css"
+    ]
+  },
+  {
+    "outputFileName": "res/css/default.min.css",
+    "inputFiles": [
+      "res/css/default.css"
+    ]
+  },
+  {
+    "outputFileName": "res/css/rtl.min.css",
+    "inputFiles": [
+      "res/css/rtl.css"
+    ]
+  },
+  {
     "outputFileName": "Scripts/bfs.min.js",
     "inputFiles": [
       "Scripts/bfs.js"
-    ]
-  },
-  {
-    "outputFileName": "content/default.min.css",
-    "inputFiles": [
-      "content/default.css"
-    ]
-  },
-  {
-    "outputFileName": "content/dark.min.css",
-    "inputFiles": [
-      "content/dark.css"
     ]
   }
 ]

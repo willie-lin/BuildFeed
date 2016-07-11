@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<BuildFeed.Models.BuildModel>
 @using BuildFeed.Code
+@using BuildFeed.Models
 @using Humanizer;
 @{
    ViewBag.Title = string.Format("{0}{1} | {2}", string.Format(BuildFeed.Local.Front.BuildsFrom, ViewBag.ItemId), ViewBag.PageNumber == 1 ? "" : string.Format(BuildFeed.Local.Common.PageTitleSegment, ViewBag.PageNumber), BuildFeed.Local.Common.SiteName);
@@ -33,12 +34,20 @@
 }
 <h3>@BuildFeed.Local.Front.Share</h3>
 <div class="addthis_sharing_toolbox"></div>
+<br />
 <h3>@BuildFeed.Local.Front.Listing</h3>
-<div class="row">
-   @foreach (var build in Model)
+<div class="build-group-listing">
+   @foreach (BuildModel build in Model)
    {
-      <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title no-wrapping" title="@build.Lab"><a href="@Url.Action("ViewBuild", new {id = build.Id})">@string.Format("{0}.{1}.{2}.{3}", build.MajorVersion, build.MinorVersion, build.Number, build.Revision)</a></h3>
+      <div class="build-group">
+         <h3 class="build-group-title" title="@build.Lab">
+            <a href="@Url.Action("ViewBuild", new
+                           {
+                              id = build.Id
+                           })">
+               @($"{build.MajorVersion}.{build.MinorVersion}.{build.Number}.{build.Revision}")
+            </a>
+         </h3>
          @if (User.Identity.IsAuthenticated)
             {
             <p>
@@ -56,7 +65,7 @@
                   <span title="@build.BuildTime.Value.Humanize()"><i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span><br />
             }
          </p>
-         <p>
+         <p class="build-group-p">
             @if (build.IsLeaked)
             {
                <span class="label label-success label-build-status">@BuildFeed.Local.Front.Public</span>
@@ -68,5 +77,8 @@
          </p>
       </div>
    }
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
 </div>
 @PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewLab", ViewContext.RouteData.Values)

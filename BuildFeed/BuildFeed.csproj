@@ -771,24 +771,24 @@
     <Content Include="content\card\Redstone.png" />
     <Content Include="content\card\Threshold2.png" />
     <Content Include="content\card\Threshold.png" />
-    <Content Include="content\dark.css">
+    <Content Include="res\css\dark.css">
       <DependentUpon>dark.scss</DependentUpon>
     </Content>
-    <Content Include="content\dark.min.css">
+    <Content Include="res\css\dark.min.css">
       <DependentUpon>dark.css</DependentUpon>
     </Content>
-    <Content Include="content\default.css">
+    <Content Include="res\css\default.css">
       <DependentUpon>default.scss</DependentUpon>
     </Content>
-    <Content Include="content\default.min.css">
+    <Content Include="res\css\default.min.css">
       <DependentUpon>default.css</DependentUpon>
     </Content>
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
-    <Content Include="content\rtl.css">
+    <Content Include="res\css\rtl.css">
       <DependentUpon>rtl.scss</DependentUpon>
     </Content>
-    <Content Include="content\rtl.min.css">
+    <Content Include="res\css\rtl.min.css">
       <DependentUpon>rtl.css</DependentUpon>
     </Content>
     <Content Include="content\tile\wide.png" />
@@ -811,18 +811,19 @@
     <Content Include="Areas\admin\Views\meta\create.cshtml" />
     <Content Include="robots.txt" />
     <Content Include="App_Code\PaginationHelpers.cshtml" />
-    <Content Include="content\default.scss" />
+    <Content Include="res\css\default.scss" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="content\rtl.scss" />
-    <Content Include="content\dark.scss" />
+    <Content Include="res\css\rtl.scss" />
+    <Content Include="res\css\dark.scss" />
     <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
     <Content Include="Scripts\bfs.js">
       <DependentUpon>bfs.ts</DependentUpon>
     </Content>
+    <Content Include="res\Web.config" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bfs.js.map">
       <DependentUpon>bfs.ts</DependentUpon>
