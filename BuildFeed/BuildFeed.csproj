@@ -106,6 +106,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
@@ -168,8 +169,9 @@
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="X.Web.RSS">
-      <HintPath>..\packages\xwebrss.1.2.1.130\lib\net40-client\X.Web.RSS.dll</HintPath>
+    <Reference Include="WilderMinds.RssSyndication, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WilderMinds.RssSyndication.1.0.4\lib\netstandard1.3\WilderMinds.RssSyndication.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
