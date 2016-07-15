@@ -1,4 +1,7 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
+﻿@using System.Globalization
+@using BuildFeed.Code.Options
+@using BuildFeed.Controllers
+@model System.Web.Mvc.HandleErrorInfo
 @{
    Layout = null;
    bool isRtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
@@ -7,21 +10,22 @@
 <html dir="@(isRtl ? "rtl" : "ltr")">
 <head>
    <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css" rel="stylesheet" />
-   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
-   <link href="//fonts.googleapis.com/css?family=Rajdhani:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
    <link rel="shortcut icon" href="~/favicon.ico" />
    <link rel="icon" href="~/favicon.ico" />
-   <meta name="application-name" content="@BuildFeed.Local.Common.SiteName" />
+   <link rel="canonical" href="@Url.Action()" />
+   <meta name="application-name" content="@InvariantTerms.SiteName" />
 
-   <link href="/content/style.min.css" rel="stylesheet" type="text/css" />
+   <link href="/res/css/default.min.css" rel="stylesheet" type="text/css" />
+   <link href="/res/css/dark.min.css" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
-      <link href="/content/rtl.min.css" rel="stylesheet" type="text/css" />
+      <link href="/res/css/rtl.min.css" rel="stylesheet" type="text/css" />
    }
-   <title>@BuildFeed.Local.Common.Error | @BuildFeed.Local.Common.SiteName</title>
+   <title>@VariantTerms.Common_Error | @InvariantTerms.SiteName</title>
    <script type="text/javascript">
       var appInsights = window.appInsights || function (config) {
          function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
@@ -47,49 +51,105 @@
       ga('require', 'linkid', 'linkid.js');
       ga('send', 'pageview');
    </script>
-   <div class="container">
-      <header id="page-header"></header>
-      <nav id="page-navigation" role="navigation">
-         <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-               @Html.ActionLink(@BuildFeed.Local.Common.SiteName, "Index", new { controller = "Front", area = "" }, new { @class = "navbar-brand" })
-               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="https://twitter.com/buildfeed" title="@BuildFeed.Local.Common.Twitter" target="_blank"><i class="fa fa-twitter"></i> @BuildFeed.Local.Common.Twitter</a></li>
+   <header id="page-header">
+      <div class="container">
+         <h1>
+            @Html.ActionLink(InvariantTerms.SiteName, nameof(FrontController.Index), new
+             {
+                controller = "Front",
+                area = ""
+             })
+         </h1>
+      </div>
+   </header>
+   <nav id="page-navigation" role="navigation">
+      <button type="button">
+         <span class="sr-only">@VariantTerms.Common_ToggleNavigation</span>
+         <i class="fa fa-bar"></i>
+      </button>
+      <div class="container">
+         <ul id="page-navigation-links">
+            <li>
+               <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank">
+                  <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
+               </a>
+            </li>
+            <li class="dropdown-parent">
+               <a href="#">
+                  <i class="fa fa-gear"></i>
+               </a>
+               <ul class="dropdown-menu">
+                  <li id="settings-theme-menu" class="dropdown-menu-block">
+                     <h4>@VariantTerms.Common_NavigationTheme</h4>
+                     <ul>
+                        @foreach (Theme item in Theme.AvailableThemes)
+                        {
+                           <li>
+                              <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
+                           </li>
+                        }
+                     </ul>
+                  </li>
+                  <li id="settings-lang-menu" class="dropdown-menu-block">
+                     <h4>@VariantTerms.Common_NavigationLanguage</h4>
+                     <ul>
+                        @foreach (Locale locale in Locale.AvailableLocales)
+                        {
+                           <li>
+                              <a href="#" data-lang="@locale.LocaleId">@locale.DisplayName</a>
+                           </li>
+                        }
+                     </ul>
+                  </li>
                </ul>
-            </div>
-         </div>
-      </nav>
-      <article id="page-content">
-         <div class="row">
-            <div class="col-sm-12">
-               <h1>@BuildFeed.Local.Common.Error</h1>
+
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <article id="page-content">
+      <div class="container">
+         <h1>@VariantTerms.Common_Error</h1>
+         <p>
+            @string.Format(VariantTerms.Common_ErrorContent, "<a href=\"https://github.com/hounsell/BuildFeed/issues\">GitHub</a>")
+         </p>
+         <p>Controller: <code>@Model.ControllerName</code></p>
+         <p>Action: <code>@Model.ActionName</code></p>
+         <p>Error: <code>@Model.Exception.Message</code></p>
+      </div>
+   </article>
+   <footer id="page-footer">
+      <div class="container">
+         <div class="footer-flex">
+            <div class="footer-flex-item">
                <p>
-                  Something's broke. Maybe it's because you did something weird. Probably it's because I did something weird. If you keep getting this error, take a screenshot and spam <a href="https://twitter.com/tomhounsell">me</a> on Twitter with it.
-               </p>
-               <p>Controller: <code>@Model.ControllerName</code></p>
-               <p>Action: <code>@Model.ActionName</code></p>
-               <p>Error: <code>@Model.Exception.Message</code></p>
-            </div>
-         </div>
-      </article>
-      <footer id="page-footer">
-         <div class="row">
-            <div class="col-sm-8 text-left">
-               <p>
-                  <i class="fa fa-language"></i>&ensp;@System.Globalization.CultureInfo.CurrentUICulture.NativeName (<a href="@Url.Action("Credits", new { controller = "Support" })">@BuildFeed.Local.Common.Credits</a>)
-               </p>
-            </div>
-            <div class="col-sm-4 text-right">
-               <p>
-                  &copy; 2013 - @DateTime.Now.Year.ToString(), @BuildFeed.Local.Common.SiteName<br />
-                  @BuildFeed.Local.Common.DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">Thomas Hounsell</a><br />
-                  @BuildFeed.Local.Common.ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+                  <i class="fa fa-language"></i>&ensp;
+                  @CultureInfo.CurrentUICulture.NativeName
                </p>
             </div>
+            <div class="footer-flex-item">
+               <p>
+                  &copy; 2013 - @DateTime.Now.Year.ToString(), @InvariantTerms.SiteName
+               </p>
+               <p>
+                  @VariantTerms.Common_DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">@InvariantTerms.DeveloperName</a>
+               </p>
+               <p>
+                  @VariantTerms.Common_ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+               </p>
+            </div>
          </div>
-      </footer>
-   </div>
-   @Scripts.Render("~/bundles/jquery")
-   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      </div>
+   </footer>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js"></script>
+   <script type="text/javascript" src="~/Scripts/bfs.min.js"></script>
+   @RenderSection("scripts", false)
+   <script id="result-template" type="text/x-jsrender">
+      <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
+         <h4 class="list-group-item-heading">{{:Label}}</h4>
+         <p class="list-group-item-text">{{:Group}}</p>
+      </a>
+   </script>
+   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 </body>
 </html>

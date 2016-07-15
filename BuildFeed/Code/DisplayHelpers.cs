@@ -53,13 +53,7 @@ namespace BuildFeed.Code
       public static string GetDisplayTextForEnum(object o)
       {
          string result = null;
-         DisplayAttribute display =
-            o.GetType()
-             .GetMember(o.ToString())
-             .First()
-             .GetCustomAttributes(false)
-             .OfType<DisplayAttribute>()
-             .LastOrDefault();
+         DisplayAttribute display = o.GetType().GetMember(o.ToString()).First().GetCustomAttributes(false).OfType<DisplayAttribute>().LastOrDefault();
 
          if (display != null)
          {

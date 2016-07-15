@@ -5,31 +5,31 @@ namespace BuildFeed.Models
 {
    public enum TypeOfSource
    {
-      [Display(ResourceType = typeof(Model), Name = "PublicRelease")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_PublicRelease))]
       PublicRelease = 0,
 
-      [Display(ResourceType = typeof(Model), Name = "InternalLeak")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_InternalLeak))]
       InternalLeak = 1,
 
-      [Display(ResourceType = typeof(Model), Name = "UpdateGDR")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_UpdateGDR))]
       UpdateGDR = 2,
 
-      [Display(ResourceType = typeof(Model), Name = "UpdateLDR")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_UpdateLDR))]
       UpdateLDR = 3,
 
-      [Display(ResourceType = typeof(Model), Name = "AppPackage")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_AppPackage))]
       AppPackage = 4,
 
-      [Display(ResourceType = typeof(Model), Name = "BuildTools")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_BuildTools))]
       BuildTools = 5,
 
-      [Display(ResourceType = typeof(Model), Name = "Documentation")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_Documentation))]
       Documentation = 6,
 
-      [Display(ResourceType = typeof(Model), Name = "Logging")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_Logging))]
       Logging = 7,
 
-      [Display(ResourceType = typeof(Model), Name = "PrivateLeak")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Source_PrivateLeak))]
       PrivateLeak = 8
    }
 }

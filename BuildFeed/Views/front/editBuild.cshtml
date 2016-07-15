@@ -1,223 +1,280 @@
-﻿@model BuildFeed.Models.BuildModel
+﻿@using BuildFeed.Models
+@model BuildFeed.Models.BuildModel
 @{
-    ViewBag.Title = (string)(ViewContext.RouteData.Values["action"]) == "addBuild" ? string.Format("{0} | {1}", BuildFeed.Local.Front.AddABuild, BuildFeed.Local.Common.SiteName) : string.Format("{0} {1} | {2}", BuildFeed.Local.Front.EditBuild, Model.FullBuildString, BuildFeed.Local.Common.SiteName);
-    Html.EnableClientValidation();
-    Html.EnableUnobtrusiveJavaScript();
+   ViewBag.Title = (string)ViewContext.RouteData.Values["action"] == "addBuild"
+                      ? $"{VariantTerms.Common_AddBuild} | {InvariantTerms.SiteName}"
+                      : $"{VariantTerms.Front_EditBuild} {Model.FullBuildString} | {InvariantTerms.SiteName}";
+   Html.EnableClientValidation();
+   Html.EnableUnobtrusiveJavaScript();
 }
 
-@if ((string)(ViewContext.RouteData.Values["action"]) == "addBuild")
+@if ((string)ViewContext.RouteData.Values["action"] == "addBuild")
 {
-    <h1>@BuildFeed.Local.Front.AddABuild</h1>
+   <h1>@VariantTerms.Common_AddBuild</h1>
 }
 else
 {
-    <h1 class="eager-wrapping">@BuildFeed.Local.Front.EditBuild @Model.FullBuildString</h1>
+   <h1 class="eager-wrapping">@VariantTerms.Front_EditBuild @Model.FullBuildString</h1>
 }
 
 <div class="form-horizontal">
-    <div class="form-group">
-        <label for="quickpaste" class="control-label col-sm-2">@BuildFeed.Local.Front.QuickPaste</label>
-        <div class="col-sm-10">
-            <div class="row">
-                <div class="col-sm-6">
-                    <input id="quickpaste" type="text" class="form-control" />
-                </div>
+   <div class="form-group">
+      <label for="quickpaste" class="control-label col-sm-2">@VariantTerms.Front_QuickPaste</label>
+      <div class="col-sm-10">
+         <div class="row">
+            <div class="col-sm-6">
+               <input id="quickpaste" type="text" class="form-control" />
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 @using (Html.BeginForm())
-            {
-    @Html.AntiForgeryToken()
+{
+   @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
+   <div class="form-horizontal">
+      @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MajorVersion, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-2">
-                        @Html.TextBoxFor(model => model.MajorVersion, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.MajorVersion)
+      <div class="form-group">
+         @Html.LabelFor(model => model.MajorVersion, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-2">
+                  @Html.TextBoxFor(model => model.MajorVersion, new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.MajorVersion)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MinorVersion, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-2">
-                        @Html.TextBoxFor(model => model.MinorVersion, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.MinorVersion)
+      <div class="form-group">
+         @Html.LabelFor(model => model.MinorVersion, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-2">
+                  @Html.TextBoxFor(model => model.MinorVersion, new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.MinorVersion)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Number, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-3">
-                        @Html.TextBoxFor(model => model.Number, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.Number)
+      <div class="form-group">
+         @Html.LabelFor(model => model.Number, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-3">
+                  @Html.TextBoxFor(model => model.Number, new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.Number)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Revision, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-3">
-                        @Html.TextBoxFor(model => model.Revision, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.Revision)
+      <div class="form-group">
+         @Html.LabelFor(model => model.Revision, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-3">
+                  @Html.TextBoxFor(model => model.Revision, new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.Revision)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Lab, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.Lab, new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.Lab)
+      <div class="form-group">
+         @Html.LabelFor(model => model.Lab, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-6">
+                  @Html.TextBoxFor(model => model.Lab, new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.Lab)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BuildTime, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextBoxFor(model => model.BuildTime, "{0:yyMMdd-HHmm}", new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.BuildTime)
+      <div class="form-group">
+         @Html.LabelFor(model => model.BuildTime, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-6">
+                  @Html.TextBoxFor(model => model.BuildTime, "{0:yyMMdd-HHmm}", new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.BuildTime)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SourceType, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.DropDownListFor(model => model.SourceType, EnumHelper.GetSelectList(typeof(BuildFeed.Models.TypeOfSource)), new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.SourceType)
+      <div class="form-group">
+         @Html.LabelFor(model => model.SourceType, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-6">
+                  @Html.DropDownListFor(model => model.SourceType, EnumHelper.GetSelectList(typeof(TypeOfSource)), new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.SourceType)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LeakDate, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-2">
-                        <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@BuildFeed.Local.Front.Today</button>
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.LeakDate)
+      <div class="form-group">
+         @Html.LabelFor(model => model.LeakDate, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-4">
+                  @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new
+                  {
+                     @class = "form-control"
+                  })
+               </div>
+               <div class="col-sm-2">
+                  <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@VariantTerms.Front_Today</button>
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.LeakDate)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SourceDetails, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.TextAreaFor(model => model.SourceDetails, new { @class = "form-control", rows = "5" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.SourceDetails)
+      <div class="form-group">
+         @Html.LabelFor(model => model.SourceDetails, new
+         {
+            @class = "control-label col-sm-2"
+         })
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-6">
+                  @Html.TextAreaFor(model => model.SourceDetails, new
+                  {
+                     @class = "form-control",
+                     rows = "5"
+                  })
+               </div>
             </div>
-        </div>
+            @Html.ValidationMessageFor(model => model.SourceDetails)
+         </div>
+      </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FlightLevel, new { @class = "control-label col-sm-2" })
-            <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-6">
-                        @Html.DropDownListFor(model => model.FlightLevel, EnumHelper.GetSelectList(typeof(BuildFeed.Models.LevelOfFlight)), new { @class = "form-control" })
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(model => model.FlightLevel)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Submit Build" class="btn btn-primary" />
-                <a href="/" onclick="window.history.back(); return false;" class="btn btn-default">@BuildFeed.Local.Front.ReturnToListing</a>
-            </div>
-        </div>
-    </div>
+      <div class="form-group">
+         <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Submit Build" class="btn btn-primary" />
+            <a href="/" onclick="window.history
+   .back(); return false;" class="btn btn-default">
+               @VariantTerms.Front_ReturnToListing</a>
+         </div>
+      </div>
+   </div>
 }
 
 @section Scripts
 {
-    <script src="~/Scripts/trumbowyg/trumbowyg.min.js" type="text/javascript"></script>
-    <link href="~/Scripts/trumbowyg/ui/trumbowyg.min.css" rel="stylesheet" type="text/css" />
+   <script src="~/Scripts/trumbowyg/trumbowyg.min.js" type="text/javascript"></script>
+   <link href="~/Scripts/trumbowyg/ui/trumbowyg.min.css" rel="stylesheet" type="text/css" />
 
-    @Scripts.Render("~/bundles/jqueryval")
+   <script src="~/Scripts/jquery.validate.js" type="text/javascript"></script>
+   <script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
 
-    <script type="text/javascript">
-        jQuery(function ($) {
-            $.validator.addMethod('date',
-            function (value, element) {
-                if (this.optional(element)) {
-                    return true;
-                }
+   <script type="text/javascript">
+      jQuery(function($) {
+         $.validator.addMethod('date',
+            function(value, element) {
+               if (this.optional(element))
+               {
+                  return true;
+               }
 
-                var ok = true;
-                try {
-                    new Date(Date.parse(value, "yyMMdd-HHmm"));
-                }
-                catch (err) {
-                    ok = false;
-                }
-                return ok;
+               var ok = true;
+               try
+               {
+                  new Date(Date.parse(value, "yyMMdd-HHmm"));
+               }
+               catch (err)
+               {
+                  ok = false;
+               }
+               return ok;
             });
-        });
+      });
 
-        $(function () {
-            var btnsGrps = $.trumbowyg.btnsGrps;
+      $(function() {
+         var btnsGrps = $.trumbowyg.btnsGrps;
 
-            $("#@Html.IdFor(model => model.SourceDetails)").trumbowyg({
-                semantic: true,
-                autogrow: true,
-                btns: ['viewHTML',
-                       '|', 'strong', 'em',
-                       '|', 'link',
-                       '|', btnsGrps.justify,
-                       '|', btnsGrps.lists]
+         $("#@Html.IdFor(model => model.SourceDetails)")
+            .trumbowyg({
+               semantic: true,
+               autogrow: true,
+               btns: [
+                  'viewHTML',
+                  '|', 'strong', 'em',
+                  '|', 'link',
+                  '|', btnsGrps.justify,
+                  '|', btnsGrps.lists
+               ]
             });
 
-            $(".trumbowyg").addClass("trumbowyg-black");
+         $(".trumbowyg").addClass("trumbowyg-black");
 
-            $("#quickpaste").change(function () {
-                var regex = /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?\.([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
-                var result = regex.exec($("#quickpaste").val());
+         $("#quickpaste")
+            .change(function() {
+               var regex =
+                  /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?\.([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
+               var result = regex.exec($("#quickpaste").val());
 
-                $("#MajorVersion").val(result[2]);
-                $("#MinorVersion").val(result[3]);
-                $("#Number").val(result[4]);
-                $("#Revision").val(result[6]);
-                $("#Lab").val(result[7]);
-                $("#BuildTime").val(result[8]);
+               $("#MajorVersion").val(result[2]);
+               $("#MinorVersion").val(result[3]);
+               $("#Number").val(result[4]);
+               $("#Revision").val(result[6]);
+               $("#Lab").val(result[7]);
+               $("#BuildTime").val(result[8]);
             });
-        })
-    </script>
+      });
+   </script>
 }

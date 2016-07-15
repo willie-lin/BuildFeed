@@ -21,10 +21,10 @@ namespace BuildFeed.Code.Options
 
    public enum SiteTheme
    {
-      [Display(ResourceType = typeof(Common), Name = nameof(Common.ThemeLight))]
-      Light = 0,
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Common_ThemeDark))]
+      Dark = 0,
 
-      [Display(ResourceType = typeof(Common), Name = nameof(Common.ThemeDark))]
-      Dark
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Common_ThemeLight))]
+      Light
    }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -8,8 +9,8 @@ namespace BuildFeed.Code
    {
       protected override void Initialize(RequestContext requestContext)
       {
-         var cookie = requestContext.HttpContext.Request.Cookies["lang"];
-         if (cookie != null && !string.IsNullOrEmpty(cookie.Value))
+         HttpCookie cookie = requestContext.HttpContext.Request.Cookies["lang"];
+         if (!string.IsNullOrEmpty(cookie?.Value))
          {
             try
             {
@@ -17,10 +18,7 @@ namespace BuildFeed.Code
                CultureInfo.CurrentCulture = ci;
                CultureInfo.CurrentUICulture = ci;
             }
-            catch(CultureNotFoundException)
-            {
-
-            }
+            catch (CultureNotFoundException) { }
          }
 
          base.Initialize(requestContext);

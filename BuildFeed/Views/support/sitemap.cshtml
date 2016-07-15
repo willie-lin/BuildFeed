@@ -1,9 +1,10 @@
-﻿@model BuildFeed.Models.ViewModel.SitemapData
+﻿@using BuildFeed.Models.ViewModel
+@model BuildFeed.Models.ViewModel.SitemapData
 @{
-   ViewBag.Title = $"{BuildFeed.Local.Common.Sitemap} | {BuildFeed.Local.Common.SiteName}";
+   ViewBag.Title = $"{VariantTerms.Common_Sitemap} | {InvariantTerms.SiteName}";
 }
 
-<h1>@BuildFeed.Local.Common.Sitemap</h1>
+<h1>@VariantTerms.Common_Sitemap</h1>
 
 <ul>
    <li>
@@ -12,35 +13,47 @@
          <li>
             <a href="#sitemap-builds" data-toggle="collapse">Builds</a>
             <ul id="sitemap-builds" class="collapse">
-               @foreach (var buildGroup in Model.Builds)
+               @foreach (SitemapDataBuildGroup buildGroup in Model.Builds)
                {
                   <li>
-                     @Html.ActionLink(buildGroup.Id.ToString(), "ViewGroup", new { controller = "Front", major = buildGroup.Id.Major, minor = buildGroup.Id.Minor, number = buildGroup.Id.Build, revision = buildGroup.Id.Revision })
+                     @Html.ActionLink(buildGroup.Id.ToString(), "ViewGroup", new
+                     {
+                        controller = "Front",
+                        major = buildGroup.Id.Major,
+                        minor = buildGroup.Id.Minor,
+                        number = buildGroup.Id.Build,
+                        revision = buildGroup.Id.Revision
+                     })
                      <ul>
-                        @foreach (var build in buildGroup.Builds)
+                        @foreach (SitemapDataBuild build in buildGroup.Builds)
                         {
-                           <li>@Html.ActionLink(build.Name, "ViewBuild", new { controller = "Front", id = build.Id })</li>
+                           <li>
+                              @Html.ActionLink(build.Name, "ViewBuild", new
+                              {
+                                 controller = "Front",
+                                 id = build.Id
+                              })</li>
                         }
                      </ul>
                   </li>
                }
             </ul>
          </li>
-         @foreach (var item in Model.Actions)
+         @foreach (KeyValuePair<string, SitemapPagedAction[]> item in Model.Actions)
          {
             <li>
                <a href="#sitemap-@item.Key.ToLower()" data-toggle="collapse">@item.Key</a>
                <ul id="sitemap-@item.Key.ToLower()" class="collapse">
-                  @foreach (var action in item.Value)
+                  @foreach (SitemapPagedAction action in item.Value)
                   {
                      if (string.IsNullOrEmpty(action.Name))
                      {
                         <li>@Html.ActionLink("Page 1", action.Action, action.UrlParams)</li>
                         for (int i = 2; i <= action.Pages; i++)
                         {
-                           var urlParams = action.UrlParams;
+                           RouteValueDictionary urlParams = action.UrlParams;
                            urlParams["page"] = i;
-                           <li>@Html.ActionLink("Page " + i.ToString(), action.Action + "Page", urlParams)</li>
+                           <li>@Html.ActionLink($"Page {i}", action.Action + "Page", urlParams)</li>
                         }
                      }
                      else
@@ -51,9 +64,9 @@
                               <li>@Html.ActionLink("Page 1", action.Action, action.UrlParams)</li>
                               @for (int i = 2; i <= action.Pages; i++)
                               {
-                                 var urlParams = action.UrlParams;
+                                 RouteValueDictionary urlParams = action.UrlParams;
                                  urlParams["page"] = i;
-                                 <li>@Html.ActionLink("Page " + i.ToString(), action.Action + "Page", urlParams)</li>
+                                 <li>@Html.ActionLink($"Page {i}", action.Action + "Page", urlParams)</li>
                               }
                            </ul>
                         </li>
@@ -63,18 +76,49 @@
             </li>
          }
          <li>
-            <a href="#sitemap-rss" data-toggle="collapse">@BuildFeed.Local.Common.RssFeeds</a>
+            <a href="#sitemap-rss" data-toggle="collapse">@VariantTerms.Common_RssFeeds</a>
             <ul id="sitemap-rss" class="collapse">
-               <li><a href="@Url.Action("Index", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyCompiled"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyCompiled</a></li>
-               <li><a href="@Url.Action("Leaked", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyLeaked"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyLeaked</a></li>
-               <li><a href="@Url.Action("Added", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyAdded"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyAdded</a></li>
-               <li><a href="@Url.Action("Version", new { controller = "Rss" })" title="@BuildFeed.Local.Support.HighestVersion"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.HighestVersion</a></li>
                <li>
-                  <a href="#rss-labs" data-toggle="collapse">@BuildFeed.Local.Model.Lab</a>
+                  <a href="@Url.Action("Index", new
+                           {
+                              controller = "Rss"
+                           })" title="@VariantTerms.Support_RecentlyCompiled">
+                     <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyCompiled</a>
+               </li>
+               <li>
+                  <a href="@Url.Action("Leaked", new
+                           {
+                              controller = "Rss"
+                           })" title="@VariantTerms.Support_RecentlyLeaked">
+                     <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyLeaked</a>
+               </li>
+               <li>
+                  <a href="@Url.Action("Added", new
+                           {
+                              controller = "Rss"
+                           })" title="@VariantTerms.Support_RecentlyAdded">
+                     <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyAdded</a>
+               </li>
+               <li>
+                  <a href="@Url.Action("Version", new
+                           {
+                              controller = "Rss"
+                           })" title="@VariantTerms.Support_HighestVersion">
+                     <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_HighestVersion</a>
+               </li>
+               <li>
+                  <a href="#rss-labs" data-toggle="collapse">@VariantTerms.Model_LabString</a>
                   <ul id="rss-labs" class="collapse">
                      @foreach (string lab in Model.Labs)
                      {
-                        <li><a href="@Url.Action("Lab", new { controller = "Rss", lab = lab })" title="@lab"><i class="fa fa-sm fa-rss"></i> @lab</a></li>
+                        <li>
+                           <a href="@Url.Action("Lab", new
+                                    {
+                                       controller = "Rss",
+                                       lab
+                                    })" title="@lab">
+                              <i class="fa fa-sm fa-rss"></i> @lab</a>
+                        </li>
                      }
                   </ul>
                </li>

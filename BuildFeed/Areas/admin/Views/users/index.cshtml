@@ -2,73 +2,73 @@
 @model IEnumerable<MembershipUser>
 
 @{
-    ViewBag.Title = "Manage users | BuildFeed";
+   ViewBag.Title = "Manage users | BuildFeed";
 }
 
 <h2>Manage users</h2>
 
 <ul>
-    <li>@Html.ActionLink("View administrators", "admins")</li>
-    <li>@Html.ActionLink("Clean-up old unapproved users", "cleanup")</li>
-    <li>@Html.ActionLink("Return to admin panel", "index", "base")</li>
+   <li>@Html.ActionLink("View administrators", "admins")</li>
+   <li>@Html.ActionLink("Clean-up old unapproved users", "cleanup")</li>
+   <li>@Html.ActionLink("Return to admin panel", "index", "base")</li>
 </ul>
 
 <table class="table table-striped table-bordered table-admin">
-    <thead>
-        <tr>
-            <th>
-                Username
-            </th>
-            <th>
-                Email Address
-            </th>
+   <thead>
+      <tr>
+         <th>
+            Username
+         </th>
+         <th>
+            Email Address
+         </th>
+         <td>
+            Registration Time
+         </td>
+         <td>
+            Last Login Time
+         </td>
+         <td>
+            Last Lockout Time
+         </td>
+         <th style="width:108px;"></th>
+         <th style="width:108px;"></th>
+      </tr>
+   </thead>
+   <tbody>
+      @foreach (MembershipUser mu in Model)
+      {
+         <tr>
             <td>
-                Registration Time
+               @mu.UserName
             </td>
             <td>
-                Last Login Time
+               <a href="mailto:@mu.Email">@mu.Email</a>
             </td>
             <td>
-                Last Lockout Time
+               @(mu.CreationDate == default(DateTime) ? "Never" : mu.CreationDate.Humanize())
             </td>
-            <th style="width:108px;"></th>
-            <th style="width:108px;"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (MembershipUser mu in Model)
-        {
-            <tr>
-                <td>
-                    @mu.UserName
-                </td>
-                <td>
-                   <a href="mailto:@mu.Email">@mu.Email</a>
-                </td>
-                <td>
-                   @(mu.CreationDate == default(DateTime) ? "Never" : mu.CreationDate.Humanize())
-                </td>
-                <td>
-                   @(mu.LastLoginDate == default(DateTime) ? "Never" : mu.LastLoginDate.Humanize())
-                </td>
-                <td>
-                   @(mu.LastLockoutDate == default(DateTime) ? "Never" : mu.LastLockoutDate.Humanize())
-                </td>
-                <td class="text-right">
-                    @(
+            <td>
+               @(mu.LastLoginDate == default(DateTime) ? "Never" : mu.LastLoginDate.Humanize())
+            </td>
+            <td>
+               @(mu.LastLockoutDate == default(DateTime) ? "Never" : mu.LastLockoutDate.Humanize())
+            </td>
+            <td class="text-right">
+               @(
                     mu.IsApproved ?
                     Html.ActionLink("Unapprove", "unapprove", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" }) :
                     Html.ActionLink("Approve", "approve", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
-                    )
-                </td>
-                <td class="text-right">
-                    @(
+               )
+            </td>
+            <td class="text-right">
+               @(
                     !mu.IsLockedOut ?
                     Html.ActionLink("Lock", "lock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-danger", style = "width:90px;" }) :
                     Html.ActionLink("Unlock", "unlock", new { id = mu.ProviderUserKey }, new { @class = "btn btn-success", style = "width:90px;" })
-                    )
-                </td>
-            </tr>
-        }
-    </tbody>
+               )
+            </td>
+         </tr>
+      }
+   </tbody>
 </table>

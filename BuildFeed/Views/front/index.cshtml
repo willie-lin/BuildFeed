@@ -1,21 +1,21 @@
 ﻿@model BuildFeed.Models.ViewModel.Front.FrontPage
 @{
-   ViewBag.Title = $"{BuildFeed.Local.Common.SiteName} | Windows 10 Build Tracker";
+   ViewBag.Title = $"{InvariantTerms.SiteName} | Windows 10 Build Tracker";
 }
 @section Head
 {
    <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
 }
 
-<h1>@BuildFeed.Local.Common.SiteName</h1>
+<h1>@InvariantTerms.SiteName</h1>
 
-<h3>Latest Builds</h3>
+<h3>@VariantTerms.Front_LatestBuilds</h3>
 <div class="latest-flex">
    <a href="@Url.Action("ViewBuild", new
             {
                Model.CurrentCanary.Id
             })" class="latest-flex-item latest-flex-red">
-      <h3 class="latest-flex-title">Current Canary</h3>
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
       <div class="latest-flex-detail">
          <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
          <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
@@ -26,7 +26,7 @@
             {
                Model.CurrentInsider.Id
             })" class="latest-flex-item latest-flex-yellow">
-      <h3 class="latest-flex-title">Current Insider</h3>
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
       <div class="latest-flex-detail">
          <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
          <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
@@ -37,7 +37,7 @@
             {
                Model.CurrentRelease.Id
             })" class="latest-flex-item latest-flex-green">
-      <h3 class="latest-flex-title">Current Release</h3>
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
       <div class="latest-flex-detail">
          <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
          <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
@@ -45,12 +45,19 @@
       </div>
    </a>
 </div>
-<a href="@Url.Action("IndexPage", new { Page = 1})" class="latest-full">See the full Windows build listing...</a>
-<h3>@BuildFeed.Local.Front.Share</h3>
+<a href="@Url.Action("IndexPage", new
+         {
+            Page = 1
+         })" class="latest-full">
+   @VariantTerms.Front_FullBuildListing
+</a>
+<h3>@VariantTerms.Front_Share</h3>
 <div class="addthis_sharing_toolbox"></div>
 <br />
-<h3>About BuildFeed</h3>
+<h3>@string.Format(VariantTerms.Front_AboutSite, InvariantTerms.SiteName)</h3>
 <h4>Who runs BuildFeed? Is this supported by Microsoft?</h4>
 <p>BuildFeed is ran and maintained by a group of enthusiasts, without the support of Microsoft. We've certainly had sources shut down by changes at Microsoft in the past, and I'm sure we will in the future.</p>
 <h4>How does BuildFeed get its data?</h4>
-<p>Nice try, Donna, but I'm not falling for this one. Suffice to say, we have a range of sources, and it is our intent that all builds posted on BuildFeed are an absolute certainty. That said, we are human and sometimes we cock up. If you have reason to think a build listed on BuildFeed is not correct, please <a href="#">get in touch</a> with us.</p>
+<p>
+   Nice try, Donna, but I'm not falling for this one. Suffice to say, we have a range of sources, and it is our intent that all builds posted on BuildFeed are an absolute certainty. That said, we are human and sometimes we cock up. If you have reason to think a build listed on BuildFeed is not correct, please get in touch with us.
+</p>
