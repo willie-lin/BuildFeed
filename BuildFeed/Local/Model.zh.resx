@@ -118,84 +118,84 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Added" xml:space="preserve">
-    <value>����ʱ��</value>
+    <value>创建时间</value>
   </data>
   <data name="AppPackage" xml:space="preserve">
-    <value>������</value>
+    <value>软件包</value>
   </data>
   <data name="BuildTime" xml:space="preserve">
-    <value>����ʱ��</value>
+    <value>编译时间</value>
   </data>
   <data name="BuildTools" xml:space="preserve">
-    <value>���빤��</value>
+    <value>编译工具</value>
   </data>
   <data name="Documentation" xml:space="preserve">
-    <value>�ĵ�</value>
+    <value>文档</value>
   </data>
   <data name="FlightCanary" xml:space="preserve">
     <value>Canary</value>
   </data>
   <data name="FlightLevel" xml:space="preserve">
-    <value>���͵ȼ�</value>
+    <value>推送等级</value>
   </data>
   <data name="FlightMSIT" xml:space="preserve">
-    <value>΢���ڲ�</value>
+    <value>微软内部</value>
   </data>
   <data name="FlightNone" xml:space="preserve">
-    <value>��</value>
+    <value>无</value>
   </data>
   <data name="FlightOSG" xml:space="preserve">
-    <value>����ϵͳ����(OSG)</value>
+    <value>操作系统部门(OSG)</value>
   </data>
   <data name="FlightWIF" xml:space="preserve">
-    <value>Windows Insider ����ͨ��</value>
+    <value>Windows Insider 快速通道</value>
   </data>
   <data name="FlightWIS" xml:space="preserve">
-    <value>Windows Insider ����ͨ��</value>
+    <value>Windows Insider 慢速通道</value>
   </data>
   <data name="InternalLeak" xml:space="preserve">
-    <value>����й¶</value>
+    <value>公开泄露</value>
   </data>
   <data name="Lab" xml:space="preserve">
-    <value>��֧��</value>
+    <value>分支名</value>
   </data>
   <data name="LeakDate" xml:space="preserve">
-    <value>й¶�򷢲�����</value>
+    <value>泄露或发布日期</value>
   </data>
   <data name="Logging" xml:space="preserve">
-    <value>�汾��¼</value>
+    <value>版本记录</value>
   </data>
   <data name="MajorVersion" xml:space="preserve">
-    <value>���汾</value>
+    <value>主版本</value>
   </data>
   <data name="MinorVersion" xml:space="preserve">
-    <value>���汾</value>
+    <value>副版本</value>
   </data>
   <data name="Modified" xml:space="preserve">
-    <value>�޸�ʱ��</value>
+    <value>修改时间</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>�汾��</value>
+    <value>版本号</value>
   </data>
   <data name="PrivateLeak" xml:space="preserve">
-    <value>˽��й¶</value>
+    <value>私密泄露</value>
   </data>
   <data name="PublicRelease" xml:space="preserve">
-    <value>��������</value>
+    <value>公开发布</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>�޶��汾</value>
+    <value>修订版本</value>
   </data>
   <data name="SourceDetails" xml:space="preserve">
-    <value>��Դ��ϸ��Ϣ</value>
+    <value>来源详细信息</value>
   </data>
   <data name="SourceType" xml:space="preserve">
-    <value>��Դ����</value>
+    <value>来源类型</value>
   </data>
   <data name="UpdateGDR" xml:space="preserve">
-    <value>����(GDR)</value>
+    <value>更新(GDR)</value>
   </data>
   <data name="UpdateLDR" xml:space="preserve">
-    <value>����(LDR)</value>
+    <value>更新(LDR)</value>
   </data>
 </root>
