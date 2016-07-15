@@ -1443,7 +1443,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MongoAuth\MongoAuth.csproj">
+    <ProjectReference Include="..\Authentication\MongoAuth\MongoAuth.csproj">
       <Project>{7c67bfb9-1b3b-4676-a58d-10573da82cfe}</Project>
       <Name>MongoAuth</Name>
     </ProjectReference>
