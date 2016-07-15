@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,7 +127,7 @@
     <value>提供貢獻到</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>鳴謝</value>
   </data>
   <data name="DevelopedBy" xml:space="preserve">
     <value>開發者</value>
@@ -142,7 +142,7 @@
     <value>登出</value>
   </data>
   <data name="PageTitleSegment" xml:space="preserve">
-    <value>| Page {0}</value>
+    <value>| 第 {0} 頁</value>
   </data>
   <data name="ProductName" xml:space="preserve">
     <value>Windows NT</value>
