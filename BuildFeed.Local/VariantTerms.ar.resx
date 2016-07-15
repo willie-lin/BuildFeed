@@ -118,312 +118,313 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>[!!! Âδδ βúïℓδ  !!!]</value>
+    <value>إضافة نسخة</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>[!!! Âδ₥ïñ  !!!]</value>
+    <value>أدوات المسؤول</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ  !!!]</value>
+    <value>ساهم بالتطوير عبر</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>لائحة الشكر والمساهمات</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥  !!!]</value>
+    <value>طور من قبل</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>[!!! Éřřôř  !!!]</value>
+    <value>خطأ</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+    <value>حدث خطأ ما بالموقع. قد يكون من جهتك ، أو من جهتنا. يرجى إعادة المحاولة مرة أخرى. إذا مازلت تحصل على شاشة الخطأ هذه ، يرجى مراجعتنا عبر {0}</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>تسجيل الدخول</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>[!!! £ôϱ ôúƭ  !!!]</value>
+    <value>تسجيل الخروج</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+    <value>اللغة</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+    <value>السمة</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
+    <value>خدمة RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>[!!! §ïƭè₥áƥ  !!!]</value>
+    <value>خريطة الموقع</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>[!!! Ðářƙ  !!!]</value>
+    <value>معتم</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>[!!! £ïϱλƭ ℓ !!!]</value>
+    <value>مضيء</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
+    <value>| الصفحة {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+    <value>تبديل الواجهة</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>[!!! Tωïƭƭèř  !!!]</value>
+    <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+    <value>عن الموقع</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>[!!! Âβôúƭ {0}  !!!]</value>
+    <value>عن {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+    <value>النسخ من {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>[!!! Çô₥₥èñƭƨ  !!!]</value>
+    <value>الملاحظات</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+    <value>آخر نسخة بالمختبرات</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+    <value>النسخة الحالية ببرنامج Windows Insiders</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+    <value>النسخة المنشورة حالياً</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+    <value>حذف</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+    <value>التفاصيل</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>[!!! Éδïƭ !!!]</value>
+    <value>تعديل</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
+    <value>تعديل بيانات النسخة</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+    <value>أوامر المعدل</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
+    <value>مشاهدة القائمة الكاملة لنسخ الويندوز...</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
+    <value>{0} قائمة النسخ</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
+    <value>آخر النسخ</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>[!!! £ïƨƭïñϱ  !!!]</value>
+    <value>القائمة</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+    <value>ابحث عن المزيد من النسخ في {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+    <value>ابحث عن المزيد من النسخ مصدرها من {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+    <value>ابحث عن المزيد من المسخ المصنعة في {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+    <value>لا يوجد تسمية مختبر</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>[!!! {0} βúïℓδƨ  !!!]</value>
+    <value>{0} نسخة/نسخ</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè  !!!]</value>
+    <value>خاص</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>[!!! Þúβℓïç  !!!]</value>
+    <value>عام</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+    <value>لصق سريع</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
+    <value>عودة إلى قائمة النسخ</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
+    <value>عودة إلى ملخص النسخة</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>[!!! §λářè  !!!]</value>
+    <value>مشاركة</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>[!!! Tôδá¥  !!!]</value>
+    <value>اليوم</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+    <value>اكتشف المزيد عن نسخة الويندوز {0} ، من المختبر {1} والتي صنعت في {2}</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+    <value>تعرف على النسخة {0} من المختبر {1}. يقوم موقع buildfeed بمتابعة النسخ الجديدة من نظام الويندوز أول بأول خلال مراحل تطويره.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+    <value>اكتشف جميع النسخ المعروفة من مختبر التطوير {0} عبر موقعنا الذي يحتوي على لائحات نسخ نظام الويندوز ، BuildFeed.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+    <value>أظهر قائمة بجميع نسخ الويندوز والتي تم بناؤها في {0} ، وراقب كيف تطور الويندوز عبر الوقت ، وذلك عبر موقع القوائم المتكاملة من نسخ الويندوز ، BuildFeed</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+    <value>تاريخ ووقت الإنشاء</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+    <value>رقم بناء النسخة</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+    <value>تاريخ ووقت بناء النسخة</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+    <value>رابط خارجي</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+    <value>اسم المختبر</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+    <value>تاريخ نشر أو تسريب النسخة</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+    <value>إصدار النسخة الرئيسي</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+    <value>إصدار النسخة الفرعي</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+    <value>تاريخ التعديل</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+    <value>رقم مراجعة بناء النسخة</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+    <value>ملاحظات على المصدر</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+    <value>نوع المصدر</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+    <value>حزمة تطبيق</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+    <value>حزمة تطوير خاصة بالويندوز</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+    <value>مرجع من مستند</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+    <value>نسخة مسربة للعموم</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+    <value>سجل متابعة</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+    <value>نسخة داخلية/غير مسربة</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+    <value>نشر عام</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+    <value>تحديث عام (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+    <value>تحديث محدود بخاصية (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+    <value>نسخة</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+    <value>بحث داخل BuildFeed...</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+    <value>لم يتم العثور على أي نتائج</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+    <value>مختبر</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+    <value>فلتر البحث</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+    <value>المصدر</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+    <value>بحث</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+    <value>اكتب للبحث...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+    <value>الإصدار</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+    <value>السنة</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+    <value>جميع الحسابات يتم تفعيلها يدوياً من مسؤول الموقع. اصبروا علينا وزورونا مرة أخرى لاحقاً.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>الإضافات إلى BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>النسخ المصنعة</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>تغيير كلمة السر</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>تأكيد كلمة السر الجديدة</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>تأكيد كلمة السر</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+    <value>الإيميل الإلكتروني</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>أدخل كلمة السر الحالية</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>أدخل كلمة سر جديدة</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+    <value>أدخل كلمة السر</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+    <value>أعلى إصدار</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+    <value>المختبرات</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>تسجيل الدخول</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+    <value>كلمة السر</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+    <value>نسخ أضيفت حديثاً</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>نسخ تم تصنيعها حديثاً</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+    <value>نسخ تم تسريبها حديثاً</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+    <value>سجّل بالموقع</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+    <value>تذكرني</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+    <value>شكراً لك على التسجيل بالموقع</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+    <value>اسم المستخدم</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+    <value>الأسبوع</value>
   </data>
+
 </root>

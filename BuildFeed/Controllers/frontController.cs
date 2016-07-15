@@ -14,7 +14,7 @@ using BuildFeed.Models.ViewModel.Front;
 
 namespace BuildFeed.Controllers
 {
-   public class FrontController : LocalController
+   public class FrontController : BaseController
    {
       public const int PAGE_SIZE = 72;
 

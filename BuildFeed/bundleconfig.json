@@ -22,5 +22,11 @@
     "inputFiles": [
       "Scripts/bfs.js"
     ]
+  },
+  {
+    "outputFileName": "res/css/light.min.css",
+    "inputFiles": [
+      "res/css/light.css"
+    ]
   }
 ]

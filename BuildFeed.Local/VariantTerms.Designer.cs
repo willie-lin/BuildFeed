@@ -295,6 +295,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [!!! Ðèƭáïℓƨ  !!!].
+        /// </summary>
+        public static string Front_Details {
+            get {
+                return ResourceManager.GetString("Front_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [!!! Éδïƭ !!!].
         /// </summary>
         public static string Front_Edit {

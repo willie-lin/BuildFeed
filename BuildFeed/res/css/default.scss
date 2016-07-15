@@ -19,6 +19,11 @@ h1
    font-weight: 500;
 }
 
+p
+{
+   margin: 0 0 1em;
+}
+
 .container
 {
    width: 1240px;
@@ -213,7 +218,7 @@ article
 
       .build-group-empty
       {
-         width: 160px;
+         width: 180px;
          flex-grow: 1;
          margin: 0 0.75em;
          box-sizing: border-box;
@@ -318,6 +323,70 @@ article
    color: #fff;
    margin: 0 0 2em;
    padding: #{(2em / 3)};
+}
+
+.build-details-flex
+{
+   display: flex;
+   font-size: 1.1em;
+
+   .build-details-flex-item
+   {
+      flex-grow: 1;
+      margin-bottom: 1.5em;
+
+      label
+      {
+         font-weight: bold;
+         display: inline-block;
+         vertical-align: top;
+         margin-right: 1em;
+      }
+
+      .build-details-flex-value
+      {
+         display: inline-block;
+         vertical-align: top;
+      }
+   }
+}
+
+.form-group
+{
+   margin-bottom: 1.5em;
+
+   > label
+   {
+      width: 20%;
+      text-align: right;
+      font-weight: bold;
+      margin-right: 1em;
+      display: inline-block;
+      vertical-align: top;
+   }
+
+   > div
+   {
+      margin-left: calc(20% + 1em);
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+
+      input, textarea, select
+      {
+         width: 100%;
+      }
+
+      input[type=submit]
+      {
+         width: auto;
+      }
+   }
+
+   > label + div
+   {
+      margin-left: 0;
+   }
 }
 
 ul.pagination

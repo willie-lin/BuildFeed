@@ -6,10 +6,17 @@ var BuildFeed;
         link.parentElement.classList.toggle("open");
     }
     BuildFeed.DropdownClick = DropdownClick;
+    function SwitchTheme(ev) {
+        ev.preventDefault();
+        var link = this;
+        document.cookie = "bf_theme=" + link.dataset["theme"] + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        location.reload(true);
+    }
+    BuildFeed.SwitchTheme = SwitchTheme;
     function SwitchLanguage(ev) {
         ev.preventDefault();
         var link = this;
-        document.cookie = "lang=" + link.dataset["lang"] + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "bf_lang=" + link.dataset["lang"] + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
         location.reload(true);
     }
     BuildFeed.SwitchLanguage = SwitchLanguage;
@@ -22,6 +29,10 @@ var BuildFeed;
                     el.addEventListener("click", DropdownClick);
                 }
             }
+        }
+        var ddThemes = document.getElementById("settings-theme-menu").getElementsByTagName("a");
+        for (var i = 0; i < ddThemes.length; i++) {
+            ddThemes[i].addEventListener("click", SwitchTheme);
         }
         var ddLangs = document.getElementById("settings-lang-menu").getElementsByTagName("a");
         for (var i = 0; i < ddLangs.length; i++) {

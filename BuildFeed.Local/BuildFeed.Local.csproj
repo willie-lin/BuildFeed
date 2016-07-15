@@ -50,6 +50,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="VariantTerms.ar.resx" />
+    <EmbeddedResource Include="VariantTerms.en.resx" />
+    <EmbeddedResource Include="VariantTerms.nl.resx" />
     <EmbeddedResource Include="VariantTerms.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VariantTerms.Designer.cs</LastGenOutput>

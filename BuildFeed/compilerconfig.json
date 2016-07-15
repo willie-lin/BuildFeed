@@ -10,5 +10,9 @@
   {
     "outputFile": "res/css/rtl.css",
     "inputFile": "res/css/rtl.scss"
+  },
+  {
+    "outputFile": "res/css/light.css",
+    "inputFile": "res/css/light.scss"
   }
 ]

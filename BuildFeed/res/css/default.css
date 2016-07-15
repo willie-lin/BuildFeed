@@ -13,6 +13,9 @@ h1 {
   font-size: 3em;
   font-weight: 500; }
 
+p {
+  margin: 0 0 1em; }
+
 .container {
   width: 1240px;
   max-width: 80%;
@@ -128,7 +131,7 @@ article {
         font-weight: 300;
         margin: 0 0 0.66667em; }
     article .build-group-listing .build-group-empty {
-      width: 160px;
+      width: 180px;
       flex-grow: 1;
       margin: 0 0.75em;
       box-sizing: border-box; }
@@ -191,6 +194,42 @@ article {
   color: #fff;
   margin: 0 0 2em;
   padding: 0.66667em; }
+
+.build-details-flex {
+  display: flex;
+  font-size: 1.1em; }
+  .build-details-flex .build-details-flex-item {
+    flex-grow: 1;
+    margin-bottom: 1.5em; }
+    .build-details-flex .build-details-flex-item label {
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1em; }
+    .build-details-flex .build-details-flex-item .build-details-flex-value {
+      display: inline-block;
+      vertical-align: top; }
+
+.form-group {
+  margin-bottom: 1.5em; }
+  .form-group > label {
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 1em;
+    display: inline-block;
+    vertical-align: top; }
+  .form-group > div {
+    margin-left: calc(20% + 1em);
+    width: 30%;
+    display: inline-block;
+    vertical-align: top; }
+    .form-group > div input, .form-group > div textarea, .form-group > div select {
+      width: 100%; }
+    .form-group > div input[type=submit] {
+      width: auto; }
+  .form-group > label + div {
+    margin-left: 0; }
 
 ul.pagination {
   text-align: center;

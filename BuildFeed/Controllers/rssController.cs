@@ -10,7 +10,7 @@ using WilderMinds.RssSyndication;
 
 namespace BuildFeed.Controllers
 {
-   public class RssController : LocalController
+   public class RssController : BaseController
    {
       private const int RSS_SIZE = 25;
       private readonly Build _bModel;

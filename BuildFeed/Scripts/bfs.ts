@@ -8,12 +8,20 @@
       link.parentElement.classList.toggle("open");
    }
 
+   export function SwitchTheme(ev: MouseEvent) {
+      ev.preventDefault();
+
+      const link = this as HTMLAnchorElement;
+      document.cookie = `bf_theme=${link.dataset["theme"]}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+      location.reload(true);
+   }
+
    export function SwitchLanguage(ev: MouseEvent)
    {
       ev.preventDefault();
 
       const link = this as HTMLAnchorElement;
-      document.cookie = `lang=${link.dataset["lang"]}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+      document.cookie = `bf_lang=${link.dataset["lang"]}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
       location.reload(true);
    }
 
@@ -31,6 +39,11 @@
                el.addEventListener("click", DropdownClick);
             }
          }
+      }
+
+      const ddThemes = document.getElementById("settings-theme-menu").getElementsByTagName("a");
+      for (let i = 0; i < ddThemes.length; i++) {
+         ddThemes[i].addEventListener("click", SwitchTheme);
       }
 
       const ddLangs = document.getElementById("settings-lang-menu").getElementsByTagName("a");

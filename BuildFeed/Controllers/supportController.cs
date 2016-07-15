@@ -14,7 +14,7 @@ using BuildFeed.Models.ViewModel;
 
 namespace BuildFeed.Controllers
 {
-   public class SupportController : LocalController
+   public class SupportController : BaseController
    {
       private readonly Build _bModel;
 

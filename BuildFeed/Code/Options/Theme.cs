@@ -13,7 +13,7 @@ namespace BuildFeed.Code.Options
       private readonly SiteTheme _siteTheme;
 
       public string CookieValue => _siteTheme.ToString();
-      public string CssPath => $"~/content/{_siteTheme.ToString().ToLower()}.min.css";
+      public string CssPath => $"~/res/css/{_siteTheme.ToString().ToLower()}.min.css";
       public string DisplayName => MvcExtensions.GetDisplayTextForEnum(_siteTheme);
 
       public Theme(SiteTheme st) { _siteTheme = st; }

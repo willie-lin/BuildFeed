@@ -186,11 +186,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
-    <Compile Include="Code\LocalController.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
     <Compile Include="Code\Options\Locale.cs" />
     <Compile Include="Code\Options\Theme.cs" />
     <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FrontController.cs" />
     <Compile Include="Controllers\RssController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
@@ -239,6 +239,12 @@
     </Content>
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
+    <Content Include="res\css\light.css">
+      <DependentUpon>light.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\light.min.css">
+      <DependentUpon>light.css</DependentUpon>
+    </Content>
     <Content Include="res\css\rtl.css">
       <DependentUpon>rtl.scss</DependentUpon>
     </Content>
@@ -284,6 +290,7 @@
     <Content Include="Scripts\bfs.min.js">
       <DependentUpon>bfs.js</DependentUpon>
     </Content>
+    <Content Include="res\css\light.scss" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
