@@ -24,7 +24,7 @@ namespace BuildFeed.Controllers
          return builds.ToArray();
       }
 
-      public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 20)
+      public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 0)
       {
          FrontBuildGroup[] bgroups = await _bModel.SelectAllGroups(limit, skip);
          return bgroups.ToArray();
