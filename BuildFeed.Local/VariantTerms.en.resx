@@ -210,6 +210,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>See the full Windows build listing...</value>
   </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: The Windows build tracker</value>
+  </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} build list</value>
   </data>
@@ -331,7 +334,7 @@
     <value>Update (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Buil</value>
+    <value>Build</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
     <value>Search BuildFeed</value>

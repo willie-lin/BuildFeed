@@ -340,6 +340,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!].
+        /// </summary>
+        public static string Front_HomeH1 {
+            get {
+                return ResourceManager.GetString("Front_HomeH1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [!!! {0} βúïℓδ ℓïƨƭ ℓ !!!].
         /// </summary>
         public static string Front_HomepageH1 {

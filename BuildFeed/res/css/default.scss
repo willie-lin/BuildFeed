@@ -11,6 +11,7 @@
 a
 {
    text-decoration: none;
+   color: #1274b2;
 }
 
 h1
@@ -29,6 +30,7 @@ p
    width: 1240px;
    max-width: 80%;
    margin: 0 auto;
+   position: relative;
 }
 
 .no-wrapping
@@ -83,8 +85,6 @@ nav#page-navigation
 
 .dropdown-parent
 {
-   position: relative;
-
    .dropdown-menu
    {
       -moz-box-sizing: border-box;
@@ -92,11 +92,11 @@ nav#page-navigation
       box-sizing: border-box;
       display: none;
       position: absolute;
-      right: 0;
-      width: calc(80vw + 20px);
+      right: -15px;
       max-width: 1240px;
       padding: 15px;
       text-align: left;
+      z-index: 10;
 
       h4
       {
@@ -159,10 +159,10 @@ article
 
    h1
    {
-      font-size: 5em;
+      font-size: 4em;
       font-weight: 300;
       text-align: center;
-      margin: 0 0 #{(1em / 3)};
+      margin: 0 0 #{(1em / 2)};
 
       &.eager-wrapping
       {
@@ -452,5 +452,36 @@ footer#page-footer
    p
    {
       margin: 0 0 #{(2em / 5)};
+   }
+}
+
+.modal-search-overlay
+{
+   display: none;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: rgba(0,0,0, 0.4);
+
+   .modal-search
+   {
+      position: absolute;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      background: #000;
+      padding: 2em;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+
+      h3
+      {
+         color: #fff;
+         margin: 0 0 1em;
+      }
    }
 }

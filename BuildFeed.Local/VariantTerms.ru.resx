@@ -118,315 +118,313 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>[!!! Âδδ βúïℓδ  !!!]</value>
+    <value>Добавить сборку</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>[!!! Âδ₥ïñ  !!!]</value>
+    <value>Администрирование</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ  !!!]</value>
+    <value>Помочь в разработке на</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>команда проекта</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥  !!!]</value>
+    <value>Автор:</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>[!!! Éřřôř  !!!]</value>
+    <value>Ошибка</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+    <value>Что-то сломалось. Возможно это потому, что вы сделали что-то не так. Или возможно потому, что я сделал что-то не так. Если вы продолжаете получать эту ошибку, сообщите о проблеме через {0}.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>Войти</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>[!!! £ôϱ ôúƭ  !!!]</value>
+    <value>Выйти</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+    <value>Язык</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+    <value>Тема</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
+    <value>RSS-лента</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>[!!! §ïƭè₥áƥ  !!!]</value>
+    <value>Карта сайта</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>[!!! Ðářƙ  !!!]</value>
+    <value>Темная</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>[!!! £ïϱλƭ ℓ !!!]</value>
+    <value>Светлая</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
+    <value>| Страница {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+    <value>Переключить навигацию</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>[!!! Tωïƭƭèř  !!!]</value>
+    <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+    <value>О сайте</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>[!!! Âβôúƭ {0}  !!!]</value>
+    <value>О {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+    <value>Сборки из {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>[!!! Çô₥₥èñƭƨ  !!!]</value>
+    <value>Комментарии</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+    <value>Сборка в Canary</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+    <value>Сборки в Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+    <value>Последний релиз</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+    <value>Удалить</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+    <value>Подробнее</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>[!!! Éδïƭ !!!]</value>
+    <value>Редактировать</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
+    <value>Редактировать сборку</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+    <value>Опции редактора</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
-  </data>
-  <data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+    <value>Посмотреть полный список сборок...</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
+    <value>Список сборок {0}</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
+    <value>Последние сборки</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>[!!! £ïƨƭïñϱ  !!!]</value>
+    <value>Листинг</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+    <value>Еще сборки из {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+    <value>Еще сборки из {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+    <value>Еще сборки, собранные в {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+    <value>Нет лаборатории</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>[!!! {0} βúïℓδƨ  !!!]</value>
+    <value>{0} сборок</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè  !!!]</value>
+    <value>Приватная</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>[!!! Þúβℓïç  !!!]</value>
+    <value>Публичная</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+    <value>Быстрая вставка</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
+    <value>Вернуться к списку сборок</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
+    <value>Вернуться к обзору сборки</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>[!!! §λářè  !!!]</value>
+    <value>Поделиться</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>[!!! Tôδá¥  !!!]</value>
+    <value>Сегодня</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+    <value>Больше сведений о сборке Windows {0} из {1}, собранной {2}.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+    <value>Узнайте больше о сборке Windows {0} из {1}. BuildFeed отслеживает весь процесс разработки Windows.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+    <value>Ознакомьтесь со всеми сборками из лаборатории {0}, опубликованными на BuildFeed, собираемом энтузиастами списке сборок Windows.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+    <value>Посмотрите список всех сборок Windows, собранных в {0} для улучшения понимания процесса разработки WIndows на BuildFeed, собираемом энтузиастами списке сборок Windows.</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+    <value>Дата создания</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+    <value>Номер сборки</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+    <value>Время сборки</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+    <value>Внешняя ссылка</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+    <value>Строка лаборатории</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+    <value>Дата утечки или релиза</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+    <value>Мажорная версия</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+    <value>Минорная версия</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+    <value>Время изменения</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+    <value>Ревизия сборки</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+    <value>Детали источника</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+    <value>Тип источника</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+    <value>Пакет приложений</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+    <value>Инструменты сборки</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+    <value>Документация</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+    <value>Публичная утечка</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+    <value>Логирование</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+    <value>Приватная утечка</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+    <value>Публичный релиз</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+    <value>Обновление (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+    <value>Обновление (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+    <value>Сборка</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+    <value>Поиск по BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+    <value>Ничего не найдено</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+    <value>Лаборатория</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+    <value>Поисковый запрос</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+    <value>Источник</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+    <value>Поиск</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+    <value>Введите запрос…</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+    <value>Версия</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+    <value>Год</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+    <value>Каждый аккаунт проходит проверку администратором, так что будьте терпеливы и проверьте позже</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>Дополнения к BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>Сборок собрано</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>Изменить ваш пароль</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>Подтвердите новый пароль</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>Подтвердите пароль</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+    <value>Электронная почта</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>Введите текущий пароль</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>Введите новый пароль</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+    <value>Введите пароль</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+    <value>Последняя версия</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+    <value>Лаборатории</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>Вход</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+    <value>Пароль</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+    <value>Только что добавленные</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>Только что скомпилированные</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+    <value>Только что утёкшие</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+    <value>Зарегистрироваться</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+    <value>Запомнить меня</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+    <value>Благодарим за регистрацию</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+    <value>Имя пользователя</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+    <value>Неделя</value>
   </data>
+
 </root>

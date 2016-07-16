@@ -113,7 +113,10 @@ namespace BuildFeed.Models
 
          query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:ReleaseLab"] }
+            { nameof(BuildModel.LabUrl), new BsonDocument
+            {
+               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
+            } }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentRelease = (await query.ToListAsync())[0];

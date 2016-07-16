@@ -2,14 +2,12 @@
   background-color: #f6f5f3;
   color: #373736; }
 
-a {
+h1 > a {
   color: #373736; }
 
 #page-content {
   background-color: #373736;
   color: #f6f5f3; }
-  #page-content a {
-    color: #f6f5f3; }
   #page-content h3 {
     border-bottom-color: #ccc; }
 
@@ -37,6 +35,10 @@ article {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15) inset;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15) inset; }
   article h1, article h3 {
+    color: #d6d5d3; }
+  article .build-group > h3 > a,
+  article a.more-link,
+  article .build-details-comments a {
     color: #d6d5d3; }
 
 ul.pagination > li.active > a {

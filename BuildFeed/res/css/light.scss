@@ -4,7 +4,7 @@
    color: #f6f5f3;
 }
 
-a
+h1 > a
 {
    color: #f6f5f3;
 }
@@ -13,11 +13,6 @@ a
 {
    background-color: #f6f5f3;
    color: #373736;
-
-   a
-   {
-      color: #373736;
-   }
 
    h3
    {
@@ -70,6 +65,13 @@ article
    box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
 
    h1, h3
+   {
+      color: #242423;
+   }
+
+   .build-group > h3 > a,
+   a.more-link,
+   .build-details-comments a
    {
       color: #242423;
    }
