@@ -121,17 +121,23 @@
     <value>اضافه کردن بیلد</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>ادمین</value>
+    <value>مدیر</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>دخیل بودن در</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
-    <value>دست اندر کاران</value>
+    <value>اعتبار</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>توسعه یافته توسط</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>خطا</value>
   </data>
@@ -148,7 +154,7 @@
     <value>زبان</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>تم</value>
+    <value>زمینه</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>فید RSS</value>
@@ -186,14 +192,11 @@
   <data name="Front_CurrentCanary" xml:space="preserve">
     <value>قناری کنونی</value>
   </data>
-  
-<!--
-<data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>اینسایدر فعلی</value>
   </data>
--->
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>اینسایدرکنونی</value>
+    <value>انتشار فعلی</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>حذف</value>
@@ -213,6 +216,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>لیست کامل بیلد ویندوز را ببینید... لورم</value>
   </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: دنباله رو بیلدهای ویندوز</value>
+  </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} لیست بیلد</value>
   </data>
@@ -220,7 +226,7 @@
     <value>آخرین بیلد</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>لیست بندی</value>
+    <value>فهرست بندی</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>بیلد های بیشتری از {0} بیابید</value>
@@ -228,12 +234,9 @@
   <data name="Front_MoreFromSource" xml:space="preserve">
     <value>بیلد های سورس شده بیشتری از {0} ببینید</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>بیلدهای فراهم شده بیشتری را در {0} پیدا کنید</value>
   </data>
--->
   <data name="Front_NoLabString" xml:space="preserve">
     <value>تب استرینگی نیست</value>
   </data>
@@ -246,17 +249,14 @@
   <data name="Front_Public" xml:space="preserve">
     <value>عمومی</value>
   </data>
-  
-<!--
-<data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>الصاق سریع</value>
   </data>
--->
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>بازگشت به لیست بندی بیلد</value>
+    <value>به فهرست بندی بیلد باز گردید</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>بازگشت به نمای کلی بیلد</value>
+    <value>به بررسی اجمالی بیلد برگردید</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
     <value>به اشتراک گذاری</value>
@@ -267,210 +267,118 @@
   <data name="Meta_BuildDate" xml:space="preserve">
     <value>درباره بیلد ویندوز {0} توسط {1} اطلاعات کسب کنید و کامپایل شده در {2}</value>
   </data>
-  
-<!--
-<data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>درباره بیلد {0}، از {1} اطلاع یابید.
+بیلدفید بیلدهای ویندوزی که در مسیر فرایند توسعه هستند را دنبال میکند.</value>
   </data>
--->
-  
-<!--
-<data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>همه بیلدهای شناخته شده که از آزمایشگاه توسعه ویندوز {0} خارج شده اند را از طریق بیلدفید بررسی کنید، یک لیست مشترک بیلد ویندوز</value>
   </data>
--->
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>یک لیست از همه بیلدهای ویندوزی فراهم شده در {0} را ببینید، و تماشا کنید که چطور ویندوز به طور مداوم در طول زمان توسعه یافته است، از طریق لیست مشترک بیلد ، بیلدفید.</value>
   </data>
--->
-  
-<!--
-<data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+  <data name="Model_Added" xml:space="preserve">
+    <value>زمان ایجاد شده</value>
   </data>
--->
   <data name="Model_BuildNumber" xml:space="preserve">
     <value>شماره  بیلد</value>
   </data>
-  
-<!--
-<data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>زمان بیلد</value>
   </data>
--->
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>لینک خارجی</value>
   </data>
--->
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>رشته آزمایشگاهی</value>
   </data>
--->
-  
-<!--
-<data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>کشف یا تاریخ انتشار</value>
   </data>
--->
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>نسخه اصلی</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>نسخه فرعی</value>
   </data>
--->
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>زمان اصلاح</value>
   </data>
--->
   <data name="Model_Revision" xml:space="preserve">
     <value>نسخه  بیلد</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
     <value>جزئیات منبع</value>
   </data>
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>مدل منبع</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>بسته نرم افزاری</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>ابزار بیلد</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>اسناد</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>کشف عمومی</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>برقراری ارتباط</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>کشف خصوصی</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>ریلیز عمومی</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>آپدیت</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>بروز رسانی (انتشار پخش محدود)</value>
   </data>
--->
-  
-<!--
-<data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  <data name="Search_Build" xml:space="preserve">
+    <value>بیلد</value>
   </data>
--->
-  
-<!--
-<data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>جستجو در بیلدفید</value>
   </data>
--->
-  
-<!--
-<data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>نتیجه ای یافت نشد</value>
   </data>
--->
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>آزمایشگاه</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>جستجوی سوالات</value>
   </data>
--->
-  
-<!--
-<data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+  <data name="Search_Source" xml:space="preserve">
+    <value>منبع</value>
   </data>
--->
   <data name="Search_Title" xml:space="preserve">
     <value>جستجو</value>
   </data>
-  
-<!--
-<data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>برای جستجو، تایپ کنید</value>
   </data>
--->
   <data name="Search_Version" xml:space="preserve">
     <value>نسخه</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
     <value>سال</value>
   </data>
-  
-<!--
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>تمامی اکانت ها، توسط مدیر معتبر شناخته شدند. صبور باشید و بعدا دوباره بررسی کنید</value>
   </data>
--->
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>اضافه شده ها به بیلدفید</value>
   </data>
--->
-  
-<!--
-<data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>گردآوری بیلد ها</value>
   </data>
--->
   <data name="Support_ChangePassword" xml:space="preserve">
     <value>تغییر پسورد</value>
   </data>
@@ -483,69 +391,45 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>آدرس ایمیل</value>
   </data>
-  
-<!--
-<data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>رمز صحیح را وارد کنید</value>
   </data>
--->
   <data name="Support_EnterNewPassword" xml:space="preserve">
     <value>رمز جدید  را وارد کنید</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>رمز را وارد کنید</value>
   </data>
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>بالاترین ورژن</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>آزمایشگاه ها</value>
   </data>
--->
   <data name="Support_Login" xml:space="preserve">
     <value>ورود</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
     <value>رمز</value>
   </data>
-  
-<!--
-<data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>اخیرا اضافه شده</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>اخیرا گردآوری شده</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>اخیرا فاش شده</value>
   </data>
--->
   <data name="Support_Register" xml:space="preserve">
     <value>رجیستر</value>
   </data>
-  
-<!--
-<data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>مرا به خاطر بسپار</value>
   </data>
--->
-  
-<!--
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>با تشکر از ثبت نام شما</value>
   </data>
--->
   <data name="Support_UserName" xml:space="preserve">
     <value>نام کاربری</value>
   </data>

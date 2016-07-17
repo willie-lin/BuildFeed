@@ -2,8 +2,15 @@
   background-color: #373736;
   color: #f6f5f3; }
 
-h1 > a {
+a {
+  color: #000; }
+
+h1 > a,
+#page-footer a {
   color: #f6f5f3; }
+
+table thead th {
+  border-bottom-color: #373736; }
 
 #page-content {
   background-color: #f6f5f3;

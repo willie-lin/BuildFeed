@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Přidat build</value>
+    <value>加入組建</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>管理員</value>
   </data>
   
 <!--
@@ -130,310 +130,307 @@
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
-    <value>Poděkování</value>
+    <value>製作人員</value>
   </data>
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>由{0}開發</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
-    <value>Chyba</value>
+    <value>錯誤</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Něco se pokazilo. Možná proto, že jste udělali něco divného. Pravděpodobně však proto, že jsme udělali něco divného my. Pokud se ovšem tato chyba objevuje neustále, vyplňte chybové hlášení přes {0}.</value>
+    <value>發生問題，可能是你做了一些奇怪的事情，但亦可能是我做的。如果你不斷收到這個錯誤，請在{0}提交一個錯誤報告。</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>登入</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Odhlásit se</value>
+    <value>登出</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Jazyk</value>
+    <value>語言</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Motiv</value>
+    <value>主題</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS kanály</value>
+    <value>RSS訂閱</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa stránek</value>
+    <value>網站地圖</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Tmavý</value>
+    <value>深色</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Světlý</value>
+    <value>淺色</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| {0}. strana</value>
+    <value>| {0} 頁</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Přepnout navigaci</value>
+    <value>切換導航</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>O</value>
+    <value>關於</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>O {0}u</value>
+    <value>關於{0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Buildy z {0}</value>
+    <value>來自{0}的組建</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Komenty</value>
+    <value>評論</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Nejnovější build Canary</value>
+    <value>目前Canary版</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Nejnovější build Insider</value>
+    <value>目前Insider版</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Nejnovější vydání</value>
+    <value>目前正式版</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Odstranit</value>
+    <value>刪除</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Podrobnosti</value>
+    <value>詳細</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Upravit</value>
+    <value>編輯</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Upravit build</value>
+    <value>編輯組建</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Editorovy akce</value>
+    <value>編輯器選項</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Zobrazit úplný seznam buildů Windows</value>
+    <value>查看完整Windows組建列表...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Sledování buildů Windows</value>
+    <value>{0}: Windows組建追蹤器</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Seznam buildů {0}</value>
+    <value>{0} 組建列表</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Nejnovější buildy</value>
+    <value>最新組建</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Výpis</value>
+    <value>列表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Zobrazit další buildy z větve {0}</value>
+    <value>尋找更多來自{0}的組建</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Zobrazit další buildy se stejným zdrojem</value>
+    <value>尋找更多來自{0}提供的組建</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Zobrazit další buildy sestavené v roce {0}</value>
+    <value>尋找更多來自{0}編譯的組建</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Bez názvu větve</value>
+    <value>沒有開發室的字符串</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>Buildů: {0}</value>
+    <value>{0}組建</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Neveřejný build</value>
+    <value>私人</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Veřejný</value>
+    <value>公開</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Rychlé vložení</value>
+    <value>快速貼上</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Vrátit se k výpisu buildů</value>
+    <value>返回組建列表</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Vrátit se k přehledu buildů</value>
+    <value>返回組建概欖</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Sdílet</value>
+    <value>分享</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Dnes</value>
+    <value>今天</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Object Windows build {0} z větve {1}, který byl sestavený {2}.</value>
+    <value>了解關於Windows組建{0}，由{1}和編譯在{2}。</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Objevte Windows build {0} z větve {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
+    <value>了解關於Windows組建{0}, 由{1}。BuildFeed會在整個開發過程中追蹤Windows的組建。</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Podívejte se na všechny známé buildy Windows pocházející z vývojové větve {0} na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>在BuildFeed - 一個共同協作的組建列表上查看所有來自Windows開發室{0}的已知組建。</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Podívejte se na seznam všech buildů Windows sestavených v roce {0} a sledujte, jak se Windows průběhem času vyvíjí na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>查看所有來自{0}編譯的Windows組建, 和通過BuildFeed - 一個共同協作的組建列表來注視Windows如何隨著時間穩步發展。</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Čas vytvoření</value>
+    <value>建立時間</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Čislo buildu</value>
+    <value>組建號碼</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Čas sestavení</value>
+    <value>組建時間</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externí odkaz</value>
+    <value>外部鏈接</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>Název větve</value>
+    <value>開發室的字符串</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Datum úniku nebo vydání</value>
+    <value>洩漏或推出日期</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Major verze</value>
+    <value>主要版本號</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Minor verze</value>
+    <value>次要版本號</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Čas poslední úpravy</value>
+    <value>修改時間</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Číslo revize</value>
+    <value>組建修訂</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Podrobnosti o zdroji</value>
+    <value>來源的詳細</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Druh zdroje</value>
+    <value>來源的類型</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Balíček aplikace</value>
+    <value>應用程式套件</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Nástroje pro sestavení</value>
+    <value>組建工具</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Dokumentace</value>
+    <value>文件</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Veřejný únik</value>
+    <value>公開洩漏</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Záznamy</value>
+    <value>記錄</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Neveřejný únik</value>
+    <value>私人洩漏</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Veřejné vydání</value>
+    <value>公開推出</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Aktualizace (GDR)</value>
+    <value>更新 (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Aktualizace (LDR)</value>
+    <value>更新 (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Build</value>
+    <value>組建</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Hledat na BuildFeedu...</value>
+    <value>搜尋BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Nebyly nalezeny žádné výsledky</value>
+    <value>沒有找到任何結果</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Větev</value>
+    <value>開發室</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Vyhledávácí dotaz</value>
+    <value>搜索查詢</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Zdroj</value>
+    <value>來源</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Hledat</value>
+    <value>搜尋</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>hledat...</value>
+    <value>請輸入搜尋...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Verze</value>
+    <value>版本</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Rok</value>
+    <value>年份</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
+    <value>每個帳號需由管理員驗證，請耐心等待和稍後再查看。</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Nově přidané na BuildFeed</value>
+    <value>BuildFeed的補充</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Zkompilováno buildů</value>
+    <value>已編譯的組建</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Změnit heslo</value>
+    <value>更改密碼</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Zopakujte nové heslo</value>
+    <value>確認新密碼</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Zopakujte heslo</value>
+    <value>確認密碼</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>電子郵件地址</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Zadejte stávající heslo</value>
+    <value>輸入目前密碼</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Zadejte nové heslo</value>
+    <value>輸入新密碼</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Zadejte heslo</value>
+    <value>輸入密碼</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Nejvyšší verze</value>
+    <value>最高版本</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Větve</value>
+    <value>開發室</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>登入</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Heslo</value>
+    <value>密碼</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Nedávno přidané</value>
+    <value>最近新增</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Nedávno sestavené</value>
+    <value>最近編譯</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Nedávno uniklé</value>
+    <value>最近洩漏</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Zaregistrovat se</value>
+    <value>註冊</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Pamatovat si mě</value>
+    <value>記住我</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Děkujeme vám za registraci</value>
+    <value>多謝您的註冊</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Uživatelské jméno</value>
+    <value>使用者名稱</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Týden</value>
+    <value>星期</value>
   </data>
 
 </root>

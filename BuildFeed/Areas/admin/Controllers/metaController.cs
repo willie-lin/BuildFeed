@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Areas.admin.Models.ViewModel;
+using BuildFeed.Controllers;
 using BuildFeed.Models;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
    [Authorize(Roles = "Administrators")]
-   public class metaController : Controller
+   public class metaController : BaseController
    {
       private readonly MetaItem _mModel;
 

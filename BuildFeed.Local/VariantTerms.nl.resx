@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrator</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Draag bij via</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>Dankwoord</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Ontwikkeld door</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>Fout</value>
   </data>
@@ -209,6 +215,9 @@
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Bekijk de volledige Windows builds overzicht</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: De Windows build tracker</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} Buildoverzicht</value>

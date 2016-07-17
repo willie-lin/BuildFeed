@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using BuildFeed.Controllers;
 using MongoAuth;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
    [Authorize(Roles = "Administrators")]
-   public class usersController : Controller
+   public class usersController : BaseController
    {
       // GET: admin/users
       public ActionResult index() => View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Přidat build</value>
+    <value>Προσθήκη έκδοσης</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>Διαχειριστής</value>
   </data>
   
 <!--
@@ -130,7 +130,7 @@
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
-    <value>Poděkování</value>
+    <value>Συντελεστές</value>
   </data>
   
 <!--
@@ -139,301 +139,301 @@
   </data>
 -->
   <data name="Common_Error" xml:space="preserve">
-    <value>Chyba</value>
+    <value>Σφάλμα</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Něco se pokazilo. Možná proto, že jste udělali něco divného. Pravděpodobně však proto, že jsme udělali něco divného my. Pokud se ovšem tato chyba objevuje neustále, vyplňte chybové hlášení přes {0}.</value>
+    <value>Κάτι χάλασε. Ίσως γιατί έκανες κάτι περίεργο. Ίσως γιατί εγώ έκανα κάτι περίεργο. Εάν συνεχίζεις να λαμβάνεις αυτό το σφάλμα, κατέθεσε μια αναφορά σφάλματος μέσω του {0}</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Σύνδεσις</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Odhlásit se</value>
+    <value>Αποσύνδεσις</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Jazyk</value>
+    <value>Γλώσσα</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Motiv</value>
+    <value>Θέμα</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS kanály</value>
+    <value>Ροές RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa stránek</value>
+    <value>Ιστοχάρτης</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Tmavý</value>
+    <value>Σκοτεινό</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Světlý</value>
+    <value>Ανοιχτό</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| {0}. strana</value>
+    <value>| Σελίδα {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Přepnout navigaci</value>
+    <value>Επιλογή πλοήγησης</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>O</value>
+    <value>Περί</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>O {0}u</value>
+    <value>Περί {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Buildy z {0}</value>
+    <value>Εκδόσεις από {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Komenty</value>
+    <value>Σχόλια</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Nejnovější build Canary</value>
+    <value>Τρέχουσα πρώιμη έκδοση</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Nejnovější build Insider</value>
+    <value>Τρέχουσα έκδοση Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Nejnovější vydání</value>
+    <value>Τρέχουσα έκδοση σε κυκλοφορία</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Odstranit</value>
+    <value>Διαγραφή</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Podrobnosti</value>
+    <value>Λεπτομέρειες</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Upravit</value>
+    <value>Επεξεργασία</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Upravit build</value>
+    <value>Επεξεργασία έκδοσης</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Editorovy akce</value>
+    <value>Ενέργειες επεξεργαστή</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Zobrazit úplný seznam buildů Windows</value>
+    <value>Δείτε ολόκληρη τη λίστα εκδόσεων των Windows...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Sledování buildů Windows</value>
+    <value>{0}: Ο ανιχνευτής εκδόσεων των Windows</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Seznam buildů {0}</value>
+    <value>{0} λίστα εκδώσεων</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Nejnovější buildy</value>
+    <value>Πρόσφατες εκδόσεις</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Výpis</value>
+    <value>Λίστα</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Zobrazit další buildy z větve {0}</value>
+    <value>Βρείτε περισσότερες εκδόσεις από {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Zobrazit další buildy se stejným zdrojem</value>
+    <value>Βρείτε περισσότερες εκδόσεις προερχόμενες από {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Zobrazit další buildy sestavené v roce {0}</value>
+    <value>Βρείτε περισσότερες εκδόσεις κατασκευασμένες στις {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Bez názvu větve</value>
+    <value>Χωρίς σήμανση εργαστηρίου</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>Buildů: {0}</value>
+    <value>{0} εκδόσεις</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Neveřejný build</value>
+    <value>Ιδιωτική</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Veřejný</value>
+    <value>Δημόσια</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Rychlé vložení</value>
+    <value>Γρήγορη επικόλληση</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Vrátit se k výpisu buildů</value>
+    <value>Πίσω στη λίστα εκδόσεων</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Vrátit se k přehledu buildů</value>
+    <value>Πίσω στην επισκόπηση έκδοσης</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Sdílet</value>
+    <value>Διαμοιρασμός</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Dnes</value>
+    <value>Σήμερα</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Object Windows build {0} z větve {1}, který byl sestavený {2}.</value>
+    <value>Ανακαλύψτε για την έκδοση Windows {0}, από {1} και κατασκευασμένες στις {2}.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Objevte Windows build {0} z větve {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
+    <value>Ανακαλύψτε για την έκδοση Windows {0}, από {1}. To BuildFeed ανιχνεύει τις εκδόσεις των Windows καθ'όλη τη διάρκεια της ανάπτυξής τους.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Podívejte se na všechny známé buildy Windows pocházející z vývojové větve {0} na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>Δείτε όλες τις γνωστές εκδόσεις οι οποίες προήλθαν από το εργαστήριο ανάπτυξης {0} μέσω του BuildFeed, μία συνεργατική λίστα εκδόσεων Windows.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Podívejte se na seznam všech buildů Windows sestavených v roce {0} a sledujte, jak se Windows průběhem času vyvíjí na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>Δείτε μια λίστα όλων των εκδόσεων Windows που δημιουργήθηκαν στις {0} και πως σταθερά αναπτύχθηκαν μέσα στο χρόνο, μέσω της συνεργατικής λίστας, το BuildFeed.</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Čas vytvoření</value>
+    <value>Ώρα δημιουργίας</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Čislo buildu</value>
+    <value>Αριθμός έκδοσης</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Čas sestavení</value>
+    <value>Ώρα έκδοσης</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externí odkaz</value>
+    <value>Εξωτερικός σύνδεσμος</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>Název větve</value>
+    <value>Σήμανση εργαστηρίου</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Datum úniku nebo vydání</value>
+    <value>Ημερομηνία διαρροής ή κυκλοφορίας</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Major verze</value>
+    <value>Μείζων έκδοση</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Minor verze</value>
+    <value>Ελάσσων έκδοση</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Čas poslední úpravy</value>
+    <value>Ώρα μετατροπής</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Číslo revize</value>
+    <value>Αναθεώρηση έκδοσης</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Podrobnosti o zdroji</value>
+    <value>Πληροφορίες πηγής</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Druh zdroje</value>
+    <value>Τύπος πηγής</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Balíček aplikace</value>
+    <value>Πακέτο εφαρμογής</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Nástroje pro sestavení</value>
+    <value>Εργαλεία έκδοσης</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Dokumentace</value>
+    <value>Τεκμηρίωση</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Veřejný únik</value>
+    <value>Δημόσια διαρροή</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Záznamy</value>
+    <value>Καταγραφή</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Neveřejný únik</value>
+    <value>Ιδιωτική διαρροή</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Veřejné vydání</value>
+    <value>Δημόσια κυκλοφορία</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Aktualizace (GDR)</value>
+    <value>Ενημέρωση (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Aktualizace (LDR)</value>
+    <value>Ενημέρωση (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Build</value>
+    <value>Έκδοση</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Hledat na BuildFeedu...</value>
+    <value>Αναζήτηση στο BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Nebyly nalezeny žádné výsledky</value>
+    <value>Δε βρέθηκαν αποτελέσματα</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Větev</value>
+    <value>Εργαστήριο</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Vyhledávácí dotaz</value>
+    <value>Ερώτημα αναζήτησης</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Zdroj</value>
+    <value>Πηγή</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Hledat</value>
+    <value>Αναζήτηση</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>hledat...</value>
+    <value>Πληκτρολογήστε για αναζήτηση...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Verze</value>
+    <value>Εκδοχή</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Rok</value>
+    <value>Έτος</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
+    <value>Κάθε λογαριασμός επικυρώνεται από έναν διαχειριστή, παρακαλώ μείνετε με υπομονή ελέγξτε ξανά αργότερα</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Nově přidané na BuildFeed</value>
+    <value>Προσθήκες στο BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Zkompilováno buildů</value>
+    <value>Εκδόσεις που κατασκευάστηκαν</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Změnit heslo</value>
+    <value>Αλλαγή του κωδικού σας</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Zopakujte nové heslo</value>
+    <value>Επιβεβαίωση του νέου κωδικού</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Zopakujte heslo</value>
+    <value>Επιβεβαίωση του κωδικού</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Διεύθυνση ηλεκτρονικού ταχυδρομείου</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Zadejte stávající heslo</value>
+    <value>Εισάγετε τον τρέχον κωδικό σας</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Zadejte nové heslo</value>
+    <value>Εισάγετε τον νέο κωδικό σας</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Zadejte heslo</value>
+    <value>Εισάγετε το κωδικό σας</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Nejvyšší verze</value>
+    <value>Υψηλότερη εκδοχή</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Větve</value>
+    <value>Εργαστήρια</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Σύνδεσις</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Heslo</value>
+    <value>Κωδικός</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Nedávno přidané</value>
+    <value>Πρόσφατα προστιθέμενα</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Nedávno sestavené</value>
+    <value>Πρόσφατα κατασκευασμένα</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Nedávno uniklé</value>
+    <value>Πρόσφατα διέρρευσαν</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Zaregistrovat se</value>
+    <value>Εγγραφή</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Pamatovat si mě</value>
+    <value>Απομνημόνευση</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Děkujeme vám za registraci</value>
+    <value>Ευχαριστούμε για την εγγραφή</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Uživatelské jméno</value>
+    <value>Όνομα χρήστη</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Týden</value>
+    <value>Εβδομάδα</value>
   </data>
 
 </root>

@@ -124,13 +124,13 @@
     <value>Admin</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Contribute on</value>
+    <value>Contribute on {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
     <value>Credits</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Developed by</value>
+    <value>Developed by {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
     <value>Error</value>

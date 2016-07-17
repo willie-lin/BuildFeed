@@ -1,2 +1,39 @@
-﻿body {
+﻿nav#page-navigation #page-navigation-links
+{
+   text-align: left;
+}
+
+.dropdown-parent .dropdown-menu
+{
+   text-align: right;
+
+   .dropdown-menu-block
+   {
+      float: right;
+
+      li
+      {
+         float: right;
+      }
+   }
+}
+
+.form-group label
+{
+   text-align: left;
+}
+
+
+footer#page-footer .footer-flex .footer-flex-item
+{
+
+   &:last-child
+   {
+      text-align: left;
+   }
+
+   &:first-child
+   {
+      text-align: right;
+   }
 }

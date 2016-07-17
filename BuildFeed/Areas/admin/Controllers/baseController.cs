@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Security;
+using BuildFeed.Controllers;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
-   public class baseController : Controller
+   public class baseController : BaseController
    {
       [Authorize(Roles = "Administrators")]
       // GET: admin/base

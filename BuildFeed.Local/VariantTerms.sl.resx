@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Prispevaj</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>Zasluge</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Razvil</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>Napaka</value>
   </data>
@@ -183,42 +189,24 @@
   <data name="Front_Comments" xml:space="preserve">
     <value>Komentarji</value>
   </data>
-  
-<!--
-<data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Trenutni Canary</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Trenutni Insider</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Trenutni Release</value>
   </data>
--->
-  
-<!--
-<data name="Front_Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>Izbriši</value>
   </data>
--->
-  
-<!--
-<data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Podrobnosti</value>
   </data>
--->
-  
-<!--
-<data name="Front_Edit" xml:space="preserve">
-    <value>[!!! Éδïƭ !!!]</value>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>Uredi</value>
   </data>
--->
   <data name="Front_EditBuild" xml:space="preserve">
     <value>Uredi gradnjo</value>
   </data>
@@ -227,6 +215,9 @@
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Oglej si poln seznam gradenj sistema Windows...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: sledilec gradnjam sistema Windows</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>Seznam gradenj {0}</value>
@@ -240,18 +231,12 @@
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>Poišči več gradenj iz {0}</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Poišči več gradenj, ki izvirajo od {0}</value>
   </data>
--->
-  
-<!--
-<data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Poišči več gradenj, prevedenih v {0}</value>
   </data>
--->
   <data name="Front_NoLabString" xml:space="preserve">
     <value>Ni niza lab</value>
   </data>
@@ -280,7 +265,7 @@
     <value>Danes</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Odkrij več o gradnji {0}, iz {1}, prevedena na {2}</value>
+    <value>Odkrij več o gradnji {0} sistema Windows, iz {1}, prevedena na {2}</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
     <value>Odkrij več o gradnji {0} sistema Windows, iz {1}. BuildFeed sledi gradnjam sistema Windows skozi proces razvoja.</value>
@@ -288,329 +273,167 @@
   <data name="Meta_LabGeneric" xml:space="preserve">
     <value>Oglej si vse znanje gradnje iz razvojnega laboratorija {0} preko BuildFeed-a, sodelovalni seznam gradenj sistema Windows.</value>
   </data>
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Oglej si seznam vse gradenj sistema Windows, prevedenih v {0}, in opazuj kako se je Windows vztrajno razvijal skozi čas, s pomočjo sodelovalnega seznama gradenj BuildFeed.</value>
   </data>
--->
-  
-<!--
-<data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+  <data name="Model_Added" xml:space="preserve">
+    <value>Čas nastanka</value>
   </data>
--->
-  
-<!--
-<data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>Številka gradnje</value>
   </data>
--->
-  
-<!--
-<data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>Čas gradnje</value>
   </data>
--->
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Zunanja povezava</value>
   </data>
--->
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Niz laboratorija</value>
   </data>
--->
-  
-<!--
-<data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Datum izida ali curljanja</value>
   </data>
--->
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Glavna verzija</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Manjša verzija</value>
   </data>
--->
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Čas spremembe</value>
   </data>
--->
-  
-<!--
-<data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Revizija gradnje</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Podrobnosti vira</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Vrsta vira</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>Dodaj paket</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Orodja gradnje</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Dokumentacija</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Javno curljanje</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Beleženje</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Zasebno curljanje</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Javni izid</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Posodobitev (GDR)</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Posodobitev (LDR)</value>
   </data>
--->
-  
-<!--
-<data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Gradnja</value>
   </data>
--->
-  
-<!--
-<data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>Preišči BuildFeed</value>
   </data>
--->
-  
-<!--
-<data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Ni rezultatov iskanja</value>
   </data>
--->
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Laboratorij</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Iskalna poizvedba</value>
   </data>
--->
-  
-<!--
-<data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Vir</value>
   </data>
--->
-  
-<!--
-<data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Iskanje</value>
   </data>
--->
-  
-<!--
-<data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Pišite za iskanje...</value>
   </data>
--->
-  
-<!--
-<data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Različica</value>
   </data>
--->
-  
-<!--
-<data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Leto</value>
   </data>
--->
-  
-<!--
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Administrator preveri vsak uporabniški račun, zato bodite potrpežljivi in ponovno preverite kasneje.</value>
   </data>
--->
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Prispevki k BuildFeed-u</value>
   </data>
--->
-  
-<!--
-<data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Prevedenih gradenj</value>
   </data>
--->
-  
-<!--
-<data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Spremenite svoje geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Potrdite novo geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Potrdite geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>E-poštni naslov</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Vnesite trenutno geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Vnesite novo geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Vnesite geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Najvišja različica</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Laboratoriji</value>
   </data>
--->
-  
-<!--
-<data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Prijava</value>
   </data>
--->
-  
-<!--
-<data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Geslo</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Nedavno dodano</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Nedavno prevedeno</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Nedavno pricurljano</value>
   </data>
--->
-  
-<!--
-<data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Registracija</value>
   </data>
--->
-  
-<!--
-<data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Zapomni si me</value>
   </data>
--->
-  
-<!--
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Hvala za registracijo</value>
   </data>
--->
-  
-<!--
-<data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Uporabniško ime</value>
   </data>
--->
-  
-<!--
-<data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Teden</value>
   </data>
--->
 
 </root>

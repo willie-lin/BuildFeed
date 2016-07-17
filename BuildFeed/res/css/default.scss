@@ -11,7 +11,13 @@
 a
 {
    text-decoration: none;
-   color: #1274b2;
+
+   &:hover,
+   &:active,
+   &:focus
+   {
+      text-decoration: underline;
+   }
 }
 
 h1
@@ -23,6 +29,26 @@ h1
 p
 {
    margin: 0 0 1em;
+}
+
+table
+{
+   width: 100%;
+   border-collapse: collapse;
+
+   th,
+   td
+   {
+      margin: 0;
+      border: 0;
+      padding: 4px 6px;
+   }
+
+   thead th
+   {
+      border-bottom: 1px solid;
+      text-align: left;
+   }
 }
 
 .container
@@ -53,6 +79,11 @@ header#page-header
    {
       font-weight: 300;
       margin: .33em 0;
+
+      a
+      {
+         text-decoration: none;
+      }
    }
 }
 
@@ -73,6 +104,13 @@ nav#page-navigation
          {
             display: block;
             padding: 15px;
+
+            &:hover,
+            &:active,
+            &:focus
+            {
+               text-decoration: none;
+            }
          }
       }
    }
@@ -129,6 +167,13 @@ nav#page-navigation
             {
                display: block;
                padding: 0 1em;
+
+               &:hover,
+               &:active,
+               &:focus
+               {
+                  text-decoration: none;
+               }
             }
          }
       }
@@ -245,6 +290,13 @@ article
       flex-grow: 1;
       margin: 0 2em 2em 0;
 
+      &:hover,
+      &:active,
+      &:focus
+      {
+         text-decoration: none;
+      }
+
       h3.latest-flex-title
       {
          border-bottom: 0;
@@ -323,6 +375,13 @@ article
    color: #fff;
    margin: 0 0 2em;
    padding: #{(2em / 3)};
+
+   &:hover,
+   &:active,
+   &:focus
+   {
+      text-decoration: none;
+   }
 }
 
 .build-details-flex
@@ -377,7 +436,8 @@ article
          width: 100%;
       }
 
-      input[type=submit]
+      input[type=submit],
+      input[type=checkbox]
       {
          width: auto;
       }

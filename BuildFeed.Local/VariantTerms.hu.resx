@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Přidat build</value>
+    <value>Build hozzáadása</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>Rendszergazda</value>
   </data>
   
 <!--
@@ -130,7 +130,7 @@
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
-    <value>Poděkování</value>
+    <value>Közreműködők</value>
   </data>
   
 <!--
@@ -139,301 +139,301 @@
   </data>
 -->
   <data name="Common_Error" xml:space="preserve">
-    <value>Chyba</value>
+    <value>Hiba</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Něco se pokazilo. Možná proto, že jste udělali něco divného. Pravděpodobně však proto, že jsme udělali něco divného my. Pokud se ovšem tato chyba objevuje neustále, vyplňte chybové hlášení přes {0}.</value>
+    <value>Valami elromlott. Lehet valami furát műveltél. Lehet én valamit furán csináltam. Ha továbbra is ez a hiba történik, küldj egy bug reportot itt: {0}.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Bejelentkezés</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Odhlásit se</value>
+    <value>Kijelentkezés</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Jazyk</value>
+    <value>Nyelv</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Motiv</value>
+    <value>Téma</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS kanály</value>
+    <value>RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa stránek</value>
+    <value>Oldaltérkép</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Tmavý</value>
+    <value>Sötét</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Světlý</value>
+    <value>Világos</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| {0}. strana</value>
+    <value>| Lap {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Přepnout navigaci</value>
+    <value>Navigáció kapcsolása</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>O</value>
+    <value>Az oldalról</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>O {0}u</value>
+    <value>{0} -ról</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Buildy z {0}</value>
+    <value>Buildek {0} -ból</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Komenty</value>
+    <value>Hozzászólások</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Nejnovější build Canary</value>
+    <value>Jelenlegi Canary</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Nejnovější build Insider</value>
+    <value>Jelenlegi Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Nejnovější vydání</value>
+    <value>Jelenlegi Release</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Odstranit</value>
+    <value>Törlés</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Podrobnosti</value>
+    <value>Részletek</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Upravit</value>
+    <value>Szerkesztés</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Upravit build</value>
+    <value>Build szerkesztése</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Editorovy akce</value>
+    <value>Szerkesztői műveletek</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Zobrazit úplný seznam buildů Windows</value>
+    <value>Lásd a teljes Windows build listázást...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Sledování buildů Windows</value>
+    <value>{0}: A Windows build követő</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Seznam buildů {0}</value>
+    <value>{0} build lista</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Nejnovější buildy</value>
+    <value>Legújabb buildek</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Výpis</value>
+    <value>Listázás</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Zobrazit další buildy z větve {0}</value>
+    <value>Több buildek {0} -ból</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Zobrazit další buildy se stejným zdrojem</value>
+    <value>Több buildek {0} forrásból</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Zobrazit další buildy sestavené v roce {0}</value>
+    <value>Több buildek compiled {0} -ból</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Bez názvu větve</value>
+    <value>Nincs lab név</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>Buildů: {0}</value>
+    <value>{0} buildek</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Neveřejný build</value>
+    <value>Privát</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Veřejný</value>
+    <value>Nyilvános</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Rychlé vložení</value>
+    <value>Gyors-beillesztés</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Vrátit se k výpisu buildů</value>
+    <value>Vissza a build listázáshoz</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Vrátit se k přehledu buildů</value>
+    <value>Vissza a build-összegzéshez</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Sdílet</value>
+    <value>Megosztás</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Dnes</value>
+    <value>Ma</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Object Windows build {0} z větve {1}, který byl sestavený {2}.</value>
+    <value>Tudj meg többet a Windows Build {0} -ról, {1} -ből, és compiled {2}.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Objevte Windows build {0} z větve {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
+    <value>Tudj meg többet a Windows Build {0} -ról, {1} -ből. A BuildFeed követi a Windows Buildeket a fejlesztési folyamat alatt is.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Podívejte se na všechny známé buildy Windows pocházející z vývojové větve {0} na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>Nézd meg az összes ismert buildeket amelyek a {0} Windows fejlesztési laborból érkeztek a BuildFeeden, egy közreműködő Windows build listázási oldalon.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Podívejte se na seznam všech buildů Windows sestavených v roce {0} a sledujte, jak se Windows průběhem času vyvíjí na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>Nézz meg egy listát az összes Windows buildről amelyek {0} -ban voltak compiled, és nézd meg hogyan fejlődött a Windows időről időre a BuildFeeden, egy közreműködő listázási oldalon.</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Čas vytvoření</value>
+    <value>Készítve ekkor</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Čislo buildu</value>
+    <value>Buildszám</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Čas sestavení</value>
+    <value>Build time</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externí odkaz</value>
+    <value>Külső link</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>Název větve</value>
+    <value>Labor név</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Datum úniku nebo vydání</value>
+    <value>Kiszivárgás vagy megjelenés ideje</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Major verze</value>
+    <value>Major verzió</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Minor verze</value>
+    <value>Minor verzió</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Čas poslední úpravy</value>
+    <value>Módosítás ideje</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Číslo revize</value>
+    <value>Build felülvizsgálat száma</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Podrobnosti o zdroji</value>
+    <value>Forrás adatai</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Druh zdroje</value>
+    <value>Forrás típusa</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Balíček aplikace</value>
+    <value>Alkalmazáscsomag</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Nástroje pro sestavení</value>
+    <value>Build eszközök</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Dokumentace</value>
+    <value>Dokumentáció</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Veřejný únik</value>
+    <value>Nyilvános kiszivárgás</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Záznamy</value>
+    <value>Naplózás</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Neveřejný únik</value>
+    <value>Privát kiszivárgás</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Veřejné vydání</value>
+    <value>Nyilvános megjelenés</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Aktualizace (GDR)</value>
+    <value>Frissítés (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Aktualizace (LDR)</value>
+    <value>Frissítés (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Hledat na BuildFeedu...</value>
+    <value>Keresés a BuildFeeden</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Nebyly nalezeny žádné výsledky</value>
+    <value>Nincs találat</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Větev</value>
+    <value>Labor</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Vyhledávácí dotaz</value>
+    <value>Keresés erre</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Zdroj</value>
+    <value>Forrás</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Hledat</value>
+    <value>Keresés</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>hledat...</value>
+    <value>Írj a kereséshez...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Verze</value>
+    <value>Verzió</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Rok</value>
+    <value>Év</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
+    <value>Minden fiók manuálisan érvényesítésre kerül egy adminisztrátor által, kérlek, légy türelmes, és ellenőrizd később</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Nově přidané na BuildFeed</value>
+    <value>Hozzáadások a BuildFeedhez</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Zkompilováno buildů</value>
+    <value>Builds compiled</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Změnit heslo</value>
+    <value>Jelszó megváltoztatása</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Zopakujte nové heslo</value>
+    <value>Erősítsd meg az új jelszót</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Zopakujte heslo</value>
+    <value>Erősítsd meg a jelszavad</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Email cím</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Zadejte stávající heslo</value>
+    <value>Írd be a jelenlegi jelszavad</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Zadejte nové heslo</value>
+    <value>Írd be az új jelszót</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Zadejte heslo</value>
+    <value>Írd be a jelszavad</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Nejvyšší verze</value>
+    <value>Legmagasabb verzió</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Větve</value>
+    <value>Laborok</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Bejelentkezés</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Heslo</value>
+    <value>Jelszó</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Nedávno přidané</value>
+    <value>Nemrég hozzáadott</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Nedávno sestavené</value>
+    <value>Nemrég compiled</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Nedávno uniklé</value>
+    <value>Nemrég kiszivárgott</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Zaregistrovat se</value>
+    <value>Regisztrálás</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Pamatovat si mě</value>
+    <value>Emlékezz rám</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Děkujeme vám za registraci</value>
+    <value>Köszönjük hogy regisztráltál!</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Uživatelské jméno</value>
+    <value>Felhasználónév</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Týden</value>
+    <value>Hét</value>
   </data>
 
 </root>

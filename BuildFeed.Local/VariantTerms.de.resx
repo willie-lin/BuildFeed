@@ -126,15 +126,18 @@
   
 <!--
 <data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ  !!!]</value>
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
     <value>Danksagungen</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Entwickelt von</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
@@ -171,12 +174,9 @@
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| Seite {0}</value>
   </data>
-  
-<!--
-<data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Navigation ein/ausblenden</value>
   </data>
--->
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
@@ -219,6 +219,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Volles Windows Build Verzeichnis anzeigen</value>
   </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Der Windows Build Tracker</value>
+  </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} Build Liste</value>
   </data>
@@ -228,24 +231,15 @@
   <data name="Front_Listing" xml:space="preserve">
     <value>Verzeichnis</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>Weitere Builds von {0}</value>
   </data>
--->
-  
-<!--
-<data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Weitere Builds mit Quellenangabe {0}</value>
   </data>
--->
-  
-<!--
-<data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Weitere Builds die in {0} kompiliert wurden</value>
   </data>
--->
   <data name="Front_NoLabString" xml:space="preserve">
     <value>Kein lab String</value>
   </data>
@@ -273,18 +267,12 @@
   <data name="Front_Today" xml:space="preserve">
     <value>Heute</value>
   </data>
-  
-<!--
-<data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>Erfahre mehr über Windows Build {0}, von {1}, am {2} kompiliert.</value>
   </data>
--->
-  
-<!--
-<data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>Erfahre mehr über Windows Build {0}, von {1}. BuildFeed verfolgt Windows Builds während dem Entwicklungsprozess</value>
   </data>
--->
   
 <!--
 <data name="Meta_LabGeneric" xml:space="preserve">
@@ -303,317 +291,170 @@
     <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>Buildnummer</value>
   </data>
--->
-  
-<!--
-<data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>Buildzeit</value>
   </data>
--->
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Externer Link</value>
   </data>
--->
   
 <!--
 <data name="Model_LabString" xml:space="preserve">
     <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Leak- oder Veröffentlichungsdatum</value>
   </data>
--->
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Major Version</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Minor Version</value>
   </data>
--->
   
 <!--
 <data name="Model_Modified" xml:space="preserve">
     <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Buildrevision</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Quellendetails</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Quellentyp</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>App Paket</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Build Tools</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Dokumentation</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Öffentlicher Leak</value>
   </data>
--->
   
 <!--
 <data name="Model_Source_Logging" xml:space="preserve">
     <value>[!!! £ôϱϱïñϱ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Privater Leak</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Öffentlicher Release</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Update (GDR)</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Update (LDR)</value>
   </data>
--->
-  
-<!--
-<data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Build</value>
   </data>
--->
-  
-<!--
-<data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>BuildFeed durchsuchen</value>
   </data>
--->
-  
-<!--
-<data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Keine Ergebnisse gefunden</value>
   </data>
--->
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Lab</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Suchanfrage</value>
   </data>
--->
-  
-<!--
-<data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Quelle</value>
   </data>
--->
-  
-<!--
-<data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Suche</value>
   </data>
--->
-  
-<!--
-<data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Tippen um zu suchen...</value>
   </data>
--->
-  
-<!--
-<data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Version</value>
   </data>
--->
-  
-<!--
-<data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Jahr</value>
   </data>
--->
-  
-<!--
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Jeder Account wird von einem Administrator bestätigt, also sei Geduldig und schau später vorbei</value>
   </data>
--->
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Erweiterungen zu BuildFeed</value>
   </data>
--->
-  
-<!--
-<data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Builds kompiliert</value>
   </data>
--->
-  
-<!--
-<data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Passwort ändern</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Neues Passwort bestätigen</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Passwort bestätigen</value>
   </data>
--->
-  
-<!--
-<data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>E-Mail Adresse</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Aktuelles Passwort eingeben</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Neues Passwort eingeben</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Passwort eingeben</value>
   </data>
--->
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Höchste Version</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Labs</value>
   </data>
--->
-  
-<!--
-<data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Anmelden</value>
   </data>
--->
-  
-<!--
-<data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Passwort</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Neulich hinzugefügt</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Neulich kompiliert</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Neulich geleakt</value>
   </data>
--->
-  
-<!--
-<data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Registrieren</value>
   </data>
--->
-  
-<!--
-<data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Erinnere dich an mich</value>
   </data>
--->
-  
-<!--
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Danke für Ihre Registrierung</value>
   </data>
--->
-  
-<!--
-<data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Benutzername</value>
   </data>
--->
-  
-<!--
-<data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Woche</value>
   </data>
--->
 
 </root>

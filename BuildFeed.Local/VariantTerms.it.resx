@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Přidat build</value>
+    <value>Aggiungi build</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>Amministratore</value>
   </data>
   
 <!--
@@ -130,7 +130,7 @@
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
-    <value>Poděkování</value>
+    <value>Crediti</value>
   </data>
   
 <!--
@@ -139,301 +139,334 @@
   </data>
 -->
   <data name="Common_Error" xml:space="preserve">
-    <value>Chyba</value>
+    <value>Errore</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Něco se pokazilo. Možná proto, že jste udělali něco divného. Pravděpodobně však proto, že jsme udělali něco divného my. Pokud se ovšem tato chyba objevuje neustále, vyplňte chybové hlášení přes {0}.</value>
+    <value>Qualcosa non va. Forse perchè hai fatto qualcosa di strano o io ho fatto qualcosa di strano. Se continui a ricevere questo errore, segnala il bug via {0}.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Accedi</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Odhlásit se</value>
+    <value>Esci</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Jazyk</value>
+    <value>Lingua</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Motiv</value>
+    <value>Tema</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS kanály</value>
+    <value>Feed RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa stránek</value>
+    <value>Mappa del sito</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Tmavý</value>
+    <value>Scuro</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Světlý</value>
+    <value>Chiaro</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| {0}. strana</value>
+    <value>| Pagina {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Přepnout navigaci</value>
+    <value>Mostra/nascondi browser</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>O</value>
+    <value>Informazioni su</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>O {0}u</value>
+    <value>Informazioni su {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Buildy z {0}</value>
+    <value>Build da {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Komenty</value>
+    <value>Commenti</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Nejnovější build Canary</value>
+    <value>Canary attuale</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Nejnovější build Insider</value>
+    <value>Insider attuale</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Nejnovější vydání</value>
+    <value>Release attuale</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Odstranit</value>
+    <value>Cancella</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Podrobnosti</value>
+    <value>Dettagli</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Upravit</value>
+    <value>Modifica</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Upravit build</value>
+    <value>Modifica build</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Editorovy akce</value>
+    <value>Azioni dell'editor</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Zobrazit úplný seznam buildů Windows</value>
+    <value>Vedi la lista completa delle build di Windows</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Sledování buildů Windows</value>
+    <value>{0}: Il tracker delle build di Windows</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Seznam buildů {0}</value>
+    <value>{0} lista build</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Nejnovější buildy</value>
+    <value>Ultime build</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Výpis</value>
+    <value>Lista</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Zobrazit další buildy z větve {0}</value>
+    <value>Vedi più build da {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Zobrazit další buildy se stejným zdrojem</value>
+    <value>Trova più build da {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Zobrazit další buildy sestavené v roce {0}</value>
+    <value>Trova altre build compilate il {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Bez názvu větve</value>
+    <value>Lab non disponibile</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>Buildů: {0}</value>
+    <value>{0} build</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Neveřejný build</value>
+    <value>Privata</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Veřejný</value>
+    <value>Pubblica</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Rychlé vložení</value>
+    <value>Incolla rapido</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Vrátit se k výpisu buildů</value>
+    <value>Ritorna alla lista build</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Vrátit se k přehledu buildů</value>
+    <value>Ritorna all'overview della build</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Sdílet</value>
+    <value>Condividi</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Dnes</value>
+    <value>Oggi</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Object Windows build {0} z větve {1}, který byl sestavený {2}.</value>
+    <value>Scopri informazioni sulla build {0} di Windows, da {1} e compilata il {2}</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Objevte Windows build {0} z větve {1}. BuildFeed sleduje buildy Windows po celou dobu vývoje.</value>
+    <value>Trova informazioni sulla build di Windows {0}, da {1}. BuildFeed tiene traccia delle build di Windows durante il processo di sviluppo</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Podívejte se na všechny známé buildy Windows pocházející z vývojové větve {0} na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+    <value>Vedi tutte le build che usciranno dal lab di sviluppo di Windows {0} con BuildFeed, la lista collaborativa delle build Windows</value>
   </data>
-  <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Podívejte se na seznam všech buildů Windows sestavených v roce {0} a sledujte, jak se Windows průběhem času vyvíjí na BuildFeedu, společně vytvořeném seznamu buildů Windows.</value>
+  
+<!--
+<data name="Meta_YearGeneric" xml:space="preserve">
+    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
   </data>
+-->
   <data name="Model_Added" xml:space="preserve">
-    <value>Čas vytvoření</value>
+    <value>Data creazione</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Čislo buildu</value>
+    <value>Build numero</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Čas sestavení</value>
+    <value>Build del</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externí odkaz</value>
+    <value>Link esterno</value>
   </data>
-  <data name="Model_LabString" xml:space="preserve">
-    <value>Název větve</value>
+  
+<!--
+<data name="Model_LabString" xml:space="preserve">
+    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
   </data>
+-->
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Datum úniku nebo vydání</value>
+    <value>Leak o data di rilascio</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Major verze</value>
+    <value>Versione maggiore</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Minor verze</value>
+    <value>Versione Minore</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Čas poslední úpravy</value>
+    <value>Modificato il</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Číslo revize</value>
+    <value>Revisione della build</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Podrobnosti o zdroji</value>
+    <value>Dettagli sorgente</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Druh zdroje</value>
+    <value>Tipo sorgente</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Balíček aplikace</value>
+    <value>Aggiungi pacchetto</value>
   </data>
-  <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Nástroje pro sestavení</value>
+  
+<!--
+<data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
   </data>
+-->
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Dokumentace</value>
+    <value>Documentazione</value>
   </data>
-  <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Veřejný únik</value>
+  
+<!--
+<data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
   </data>
-  <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Záznamy</value>
+-->
+  
+<!--
+<data name="Model_Source_Logging" xml:space="preserve">
+    <value>[!!! £ôϱϱïñϱ  !!!]</value>
   </data>
-  <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Neveřejný únik</value>
+-->
+  
+<!--
+<data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
   </data>
+-->
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Veřejné vydání</value>
+    <value>Release pubblica</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Aktualizace (GDR)</value>
+    <value>Aggiornamento (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Aktualizace (LDR)</value>
+    <value>Aggiornamento (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Hledat na BuildFeedu...</value>
+    <value>Cerca in BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Nebyly nalezeny žádné výsledky</value>
+    <value>Nessun risultato trovato</value>
   </data>
-  <data name="Search_Lab" xml:space="preserve">
-    <value>Větev</value>
+  
+<!--
+<data name="Search_Lab" xml:space="preserve">
+    <value>[!!! £áβ  !!!]</value>
   </data>
-  <data name="Search_Query" xml:space="preserve">
-    <value>Vyhledávácí dotaz</value>
+-->
+  
+<!--
+<data name="Search_Query" xml:space="preserve">
+    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
   </data>
+-->
   <data name="Search_Source" xml:space="preserve">
-    <value>Zdroj</value>
+    <value>Sorgente</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Hledat</value>
+    <value>Cerca</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>hledat...</value>
+    <value>Tipo di ricerca</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Verze</value>
+    <value>Versione</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Rok</value>
+    <value>Anno</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
+    <value>Ogni account è validato da un amministratore, abbiate pazienza e controllate più tardi</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Nově přidané na BuildFeed</value>
+    <value>Aggiunte a BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Zkompilováno buildů</value>
+    <value>Build compilata</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Změnit heslo</value>
+    <value>Cambia password</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Zopakujte nové heslo</value>
+    <value>Conferma nuova password</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Zopakujte heslo</value>
+    <value>Conferma password</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Indirizzo email</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Zadejte stávající heslo</value>
+    <value>Inserisci password attuale</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Zadejte nové heslo</value>
+    <value>Inserisci nuova password</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Zadejte heslo</value>
+    <value>Inserisci password</value>
   </data>
-  <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Nejvyšší verze</value>
+  
+<!--
+<data name="Support_HighestVersion" xml:space="preserve">
+    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
   </data>
-  <data name="Support_Labs" xml:space="preserve">
-    <value>Větve</value>
+-->
+  
+<!--
+<data name="Support_Labs" xml:space="preserve">
+    <value>[!!! £áβƨ !!!]</value>
   </data>
+-->
   <data name="Support_Login" xml:space="preserve">
-    <value>Přihlásit se</value>
+    <value>Log in</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Heslo</value>
+    <value>Password</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Nedávno přidané</value>
+    <value>Aggiunto recentemente</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Nedávno sestavené</value>
+    <value>Compilato recentemente</value>
   </data>
-  <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Nedávno uniklé</value>
+  
+<!--
+<data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
   </data>
+-->
   <data name="Support_Register" xml:space="preserve">
-    <value>Zaregistrovat se</value>
+    <value>Registrati</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Pamatovat si mě</value>
+    <value>Ricordami</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Děkujeme vám za registraci</value>
+    <value>Grazie per esserti registrato</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Uživatelské jméno</value>
+    <value>Nome utente</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Týden</value>
+    <value>Settimana</value>
   </data>
 
 </root>

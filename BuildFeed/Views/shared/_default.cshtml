@@ -11,6 +11,7 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -198,10 +199,10 @@
                   &copy; 2013 - @DateTime.Now.Year.ToString(), @InvariantTerms.SiteName
                </p>
                <p>
-                  @VariantTerms.Common_DevelopedBy <a href="https://twitter.com/tomhounsell" target="_blank">@InvariantTerms.DeveloperName</a>
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $" <a href=\"https://twitter.com/tomhounsell\" target=\"_blank\">{InvariantTerms.DeveloperName}</a> "))
                </p>
                <p>
-                  @VariantTerms.Common_ContributeOn&ensp;<a href="https://github.com/hounsell/BuildFeed" target="_blank"><i class="fa fa-github"></i>&ensp;GitHub</a>
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, " <a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a> "))
                </p>
             </div>
          </div>

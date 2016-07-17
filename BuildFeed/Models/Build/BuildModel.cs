@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Text;
 using System.Web.Mvc;
 using BuildFeed.Local;
@@ -101,7 +102,7 @@ namespace BuildFeed.Models
 
             if (BuildTime.HasValue)
             {
-               sb.Append($".{BuildTime:yyMMdd-HHmm}");
+               sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
             }
 
             return sb.ToString();

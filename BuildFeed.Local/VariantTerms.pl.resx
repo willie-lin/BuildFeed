@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrator</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Współtwórz na</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>Autorzy</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Stworzone przez</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>błąd</value>
   </data>
@@ -196,7 +202,7 @@
     <value>aktualna wersja</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>usuń</value>
+    <value>Usuń</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
     <value>szczegóły</value>
@@ -221,10 +227,13 @@
 -->
   
 <!--
-<data name="Front_HomepageH1" xml:space="preserve">
-    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
+<data name="Front_HomeH1" xml:space="preserve">
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
 -->
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>{0} lista buildów</value>
+  </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>Najnowsze buildy</value>
   </data>
@@ -285,66 +294,45 @@
     <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>numer buildu</value>
   </data>
--->
   
 <!--
 <data name="Model_BuildTime" xml:space="preserve">
     <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>link zewnętrzny</value>
   </data>
--->
   <data name="Model_LabString" xml:space="preserve">
     <value>Nazwa labu</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
     <value>Data wydania lub wycieku</value>
   </data>
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>główna wersja</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>wersja pomocnicza</value>
   </data>
--->
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>czas modyfikacji</value>
   </data>
--->
   
 <!--
 <data name="Model_Revision" xml:space="preserve">
     <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>dane źródłowe</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>rodzaj źródła</value>
   </data>
--->
   
 <!--
 <data name="Model_Source_AppPackage" xml:space="preserve">
@@ -357,12 +345,9 @@
     <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>dokumentacja</value>
   </data>
--->
   
 <!--
 <data name="Model_Source_InternalLeak" xml:space="preserve">
@@ -453,12 +438,9 @@
     <value>[!!! Vèřƨïôñ ℓ !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+  <data name="Search_Year" xml:space="preserve">
+    <value>rok</value>
   </data>
--->
   
 <!--
 <data name="Support_AccountValidation" xml:space="preserve">

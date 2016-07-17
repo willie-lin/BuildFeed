@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrador</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Contribuir em</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>Créditos</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Desenvolvido por</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>Erro</value>
   </data>
@@ -209,6 +215,9 @@
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Ver a listagem completa de Compilações do Windows</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: O localizador de compilações do Windows</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} Lista das compilações</value>

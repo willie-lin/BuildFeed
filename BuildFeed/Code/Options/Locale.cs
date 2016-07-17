@@ -32,8 +32,9 @@ namespace BuildFeed.Code.Options
          //new Locale("sv"),
          //new Locale("tr"),
          new Locale("uk"),
+         new Locale("vi"),
          //new Locale("zh-cn"),
-         //new Locale("zh-tw")
+         new Locale("zh-hant")
       };
 
       public string DisplayName => Info.NativeName;

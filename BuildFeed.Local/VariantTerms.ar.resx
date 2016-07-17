@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>أدوات المسؤول</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>ساهم بالتطوير عبر</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>لائحة الشكر والمساهمات</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>طور من قبل</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>خطأ</value>
   </data>
@@ -209,6 +215,9 @@
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>مشاهدة القائمة الكاملة لنسخ الويندوز...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: متتبع نسخ نظام الويندوز</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} قائمة النسخ</value>

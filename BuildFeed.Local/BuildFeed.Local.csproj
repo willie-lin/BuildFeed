@@ -53,10 +53,15 @@
     <EmbeddedResource Include="VariantTerms.ar.resx" />
     <EmbeddedResource Include="VariantTerms.cs.resx" />
     <EmbeddedResource Include="VariantTerms.de.resx" />
+    <EmbeddedResource Include="VariantTerms.el.resx" />
     <EmbeddedResource Include="VariantTerms.en.resx" />
+    <EmbeddedResource Include="VariantTerms.es.resx" />
     <EmbeddedResource Include="VariantTerms.fa.resx" />
     <EmbeddedResource Include="VariantTerms.fr.resx" />
+    <EmbeddedResource Include="VariantTerms.hu.resx" />
+    <EmbeddedResource Include="VariantTerms.it.resx" />
     <EmbeddedResource Include="VariantTerms.nl.resx" />
+    <EmbeddedResource Include="VariantTerms.no.resx" />
     <EmbeddedResource Include="VariantTerms.pl.resx" />
     <EmbeddedResource Include="VariantTerms.pt-br.resx" />
     <EmbeddedResource Include="VariantTerms.pt.resx" />
@@ -67,6 +72,8 @@
     <EmbeddedResource Include="VariantTerms.ru.resx" />
     <EmbeddedResource Include="VariantTerms.sl.resx" />
     <EmbeddedResource Include="VariantTerms.uk.resx" />
+    <EmbeddedResource Include="VariantTerms.vi.resx" />
+    <EmbeddedResource Include="VariantTerms.zh-hant.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

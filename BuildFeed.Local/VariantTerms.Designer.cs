@@ -79,7 +79,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! Çôñƭřïβúƭè ôñ  !!!].
+        ///   Looks up a localized string similar to [!!! Çôñƭřïβúƭè ôñ {0}  !!!].
         /// </summary>
         public static string Common_ContributeOn {
             get {
@@ -97,7 +97,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [!!! ÐèƲèℓôƥèδ β¥  !!!].
+        ///   Looks up a localized string similar to [!!! ÐèƲèℓôƥèδ β¥ {0}  !!!].
         /// </summary>
         public static string Common_DevelopedBy {
             get {

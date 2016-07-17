@@ -123,15 +123,21 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Администрирование</value>
   </data>
-  <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Помочь в разработке на</value>
+  
+<!--
+<data name="Common_ContributeOn" xml:space="preserve">
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Credits" xml:space="preserve">
     <value>команда проекта</value>
   </data>
-  <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Автор:</value>
+  
+<!--
+<data name="Common_DevelopedBy" xml:space="preserve">
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
+-->
   <data name="Common_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
@@ -210,6 +216,12 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Посмотреть полный список сборок...</value>
   </data>
+  
+<!--
+<data name="Front_HomeH1" xml:space="preserve">
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  </data>
+-->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>Список сборок {0}</value>
   </data>
