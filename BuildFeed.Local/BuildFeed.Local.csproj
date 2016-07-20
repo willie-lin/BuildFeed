@@ -57,20 +57,24 @@
     <EmbeddedResource Include="VariantTerms.en.resx" />
     <EmbeddedResource Include="VariantTerms.es.resx" />
     <EmbeddedResource Include="VariantTerms.fa.resx" />
+    <EmbeddedResource Include="VariantTerms.fi.resx" />
     <EmbeddedResource Include="VariantTerms.fr.resx" />
     <EmbeddedResource Include="VariantTerms.hu.resx" />
     <EmbeddedResource Include="VariantTerms.it.resx" />
+    <EmbeddedResource Include="VariantTerms.ko.resx" />
     <EmbeddedResource Include="VariantTerms.nl.resx" />
     <EmbeddedResource Include="VariantTerms.no.resx" />
     <EmbeddedResource Include="VariantTerms.pl.resx" />
     <EmbeddedResource Include="VariantTerms.pt-br.resx" />
     <EmbeddedResource Include="VariantTerms.pt.resx" />
+    <EmbeddedResource Include="VariantTerms.qps-ploc.resx" />
     <EmbeddedResource Include="VariantTerms.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VariantTerms.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VariantTerms.ru.resx" />
     <EmbeddedResource Include="VariantTerms.sl.resx" />
+    <EmbeddedResource Include="VariantTerms.tr.resx" />
     <EmbeddedResource Include="VariantTerms.uk.resx" />
     <EmbeddedResource Include="VariantTerms.vi.resx" />
     <EmbeddedResource Include="VariantTerms.zh-hant.resx" />
