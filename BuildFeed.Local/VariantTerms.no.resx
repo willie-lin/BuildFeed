@@ -123,24 +123,18 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Delta i {0}</value>
   </data>
--->
   
 <!--
 <data name="Common_Credits" xml:space="preserve">
     <value>[!!! Çřèδïƭƨ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Utviklet av {0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Feil</value>
   </data>

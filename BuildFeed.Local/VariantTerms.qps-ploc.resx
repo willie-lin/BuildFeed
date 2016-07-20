@@ -118,316 +118,316 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Build toevoegen</value>
+    <value>[!!! Âδδ βúïℓδ  !!!]</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Administrator</value>
+    <value>[!!! Âδ₥ïñ  !!!]</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Draag bij via {0}</value>
+    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>Dankwoord</value>
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Ontwikkeld door {0}</value>
+    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>Fout</value>
+    <value>[!!! Éřřôř  !!!]</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Iets is kapot gegaan. Misschien is dit gekomen door jouw of omdat ik wat verkeerd heb gedaan. Als je deze error blijft krijgen, open een bug probleem via {0}</value>
+    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>[!!! £ôϱ ïñ  !!!]</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Uitloggen</value>
+    <value>[!!! £ôϱ ôúƭ  !!!]</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Taal</value>
+    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Thema</value>
+    <value>[!!! Tλè₥è ℓ !!!]</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+    <value>[!!! §ïƭè₥áƥ  !!!]</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Donker</value>
+    <value>[!!! Ðářƙ  !!!]</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Licht</value>
+    <value>[!!! £ïϱλƭ ℓ !!!]</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| Pagina {0}</value>
+    <value>[!!! | Þáϱè {0}  !!!]</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Schakel navigatie</value>
+    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>Twitter</value>
+    <value>[!!! Tωïƭƭèř  !!!]</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Over</value>
+    <value>[!!! Âβôúƭ  !!!]</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>Over {0}</value>
+    <value>[!!! Âβôúƭ {0}  !!!]</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Builds uit {0}</value>
+    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Commentaar</value>
+    <value>[!!! Çô₥₥èñƭƨ  !!!]</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Huidige canary</value>
+    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Huidige insider</value>
+    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Huidige release</value>
+    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Verwijderen</value>
+    <value>[!!! Ðèℓèƭè  !!!]</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Gegevens</value>
+    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Bewerken</value>
+    <value>[!!! Éδïƭ !!!]</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Build bewerken</value>
+    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Redacteur acties</value>
+    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Bekijk de volledige Windows builds overzicht</value>
+    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: De Windows build tracker</value>
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} Buildoverzicht</value>
+    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Laatste builds</value>
+    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Overzicht</value>
+    <value>[!!! £ïƨƭïñϱ  !!!]</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Vind meer builds van {0}</value>
+    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Vind meer builds afkomstig van {0}</value>
+    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Vind meer builds gecompileerd in {0}</value>
+    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Geen lab</value>
+    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} Builds</value>
+    <value>[!!! {0} βúïℓδƨ  !!!]</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Prive</value>
+    <value>[!!! ÞřïƲáƭè  !!!]</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Publiek</value>
+    <value>[!!! Þúβℓïç  !!!]</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Snel plakken</value>
+    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Terug naar de build lijst</value>
+    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Terug naar het build overzicht</value>
+    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Delen</value>
+    <value>[!!! §λářè  !!!]</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Vandaag</value>
+    <value>[!!! Tôδá¥  !!!]</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1} gecompileerd op {2}</value>
+    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1}, BuildFeed houd de ontwikkelfase van de Windows builds in de gaten.</value>
+    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Ondek over alle bekende builds uit het Windows ontwikkellab {0} via BuildFeed, een samenwerkend Windows buildlijst</value>
+    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Bekijk een lijst van alle Windows builds gecompileerd in {0} en zie hoe Windows wordt ontwikkeld via de samenwerkend buildlist BuildFeed</value>
+    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Tijd gemaakt</value>
+    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Build nummer</value>
+    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Build tijd</value>
+    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externe link</value>
+    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>Lab</value>
+    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Lek of release datum</value>
+    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Hoofdversie</value>
+    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Onderversie</value>
+    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Tijd gewijzigd</value>
+    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Build revisie</value>
+    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Bron gegevens</value>
+    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Bron type</value>
+    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Applicatie pakket</value>
+    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Build gereedschappen</value>
+    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Documentatie</value>
+    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Publiekelijke lek</value>
+    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Logging</value>
+    <value>[!!! £ôϱϱïñϱ  !!!]</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Prive lek</value>
+    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Publiekelijke release</value>
+    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Update (GDR)</value>
+    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Update (LDR)</value>
+    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Build</value>
+    <value>[!!! ßúïℓδ ℓ !!!]</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Zoeken in BuildFeed</value>
+    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Geen resultaten gevonden</value>
+    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Lab</value>
+    <value>[!!! £áβ  !!!]</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Zoekvraag</value>
+    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Bron</value>
+    <value>[!!! §ôúrçè l !!!]</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Zoeken</value>
+    <value>[!!! §èářçλ  !!!]</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>typ om te zoeken</value>
+    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Versie</value>
+    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Jaar</value>
+    <value>[!!! Ýèář  !!!]</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Elk account wordt gevalideerd bij de administrator, dus wees geduldig en controleer later opnieuw</value>
+    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Toevoegingen aan BuildFeed</value>
+    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd</value>
+    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Verander je wachtwoord</value>
+    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Bevestig nieuw wachtwoord</value>
+    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Bevestig wachtwoord</value>
+    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord in</value>
+    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Vul nieuw wachtwoord in</value>
+    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord n</value>
+    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Hoogste versie</value>
+    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Labs</value>
+    <value>[!!! £áβƨ !!!]</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>[!!! £ôϱ ïñ  !!!]</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Wachtwoord</value>
+    <value>[!!! Þáƨƨωôřδ  !!!]</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Recent toegevoegd</value>
+    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Recent gecompileerd</value>
+    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Recent gelekt</value>
+    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Registreer</value>
+    <value>[!!! Rèϱïƨƭèř  !!!]</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Onthoud mij</value>
+    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Bedankt voor het registreren</value>
+    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Gebruikersnaam</value>
+    <value>[!!! Ûƨèřñá₥è  !!!]</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Week</value>
+    <value>[!!! Wèèƙ !!!]</value>
   </data>
 
 </root>

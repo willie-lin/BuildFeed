@@ -118,316 +118,358 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Build toevoegen</value>
+    <value>빌드추가</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Administrator</value>
+    <value>관리</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Draag bij via {0}</value>
+    <value>기여 : {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>Dankwoord</value>
+    <value>크레딧</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Ontwikkeld door {0}</value>
+    <value>개발 : {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>Fout</value>
+    <value>오류</value>
   </data>
-  <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Iets is kapot gegaan. Misschien is dit gekomen door jouw of omdat ik wat verkeerd heb gedaan. Als je deze error blijft krijgen, open een bug probleem via {0}</value>
+  
+<!--
+<data name="Common_ErrorContent" xml:space="preserve">
+    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
   </data>
+-->
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>로그인</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Uitloggen</value>
+    <value>로그아웃</value>
   </data>
-  <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Taal</value>
+  
+<!--
+<data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
   </data>
-  <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Thema</value>
+-->
+  
+<!--
+<data name="Common_NavigationTheme" xml:space="preserve">
+    <value>[!!! Tλè₥è ℓ !!!]</value>
   </data>
+-->
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+    <value>RSS 피드</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+    <value>사이트맵</value>
   </data>
-  <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Donker</value>
+  
+<!--
+<data name="Common_ThemeDark" xml:space="preserve">
+    <value>[!!! Ðářƙ  !!!]</value>
   </data>
-  <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Licht</value>
+-->
+  
+<!--
+<data name="Common_ThemeLight" xml:space="preserve">
+    <value>[!!! £ïϱλƭ ℓ !!!]</value>
   </data>
+-->
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| Pagina {0}</value>
+    <value>| 페이지 {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Schakel navigatie</value>
+    <value>전환 탐색</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>Twitter</value>
+    <value>트위터</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Over</value>
+    <value>대하여</value>
   </data>
-  <data name="Front_AboutSite" xml:space="preserve">
-    <value>Over {0}</value>
+  
+<!--
+<data name="Front_AboutSite" xml:space="preserve">
+    <value>[!!! Âβôúƭ {0}  !!!]</value>
   </data>
+-->
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Builds uit {0}</value>
+    <value>{0}에서 빌드</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Commentaar</value>
+    <value>댓글</value>
   </data>
-  <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Huidige canary</value>
+  
+<!--
+<data name="Front_CurrentCanary" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Huidige insider</value>
+-->
+  
+<!--
+<data name="Front_CurrentInsider" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Huidige release</value>
+-->
+  
+<!--
+<data name="Front_CurrentRelease" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Delete" xml:space="preserve">
-    <value>Verwijderen</value>
+    <value>삭제</value>
   </data>
-  <data name="Front_Details" xml:space="preserve">
-    <value>Gegevens</value>
+  
+<!--
+<data name="Front_Details" xml:space="preserve">
+    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
   </data>
+-->
   <data name="Front_Edit" xml:space="preserve">
-    <value>Bewerken</value>
+    <value>수정</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Build bewerken</value>
+    <value>빌드 수정</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Redacteur acties</value>
+    <value>편집 작업</value>
   </data>
-  <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Bekijk de volledige Windows builds overzicht</value>
+  
+<!--
+<data name="Front_FullBuildListing" xml:space="preserve">
+    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
   </data>
-  <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: De Windows build tracker</value>
+-->
+  
+<!--
+<data name="Front_HomeH1" xml:space="preserve">
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
+-->
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} Buildoverzicht</value>
+    <value>{0} 빌드 리스트</value>
   </data>
-  <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Laatste builds</value>
+  
+<!--
+<data name="Front_LatestBuilds" xml:space="preserve">
+    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Listing" xml:space="preserve">
-    <value>Overzicht</value>
+    <value>리스트</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Vind meer builds van {0}</value>
+    <value>{0}랩인 많은 빌드 찾기</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Vind meer builds afkomstig van {0}</value>
+    <value>{0}으로 발견된 많은 빌드 찾기</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Vind meer builds gecompileerd in {0}</value>
+    <value>{0}년에 컴파일 된 많은 빌드 찾기</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Geen lab</value>
+    <value>개발랩 없음</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} Builds</value>
+    <value>{0} 빌드</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Prive</value>
+    <value>비공식</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Publiek</value>
+    <value>공식</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Snel plakken</value>
+    <value>빠르게 붙여 넣기</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Terug naar de build lijst</value>
+    <value>빌드 리스트로 돌아가기</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Terug naar het build overzicht</value>
+    <value>빌드 정보로 돌아가기</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Delen</value>
+    <value>공유</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Vandaag</value>
+    <value>오늘</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1} gecompileerd op {2}</value>
+    <value>{0}로부터 {2}년에 컴파일 된 Windows 빌드 {1}를 발견 하였습니다.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1}, BuildFeed houd de ontwikkelfase van de Windows builds in de gaten.</value>
+    <value>{0}로부터 Windows 빌드 {1}에 대하여 발견하세요. BuildFeed는 개발 과정 전체에 걸쳐 Windows 빌드를 추적합니다.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Ondek over alle bekende builds uit het Windows ontwikkellab {0} via BuildFeed, een samenwerkend Windows buildlijst</value>
+    <value>알려진 빌드에 대한 Windows 개발랩 {0}을(를) BuildFeed를 통하여 확인 해 보고, Windows 빌드 리스트와 같이 보십시오.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Bekijk een lijst van alle Windows builds gecompileerd in {0} en zie hoe Windows wordt ontwikkeld via de samenwerkend buildlist BuildFeed</value>
+    <value>{0}년에 컴파일 된 모든 Windows 빌드 리스트를 보고 BuildFeed의 빌드 리스트를 같이 보면서 어디서 부터 개발이 되었는지 보십시오.</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Tijd gemaakt</value>
+    <value>시간 생성</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Build nummer</value>
+    <value>빌드 넘버</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Build tijd</value>
+    <value>빌드 시간</value>
   </data>
-  <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externe link</value>
+  
+<!--
+<data name="Model_ExternalLink" xml:space="preserve">
+    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
   </data>
+-->
   <data name="Model_LabString" xml:space="preserve">
-    <value>Lab</value>
+    <value>개발랩</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Lek of release datum</value>
+    <value>유출 및 공개 날짜</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Hoofdversie</value>
+    <value>주요 버전</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Onderversie</value>
+    <value>주요 버전</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Tijd gewijzigd</value>
+    <value>수정한 날짜</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Build revisie</value>
+    <value>빌드 리비전</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Bron gegevens</value>
+    <value>공개 정보</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Bron type</value>
+    <value>공개 유형</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Applicatie pakket</value>
+    <value>응용 프로그램 패키지</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Build gereedschappen</value>
+    <value>빌드 도구</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Documentatie</value>
+    <value>문서</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Publiekelijke lek</value>
+    <value>내부 유출</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Logging</value>
+    <value>로깅</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Prive lek</value>
+    <value>내부 비유출</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Publiekelijke release</value>
+    <value>공식 출시</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Update (GDR)</value>
+    <value>업데이트 (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Update (LDR)</value>
+    <value>업데이트 (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Build</value>
+    <value>빌드</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Zoeken in BuildFeed</value>
+    <value>BuildFeed에서 검색</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Geen resultaten gevonden</value>
+    <value>검색 결과 없음</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Lab</value>
+    <value>랩</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Zoekvraag</value>
+    <value>검색어</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Bron</value>
+    <value>개발랩</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Zoeken</value>
+    <value>검색</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>typ om te zoeken</value>
+    <value>검색 종류</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Versie</value>
+    <value>버전</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Jaar</value>
+    <value>년</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Elk account wordt gevalideerd bij de administrator, dus wees geduldig en controleer later opnieuw</value>
+    <value>관리자가 인증을 해야합니다. 기다렸다가 나중에 다시 확인하십시오.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Toevoegingen aan BuildFeed</value>
+    <value>BuildFeed에 추가</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd</value>
+    <value>빌드 컴파일</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Verander je wachtwoord</value>
+    <value>비밀번호 변경</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Bevestig nieuw wachtwoord</value>
+    <value>새 비밀번호 확인</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Bevestig wachtwoord</value>
+    <value>현재 비밀번호 확인</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>이메일 주소</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord in</value>
+    <value>현재 비밀번호 입력</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Vul nieuw wachtwoord in</value>
+    <value>새 비밀번호 입력</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord n</value>
+    <value>비밀번호 입력</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Hoogste versie</value>
+    <value>높은 버전</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Labs</value>
+    <value>개발랩</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>로그인</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Wachtwoord</value>
+    <value>비밀번호</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Recent toegevoegd</value>
+    <value>최근 추가</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Recent gecompileerd</value>
+    <value>최근 컴파일</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Recent gelekt</value>
+    <value>최근 유출</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Registreer</value>
+    <value>회원 가입</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Onthoud mij</value>
+    <value>로그인 상태 유지</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Bedankt voor het registreren</value>
+    <value>회원 가입을 축하드립니다.</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Gebruikersnaam</value>
+    <value>ID</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Week</value>
+    <value>주</value>
   </data>
 
 </root>

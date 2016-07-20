@@ -123,12 +123,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Contatar Admin</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Contribuir em {0}</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
     <value>Créditos</value>
   </data>
@@ -216,12 +213,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Veja a lista completa de builds do Windows...</value>
   </data>
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: O localizador de compilações do Windows</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>Lista de compilações {0}</value>
   </data>
@@ -300,18 +294,12 @@
   <data name="Model_LeakDate" xml:space="preserve">
     <value>Vazamento ou data de lançamento</value>
   </data>
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Versão principal</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Versão minoritária</value>
   </data>
--->
   <data name="Model_Modified" xml:space="preserve">
     <value>Hora de modificação</value>
   </data>
@@ -421,12 +409,9 @@
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>Maior versão</value>
   </data>
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Laboratórios</value>
   </data>
--->
   <data name="Support_Login" xml:space="preserve">
     <value>Entrar</value>
   </data>

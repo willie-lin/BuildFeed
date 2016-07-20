@@ -123,21 +123,15 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Contribuer sur {0}</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
     <value>Crédits</value>
   </data>
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Développé par {0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Erreur</value>
   </data>
@@ -216,12 +210,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Visualiser la liste compléte des builds Windows</value>
   </data>
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Le traqueur de build Windows</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} liste de build</value>
   </data>

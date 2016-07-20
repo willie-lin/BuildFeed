@@ -120,30 +120,18 @@
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Thêm bản xây dựng</value>
   </data>
-  
-<!--
-<data name="Common_Admin" xml:space="preserve">
-    <value>[!!! Âδ₥ïñ  !!!]</value>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>Quản trị viên</value>
   </data>
--->
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Đóng góp vào{0}</value>
   </data>
--->
-  
-<!--
-<data name="Common_Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>Sự đóng góp từ</value>
   </data>
--->
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Phát triển bởi ai{0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
@@ -165,12 +153,9 @@
   <data name="Common_NavigationTheme" xml:space="preserve">
     <value>Chủ đề</value>
   </data>
-  
-<!--
-<data name="Common_RssFeeds" xml:space="preserve">
-    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>Nguồn cấp dữ liệu RSS</value>
   </data>
--->
   
 <!--
 <data name="Common_Sitemap" xml:space="preserve">
@@ -201,24 +186,15 @@
     <value>[!!! Tωïƭƭèř  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+  <data name="Front_About" xml:space="preserve">
+    <value>Thông tin</value>
   </data>
--->
-  
-<!--
-<data name="Front_AboutSite" xml:space="preserve">
-    <value>[!!! Âβôúƭ {0}  !!!]</value>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>Thông tin{0}</value>
   </data>
--->
-  
-<!--
-<data name="Front_BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>Những bản dựng từ{0}</value>
   </data>
--->
   <data name="Front_Comments" xml:space="preserve">
     <value>Các bình luận</value>
   </data>
@@ -285,12 +261,9 @@
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>Những bản xây dựng mới nhất</value>
   </data>
-  
-<!--
-<data name="Front_Listing" xml:space="preserve">
-    <value>[!!! £ïƨƭïñϱ  !!!]</value>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>Danh sách</value>
   </data>
--->
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>Tìm thêm nhiều bản dựng nữa từ {0}</value>
   </data>
@@ -306,60 +279,36 @@
     <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_NoLabString" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>Không có xâu chuỗi từ thử nghiệm</value>
   </data>
--->
-  
-<!--
-<data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>[!!! {0} βúïℓδƨ  !!!]</value>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>{0} Những bản dựng</value>
   </data>
--->
   <data name="Front_Private" xml:space="preserve">
     <value>Riêng tư</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
     <value>Công khai</value>
   </data>
-  
-<!--
-<data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>Dán nhanh</value>
   </data>
--->
-  
-<!--
-<data name="Front_ReturnToListing" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>Trở lại danh sách bản dựng</value>
   </data>
--->
-  
-<!--
-<data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>Trở lại trang bản dựng tổng quan</value>
   </data>
--->
-  
-<!--
-<data name="Front_Share" xml:space="preserve">
-    <value>[!!! §λářè  !!!]</value>
+  <data name="Front_Share" xml:space="preserve">
+    <value>Chia sẻ</value>
   </data>
--->
-  
-<!--
-<data name="Front_Today" xml:space="preserve">
-    <value>[!!! Tôδá¥  !!!]</value>
+  <data name="Front_Today" xml:space="preserve">
+    <value>Hôm nay</value>
   </data>
--->
-  
-<!--
-<data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>Khám phá về bản dựng Windows {0}, từ {1} và được tổng hợp thành{2}</value>
   </data>
--->
   
 <!--
 <data name="Meta_BuildNoDate" xml:space="preserve">
@@ -372,12 +321,9 @@
     <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Hiển thị tất cả danh sách của những bản dựng Windows được tổng hợp từ{0}, và xem xem rằng thế nào mà Windows lại có thể phát triển vững chắc qua thời gian, thông qua tính tổng hợp của danh sách các bản dựng, BuildFeed</value>
   </data>
--->
   <data name="Model_Added" xml:space="preserve">
     <value>Thời gian khởi tạo</value>
   </data>
@@ -387,305 +333,155 @@
   <data name="Model_BuildTime" xml:space="preserve">
     <value>Thời gian của bản xây dựng</value>
   </data>
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Địa chỉ ngoài</value>
   </data>
--->
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Chuỗi thử nghiệm</value>
   </data>
--->
-  
-<!--
-<data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Ngày rò rỉ hay ra mắt</value>
   </data>
--->
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Phiên bản chính</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Phiên bản phụ</value>
   </data>
--->
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Thời gian chỉnh sửa</value>
   </data>
--->
-  
-<!--
-<data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Bản tái xây dựng</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Chi tiết nguồn</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Loại nguồn</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>Gói ứng dụng</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Những công cụ cho bản dựng</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Tài liệu</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Rò rỉ công khai</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Đang đăng nhập</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Rò rỉ riêng tư</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Phiên bản ra mắt công khai</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Cập nhật (GDR)</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Cập nhật (LDR)</value>
   </data>
--->
-  
-<!--
-<data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Bản dựng</value>
   </data>
--->
-  
-<!--
-<data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>Tìm kiếm BuildFeed</value>
   </data>
--->
-  
-<!--
-<data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Không tìm thấy kết quả nào</value>
   </data>
--->
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Thử nghiệm</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Tìm câu hỏi</value>
   </data>
--->
-  
-<!--
-<data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Nguồn</value>
   </data>
--->
-  
-<!--
-<data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Tìm kiếm</value>
   </data>
--->
-  
-<!--
-<data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Gõ để tìm kiếm</value>
   </data>
--->
-  
-<!--
-<data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Phiên bản</value>
   </data>
--->
-  
-<!--
-<data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Năm</value>
   </data>
--->
-  
-<!--
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Mỗi tài khoản chỉ hợp lệ và được xác minh bởi người quản trị viên, vậy nên mong bạn hãy kiên nhẫn đợi chờ và quay lại kiểm tra lần sau</value>
   </data>
--->
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Những bổ sung từ BuildFeed</value>
   </data>
--->
-  
-<!--
-<data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Những bản dựng được tổng hợp</value>
   </data>
--->
-  
-<!--
-<data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Đổi mật khẩu của bạn</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
   </data>
--->
-  
-<!--
-<data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>Địa chỉ email</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Nhập mật khẩu hiện tại</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Nhập mật khẩu mới</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Nhập mật khẩu</value>
   </data>
--->
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Phiên bản mới nhất/cao nhất</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Những thử nghiệm</value>
   </data>
--->
-  
-<!--
-<data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Đăng nhập</value>
   </data>
--->
-  
-<!--
-<data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Mật khẩu</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Được thêm vào gần đây</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Tổng hợp gần đây</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Bị rò rỉ gần đây</value>
   </data>
--->
-  
-<!--
-<data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Đăng ký</value>
   </data>
--->
-  
-<!--
-<data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Ghi nhớ</value>
   </data>
--->
-  
-<!--
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Cảm ơn bạn đã đăng ký</value>
   </data>
--->
-  
-<!--
-<data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Tên đăng nhập</value>
   </data>
--->
-  
-<!--
-<data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Tuần</value>
   </data>
--->
 
 </root>

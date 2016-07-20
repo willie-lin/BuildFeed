@@ -123,21 +123,15 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Mitwirken bei {0}</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
     <value>Danksagungen</value>
   </data>
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Entwickelt von {0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
@@ -153,12 +147,9 @@
   <data name="Common_NavigationLanguage" xml:space="preserve">
     <value>Sprache</value>
   </data>
-  
-<!--
-<data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Design</value>
   </data>
--->
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>RSS Feeds</value>
   </data>
@@ -300,12 +291,9 @@
   <data name="Model_ExternalLink" xml:space="preserve">
     <value>Externer Link</value>
   </data>
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Lab-String</value>
   </data>
--->
   <data name="Model_LeakDate" xml:space="preserve">
     <value>Leak- oder Veröffentlichungsdatum</value>
   </data>

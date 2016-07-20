@@ -123,21 +123,15 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Amministratore</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Contribuire su {0}</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
     <value>Crediti</value>
   </data>
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Sviluppato da {0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Errore</value>
   </data>
@@ -273,81 +267,63 @@
   <data name="Meta_LabGeneric" xml:space="preserve">
     <value>Vedi tutte le build che usciranno dal lab di sviluppo di Windows {0} con BuildFeed, la lista collaborativa delle build Windows</value>
   </data>
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Vedi una lista di tutte le build Windows compilate in {0}, e segui lo sviluppo di Windows attraverso il tempo con la lista collaborativa BuildFeed.</value>
   </data>
--->
   <data name="Model_Added" xml:space="preserve">
-    <value>Data creazione</value>
+    <value>Ora di creazione</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Build numero</value>
+    <value>Numero di build</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Build del</value>
+    <value>Ora di compilazione</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
     <value>Link esterno</value>
   </data>
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Stringa di laboratorio</value>
   </data>
--->
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Leak o data di rilascio</value>
+    <value>Data di fuga o release</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
     <value>Versione maggiore</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Versione Minore</value>
+    <value>Versione minore</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
     <value>Modificato il</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Revisione della build</value>
+    <value>Revisione</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Dettagli sorgente</value>
+    <value>Dettagli della fonte</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Tipo sorgente</value>
+    <value>Tipo della fonte</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
     <value>Aggiungi pacchetto</value>
   </data>
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Utilità di build</value>
   </data>
--->
   <data name="Model_Source_Documentation" xml:space="preserve">
     <value>Documentazione</value>
   </data>
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Fuga pubblica</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Registri</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Fuga privata</value>
   </data>
--->
   <data name="Model_Source_PublicRelease" xml:space="preserve">
     <value>Release pubblica</value>
   </data>
@@ -366,18 +342,12 @@
   <data name="Search_Empty" xml:space="preserve">
     <value>Nessun risultato trovato</value>
   </data>
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Laboratorio</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Quesito</value>
   </data>
--->
   <data name="Search_Source" xml:space="preserve">
     <value>Sorgente</value>
   </data>
@@ -423,18 +393,12 @@
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Inserisci password</value>
   </data>
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Versione più alta</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Laboratori</value>
   </data>
--->
   <data name="Support_Login" xml:space="preserve">
     <value>Log in</value>
   </data>
@@ -447,12 +411,9 @@
   <data name="Support_RecentlyCompiled" xml:space="preserve">
     <value>Compilato recentemente</value>
   </data>
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Fughe recenti</value>
   </data>
--->
   <data name="Support_Register" xml:space="preserve">
     <value>Registrati</value>
   </data>

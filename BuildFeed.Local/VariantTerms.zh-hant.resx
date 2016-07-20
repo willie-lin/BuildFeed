@@ -118,28 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>加入組建</value>
+    <value>新增組建</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>管理員</value>
+    <value>管理</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>貢獻於 {0}</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
-    <value>製作人員</value>
+    <value>貢獻者名單</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>由{0}開發</value>
+    <value>由 {0} 開發</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
     <value>錯誤</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>發生問題，可能是你做了一些奇怪的事情，但亦可能是我做的。如果你不斷收到這個錯誤，請在{0}提交一個錯誤報告。</value>
+    <value>有東西壞掉了，這或許是因為你做了甚麼奇怪的事，也有可能是我做了甚麼奇怪的事。如果你不斷遇上這個問題，請透過 {0} 回報問題。</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>登入</value>
@@ -154,7 +151,7 @@
     <value>主題</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS訂閱</value>
+    <value>RSS 訂閱</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>網站地圖</value>
@@ -166,7 +163,7 @@
     <value>淺色</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| {0} 頁</value>
+    <value>|第 {0} 頁</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
     <value>切換導航</value>
@@ -178,28 +175,28 @@
     <value>關於</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>關於{0}</value>
+    <value>關於 {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>來自{0}的組建</value>
+    <value>來自 {0} 的組建</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>評論</value>
+    <value>留言</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>目前Canary版</value>
+    <value>當前內部開發版本</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>目前Insider版</value>
+    <value>當前公眾預覽版本</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>目前正式版</value>
+    <value>當前正式發行版本</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>刪除</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>詳細</value>
+    <value>詳情</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
     <value>編輯</value>
@@ -208,13 +205,13 @@
     <value>編輯組建</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>編輯器選項</value>
+    <value>編輯操作</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>查看完整Windows組建列表...</value>
+    <value>查看完整 Windows 組建列表...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Windows組建追蹤器</value>
+    <value>{0}: Windows 組建追蹤器</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} 組建列表</value>
@@ -226,22 +223,22 @@
     <value>列表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>尋找更多來自{0}的組建</value>
+    <value>尋找更多來自 {0} 的組建</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>尋找更多來自{0}提供的組建</value>
+    <value>尋找更多由 {0} 提供的組建</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>尋找更多來自{0}編譯的組建</value>
+    <value>尋找更多編譯於 {0} 的組建</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>沒有開發室的字符串</value>
+    <value>缺少 Lab 字串</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0}組建</value>
+    <value>{0} 組建</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>私人</value>
+    <value>私密</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
     <value>公開</value>
@@ -253,7 +250,7 @@
     <value>返回組建列表</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>返回組建概欖</value>
+    <value>返回組建概觀</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
     <value>分享</value>
@@ -262,16 +259,16 @@
     <value>今天</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>了解關於Windows組建{0}，由{1}和編譯在{2}。</value>
+    <value>了解更多關於來自 {1} 分支，編譯於 {2} 的 Windows 組建 {0}。</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>了解關於Windows組建{0}, 由{1}。BuildFeed會在整個開發過程中追蹤Windows的組建。</value>
+    <value>了解更多關於來自 {1} 分支的 Windows 組建 {0}，BuildFeed 會在開發過程中全程追蹤 Windows 組建的發展。</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>在BuildFeed - 一個共同協作的組建列表上查看所有來自Windows開發室{0}的已知組建。</value>
+    <value>透過 BuildFeed，一個協作 Windows 組建清單查看來自 {0} 分支的所有已知組建。</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>查看所有來自{0}編譯的Windows組建, 和通過BuildFeed - 一個共同協作的組建列表來注視Windows如何隨著時間穩步發展。</value>
+    <value>透過 BuildFeed，一個基於社群協作的 Windows 組建列表，查看所有來自 {0} 分支的所有已知組建，並從中觀察 Windows 隨著時間持續發展的過程。</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
     <value>建立時間</value>
@@ -280,37 +277,37 @@
     <value>組建號碼</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>組建時間</value>
+    <value>編譯時間</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>外部鏈接</value>
+    <value>外部連結</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>開發室的字符串</value>
+    <value>Lab 字串</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>洩漏或推出日期</value>
+    <value>洩漏或發佈日期</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>主要版本號</value>
+    <value>主要版本</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>次要版本號</value>
+    <value>次要版本</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
     <value>修改時間</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>組建修訂</value>
+    <value>修訂版號</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>來源的詳細</value>
+    <value>資料來源詳情</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>來源的類型</value>
+    <value>來源類型</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>應用程式套件</value>
+    <value>App 套件</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
     <value>組建工具</value>
@@ -322,13 +319,13 @@
     <value>公開洩漏</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>記錄</value>
+    <value>記錄檔</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>私人洩漏</value>
+    <value>私下洩漏</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>公開推出</value>
+    <value>公開發佈</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
     <value>更新 (GDR)</value>
@@ -340,13 +337,13 @@
     <value>組建</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>搜尋BuildFeed</value>
+    <value>搜尋 BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
     <value>沒有找到任何結果</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>開發室</value>
+    <value>Lab</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
     <value>搜索查詢</value>
@@ -367,16 +364,16 @@
     <value>年份</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>每個帳號需由管理員驗證，請耐心等待和稍後再查看。</value>
+    <value>所有帳戶均須經過管理員審核，請耐心等候並稍後再試。</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>BuildFeed的補充</value>
+    <value>BuildFeed 補充資訊</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
     <value>已編譯的組建</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>更改密碼</value>
+    <value>更改你的密碼</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
     <value>確認新密碼</value>
@@ -388,7 +385,7 @@
     <value>電子郵件地址</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>輸入目前密碼</value>
+    <value>輸入原密碼</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
     <value>輸入新密碼</value>
@@ -397,10 +394,10 @@
     <value>輸入密碼</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>最高版本</value>
+    <value>最新版本</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>開發室</value>
+    <value>Labs</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
     <value>登入</value>
@@ -424,13 +421,13 @@
     <value>記住我</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>多謝您的註冊</value>
+    <value>感謝註冊</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>使用者名稱</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>星期</value>
+    <value>週</value>
   </data>
 
 </root>

@@ -118,316 +118,316 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Build toevoegen</value>
+    <value>Yapı ekle</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Administrator</value>
+    <value>Yönetici</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Draag bij via {0}</value>
+    <value>Şuna katkıda bulun: {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>Dankwoord</value>
+    <value>Emek sahipleri</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Ontwikkeld door {0}</value>
+    <value>{0} tarafından geliştirildi</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>Fout</value>
+    <value>Hata</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Iets is kapot gegaan. Misschien is dit gekomen door jouw of omdat ik wat verkeerd heb gedaan. Als je deze error blijft krijgen, open een bug probleem via {0}</value>
+    <value>Bir şeyler yanlış gitti. Belki sıradışı bir şeyler yapmışsınızdır. Bizim hatamız da olabilir. Bu hatayı almaya devam ederseniz, {0} adresinden hata bildirimi gönderin.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>Giriş yap</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Uitloggen</value>
+    <value>Çıkış yap</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Taal</value>
+    <value>Dil:</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Thema</value>
+    <value>Tema:</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS feeds</value>
+    <value>RSS akışı</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Sitemap</value>
+    <value>Site haritası</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Donker</value>
+    <value>Karanlık</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Licht</value>
+    <value>Açık:</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| Pagina {0}</value>
+    <value>Sayfa {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Schakel navigatie</value>
+    <value>Yönlendirmeye geç</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Over</value>
+    <value>Hakkında</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>Over {0}</value>
+    <value>{0} hakkında</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Builds uit {0}</value>
+    <value>{0}'den yapılar</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Commentaar</value>
+    <value>Yorumlar</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Huidige canary</value>
+    <value>Şimdiki Muhbir</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Huidige insider</value>
+    <value>Şimdiki Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Huidige release</value>
+    <value>Şimdiki Dağıtım</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>Verwijderen</value>
+    <value>Sil</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>Gegevens</value>
+    <value>Ayrıntılar</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>Bewerken</value>
+    <value>Düzenle</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Build bewerken</value>
+    <value>Yapıyı Düzenle</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Redacteur acties</value>
+    <value>Editör eylemleri</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Bekijk de volledige Windows builds overzicht</value>
+    <value>Tam Windows Yapıları listesini gör</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: De Windows build tracker</value>
+    <value>Windows Yapıları izleyicisi: {0}</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} Buildoverzicht</value>
+    <value>Yapı Listesi {0}</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Laatste builds</value>
+    <value>En Son Yapılar</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Overzicht</value>
+    <value>Liste</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Vind meer builds van {0}</value>
+    <value>{0}'den daha fazla yapı bul</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Vind meer builds afkomstig van {0}</value>
+    <value>{0} kaynaklı daha fazla yapı bul</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Vind meer builds gecompileerd in {0}</value>
+    <value>{0} içinde derlenmiş daha fazla yapı bul</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Geen lab</value>
+    <value>Laboratuvar etiketi yok</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} Builds</value>
+    <value>{0} Yapı</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Prive</value>
+    <value>Özel</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Publiek</value>
+    <value>Genel</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Snel plakken</value>
+    <value>Hızlı yapıştır</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Terug naar de build lijst</value>
+    <value>Yapı listesine geri dön</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Terug naar het build overzicht</value>
+    <value>Yapı genel bakışına geri dön</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Delen</value>
+    <value>Paylaş</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Vandaag</value>
+    <value>Bugün</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1} gecompileerd op {2}</value>
+    <value>{1} kaynaklı {2} tarihinde derlenmiş {0} Windows yapısını keşfet</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Ontdek over Windows build {0} van {1}, BuildFeed houd de ontwikkelfase van de Windows builds in de gaten.</value>
+    <value>{1} kaynaklı {0} Windows yapısını keşfet. BuildFeed, Windows yapılarını geliştirme süreci boyunca izler.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Ondek over alle bekende builds uit het Windows ontwikkellab {0} via BuildFeed, een samenwerkend Windows buildlijst</value>
+    <value>Windows geliştirme laboratuvarlarından çıkan bütün bilinen Windows yapılarını, beraber oluşturulan BuildFeed ile keşfedin</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Bekijk een lijst van alle Windows builds gecompileerd in {0} en zie hoe Windows wordt ontwikkeld via de samenwerkend buildlist BuildFeed</value>
+    <value>Beraber oluşturulan BuildFeed ile, {0} tarihinde derlenen bütün Windows yapılarının bir listesini görüntüleyin ve Windows'un zamanla nasıl durmadan geliştiğini izleyin</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Tijd gemaakt</value>
+    <value>Oluşturulan zaman</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Build nummer</value>
+    <value>Yapı numarası</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Build tijd</value>
+    <value>Yapı tarihi</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externe link</value>
+    <value>Dış bağlantı:</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>Lab</value>
+    <value>Laboratuvar etiketi</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Lek of release datum</value>
+    <value>Sızdırılma veya yayınlanma tarihi:</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Hoofdversie</value>
+    <value>Büyük sürüm numarası</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Onderversie</value>
+    <value>Küçük sürüm numarası</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Tijd gewijzigd</value>
+    <value>Değiştirme zamanı</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Build revisie</value>
+    <value>Yapı revizyon numarası</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Bron gegevens</value>
+    <value>Kaynak ayrıntıları</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Bron type</value>
+    <value>Kaynak türü</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Applicatie pakket</value>
+    <value>Uygulama paketi</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Build gereedschappen</value>
+    <value>Yapı araçları</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Documentatie</value>
+    <value>Belgelendirme</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Publiekelijke lek</value>
+    <value>Genel sızdırma</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Logging</value>
+    <value>Giriliyor</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Prive lek</value>
+    <value>Özel sızdırma</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Publiekelijke release</value>
+    <value>Genel yayınlama</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Update (GDR)</value>
+    <value>Güncelleme (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Update (LDR)</value>
+    <value>Güncelleme (EDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Build</value>
+    <value>Yapı:</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Zoeken in BuildFeed</value>
+    <value>BuildFeed'i Araştır...</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Geen resultaten gevonden</value>
+    <value>Sonuç bulunamadı</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Lab</value>
+    <value>Laboratuvar</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Zoekvraag</value>
+    <value>Arama kelimeleri</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Bron</value>
+    <value>Kaynak</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Zoeken</value>
+    <value>Araştır</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>typ om te zoeken</value>
+    <value>Araştırmak için yazın... :</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Versie</value>
+    <value>Sürüm:</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Jaar</value>
+    <value>Yıl</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Elk account wordt gevalideerd bij de administrator, dus wees geduldig en controleer later opnieuw</value>
+    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olup sonra tekrar kontrol ediniz.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Toevoegingen aan BuildFeed</value>
+    <value>BuildFeed'e eklemeler:</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Builds gecompileerd</value>
+    <value>Derlenen Yapılar:</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Verander je wachtwoord</value>
+    <value>Parolanızı değiştirin:</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Bevestig nieuw wachtwoord</value>
+    <value>Yeni parolayı onaylayın:</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Bevestig wachtwoord</value>
+    <value>Parolayı onaylayın:</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>E-posta adresi</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord in</value>
+    <value>Şimdiki parolanızı girin:</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Vul nieuw wachtwoord in</value>
+    <value>Yeni parolayı girin:</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Vul huidig wachtwoord n</value>
+    <value>Parolayı girin</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Hoogste versie</value>
+    <value>En yüksek sürüm:</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Labs</value>
+    <value>Laboratuvarlar</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Inloggen</value>
+    <value>Giriş yap</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Wachtwoord</value>
+    <value>Parola</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Recent toegevoegd</value>
+    <value>Son eklenenler</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Recent gecompileerd</value>
+    <value>Son derlenenler</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Recent gelekt</value>
+    <value>Son sızdırılanlar</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Registreer</value>
+    <value>Kaydol</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Onthoud mij</value>
+    <value>Beni hatırla</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Bedankt voor het registreren</value>
+    <value>Kayıt olduğunuz için teşekkürler!</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Gebruikersnaam</value>
+    <value>Kullanıcı adı</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Week</value>
+    <value>Hafta</value>
   </data>
 
 </root>
