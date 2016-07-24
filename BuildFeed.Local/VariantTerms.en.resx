@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed is ran and maintained by a group of enthusiasts. Microsoft are not involved in the site in any way. We've certainly had no formal complaint from Microsoft about the site, even though we are certain they are aware of the site. That said, Microsoft obviously wish to keep private information private, and so we've had sources shut down by them in the past, and I'm sure they will in the future.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Nice try, Dona, but I'm not falling for this one. What I can say is this. BuildFeed makes as certain as is possible that all builds posted on the site are correct and legitimate. We have a number of different sources, to make verification more reliable and to give us some redundancy should Microsoft shut down one of our sources.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>There's a number of ways. You can discuss the builds in the disqus comments system on each build page. You can also contribute to the site's development by reporting bugs or making pull requests on our GitHub. Lastly, you can help translate BuildFeed into your native language through our Translation portal.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Who runs BuildFeed? Is this an official Microsoft site?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>How does BuildFeed get its data exactly?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>How can I get involved?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Add build</value>
   </data>

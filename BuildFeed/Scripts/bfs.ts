@@ -25,6 +25,28 @@
       location.reload(true);
    }
 
+   export function OpenSearch(ev: MouseEvent)
+   {
+      ev.preventDefault();
+
+      const modal = document.getElementById("modal-search-overlay") as HTMLDivElement;
+      modal.classList.add("open");
+   }
+
+   export function CloseSearch(ev: MouseEvent)
+   {
+      ev.preventDefault();
+
+      const modal = document.getElementById("modal-search-overlay") as HTMLDivElement;
+      modal.classList.remove("open");
+   }
+
+   export function StopClick(ev: MouseEvent)
+   {
+      ev.preventDefault();
+      ev.stopPropagation();
+   }
+
    export function BuildFeedSetup(ev: Event)
    {
       const ddParents = document.getElementsByClassName("dropdown-parent");
@@ -51,6 +73,15 @@
       {
          ddLangs[i].addEventListener("click", SwitchLanguage);
       }
+
+      const btnSearch = document.getElementById("page-navigation-search");
+      btnSearch.addEventListener("click", OpenSearch);
+
+      const modalOverlay = document.getElementById("modal-search-overlay") as HTMLDivElement;
+      modalOverlay.addEventListener("click", CloseSearch);
+
+      const modalDialog = document.getElementById("modal-search") as HTMLDivElement;
+      modalDialog.addEventListener("click", StopClick);
    }
 }
 

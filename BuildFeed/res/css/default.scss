@@ -480,7 +480,7 @@ ul.pagination
 
 footer#page-footer
 {
-   padding-top: #{(4em / 3)};
+   padding: #{(4em / 3)} 0 #{(4em / 6)};
    font-size: 0.85em;
 
    .footer-flex
@@ -515,7 +515,7 @@ footer#page-footer
    }
 }
 
-.modal-search-overlay
+#modal-search-overlay
 {
    display: none;
    position: fixed;
@@ -523,25 +523,78 @@ footer#page-footer
    bottom: 0;
    left: 0;
    right: 0;
-   background: rgba(0,0,0, 0.4);
+   -moz-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
+   -o-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
+   -webkit-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
+   transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
+   background-color: rgba(0,0,0, 0);
+   -webkit-backdrop-filter: blur(0);
+   backdrop-filter: blur(0);
+   z-index: 100;
 
-   .modal-search
+   &.open
+   {
+      display: block;
+      background-color: rgba(0,0,0, 0.6);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+   }
+
+   #modal-search
    {
       position: absolute;
       top: 20%;
-      left: 30%;
-      width: 40%;
-      background: #000;
+      left: 25%;
+      width: 50%;
       padding: 2em;
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px;
       border-radius: 2px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
       border: 1px solid #ccc;
 
       h3
       {
-         color: #fff;
          margin: 0 0 1em;
+         font-size: 1.5em;
+         font-weight: 300;
       }
+
+      > #modal-search-box
+      {
+         width: 100%;
+
+         > *
+         {
+            display: inline-block;
+            height: 2.5em;
+            padding: 0.5em;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 1px solid;
+         }
+
+         > #modal-search-input
+         {
+            width: calc(100% - #{(10em / 3)});
+         }
+
+         > #modal-search-button
+         {
+            width: #{(8em / 3)};
+         }
+      }
+   }
+}
+
+@media (max-width: 980px)
+{
+   #modal-search-overlay #modal-search
+   {
+      left: 10%;
+      width: 80%;
    }
 }

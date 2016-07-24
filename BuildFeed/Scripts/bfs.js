@@ -20,6 +20,23 @@ var BuildFeed;
         location.reload(true);
     }
     BuildFeed.SwitchLanguage = SwitchLanguage;
+    function OpenSearch(ev) {
+        ev.preventDefault();
+        var modal = document.getElementById("modal-search-overlay");
+        modal.classList.add("open");
+    }
+    BuildFeed.OpenSearch = OpenSearch;
+    function CloseSearch(ev) {
+        ev.preventDefault();
+        var modal = document.getElementById("modal-search-overlay");
+        modal.classList.remove("open");
+    }
+    BuildFeed.CloseSearch = CloseSearch;
+    function StopClick(ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+    }
+    BuildFeed.StopClick = StopClick;
     function BuildFeedSetup(ev) {
         var ddParents = document.getElementsByClassName("dropdown-parent");
         for (var i = 0; i < ddParents.length; i++) {
@@ -38,6 +55,12 @@ var BuildFeed;
         for (var i = 0; i < ddLangs.length; i++) {
             ddLangs[i].addEventListener("click", SwitchLanguage);
         }
+        var btnSearch = document.getElementById("page-navigation-search");
+        btnSearch.addEventListener("click", OpenSearch);
+        var modalOverlay = document.getElementById("modal-search-overlay");
+        modalOverlay.addEventListener("click", CloseSearch);
+        var modalDialog = document.getElementById("modal-search");
+        modalDialog.addEventListener("click", StopClick);
     }
     BuildFeed.BuildFeedSetup = BuildFeedSetup;
 })(BuildFeed || (BuildFeed = {}));

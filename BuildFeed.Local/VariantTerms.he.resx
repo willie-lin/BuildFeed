@@ -117,335 +117,318 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
-  </data>
-  <data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
-  </data>
-  <data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
-  </data>
-  <data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
-  </data>
-  <data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
-  </data>
-  <data name="About_Q3" xml:space="preserve">
-    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
-  </data>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>[!!! Âδδ βúïℓδ  !!!]</value>
+    <value>הוספת בילד</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>[!!! Âδ₥ïñ  !!!]</value>
+    <value>Admin</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+    <value>סיוע בפיתוח ב-{0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>[!!! Çřèδïƭƨ  !!!]</value>
+    <value>תודות</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+    <value>פותח על-ידי {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>[!!! Éřřôř  !!!]</value>
+    <value>שגיאה</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+    <value>משהו התקלקל. אולי זה בגלל שעשית משהו מוזר. סביר להניח שזה בגלל שאני עשיתי משהו מוזר. אם אתה ממשיך לקבל את השגיאה הזו, שלח דו"ח שגיאות דרך {0}</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>כניסה</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>[!!! £ôϱ ôúƭ  !!!]</value>
+    <value>יציאה</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+    <value>שפה</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+    <value>ערכת נושא</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>[!!! R§§ ƒèèδƨ  !!!]</value>
+    <value>הזנות RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>[!!! §ïƭè₥áƥ  !!!]</value>
+    <value>מפת אתר</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>[!!! Ðářƙ  !!!]</value>
+    <value>כהה</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>[!!! £ïϱλƭ ℓ !!!]</value>
+    <value>בהיר</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
+    <value>| דף {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+    <value>החלף ניווט</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>[!!! Tωïƭƭèř  !!!]</value>
+    <value>טוויטר</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>[!!! Âβôúƭ  !!!]</value>
+    <value>אודות</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>[!!! Âβôúƭ {0}  !!!]</value>
+    <value>אודות {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+    <value>בילדים מ- {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>[!!! Çô₥₥èñƭƨ  !!!]</value>
+    <value>הערות</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+    <value>Canary נוכחית</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+    <value>Insider נוכחית</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+    <value>Release נוכחית</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+    <value>מחק</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+    <value>פרטים</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>[!!! Éδïƭ !!!]</value>
+    <value>ערוך</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
+    <value>ערוך בילד</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+    <value>פעולות עורך</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
+    <value>הצג את כל רשימת הבילדים של Windows...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+    <value>{0}: The Windows build tracker</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
+    <value>רשימת בילדים {0}</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
+    <value>בילדים אחרונים</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>[!!! £ïƨƭïñϱ  !!!]</value>
+    <value>רשימה</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+    <value>מצא בילדים נוספים מ- {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+    <value>מצא בילדים נוספים שמקורם ב- {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+    <value>מצא בילדים נוספים שהודרו ב- {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+    <value>אין מחרוזת מעבדה</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>[!!! {0} βúïℓδƨ  !!!]</value>
+    <value>בילדים {0}</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè  !!!]</value>
+    <value>פרטי</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>[!!! Þúβℓïç  !!!]</value>
+    <value>ציבורי</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+    <value>הדבקה מהירה</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ℓïƨƭïñϱ ℓ !!!]</value>
+    <value>חזור לרשימת הבילדים</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>[!!! Rèƭúřñ ƭô βúïℓδ ôƲèřƲïèω ℓ !!!]</value>
+    <value>חזור לסקירת הבילד</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>[!!! §λářè  !!!]</value>
+    <value>שתף</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>[!!! Tôδá¥  !!!]</value>
+    <value>היום</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+    <value>גלה אודות בילד של ,Windows {0} מ- {1} והודר ב- {2}</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+    <value>גלה אודות בילד של Windows {0}, מ- {1}.
+BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך הפיתוח.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+    <value>הצג את כל הבילדים הידועים, אשר יצאו ממעבדת הפיתוח של Windows {0} בעזרת BuildFeed, מאגר הבילדים השיתופי של Windows.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+    <value>הצג רשימה של כל הבילדים של Windows אשר הודרו ב- {0}, וראה כיצד Windows מפותחת בקביעות לאורך זמן, דרך מאגר הבילדים השיתופי, BuildFeed.</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+    <value>זמן יצירה</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+    <value>מספר בילד</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+    <value>שעת יצירת הבילד</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+    <value>קישור חיצוני</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+    <value>מחרוזת מעבדה</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+    <value>תאריך זליגה או שיחרור</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+    <value>גירסה עיקרית</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+    <value>גירסה משנית</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+    <value>מועד שינוי</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+    <value>מהדורת בילד</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+    <value>פרטי המקור</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+    <value>סוג המקור</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+    <value>חבילת תוכנה</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+    <value>כלי בילד</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+    <value>תיעוד</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+    <value>זליגה פומבית</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+    <value>רישום</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+    <value>זליגה פרטית</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+    <value>הפצה רשמית</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+    <value>עדכון (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+    <value>עדכון (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+    <value>בילד</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+    <value>חפש ב- BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+    <value>לא נמצאו תוצאות</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+    <value>מעבדה</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+    <value>שאילתה</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+    <value>מקור</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+    <value>חיפוש</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+    <value>הקלד לחיפוש...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+    <value>גירסה</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+    <value>שנה</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+    <value>כל חשבון נבדק ע"י מנהל המערכת, התאזר בסבלנות וחזור מאוחר יותר.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+    <value>תוספות ל- BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>בילד הודר</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>החלף סיסמה</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>אשר סיסמה חדשה</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>אשר סיסמה</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+    <value>כתובת דוא"ל</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>הזן סיסמה נוכחית</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+    <value>הזן סיסמה חדשה</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+    <value>הזן סיסמה</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+    <value>הגירסה הגבוהה ביותר</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+    <value>מעבדות</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+    <value>היכנס</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+    <value>סיסמה</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+    <value>נוסף לאחרונה</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+    <value>הודר לאחרונה</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+    <value>זלג לאחרונה</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+    <value>הירשם</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+    <value>זכור אותי</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+    <value>תודה על ההרשמה</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+    <value>שם משתמש</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+    <value>שבוע</value>
   </data>
 
 </root>

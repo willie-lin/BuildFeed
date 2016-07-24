@@ -104,3 +104,21 @@ ul.pagination
       color: #f6f5f3 !important;
    }
 }
+
+#modal-search-overlay #modal-search
+{
+   background-color: #f6f5f3;
+
+   h3
+   {
+      color: #373736;
+   }
+
+   > #modal-search-box > #modal-search-input,
+   > #modal-search-box > #modal-search-button
+   {
+      background-color: #fff;
+      color: #373736;
+      border-color: #242423;
+   }
+}

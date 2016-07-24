@@ -129,12 +129,9 @@
   <data name="Common_Credits" xml:space="preserve">
     <value>Créditos</value>
   </data>
-  
-<!--
-<data name="Common_DevelopedBy" xml:space="preserve">
-    <value>[!!! ÐèƲèℓôƥèδ β¥ {0}  !!!]</value>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Desenvolvido por {0}</value>
   </data>
--->
   <data name="Common_Error" xml:space="preserve">
     <value>Erro</value>
   </data>
@@ -315,12 +312,9 @@
   <data name="Model_Source_AppPackage" xml:space="preserve">
     <value>Pacote de Aplicativo</value>
   </data>
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Ferramentas da compilação</value>
   </data>
--->
   <data name="Model_Source_Documentation" xml:space="preserve">
     <value>Documentação</value>
   </data>
@@ -376,12 +370,9 @@
   <data name="Support_AccountValidation" xml:space="preserve">
     <value>Toda conta é validada por um administrador, seja paciente e cheque mais tarde.</value>
   </data>
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Adições ao Buildfeed</value>
   </data>
--->
   <data name="Support_BuildsCompiled" xml:space="preserve">
     <value>Compilações compiladas</value>
   </data>

@@ -61,6 +61,60 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè&apos;Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè&apos;Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì&apos;₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥï [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string About_A1 {
+            get {
+                return ResourceManager.GetString("About_A1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì&apos;₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!].
+        /// </summary>
+        public static string About_A2 {
+            get {
+                return ResourceManager.GetString("About_A2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [!!! Tλèřè&apos;ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè&apos;ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!].
+        /// </summary>
+        public static string About_A3 {
+            get {
+                return ResourceManager.GetString("About_A3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!].
+        /// </summary>
+        public static string About_Q1 {
+            get {
+                return ResourceManager.GetString("About_Q1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!].
+        /// </summary>
+        public static string About_Q2 {
+            get {
+                return ResourceManager.GetString("About_Q2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!].
+        /// </summary>
+        public static string About_Q3 {
+            get {
+                return ResourceManager.GetString("About_Q3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [!!! Âδδ βúïℓδ  !!!].
         /// </summary>
         public static string Common_AddBuild {

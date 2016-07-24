@@ -58,3 +58,13 @@ ul.pagination > li:active:not(.disabled) > a {
   background: #d6d5d3;
   color: #373736 !important; }
 
+#modal-search-overlay #modal-search {
+  background-color: #242423; }
+  #modal-search-overlay #modal-search h3 {
+    color: #f6f5f3; }
+  #modal-search-overlay #modal-search > #modal-search-box > #modal-search-input,
+  #modal-search-overlay #modal-search > #modal-search-box > #modal-search-button {
+    background-color: #373736;
+    color: #f6f5f3;
+    border-color: #d6d5d3; }
+
