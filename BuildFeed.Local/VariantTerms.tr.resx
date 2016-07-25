@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed bir hayranlar topluluğu tarafından çalıştırılır ve bakılır. Bu sitenin Microsoft ile hiçbir ilgisi yoktur. Onların bu siteyi bildiğinden emin olsak da, şu ana kadar onlarla hiçbir yasal sorunumuz olmadı. Söylediğimiz gibi, Microsoft kendi bilgilerini özel tutmaya çalışıyor ve onların kapattığı kaynaklardan da bilgi alıyorduk, bunu yapmaya devam edeceklerinden de eminiz.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>İyi denemeydi Dona, ama buna kanmadım. Şunu söyleyebilirim ki, BuildFeed bu siteye gönderilen yapıların doğru ve geçerli olması için elinden geleni yapar. Birkaç kaynağımız var, doğrulamayı daha güvenli yapmak ve bize biraz kalabalık vermek için Microsoft kaynaklarımızın birini kapatabilir.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Bazı yollar var. Her yapı sayfasında, Disqus yorum sistemi ile yapılar hakkında konuşabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i çeviri portalımızdan kendi anadilinize çevirebilirsiniz.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>BuildFeed'i kim çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>BuildFeed barındırdığı bilgileri kesin olarak nasıl alıyor?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Nasıl yardımcı olabilirim?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Yapı ekle</value>
   </data>

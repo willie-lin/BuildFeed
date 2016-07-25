@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeediä ylläpitää ryhmä harrastajia, eikä Microsoft osallistu siihen millään tavalla. Microsoft ei kuitenkaan ole valittanut sivusta virallisesti, vaikka olemme varmoja siitä, että he tietävät sen olemassaolosta. Microsoft haluaa silti pitää yksityiset tietonsa yksityisinä, ja näin ollen jotkut lähteistämme on aikaisemmin hiljennetty, ja olemme varmoja että näin tulee tapahtumaan jatkossakin.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Hyvä yritys, Dona, mutta en mene halpaan. Voin kuitenkin kertoa, että BuildFeed yrittää parhaansa mukaan pitää huolta siitä, että kaikki sivustolla esiintyvät koontiversiot ovat todenmukaisia. Meillä on monia eri lähteitä, joka tekee varmistamisesta helppoa ja antaa meille hieman ylimäärää siltä varalta, etta jokin lähteistämme katoaa Microsoftin toimesta.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Monin keinoin. Voit keskustella koontiversioista Disqus-kommenttijärjestelmän avulla jokaisella koontiversiosivulla. Voit myös osallistua kehitykseen raportoimalla bugeja tai tekemällä pull requesteja GitHub-sivullamme. Lopuksi, voit kääntää BuildFeedin äidinkielellesi käännösportaalimme kautta.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Kuka ylläpitää BuildFeediä? Onko se virallinen Microsoft-sivusto?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Miten BuildFeed tarkalleen hankkii datansa?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Miten voin osallistua?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Lisää koontiversio</value>
   </data>

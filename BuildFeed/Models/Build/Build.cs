@@ -98,14 +98,20 @@ namespace BuildFeed.Models
 
          IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:OSGLab"] }
+            { nameof(BuildModel.LabUrl), new BsonDocument
+            {
+               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';')) }
+            } }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentCanary = (await query.ToListAsync())[0];
 
          query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), ConfigurationManager.AppSettings["site:InsiderLab"] },
+            { nameof(BuildModel.LabUrl), new BsonDocument
+            {
+               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
+            } },
             { nameof(BuildModel.SourceType), TypeOfSource.PublicRelease }
          }).Sort(sortByCompileDate).Limit(1);
 

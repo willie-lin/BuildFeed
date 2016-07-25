@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed управляется и поддерживается группой энтузиастов. Microsoft не имеет никакого отношения к этому сайту. Мы совершенно точно не получали от Microsoft официальных претензий по поводу этого сайта, хотя точно знаем, что они осведомлены об этом сайте. Тем не менее, в Microsoft, естественно, хотят сохранить приватную информацию тайной, так что у нас были источники, закрытые ими в прошлом и я уверен, что они будут и в будущем.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Хорошая попытка, Дона, но я на это не поведусь. Что я могу сказать на самом деле, так это то, что BuildFeed делает всё, чтобы быть уверенным в том, что информация о каждой сборке на этом сайте корректна и достоверна. У нас есть множество различных источников, чтобы сделать проверку более надёжной и чтобы дать нам некую избыточность, Microsoft должны закрыть один из них.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Есть много путей. Вы можете принять участие в обсуждении сборок в комментариях на страницах каждой сборки. Вы так же можете помочь сайту, сообщая о проблемах или делая запросы на включение сделанных вами изменений на GitHub. И наконец вы можете помочь, переведя BuildFeed на ваш родной язык через портал перевода.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Кто управляет сайтом BuildFeed? Имеет ли этот сайт отношение к Microsoft?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Как на самом деле BuildFeed получает свою информацию?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Как я могу принять участие?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Добавить сборку</value>
   </data>

@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed wird von einer Gruppe von Enthusiasten betrieben und gewartet. Microsoft ist nicht auf irgend eine Weise in die Seite involviert. Wir haben definitiv keine formale Beschwerde über die Seite von Microsoft erhalten, obwohl wir uns sicher sind, dass sie von der Seite wissen. Microsoft möchte offensichtlich interne Informationen auch intern behalten, weshalb wir in der Vergangenheit Quellen verloren haben und ich bin mir sicher, dass dies auch in der Zukunft passieren wird.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Netter Versuch Dona, aber auf den falle ich nicht herein. Was ich sagen kann ist folgendes: BuildFeed stellt so gut wie möglich sicher, dass alle Builds die auf der Seite veröffentlicht werden korrekt und legitim sind. Wir haben eine Menge an verschiedenen Quellen um Verifizierung zuverlässiger zu machen und um uns etwas Redundanz zu geben, für den Fall dass Microsoft eine unserer Quellen stilllegt.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Es gibt mehrere Wege. Sie können über Builds im Disqus Kommentarsystem diskutieren. Außerdem können Sie zur Entwicklung der Seite beitragen indem Sie Fehler melden oder Pull-Requests auf unserem GitHub einreichen. Sie können auch helfen BuildFeed über unser Übersetzungsportal in ihre Muttersprache zu übersetzen.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Wer betreibt BuildFeed? Ist es eine offizielle Microsoft Seite?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Wie bekommt BuildFeed die Daten?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Wie kann ich helfen?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Build hinzufügen</value>
   </data>
@@ -184,13 +202,13 @@
     <value>Kommentare</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Aktuelle Canary</value>
+    <value>Aktueller Canary</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Aktuelle Insider</value>
+    <value>Aktueller Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Aktuelle Release</value>
+    <value>Aktueller Release</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Entfernen</value>
@@ -270,18 +288,12 @@
     <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Sehen Sie eine Liste von allen Windows Builds, die in {0} kompiliert wurden und beobachten Sie, wie sich Windows Laufe der Zeit stetig entwickelt hat, mit der kollaborativen Build-Liste, BuildFeed.</value>
   </data>
--->
-  
-<!--
-<data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+  <data name="Model_Added" xml:space="preserve">
+    <value>Erstellungszeit</value>
   </data>
--->
   <data name="Model_BuildNumber" xml:space="preserve">
     <value>Buildnummer</value>
   </data>
@@ -298,17 +310,14 @@
     <value>Leak- oder Veröffentlichungsdatum</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Major Version</value>
+    <value>Hauptversion</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Minor Version</value>
+    <value>Nebenversion</value>
   </data>
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Änderungszeit</value>
   </data>
--->
   <data name="Model_Revision" xml:space="preserve">
     <value>Buildrevision</value>
   </data>
@@ -330,12 +339,9 @@
   <data name="Model_Source_InternalLeak" xml:space="preserve">
     <value>Öffentlicher Leak</value>
   </data>
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Aufzeichnung</value>
   </data>
--->
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
     <value>Privater Leak</value>
   </data>

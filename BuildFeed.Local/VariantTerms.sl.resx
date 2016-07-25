@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed vodi in vzdržuje skupina navdušencev. Microsoft ni vpleten v ta projekt na noben način. Zagovoto se zavedajo obstaja strani, a niso   vložili pritožbe. Je pa res, da želi Microsoft zaupne informacije ohraniti zaupne, zato so nam v preteklosti že onemogočili nekatere vire, kar se bo zagotovo dogajalo tudi v bodoče.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Lep poskus, Dona, ampak ne bo šlo. Rečem lahko le tole. BuildFeed se prepriča kolikor je mogoče, da so vse gradnje, objavljene na strani, pravilne in legitimne. Imamo več različnih virov, da je preverjanje bolj zanesljivo, poleg tega pa imamo v primeru izpada vira vseeno zagotovljene informacije.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Obstaja več načinov. Lahko razpravljate o gradnjah v komentarjih na strani vsake gradnje. Lahko prispevate k razvoju strani tako, da javljate napake ali naredite pull zahtevo na našem GitHubu. Lahko tudi pomagate prevesti BuildFeed v svoj materni jezik preko našega portala za prevajanje.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Kdo upravlja BuildFeed? Je to uradna Microsoftova stran?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Kako natančno dobi BuildFeed svoje podatke?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Kako lahko sodelujem?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Dodaj gradnjo</value>
   </data>

@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed מופעל ומתוחזק ע"י קבוצת חובבים. מיקרוסופט אינה מעורבת באתר בשום צורה. מעולם לא הוגשה תלונה רשמית מצד מיקרוסופט נגד האתר, על אף שאנו בטוחים שהם מודעים לקיומו. יחד עם זאת, מטבע הדברים מיקרוסופט מעוניינת לשמור מידע פרטי כפרטי, ולכן כבר היו לנו מקורות בעבר אשר חוסלו ע"י מיקרוסופט, ואני בטוח שיהיו כאלה גם בעתיד.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>ניסיון יפה, דונה. אבל אני לא נופל בפח הזה. מה שאני יכול לומר הוא זה: BuildFeed מוודא עד כמה שהדבר אפשרי שכל בילד המפורסם באתר - נכון ולגיטימי. יש לנו מספר מקורות שונים, על מנת להפוך את תהליך האימות לאמין יותר ולמקרה שמיקרוסופט תחילט לחסל את אחד המקורות שלנו.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>ישנן מספר דרכים. תוכל לנהל דיון אודות הבילדים במערכת התגובות של disqus בכל עמוד של בילד. תוכל גם לתרום לפיתוחו של האתר ע"י שליחת דיווחי באגים או לעשות pull request במאגר ה- GitHub שלנו. לבסוף, תוכל לתרגם את BuildFeed לשפת האם שלך דרך פורטל התירגום שלנו.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>מי מפעיל את BuildFeed? האם זהו אתר רשמי של מיקרוסופט?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>כיצד בדיוק משיג BuildFeed את המידע שלו?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>כיצד אוכל לעזור?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>הוספת בילד</value>
   </data>

@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed керується і підтримується групою ентузіастів. Microsoft не має ніякого відношення до цього сайту. Ми абсолютно точно не отримували від Microsoft офіційних претензій з приводу цього сайту, хоча точно знаємо, що вони інформовані про цей сайт. Проте, в Microsoft, звичайно, бажають зберегти приватну інформацію таємницею, так що у нас були джерела, закриті ними в минулому і я впевнений, що вони будуть і в майбутньому.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Гарна спроба, Дона, але мене цим не візьмеш. Що я можу сказати насправді так це те, що BuildFeed робить все можливе, щоб бути впевненим в тому, що інформація про кожну збірку на цьому сайті є корректною і підтвердженою. В нас є безліч різних джерел, щоб зробити процесс перевірки більш надійним і щоб дати нам деяку надмірність, Microsoft повинні закрити одне з наших джерел.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Є багато шляхів. Ви можете взяти участь в обговоренні збірок в коментарях на сторінках кожної збірки. Ви так само можете допомогти сайту, повідомляючи про проблеми або роблячи запити на включення зроблених вами змін на GitHub. І нарешті ви можете допомогти, перевівши BuildFeed на ваш рідну мову за допомогою порталу перекладу.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Хто керує сайтом BuildFeed? Чи є він офіційним сайтом Microsoft?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Як саме BuildFeed отримує свою інформацію?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Як я можу взяти участь?</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Додати збірку</value>
   </data>
