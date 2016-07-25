@@ -46,6 +46,11 @@ table {
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
+.field-validation-error {
+  display: block;
+  margin: 0.33333em 0;
+  color: #FF2626; }
+
 header#page-header h1 {
   font-weight: 300;
   margin: .33em 0; }
@@ -248,17 +253,45 @@ article {
     font-weight: bold;
     margin-right: 1em;
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    margin-top: 0.25em; }
   .form-group > div {
     margin-left: calc(20% + 1em);
     width: 30%;
     display: inline-block;
     vertical-align: top; }
     .form-group > div input, .form-group > div textarea, .form-group > div select {
-      width: 100%; }
+      width: 100%;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid;
+      padding: 0.33333em 0.5em;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      line-height: 1em; }
     .form-group > div input[type=submit],
     .form-group > div input[type=checkbox] {
       width: auto; }
+    .form-group > div input[type=submit],
+    .form-group > div button {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid;
+      padding: 0.33333em 0.5em;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      background-color: #1274B2;
+      color: #fff;
+      line-height: 1; }
+    .form-group > div.wide-group {
+      width: 40%; }
+      .form-group > div.wide-group > .trumbowyg-box {
+        width: 100%;
+        margin: 0; }
   .form-group > label + div {
     margin-left: 0; }
 

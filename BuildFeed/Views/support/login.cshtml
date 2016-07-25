@@ -25,15 +25,11 @@
          {
             @class = "control-label col-md-2"
          })
-         <div class="col-md-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.TextBoxFor(model => model.UserName, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.UserName, new
+            {
+               @class = "form-control"
+            })
             @Html.ValidationMessageFor(model => model.UserName)
          </div>
       </div>
@@ -43,32 +39,24 @@
          {
             @class = "control-label col-md-2"
          })
-         <div class="col-md-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.PasswordFor(model => model.Password, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.PasswordFor(model => model.Password, new
+            {
+               @class = "form-control"
+            })
             @Html.ValidationMessageFor(model => model.Password)
          </div>
       </div>
 
       <div class="form-group">
-         <div class="col-md-10 col-md-offset-2">
-            <div class="row">
-               <div class="col-sm-6">
-                  <label for="@Html.IdFor(model => model.RememberMe)" class="checkbox checkbox-inline">@Html.CheckBoxFor(model => model.RememberMe) @Html.DisplayNameFor(model => model.RememberMe)</label>
-               </div>
-            </div>
+         <div>
+            <label for="@Html.IdFor(model => model.RememberMe)" class="checkbox checkbox-inline">@Html.CheckBoxFor(model => model.RememberMe) @Html.DisplayNameFor(model => model.RememberMe)</label>
          </div>
       </div>
 
       <div class="form-group">
-         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="@VariantTerms.Support_Login" class="btn btn-primary" />
+         <div>
+            <input type="submit" value="@VariantTerms.Support_Login" class="btn btn-primary" /> &ensp;
             @Html.ActionLink(VariantTerms.Support_Register, "register", new
             {
                controller = "Support"

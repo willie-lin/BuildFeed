@@ -19,13 +19,9 @@ else
 
 <div class="form-horizontal">
    <div class="form-group">
-      <label for="quickpaste" class="control-label col-sm-2">@VariantTerms.Front_QuickPaste</label>
-      <div class="col-sm-10">
-         <div class="row">
-            <div class="col-sm-6">
-               <input id="quickpaste" type="text" class="form-control" />
-            </div>
-         </div>
+      <label for="quickpaste" class="control-label">@VariantTerms.Front_QuickPaste</label>
+      <div>
+         <input id="quickpaste" type="text" class="form-control" />
       </div>
    </div>
 </div>
@@ -40,17 +36,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.MajorVersion, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-2">
-                  @Html.TextBoxFor(model => model.MajorVersion, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.MajorVersion)
             @Html.ValidationMessageFor(model => model.MajorVersion)
          </div>
       </div>
@@ -58,17 +47,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.MinorVersion, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-2">
-                  @Html.TextBoxFor(model => model.MinorVersion, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.MinorVersion)
             @Html.ValidationMessageFor(model => model.MinorVersion)
          </div>
       </div>
@@ -76,17 +58,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.Number, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-3">
-                  @Html.TextBoxFor(model => model.Number, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.Number)
             @Html.ValidationMessageFor(model => model.Number)
          </div>
       </div>
@@ -94,17 +69,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.Revision, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-3">
-                  @Html.TextBoxFor(model => model.Revision, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.Revision)
             @Html.ValidationMessageFor(model => model.Revision)
          </div>
       </div>
@@ -112,17 +80,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.Lab, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.TextBoxFor(model => model.Lab, new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.Lab)
             @Html.ValidationMessageFor(model => model.Lab)
          </div>
       </div>
@@ -130,17 +91,10 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.BuildTime, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.TextBoxFor(model => model.BuildTime, "{0:yyMMdd-HHmm}", new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.BuildTime, "{0:yyMMdd-HHmm}")
             @Html.ValidationMessageFor(model => model.BuildTime)
          </div>
       </div>
@@ -148,17 +102,13 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.SourceType, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.DropDownListFor(model => model.SourceType, EnumHelper.GetSelectList(typeof(TypeOfSource)), new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-            </div>
+         <div>
+            @Html.DropDownListFor(model => model.SourceType, EnumHelper.GetSelectList(typeof(TypeOfSource)), new
+            {
+               @class = "form-control"
+            })
             @Html.ValidationMessageFor(model => model.SourceType)
          </div>
       </div>
@@ -166,20 +116,14 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.LeakDate, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-4">
-                  @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new
-                  {
-                     @class = "form-control"
-                  })
-               </div>
-               <div class="col-sm-2">
-                  <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@VariantTerms.Front_Today</button>
-               </div>
-            </div>
+         <div>
+            @Html.TextBoxFor(model => model.LeakDate, "{0:dd/MM/yyyy}", new
+            {
+               @class = "form-control"
+            })
+            <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@VariantTerms.Front_Today</button>
             @Html.ValidationMessageFor(model => model.LeakDate)
          </div>
       </div>
@@ -187,25 +131,24 @@ else
       <div class="form-group">
          @Html.LabelFor(model => model.SourceDetails, new
          {
-            @class = "control-label col-sm-2"
+            @class = "control-label"
          })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-6">
-                  @Html.TextAreaFor(model => model.SourceDetails, new
-                  {
-                     @class = "form-control",
-                     rows = "5"
-                  })
-               </div>
-            </div>
+         <div class="wide-group">
+            @Html.TextAreaFor(model => model.SourceDetails, new
+            {
+               @class = "form-control",
+               rows = "5"
+            })
             @Html.ValidationMessageFor(model => model.SourceDetails)
          </div>
       </div>
 
       <div class="form-group">
-         <div class="col-sm-offset-2 col-sm-10">
-            <input type="submit" value="Submit Build" class="btn btn-primary" />
+         <div>
+            <input type="submit" value="@((string)ViewContext.RouteData.Values["action"] == "addBuild"
+                                             ? VariantTerms.Common_AddBuild
+                                             : VariantTerms.Front_EditBuild)" class="btn btn-primary" />
+            &ensp;
             <a href="/" onclick="window.history
    .back(); return false;" class="btn btn-default">
                @VariantTerms.Front_ReturnToListing</a>
