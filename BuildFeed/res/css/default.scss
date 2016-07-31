@@ -65,6 +65,7 @@ table
    -o-text-overflow: ellipsis;
    text-overflow: ellipsis;
    overflow: hidden;
+   white-space: nowrap;
 }
 
 .eager-wrapping
@@ -626,9 +627,11 @@ footer#page-footer
    #modal-search
    {
       position: absolute;
-      top: 20%;
+      top: 15%;
       left: 25%;
       width: 50%;
+      max-height: 70%;
+      overflow: auto;
       padding: 2em;
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px;
@@ -668,6 +671,26 @@ footer#page-footer
          > #modal-search-button
          {
             width: #{(8em / 3)};
+         }
+      }
+
+      > #modal-search-result
+      {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+
+         > .search-result-item
+         {
+            display: block;
+            padding: 0 1em;
+            width: 140px;
+
+            > .search-result-heading
+            {
+               font-size: 1.2em;
+               margin-bottom: 0;
+            }
          }
       }
    }

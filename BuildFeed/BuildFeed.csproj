@@ -56,8 +56,8 @@
       <HintPath>..\packages\Humanizer.1.37.7\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -222,6 +222,7 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
+    <Content Include="content\card\Redstone2.png" />
     <Content Include="content\card\Redstone.png" />
     <Content Include="content\card\Threshold2.png" />
     <Content Include="content\card\Threshold.png" />
@@ -280,14 +281,14 @@
     <Content Include="res\css\rtl.scss" />
     <Content Include="res\css\dark.scss" />
     <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
-    <Content Include="Scripts\bfs.js">
+    <Content Include="res\ts\bfs.js">
       <DependentUpon>bfs.ts</DependentUpon>
     </Content>
     <Content Include="res\Web.config" />
-    <Content Include="Scripts\bfs.js.map">
+    <Content Include="res\ts\bfs.js.map">
       <DependentUpon>bfs.ts</DependentUpon>
     </Content>
-    <Content Include="Scripts\bfs.min.js">
+    <Content Include="res\ts\bfs.min.js">
       <DependentUpon>bfs.js</DependentUpon>
     </Content>
     <Content Include="res\css\light.scss" />
@@ -426,7 +427,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\bfs.ts" />
+    <TypeScriptCompile Include="res\ts\bfs.ts" />
+    <TypeScriptCompile Include="Scripts\typings\google.analytics\ga.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jsrender\jsrender.d.ts" />
   </ItemGroup>

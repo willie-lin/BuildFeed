@@ -203,7 +203,7 @@ namespace BuildFeed.Controllers
             });
          }
 
-         return results.Take(15);
+         return results.Take(16);
       }
    }
 }

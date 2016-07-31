@@ -213,19 +213,20 @@
       <div id="modal-search">
          <h3>@VariantTerms.Search_BuildFeed</h3>
          <div id="modal-search-box">
-            <input id="modal-search-input" type="text" placeholder="@VariantTerms.Search_TypePlaceholder"/>
+            <input id="modal-search-input" type="text" placeholder="@VariantTerms.Search_TypePlaceholder" />
             <button id="modal-search-button"><i class="fa fa-search"></i></button>
          </div>
+         <div id="modal-search-result"></div>
       </div>
    </div>
 
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js"></script>
-   <script type="text/javascript" src="~/Scripts/bfs.min.js"></script>
+   <script type="text/javascript" src="~/res/ts/bfs.min.js"></script>
    @RenderSection("scripts", false)
    <script id="result-template" type="text/x-jsrender">
-      <a href="{{:Url}}" class="list-group-item" title="{{:Title}}">
-         <h4 class="list-group-item-heading">{{:Label}}</h4>
-         <p class="list-group-item-text">{{:Group}}</p>
+      <a href="{{:Url}}" class="search-result-item" title="{{:Title}}">
+         <h4 class="search-result-heading no-wrapping">{{:Label}}</h4>
+         <p class="search-result-text">{{:Group}}</p>
       </a>
    </script>
    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>

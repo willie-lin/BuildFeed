@@ -117,336 +117,392 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed é mantido por um grupo de entusiastas. Microsoft não está envolvida com o site em nenhuma hipótese. Não temos nenhuma denúncia formal da Microsoft sobre o site, embora estejamos cientes de seu conhecimento sobre. Disto isto, Microsoft obviamente deseja manter suas informações privadas e tivemos fontes desligadas no passado, e temos certeza que outras serão.</value>
+  
+<!--
+<data name="About_A1" xml:space="preserve">
+    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
   </data>
-  <data name="About_A2" xml:space="preserve">
-    <value>Boa tentativa, Dona, mas eu não cairei nessa. O que posso dizer é isso. BuildFeed checa se todas as compilações postadas no site são legítimas e totalmente corretas. Nós temos diferentes fontes, para tornar a verificação mais confiável e nos dar redundância caso uma de nossas fontes seja desativada.</value>
+-->
+  
+<!--
+<data name="About_A2" xml:space="preserve">
+    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
   </data>
-  <data name="About_A3" xml:space="preserve">
-    <value>Há muitas maneiras. Você pode discutir as compilações através de suas páginas no sistema de comentários disqus. Você também pode contribuir com o desenvolvimento do site reportando bugs e fazendo 'pull requests' em nosso GitHub. Por último, você pode ajudar a traduzir o BuildFeed para sua língua no nosso portal de Tradução.</value>
+-->
+  
+<!--
+<data name="About_A3" xml:space="preserve">
+    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
   </data>
-  <data name="About_Q1" xml:space="preserve">
-    <value>Quem mantém o BuildFeed? É um site oficial da Microsoft?</value>
+-->
+  
+<!--
+<data name="About_Q1" xml:space="preserve">
+    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
   </data>
-  <data name="About_Q2" xml:space="preserve">
-    <value>Como o BuildFeed tem seus dados exatos?</value>
+-->
+  
+<!--
+<data name="About_Q2" xml:space="preserve">
+    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
   </data>
-  <data name="About_Q3" xml:space="preserve">
-    <value>Como posso participar?</value>
+-->
+  
+<!--
+<data name="About_Q3" xml:space="preserve">
+    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
   </data>
+-->
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Adicionar build</value>
+    <value>Dodaj verziju</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>Contatar Admin</value>
+    <value>Administrator</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Contribuir em {0}</value>
+    <value>Pomogni u izradi {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>Créditos</value>
+    <value>Zasluge</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Desenvolvido por {0}</value>
+    <value>Izradio {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>Erro</value>
+    <value>Greška</value>
   </data>
-  <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Algo deu errado. Talvez você tenha feito algo estranho, na realidade, provavelmente eu tenha feito algo estranho. Se continuar obtendo este erro, reporte-o em {0}. </value>
+  
+<!--
+<data name="Common_ErrorContent" xml:space="preserve">
+    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
   </data>
+-->
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Entrar</value>
+    <value>Prijava</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Sair</value>
+    <value>Odjava</value>
   </data>
-  <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Língua</value>
+  
+<!--
+<data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
   </data>
-  <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Tema</value>
+-->
+  
+<!--
+<data name="Common_NavigationTheme" xml:space="preserve">
+    <value>[!!! Tλè₥è ℓ !!!]</value>
   </data>
+-->
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>Feeds RSS</value>
+    <value>RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa do site</value>
+    <value>Mapa stranice</value>
   </data>
-  <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Escuro</value>
+  
+<!--
+<data name="Common_ThemeDark" xml:space="preserve">
+    <value>[!!! Ðářƙ  !!!]</value>
   </data>
-  <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Claro</value>
+-->
+  
+<!--
+<data name="Common_ThemeLight" xml:space="preserve">
+    <value>[!!! £ïϱλƭ ℓ !!!]</value>
   </data>
+-->
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| Página {0}</value>
+    <value>| Stranica {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Mostrar/ocultar navegação</value>
+    <value>Izbor navigacije</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Sobre</value>
+    <value>O</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>Sobre {0}</value>
+    <value>O {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Builds de {0}</value>
+    <value>Verzije od {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Comentários</value>
+    <value>Komentari</value>
   </data>
-  <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Última Canary</value>
+  
+<!--
+<data name="Front_CurrentCanary" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Última Insider</value>
+-->
+  
+<!--
+<data name="Front_CurrentInsider" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Última Release</value>
+-->
+  
+<!--
+<data name="Front_CurrentRelease" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Delete" xml:space="preserve">
-    <value>Excluir</value>
+    <value>Izbriši</value>
   </data>
-  <data name="Front_Details" xml:space="preserve">
-    <value>Detalhes</value>
+  
+<!--
+<data name="Front_Details" xml:space="preserve">
+    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
   </data>
+-->
   <data name="Front_Edit" xml:space="preserve">
-    <value>Editar</value>
+    <value>Promijeni</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Editar build</value>
+    <value>Promijeni verziju</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Ações do editor</value>
+    <value>Akcije editora</value>
   </data>
-  <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Veja a lista completa de builds do Windows...</value>
+  
+<!--
+<data name="Front_FullBuildListing" xml:space="preserve">
+    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
   </data>
-  <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: O localizador de compilações do Windows</value>
+-->
+  
+<!--
+<data name="Front_HomeH1" xml:space="preserve">
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
+-->
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Lista de compilações {0}</value>
+    <value>Lista {0} verzija</value>
   </data>
-  <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Últimas builds</value>
+  
+<!--
+<data name="Front_LatestBuilds" xml:space="preserve">
+    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Listing" xml:space="preserve">
-    <value>Listagem</value>
+    <value>Popis</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Veja mais compilações do {0}</value>
+    <value>Nađi više verzija od {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Veja mais compilações originadas de {0}</value>
+    <value>Nađi više verzija od {0} koje su nastale od istog izvora</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Veja mais compilações compiladas em {0}</value>
+    <value>Nađi više verzija koje su kompajlirane od {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Sem informações de laboratório</value>
+    <value>Nema naziva grane</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} compilações</value>
+    <value>{0} verzije</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Privado</value>
+    <value>Privatni</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Público</value>
+    <value>Javni</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Colar rapidamente</value>
+    <value>Brzo zalijepi</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Voltar para a lista de compilações</value>
+    <value>Povratak na listu verzija</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Voltar para a visão geral da compilação</value>
+    <value>Povratak na pregled verzija</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Compartilhar</value>
+    <value>Podijeli</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Hoje</value>
+    <value>Danas</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Descubra sobre a compilação {0} do Windows, do {1} e feita em {2}.</value>
+    <value>Saznaj o Windows verziji {0}, od {1} i kompajliranu {2}</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Descubra sobre a compilação {0} do Windows, do {1}. O BuildFeed rastreia compilações do Windows ao decorrer do processo de desenvolvimento.</value>
+    <value>Saznaj o Windows verziji {0}, od {1}. BuildFeed prati verzije Windowsa koje nastaju tijekom razvijanja.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Veja todas as compilações que saíram do laboratório de desenvolvimento {0} do Windows com o BuildFeed, uma lista colaborativa de compilações do Windows</value>
+    <value>Pogledaj sve poznate verzije Windowsa iz grane {0} u BuildFeedu, javno održavanom listom Windows verzija</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Veja uma lista de todas as compilações do Windows feitas em {0}, e veja como o Windows desenvolveu-se com o tempo, com a lista colaborativa de compilações, BuildFeed</value>
+    <value>Pogledaj listu svih Windows verzija kompajliranih u {0} i pogledaj kako je prolazio razvoj Windowsa kroz vrijeme preko javno održavane liste - BuildFeed</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Hora de criação</value>
+    <value>Stvoreno</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Número da compilação</value>
+    <value>Broj verzije</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Hora da compilação</value>
+    <value>Vrijeme izrade</value>
   </data>
-  <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Link externo</value>
+  
+<!--
+<data name="Model_ExternalLink" xml:space="preserve">
+    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
   </data>
+-->
   <data name="Model_LabString" xml:space="preserve">
-    <value>Informação do laboratório</value>
+    <value>Linija grane</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Vazamento ou data de lançamento</value>
+    <value>Datum kad je procurio / objavljen</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Versão principal</value>
+    <value>Glavna verzija</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Versão minoritária</value>
+    <value>Sporedna verzija</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Hora de modificação</value>
+    <value>Vrijeme izmjene</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Revisão da compilação</value>
+    <value>Revizija verzije</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Detalhes da fonte</value>
+    <value>Detalji o izvoru</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Tipo da fonte</value>
+    <value>Vrsta izvora</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Pacote de Aplicativo</value>
+    <value>Paket aplikacije</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Ferramentas da compilação</value>
+    <value>Alati za izradu</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Documentação</value>
+    <value>Dokumentacija</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Vazamento público</value>
+    <value>Javno procurio</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Logando</value>
+    <value>Zapisivanje</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Vazamento privado</value>
+    <value>Verzija koja je privatno procurila</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Lançamento ao público</value>
+    <value>Javno pušteno</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Atualização (GDR)
-</value>
+    <value>Nadogradnja (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Atualização (LDR)</value>
+    <value>Nadogradnja (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Compilação</value>
+    <value>Verzija</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Pesquisar BuildFeed...</value>
+    <value>Pretraži BuildFeed</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Nenhum resultado encontrado</value>
+    <value>Nema rezultata</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Laboratório</value>
+    <value>Grana</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Termos da pesquisa</value>
+    <value>Upit</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Fonte</value>
+    <value>Izvor</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Pesquisar</value>
+    <value>Pretraživanje</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>digite para pesquisar...</value>
+    <value>Pretraži...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Versão</value>
+    <value>Verzija</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Ano</value>
+    <value>Godina</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Toda conta é validada por um administrador, seja paciente e cheque mais tarde.</value>
+    <value>Svaki račun je validiran od strane administratora tako da molimo za strpljenje i probajte kasnije.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Adições ao Buildfeed</value>
+    <value>Dodaci BuildFeed-u</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Compilações compiladas</value>
+    <value>Kompajlirane verzije</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Alterar sua senha</value>
+    <value>Promijeni lozinku</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Confirme nova senha</value>
+    <value>Potvrdi novu lozinku</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Confirme a senha</value>
+    <value>Potvrdi lozinku</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>Endereço de email</value>
+    <value>Mail adresa</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Digite a senha atual</value>
+    <value>Unesi trenutnu lozinku</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Digite a nova senha</value>
+    <value>Unesi novu lozinku</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Digite a senha</value>
+    <value>Unesi lozinku</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Maior versão</value>
+    <value>Zadnja verzija</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Laboratórios</value>
+    <value>Grane</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Entrar</value>
+    <value>Prijava</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Senha</value>
+    <value>Lozinka</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Adicionadas recentemente</value>
+    <value>Nedavno dodano</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Compiladas recentemente</value>
+    <value>Nedavno kompajlirano</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Recentemente vazado</value>
+    <value>Nedavno procurilo</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Registrar</value>
+    <value>Registracija</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Lembre-me</value>
+    <value>Zapamti me</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Obrigado por registrar-se</value>
+    <value>Hvala na registraciji</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Nome de usuário</value>
+    <value>Korisničko ime</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Semana</value>
+    <value>Tjedan</value>
   </data>
 
 </root>

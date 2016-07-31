@@ -16,7 +16,7 @@ namespace BuildFeed.Code.Options
          new Locale("fi"),
          new Locale("fr"),
          new Locale("he"),
-         //new Locale("hr"),
+         new Locale("hr"),
          new Locale("hu"),
          //new Locale("id"),
          new Locale("it"),

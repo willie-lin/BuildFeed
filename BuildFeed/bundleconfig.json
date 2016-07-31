@@ -18,9 +18,9 @@
     ]
   },
   {
-    "outputFileName": "Scripts/bfs.min.js",
+    "outputFileName": "res/ts/bfs.min.js",
     "inputFiles": [
-      "Scripts/bfs.js"
+      "res/ts/bfs.js"
     ]
   },
   {

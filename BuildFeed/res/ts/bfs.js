@@ -1,5 +1,9 @@
+/// <reference path="../../scripts/typings/google.analytics/ga.d.ts" />
+/// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
 var BuildFeed;
 (function (BuildFeed) {
+    var ajax;
+    var timeout;
     function DropdownClick(ev) {
         ev.preventDefault();
         var link = this;
@@ -37,6 +41,47 @@ var BuildFeed;
         ev.stopPropagation();
     }
     BuildFeed.StopClick = StopClick;
+    function InitiateSearch(ev) {
+        var resultPane = document.getElementById("modal-search-result");
+        resultPane.innerHTML = "";
+        if (typeof (timeout) !== "undefined") {
+            clearTimeout(timeout);
+        }
+        if (typeof (ajax) !== "undefined" && ajax.readyState !== XMLHttpRequest.DONE) {
+            ajax.abort();
+        }
+        timeout = setInterval(SendSearch, 200);
+    }
+    BuildFeed.InitiateSearch = InitiateSearch;
+    function SendSearch() {
+        if (typeof (timeout) !== "undefined") {
+            clearTimeout(timeout);
+        }
+        var modalInput = document.getElementById("modal-search-input");
+        ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = CompleteSearch;
+        ajax.open("GET", "/api/GetSearchResult/" + modalInput.value + "/", true);
+        ajax.send(null);
+    }
+    BuildFeed.SendSearch = SendSearch;
+    function CompleteSearch(ev) {
+        if (ajax.readyState !== XMLHttpRequest.DONE || ajax.status !== 200) {
+            return;
+        }
+        var resultPane = document.getElementById("modal-search-result");
+        var templateContent = document.getElementById("result-template");
+        var template = jsrender.templates(templateContent.innerHTML);
+        var content = template.render(JSON.parse(ajax.responseText));
+        resultPane.innerHTML = content;
+        var resultLinks = resultPane.getElementsByTagName("a");
+        for (var i = 0; i < resultLinks.length; i++) {
+            resultLinks[i].addEventListener("click", function () {
+                var modalInput = document.getElementById("modal-search-input");
+                ga("send", "pageview", "/api/GetSearchResult/" + modalInput.value + "/");
+            });
+        }
+    }
+    BuildFeed.CompleteSearch = CompleteSearch;
     function BuildFeedSetup(ev) {
         var ddParents = document.getElementsByClassName("dropdown-parent");
         for (var i = 0; i < ddParents.length; i++) {
@@ -61,6 +106,8 @@ var BuildFeed;
         modalOverlay.addEventListener("click", CloseSearch);
         var modalDialog = document.getElementById("modal-search");
         modalDialog.addEventListener("click", StopClick);
+        var modalInput = document.getElementById("modal-search-input");
+        modalInput.addEventListener("keyup", InitiateSearch);
     }
     BuildFeed.BuildFeedSetup = BuildFeedSetup;
 })(BuildFeed || (BuildFeed = {}));

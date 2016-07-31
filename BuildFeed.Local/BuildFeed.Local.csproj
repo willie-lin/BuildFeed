@@ -60,6 +60,7 @@
     <EmbeddedResource Include="VariantTerms.fi.resx" />
     <EmbeddedResource Include="VariantTerms.fr.resx" />
     <EmbeddedResource Include="VariantTerms.he.resx" />
+    <EmbeddedResource Include="VariantTerms.hr.resx" />
     <EmbeddedResource Include="VariantTerms.hu.resx" />
     <EmbeddedResource Include="VariantTerms.it.resx" />
     <EmbeddedResource Include="VariantTerms.ko.resx" />

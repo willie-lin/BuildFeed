@@ -20,7 +20,7 @@
       "Precision": 5,
       "relativeUrls": true,
       "sourceMapRoot": "",
-      "sourceMap": false
+      "sourceMap": true
     },
     "stylus": {
       "sourceMap": false

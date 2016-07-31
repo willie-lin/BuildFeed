@@ -1,5 +1,11 @@
-﻿module BuildFeed
+﻿/// <reference path="../../scripts/typings/google.analytics/ga.d.ts" />
+/// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
+
+module BuildFeed
 {
+   let ajax: XMLHttpRequest;
+   let timeout: number;
+
    export function DropdownClick(ev: MouseEvent)
    {
       ev.preventDefault();
@@ -47,6 +53,63 @@
       ev.stopPropagation();
    }
 
+   export function InitiateSearch(ev: KeyboardEvent)
+   {
+      const resultPane = document.getElementById("modal-search-result") as HTMLDivElement;
+      resultPane.innerHTML = "";
+
+      if (typeof (timeout) !== "undefined")
+      {
+         clearTimeout(timeout);
+      }
+
+      if (typeof (ajax) !== "undefined" && ajax.readyState !== XMLHttpRequest.DONE)
+      {
+         ajax.abort();
+      }
+
+      timeout = setInterval(SendSearch, 200);
+   }
+
+   export function SendSearch()
+   {
+      if (typeof (timeout) !== "undefined")
+      {
+         clearTimeout(timeout);
+      }
+
+      const modalInput = document.getElementById("modal-search-input") as HTMLInputElement;
+
+      ajax = new XMLHttpRequest();
+      ajax.onreadystatechange = CompleteSearch;
+      ajax.open("GET", `/api/GetSearchResult/${modalInput.value}/`, true);
+      ajax.send(null);
+   }
+
+   export function CompleteSearch(ev: ProgressEvent)
+   {
+      if (ajax.readyState !== XMLHttpRequest.DONE || ajax.status !== 200)
+      {
+         return;
+      }
+
+      const resultPane = document.getElementById("modal-search-result") as HTMLDivElement;
+      const templateContent = document.getElementById("result-template") as HTMLDivElement;
+      const template = jsrender.templates(templateContent.innerHTML);
+      const content = template.render(JSON.parse(ajax.responseText));
+      resultPane.innerHTML = content;
+
+      const resultLinks = resultPane.getElementsByTagName("a");
+      for (let i = 0; i < resultLinks.length; i++)
+      {
+         resultLinks[i].addEventListener("click", () =>
+         {
+            const modalInput = document.getElementById("modal-search-input") as HTMLInputElement;
+            ga("send", "pageview", `/api/GetSearchResult/${modalInput.value}/`);
+         });
+      }
+   }
+
    export function BuildFeedSetup(ev: Event)
    {
       const ddParents = document.getElementsByClassName("dropdown-parent");
@@ -82,6 +145,9 @@
 
       const modalDialog = document.getElementById("modal-search") as HTMLDivElement;
       modalDialog.addEventListener("click", StopClick);
+
+      const modalInput = document.getElementById("modal-search-input") as HTMLInputElement;
+      modalInput.addEventListener("keyup", InitiateSearch);
    }
 }
 

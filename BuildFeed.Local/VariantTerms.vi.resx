@@ -117,42 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed được điều hành và bảo trì bởi một nhóm những người có niềm đam mê. Microsoft không tham gia vào trang web này dưới bất cứ hình thức nào. Chúng tôi chắc chắn rằng không có những than phiền từ Microsoft về trang web này, kể cả khi chúng tôi chắc chắn họ biết về trang web này. Điều đó nói rằng, Microsoft chắc chắn muốn giữ những thông tin mật, và chúng tôi đã bị đóng cửa bởi họ trong quá khứ, và chúng tôi chắc họ cũng sẽ vậy trong tương lai.</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>Cố gắng tốt lắm, Dona, nhưng chúng tôi sẽ không sụp đổ vì điều này. Chúng tôi có thể nói gì về điều này. BuildFeed chắc chắn sẽ làm hết sức có thể để tất cả những bản dựng đều được đưa lên trang web đều đúng và hợp pháp. Chúng tôi có rất nhiều nguồn tin, để xác thực độ đáng tin cậy hơn và cung cấp cho chúng tôi một vài dự phòng khi mà Microsoft đóng cửa một trong số nguồn tin của chúng tôi.</value>
   </data>
--->
-  
-<!--
-<data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
+  <data name="About_A3" xml:space="preserve">
+    <value>Có rất nhiều cách. Bạn có thể thảo luận về bản dựng trong hệ thống bình luận trong mỗi trang bản dựng. Bạn cũng có thể đóng góp vào sự phát triển của trang web bằng cách góp ý về những lỗi hoặc góp ý cho chúng tôi trên GitHub. Cuối cùng, bạn có thể giúp dịch BuildFeed sang ngôn ngữ mẹ đẻ của bạn thông qua cổng thông tin dịch của chúng tôi.</value>
   </data>
--->
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Ai là người điều hành và chịu trách nhiệm cho BuildFeed? Đây có phải là trang chính thức của Microsoft hay không?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Làm thế nào mà BuildFeed lấy được dữ liệu của chúng một cách chính xác?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q3" xml:space="preserve">
-    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Tôi có thể tham gia như thế nào?</value>
   </data>
--->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Thêm bản xây dựng</value>
   </data>
@@ -171,12 +153,9 @@
   <data name="Common_Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
-  
-<!--
-<data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Có gì đó đã hỏng. Có lẽ bởi vì bạn đã làm việc gì đó lạ. Có lẽ tôi làm gì đó lạ. Nếu bạn vẫn thấy lỗi này, hãy báo lỗi này qua {0}</value>
   </data>
--->
   <data name="Common_LogIn" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
@@ -192,36 +171,24 @@
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>Nguồn cấp dữ liệu RSS</value>
   </data>
-  
-<!--
-<data name="Common_Sitemap" xml:space="preserve">
-    <value>[!!! §ïƭè₥áƥ  !!!]</value>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>Biểu đồ trang web</value>
   </data>
--->
   <data name="Common_ThemeDark" xml:space="preserve">
     <value>Tối</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>Sáng</value>
   </data>
-  
-<!--
-<data name="Common_TitlePage" xml:space="preserve">
-    <value>[!!! | Þáϱè {0}  !!!]</value>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>|Trang {0}</value>
   </data>
--->
-  
-<!--
-<data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Thanh điều hướng</value>
   </data>
--->
-  
-<!--
-<data name="Common_Twitter" xml:space="preserve">
-    <value>[!!! Tωïƭƭèř  !!!]</value>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>Twitter</value>
   </data>
--->
   <data name="Front_About" xml:space="preserve">
     <value>Thông tin</value>
   </data>
@@ -240,60 +207,45 @@
     <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Người dùng nội bộ hiện tại</value>
   </data>
--->
   
 <!--
 <data name="Front_CurrentRelease" xml:space="preserve">
     <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_Delete" xml:space="preserve">
-    <value>[!!! Ðèℓèƭè  !!!]</value>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>Xóa</value>
   </data>
--->
   <data name="Front_Details" xml:space="preserve">
     <value>Chi tiết</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
     <value>Chỉnh sửa</value>
   </data>
-  
-<!--
-<data name="Front_EditBuild" xml:space="preserve">
-    <value>[!!! Éδïƭ βúïℓδ  !!!]</value>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>Chỉnh sửa bản dựng</value>
   </data>
--->
   
 <!--
 <data name="Front_EditorActions" xml:space="preserve">
     <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Xem đầy đủ danh sách bản dựng Windows</value>
   </data>
--->
   
 <!--
 <data name="Front_HomeH1" xml:space="preserve">
     <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Front_HomepageH1" xml:space="preserve">
-    <value>[!!! {0} βúïℓδ ℓïƨƭ ℓ !!!]</value>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>{0} danh sách bản dựng</value>
   </data>
--->
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>Những bản xây dựng mới nhất</value>
   </data>
@@ -303,18 +255,12 @@
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>Tìm thêm nhiều bản dựng nữa từ {0}</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Tìm thêm nhiều nguồn của bản dựng {0}</value>
   </data>
--->
-  
-<!--
-<data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Tìm thêm nhiều bản dựng đã được biên soạn trong {0}</value>
   </data>
--->
   <data name="Front_NoLabString" xml:space="preserve">
     <value>Không có xâu chuỗi từ thử nghiệm</value>
   </data>
@@ -343,7 +289,7 @@
     <value>Hôm nay</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Khám phá về bản dựng Windows {0}, từ {1} và được tổng hợp thành{2}</value>
+    <value>Khám phá về bản dựng Windows {0}, từ {1} và được tổng hợp thành {2}</value>
   </data>
   
 <!--

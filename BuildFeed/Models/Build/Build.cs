@@ -112,7 +112,13 @@ namespace BuildFeed.Models
             {
                { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
             } },
-            { nameof(BuildModel.SourceType), TypeOfSource.PublicRelease }
+            { nameof(BuildModel.SourceType), new BsonDocument
+            {
+               { "$in", new BsonArray()
+               {
+                  TypeOfSource.PublicRelease, TypeOfSource.UpdateGDR
+               } }
+            } }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentInsider = (await query.ToListAsync())[0];
