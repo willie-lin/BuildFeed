@@ -117,42 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed održava grupa entuzijasta. Microsoft ni na kojin način nije uplete u rad ove stranice. Nismo imali nikakav službeni prigovor od strane Microsofta u vezi stranice, iako smo sigurni da znaju za njeno postojanje. Međutim, Microsoft očigledno želiti privatne informacije zadržati privatnima tako da su neki naši izvori bili ugašeni, te će sigurno biti ugašeni u budućnosti.</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>Dobar pokušaj, Dona, ali ja ne padam na tu foru. Ono što mogu reći je da informacije koje Buildfeed pruža su točne i legitimne. Imamo nekoliko različitih izvora koji omogućuju provjeru i pouzdanost, te nam omogućuje redudantnost u slučaju da Microsoft ugasi neki od naših izvora.</value>
   </data>
--->
-  
-<!--
-<data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
+  <data name="About_A3" xml:space="preserve">
+    <value>Postoji nekoliko načina kako možete sudjelovati. Možete ostaviti komentar preko Disqus-a, ili možete dopridonijeti razvoju stranice prijavom greški (bugova) ili preuzimanjem repozitorija na GitHub-u. Isto tako možete pomoći u prijevodu na drugi jezik preko našeg portala za prijevod.</value>
   </data>
--->
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Tko vodi BuildFeed? Je li to službena Microsoftova stranica?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Kako BuildFeed dolazi do informacija?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q3" xml:space="preserve">
-    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Kako se mogu uključiti?</value>
   </data>
--->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Dodaj verziju</value>
   </data>
@@ -171,48 +153,33 @@
   <data name="Common_Error" xml:space="preserve">
     <value>Greška</value>
   </data>
-  
-<!--
-<data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Nešto je pokvareno. Možda zato jer si ti napravio nešto čudno. Vjerojatno zato jer sam ja napravio nešto čudno. Ako i dalje dobivaš istu grešku, prijavi preko {0}</value>
   </data>
--->
   <data name="Common_LogIn" xml:space="preserve">
     <value>Prijava</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
     <value>Odjava</value>
   </data>
-  
-<!--
-<data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Jezik</value>
   </data>
--->
-  
-<!--
-<data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Izgled</value>
   </data>
--->
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>Mapa stranice</value>
   </data>
-  
-<!--
-<data name="Common_ThemeDark" xml:space="preserve">
-    <value>[!!! Ðářƙ  !!!]</value>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>Tamno</value>
   </data>
--->
-  
-<!--
-<data name="Common_ThemeLight" xml:space="preserve">
-    <value>[!!! £ïϱλƭ ℓ !!!]</value>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>Svijetlo</value>
   </data>
--->
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| Stranica {0}</value>
   </data>
@@ -234,33 +201,21 @@
   <data name="Front_Comments" xml:space="preserve">
     <value>Komentari</value>
   </data>
-  
-<!--
-<data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Trenutna interna verzija</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Trenutna verzija za Insidere</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Javna verzija</value>
   </data>
--->
   <data name="Front_Delete" xml:space="preserve">
     <value>Izbriši</value>
   </data>
-  
-<!--
-<data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Detalji</value>
   </data>
--->
   <data name="Front_Edit" xml:space="preserve">
     <value>Promijeni</value>
   </data>
@@ -270,27 +225,18 @@
   <data name="Front_EditorActions" xml:space="preserve">
     <value>Akcije editora</value>
   </data>
-  
-<!--
-<data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Pogledaj listu verzija Windowsa...</value>
   </data>
--->
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Praćenje verzija Windowsa</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>Lista {0} verzija</value>
   </data>
-  
-<!--
-<data name="Front_LatestBuilds" xml:space="preserve">
-    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>Posljednja verzija</value>
   </data>
--->
   <data name="Front_Listing" xml:space="preserve">
     <value>Popis</value>
   </data>
@@ -351,12 +297,9 @@
   <data name="Model_BuildTime" xml:space="preserve">
     <value>Vrijeme izrade</value>
   </data>
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Vanjska poveznica</value>
   </data>
--->
   <data name="Model_LabString" xml:space="preserve">
     <value>Linija grane</value>
   </data>

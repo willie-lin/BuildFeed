@@ -1,9 +1,13 @@
-/// <reference path="../../scripts/typings/google.analytics/ga.d.ts" />
-/// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
 var BuildFeed;
 (function (BuildFeed) {
     var ajax;
     var timeout;
+    function MobileMenuToggle(ev) {
+        ev.preventDefault();
+        var button = this;
+        button.nextElementSibling.classList.toggle("open");
+    }
+    BuildFeed.MobileMenuToggle = MobileMenuToggle;
     function DropdownClick(ev) {
         ev.preventDefault();
         var link = this;
@@ -100,6 +104,8 @@ var BuildFeed;
         for (var i = 0; i < ddLangs.length; i++) {
             ddLangs[i].addEventListener("click", SwitchLanguage);
         }
+        var btnNav = document.getElementById("page-navigation-toggle");
+        btnNav.addEventListener("click", MobileMenuToggle);
         var btnSearch = document.getElementById("page-navigation-search");
         btnSearch.addEventListener("click", OpenSearch);
         var modalOverlay = document.getElementById("modal-search-overlay");

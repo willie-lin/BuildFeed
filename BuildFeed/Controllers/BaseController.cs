@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using BuildFeed.Code.Options;
@@ -19,7 +20,15 @@ namespace BuildFeed.Controllers
          {
             try
             {
-               CultureInfo ci = CultureInfo.GetCultureInfo(langCookie);
+               CultureInfo ci = (CultureInfo)CultureInfo.GetCultureInfo(langCookie).Clone();
+
+               // Get Gregorian Calendar in locale if available
+               Calendar gc = ci.OptionalCalendars.FirstOrDefault(c => c is GregorianCalendar && ((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized);
+               if (gc != null)
+               {
+                  ci.DateTimeFormat.Calendar = gc;
+               }
+
                CultureInfo.CurrentCulture = ci;
                CultureInfo.CurrentUICulture = ci;
             }

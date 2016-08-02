@@ -6,6 +6,14 @@ module BuildFeed
    let ajax: XMLHttpRequest;
    let timeout: number;
 
+   export function MobileMenuToggle(ev: MouseEvent)
+   {
+      ev.preventDefault();
+
+      const button = this as HTMLButtonElement;
+      button.nextElementSibling.classList.toggle("open");
+   }
+
    export function DropdownClick(ev: MouseEvent)
    {
       ev.preventDefault();
@@ -136,6 +144,9 @@ module BuildFeed
       {
          ddLangs[i].addEventListener("click", SwitchLanguage);
       }
+
+      const btnNav = document.getElementById("page-navigation-toggle");
+      btnNav.addEventListener("click", MobileMenuToggle);
 
       const btnSearch = document.getElementById("page-navigation-search");
       btnSearch.addEventListener("click", OpenSearch);

@@ -65,11 +65,10 @@
       </div>
    </header>
    <nav id="page-navigation" role="navigation">
-      <button type="button">
-         <span class="sr-only">@VariantTerms.Common_ToggleNavigation</span>
-         <i class="fa fa-bar"></i>
-      </button>
       <div class="container">
+         <button id="page-navigation-toggle">
+            <i class="fa fa-bars"></i>&ensp;@VariantTerms.Common_ToggleNavigation
+         </button>
          <ul id="page-navigation-links">
             @if (!User.Identity.IsAuthenticated)
             {
@@ -199,10 +198,10 @@
                   &copy; 2013 - @DateTime.Now.Year.ToString(), @InvariantTerms.SiteName
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $" <a href=\"https://twitter.com/tomhounsell\" target=\"_blank\">{InvariantTerms.DeveloperName}</a> "))
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\">{InvariantTerms.DeveloperName}</a>"))
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, " <a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a> "))
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
                </p>
             </div>
          </div>

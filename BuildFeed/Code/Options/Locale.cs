@@ -28,7 +28,7 @@ namespace BuildFeed.Code.Options
          new Locale("qps-ploc"),
          //new Locale("ro"),
          new Locale("ru"),
-         //new Locale("sk"),
+         new Locale("sk"),
          new Locale("sl"),
          //new Locale("sv"),
          new Locale("tr"),

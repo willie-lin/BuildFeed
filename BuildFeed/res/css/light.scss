@@ -36,6 +36,11 @@ table thead th
    background-color: #d6d5d3;
    color: #373736;
 
+   button
+   {
+      color: #373736;
+   }
+
    #page-navigation-links
    {
       > li
@@ -71,9 +76,9 @@ table thead th
 
 article
 {
-   -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
-   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
 
    h1, h3
    {

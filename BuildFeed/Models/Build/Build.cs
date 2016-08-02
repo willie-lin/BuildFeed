@@ -128,6 +128,13 @@ namespace BuildFeed.Models
             { nameof(BuildModel.LabUrl), new BsonDocument
             {
                { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
+            } },
+            { nameof(BuildModel.SourceType), new BsonDocument
+            {
+               { "$in", new BsonArray()
+               {
+                  TypeOfSource.PublicRelease, TypeOfSource.UpdateGDR
+               } }
             } }
          }).Sort(sortByCompileDate).Limit(1);
 

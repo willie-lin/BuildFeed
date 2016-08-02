@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>Buildfeed 由一群爱好者运行和维护。微软官方和本网站没有任何关系。虽然我们肯定他们已经知道这个网站的存在，但我们现在还没有收到微软发来的正式投诉。也就是说，显然微软不想让内部信息到处传播，之前我们的信息源也被微软封掉过，我肯定他们以后也会这样做。</value>
+    <value>Buildfeed 由一群爱好者运行和维护，微软官方和本网站没有任何关系。虽然他们一定已经知道这个网站的存在，但我们现在还没有收到微软发来的正式投诉。显然，微软不想让内部信息到处传播。之前我们的信息源被微软封掉过，我敢肯定他们今后也会继续。</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>问得好，唐娜姐，但我不会上你的当的。我可以说的是 BuildFeed 尽力保证所有记录在本网站的版本都是正确且真实的。我们的消息来自许多不同的来源以确保信息的可靠度，同时如果微软封掉某些消息源的话，我们也有其他的源可用。</value>
+    <value>问得好，唐娜姐，但我不会上你的当的。我可以说的是 BuildFeed 尽力保证所有记录在本网站的版本信息都是正确且真实的。为了确保数据的可靠度，我们的数据来自许多不同的来源。同时，如果微软封掉某些信息源的话，我们也有其他的信息源可用。</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>有好几种方法。你可以在每个版本页下面的 Disqus 讨论系统中进行讨论。你也可以在我们的 Github 中提 Bug 或者发起 Pull Request 来贡献你的一份力。最后你还可以通过我们的翻译中心来帮助我们将 BuildFeed 翻译到你的母语。</value>
+    <value>有好几种方式。你可以在每个版本页下的 Disqus 讨论系统中进行讨论，也可以在我们的 Github 中提 Bug 或者发起 Pull Request 来贡献你的一份力。最后你还能通过我们的翻译中心来帮助我们将 BuildFeed 翻译到你的母语。</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>是谁在运行 BuildFeed？这是微软官方的网站吗？</value>
+    <value>谁在运行 BuildFeed？这是微软官方的网站吗？</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
-    <value>BuildFeed 到底是怎么获得这些信息的？</value>
+    <value>BuildFeed 是怎样获取信息的？</value>
   </data>
   <data name="About_Q3" xml:space="preserve">
     <value>我怎么才能参与进来呢？</value>
@@ -145,7 +145,7 @@
     <value>贡献到 {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>感谢</value>
+    <value>贡献者名单</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
     <value>开发者 {0}</value>
@@ -238,7 +238,7 @@
     <value>最新版本</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>列</value>
+    <value>版本列表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>查看更多{0}分支的版本</value>
@@ -277,16 +277,16 @@
     <value>今天</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>了解更多关于编译于{2}，{1}分支的 Windows 版本 {0}。</value>
+    <value>更多地了解在{2}编译，属于{1}分支的 Windows 版本 {0}。</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>了解更多关于来自{1}分支的 Windows 版本 {0}。BuildFeed在开发过程中全程追踪 Windows 版本。</value>
+    <value>更多地了解编译于{1}分支的 Windows 版本 {0}。BuildFeed 在 Windows 开发过程中全程追踪版本的构建。</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>通过 BuildFeed，一个基于社区协作的 Windows 版本列表，查看所有来自于 {0} 分支的已知版本号。</value>
+    <value>通过 BuildFeed （一个基于社区协作的 Windows 版本列表）查看所有已知的属于 {0} 分支的 Windows 版本。</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>通过基于社区协作的 Windows 版本列表 BuildFeed，查看在{0}年编译的所有Windows版本列表，以及 Windows 是怎样随着时间推移不断开发的</value>
+    <value>通过 BuildFeed （一个基于社区协作的 Windows 版本列表），查看所有在{0}年编译的 Windows 版本，以及历年 Windows 是如何不断开发的。</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
     <value>创建时间</value>
@@ -355,7 +355,7 @@
     <value>版本</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>在 BuildFeed 上搜索...</value>
+    <value>在 BuildFeed 上搜索</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
     <value>未找到符合条件的结果</value>
@@ -376,7 +376,7 @@
     <value>输入搜索内容...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>版本</value>
+    <value>大版本</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
     <value>年</value>

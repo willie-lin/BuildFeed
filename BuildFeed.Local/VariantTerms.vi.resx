@@ -136,19 +136,19 @@
     <value>Tôi có thể tham gia như thế nào?</value>
   </data>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Thêm bản xây dựng</value>
+    <value>Thêm bản dựng</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Quản trị viên</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Đóng góp vào{0}</value>
+    <value>Đóng góp vào {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
     <value>Sự đóng góp từ</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Phát triển bởi ai{0}</value>
+    <value>Phát triển bởi {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
     <value>Lỗi</value>
@@ -190,13 +190,13 @@
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Thông tin</value>
+    <value>Về</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>Thông tin{0}</value>
+    <value>Về {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Những bản dựng từ{0}</value>
+    <value>Những bản dựng từ {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
     <value>Các bình luận</value>
@@ -247,7 +247,7 @@
     <value>{0} danh sách bản dựng</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Những bản xây dựng mới nhất</value>
+    <value>Những bản dựng mới nhất</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
     <value>Danh sách</value>
@@ -265,7 +265,7 @@
     <value>Không có xâu chuỗi từ thử nghiệm</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} Những bản dựng</value>
+    <value>{0} bản dựng</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
     <value>Riêng tư</value>
@@ -310,10 +310,10 @@
     <value>Thời gian khởi tạo</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Số của bản xây dựng</value>
+    <value>Số của bản dựng</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Thời gian của bản xây dựng</value>
+    <value>Thời gian của bản dựng</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
     <value>Địa chỉ ngoài</value>
@@ -334,7 +334,7 @@
     <value>Thời gian chỉnh sửa</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Bản tái xây dựng</value>
+    <value>Bản dựng trước</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
     <value>Chi tiết nguồn</value>
@@ -361,7 +361,7 @@
     <value>Rò rỉ riêng tư</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Phiên bản ra mắt công khai</value>
+    <value>Phiên bản ra mắt chính thức</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
     <value>Cập nhật (GDR)</value>
@@ -430,7 +430,7 @@
     <value>Nhập mật khẩu</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Phiên bản mới nhất/cao nhất</value>
+    <value>Phiên bản mới nhất</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
     <value>Những thử nghiệm</value>

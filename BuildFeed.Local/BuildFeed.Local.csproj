@@ -75,6 +75,7 @@
       <LastGenOutput>VariantTerms.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VariantTerms.ru.resx" />
+    <EmbeddedResource Include="VariantTerms.sk.resx" />
     <EmbeddedResource Include="VariantTerms.sl.resx" />
     <EmbeddedResource Include="VariantTerms.tr.resx" />
     <EmbeddedResource Include="VariantTerms.uk.resx" />
