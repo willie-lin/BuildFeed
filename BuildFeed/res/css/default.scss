@@ -2,6 +2,7 @@
 {
    font-family: 'Roboto', sans-serif;
    font-size: 10pt;
+   line-height: 1.6;
    margin: 0;
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
@@ -233,11 +234,15 @@ article
    {
       font-size: 2em;
       font-weight: bold;
-      padding: 0 0 #{(1em / 3)};
       margin: #{(1em / 3)} 0 #{(2em / 3)};
       text-transform: uppercase;
       letter-spacing: #{(1em / 4)};
       border-bottom: 1px solid;
+   }
+
+   h4
+   {
+      margin: 1em 0 0;
    }
 
    .build-group-listing
@@ -713,6 +718,11 @@ footer#page-footer
 
 @media (max-width: 640px)
 {
+   header#page-header h1
+   {
+      text-align: center;
+   }
+
    nav#page-navigation
    {
       button
@@ -737,9 +747,38 @@ footer#page-footer
       }
    }
 
-   article h1,
-   article h1.eager-wrapping
+   article
    {
-      font-size: 3em;
+      h1,
+      h1.eager-wrapping
+      {
+         font-size: 3em;
+         line-height: #{(4 / 3)};
+      }
+
+      h3
+      {
+         text-align: center;
+      }
+
+      .addthis_sharing_toolbox
+      {
+         text-align: center;
+      }
+   }
+
+
+   footer#page-footer .footer-flex .footer-flex-item
+   {
+      &:first-child
+      {
+         text-align: center;
+         margin-bottom: #{(3em / 2)};
+      }
+
+      &:last-child
+      {
+         text-align: center;
+      }
    }
 }

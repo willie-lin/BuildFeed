@@ -74,6 +74,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VariantTerms.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="VariantTerms.ro.resx" />
     <EmbeddedResource Include="VariantTerms.ru.resx" />
     <EmbeddedResource Include="VariantTerms.sk.resx" />
     <EmbeddedResource Include="VariantTerms.sl.resx" />

@@ -156,7 +156,7 @@
                         @foreach (Locale locale in Locale.AvailableLocales)
                         {
                            <li>
-                              <a href="#" data-lang="@locale.LocaleId">@locale.DisplayName</a>
+                              <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft ? "rtl" : "ltr")">@locale.DisplayName</a>
                            </li>
                         }
                      </ul>

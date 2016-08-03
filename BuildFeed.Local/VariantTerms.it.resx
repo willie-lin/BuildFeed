@@ -117,42 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed è mantenuto da un gruppo di entusiasti. Microsoft non ha nessuna relazione con questo sito in nessun modo. Non abbiamo ricevuto nessun reclamo da Microsoft sul sito, anche se sanno della sua esistenza. Microsoft, ovviamente, desidera mantenere i dati privati fuori dal pubblico. Hanno chiuso varie fonti che ci fornivano dati nel passato, e siamo sicuri di che lo faranno ancora.</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>Non ci cascherò, Dona. Posso dire questo: in BuildFeed ci assicuriamo al più possibile di che tutte le build sulla pagina siano corrette. Disponiamo di un numero di fonti per verificare l'informazione e farla affidabile, avendo ridondanza per darci la capacità di farlo anche se Microsoft dovesse chiudere una delle fonti.</value>
   </data>
--->
-  
-<!--
-<data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
+  <data name="About_A3" xml:space="preserve">
+    <value>Ci sono vari modi per farlo. Puoi discutere le build tramite il sistema di commenti Disqus nella pagina di ogni build. Puoi contribuire allo sviluppo del sito informandoci di errori che si producano o contribuendo codice con "pull request" nel nostro GitHub. Puoi anche aiutarci con la traduzione del sito alla tua lingua materna con il nostro portale di traduzioni.</value>
   </data>
--->
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Chi è in carica di BuildFeed? Si tratta di un sito ufficiale di Microsoft?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Come ottiene BuildFeed l'informazione?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q3" xml:space="preserve">
-    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Come posso aiutare?</value>
   </data>
--->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Aggiungi build</value>
   </data>

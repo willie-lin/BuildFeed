@@ -1,6 +1,11 @@
 ﻿nav#page-navigation #page-navigation-links
 {
    text-align: left;
+
+   > li > a
+   {
+      text-align: right;
+   }
 }
 
 .dropdown-parent .dropdown-menu

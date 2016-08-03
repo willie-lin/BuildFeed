@@ -19,7 +19,7 @@ table thead th {
     border-bottom-color: #ccc; }
 
 #page-navigation {
-  background-color: #d6d5d3;
+  background-color: #e6e5e3;
   color: #373736; }
   #page-navigation button {
     color: #373736; }
@@ -30,7 +30,7 @@ table thead th {
     background-color: #f6f5f3; }
 
 .dropdown-menu {
-  background-color: #d6d5d3;
+  background-color: #e6e5e3;
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); }
@@ -52,7 +52,7 @@ article {
 
 ul.pagination > li.active > a {
   background: #373736;
-  color: #d6d5d3 !important; }
+  color: #e6e5e3 !important; }
 
 ul.pagination > li:hover:not(.disabled) > a,
 ul.pagination > li:focus:not(.disabled) > a,
