@@ -54,3 +54,5 @@ interface JQueryStatic {
     templates(name: string, markupOrSelector: string): JsRender.Template;
     templates(namedTemplates: any): any;
 }
+
+declare var jsrender: JQueryStatic;

@@ -1,22 +1,22 @@
 ﻿@{
-    ViewBag.Title = "Administration | BuildFeed";
+   ViewBag.Title = "Administration | BuildFeed";
 }
 
 <h2>Administration</h2>
 
 <ul>
-    <li>
-        @Html.ActionLink("Manage users", "index", "users")
-        <ul>
-            <li>@Html.ActionLink("View administrators", "admins", "users")</li>
-        </ul>
-    </li>
-    <li>
-        @Html.ActionLink("Manage metadata", "index", "meta")
-    </li>
-    @if (User.Identity.Name == "hounsell")
-    {
-        <li>@Html.ActionLink("Exception test", "exception")</li>
-        <li>@Html.ActionLink("Initial setup", "setup")</li>
-    }
+   <li>
+      @Html.ActionLink("Manage users", "index", "users")
+      <ul>
+         <li>@Html.ActionLink("View administrators", "admins", "users")</li>
+      </ul>
+   </li>
+   <li>
+      @Html.ActionLink("Manage metadata", "index", "meta")
+   </li>
+   @if (User.Identity.Name == "hounsell")
+   {
+      <li>@Html.ActionLink("Exception test", "exception")</li>
+      <li>@Html.ActionLink("Initial setup", "setup")</li>
+   }
 </ul>

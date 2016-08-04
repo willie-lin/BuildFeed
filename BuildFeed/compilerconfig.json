@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "res/css/default.css",
+    "inputFile": "res/css/default.scss"
+  },
+  {
+    "outputFile": "res/css/dark.css",
+    "inputFile": "res/css/dark.scss"
+  },
+  {
+    "outputFile": "res/css/rtl.css",
+    "inputFile": "res/css/rtl.scss"
+  },
+  {
+    "outputFile": "res/css/light.css",
+    "inputFile": "res/css/light.scss"
+  }
+]

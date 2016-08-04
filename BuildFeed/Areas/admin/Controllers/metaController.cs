@@ -1,39 +1,30 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Areas.admin.Models.ViewModel;
+using BuildFeed.Controllers;
 using BuildFeed.Models;
-using System.Threading.Tasks;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
    [Authorize(Roles = "Administrators")]
-   public class metaController : Controller
+   public class metaController : BaseController
    {
-      private MetaItem mModel;
+      private readonly MetaItem _mModel;
 
-      public metaController() : base()
-      {
-         mModel = new MetaItem();
-      }
+      public metaController() { _mModel = new MetaItem(); }
 
       // GET: admin/meta
       public async Task<ActionResult> index()
       {
-         var currentItems = from i in await mModel.Select()
-                            group i by i.Id.Type
-                            into b
-                            select b;
-
-         var pendingLabs = mModel.SelectUnusedLabs();
-
          return View(new MetaListing
          {
-            CurrentItems = from i in await mModel.Select()
+            CurrentItems = from i in await _mModel.Select()
                            group i by i.Id.Type
-                                        into b
+                           into b
                            orderby b.Key.ToString()
                            select b,
-            NewItems = from i in (from l in await mModel.SelectUnusedLabs()
+            NewItems = from i in (from l in await _mModel.SelectUnusedLabs()
                                   select new MetaItemModel
                                   {
                                      Id = new MetaItemKey
@@ -41,27 +32,25 @@ namespace BuildFeed.Areas.admin.Controllers
                                         Type = MetaType.Lab,
                                         Value = l
                                      }
-                                  })
-                                  .Concat(from v in await mModel.SelectUnusedVersions()
-                                          select new MetaItemModel
-                                          {
-                                             Id = new MetaItemKey
-                                             {
-                                                Type = MetaType.Version,
-                                                Value = v
-                                             }
-                                          })
-                                  .Concat(from y in await mModel.SelectUnusedYears()
-                                          select new MetaItemModel
-                                          {
-                                             Id = new MetaItemKey
-                                             {
-                                                Type = MetaType.Year,
-                                                Value = y
-                                             }
-                                          })
+                                  }).Concat(from v in await _mModel.SelectUnusedVersions()
+                                            select new MetaItemModel
+                                            {
+                                               Id = new MetaItemKey
+                                               {
+                                                  Type = MetaType.Version,
+                                                  Value = v
+                                               }
+                                            }).Concat(from y in await _mModel.SelectUnusedYears()
+                                                      select new MetaItemModel
+                                                      {
+                                                         Id = new MetaItemKey
+                                                         {
+                                                            Type = MetaType.Year,
+                                                            Value = y
+                                                         }
+                                                      })
                        group i by i.Id.Type
-                                    into b
+                       into b
                        orderby b.Key.ToString()
                        select b
          });
@@ -84,7 +73,7 @@ namespace BuildFeed.Areas.admin.Controllers
       {
          if (ModelState.IsValid)
          {
-            await mModel.Insert(meta);
+            await _mModel.Insert(meta);
             return RedirectToAction("index");
          }
 
@@ -93,7 +82,7 @@ namespace BuildFeed.Areas.admin.Controllers
 
       public async Task<ActionResult> edit(MetaType type, string value)
       {
-         return View("create", await mModel.SelectById(new MetaItemKey
+         return View("create", await _mModel.SelectById(new MetaItemKey
          {
             Type = type,
             Value = value
@@ -105,7 +94,7 @@ namespace BuildFeed.Areas.admin.Controllers
       {
          if (ModelState.IsValid)
          {
-            await mModel.Update(meta);
+            await _mModel.Update(meta);
             return RedirectToAction("index");
          }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Text;
 using System.Web.Mvc;
 using BuildFeed.Local;
@@ -10,7 +11,7 @@ using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Models
 {
-   [DataObject]
+   [DataObject, BsonIgnoreExtraElements]
    public class BuildModel
    {
       [Key, BsonId]
@@ -19,53 +20,49 @@ namespace BuildFeed.Models
       public long? LegacyId { get; set; }
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "MajorVersion")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MajorVersion))]
       public uint MajorVersion { get; set; }
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "MinorVersion")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MinorVersion))]
       public uint MinorVersion { get; set; }
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "Number")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildNumber))]
       public uint Number { get; set; }
 
-      [Display(ResourceType = typeof(Model), Name = "Revision")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Revision))]
       [DisplayFormat(ConvertEmptyStringToNull = true)]
       public uint? Revision { get; set; }
 
-      [Display(ResourceType = typeof(Model), Name = "Lab")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LabString))]
       public string Lab { get; set; }
 
-      [Display(ResourceType = typeof(Model), Name = "BuildTime")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildTime))]
       [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
       public DateTime? BuildTime { get; set; }
 
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "Added")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Added))]
       public DateTime Added { get; set; }
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "Modified")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Modified))]
       public DateTime Modified { get; set; }
 
       [@Required]
-      [Display(ResourceType = typeof(Model), Name = "SourceType")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceType))]
       [EnumDataType(typeof(TypeOfSource))]
       public TypeOfSource SourceType { get; set; }
 
-      [Display(ResourceType = typeof(Model), Name = "SourceDetails")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceDetails))]
       [AllowHtml]
       public string SourceDetails { get; set; }
 
-      [Display(ResourceType = typeof(Model), Name = "LeakDate")]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LeakDate))]
       [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
       public DateTime? LeakDate { get; set; }
-
-      [Display(ResourceType = typeof(Model), Name = "FlightLevel")]
-      [EnumDataType(typeof(LevelOfFlight))]
-      public LevelOfFlight FlightLevel { get; set; }
 
       public string LabUrl { get; set; }
 
@@ -91,21 +88,21 @@ namespace BuildFeed.Models
          get
          {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0}.{1}.{2}", MajorVersion, MinorVersion, Number);
+            sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
 
             if (Revision.HasValue)
             {
-               sb.AppendFormat(".{0}", Revision);
+               sb.Append($".{Revision}");
             }
 
             if (!string.IsNullOrWhiteSpace(Lab))
             {
-               sb.AppendFormat(".{0}", Lab);
+               sb.Append($".{Lab}");
             }
 
             if (BuildTime.HasValue)
             {
-               sb.AppendFormat(".{0:yyMMdd-HHmm}", BuildTime);
+               sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
             }
 
             return sb.ToString();
@@ -188,7 +185,7 @@ namespace BuildFeed.Models
             if (Uri.IsWellFormedUriString(hDoc.DocumentNode.InnerText, UriKind.Absolute))
             {
                Uri uri = new Uri(hDoc.DocumentNode.InnerText, UriKind.Absolute);
-               return $"<a href=\"{uri}\" target=\"_blank\">External link <i class=\"fa fa-external-link\"></i></a>";
+               return $"<a href=\"{uri}\" target=\"_blank\">{VariantTerms.Model_ExternalLink} <i class=\"fa fa-external-link\"></i></a>";
             }
             return SourceDetails;
          }

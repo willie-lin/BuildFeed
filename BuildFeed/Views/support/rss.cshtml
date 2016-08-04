@@ -1,30 +1,51 @@
 ﻿@{
-   ViewBag.Title = $"{BuildFeed.Local.Common.RssFeeds} | {BuildFeed.Local.Common.SiteName}";
+   ViewBag.Title = $"{VariantTerms.Common_RssFeeds} | {InvariantTerms.SiteName}";
 }
 
-<h1>@BuildFeed.Local.Common.RssFeeds</h1>
+<h1>@VariantTerms.Common_RssFeeds</h1>
 
 <ul>
-   <li><a href="@Url.Action("Index", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyCompiled"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyCompiled</a></li>
-   <li><a href="@Url.Action("Leaked", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyLeaked"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyLeaked</a></li>
-   <li><a href="@Url.Action("Added", new { controller = "Rss" })" title="@BuildFeed.Local.Support.RecentlyAdded"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.RecentlyAdded</a></li>
-   <li><a href="@Url.Action("Version", new { controller = "Rss" })" title="@BuildFeed.Local.Support.HighestVersion"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Support.HighestVersion</a></li>
    <li>
-      @BuildFeed.Local.Model.FlightLevel
-      <ul>
-         <li><a href="@Url.Action("Flight", new { controller = "Rss", id = "wis" })" title="@BuildFeed.Local.Model.FlightWIS"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightWIS</a></li>
-         <li><a href="@Url.Action("Flight", new { controller = "Rss", id = "wif" })" title="@BuildFeed.Local.Model.FlightWIF"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightWIF</a></li>
-         <li><a href="@Url.Action("Flight", new { controller = "Rss", id = "osg" })" title="@BuildFeed.Local.Model.FlightOSG"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightOSG</a></li>
-         <li><a href="@Url.Action("Flight", new { controller = "Rss", id = "msit" })" title="@BuildFeed.Local.Model.FlightMSIT"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightMSIT</a></li>
-         <li><a href="@Url.Action("Flight", new { controller = "Rss", id = "canary" })" title="@BuildFeed.Local.Model.FlightCanary"><i class="fa fa-sm fa-rss"></i> @BuildFeed.Local.Model.FlightCanary</a></li>
-      </ul>
+      <a href="@Url.Action("Index", new
+               {
+                  controller = "Rss"
+               })" title="@VariantTerms.Support_RecentlyCompiled">
+         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyCompiled</a>
    </li>
    <li>
-      <a href="#rss-labs" data-toggle="collapse">@BuildFeed.Local.Model.Lab</a>
+      <a href="@Url.Action("Leaked", new
+               {
+                  controller = "Rss"
+               })" title="@VariantTerms.Support_RecentlyLeaked">
+         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyLeaked</a>
+   </li>
+   <li>
+      <a href="@Url.Action("Added", new
+               {
+                  controller = "Rss"
+               })" title="@VariantTerms.Support_RecentlyAdded">
+         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyAdded</a>
+   </li>
+   <li>
+      <a href="@Url.Action("Version", new
+               {
+                  controller = "Rss"
+               })" title="@VariantTerms.Support_HighestVersion">
+         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_HighestVersion</a>
+   </li>
+   <li>
+      <a href="#rss-labs" data-toggle="collapse">@VariantTerms.Search_Lab</a>
       <ul id="rss-labs" class="collapse">
          @foreach (string lab in ViewBag.Labs)
          {
-            <li><a href="@Url.Action("Lab", new { controller = "Rss", lab = lab })" title="@lab"><i class="fa fa-sm fa-rss"></i> @lab</a></li>
+            <li>
+               <a href="@Url.Action("Lab", new
+                        {
+                           controller = "Rss",
+                           lab
+                        })" title="@lab">
+                  <i class="fa fa-sm fa-rss"></i> @lab</a>
+            </li>
          }
       </ul>
    </li>

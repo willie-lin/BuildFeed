@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>Buildfeed 由一群爱好者运行和维护，微软官方和本网站没有任何关系。虽然他们一定已经知道这个网站的存在，但我们现在还没有收到微软发来的正式投诉。显然，微软不想让内部信息到处传播。之前我们的信息源被微软封掉过，我敢肯定他们今后也会继续。</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>问得好，唐娜姐，但我不会上你的当的。我可以说的是 BuildFeed 尽力保证所有记录在本网站的版本信息都是正确且真实的。为了确保数据的可靠度，我们的数据来自许多不同的来源。同时，如果微软封掉某些信息源的话，我们也有其他的信息源可用。</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>有好几种方式。你可以在每个版本页下的 Disqus 讨论系统中进行讨论，也可以在我们的 Github 中提 Bug 或者发起 Pull Request 来贡献你的一份力。最后你还能通过我们的翻译中心来帮助我们将 BuildFeed 翻译到你的母语。</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>谁在运行 BuildFeed？这是微软官方的网站吗？</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>BuildFeed 是怎样获取信息的？</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>我怎么才能参与进来呢？</value>
+  </data>
+  <data name="Common_AddBuild" xml:space="preserve">
+    <value>添加版本号</value>
+  </data>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>贡献到 {0}</value>
+  </data>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>贡献者名单</value>
+  </data>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>开发者 {0}</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>有什么东西不对劲。可能是你做了一些奇怪的事，也可能是我做了一些奇怪的事。如果你一直收到这个错误信息，请通过{0}提交错误报告。</value>
+  </data>
+  <data name="Common_LogIn" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Common_LogOut" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>RSS源</value>
+  </data>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>网站地图</value>
+  </data>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>| 第 {0}</value>
+  </data>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>导航</value>
+  </data>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="Front_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>关于 {0}</value>
+  </data>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>来自 {0} 的版本</value>
+  </data>
+  <data name="Front_Comments" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>当前内部版本</value>
+  </data>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>当前预览版本</value>
+  </data>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>当前正式版本</value>
+  </data>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Front_Details" xml:space="preserve">
+    <value>详情</value>
+  </data>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>编辑版本</value>
+  </data>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>编辑操作</value>
+  </data>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>显示完整 Windows 版本列表...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}： Windows 版本追踪器</value>
+  </data>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>{0} 版本列表</value>
+  </data>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>最新版本</value>
+  </data>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>版本列表</value>
+  </data>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>查看更多{0}分支的版本</value>
+  </data>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>查看更多{0}的版本</value>
+  </data>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>查看更多在{0}年编译的版本</value>
+  </data>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>无分支名</value>
+  </data>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>{0} 个版本</value>
+  </data>
+  <data name="Front_Private" xml:space="preserve">
+    <value>私密</value>
+  </data>
+  <data name="Front_Public" xml:space="preserve">
+    <value>公开</value>
+  </data>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>快速粘贴</value>
+  </data>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>返回版本列表</value>
+  </data>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>返回版本概览</value>
+  </data>
+  <data name="Front_Share" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="Front_Today" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>更多地了解在{2}编译，属于{1}分支的 Windows 版本 {0}。</value>
+  </data>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>更多地了解编译于{1}分支的 Windows 版本 {0}。BuildFeed 在 Windows 开发过程中全程追踪版本的构建。</value>
+  </data>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>通过 BuildFeed （一个基于社区协作的 Windows 版本列表）查看所有已知的属于 {0} 分支的 Windows 版本。</value>
+  </data>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>通过 BuildFeed （一个基于社区协作的 Windows 版本列表），查看所有在{0}年编译的 Windows 版本，以及历年 Windows 是如何不断开发的。</value>
+  </data>
+  <data name="Model_Added" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>版本号</value>
+  </data>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>编译时间</value>
+  </data>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>外部链接</value>
+  </data>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>分支名</value>
+  </data>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>泄露或发布日期</value>
+  </data>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>主版本</value>
+  </data>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>副版本</value>
+  </data>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>修订版本</value>
+  </data>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>来源详细信息</value>
+  </data>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>来源类型</value>
+  </data>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>软件包</value>
+  </data>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>编译工具</value>
+  </data>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>文档</value>
+  </data>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>公开泄露</value>
+  </data>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>版本记录</value>
+  </data>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>私密泄露</value>
+  </data>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>公开发布</value>
+  </data>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>更新(GDR)</value>
+  </data>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>更新(LDR)</value>
+  </data>
+  <data name="Search_Build" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>在 BuildFeed 上搜索</value>
+  </data>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>未找到符合条件的结果</value>
+  </data>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>分支</value>
+  </data>
+  <data name="Search_Query" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Search_Source" xml:space="preserve">
+    <value>来源</value>
+  </data>
+  <data name="Search_Title" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>输入搜索内容...</value>
+  </data>
+  <data name="Search_Version" xml:space="preserve">
+    <value>大版本</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>由于每个账号都要由管理员验证，所以请耐心等待并稍后重新查看。</value>
+  </data>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>新增到 BuildFeed 的记录数</value>
+  </data>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>完成编译的版本数</value>
+  </data>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>输入新密码</value>
+  </data>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>电子邮件地址</value>
+  </data>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>输入当前密码</value>
+  </data>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>输入新密码</value>
+  </data>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>输入密码</value>
+  </data>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>最高版本</value>
+  </data>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>分支</value>
+  </data>
+  <data name="Support_Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Support_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>最近添加</value>
+  </data>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>最近编译</value>
+  </data>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>最近泄露</value>
+  </data>
+  <data name="Support_Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>记住我</value>
+  </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>感谢您的注册</value>
+  </data>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Support_Week" xml:space="preserve">
+    <value>周</value>
+  </data>
+
+</root>

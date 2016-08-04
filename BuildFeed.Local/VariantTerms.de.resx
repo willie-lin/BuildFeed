@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed wird von einer Gruppe von Enthusiasten betrieben und gewartet. Microsoft ist nicht auf irgend eine Weise in die Seite involviert. Wir haben definitiv keine formale Beschwerde über die Seite von Microsoft erhalten, obwohl wir uns sicher sind, dass sie von der Seite wissen. Microsoft möchte offensichtlich interne Informationen auch intern behalten, weshalb wir in der Vergangenheit Quellen verloren haben und ich bin mir sicher, dass dies auch in der Zukunft passieren wird.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Netter Versuch Dona, aber auf den falle ich nicht herein. Was ich sagen kann ist folgendes: BuildFeed stellt so gut wie möglich sicher, dass alle Builds die auf der Seite veröffentlicht werden korrekt und legitim sind. Wir haben eine Menge an verschiedenen Quellen um Verifizierung zuverlässiger zu machen und um uns etwas Redundanz zu geben, für den Fall dass Microsoft eine unserer Quellen stilllegt.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Es gibt mehrere Wege. Sie können über Builds im Disqus Kommentarsystem diskutieren. Außerdem können Sie zur Entwicklung der Seite beitragen indem Sie Fehler melden oder Pull-Requests auf unserem GitHub einreichen. Sie können auch helfen BuildFeed über unser Übersetzungsportal in ihre Muttersprache zu übersetzen.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Wer betreibt BuildFeed? Ist es eine offizielle Microsoft Seite?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Wie bekommt BuildFeed die Daten?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Wie kann ich helfen?</value>
+  </data>
+  <data name="Common_AddBuild" xml:space="preserve">
+    <value>Build hinzufügen</value>
+  </data>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Mitwirken bei {0}</value>
+  </data>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>Danksagungen</value>
+  </data>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Entwickelt von {0}</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Etwas ist kaputt gegangen. Eventuell weil Sie etwas komisches gemacht haben. Vermutlich weil ich etwas komisches gemacht habe. Wenn Sie diesen Fehler weiterhin bekommen, senden sie einen Bugreport via {0}</value>
+  </data>
+  <data name="Common_LogIn" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="Common_LogOut" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Design</value>
+  </data>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>RSS Feeds</value>
+  </data>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>Sitemap</value>
+  </data>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>| Seite {0}</value>
+  </data>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Navigation ein/ausblenden</value>
+  </data>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="Front_About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>Über {0}</value>
+  </data>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>Builds von {0}</value>
+  </data>
+  <data name="Front_Comments" xml:space="preserve">
+    <value>Kommentare</value>
+  </data>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Aktueller Canary</value>
+  </data>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Aktueller Insider</value>
+  </data>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Aktueller Release</value>
+  </data>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>Build bearbeiten</value>
+  </data>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>Editoraktionen</value>
+  </data>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Volles Windows Build Verzeichnis anzeigen</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Der Windows Build Tracker</value>
+  </data>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>{0} Build Liste</value>
+  </data>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>Neueste Builds</value>
+  </data>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>Verzeichnis</value>
+  </data>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>Weitere Builds von {0}</value>
+  </data>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Weitere Builds mit Quellenangabe {0}</value>
+  </data>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Weitere Builds die in {0} kompiliert wurden</value>
+  </data>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>Kein lab String</value>
+  </data>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>{0} Builds</value>
+  </data>
+  <data name="Front_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="Front_Public" xml:space="preserve">
+    <value>Öffentlich</value>
+  </data>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>Schnell einfügen</value>
+  </data>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>Zurück zum Build Verzeichnis</value>
+  </data>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>Zurück zur Build Übersicht</value>
+  </data>
+  <data name="Front_Share" xml:space="preserve">
+    <value>Teilen</value>
+  </data>
+  <data name="Front_Today" xml:space="preserve">
+    <value>Heute</value>
+  </data>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>Erfahre mehr über Windows Build {0}, von {1}, am {2} kompiliert.</value>
+  </data>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>Erfahre mehr über Windows Build {0}, von {1}. BuildFeed verfolgt Windows Builds während dem Entwicklungsprozess</value>
+  </data>
+  
+<!--
+<data name="Meta_LabGeneric" xml:space="preserve">
+    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+  </data>
+-->
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Sehen Sie eine Liste von allen Windows Builds, die in {0} kompiliert wurden und beobachten Sie, wie sich Windows Laufe der Zeit stetig entwickelt hat, mit der kollaborativen Build-Liste, BuildFeed.</value>
+  </data>
+  <data name="Model_Added" xml:space="preserve">
+    <value>Erstellungszeit</value>
+  </data>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>Buildnummer</value>
+  </data>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>Buildzeit</value>
+  </data>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Externer Link</value>
+  </data>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Lab-String</value>
+  </data>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Leak- oder Veröffentlichungsdatum</value>
+  </data>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Hauptversion</value>
+  </data>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Nebenversion</value>
+  </data>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Änderungszeit</value>
+  </data>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Buildrevision</value>
+  </data>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Quellendetails</value>
+  </data>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Quellentyp</value>
+  </data>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>App Paket</value>
+  </data>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Build Tools</value>
+  </data>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Öffentlicher Leak</value>
+  </data>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Aufzeichnung</value>
+  </data>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Privater Leak</value>
+  </data>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Öffentlicher Release</value>
+  </data>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Update (GDR)</value>
+  </data>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Update (LDR)</value>
+  </data>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>BuildFeed durchsuchen</value>
+  </data>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Keine Ergebnisse gefunden</value>
+  </data>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Lab</value>
+  </data>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Suchanfrage</value>
+  </data>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Quelle</value>
+  </data>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Suche</value>
+  </data>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Tippen um zu suchen...</value>
+  </data>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Jahr</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Jeder Account wird von einem Administrator bestätigt, also sei Geduldig und schau später vorbei</value>
+  </data>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Erweiterungen zu BuildFeed</value>
+  </data>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Builds kompiliert</value>
+  </data>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Passwort ändern</value>
+  </data>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Neues Passwort bestätigen</value>
+  </data>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Passwort bestätigen</value>
+  </data>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>E-Mail Adresse</value>
+  </data>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Aktuelles Passwort eingeben</value>
+  </data>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Neues Passwort eingeben</value>
+  </data>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Passwort eingeben</value>
+  </data>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Höchste Version</value>
+  </data>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Labs</value>
+  </data>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Neulich hinzugefügt</value>
+  </data>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Neulich kompiliert</value>
+  </data>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Neulich geleakt</value>
+  </data>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Registrieren</value>
+  </data>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Erinnere dich an mich</value>
+  </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Danke für Ihre Registrierung</value>
+  </data>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Woche</value>
+  </data>
+
+</root>

@@ -2,7 +2,7 @@
 
 namespace BuildFeed.Areas.admin
 {
-    public class adminAreaRegistration : AreaRegistration
+    public class AdminAreaRegistration : AreaRegistration
     {
         public override string AreaName => "admin";
 

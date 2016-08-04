@@ -1,4 +1,4 @@
-Copyright (c) 2015, Thomas Hounsell.
+Copyright (c) 2016, Thomas Hounsell.
 
 All rights reserved.
 

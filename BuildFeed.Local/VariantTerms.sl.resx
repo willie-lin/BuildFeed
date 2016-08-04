@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed vodi in vzdržuje skupina navdušencev. Microsoft ni vpleten v ta projekt na noben način. Zagovoto se zavedajo obstaja strani, a niso   vložili pritožbe. Je pa res, da želi Microsoft zaupne informacije ohraniti zaupne, zato so nam v preteklosti že onemogočili nekatere vire, kar se bo zagotovo dogajalo tudi v bodoče.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Lep poskus, Dona, ampak ne bo šlo. Rečem lahko le tole. BuildFeed se prepriča kolikor je mogoče, da so vse gradnje, objavljene na strani, pravilne in legitimne. Imamo več različnih virov, da je preverjanje bolj zanesljivo, poleg tega pa imamo v primeru izpada vira vseeno zagotovljene informacije.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Obstaja več načinov. Lahko razpravljate o gradnjah v komentarjih na strani vsake gradnje. Lahko prispevate k razvoju strani tako, da javljate napake ali naredite pull zahtevo na našem GitHubu. Lahko tudi pomagate prevesti BuildFeed v svoj materni jezik preko našega portala za prevajanje.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Kdo upravlja BuildFeed? Je to uradna Microsoftova stran?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Kako natančno dobi BuildFeed svoje podatke?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Kako lahko sodelujem?</value>
+  </data>
+  <data name="Common_AddBuild" xml:space="preserve">
+    <value>Dodaj gradnjo</value>
+  </data>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Prispevaj {0}</value>
+  </data>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>Zasluge</value>
+  </data>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Razvil {0}</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Napaka</value>
+  </data>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Nekaj je šlo narobe. Mogoče zato, ker ste naredili nekaj čudnega. Verjetno zato, ker sem jaz naredil nekaj čudnega. Če se napaka ponavlja, jo prijavite preko {0}.</value>
+  </data>
+  <data name="Common_LogIn" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Common_LogOut" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>RSS vir</value>
+  </data>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>Zemljevid strani</value>
+  </data>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>Temna</value>
+  </data>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>Svetla</value>
+  </data>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>| Stran {0}</value>
+  </data>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Preklopi navigacijo</value>
+  </data>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="Front_About" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>O {0}</value>
+  </data>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>Gradnje iz {0}</value>
+  </data>
+  <data name="Front_Comments" xml:space="preserve">
+    <value>Komentarji</value>
+  </data>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Trenutni Canary</value>
+  </data>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Trenutni Insider</value>
+  </data>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Trenutni Release</value>
+  </data>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>Izbriši</value>
+  </data>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Podrobnosti</value>
+  </data>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>Uredi gradnjo</value>
+  </data>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>Uredi dejanja</value>
+  </data>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Oglej si poln seznam gradenj sistema Windows...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: sledilec gradnjam sistema Windows</value>
+  </data>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>Seznam gradenj {0}</value>
+  </data>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>Najnovejše gradnje</value>
+  </data>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>Seznam</value>
+  </data>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>Poišči več gradenj iz {0}</value>
+  </data>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Poišči več gradenj, ki izvirajo od {0}</value>
+  </data>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Poišči več gradenj, prevedenih v {0}</value>
+  </data>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>Ni niza lab</value>
+  </data>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>{0} gradnje</value>
+  </data>
+  <data name="Front_Private" xml:space="preserve">
+    <value>Zasebna</value>
+  </data>
+  <data name="Front_Public" xml:space="preserve">
+    <value>Javna</value>
+  </data>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>Hitro lepljenje</value>
+  </data>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>Vrni se na seznam gradenj</value>
+  </data>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>Vrni se na pregled gradenj</value>
+  </data>
+  <data name="Front_Share" xml:space="preserve">
+    <value>Deli</value>
+  </data>
+  <data name="Front_Today" xml:space="preserve">
+    <value>Danes</value>
+  </data>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>Odkrij več o gradnji {0} sistema Windows, iz {1}, prevedena na {2}</value>
+  </data>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>Odkrij več o gradnji {0} sistema Windows, iz {1}. BuildFeed sledi gradnjam sistema Windows skozi proces razvoja.</value>
+  </data>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>Oglej si vse znanje gradnje iz razvojnega laboratorija {0} preko BuildFeed-a, sodelovalni seznam gradenj sistema Windows.</value>
+  </data>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Oglej si seznam vse gradenj sistema Windows, prevedenih v {0}, in opazuj kako se je Windows vztrajno razvijal skozi čas, s pomočjo sodelovalnega seznama gradenj BuildFeed.</value>
+  </data>
+  <data name="Model_Added" xml:space="preserve">
+    <value>Čas nastanka</value>
+  </data>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>Številka gradnje</value>
+  </data>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>Čas gradnje</value>
+  </data>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Zunanja povezava</value>
+  </data>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Niz laboratorija</value>
+  </data>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Datum izida ali curljanja</value>
+  </data>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Glavna verzija</value>
+  </data>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Manjša verzija</value>
+  </data>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Čas spremembe</value>
+  </data>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Revizija gradnje</value>
+  </data>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Podrobnosti vira</value>
+  </data>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Vrsta vira</value>
+  </data>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>Dodaj paket</value>
+  </data>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Orodja gradnje</value>
+  </data>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Dokumentacija</value>
+  </data>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Javno curljanje</value>
+  </data>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Beleženje</value>
+  </data>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Zasebno curljanje</value>
+  </data>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Javni izid</value>
+  </data>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Posodobitev (GDR)</value>
+  </data>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Posodobitev (LDR)</value>
+  </data>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Gradnja</value>
+  </data>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>Preišči BuildFeed</value>
+  </data>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Ni rezultatov iskanja</value>
+  </data>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Laboratorij</value>
+  </data>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Iskalna poizvedba</value>
+  </data>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Vir</value>
+  </data>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Iskanje</value>
+  </data>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Pišite za iskanje...</value>
+  </data>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Različica</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Leto</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Administrator preveri vsak uporabniški račun, zato bodite potrpežljivi in ponovno preverite kasneje.</value>
+  </data>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Prispevki k BuildFeed-u</value>
+  </data>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Prevedenih gradenj</value>
+  </data>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Spremenite svoje geslo</value>
+  </data>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Potrdite novo geslo</value>
+  </data>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Potrdite geslo</value>
+  </data>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>E-poštni naslov</value>
+  </data>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Vnesite trenutno geslo</value>
+  </data>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Vnesite novo geslo</value>
+  </data>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Vnesite geslo</value>
+  </data>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Najvišja različica</value>
+  </data>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Laboratoriji</value>
+  </data>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Geslo</value>
+  </data>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Nedavno dodano</value>
+  </data>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Nedavno prevedeno</value>
+  </data>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Nedavno pricurljano</value>
+  </data>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Registracija</value>
+  </data>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Zapomni si me</value>
+  </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Hvala za registracijo</value>
+  </data>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Uporabniško ime</value>
+  </data>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Teden</value>
+  </data>
+
+</root>

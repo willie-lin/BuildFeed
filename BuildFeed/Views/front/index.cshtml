@@ -1,62 +1,63 @@
-﻿@using BuildFeed.Local
-@using BuildFeed.Models.ViewModel.Front
-@using Humanizer
-@model IEnumerable<BuildFeed.Models.ViewModel.Front.FrontBuildGroup>
+﻿@model BuildFeed.Models.ViewModel.Front.FrontPage
 @{
-   ViewBag.Title = Common.SiteName;
+   ViewBag.Title = $"{InvariantTerms.SiteName} | Windows 10 Build Tracker";
 }
-@section head
+@section Head
 {
-   @if (ViewBag.PageNumber == 1)
-   {
-      <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
-   }
-   else
-   {
-      <meta name="robots" content="noindex, follow" />
-   }
+   <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
 }
 
-<h1>@Front.HomepageH1</h1>
-<h3>@Front.Share</h3>
-<div class="addthis_sharing_toolbox"></div>
-<h3>@Front.Listing</h3>
-<div class="row">
-   @foreach (FrontBuildGroup group in Model)
-   {
-      <div class="col-md-2 col-sm-3 col-xs-6 build-group">
-         <h3 class="build-group-title">
-            <a href="@Url.Action("ViewGroup", new
-                     {
-                        major = group.Key.Major,
-                        minor = group.Key.Minor,
-                        number = group.Key.Build,
-                        revision = group.Key.Revision
-                     })">
-               @group.Key.ToString()</a>
-         </h3>
-         @if (group.LastBuild.HasValue)
-         {
-            <p class="build-group-p">
-               @{
-                  DateTime maxDate = group.LastBuild.Value;
-                  if (maxDate.AddDays(28) > DateTime.Now)
-                  {
-                     <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
-                     <br />
-                  }
-                  else
-                  {
-                     <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
-                     <br />
-                  }
-               }
-            </p>
-         }
-         <p class="build-group-p">
-            <i class="fa fa-server fa-fw"></i> @string.Format(Front.xBuilds, group.BuildCount)
-         </p>
+<h1>@string.Format(VariantTerms.Front_HomeH1, InvariantTerms.SiteName)</h1>
+
+<h3>@VariantTerms.Front_LatestBuilds</h3>
+<div class="latest-flex">
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentCanary.Id
+            })" class="latest-flex-item latest-flex-red">
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentCanary.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
       </div>
-   }
+   </a>
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentInsider.Id
+            })" class="latest-flex-item latest-flex-yellow">
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentInsider.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
+      </div>
+   </a>
+   <a href="@Url.Action("ViewBuild", new
+            {
+               Model.CurrentRelease.Id
+            })" class="latest-flex-item latest-flex-green">
+      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
+      <div class="latest-flex-detail">
+         <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
+         <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
+         <p class="latest-flex-time">@Model.CurrentRelease.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
+      </div>
+   </a>
 </div>
-@PaginationHelpers.PaginationBlock((int) ViewBag.PageNumber, (int) ViewBag.PageCount, "Index", ViewContext.RouteData.Values)
+<a href="@Url.Action("IndexPage", new
+         {
+            Page = 1
+         })" class="latest-full">
+   @VariantTerms.Front_FullBuildListing
+</a>
+<h3>@VariantTerms.Front_Share</h3>
+<div class="addthis_sharing_toolbox"></div>
+<br />
+<h3>@string.Format(VariantTerms.Front_AboutSite, InvariantTerms.SiteName)</h3>
+<h4>@VariantTerms.About_Q1</h4>
+<p>@VariantTerms.About_A1</p>
+<h4>@VariantTerms.About_Q2</h4>
+<p>@VariantTerms.About_A2</p>
+<h4>@VariantTerms.About_Q3</h4>
+<p>@VariantTerms.About_A3</p>

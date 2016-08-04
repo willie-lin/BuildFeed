@@ -6,14 +6,14 @@ namespace BuildFeed.Models.ViewModel
     public class LoginUser
     {
         [Required]
-        [Display(ResourceType = typeof(Support), Name = "UserName")]
+        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_UserName))]
         public string UserName { get; set; }
 
         [Required]
-        [Display(ResourceType = typeof(Support), Name = "Password")]
+        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_Password))]
         public string Password { get; set; }
 
-        [Display(ResourceType = typeof(Support), Name = "RememberMe")]
+        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_RememberMe))]
         public bool RememberMe { get; set; }
     }
 }

@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>Το BuildFeed διαχειρίζεται από μία αφοσιωμένη στο αντικείμενο ομάδα. Η Microsoft δεν έμπλέκεται με κανένα τρόπο. Σίγουρα δεν έχουμε κάποιο επίσημο παράπονο από τη Microsoft για την ιστοσελίδα, εάν και είμαστε σίγουροι πως γνωρίζουν για αυτή. Λέγοντας αυτό, η Microsoft σίγουρα θέλει να κρατήσει τις κρυφές πληροφορίες κρυφές, άρα πήγες μας στο παρελθόν έχουν κλειστεί από αυτούς, και είμαι σίγουρος πως θα κάνουν το ίδιο και στο μέλλον.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>Καλή προσπάθεια, Ντόνα, αλλά δε θα τσιμπήσω. Ένα μπορώ να πω. Το BuildFeed είναι όσο σίγουρο όσο είναι δυνατον για το πόσο σωστές και αυθεντικές είναι οι εκδόσεις των windows που αναρτώνται εδώ. Έχουμε έναν αριθμό από διάφορες πηγές, ώστε να κάνουμε αξιόπιστη επικύρωση και να μας δώσει μία εναλλακτική, εαν η Microsoft κλείσει μία από τις πηγές αυτές.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>Υπάρχει πληθώρα τρόπων. Μπορείτε να συζητήσετε τις εκδόσεις μέσω του συστήματος σχολίων του Disqus. Μπορείτε επίσης να συνεισφέρετε στην ανάπτυξη της ιστοσελίδας με αναφορές σφαλμάτων ή με αιτήσεις κατεβάσματος στο GitHub. Τέλος, μπορείτε να βοηθήσετε με την μετάφραση τoυ BuildFeed στη μητρική σας γλώσσα.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Ποιος είναι ο διαχειριστής του BuildFeed; Είναι αυτή μια επίσημη σελίδα της Microsoft;</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Πώς ακριβώς λαμβάνει τις πληροφορίες του το BuildFeed;</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Πώς μπορώ να εμπλακώ;</value>
+  </data>
+  <data name="Common_AddBuild" xml:space="preserve">
+    <value>Προσθήκη έκδοσης</value>
+  </data>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>Διαχειριστής</value>
+  </data>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>Συνεισφέρεται σε {0}</value>
+  </data>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>Συντελεστές</value>
+  </data>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>Αναπτύχθηκε από {0}</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Κάτι χάλασε. Ίσως γιατί έκανες κάτι περίεργο. Ίσως γιατί εγώ έκανα κάτι περίεργο. Εάν συνεχίζεις να λαμβάνεις αυτό το σφάλμα, κατέθεσε μια αναφορά σφάλματος μέσω του {0}</value>
+  </data>
+  <data name="Common_LogIn" xml:space="preserve">
+    <value>Σύνδεσις</value>
+  </data>
+  <data name="Common_LogOut" xml:space="preserve">
+    <value>Αποσύνδεσις</value>
+  </data>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Γλώσσα</value>
+  </data>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Θέμα</value>
+  </data>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>Ροές RSS</value>
+  </data>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>Ιστοχάρτης</value>
+  </data>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>Σκοτεινό</value>
+  </data>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>Ανοιχτό</value>
+  </data>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>| Σελίδα {0}</value>
+  </data>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Επιλογή πλοήγησης</value>
+  </data>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="Front_About" xml:space="preserve">
+    <value>Περί</value>
+  </data>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>Περί {0}</value>
+  </data>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>Εκδόσεις από {0}</value>
+  </data>
+  <data name="Front_Comments" xml:space="preserve">
+    <value>Σχόλια</value>
+  </data>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Τρέχουσα πρώιμη έκδοση</value>
+  </data>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Τρέχουσα έκδοση Insider</value>
+  </data>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Τρέχουσα έκδοση σε κυκλοφορία</value>
+  </data>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Λεπτομέρειες</value>
+  </data>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>Επεξεργασία έκδοσης</value>
+  </data>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>Ενέργειες επεξεργαστή</value>
+  </data>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Δείτε ολόκληρη τη λίστα εκδόσεων των Windows...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Ο ανιχνευτής εκδόσεων των Windows</value>
+  </data>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>{0} λίστα εκδώσεων</value>
+  </data>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>Πρόσφατες εκδόσεις</value>
+  </data>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>Λίστα</value>
+  </data>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>Βρείτε περισσότερες εκδόσεις από {0}</value>
+  </data>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>Βρείτε περισσότερες εκδόσεις προερχόμενες από {0}</value>
+  </data>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>Βρείτε περισσότερες εκδόσεις κατασκευασμένες στις {0}</value>
+  </data>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>Χωρίς σήμανση εργαστηρίου</value>
+  </data>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>{0} εκδόσεις</value>
+  </data>
+  <data name="Front_Private" xml:space="preserve">
+    <value>Ιδιωτική</value>
+  </data>
+  <data name="Front_Public" xml:space="preserve">
+    <value>Δημόσια</value>
+  </data>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>Γρήγορη επικόλληση</value>
+  </data>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>Πίσω στη λίστα εκδόσεων</value>
+  </data>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>Πίσω στην επισκόπηση έκδοσης</value>
+  </data>
+  <data name="Front_Share" xml:space="preserve">
+    <value>Διαμοιρασμός</value>
+  </data>
+  <data name="Front_Today" xml:space="preserve">
+    <value>Σήμερα</value>
+  </data>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>Ανακαλύψτε για την έκδοση Windows {0}, από {1} και κατασκευασμένες στις {2}.</value>
+  </data>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>Ανακαλύψτε για την έκδοση Windows {0}, από {1}. To BuildFeed ανιχνεύει τις εκδόσεις των Windows καθ'όλη τη διάρκεια της ανάπτυξής τους.</value>
+  </data>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>Δείτε όλες τις γνωστές εκδόσεις οι οποίες προήλθαν από το εργαστήριο ανάπτυξης {0} μέσω του BuildFeed, μία συνεργατική λίστα εκδόσεων Windows.</value>
+  </data>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>Δείτε μια λίστα όλων των εκδόσεων Windows που δημιουργήθηκαν στις {0} και πως σταθερά αναπτύχθηκαν μέσα στο χρόνο, μέσω της συνεργατικής λίστας, το BuildFeed.</value>
+  </data>
+  <data name="Model_Added" xml:space="preserve">
+    <value>Ώρα δημιουργίας</value>
+  </data>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>Αριθμός έκδοσης</value>
+  </data>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>Ώρα έκδοσης</value>
+  </data>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Εξωτερικός σύνδεσμος</value>
+  </data>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>Σήμανση εργαστηρίου</value>
+  </data>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>Ημερομηνία διαρροής ή κυκλοφορίας</value>
+  </data>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>Μείζων έκδοση</value>
+  </data>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>Ελάσσων έκδοση</value>
+  </data>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>Ώρα μετατροπής</value>
+  </data>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>Αναθεώρηση έκδοσης</value>
+  </data>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>Πληροφορίες πηγής</value>
+  </data>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>Τύπος πηγής</value>
+  </data>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>Πακέτο εφαρμογής</value>
+  </data>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>Εργαλεία έκδοσης</value>
+  </data>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>Τεκμηρίωση</value>
+  </data>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>Δημόσια διαρροή</value>
+  </data>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>Καταγραφή</value>
+  </data>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>Ιδιωτική διαρροή</value>
+  </data>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>Δημόσια κυκλοφορία</value>
+  </data>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>Ενημέρωση (GDR)</value>
+  </data>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>Ενημέρωση (LDR)</value>
+  </data>
+  <data name="Search_Build" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>Αναζήτηση στο BuildFeed</value>
+  </data>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>Δε βρέθηκαν αποτελέσματα</value>
+  </data>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>Εργαστήριο</value>
+  </data>
+  <data name="Search_Query" xml:space="preserve">
+    <value>Ερώτημα αναζήτησης</value>
+  </data>
+  <data name="Search_Source" xml:space="preserve">
+    <value>Πηγή</value>
+  </data>
+  <data name="Search_Title" xml:space="preserve">
+    <value>Αναζήτηση</value>
+  </data>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>Πληκτρολογήστε για αναζήτηση...</value>
+  </data>
+  <data name="Search_Version" xml:space="preserve">
+    <value>Εκδοχή</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Έτος</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>Κάθε λογαριασμός επικυρώνεται από έναν διαχειριστή, παρακαλώ μείνετε με υπομονή ελέγξτε ξανά αργότερα</value>
+  </data>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>Προσθήκες στο BuildFeed</value>
+  </data>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>Εκδόσεις που κατασκευάστηκαν</value>
+  </data>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>Αλλαγή του κωδικού σας</value>
+  </data>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>Επιβεβαίωση του νέου κωδικού</value>
+  </data>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>Επιβεβαίωση του κωδικού</value>
+  </data>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>Διεύθυνση ηλεκτρονικού ταχυδρομείου</value>
+  </data>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>Εισάγετε τον τρέχον κωδικό σας</value>
+  </data>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>Εισάγετε τον νέο κωδικό σας</value>
+  </data>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>Εισάγετε το κωδικό σας</value>
+  </data>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>Υψηλότερη εκδοχή</value>
+  </data>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>Εργαστήρια</value>
+  </data>
+  <data name="Support_Login" xml:space="preserve">
+    <value>Σύνδεσις</value>
+  </data>
+  <data name="Support_Password" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>Πρόσφατα προστιθέμενα</value>
+  </data>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>Πρόσφατα κατασκευασμένα</value>
+  </data>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>Πρόσφατα διέρρευσαν</value>
+  </data>
+  <data name="Support_Register" xml:space="preserve">
+    <value>Εγγραφή</value>
+  </data>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>Απομνημόνευση</value>
+  </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Ευχαριστούμε για την εγγραφή</value>
+  </data>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>Όνομα χρήστη</value>
+  </data>
+  <data name="Support_Week" xml:space="preserve">
+    <value>Εβδομάδα</value>
+  </data>
+
+</root>

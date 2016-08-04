@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed מופעל ומתוחזק ע"י קבוצת חובבים. מיקרוסופט אינה מעורבת באתר בשום צורה. מעולם לא הוגשה תלונה רשמית מצד מיקרוסופט נגד האתר, על אף שאנו בטוחים שהם מודעים לקיומו. יחד עם זאת, מטבע הדברים מיקרוסופט מעוניינת לשמור מידע פרטי כפרטי, ולכן כבר היו לנו מקורות בעבר אשר חוסלו ע"י מיקרוסופט, ואני בטוח שיהיו כאלה גם בעתיד.</value>
+  </data>
+  <data name="About_A2" xml:space="preserve">
+    <value>ניסיון יפה, דונה. אבל אני לא נופל בפח הזה. מה שאני יכול לומר הוא זה: BuildFeed מוודא עד כמה שהדבר אפשרי שכל בילד המפורסם באתר - נכון ולגיטימי. יש לנו מספר מקורות שונים, על מנת להפוך את תהליך האימות לאמין יותר ולמקרה שמיקרוסופט תחילט לחסל את אחד המקורות שלנו.</value>
+  </data>
+  <data name="About_A3" xml:space="preserve">
+    <value>ישנן מספר דרכים. תוכל לנהל דיון אודות הבילדים במערכת התגובות של disqus בכל עמוד של בילד. תוכל גם לתרום לפיתוחו של האתר ע"י שליחת דיווחי באגים או לעשות pull request במאגר ה- GitHub שלנו. לבסוף, תוכל לתרגם את BuildFeed לשפת האם שלך דרך פורטל התירגום שלנו.</value>
+  </data>
+  <data name="About_Q1" xml:space="preserve">
+    <value>מי מפעיל את BuildFeed? האם זהו אתר רשמי של מיקרוסופט?</value>
+  </data>
+  <data name="About_Q2" xml:space="preserve">
+    <value>כיצד בדיוק משיג BuildFeed את המידע שלו?</value>
+  </data>
+  <data name="About_Q3" xml:space="preserve">
+    <value>כיצד אוכל לעזור?</value>
+  </data>
+  <data name="Common_AddBuild" xml:space="preserve">
+    <value>הוספת בילד</value>
+  </data>
+  <data name="Common_Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>סיוע בפיתוח ב-{0}</value>
+  </data>
+  <data name="Common_Credits" xml:space="preserve">
+    <value>תודות</value>
+  </data>
+  <data name="Common_DevelopedBy" xml:space="preserve">
+    <value>פותח על-ידי {0}</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>שגיאה</value>
+  </data>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>משהו התקלקל. אולי זה בגלל שעשית משהו מוזר. סביר להניח שזה בגלל שאני עשיתי משהו מוזר. אם אתה ממשיך לקבל את השגיאה הזו, שלח דו"ח שגיאות דרך {0}</value>
+  </data>
+  <data name="Common_LogIn" xml:space="preserve">
+    <value>כניסה</value>
+  </data>
+  <data name="Common_LogOut" xml:space="preserve">
+    <value>יציאה</value>
+  </data>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>שפה</value>
+  </data>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>ערכת נושא</value>
+  </data>
+  <data name="Common_RssFeeds" xml:space="preserve">
+    <value>הזנות RSS</value>
+  </data>
+  <data name="Common_Sitemap" xml:space="preserve">
+    <value>מפת אתר</value>
+  </data>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>כהה</value>
+  </data>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>בהיר</value>
+  </data>
+  <data name="Common_TitlePage" xml:space="preserve">
+    <value>| דף {0}</value>
+  </data>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>החלף ניווט</value>
+  </data>
+  <data name="Common_Twitter" xml:space="preserve">
+    <value>טוויטר</value>
+  </data>
+  <data name="Front_About" xml:space="preserve">
+    <value>אודות</value>
+  </data>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>אודות {0}</value>
+  </data>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>בילדים מ- {0}</value>
+  </data>
+  <data name="Front_Comments" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Canary נוכחית</value>
+  </data>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Insider נוכחית</value>
+  </data>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Release נוכחית</value>
+  </data>
+  <data name="Front_Delete" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="Front_Details" xml:space="preserve">
+    <value>פרטים</value>
+  </data>
+  <data name="Front_Edit" xml:space="preserve">
+    <value>ערוך</value>
+  </data>
+  <data name="Front_EditBuild" xml:space="preserve">
+    <value>ערוך בילד</value>
+  </data>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>פעולות עורך</value>
+  </data>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>הצג את כל רשימת הבילדים של Windows...</value>
+  </data>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: The Windows build tracker</value>
+  </data>
+  <data name="Front_HomepageH1" xml:space="preserve">
+    <value>רשימת בילדים {0}</value>
+  </data>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>בילדים אחרונים</value>
+  </data>
+  <data name="Front_Listing" xml:space="preserve">
+    <value>רשימה</value>
+  </data>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>מצא בילדים נוספים מ- {0}</value>
+  </data>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>מצא בילדים נוספים שמקורם ב- {0}</value>
+  </data>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>מצא בילדים נוספים שהודרו ב- {0}</value>
+  </data>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>אין מחרוזת מעבדה</value>
+  </data>
+  <data name="Front_NumOfBuilds" xml:space="preserve">
+    <value>בילדים {0}</value>
+  </data>
+  <data name="Front_Private" xml:space="preserve">
+    <value>פרטי</value>
+  </data>
+  <data name="Front_Public" xml:space="preserve">
+    <value>ציבורי</value>
+  </data>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>הדבקה מהירה</value>
+  </data>
+  <data name="Front_ReturnToListing" xml:space="preserve">
+    <value>חזור לרשימת הבילדים</value>
+  </data>
+  <data name="Front_ReturnToOverview" xml:space="preserve">
+    <value>חזור לסקירת הבילד</value>
+  </data>
+  <data name="Front_Share" xml:space="preserve">
+    <value>שתף</value>
+  </data>
+  <data name="Front_Today" xml:space="preserve">
+    <value>היום</value>
+  </data>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>גלה אודות בילד של ,Windows {0} מ- {1} והודר ב- {2}</value>
+  </data>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>גלה אודות בילד של Windows {0}, מ- {1}.
+BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך הפיתוח.</value>
+  </data>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>הצג את כל הבילדים הידועים, אשר יצאו ממעבדת הפיתוח של Windows {0} בעזרת BuildFeed, מאגר הבילדים השיתופי של Windows.</value>
+  </data>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>הצג רשימה של כל הבילדים של Windows אשר הודרו ב- {0}, וראה כיצד Windows מפותחת בקביעות לאורך זמן, דרך מאגר הבילדים השיתופי, BuildFeed.</value>
+  </data>
+  <data name="Model_Added" xml:space="preserve">
+    <value>זמן יצירה</value>
+  </data>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>מספר בילד</value>
+  </data>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>שעת יצירת הבילד</value>
+  </data>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>קישור חיצוני</value>
+  </data>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>מחרוזת מעבדה</value>
+  </data>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>תאריך זליגה או שיחרור</value>
+  </data>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>גירסה עיקרית</value>
+  </data>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>גירסה משנית</value>
+  </data>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>מועד שינוי</value>
+  </data>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>מהדורת בילד</value>
+  </data>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>פרטי המקור</value>
+  </data>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>סוג המקור</value>
+  </data>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>חבילת תוכנה</value>
+  </data>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>כלי בילד</value>
+  </data>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>תיעוד</value>
+  </data>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>זליגה פומבית</value>
+  </data>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>רישום</value>
+  </data>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>זליגה פרטית</value>
+  </data>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>הפצה רשמית</value>
+  </data>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>עדכון (GDR)</value>
+  </data>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>עדכון (LDR)</value>
+  </data>
+  <data name="Search_Build" xml:space="preserve">
+    <value>בילד</value>
+  </data>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>חפש ב- BuildFeed</value>
+  </data>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>לא נמצאו תוצאות</value>
+  </data>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>מעבדה</value>
+  </data>
+  <data name="Search_Query" xml:space="preserve">
+    <value>שאילתה</value>
+  </data>
+  <data name="Search_Source" xml:space="preserve">
+    <value>מקור</value>
+  </data>
+  <data name="Search_Title" xml:space="preserve">
+    <value>חיפוש</value>
+  </data>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>הקלד לחיפוש...</value>
+  </data>
+  <data name="Search_Version" xml:space="preserve">
+    <value>גירסה</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>שנה</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>כל חשבון נבדק ע"י מנהל המערכת, התאזר בסבלנות וחזור מאוחר יותר.</value>
+  </data>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>תוספות ל- BuildFeed</value>
+  </data>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>בילד הודר</value>
+  </data>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>החלף סיסמה</value>
+  </data>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>אשר סיסמה חדשה</value>
+  </data>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>אשר סיסמה</value>
+  </data>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>כתובת דוא"ל</value>
+  </data>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>הזן סיסמה נוכחית</value>
+  </data>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>הזן סיסמה חדשה</value>
+  </data>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>הזן סיסמה</value>
+  </data>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>הגירסה הגבוהה ביותר</value>
+  </data>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>מעבדות</value>
+  </data>
+  <data name="Support_Login" xml:space="preserve">
+    <value>היכנס</value>
+  </data>
+  <data name="Support_Password" xml:space="preserve">
+    <value>סיסמה</value>
+  </data>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>נוסף לאחרונה</value>
+  </data>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>הודר לאחרונה</value>
+  </data>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>זלג לאחרונה</value>
+  </data>
+  <data name="Support_Register" xml:space="preserve">
+    <value>הירשם</value>
+  </data>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>זכור אותי</value>
+  </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>תודה על ההרשמה</value>
+  </data>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>שם משתמש</value>
+  </data>
+  <data name="Support_Week" xml:space="preserve">
+    <value>שבוע</value>
+  </data>
+
+</root>
