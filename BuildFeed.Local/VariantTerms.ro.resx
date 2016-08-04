@@ -117,42 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed este condus și menținut de un grup de entuziaști. Microsoft nu este implicat în nici un fel.  Cu siguranță nu am avut o plângere formală de la Microsoft despre acest site, deși cu siguranță Microsoft știe de existența acestuia. Microsoft cu siguranță doerește să mențină informațiile private, deci am avut surse desființate de Microsoft în trecut, și sunt sigur că se va mai întâmpla în viitor.</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>Bună încercare, Dona, dar nu renunț pentru acesta. Pot spune că BuilFeed face cât mai sigur ca toate build-urile postate pe site să fie corecte și legitime. Avem mai multe surse diferite, pentru a face verificarea mai eficientă și pentru a ne da ceva redundanţă dacă Microsoft va închide una dintre sursele noastre.</value>
   </data>
--->
-  
-<!--
-<data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
+  <data name="About_A3" xml:space="preserve">
+    <value>Există câteva posibilități. Puteți discuta aceste build-uri în sistemul de comentarii pe pagina fiecărui build. Puteți de asemenea contribui la construirea site-ului raportând problemele sau făcând trageri de solicitări pe GitHub. Mai puteți ajuta la traducerea BuildFeed în limba dumneavoastră natală prin Portalul de traducere.</value>
   </data>
--->
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Cine conduce BuildFeed? Este acesta un site official Microsoft?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Cum exact își furnizează BuildFeed datele?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q3" xml:space="preserve">
-    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
+  <data name="About_Q3" xml:space="preserve">
+    <value>Cum pot să mă implic?</value>
   </data>
--->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Adăugare build</value>
   </data>
@@ -171,48 +153,33 @@
   <data name="Common_Error" xml:space="preserve">
     <value>Eroare</value>
   </data>
-  
-<!--
-<data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>Ceva s-a stricat. Poate fiindcă ați făcut ceva neobișnuit. Probabil fiindcă eu am făcut ceva neobișnuit. Dacă mai primiți această eroare, trimiteți un raport de problemă prin {0}.</value>
   </data>
--->
   <data name="Common_LogIn" xml:space="preserve">
     <value>Logare</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
     <value>Delogare</value>
   </data>
-  
-<!--
-<data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Limbă</value>
   </data>
--->
-  
-<!--
-<data name="Common_NavigationTheme" xml:space="preserve">
-    <value>[!!! Tλè₥è ℓ !!!]</value>
+  <data name="Common_NavigationTheme" xml:space="preserve">
+    <value>Temă</value>
   </data>
--->
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>Feed-uri RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>Harta site-ului</value>
   </data>
-  
-<!--
-<data name="Common_ThemeDark" xml:space="preserve">
-    <value>[!!! Ðářƙ  !!!]</value>
+  <data name="Common_ThemeDark" xml:space="preserve">
+    <value>Întunecat</value>
   </data>
--->
-  
-<!--
-<data name="Common_ThemeLight" xml:space="preserve">
-    <value>[!!! £ïϱλƭ ℓ !!!]</value>
+  <data name="Common_ThemeLight" xml:space="preserve">
+    <value>Luminos</value>
   </data>
--->
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| Pagina {0}</value>
   </data>
@@ -234,33 +201,21 @@
   <data name="Front_Comments" xml:space="preserve">
     <value>Comentarii</value>
   </data>
-  
-<!--
-<data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Canar curent</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentInsider" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
+  <data name="Front_CurrentInsider" xml:space="preserve">
+    <value>Insider curent</value>
   </data>
--->
-  
-<!--
-<data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Lansare curentă</value>
   </data>
--->
   <data name="Front_Delete" xml:space="preserve">
     <value>Ștergere</value>
   </data>
-  
-<!--
-<data name="Front_Details" xml:space="preserve">
-    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
+  <data name="Front_Details" xml:space="preserve">
+    <value>Detalii</value>
   </data>
--->
   <data name="Front_Edit" xml:space="preserve">
     <value>Editare</value>
   </data>
@@ -270,27 +225,18 @@
   <data name="Front_EditorActions" xml:space="preserve">
     <value>Acțiuni editor</value>
   </data>
-  
-<!--
-<data name="Front_FullBuildListing" xml:space="preserve">
-    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
+  <data name="Front_FullBuildListing" xml:space="preserve">
+    <value>Vezi lista completă de build-uri Windows...</value>
   </data>
--->
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0} Urmăritor de build-uri Windows</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>Listă build-uri {0}</value>
   </data>
-  
-<!--
-<data name="Front_LatestBuilds" xml:space="preserve">
-    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
+  <data name="Front_LatestBuilds" xml:space="preserve">
+    <value>Ultimele build-uri</value>
   </data>
--->
   <data name="Front_Listing" xml:space="preserve">
     <value>Listare</value>
   </data>
@@ -351,12 +297,9 @@
   <data name="Model_BuildTime" xml:space="preserve">
     <value>Timp compilare</value>
   </data>
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>Legătură externă</value>
   </data>
--->
   <data name="Model_LabString" xml:space="preserve">
     <value>Etichetă lab</value>
   </data>

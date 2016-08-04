@@ -184,7 +184,7 @@
     <value>| Page {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Basculer la navigation</value>
+    <value>Ouvrir/Fermer la navigation</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>

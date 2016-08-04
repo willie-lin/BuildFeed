@@ -183,30 +183,21 @@
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| Sivu {0}</value>
   </data>
-  
-<!--
-<data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>[!!! Tôϱϱℓè ñáƲïϱáƭïôñ ℓ !!!]</value>
+  <data name="Common_ToggleNavigation" xml:space="preserve">
+    <value>Navigaatio Päälle/Pois</value>
   </data>
--->
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>Tietoja</value>
   </data>
-  
-<!--
-<data name="Front_AboutSite" xml:space="preserve">
-    <value>[!!! Âβôúƭ {0}  !!!]</value>
+  <data name="Front_AboutSite" xml:space="preserve">
+    <value>[!!! Tietoja {0} !!!]</value>
   </data>
--->
-  
-<!--
-<data name="Front_BuildsFrom" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ ƒřô₥ {0}  !!!]</value>
+  <data name="Front_BuildsFrom" xml:space="preserve">
+    <value>[!!! Koontiversioita {0} :sta !!!]</value>
   </data>
--->
   <data name="Front_Comments" xml:space="preserve">
     <value>Kommentit</value>
   </data>

@@ -282,12 +282,9 @@
   <data name="Meta_BuildNoDate" xml:space="preserve">
     <value>Erfahre mehr über Windows Build {0}, von {1}. BuildFeed verfolgt Windows Builds während dem Entwicklungsprozess</value>
   </data>
-  
-<!--
-<data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>Entdecke alle bekannten Builds aus dem Windows Development Lab {0} durch BuildFeed, eine kollaborative Windows build Liste.</value>
   </data>
--->
   <data name="Meta_YearGeneric" xml:space="preserve">
     <value>Sehen Sie eine Liste von allen Windows Builds, die in {0} kompiliert wurden und beobachten Sie, wie sich Windows Laufe der Zeit stetig entwickelt hat, mit der kollaborativen Build-Liste, BuildFeed.</value>
   </data>

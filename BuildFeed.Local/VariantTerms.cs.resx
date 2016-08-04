@@ -202,13 +202,13 @@
     <value>Komenty</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Nejnovější build Canary</value>
+    <value>Aktuální Canary</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Nejnovější build Insider</value>
+    <value>Aktuální Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Nejnovější vydání</value>
+    <value>Aktuální Release</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Odstranit</value>
