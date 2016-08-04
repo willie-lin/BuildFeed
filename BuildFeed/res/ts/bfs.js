@@ -1,5 +1,3 @@
-/// <reference path="../../scripts/typings/google.analytics/ga.d.ts" />
-/// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
 var BuildFeed;
 (function (BuildFeed) {
     var ajax;

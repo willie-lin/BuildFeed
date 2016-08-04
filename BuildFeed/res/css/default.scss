@@ -82,6 +82,36 @@ table
    color: #FF2626;
 }
 
+a.button,
+input[type=submit].button
+{
+   display: inline-block;
+   vertical-align: middle;
+   padding: #{(1em / 3)} 1em;
+   background-color: #1274B2;
+   color: #fff;
+   text-decoration: none;
+   -moz-border-radius: #{(1em / 6)};
+   -webkit-border-radius: #{(1em / 6)};
+   border-radius: #{(1em / 6)};
+   text-align: center;
+
+   &.edit-button
+   {
+      background-color: #FF9F19;
+   }
+
+   &.delete-button
+   {
+      background-color: #FF2626;
+   }
+
+   &.add-button
+   {
+      background-color: #12B23F;
+   }
+}
+
 header#page-header
 {
    h1
@@ -145,6 +175,7 @@ nav#page-navigation
       box-sizing: border-box;
       display: none;
       position: absolute;
+      left: -15px;
       right: -15px;
       max-width: 1240px;
       padding: 15px;
@@ -270,6 +301,7 @@ article
             letter-spacing: -0.05em;
             border-bottom: 0;
             text-transform: lowercase;
+            text-align: left;
          }
 
          p
@@ -480,17 +512,17 @@ article
       input[type=submit],
       button
       {
-         -moz-box-sizing: border-box;
-         -webkit-box-sizing: border-box;
-         box-sizing: border-box;
-         border: 1px solid;
-         padding: #{(1em / 3)} #{(1em / 2)};
-         -moz-border-radius: 2px;
-         -webkit-border-radius: 2px;
-         border-radius: 2px;
-         background-color: #1274B2;
+         display: inline-block;
+         vertical-align: middle;
+         padding: #{(1em / 3)} 1em;
+         background-color: #12B23F;
          color: #fff;
-         line-height: 1;
+         text-decoration: none;
+         -moz-border-radius: #{(1em / 6)};
+         -webkit-border-radius: #{(1em / 6)};
+         border-radius: #{(1em / 6)};
+         border: 0;
+         line-height: 1.6;
       }
 
       &.wide-group
@@ -696,6 +728,7 @@ footer#page-footer
             display: block;
             padding: 0 1em;
             width: 140px;
+            flex-grow: 1;
 
             > .search-result-heading
             {
@@ -766,7 +799,6 @@ footer#page-footer
          text-align: center;
       }
    }
-
 
    footer#page-footer .footer-flex .footer-flex-item
    {

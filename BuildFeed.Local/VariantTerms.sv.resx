@@ -117,335 +117,398 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed je prevádzkovaný a spravovaný skupinou nadšencov. Microsoft v ňom nie je nijako zapojený. Aj keď sme doteraz nezaznamenali žiadne stažnosti z ich strany, sme si istý, že o tejto stránke vedia. Ako by ste mohli čakať, Microsoft by bol spokojenejší keby ich súkromné informácie ostali súkromnými. Z tohto dôvodu už bolo pár našich zdrojov odstavených a sme si istý, že aj naďalej budú.</value>
+  
+<!--
+<data name="About_A1" xml:space="preserve">
+    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
   </data>
-  <data name="About_A2" xml:space="preserve">
-    <value>Dobrý pokus Dona no na toto ti neskočíme. Čo môžeme povedať je toto. Zostavy ktoré môžete vidieť na BuildFeede sú dôkladne kontrolované nami ale aj našimi zdrojmi aby sme zamedzili šíreniu neoverených informácii.</value>
+-->
+  
+<!--
+<data name="About_A2" xml:space="preserve">
+    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
   </data>
-  <data name="About_A3" xml:space="preserve">
-    <value>Je tu mnoho spôsobov. Napríklad môžete diskutovať o zostavách v ich sekcii komentárov. V prípade, že sa chcete na vyvíjaní podieľať môžete na našom GitHube nahlasovať chyby či zaslať vami opravený zdrojový kód. Taktiež môžete pomôcť s prekladom</value>
+-->
+  
+<!--
+<data name="About_A3" xml:space="preserve">
+    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
   </data>
-  <data name="About_Q1" xml:space="preserve">
-    <value>Kto prevádzkuje BuildFeed? Je toto oficiálna stránka spoločnosti Microsoft?</value>
+-->
+  
+<!--
+<data name="About_Q1" xml:space="preserve">
+    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
   </data>
-  <data name="About_Q2" xml:space="preserve">
-    <value>Ako BuildFeed získava dáta?</value>
+-->
+  
+<!--
+<data name="About_Q2" xml:space="preserve">
+    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
   </data>
-  <data name="About_Q3" xml:space="preserve">
-    <value>Ako sa môžem zapojiť?</value>
+-->
+  
+<!--
+<data name="About_Q3" xml:space="preserve">
+    <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
   </data>
+-->
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Pridať zostavu</value>
+    <value>Lägg till build</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Prispieť na {0}</value>
+    <value>Bidra med {0}</value>
   </data>
-  <data name="Common_Credits" xml:space="preserve">
-    <value>Autori</value>
+  
+<!--
+<data name="Common_Credits" xml:space="preserve">
+    <value>[!!! Çřèδïƭƨ  !!!]</value>
   </data>
+-->
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>Vytvoril {0}</value>
+    <value>Utvecklad av {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>Chyba</value>
+    <value>Fel</value>
   </data>
-  <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Niečo sa pokazilo. Možno to bolo zapríčinené vami, no s väčšou pravdepodobnosťou nami. Ak sa táto chyba opakuje, prosím oboznámte nás o nej pomocu {0}.</value>
+  
+<!--
+<data name="Common_ErrorContent" xml:space="preserve">
+    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
   </data>
+-->
   <data name="Common_LogIn" xml:space="preserve">
-    <value>Prihlásiť sa</value>
+    <value>Logga in</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>Odhlásiť sa</value>
+    <value>Logga ut</value>
   </data>
-  <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Jazyk</value>
+  
+<!--
+<data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
   </data>
-  <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Téma</value>
+-->
+  
+<!--
+<data name="Common_NavigationTheme" xml:space="preserve">
+    <value>[!!! Tλè₥è ℓ !!!]</value>
   </data>
+-->
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS Kanál</value>
+    <value>RSS-flöden</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Mapa stránok</value>
+    <value>Sitemap</value>
   </data>
-  <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Tmavá</value>
+  
+<!--
+<data name="Common_ThemeDark" xml:space="preserve">
+    <value>[!!! Ðářƙ  !!!]</value>
   </data>
-  <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Svetlá</value>
+-->
+  
+<!--
+<data name="Common_ThemeLight" xml:space="preserve">
+    <value>[!!! £ïϱλƭ ℓ !!!]</value>
   </data>
+-->
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>| Stránka {0}</value>
+    <value>| Sida {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>Prepnúť navigáciu</value>
+    <value>Hantera navigation</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Popis</value>
+    <value>Om</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>O {0}</value>
+    <value>Om {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>Zostavy z {0}</value>
+    <value>Builds från {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>Komentáre</value>
+    <value>Kommentarer</value>
   </data>
-  <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Aktuálny Canary</value>
+  
+<!--
+<data name="Front_CurrentCanary" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Aktuálny Insider</value>
+-->
+  
+<!--
+<data name="Front_CurrentInsider" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Ìñƨïδèř ℓ !!!]</value>
   </data>
-  <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Aktuálny Release</value>
+-->
+  
+<!--
+<data name="Front_CurrentRelease" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Delete" xml:space="preserve">
-    <value>Odstrániť</value>
+    <value>Ta bort</value>
   </data>
-  <data name="Front_Details" xml:space="preserve">
-    <value>Detaily</value>
+  
+<!--
+<data name="Front_Details" xml:space="preserve">
+    <value>[!!! Ðèƭáïℓƨ  !!!]</value>
   </data>
+-->
   <data name="Front_Edit" xml:space="preserve">
-    <value>Upraviť</value>
+    <value>Ändra</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Upraviť zostavu</value>
+    <value>Ändra build</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Akcie editoru</value>
+    <value>Editor-funktioner</value>
   </data>
-  <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Zobraziť plný zoznam zostáv...</value>
+  
+<!--
+<data name="Front_FullBuildListing" xml:space="preserve">
+    <value>[!!! §èè ƭλè ƒúℓℓ Wïñδôωƨ βúïℓδ ℓïƨƭïñϱ... ℓôřè₥ !!!]</value>
   </data>
-  <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}: Sledovanie zostáv Windowsu</value>
+-->
+  
+<!--
+<data name="Front_HomeH1" xml:space="preserve">
+    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
   </data>
+-->
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Zoznam zostáv {0}</value>
+    <value>{0} build-lista</value>
   </data>
-  <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>Najnovšie zostavy</value>
+  
+<!--
+<data name="Front_LatestBuilds" xml:space="preserve">
+    <value>[!!! £áƭèƨƭ ßúïℓδƨ ℓ !!!]</value>
   </data>
+-->
   <data name="Front_Listing" xml:space="preserve">
-    <value>Zoznam</value>
+    <value>Lista</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Nájdi viac zostáv z {0}</value>
+    <value>Hitta fler builds från {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Nájdi viac zostáv pochádzajúcich zo zdroja {0}</value>
+    <value>Hitta fler builds från {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Nájdi viac zostáv kompilovaných v {0}</value>
+    <value>Hitta fler builds kompilerad i {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Bez názvu vetvy</value>
+    <value>Ingen lab string</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} zostáv</value>
+    <value>{0} builds</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Súkromný</value>
+    <value>Privat</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Verejný</value>
+    <value>Allmän</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Rýchle prilepenie</value>
+    <value>Klistra in</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Naspäť k výpisu buildov</value>
+    <value>Återgå till build-lista</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>Naspäť k prehľadu zostáv</value>
+    <value>Återgå till build-översikt</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>Zdieľať</value>
+    <value>Dela</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
-    <value>Dnes</value>
+    <value>Idag</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Objavte zostavu {0}, z {1}, skompilovanú {2}.</value>
+    <value>Upptäck  Windows Build {0}, från {1} och kompilerad {2}.</value>
   </data>
-  <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Objavte zostavu {0}, z {1}. BuildFeed sleduje zostavy Windowsu počas procesu vývoja.</value>
+  
+<!--
+<data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
   </data>
+-->
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Pozrite sa na všetky známe zostavy Windowsu ktoré pochádzajú z vetvy {0} pomocou BuildFeedu, kolaboratívnom zozname zostáv Windowsu.</value>
+    <value>Kolla alla kända builds som kommer från  Windows development lab {0} genom BuildFeed, en samarbetad Windows build-lista</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Pozrite sa na výpis všetkých zostáv skompilovaných v {0} a sledujte ako sa Windows časom vyvíjal, pomocou BuildFeedu, kolaboratívnom zozname zostáv Windowsu.</value>
+    <value>Se en lista över alla Windows-builds kompilerade  {0}, och se hur Windows utvecklades över tid, genom buildlistan BuildFeed</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
-    <value>Čas pridania</value>
+    <value>Skapad</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>Číslo zostavy</value>
+    <value>Build-nummer</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Čas kompilácie</value>
+    <value>Build-tid</value>
   </data>
-  <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Externý odkaz</value>
+  
+<!--
+<data name="Model_ExternalLink" xml:space="preserve">
+    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
   </data>
+-->
   <data name="Model_LabString" xml:space="preserve">
-    <value>Názov vetvy</value>
+    <value>Lab-sträng</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Dátumu leaku alebo vydania</value>
+    <value>Läcka eller release-datum</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Hlavná verzia</value>
+    <value>Major-version</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Vedľajšia verzia</value>
+    <value>Minor-version</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
-    <value>Čas úpravy</value>
+    <value>Modifierad</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Revízia zostavy</value>
+    <value>Build revision</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>Detaily o zdroji</value>
+    <value>Detaljer om källa</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>Druh zdroja</value>
+    <value>Källtyp</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>Balíček aplikácie</value>
+    <value>App-paket</value>
   </data>
   <data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>Nástroje na kompiláciu</value>
+    <value>Build-verktyg</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>Dokumentácia</value>
+    <value>Dokumentation</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Verejný leak</value>
+    <value>Publik läcka</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
-    <value>Záznamy</value>
+    <value>Logging</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Súkromný leak</value>
+    <value>Privat läcka</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Verejné vydanie</value>
+    <value>Publikt släpp</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>Aktualizácia (GDR)</value>
+    <value>Update (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Aktualizácia (LDR)</value>
+    <value>Update (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Zostava</value>
+    <value>Build</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>Hľadať v BuildFeede</value>
+    <value>Sök i BuildFeed...</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Neboli nájdené žiadne výsledky</value>
+    <value>Inga resultat funna</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
-    <value>Vetva</value>
+    <value>Lab</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>Výraz vyhľadávania</value>
+    <value>Sökord</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
-    <value>Zdroj</value>
+    <value>Källa</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Hľadať</value>
+    <value>Sök</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>Písaním hľadajte...</value>
+    <value>skriv för att söka...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
-    <value>Verzia</value>
+    <value>Version</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>Rok</value>
+    <value>År</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je overený Administrátorom, buďte trpezlivý a pozrite sa znovu za chvíľu.</value>
+    <value>Varje konto är kontrollerat av en Administratör, var god och återkom senare.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>Novo pridané na BuildFeed</value>
+    <value>Tillägg till BuildFeed</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Zostáv kompilovaných</value>
+    <value>Builds kompilerad</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Zmeniť heslo</value>
+    <value>Ändra ditt lösenord</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Potvrdiť nové heslo</value>
+    <value>Bekräfta nytt lösenord</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Potvrdiť heslo</value>
+    <value>Bekräfta lösenord</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Mailadress</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Zadajte súčasné heslo</value>
+    <value>Ange nuvarande lösenord</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Zadajte nové heslo</value>
+    <value>Ange nytt lösenord</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Zadajte heslo</value>
+    <value>Ange lösenord</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>Najvyššia verzia</value>
+    <value>Högsta version</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
-    <value>Vetvy</value>
+    <value>Labs</value>
   </data>
   <data name="Support_Login" xml:space="preserve">
-    <value>Prihlásiť sa</value>
+    <value>Logga in</value>
   </data>
   <data name="Support_Password" xml:space="preserve">
-    <value>Heslo</value>
+    <value>Lösenord</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Nedávno pridané</value>
+    <value>Senaste tillagda</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Nedávno kompilované</value>
+    <value>Senaste kompilerade</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Nedávno leaknuté</value>
+    <value>Senaste läckta</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Zaregistrovať sa</value>
+    <value>Registrera</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
-    <value>Zapamätať</value>
+    <value>Kom ihåg mig</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Ďakujeme za registrovanie</value>
+    <value>Tack för registreringen</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
-    <value>Použivateľské meno</value>
+    <value>Användarnamn</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
-    <value>Týždeň</value>
+    <value>Vecka</value>
   </data>
 
 </root>

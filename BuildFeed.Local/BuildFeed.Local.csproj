@@ -62,6 +62,7 @@
     <EmbeddedResource Include="VariantTerms.he.resx" />
     <EmbeddedResource Include="VariantTerms.hr.resx" />
     <EmbeddedResource Include="VariantTerms.hu.resx" />
+    <EmbeddedResource Include="VariantTerms.id.resx" />
     <EmbeddedResource Include="VariantTerms.it.resx" />
     <EmbeddedResource Include="VariantTerms.ko.resx" />
     <EmbeddedResource Include="VariantTerms.nl.resx" />
@@ -78,6 +79,7 @@
     <EmbeddedResource Include="VariantTerms.ru.resx" />
     <EmbeddedResource Include="VariantTerms.sk.resx" />
     <EmbeddedResource Include="VariantTerms.sl.resx" />
+    <EmbeddedResource Include="VariantTerms.sv.resx" />
     <EmbeddedResource Include="VariantTerms.tr.resx" />
     <EmbeddedResource Include="VariantTerms.uk.resx" />
     <EmbeddedResource Include="VariantTerms.vi.resx" />

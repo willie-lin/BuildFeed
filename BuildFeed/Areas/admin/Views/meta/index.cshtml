@@ -14,7 +14,7 @@
    <thead>
       <tr>
          <th>Name</th>
-         <th style="width:80px;"></th>
+         <th style="width:50px"></th>
       </tr>
    </thead>
    <tbody>
@@ -27,7 +27,7 @@
          {
             <tr>
                <td>@item.Id.Value</td>
-               <td>@Html.ActionLink("Edit", "edit", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "btn btn-info btn-xs btn-block" })</td>
+               <td>@Html.ActionLink("Edit", "edit", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "button", style = "width:50px" })</td>
             </tr>
          }
       }
@@ -38,7 +38,7 @@
    <thead>
       <tr>
          <th>Name</th>
-         <th style="width:80px;"></th>
+         <th style="width:50px"></th>
       </tr>
    </thead>
    <tbody>
@@ -51,7 +51,7 @@
          {
             <tr>
                <td>@item.Id.Value</td>
-               <td>@Html.ActionLink("Create", "create", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "btn btn-info btn-xs btn-block" })</td>
+               <td>@Html.ActionLink("Create", "create", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "button", style = "width:50px" })</td>
             </tr>
          }
       }

@@ -15,13 +15,9 @@
 
    <div class="form-horizontal">
       <div class="form-group">
-         @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label col-sm-2" })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-8">
+         @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label" })
+         <div class="wide-group">
                   @Html.TextAreaFor(model => model.MetaDescription, new { @class = "form-control", rows = "2" })
-               </div>
-            </div>
             <div class="help-block">
                <span id="meta-count">0</span> characters
                @Html.ValidationMessageFor(model => model.MetaDescription)
@@ -30,13 +26,9 @@
       </div>
 
       <div class="form-group">
-         @Html.LabelFor(model => model.PageContent, new { @class = "control-label col-sm-2" })
-         <div class="col-sm-10">
-            <div class="row">
-               <div class="col-sm-8">
+         @Html.LabelFor(model => model.PageContent, new { @class = "control-label" })
+         <div class="wide-group">
                   @Html.TextAreaFor(model => model.PageContent, new { @class = "form-control" })
-               </div>
-            </div>
             <div class="help-block">
                @Html.ValidationMessageFor(model => model.PageContent)
             </div>
@@ -44,7 +36,7 @@
       </div>
 
       <div class="form-group">
-         <div class="col-sm-offset-2 col-sm-10">
+         <div>
             <input type="submit" value="Add metadata" class="btn btn-primary" />
          </div>
       </div>

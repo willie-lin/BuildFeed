@@ -162,7 +162,6 @@
                      </ul>
                   </li>
                </ul>
-
             </li>
          </ul>
       </div>
@@ -195,13 +194,13 @@
             </div>
             <div class="footer-flex-item">
                <p>
-                  &copy; 2013 - @DateTime.Now.Year.ToString(), @InvariantTerms.SiteName
+                  &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\">{InvariantTerms.DeveloperName}</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\">{InvariantTerms.DeveloperName}</a>"))
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
                </p>
             </div>
          </div>
