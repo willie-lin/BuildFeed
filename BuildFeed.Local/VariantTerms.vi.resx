@@ -154,7 +154,7 @@
     <value>Lỗi</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Có gì đó đã hỏng. Có lẽ bởi vì bạn đã làm việc gì đó lạ. Có lẽ tôi làm gì đó lạ. Nếu bạn vẫn thấy lỗi này, hãy báo lỗi này qua {0}</value>
+    <value>Có gì đó đã hỏng. Có lẽ bởi vì bạn đã làm việc gì đó bất thường. Có lẽ tôi làm gì đó bất thường. Nếu bạn vẫn thấy lỗi này, hãy báo lỗi này qua {0}</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>Đăng nhập</value>
@@ -201,21 +201,15 @@
   <data name="Front_Comments" xml:space="preserve">
     <value>Các bình luận</value>
   </data>
-  
-<!--
-<data name="Front_CurrentCanary" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Çáñář¥ ℓ !!!]</value>
+  <data name="Front_CurrentCanary" xml:space="preserve">
+    <value>Phiên bản đang được xây dựng hiện tại</value>
   </data>
--->
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Người dùng nội bộ hiện tại</value>
+    <value>Phiên bản xem trước hiện tại</value>
   </data>
-  
-<!--
-<data name="Front_CurrentRelease" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+  <data name="Front_CurrentRelease" xml:space="preserve">
+    <value>Phiên bản ra mắt hiện tại</value>
   </data>
--->
   <data name="Front_Delete" xml:space="preserve">
     <value>Xóa</value>
   </data>
@@ -228,21 +222,15 @@
   <data name="Front_EditBuild" xml:space="preserve">
     <value>Chỉnh sửa bản dựng</value>
   </data>
-  
-<!--
-<data name="Front_EditorActions" xml:space="preserve">
-    <value>[!!! Éδïƭôř áçƭïôñƨ  !!!]</value>
+  <data name="Front_EditorActions" xml:space="preserve">
+    <value>Tùy chọn của tác giả</value>
   </data>
--->
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Xem đầy đủ danh sách bản dựng Windows</value>
   </data>
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Theo dõi bản dựng Windows</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} danh sách bản dựng</value>
   </data>
@@ -262,7 +250,7 @@
     <value>Tìm thêm nhiều bản dựng đã được biên soạn trong {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Không có xâu chuỗi từ thử nghiệm</value>
+    <value>Không có chuỗi thử nghiệm</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
     <value>{0} bản dựng</value>
@@ -291,18 +279,12 @@
   <data name="Meta_BuildDate" xml:space="preserve">
     <value>Khám phá về bản dựng Windows {0}, từ {1} và được tổng hợp thành {2}</value>
   </data>
-  
-<!--
-<data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>Khám phá về bản dựng Windows {0}, từ {1}. BuildFeed theo dõi các bản dựng Windows thông qua tiến trình phát triển</value>
   </data>
--->
-  
-<!--
-<data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>Kiểm tra tất cả các bản dựng có từ nhánh phát triển Windows {0} thông qua BuildFeed, một danh sách bản dựng Windows thống nhất</value>
   </data>
--->
   <data name="Meta_YearGeneric" xml:space="preserve">
     <value>Hiển thị tất cả danh sách của những bản dựng Windows được tổng hợp từ{0}, và xem xem rằng thế nào mà Windows lại có thể phát triển vững chắc qua thời gian, thông qua tính tổng hợp của danh sách các bản dựng, BuildFeed</value>
   </data>

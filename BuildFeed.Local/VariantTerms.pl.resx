@@ -117,38 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed jest prowadzony i zarządzany przez grupę entuzjastów. Microsoft nie jest powiązany z tą stroną w żaden możliwy sposób. Nie mamy też żadnych roszczeń dotyczących strony od Microsoftu, choć jesteśmy pewni że wiedzą o jej istnieniu. Microsoft oczywiście chce część informacji mieć prywatnych, mieliśmy kilka źródeł zamkniętych w przeszłości, nie wykluczone, że mogą też zamknąć inne źródła w przyszłości.</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>Niezła próba, dona, ale nie powiem dużo na ten temat. To co mogę powiedzieć to, to że wszystkie buildy podane na BuildFeed są prawdziwe. Mamy kilka różnych źródeł, aby weryfikacja była bardziej niezawodna Microsoft powinien zamknąć jedno z naszych źródeł.</value>
   </data>
--->
-  
-<!--
-<data name="About_A3" xml:space="preserve">
-    <value>[!!! Tλèřè'ƨ á ñú₥βèř ôƒ ωá¥ƨ. Ýôú çáñ δïƨçúƨƨ ƭλè βúïℓδƨ ïñ ƭλè δïƨ9úƨ çô₥₥èñƭƨ ƨ¥ƨƭè₥ ôñ èáçλ βúïℓδ ƥáϱè. Ýôú çáñ áℓƨô çôñƭřïβúƭè ƭô ƭλè ƨïƭè'ƨ δèƲèℓôƥ₥èñƭ β¥ řèƥôřƭïñϱ βúϱƨ ôř ₥áƙïñϱ ƥúℓℓ řè9úèƨƭƨ ôñ ôúř GïƭHúβ. £áƨƭℓ¥, ¥ôú çáñ λèℓƥ ƭřáñƨℓáƭè ßúïℓδFèèδ ïñƭô ¥ôúř ñáƭïƲè ℓáñϱúáϱè ƭλřôúϱλ ôúř Třáñƨℓáƭïôñ ƥôřƭáℓ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒ !!!]</value>
+  <data name="About_A3" xml:space="preserve">
+    <value>Jest wiele sposobów. Możesz dyskutować o buildach w sekcji komentarzy na każdej stronie opisującej build. Możesz też wspierać rozwój strony, poprzez raportowanie błędów, lub współtworzyć kod na stronie GitHub. Możesz również wspomóc tłumaczenie strony na swój język.</value>
   </data>
--->
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>Kto prowadzi BuildFeed? czy to oficjalna strona Microsoftu?</value>
   </data>
--->
-  
-<!--
-<data name="About_Q2" xml:space="preserve">
-    <value>[!!! Hôω δôèƨ ßúïℓδFèèδ ϱèƭ ïƭƨ δáƭá èжáçƭℓ¥? ℓôřè₥ ïƥƨú₥ !!!]</value>
+  <data name="About_Q2" xml:space="preserve">
+    <value>Skąd dokładnie BuildFeed bierze te dane?</value>
   </data>
--->
   <data name="About_Q3" xml:space="preserve">
-    <value>Jak mogę wziąć udział?</value>
+    <value>Jak mogę pomóc?</value>
   </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Dodaj build</value>
@@ -243,12 +228,9 @@
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Zobacz pełny wykaz buildów Windows</value>
   </data>
-  
-<!--
-<data name="Front_HomeH1" xml:space="preserve">
-    <value>[!!! {0}: Tλè Wïñδôωƨ βúïℓδ ƭřáçƙèř ℓôřè₥ ïƥ !!!]</value>
+  <data name="Front_HomeH1" xml:space="preserve">
+    <value>{0}: Tracker buildów systemu Windows</value>
   </data>
--->
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} lista buildów</value>
   </data>

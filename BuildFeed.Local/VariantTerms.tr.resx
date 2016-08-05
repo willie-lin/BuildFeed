@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed bir hayranlar topluluğu tarafından çalıştırılır ve bakılır. Bu sitenin Microsoft ile hiçbir ilgisi yoktur. Onların bu siteyi bildiğinden emin olsak da, şu ana kadar onlarla hiçbir yasal sorunumuz olmadı. Söylediğimiz gibi, Microsoft kendi bilgilerini özel tutmaya çalışıyor ve onların kapattığı kaynaklardan da bilgi alıyorduk, bunu yapmaya devam edeceklerinden de eminiz.</value>
+    <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bununla beraber, Microsoft açıkça, gizli bilgileri gizli tutmayı istiyor, ve daha önce onlar tarafından kapatılan kaynaklara sahiptik, bunu yapmaya devam edeceklerinden de eminim.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>İyi denemeydi Dona, ama buna kanmadım. Şunu söyleyebilirim ki, BuildFeed bu siteye gönderilen yapıların doğru ve geçerli olması için elinden geleni yapar. Birkaç kaynağımız var, doğrulamayı daha güvenli yapmak ve bize biraz kalabalık vermek için Microsoft kaynaklarımızın birini kapatabilir.</value>
+    <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu siteye gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Bazı yollar var. Her yapı sayfasında, Disqus yorum sistemi ile yapılar hakkında konuşabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i çeviri portalımızdan kendi anadilinize çevirebilirsiniz.</value>
+    <value>Birkaç yol var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımızdan kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>BuildFeed'i kim çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
+    <value>BuildFeed'i kim yürütüyor? Bu resmi bir Microsoft sitesi mi?</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
-    <value>BuildFeed barındırdığı bilgileri kesin olarak nasıl alıyor?</value>
+    <value>BuildFeed verilerini tam olarak nasıl alıyor?</value>
   </data>
   <data name="About_Q3" xml:space="preserve">
-    <value>Nasıl yardımcı olabilirim?</value>
+    <value>Nasıl dahil olabilirim?</value>
   </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Yapı ekle</value>
@@ -154,7 +154,7 @@
     <value>Hata</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Bir şeyler yanlış gitti. Belki sıradışı bir şeyler yapmışsınızdır. Bizim hatamız da olabilir. Bu hatayı almaya devam ederseniz, {0} adresinden hata bildirimi gönderin.</value>
+    <value>Bir şeyler kırıldı. Belki tuhaf bir şey yaptığından dolayı. Muhtemelen benim tuhaf bir şey yaptığımdan dolayı. Bu hatayı almaya devam edersen, {0} ile hata raporu gönder.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>Giriş yap</value>
@@ -169,7 +169,7 @@
     <value>Tema:</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS akışı</value>
+    <value>RSS beslemesi</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>Site haritası</value>
@@ -202,7 +202,7 @@
     <value>Yorumlar</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Şimdiki Muhbir</value>
+    <value>Şimdiki Kanarya</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
     <value>Şimdiki Insider</value>
@@ -226,7 +226,7 @@
     <value>Editör eylemleri</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Tam Windows Yapıları listesini gör</value>
+    <value>Bütün Windows Yapıları listesini gör</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
     <value>Windows Yapıları izleyicisi: {0}</value>
@@ -259,7 +259,7 @@
     <value>Özel</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>Genel</value>
+    <value>Herkese açık</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
     <value>Hızlı yapıştır</value>
@@ -295,7 +295,7 @@
     <value>Yapı numarası</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Yapı tarihi</value>
+    <value>Yapı zamanı</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
     <value>Dış bağlantı:</value>
@@ -307,16 +307,16 @@
     <value>Sızdırılma veya yayınlanma tarihi:</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Büyük sürüm numarası</value>
+    <value>Büyük sürüm</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Küçük sürüm numarası</value>
+    <value>Küçük sürüm</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
     <value>Değiştirme zamanı</value>
   </data>
   <data name="Model_Revision" xml:space="preserve">
-    <value>Yapı revizyon numarası</value>
+    <value>Yapı düzeltmesi</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
     <value>Kaynak ayrıntıları</value>
@@ -358,7 +358,7 @@
     <value>BuildFeed'i Araştır...</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
-    <value>Sonuç bulunamadı</value>
+    <value>Hiçbir sonuç bulunamadı</value>
   </data>
   <data name="Search_Lab" xml:space="preserve">
     <value>Laboratuvar</value>
@@ -370,10 +370,10 @@
     <value>Kaynak</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Araştır</value>
+    <value>Ara</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>Araştırmak için yazın... :</value>
+    <value>Aramak için yazın... :</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
     <value>Sürüm:</value>
@@ -403,10 +403,10 @@
     <value>E-posta adresi</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Şimdiki parolanızı girin:</value>
+    <value>Şu anki parolayı girin:</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Yeni parolayı girin:</value>
+    <value>Yeni parola girin:</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Parolayı girin</value>
@@ -424,13 +424,13 @@
     <value>Parola</value>
   </data>
   <data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>Son eklenenler</value>
+    <value>Yakın zamanda eklenenler</value>
   </data>
   <data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>Son derlenenler</value>
+    <value>Yakın zamanda derlenenler</value>
   </data>
   <data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>Son sızdırılanlar</value>
+    <value>Yakın zamanda sızdırılanlar</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
     <value>Kaydol</value>
@@ -439,7 +439,7 @@
     <value>Beni hatırla</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Kayıt olduğunuz için teşekkürler!</value>
+    <value>Kayıt olduğun için teşekkür ederim!</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Kullanıcı adı</value>

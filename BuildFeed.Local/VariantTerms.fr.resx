@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed est réalisé et maintenu par un groupe de passionnés. Microsoft n'est pas impliqué dans le site d'une quelque manière. Certainement, nous avons eu aucune plainte officielle de Microsoft sur le site, même si nous sommes sûrs qu'ils sont conscients du site. Cela dit, Microsoft souhaite évidemment garder l'information privée, et les sources que nous avons eues ont été fermées par eux dans le passé, et je suis sûr qu'ils le feront à l'avenir.</value>
+    <value>BuildFeed est réalisé et maintenu par un groupe de passionnés. Microsoft n'est pas impliqué dans le site d'une quelconque manière. Certainement, nous avons eu aucune plainte officielle de Microsoft sur le site, même si nous sommes sûrs qu'ils sont conscients du site. Cela dit, Microsoft souhaite évidemment garder l'information privée, et les sources que nous avons eues ont été fermées par eux dans le passé, et je suis sûr qu'ils le feront à nouveau à l'avenir.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>Bien essayé, Dona, mais je ne tomberai pas dans le panneau cette fois. Ce que je peux dire est ceci. BuildFeed fait en sorte d'être aussi certain que possible que toutes les versions publiées sur le site sont correctes et légitimes. Nous avons un certain nombre de sources différentes afin d'effectuer une vérification fiable et de nous donner une certaine redondance si Microsoft fermait une de nos sources.</value>
