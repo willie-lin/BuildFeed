@@ -1,5 +1,3 @@
-/// <reference path="../../scripts/typings/google.analytics/ga.d.ts" />
-/// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
 var BuildFeed;
 (function (BuildFeed) {
     var ajax;
@@ -67,6 +65,7 @@ var BuildFeed;
         ajax = new XMLHttpRequest();
         ajax.onreadystatechange = CompleteSearch;
         ajax.open("GET", "/api/GetSearchResult/" + modalInput.value + "/", true);
+        ajax.setRequestHeader("accept", "application/json");
         ajax.send(null);
     }
     BuildFeed.SendSearch = SendSearch;
@@ -81,9 +80,11 @@ var BuildFeed;
         resultPane.innerHTML = content;
         var resultLinks = resultPane.getElementsByTagName("a");
         for (var i = 0; i < resultLinks.length; i++) {
-            resultLinks[i].addEventListener("click", function () {
+            resultLinks[i].addEventListener("click", function (mev) {
+                mev.preventDefault();
                 var modalInput = document.getElementById("modal-search-input");
                 ga("send", "pageview", "/api/GetSearchResult/" + modalInput.value + "/");
+                location.assign(mev.currentTarget.href);
             });
         }
     }

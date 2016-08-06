@@ -91,6 +91,7 @@ module BuildFeed
       ajax = new XMLHttpRequest();
       ajax.onreadystatechange = CompleteSearch;
       ajax.open("GET", `/api/GetSearchResult/${modalInput.value}/`, true);
+      ajax.setRequestHeader("accept", "application/json");
       ajax.send(null);
    }
 
@@ -110,10 +111,12 @@ module BuildFeed
       const resultLinks = resultPane.getElementsByTagName("a");
       for (let i = 0; i < resultLinks.length; i++)
       {
-         resultLinks[i].addEventListener("click", () =>
+         resultLinks[i].addEventListener("click", (mev: MouseEvent) =>
          {
+            mev.preventDefault();
             const modalInput = document.getElementById("modal-search-input") as HTMLInputElement;
             ga("send", "pageview", `/api/GetSearchResult/${modalInput.value}/`);
+            location.assign((mev.currentTarget as HTMLAnchorElement).href);
          });
       }
    }
