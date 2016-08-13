@@ -163,10 +163,10 @@
     <value>Çıkış yap</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>Dil:</value>
+    <value>Dil</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
-    <value>Tema:</value>
+    <value>Tema</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
     <value>RSS beslemesi</value>
@@ -178,7 +178,7 @@
     <value>Karanlık</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Açık:</value>
+    <value>Açık</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>Sayfa {0}</value>
@@ -196,7 +196,7 @@
     <value>{0} hakkında</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>{0}'den yapılar</value>
+    <value>{0} laboratuvar etiketinden yapılar</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
     <value>Yorumlar</value>
@@ -229,10 +229,10 @@
     <value>Bütün Windows Yapıları listesini gör</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>Windows Yapıları izleyicisi: {0}</value>
+    <value>Windows yapıları izleyicisi: {0}</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>Yapı Listesi {0}</value>
+    <value>{0} Yapı Listesi</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>En Son Yapılar</value>
@@ -241,7 +241,7 @@
     <value>Liste</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>{0}'den daha fazla yapı bul</value>
+    <value>{0} laboratuvar etiketinden daha fazla yapı bul</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
     <value>{0} kaynaklı daha fazla yapı bul</value>
@@ -349,7 +349,7 @@
     <value>Güncelleme (GDR)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>Güncelleme (EDR)</value>
+    <value>Güncelleme (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Yapı:</value>
@@ -373,7 +373,7 @@
     <value>Ara</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>Aramak için yazın... :</value>
+    <value>Aramak için yazın...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
     <value>Sürüm:</value>
@@ -439,7 +439,7 @@
     <value>Beni hatırla</value>
   </data>
   <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Kayıt olduğun için teşekkür ederim!</value>
+    <value>Kaydolduğunuz için teşekkür ederiz!</value>
   </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Kullanıcı adı</value>

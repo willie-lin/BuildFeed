@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>O BuildFeed é gerido e mantido por um grupo de entusiastas. A Microsoft não está envolvida de alguma maneira neste site. Nós nunca tivemos nenhuma queixa da Microsoft acerca deste site, apesar de que nós temos a certeza que eles tem noção da existência do site. Dito isso, a Microsoft certamente deseja que Informação privada se mantenha privada, e por isso nós tivemos fontes fechadas por eles no passado, e de certeza que vai acontecer no futuro.</value>
+    <value>O BuildFeed é gerido e mantido por um grupo de entusiastas. A Microsoft não está envolvida de alguma maneira neste site. Nós nunca tivemos nenhuma queixa da Microsoft acerca deste site, apesar de que nós temos a certeza que eles sabem da existência do site. Dito isso, a Microsoft certamente deseja que Informação privada se mantenha privada, e por isso nós tivemos fontes fechadas por eles no passado, e de certeza que vai acontecer novamente no futuro.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>Boa tentativa, Dona, mas eu não vou cair nessa. O que eu posso dizer é isto. O BuildFeed faz o possível para certificar-se que todas as compilação publicadas estão corretas e são legitimas. Nós temos um número de fontes diferentes, para fazer uma verificação mais confiável e para nos oferecer uma redundância caso a Microsoft decida fechar uma das nossas fontes.</value>
@@ -190,10 +190,10 @@
     <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>Acerca do</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>Acerca de {0}</value>
+    <value>Acerca do {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
     <value>Compilações a partir de {0}</value>
