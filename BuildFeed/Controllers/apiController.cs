@@ -6,9 +6,9 @@ using System.Web.Http;
 using System.Web.Security;
 using BuildFeed.Code;
 using BuildFeed.Local;
-using BuildFeed.Models;
-using BuildFeed.Models.ApiModel;
-using BuildFeed.Models.ViewModel.Front;
+using BuildFeed.Model.Api;
+using BuildFeed.Model;
+using BuildFeed.Model.View;
 
 namespace BuildFeed.Controllers
 {
@@ -59,7 +59,7 @@ namespace BuildFeed.Controllers
       }
 
       [HttpPost]
-      public async Task<bool> AddWin10Builds(NewBuild apiModel)
+      public async Task<bool> AddWin10Builds(NewBuildPost apiModel)
       {
          if (apiModel == null)
          {
@@ -93,110 +93,105 @@ namespace BuildFeed.Controllers
             return new SearchResult[0];
          }
 
+         const int maxResults = 16;
          List<SearchResult> results = new List<SearchResult>();
 
-         IEnumerable<SearchResult> sourceResults = from s in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>().Select(s => new
-         {
-            Text = MvcExtensions.GetDisplayTextForEnum(s),
-            Value = s
-         })
-                                                   where s.Text.ToLower().Contains(id.ToLower())
-                                                   orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
-                                                   select new SearchResult
-                                                   {
-                                                      Url = Url.Route("Source Root",
-                                                         new
-                                                         {
-                                                            controller = "Front",
-                                                            action = "ViewSource",
-                                                            source = s.Value
-                                                         }),
-                                                      Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
-                                                      Title = s.Text,
-                                                      Group = VariantTerms.Search_Source
-                                                   };
+         results.AddRange(from s in (from c in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>()
+                                     select new
+                                     {
+                                        Text = MvcExtensions.GetDisplayTextForEnum(c),
+                                        Value = c
+                                     })
+                          where s.Text.ToLower().Contains(id.ToLower())
+                          orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
+                          select new SearchResult
+                          {
+                             Url = Url.Route("Source Root",
+                                new
+                                {
+                                   controller = "Front",
+                                   action = "ViewSource",
+                                   source = s.Value
+                                }),
+                             Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
+                             Title = s.Text,
+                             Group = VariantTerms.Search_Source
+                          });
 
-         results.AddRange(sourceResults);
+         if (results.Count >= maxResults) return results.Take(maxResults);
 
+         results.AddRange(from v in await _bModel.SelectAllVersions()
+                          where $"{v.Major}.{v.Minor}".StartsWith(id)
+                          orderby v.Major descending, v.Minor descending
+                          select new SearchResult
+                          {
+                             Url = Url.Route("Version Root",
+                                new
+                                {
+                                   controller = "Front",
+                                   action = "ViewVersion",
+                                   major = v.Major,
+                                   minor = v.Minor
+                                }),
+                             Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
+                             Title = "",
+                             Group = VariantTerms.Search_Version
+                          });
 
-         IEnumerable<SearchResult> versionResults = from v in await _bModel.SelectAllVersions()
-                                                    where $"{v.Major}.{v.Minor}".StartsWith(id)
-                                                    orderby v.Major descending, v.Minor descending
-                                                    select new SearchResult
-                                                    {
-                                                       Url = Url.Route("Version Root",
-                                                          new
-                                                          {
-                                                             controller = "Front",
-                                                             action = "ViewVersion",
-                                                             major = v.Major,
-                                                             minor = v.Minor
-                                                          }),
-                                                       Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
-                                                       Title = "",
-                                                       Group = VariantTerms.Search_Version
-                                                    };
+         if (results.Count >= maxResults) return results.Take(maxResults);
 
-         results.AddRange(versionResults);
+         results.AddRange(from y in await _bModel.SelectAllYears()
+                          where y.ToString().Contains(id)
+                          orderby y descending
+                          select new SearchResult
+                          {
+                             Url = Url.Route("Year Root",
+                                new
+                                {
+                                   controller = "Front",
+                                   action = "ViewYear",
+                                   year = y
+                                }),
+                             Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
+                             Title = "",
+                             Group = VariantTerms.Search_Year
+                          });
 
+         if (results.Count >= maxResults) return results.Take(maxResults);
 
-         IEnumerable<SearchResult> yearResults = from y in await _bModel.SelectAllYears()
-                                                 where y.ToString().Contains(id)
-                                                 orderby y descending
-                                                 select new SearchResult
-                                                 {
-                                                    Url = Url.Route("Year Root",
-                                                       new
-                                                       {
-                                                          controller = "Front",
-                                                          action = "ViewYear",
-                                                          year = y
-                                                       }),
-                                                    Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
-                                                    Title = "",
-                                                    Group = VariantTerms.Search_Year
-                                                 };
+         results.AddRange(from l in await _bModel.SearchLabs(id)
+                          select new SearchResult
+                          {
+                             Url = Url.Route("Lab Root",
+                                new
+                                {
+                                   controller = "Front",
+                                   action = "ViewLab",
+                                   lab = l.Replace('/', '-')
+                                }),
+                             Label = l.Replace(id, $"<strong>{id}</strong>"),
+                             Title = l,
+                             Group = VariantTerms.Search_Lab
+                          });
 
-         results.AddRange(yearResults);
+         if (results.Count >= maxResults) return results.Take(maxResults);
 
-
-         IEnumerable<SearchResult> labResults = from l in await _bModel.SearchLabs(id)
-                                                select new SearchResult
-                                                {
-                                                   Url = Url.Route("Lab Root",
-                                                      new
-                                                      {
-                                                         controller = "Front",
-                                                         action = "ViewLab",
-                                                         lab = l.Replace('/', '-')
-                                                      }),
-                                                   Label = l.Replace(id, $"<strong>{id}</strong>"),
-                                                   Title = l,
-                                                   Group = VariantTerms.Search_Lab
-                                                };
-
-         results.AddRange(labResults);
-
-
-         IEnumerable<SearchResult> buildResults = from b in await _bModel.Select()
-                                                  where b.FullBuildString.ToLower().Contains(id.ToLower())
-                                                  orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending, b.BuildTime descending
-                                                  select new SearchResult
-                                                  {
-                                                     Url = Url.Route("Build",
-                                                        new
-                                                        {
-                                                           controller = "Front",
-                                                           action = "ViewBuild",
-                                                           id = b.Id
-                                                        }),
-                                                     Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
-                                                     Title = b.FullBuildString,
-                                                     Group = VariantTerms.Search_Build
-                                                  };
-
-         results.AddRange(buildResults);
-
+         results.AddRange(from b in await _bModel.Select()
+                          where b.FullBuildString.ToLower().Contains(id.ToLower())
+                          orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending, b.BuildTime descending
+                          select new SearchResult
+                          {
+                             Url = Url.Route("Build",
+                                new
+                                {
+                                   controller = "Front",
+                                   action = "ViewBuild",
+                                   id = b.Id
+                                }),
+                             Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
+                             Title = b.FullBuildString,
+                             Group = VariantTerms.Search_Build
+                          });
 
          if (results.Count == 0)
          {

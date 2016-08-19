@@ -1,5 +1,5 @@
-﻿@using BuildFeed.Models
-@model BuildFeed.Models.BuildModel
+﻿@using BuildFeed.Model
+@model BuildModel
 @{
    ViewBag.Title = (string)ViewContext.RouteData.Values["action"] == "addBuild"
                       ? $"{VariantTerms.Common_AddBuild} | {InvariantTerms.SiteName}"

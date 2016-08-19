@@ -1,5 +1,5 @@
 ﻿/// <autosync enabled="true" />
-/// <reference path="bfs.js" />
+/// <reference path="../res/ts/bfs.js" />
 /// <reference path="jquery.validate.min.js" />
 /// <reference path="jquery.validate.unobtrusive.min.js" />
 /// <reference path="jquery-2.2.4.min.js" />

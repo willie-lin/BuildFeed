@@ -1,4 +1,4 @@
-﻿namespace BuildFeed.Models.ApiModel
+﻿namespace BuildFeed.Model.Api
 {
    public class SearchResult
    {

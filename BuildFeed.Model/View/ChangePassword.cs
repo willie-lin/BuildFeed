@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using BuildFeed.Local;
 
-namespace BuildFeed.Models.ViewModel
+namespace BuildFeed.Model.View
 {
    public class ChangePassword
    {

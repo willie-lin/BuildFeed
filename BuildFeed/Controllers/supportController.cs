@@ -9,8 +9,8 @@ using System.Web.Security;
 using System.Xml.Linq;
 using BuildFeed.Code;
 using BuildFeed.Local;
-using BuildFeed.Models;
-using BuildFeed.Models.ViewModel;
+using BuildFeed.Model;
+using BuildFeed.Model.View;
 
 namespace BuildFeed.Controllers
 {

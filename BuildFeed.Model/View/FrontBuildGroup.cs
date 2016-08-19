@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BuildFeed.Models.ViewModel.Front
+namespace BuildFeed.Model.View
 {
    public class FrontBuildGroup
    {

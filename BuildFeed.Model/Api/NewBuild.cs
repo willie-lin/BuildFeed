@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace BuildFeed.Models.ApiModel
+namespace BuildFeed.Model.Api
 {
-   public class NewBuild
+   public class NewBuildPost
    {
-      public NewBuildObject[] NewBuilds { get; set; }
+      public NewBuild[] NewBuilds { get; set; }
       public string Password { get; set; }
       public string Username { get; set; }
    }
 
-   public class NewBuildObject
+   public class NewBuild
    {
       public DateTime? BuildTime { get; set; }
       public string Lab { get; set; }

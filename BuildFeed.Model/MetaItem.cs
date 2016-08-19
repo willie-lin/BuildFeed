@@ -10,7 +10,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
-namespace BuildFeed.Models
+namespace BuildFeed.Model
 {
    [DataObject]
    public class MetaItemModel

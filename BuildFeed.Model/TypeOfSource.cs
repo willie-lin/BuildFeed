@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using BuildFeed.Local;
 
-namespace BuildFeed.Models
+namespace BuildFeed.Model
 {
    public enum TypeOfSource
    {

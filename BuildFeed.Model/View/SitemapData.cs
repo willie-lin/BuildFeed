@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Routing;
 
-namespace BuildFeed.Models.ViewModel
+namespace BuildFeed.Model.View
 {
    public class SitemapData
    {

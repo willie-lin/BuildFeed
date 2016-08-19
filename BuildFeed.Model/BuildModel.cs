@@ -9,7 +9,7 @@ using HtmlAgilityPack;
 using MongoDB.Bson.Serialization.Attributes;
 using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
-namespace BuildFeed.Models
+namespace BuildFeed.Model
 {
    [DataObject, BsonIgnoreExtraElements]
    public class BuildModel

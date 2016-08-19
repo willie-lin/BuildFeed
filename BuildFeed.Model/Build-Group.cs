@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BuildFeed.Models.ViewModel.Front;
+using BuildFeed.Model.View;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace BuildFeed.Models
+namespace BuildFeed.Model
 {
    public partial class Build
    {

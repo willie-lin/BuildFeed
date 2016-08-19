@@ -1,7 +1,7 @@
 ﻿@using BuildFeed.Code
-@using BuildFeed.Models
+@using BuildFeed.Model
 @using Humanizer
-@model Tuple<BuildFeed.Models.BuildGroup, List<BuildFeed.Models.BuildModel>>
+@model Tuple<BuildGroup, List<BuildModel>>
 @{
    ViewBag.Title = $"{Model.Item1} | {InvariantTerms.SiteName}";
 }

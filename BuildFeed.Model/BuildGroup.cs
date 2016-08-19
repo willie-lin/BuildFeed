@@ -1,4 +1,4 @@
-﻿namespace BuildFeed.Models
+﻿namespace BuildFeed.Model
 {
    public class BuildGroup
    {

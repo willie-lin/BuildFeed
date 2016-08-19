@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace BuildFeed.Models
+namespace BuildFeed.Model
 {
    public partial class Build
    {

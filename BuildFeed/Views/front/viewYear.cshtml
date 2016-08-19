@@ -1,7 +1,7 @@
 ﻿@using BuildFeed.Code
-@using BuildFeed.Models
+@using BuildFeed.Model
 @using Humanizer
-@model IEnumerable<BuildFeed.Models.BuildModel>
+@model IEnumerable<BuildModel>
 @{
    ViewBag.Title = string.Format("{0}{1} | {2}", string.Format(VariantTerms.Front_BuildsFrom, ViewBag.ItemId), ViewBag.PageNumber == 1
                                                                                                                   ? ""

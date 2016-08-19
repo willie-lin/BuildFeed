@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Areas.admin.Models.ViewModel;
 using BuildFeed.Controllers;
-using BuildFeed.Models;
+using BuildFeed.Model;
 
 namespace BuildFeed.Areas.admin.Controllers
 {

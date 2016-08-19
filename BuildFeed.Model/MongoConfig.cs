@@ -1,9 +1,8 @@
 ﻿using System.Configuration;
-using BuildFeed.Models;
 
-namespace BuildFeed
+namespace BuildFeed.Model
 {
-   internal static class MongoConfig
+   public static class MongoConfig
    {
       public static string Host { get; }
       public static int Port { get; }

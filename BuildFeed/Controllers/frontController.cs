@@ -9,8 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Code;
-using BuildFeed.Models;
-using BuildFeed.Models.ViewModel.Front;
+using BuildFeed.Model;
+using BuildFeed.Model.View;
 
 namespace BuildFeed.Controllers
 {
