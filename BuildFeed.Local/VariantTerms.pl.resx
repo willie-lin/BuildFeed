@@ -151,7 +151,7 @@
     <value>Stworzone przez {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>błąd</value>
+    <value>Błąd</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
     <value>Coś się popsuło. Może dlatego, że ty coś zrobiłeś dziwnego. Albo prawdopodobnie ja zrobiłem coś dziwnego. Jeśli cały czas otrzymujesz ten błąd, zgłoś błąd za pomocą {0}.</value>
@@ -181,7 +181,7 @@
     <value>Jasny</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>Strona {0}</value>
+    <value>| Strona {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
     <value>Przełącz nawigację</value>
@@ -193,34 +193,34 @@
     <value>Około</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>o {0}</value>
+    <value>O {0}</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
     <value>Buildy z {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
-    <value>komentarze</value>
+    <value>Komentarze</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>obecny canary</value>
+    <value>Aktualny canary</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
     <value>Aktualny Insider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Oficjalna Wersja</value>
+    <value>Aktualna wersja</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Usuń</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>szczegóły</value>
+    <value>Szczegóły</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
-    <value>edytuj</value>
+    <value>Edytuj</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>edytuj build</value>
+    <value>Edytuj build</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
     <value>Edytuj akcje</value>
@@ -232,7 +232,7 @@
     <value>{0}: Tracker buildów systemu Windows</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} lista buildów</value>
+    <value>Lista buildów {0}</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>Najnowsze buildy</value>
@@ -277,10 +277,10 @@
     <value>Dzisiaj</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>Odkryj informacje o Windows Build {0}, z {1} i skompilowane w {2}.</value>
+    <value>Odkryj informacje o buildzie Windows {0}, z {1} i skompilowane w {2}.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>Odkryj informacje o Windows Build {0}, z {1}. BuildFeed śledzi buildy Windowsa w trakcie całego procesu rozwoju.</value>
+    <value>Odkryj informacje o buildzie Windows {0}, z {1}. BuildFeed śledzi buildy Windowsa w trakcie całego procesu rozwoju.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
     <value>Obejrzyj wszystkie znane buildy pochodzące z Windows development lab {0} przez BuildFeed, wspólną listę buildów Windowsa.</value>
@@ -292,13 +292,13 @@
     <value>Data utworzenia</value>
   </data>
   <data name="Model_BuildNumber" xml:space="preserve">
-    <value>numer buildu</value>
+    <value>Numer buildu</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
     <value>Data buildu</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>link zewnętrzny</value>
+    <value>Link zewnętrzny</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
     <value>Nazwa labu</value>
@@ -307,10 +307,10 @@
     <value>Data wydania lub wycieku</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>główna wersja</value>
+    <value>Główna wersja</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>wersja pomocnicza</value>
+    <value>Wersja drugorzędna</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
     <value>czas modyfikacji</value>
@@ -322,7 +322,7 @@
     <value>dane źródłowe</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>rodzaj źródła</value>
+    <value>Rodzaj źródła</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
     <value>Pakiet aplikacji</value>
@@ -331,7 +331,7 @@
     <value>Narzędzia buildu</value>
   </data>
   <data name="Model_Source_Documentation" xml:space="preserve">
-    <value>dokumentacja</value>
+    <value>Dokumentacja</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
     <value>Publiczny wyciek</value>
@@ -352,7 +352,7 @@
     <value>Aktualizacja (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Numer buildu</value>
+    <value>Build</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
     <value>Przeszukaj Buildfeed...</value>
@@ -373,7 +373,7 @@
     <value>Szukaj</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>pisz aby wyszukać...</value>
+    <value>Pisz aby wyszukać...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
     <value>Wersja</value>

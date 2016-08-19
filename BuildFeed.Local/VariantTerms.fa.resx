@@ -120,12 +120,9 @@
   <data name="About_A1" xml:space="preserve">
     <value>بیلدفید توسط یک گروه علاقمند به مایکروسافت ایجاد و حمایت شده است. مایکروسافت به هیچ عنوان دخالتی در این سایت ندارد. همانا ما هیچ گونه شکایت رسمی در مورد این سایت از سوی مایکروسافت نداشته ایم، با اینکه ما مطمئن هستیم آنها از این سایت آگاه هستند. گفته شد که ، مایکروسافت طبیعیه که بخواهد اطلاعات خصوصی را خصوصی نگه دارد، و بنابراین ما منابع بسته شده از سوی آن ها در گذشته داشته ایم، و من مطمئنم در آینده هم خواهیم داشت.</value>
   </data>
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>بهترین تلاش،خانم دونا،اما من به دام او نمی افتم.(تنها مرجع من دونا نیست).این چیزی است که میتوانم بگویم.بیلدفید بصورت خاصی فراهم شده است که همه ی بیلدهای وارد شده روی سایت درست و قانونی هستند.ما یک تعداد از منابع مختلفی داریم تا باعث تایید و اطمینان بیشتر شود و به ما برخی نسخه ها و اطلاعات اضافی بدهند زمانی که مایکروسافت مجبور بوده است که آن را بر روی یکی از منابع ما ببندد.</value>
   </data>
--->
   <data name="About_A3" xml:space="preserve">
     <value>راه های زیادی وجود دارد. شما در هر صفحه بیلد ازقسمت نظرات سیستم درمورد بیلدها می توانید بحث کنید.همچنین شما می توانید در توسعه سایت از طریق گزارش مشکلات یا ایجاد نظر و درخواست ها روی GitHub به ما کمک کنید. در پایان،شما از طریق پرتال ترجمه می توانید به ترجمه بیلدفید به زبان مادریتان کمک کنید</value>
   </data>
@@ -160,10 +157,10 @@
     <value>چیزی خراب شده است. شاید به خاطر ای است که شما کار عجیبی انجام داده اید. احتمالا به خاطر کار عجیبیه که انجام دادم. اگر این ارور ادامه پیدا کرد، یک باگ را توسط {0} گزارش دهید.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
-    <value>ورود</value>
+    <value>وارد شدن</value>
   </data>
   <data name="Common_LogOut" xml:space="preserve">
-    <value>خروج</value>
+    <value>خارج شدن</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
     <value>زبان</value>
@@ -178,7 +175,7 @@
     <value>نقشه  سایت</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>تاریک</value>
+    <value>تیره</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>روشن</value>
@@ -187,7 +184,7 @@
     <value>صفحه {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>تعویض ناوبری</value>
+    <value>تغییر جهت</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>توییتر</value>
@@ -205,7 +202,7 @@
     <value>نظرها</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>قناری کنونی</value>
+    <value>در حال آزمایش</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
     <value>اینسایدر فعلی</value>
@@ -229,7 +226,7 @@
     <value>کار های ویرایشگر</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>لیست کامل بیلد ویندوز را ببینید... لورم</value>
+    <value>لیست کامل بیلدهای ویندوز را ببینید...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
     <value>{0}: دنباله رو بیلدهای ویندوز</value>
@@ -238,7 +235,7 @@
     <value>{0} لیست بیلد</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>آخرین بیلد</value>
+    <value>آخرین بیلدها</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
     <value>فهرست بندی</value>
@@ -247,13 +244,13 @@
     <value>بیلد های بیشتری از {0} بیابید</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>بیلد های سورس شده بیشتری از {0} ببینید</value>
+    <value>بیلد های تاییدی بیشتری از {0} ببینید</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
     <value>بیلدهای فراهم شده بیشتری را در {0} پیدا کنید</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>تب استرینگی نیست</value>
+    <value>در صف آزمایش نیست</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
     <value>بیلد های {0}</value>
@@ -265,7 +262,7 @@
     <value>عمومی</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>الصاق سریع</value>
+    <value>برچسب فوری</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
     <value>به فهرست بندی بیلد باز گردید</value>
@@ -274,13 +271,13 @@
     <value>به بررسی اجمالی بیلد برگردید</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
-    <value>به اشتراک گذاری</value>
+    <value>به اشتراک گذاشتن</value>
   </data>
   <data name="Front_Today" xml:space="preserve">
     <value>امروز</value>
   </data>
   <data name="Meta_BuildDate" xml:space="preserve">
-    <value>درباره بیلد ویندوز {0} توسط {1} اطلاعات کسب کنید و کامپایل شده در {2}</value>
+    <value>درباره بیلد ویندوز {0}، از {1} و فراهم شده در {2} اطلاع یابید.</value>
   </data>
   <data name="Meta_BuildNoDate" xml:space="preserve">
     <value>درباره بیلد {0}، از {1} اطلاع یابید.
@@ -326,7 +323,7 @@
     <value>جزئیات منبع</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
-    <value>مدل منبع</value>
+    <value>نوع منبع</value>
   </data>
   <data name="Model_Source_AppPackage" xml:space="preserve">
     <value>بسته نرم افزاری</value>
@@ -350,7 +347,7 @@
     <value>ریلیز عمومی</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>آپدیت</value>
+    <value>بروز رسانی (انتشار توزیع عمومی)</value>
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>بروز رسانی (انتشار پخش محدود)</value>
@@ -377,7 +374,7 @@
     <value>جستجو</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>برای جستجو، تایپ کنید</value>
+    <value>برای جستجو، تایپ کنید...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
     <value>نسخه</value>
@@ -437,7 +434,7 @@
     <value>اخیرا فاش شده</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>رجیستر</value>
+    <value>ثبت نام</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
     <value>مرا به خاطر بسپار</value>
