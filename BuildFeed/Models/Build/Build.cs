@@ -114,7 +114,7 @@ namespace BuildFeed.Models
             }
          }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentCanary = (await query.ToListAsync())[0];
+         fp.CurrentCanary = await query.FirstOrDefaultAsync();
 
          query = _buildCollection.Find(new BsonDocument
          {
@@ -138,7 +138,7 @@ namespace BuildFeed.Models
             }
          }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentInsider = (await query.ToListAsync())[0];
+         fp.CurrentInsider = await query.FirstOrDefaultAsync();
 
          query = _buildCollection.Find(new BsonDocument
          {
@@ -162,7 +162,7 @@ namespace BuildFeed.Models
             }
          }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentRelease = (await query.ToListAsync())[0];
+         fp.CurrentRelease = await query.FirstOrDefaultAsync();
 
          return fp;
       }

@@ -11,39 +11,48 @@
 
 <h3>@VariantTerms.Front_LatestBuilds</h3>
 <div class="latest-flex">
-   <a href="@Url.Action("ViewBuild", new
+   @if (Model.CurrentCanary != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
             {
                Model.CurrentCanary.Id
             })" class="latest-flex-item latest-flex-red">
-      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
-      <div class="latest-flex-detail">
-         <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
-         <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentCanary.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
-      </div>
-   </a>
-   <a href="@Url.Action("ViewBuild", new
-            {
-               Model.CurrentInsider.Id
-            })" class="latest-flex-item latest-flex-yellow">
-      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
-      <div class="latest-flex-detail">
-         <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
-         <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentInsider.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
-      </div>
-   </a>
-   <a href="@Url.Action("ViewBuild", new
-            {
-               Model.CurrentRelease.Id
-            })" class="latest-flex-item latest-flex-green">
-      <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
-      <div class="latest-flex-detail">
-         <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
-         <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
-         <p class="latest-flex-time">@Model.CurrentRelease.BuildTime.Value.ToString("HH:mm, dddd dd MMMM yyyy")</p>
-      </div>
-   </a>
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentCanary.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
+   @if (Model.CurrentInsider != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentInsider.Id
+               })" class="latest-flex-item latest-flex-yellow">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentInsider.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
+   @if (Model.CurrentRelease != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentRelease.Id
+               })" class="latest-flex-item latest-flex-green">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentRelease.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
 </div>
 <a href="@Url.Action("IndexPage", new
          {

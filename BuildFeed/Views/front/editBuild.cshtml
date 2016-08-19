@@ -123,7 +123,7 @@ else
             {
                @class = "form-control"
             })
-            <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToString("dd/MM/yyyy")');return false;" class="btn btn-success btn-block btn-reset">@VariantTerms.Front_Today</button>
+            <button onclick="$('#@Html.IdFor(model => model.LeakDate)').val('@DateTime.Now.ToShortDateString()');return false;" class="btn btn-success btn-block btn-reset">@VariantTerms.Front_Today</button>
             @Html.ValidationMessageFor(model => model.LeakDate)
          </div>
       </div>
