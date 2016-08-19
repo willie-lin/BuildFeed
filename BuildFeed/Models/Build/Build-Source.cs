@@ -8,9 +8,9 @@ namespace BuildFeed.Models
 {
    public partial class Build
    {
-      public Task<TypeOfSource[]> SelectAllSources(int limit = -1, int skip = 0) { return Task.Run(() => Enum.GetValues(typeof(TypeOfSource)) as TypeOfSource[]); }
+      public Task<TypeOfSource[]> SelectAllSources(int limit = -1, int skip = 0) => Task.Run(() => Enum.GetValues(typeof(TypeOfSource)) as TypeOfSource[]);
 
-      public Task<long> SelectAllSourcesCount() { return Task.Run(() => Enum.GetValues(typeof(TypeOfSource)).LongLength); }
+      public Task<long> SelectAllSourcesCount() => Task.Run(() => Enum.GetValues(typeof(TypeOfSource)).LongLength);
 
       public async Task<List<BuildModel>> SelectSource(TypeOfSource source, int limit = -1, int skip = 0)
       {
@@ -24,6 +24,6 @@ namespace BuildFeed.Models
          return await query.ToListAsync();
       }
 
-      public async Task<long> SelectSourceCount(TypeOfSource source) { return await _buildCollection.CountAsync(new BsonDocument(nameof(BuildModel.SourceType), source)); }
+      public async Task<long> SelectSourceCount(TypeOfSource source) => await _buildCollection.CountAsync(new BsonDocument(nameof(BuildModel.SourceType), source));
    }
 }

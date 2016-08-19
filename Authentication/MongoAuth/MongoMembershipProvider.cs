@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Driver;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -9,12 +6,15 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Security;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace MongoAuth
 {
    public class MongoMembershipProvider : MembershipProvider
    {
-      private const string _memberCollectionName = "members";
+      private const string MEMBER_COLLECTION_NAME = "members";
 
       private bool _enablePasswordReset = true;
       private int _maxInvalidPasswordAttempts = 5;
@@ -57,18 +57,18 @@ namespace MongoAuth
 
          base.Initialize(name, config);
 
-         _enablePasswordReset = tryReadBool(config["enablePasswordReset"], _enablePasswordReset);
-         _maxInvalidPasswordAttempts = tryReadInt(config["maxInvalidPasswordAttempts"], _maxInvalidPasswordAttempts);
-         _minRequiredNonAlphanumericCharacters = tryReadInt(config["minRequiredNonAlphanumericCharacters"], _minRequiredNonAlphanumericCharacters);
-         _minRequriedPasswordLength = tryReadInt(config["minRequriedPasswordLength"], _minRequriedPasswordLength);
-         _passwordAttemptWindow = tryReadInt(config["passwordAttemptWindow"], _passwordAttemptWindow);
-         _requiresUniqueEmail = tryReadBool(config["requiresUniqueEmail"], _requiresUniqueEmail);
+         _enablePasswordReset = TryReadBool(config["enablePasswordReset"], _enablePasswordReset);
+         _maxInvalidPasswordAttempts = TryReadInt(config["maxInvalidPasswordAttempts"], _maxInvalidPasswordAttempts);
+         _minRequiredNonAlphanumericCharacters = TryReadInt(config["minRequiredNonAlphanumericCharacters"], _minRequiredNonAlphanumericCharacters);
+         _minRequriedPasswordLength = TryReadInt(config["minRequriedPasswordLength"], _minRequriedPasswordLength);
+         _passwordAttemptWindow = TryReadInt(config["passwordAttemptWindow"], _passwordAttemptWindow);
+         _requiresUniqueEmail = TryReadBool(config["requiresUniqueEmail"], _requiresUniqueEmail);
 
-         _dbClient = new MongoClient(new MongoClientSettings()
+         _dbClient = new MongoClient(new MongoClientSettings
          {
             Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
          });
-         _memberCollection = _dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(_memberCollectionName);
+         _memberCollection = _dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
       }
 
       public override bool ChangePassword(string username, string oldPassword, string newPassword)
@@ -77,11 +77,9 @@ namespace MongoAuth
 
          if (isAuthenticated)
          {
-            var task = _memberCollection
-                .Find(m => m.UserName.ToLower() == username.ToLower())
-                .SingleOrDefaultAsync();
+            Task<MongoMember> task = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
             task.Wait();
-            var mm = task.Result;
+            MongoMember mm = task.Result;
 
             if (mm == null)
             {
@@ -89,13 +87,12 @@ namespace MongoAuth
             }
 
             byte[] salt = new byte[24];
-            byte[] hash = calculateHash(newPassword, ref salt);
+            byte[] hash = CalculateHash(newPassword, ref salt);
 
             mm.PassSalt = salt;
             mm.PassHash = hash;
 
-            var replaceTask = _memberCollection
-                .ReplaceOneAsync(m => m.Id == mm.Id, mm);
+            Task<ReplaceOneResult> replaceTask = _memberCollection.ReplaceOneAsync(m => m.Id == mm.Id, mm);
             replaceTask.Wait();
 
             return replaceTask.IsCompleted;
@@ -104,10 +101,7 @@ namespace MongoAuth
          return false;
       }
 
-      public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
-      {
-         throw new NotImplementedException();
-      }
+      public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer) { throw new NotImplementedException(); }
 
       public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
       {
@@ -119,12 +113,8 @@ namespace MongoAuth
 
          MembershipUser mu = null;
 
-         var dupeUsers = _memberCollection
-             .Find(m => m.UserName.ToLower() == username.ToLower())
-             .CountAsync();
-         var dupeEmails = _memberCollection
-             .Find(m => m.EmailAddress.ToLower() == email.ToLower())
-             .CountAsync();
+         Task<long> dupeUsers = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower()).CountAsync();
+         Task<long> dupeEmails = _memberCollection.Find(m => m.EmailAddress.ToLower() == email.ToLower()).CountAsync();
          dupeUsers.Wait();
          dupeEmails.Wait();
 
@@ -139,34 +129,30 @@ namespace MongoAuth
          else
          {
             byte[] salt = new byte[24];
-            byte[] hash = calculateHash(password, ref salt);
+            byte[] hash = CalculateHash(password, ref salt);
 
-            MongoMember mm = new MongoMember()
+            MongoMember mm = new MongoMember
             {
                Id = Guid.NewGuid(),
                UserName = username,
                PassHash = hash,
                PassSalt = salt,
                EmailAddress = email,
-
                IsApproved = false,
                IsLockedOut = false,
-
                CreationDate = DateTime.Now,
                LastLoginDate = DateTime.MinValue,
                LastActivityDate = DateTime.MinValue,
                LastLockoutDate = DateTime.MinValue
             };
 
-            var insertTask = _memberCollection
-                .InsertOneAsync(mm);
+            Task insertTask = _memberCollection.InsertOneAsync(mm);
             insertTask.Wait();
 
             if (insertTask.Status == TaskStatus.RanToCompletion)
             {
-
                status = MembershipCreateStatus.Success;
-               mu = new MembershipUser(this.Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
+               mu = new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
             }
             else
             {
@@ -179,110 +165,85 @@ namespace MongoAuth
 
       public override bool DeleteUser(string username, bool deleteAllRelatedData)
       {
-         var task = _memberCollection
-             .DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
+         Task<DeleteResult> task = _memberCollection.DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
          task.Wait();
 
          return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
       }
 
-      public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
-      {
-         throw new NotImplementedException();
-      }
+      public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords) { throw new NotImplementedException(); }
 
-      public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
-      {
-         throw new NotImplementedException();
-      }
+      public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords) { throw new NotImplementedException(); }
 
       public override MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
       {
          MembershipUserCollection muc = new MembershipUserCollection();
 
-         var users = _memberCollection
-             .Find(new BsonDocument());
+         IFindFluent<MongoMember, MongoMember> users = _memberCollection.Find(new BsonDocument());
 
-         var totalRecordsTask = users
-             .CountAsync();
+         Task<long> totalRecordsTask = users.CountAsync();
          totalRecordsTask.Wait();
          totalRecords = Convert.ToInt32(totalRecordsTask.Result);
 
-         users = users
-             .Skip(pageIndex * pageSize)
-             .Limit(pageSize);
-         var pageItemsTask = users.ToListAsync();
+         users = users.Skip(pageIndex * pageSize).Limit(pageSize);
+         Task<List<MongoMember>> pageItemsTask = users.ToListAsync();
          pageItemsTask.Wait();
 
-         foreach (var mm in pageItemsTask.Result)
+         foreach (MongoMember mm in pageItemsTask.Result)
          {
-            muc.Add(new MembershipUser(this.Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate));
+            muc.Add(new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate));
          }
 
          return muc;
       }
 
-      public override int GetNumberOfUsersOnline()
-      {
-         throw new NotImplementedException();
-      }
+      public override int GetNumberOfUsersOnline() { throw new NotImplementedException(); }
 
-      public override string GetPassword(string username, string answer)
-      {
-         throw new NotImplementedException();
-      }
+      public override string GetPassword(string username, string answer) { throw new NotImplementedException(); }
 
       public override MembershipUser GetUser(string username, bool userIsOnline)
       {
-         var task = _memberCollection
-             .Find(f => f.UserName.ToLower() == username.ToLower())
-             .FirstOrDefaultAsync();
+         Task<MongoMember> task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
          task.Wait();
 
-         var mm = task.Result;
+         MongoMember mm = task.Result;
 
-         return mm == null ? null : new MembershipUser(this.Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
+         return mm == null
+            ? null
+            : new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
       }
 
       public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
       {
-         var task = _memberCollection
-             .Find(f => f.Id == (Guid)providerUserKey)
-             .FirstOrDefaultAsync();
+         Task<MongoMember> task = _memberCollection.Find(f => f.Id == (Guid)providerUserKey).FirstOrDefaultAsync();
          task.Wait();
 
-         var mm = task.Result;
+         MongoMember mm = task.Result;
 
-         return mm == null ? null : new MembershipUser(this.Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
+         return mm == null
+            ? null
+            : new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
       }
 
       public override string GetUserNameByEmail(string email)
       {
-         var task = _memberCollection
-             .Find(f => f.EmailAddress.ToLower() == email.ToLower())
-             .FirstOrDefaultAsync();
+         Task<MongoMember> task = _memberCollection.Find(f => f.EmailAddress.ToLower() == email.ToLower()).FirstOrDefaultAsync();
          task.Wait();
 
          return task.Result.UserName;
       }
 
-      public override string ResetPassword(string username, string answer)
-      {
-         throw new NotImplementedException();
-      }
+      public override string ResetPassword(string username, string answer) { throw new NotImplementedException(); }
 
-      public void ChangeApproval(Guid Id, bool newStatus)
+      public void ChangeApproval(Guid id, bool newStatus)
       {
-         var task = _memberCollection
-             .UpdateOneAsync(
-                 Builders<MongoMember>.Filter.Eq(u => u.Id, Id),
-                 Builders<MongoMember>.Update.Set(u => u.IsApproved, newStatus));
+         Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id), Builders<MongoMember>.Update.Set(u => u.IsApproved, newStatus));
          task.Wait();
       }
 
-      public void ChangeLockStatus(Guid Id, bool newStatus)
+      public void ChangeLockStatus(Guid id, bool newStatus)
       {
-         var updateDefinition = new List<UpdateDefinition<MongoMember>>();
+         List<UpdateDefinition<MongoMember>> updateDefinition = new List<UpdateDefinition<MongoMember>>();
          updateDefinition.Add(Builders<MongoMember>.Update.Set(u => u.IsLockedOut, newStatus));
 
          if (newStatus)
@@ -295,50 +256,40 @@ namespace MongoAuth
             updateDefinition.Add(Builders<MongoMember>.Update.Set(u => u.LastLockoutDate, DateTime.MinValue));
          }
 
-         var task = _memberCollection
-             .UpdateOneAsync(
-                 Builders<MongoMember>.Filter.Eq(u => u.Id, Id),
-                 Builders<MongoMember>.Update.Combine(updateDefinition));
+         Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id), Builders<MongoMember>.Update.Combine(updateDefinition));
          task.Wait();
       }
 
       public override bool UnlockUser(string userName)
       {
-         var task = _memberCollection
-             .UpdateOneAsync(
-                 Builders<MongoMember>.Filter.Eq(m => m.UserName.ToLower(), userName.ToLower()),
-                 Builders<MongoMember>.Update.Set(m => m.IsLockedOut, false));
+         Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(m => m.UserName.ToLower(), userName.ToLower()), Builders<MongoMember>.Update.Set(m => m.IsLockedOut, false));
          task.Wait();
 
          return task.Result.IsAcknowledged && task.Result.ModifiedCount == 1;
       }
 
-      public override void UpdateUser(MembershipUser user)
-      {
-         throw new NotImplementedException();
-      }
+      public override void UpdateUser(MembershipUser user) { throw new NotImplementedException(); }
 
       public override bool ValidateUser(string username, string password)
       {
-         var task = _memberCollection
-             .Find(f => f.UserName.ToLower() == username.ToLower())
-             .FirstOrDefaultAsync();
+         Task<MongoMember> task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
          task.Wait();
-         var mm = task.Result;
+         MongoMember mm = task.Result;
 
-         if (mm == null || !(mm.IsApproved && !mm.IsLockedOut))
+         if (mm == null
+            || !(mm.IsApproved && !mm.IsLockedOut))
          {
             return false;
          }
 
          byte[] salt = mm.PassSalt;
-         byte[] hash = calculateHash(password, ref salt);
+         byte[] hash = CalculateHash(password, ref salt);
 
          bool isFail = false;
 
          for (int i = 0; i > hash.Length; i++)
          {
-            isFail |= (hash[i] != mm.PassHash[i]);
+            isFail |= hash[i] != mm.PassHash[i];
          }
 
 
@@ -375,16 +326,13 @@ namespace MongoAuth
             mm.LockoutWindowAttempts = 0;
          }
 
-         var updTask = _memberCollection
-             .ReplaceOneAsync(
-                 Builders<MongoMember>.Filter.Eq(u => u.Id, mm.Id),
-                 mm);
+         Task<ReplaceOneResult> updTask = _memberCollection.ReplaceOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, mm.Id), mm);
          updTask.Wait();
 
          return !isFail;
       }
 
-      private static byte[] calculateHash(string password, ref byte[] salt)
+      private static byte[] CalculateHash(string password, ref byte[] salt)
       {
          if (!salt.Any(v => v != 0))
          {
@@ -405,18 +353,22 @@ namespace MongoAuth
          return hash;
       }
 
-      private static bool tryReadBool(string config, bool defaultValue)
+      private static bool TryReadBool(string config, bool defaultValue)
       {
-         bool temp = false;
+         bool temp;
          bool success = bool.TryParse(config, out temp);
-         return success ? temp : defaultValue;
+         return success
+            ? temp
+            : defaultValue;
       }
 
-      private static int tryReadInt(string config, int defaultValue)
+      private static int TryReadInt(string config, int defaultValue)
       {
-         int temp = 0;
+         int temp;
          bool success = int.TryParse(config, out temp);
-         return success ? temp : defaultValue;
+         return success
+            ? temp
+            : defaultValue;
       }
    }
 
@@ -441,5 +393,4 @@ namespace MongoAuth
       public DateTime LockoutWindowStart { get; set; }
       public int LockoutWindowAttempts { get; set; }
    }
-
 }

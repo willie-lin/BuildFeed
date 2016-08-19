@@ -74,11 +74,12 @@ namespace BuildFeed.Controllers
          List<BuildModel> builds = await _bModel.SelectGroup(bg);
 
          return builds.Count() == 1
-                   ? RedirectToAction(nameof(ViewBuild), new
-                   {
-                      id = builds.Single().Id
-                   }) as ActionResult
-                   : View(new Tuple<BuildGroup, List<BuildModel>>(bg, builds));
+            ? RedirectToAction(nameof(ViewBuild),
+               new
+               {
+                  id = builds.Single().Id
+               }) as ActionResult
+            : View(new Tuple<BuildGroup, List<BuildModel>>(bg, builds));
       }
 
       [Route("build/{id:guid}/", Name = "Build")]
@@ -103,10 +104,11 @@ namespace BuildFeed.Controllers
          {
             return new HttpNotFoundResult();
          }
-         return RedirectToAction(nameof(ViewBuild), new
-         {
-            id = b.Id
-         });
+         return RedirectToAction(nameof(ViewBuild),
+            new
+            {
+               id = b.Id
+            });
       }
 
       [Route("twitter/{id:guid}/", Name = "Twitter")]
@@ -126,8 +128,8 @@ namespace BuildFeed.Controllers
          bool backExists = System.IO.File.Exists(path);
 
          using (Bitmap bm = backExists
-                               ? new Bitmap(path)
-                               : new Bitmap(1120, 600))
+            ? new Bitmap(path)
+            : new Bitmap(1120, 600))
          {
             using (Graphics gr = Graphics.FromImage(bm))
             {
@@ -148,8 +150,13 @@ namespace BuildFeed.Controllers
                gp.AddString($"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
                gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96), StringFormat.GenericTypographic);
                gp.AddString(b.BuildTime.HasValue
-                               ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}"
-                               : $"{b.Lab}", new FontFamily("Segoe UI"), 0, 44, new Point(40, 440), StringFormat.GenericTypographic);
+                  ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}"
+                  : $"{b.Lab}",
+                  new FontFamily("Segoe UI"),
+                  0,
+                  44,
+                  new Point(40, 440),
+                  StringFormat.GenericTypographic);
                gr.FillPath(Brushes.White, gp);
 
                Response.ContentType = "image/png";
@@ -168,17 +175,21 @@ namespace BuildFeed.Controllers
          {
             return new HttpNotFoundResult();
          }
-         return RedirectToAction(nameof(TwitterCard), new
-         {
-            id = b.Id
-         });
+         return RedirectToAction(nameof(TwitterCard),
+            new
+            {
+               id = b.Id
+            });
       }
 
       [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
 #if !DEBUG
    //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> ViewLab(string lab) { return await ViewLabPage(lab, 1); }
+      public async Task<ActionResult> ViewLab(string lab)
+      {
+         return await ViewLabPage(lab, 1);
+      }
 
       [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
@@ -210,7 +221,10 @@ namespace BuildFeed.Controllers
 #if !DEBUG
    //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> ViewSource(TypeOfSource source) { return await ViewSourcePage(source, 1); }
+      public async Task<ActionResult> ViewSource(TypeOfSource source)
+      {
+         return await ViewSourcePage(source, 1);
+      }
 
       [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
@@ -242,7 +256,10 @@ namespace BuildFeed.Controllers
 #if !DEBUG
    //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> ViewYear(int year) { return await ViewYearPage(year, 1); }
+      public async Task<ActionResult> ViewYear(int year)
+      {
+         return await ViewYearPage(year, 1);
+      }
 
       [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
@@ -274,7 +291,10 @@ namespace BuildFeed.Controllers
 #if !DEBUG
    //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
 #endif
-      public async Task<ActionResult> ViewVersion(uint major, uint minor) { return await ViewVersionPage(major, minor, 1); }
+      public async Task<ActionResult> ViewVersion(uint major, uint minor)
+      {
+         return await ViewVersionPage(major, minor, 1);
+      }
 
       [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
@@ -336,10 +356,11 @@ namespace BuildFeed.Controllers
             {
                return View("EditBuild", build);
             }
-            return RedirectToAction(nameof(ViewBuild), new
-            {
-               id = build.Id
-            });
+            return RedirectToAction(nameof(ViewBuild),
+               new
+               {
+                  id = build.Id
+               });
          }
          return View("EditBuild", build);
       }
@@ -373,10 +394,11 @@ namespace BuildFeed.Controllers
                return View(build);
             }
 
-            return RedirectToAction(nameof(ViewBuild), new
-            {
-               id = build.Id
-            });
+            return RedirectToAction(nameof(ViewBuild),
+               new
+               {
+                  id = build.Id
+               });
          }
          return View(build);
       }

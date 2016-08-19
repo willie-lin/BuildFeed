@@ -43,7 +43,7 @@ namespace BuildFeed.Models
       public async Task<List<string>> SearchLabs(string search)
       {
          List<Tuple<string>> result = await _buildCollection.Aggregate().Match(b => b.Lab != null).Match(b => b.Lab != "").Match(b => b.Lab.ToLower().Contains(search.ToLower())).Group(b => b.Lab.ToLower(),
-                                               // incoming bullshit hack
+            // incoming bullshit hack
             bg => new Tuple<string>(bg.Key)).ToListAsync();
 
          // work ourselves out of aforementioned bullshit hack
@@ -71,6 +71,6 @@ namespace BuildFeed.Models
          return await query.ToListAsync();
       }
 
-      public async Task<long> SelectLabCount(string lab) { return await _buildCollection.CountAsync(new BsonDocument(nameof(BuildModel.LabUrl), lab)); }
+      public async Task<long> SelectLabCount(string lab) => await _buildCollection.CountAsync(new BsonDocument(nameof(BuildModel.LabUrl), lab));
    }
 }

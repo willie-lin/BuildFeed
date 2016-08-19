@@ -8,7 +8,7 @@
       public uint? Revision { get; set; }
 
       public override string ToString() => Revision.HasValue
-                                              ? $"{Major}.{Minor}.{Build}.{Revision.Value}"
-                                              : $"{Major}.{Minor}.{Build}";
+         ? $"{Major}.{Minor}.{Build}.{Revision.Value}"
+         : $"{Major}.{Minor}.{Build}";
    }
 }

@@ -82,11 +82,12 @@ namespace BuildFeed.Areas.admin.Controllers
 
       public async Task<ActionResult> edit(MetaType type, string value)
       {
-         return View("create", await _mModel.SelectById(new MetaItemKey
-         {
-            Type = type,
-            Value = value
-         }));
+         return View("create",
+            await _mModel.SelectById(new MetaItemKey
+            {
+               Type = type,
+               Value = value
+            }));
       }
 
       [HttpPost]

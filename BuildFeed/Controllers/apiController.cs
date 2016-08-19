@@ -75,8 +75,8 @@ namespace BuildFeed.Controllers
                Revision = nb.Revision,
                Lab = nb.Lab,
                BuildTime = nb.BuildTime.HasValue
-                              ? DateTime.SpecifyKind(nb.BuildTime.Value, DateTimeKind.Utc)
-                              : null as DateTime?,
+                  ? DateTime.SpecifyKind(nb.BuildTime.Value, DateTimeKind.Utc)
+                  : null as DateTime?,
                Added = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
                Modified = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
                SourceType = TypeOfSource.PrivateLeak
@@ -104,12 +104,13 @@ namespace BuildFeed.Controllers
                                                    orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
                                                    select new SearchResult
                                                    {
-                                                      Url = Url.Route("Source Root", new
-                                                      {
-                                                         controller = "Front",
-                                                         action = "ViewSource",
-                                                         source = s.Value
-                                                      }),
+                                                      Url = Url.Route("Source Root",
+                                                         new
+                                                         {
+                                                            controller = "Front",
+                                                            action = "ViewSource",
+                                                            source = s.Value
+                                                         }),
                                                       Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
                                                       Title = s.Text,
                                                       Group = VariantTerms.Search_Source
@@ -123,13 +124,14 @@ namespace BuildFeed.Controllers
                                                     orderby v.Major descending, v.Minor descending
                                                     select new SearchResult
                                                     {
-                                                       Url = Url.Route("Version Root", new
-                                                       {
-                                                          controller = "Front",
-                                                          action = "ViewVersion",
-                                                          major = v.Major,
-                                                          minor = v.Minor
-                                                       }),
+                                                       Url = Url.Route("Version Root",
+                                                          new
+                                                          {
+                                                             controller = "Front",
+                                                             action = "ViewVersion",
+                                                             major = v.Major,
+                                                             minor = v.Minor
+                                                          }),
                                                        Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
                                                        Title = "",
                                                        Group = VariantTerms.Search_Version
@@ -143,12 +145,13 @@ namespace BuildFeed.Controllers
                                                  orderby y descending
                                                  select new SearchResult
                                                  {
-                                                    Url = Url.Route("Year Root", new
-                                                    {
-                                                       controller = "Front",
-                                                       action = "ViewYear",
-                                                       year = y
-                                                    }),
+                                                    Url = Url.Route("Year Root",
+                                                       new
+                                                       {
+                                                          controller = "Front",
+                                                          action = "ViewYear",
+                                                          year = y
+                                                       }),
                                                     Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
                                                     Title = "",
                                                     Group = VariantTerms.Search_Year
@@ -160,12 +163,13 @@ namespace BuildFeed.Controllers
          IEnumerable<SearchResult> labResults = from l in await _bModel.SearchLabs(id)
                                                 select new SearchResult
                                                 {
-                                                   Url = Url.Route("Lab Root", new
-                                                   {
-                                                      controller = "Front",
-                                                      action = "ViewLab",
-                                                      lab = l.Replace('/', '-')
-                                                   }),
+                                                   Url = Url.Route("Lab Root",
+                                                      new
+                                                      {
+                                                         controller = "Front",
+                                                         action = "ViewLab",
+                                                         lab = l.Replace('/', '-')
+                                                      }),
                                                    Label = l.Replace(id, $"<strong>{id}</strong>"),
                                                    Title = l,
                                                    Group = VariantTerms.Search_Lab
@@ -179,12 +183,13 @@ namespace BuildFeed.Controllers
                                                   orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending, b.BuildTime descending
                                                   select new SearchResult
                                                   {
-                                                     Url = Url.Route("Build", new
-                                                     {
-                                                        controller = "Front",
-                                                        action = "ViewBuild",
-                                                        id = b.Id
-                                                     }),
+                                                     Url = Url.Route("Build",
+                                                        new
+                                                        {
+                                                           controller = "Front",
+                                                           action = "ViewBuild",
+                                                           id = b.Id
+                                                        }),
                                                      Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
                                                      Title = b.FullBuildString,
                                                      Group = VariantTerms.Search_Build

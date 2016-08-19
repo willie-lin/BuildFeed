@@ -6,10 +6,8 @@ namespace BuildFeed.Models.ViewModel
    public class RegistrationUser
    {
       [Required]
-      [MinLength(8)]
-      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_ConfirmPassword))]
-      [Compare("Password")]
-      public string ConfirmPassword { get; set; }
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_UserName))]
+      public string UserName { get; set; }
 
       [Required]
       [EmailAddress]
@@ -22,7 +20,9 @@ namespace BuildFeed.Models.ViewModel
       public string Password { get; set; }
 
       [Required]
-      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_UserName))]
-      public string UserName { get; set; }
+      [MinLength(8)]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Support_ConfirmPassword))]
+      [Compare(nameof(Password))]
+      public string ConfirmPassword { get; set; }
    }
 }

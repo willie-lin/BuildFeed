@@ -19,8 +19,8 @@ namespace BuildFeed
          }
 
          return success
-                   ? retValue as DateTime?
-                   : null;
+            ? retValue as DateTime?
+            : null;
       }
    }
 }

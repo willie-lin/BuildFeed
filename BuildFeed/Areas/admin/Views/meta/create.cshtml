@@ -1,9 +1,9 @@
 ﻿@model BuildFeed.Models.MetaItemModel
 @{
-   ViewBag.Title = string.Format("Add metadata for {0} | BuildFeed", Model.Id.Value);
+   ViewBag.Title = $"Add metadata for {Model.Id.Value} | BuildFeed";
 }
 
-<h2>@string.Format("Add metadata for {0}", Model.Id.Value)</h2>
+<h2>@($"Add metadata for {Model.Id.Value}") </h2>
 
 
 @using (Html.BeginForm())
@@ -15,9 +15,16 @@
 
    <div class="form-horizontal">
       <div class="form-group">
-         @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label" })
+         @Html.LabelFor(model => model.MetaDescription, new
+         {
+            @class = "control-label"
+         })
          <div class="wide-group">
-                  @Html.TextAreaFor(model => model.MetaDescription, new { @class = "form-control", rows = "2" })
+            @Html.TextAreaFor(model => model.MetaDescription, new
+            {
+               @class = "form-control",
+               rows = "2"
+            })
             <div class="help-block">
                <span id="meta-count">0</span> characters
                @Html.ValidationMessageFor(model => model.MetaDescription)
@@ -26,9 +33,15 @@
       </div>
 
       <div class="form-group">
-         @Html.LabelFor(model => model.PageContent, new { @class = "control-label" })
+         @Html.LabelFor(model => model.PageContent, new
+         {
+            @class = "control-label"
+         })
          <div class="wide-group">
-                  @Html.TextAreaFor(model => model.PageContent, new { @class = "form-control" })
+            @Html.TextAreaFor(model => model.PageContent, new
+            {
+               @class = "form-control"
+            })
             <div class="help-block">
                @Html.ValidationMessageFor(model => model.PageContent)
             </div>
@@ -53,36 +66,44 @@
    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
    <script type="text/javascript">
-      function updateMetaCount() {
+      function updateMetaCount()
+      {
          var count = document.getElementById("@Html.IdFor(model => model.MetaDescription)").value.length;
          $("#meta-count").text(count.toFixed(0));
-         if (count === 0) {
+         if (count === 0)
+         {
             $("#meta-count").attr("class", "");
          }
-         else if (count < 160) {
+         else if (count < 160)
+         {
             $("#meta-count").attr("class", "text-success");
          }
-         else {
+         else
+         {
             $("#meta-count").attr("class", "text-danger");
          }
       }
 
-      $(function () {
+      $(function() {
          var btnsGrps = $.trumbowyg.btnsGrps;
 
-         $("#@Html.IdFor(model => model.PageContent)").trumbowyg({
-            semantic: true,
-            autogrow: true,
-            btns: ['viewHTML',
-                   '|', 'strong', 'em',
-                   '|', 'link',
-                   '|', btnsGrps.justify,
-                   '|', btnsGrps.lists]
-         });
+         $("#@Html.IdFor(model => model.PageContent)")
+            .trumbowyg({
+               semantic: true,
+               autogrow: true,
+               btns: [
+                  'viewHTML',
+                  '|', 'strong', 'em',
+                  '|', 'link',
+                  '|', btnsGrps.justify,
+                  '|', btnsGrps.lists
+               ]
+            });
 
-         $("#@Html.IdFor(model => model.MetaDescription)").keyup(function () {
-            updateMetaCount();
-         });
+         $("#@Html.IdFor(model => model.MetaDescription)")
+            .keyup(function() {
+               updateMetaCount();
+            });
 
          updateMetaCount();
       });

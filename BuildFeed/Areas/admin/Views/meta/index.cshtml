@@ -1,4 +1,5 @@
-﻿@model BuildFeed.Areas.admin.Models.ViewModel.MetaListing
+﻿@using BuildFeed.Models
+@model BuildFeed.Areas.admin.Models.ViewModel.MetaListing
 
 @{
    ViewBag.Title = "Metadata | BuildFeed";
@@ -12,48 +13,70 @@
 <h3>Current items</h3>
 <table class="table table-striped table-bordered table-admin">
    <thead>
-      <tr>
-         <th>Name</th>
-         <th style="width:50px"></th>
-      </tr>
+   <tr>
+      <th>Name</th>
+      <th style="width: 50px"></th>
+   </tr>
    </thead>
    <tbody>
-      @foreach (var group in Model.CurrentItems)
+   @foreach (IGrouping<MetaType, MetaItemModel> group in Model.CurrentItems)
+   {
+      <tr>
+         <td colspan="3">
+            <h4>@group.Key</h4>
+         </td>
+      </tr>
+      foreach (MetaItemModel item in group)
       {
          <tr>
-            <td colspan="3"><h4>@group.Key</h4></td>
+            <td>@item.Id.Value</td>
+            <td>
+               @Html.ActionLink("Edit", "edit", new
+               {
+                  type = item.Id.Type,
+                  value = item.Id.Value
+               }, new
+               {
+                  @class = "button",
+                  style = "width:50px"
+               })</td>
          </tr>
-         foreach (var item in group)
-         {
-            <tr>
-               <td>@item.Id.Value</td>
-               <td>@Html.ActionLink("Edit", "edit", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "button", style = "width:50px" })</td>
-            </tr>
-         }
       }
+   }
    </tbody>
 </table>
 <h3>Add new metadata</h3>
 <table class="table table-striped table-bordered table-admin">
    <thead>
-      <tr>
-         <th>Name</th>
-         <th style="width:50px"></th>
-      </tr>
+   <tr>
+      <th>Name</th>
+      <th style="width: 50px"></th>
+   </tr>
    </thead>
    <tbody>
-      @foreach (var group in Model.NewItems)
+   @foreach (IGrouping<MetaType, MetaItemModel> group in Model.NewItems)
+   {
+      <tr>
+         <td colspan="3">
+            <h4>@group.Key</h4>
+         </td>
+      </tr>
+      foreach (MetaItemModel item in group)
       {
          <tr>
-            <td colspan="3"><h4>@group.Key</h4></td>
+            <td>@item.Id.Value</td>
+            <td>
+               @Html.ActionLink("Create", "create", new
+               {
+                  type = item.Id.Type,
+                  value = item.Id.Value
+               }, new
+               {
+                  @class = "button",
+                  style = "width:50px"
+               })</td>
          </tr>
-         foreach (var item in group)
-         {
-            <tr>
-               <td>@item.Id.Value</td>
-               <td>@Html.ActionLink("Create", "create", new { type = item.Id.Type, value = item.Id.Value }, new { @class = "button", style = "width:50px" })</td>
-            </tr>
-         }
       }
+   }
    </tbody>
 </table>

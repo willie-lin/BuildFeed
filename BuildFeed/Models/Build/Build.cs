@@ -46,26 +46,34 @@ namespace BuildFeed.Models
          List<BsonDocument> indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
          if (indexes.All(i => i["name"] != "_idx_group"))
          {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion), Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion), Builders<BuildModel>.IndexKeys.Descending(b => b.Number), Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)), new CreateIndexOptions
-            {
-               Name = "_idx_group"
-            });
+            await
+               _buildCollection.Indexes.CreateOneAsync(
+                  Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
+                     Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
+                     Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
+                     Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)),
+                  new CreateIndexOptions
+                  {
+                     Name = "_idx_group"
+                  });
          }
 
          if (indexes.All(i => i["name"] != "_idx_legacy"))
          {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId), new CreateIndexOptions
-            {
-               Name = "_idx_legacy"
-            });
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId),
+               new CreateIndexOptions
+               {
+                  Name = "_idx_legacy"
+               });
          }
 
          if (indexes.All(i => i["name"] != "_idx_lab"))
          {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.Lab), new CreateIndexOptions
-            {
-               Name = "_idx_lab"
-            });
+            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.Lab),
+               new CreateIndexOptions
+               {
+                  Name = "_idx_lab"
+               });
          }
       }
 
@@ -98,44 +106,60 @@ namespace BuildFeed.Models
 
          IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), new BsonDocument
             {
-               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';')) }
-            } }
+               nameof(BuildModel.LabUrl), new BsonDocument
+               {
+                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';')) }
+               }
+            }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentCanary = (await query.ToListAsync())[0];
 
          query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), new BsonDocument
             {
-               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
-            } },
-            { nameof(BuildModel.SourceType), new BsonDocument
-            {
-               { "$in", new BsonArray()
+               nameof(BuildModel.LabUrl), new BsonDocument
                {
-                  TypeOfSource.PublicRelease, TypeOfSource.UpdateGDR
-               } }
-            } }
+                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
+               }
+            },
+            {
+               nameof(BuildModel.SourceType), new BsonDocument
+               {
+                  {
+                     "$in", new BsonArray
+                     {
+                        TypeOfSource.PublicRelease,
+                        TypeOfSource.UpdateGDR
+                     }
+                  }
+               }
+            }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentInsider = (await query.ToListAsync())[0];
 
          query = _buildCollection.Find(new BsonDocument
          {
-            { nameof(BuildModel.LabUrl), new BsonDocument
             {
-               { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
-            } },
-            { nameof(BuildModel.SourceType), new BsonDocument
-            {
-               { "$in", new BsonArray()
+               nameof(BuildModel.LabUrl), new BsonDocument
                {
-                  TypeOfSource.PublicRelease, TypeOfSource.UpdateGDR
-               } }
-            } }
+                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
+               }
+            },
+            {
+               nameof(BuildModel.SourceType), new BsonDocument
+               {
+                  {
+                     "$in", new BsonArray
+                     {
+                        TypeOfSource.PublicRelease,
+                        TypeOfSource.UpdateGDR
+                     }
+                  }
+               }
+            }
          }).Sort(sortByCompileDate).Limit(1);
 
          fp.CurrentRelease = (await query.ToListAsync())[0];
@@ -217,6 +241,9 @@ namespace BuildFeed.Models
       }
 
       [DataObjectMethod(DataObjectMethodType.Delete, true)]
-      public async Task DeleteById(Guid id) { await _buildCollection.DeleteOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, id)); }
+      public async Task DeleteById(Guid id)
+      {
+         await _buildCollection.DeleteOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, id));
+      }
    }
 }

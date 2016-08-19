@@ -15,60 +15,94 @@
 
 <table>
    <thead>
-      <tr>
-         <th>
-            Username
-         </th>
-         <th>
-            Email Address
-         </th>
-         <th>
-            Registration Time
-         </th>
-         <th>
-            Last Login Time
-         </th>
-         <th>
-            Last Lockout Time
-         </th>
-         <th style="width:108px;"></th>
-         <th style="width:108px;"></th>
-      </tr>
+   <tr>
+      <th>
+         Username
+      </th>
+      <th>
+         Email Address
+      </th>
+      <th>
+         Registration Time
+      </th>
+      <th>
+         Last Login Time
+      </th>
+      <th>
+         Last Lockout Time
+      </th>
+      <th style="width: 108px;"></th>
+      <th style="width: 108px;"></th>
+   </tr>
    </thead>
    <tbody>
-      @foreach (MembershipUser mu in Model)
-      {
-         <tr>
-            <td>
-               @mu.UserName
-            </td>
-            <td>
-               <a href="mailto:@mu.Email">@mu.Email</a>
-            </td>
-            <td>
-               @(mu.CreationDate == default(DateTime) ? "Never" : mu.CreationDate.Humanize())
-            </td>
-            <td>
-               @(mu.LastLoginDate == default(DateTime) ? "Never" : mu.LastLoginDate.Humanize())
-            </td>
-            <td>
-               @(mu.LastLockoutDate == default(DateTime) ? "Never" : mu.LastLockoutDate.Humanize())
-            </td>
-            <td class="text-right">
-               @(
-                    mu.IsApproved ?
-                    Html.ActionLink("Unapprove", "unapprove", new { id = mu.ProviderUserKey }, new { @class = "button delete-button", style = "width:70px;" }) :
-                    Html.ActionLink("Approve", "approve", new { id = mu.ProviderUserKey }, new { @class = "button add-button", style = "width:70px;" })
-               )
-            </td>
-            <td class="text-right">
-               @(
-                    !mu.IsLockedOut ?
-                    Html.ActionLink("Lock", "lock", new { id = mu.ProviderUserKey }, new { @class = "button delete-button", style = "width:70px;" }) :
-                    Html.ActionLink("Unlock", "unlock", new { id = mu.ProviderUserKey }, new { @class = "button add-button", style = "width:70px;" })
-               )
-            </td>
-         </tr>
-      }
+   @foreach (MembershipUser mu in Model)
+   {
+      <tr>
+         <td>
+            @mu.UserName
+         </td>
+         <td>
+            <a href="mailto:@mu.Email">@mu.Email</a>
+         </td>
+         <td>
+            @(mu.CreationDate == default(DateTime)
+                 ? "Never"
+                 : mu.CreationDate.Humanize())
+         </td>
+         <td>
+            @(mu.LastLoginDate == default(DateTime)
+                 ? "Never"
+                 : mu.LastLoginDate.Humanize())
+         </td>
+         <td>
+            @(mu.LastLockoutDate == default(DateTime)
+                 ? "Never"
+                 : mu.LastLockoutDate.Humanize())
+         </td>
+         <td class="text-right">
+            @(
+         mu.IsApproved
+            ? Html.ActionLink("Unapprove", "unapprove", new
+            {
+               id = mu.ProviderUserKey
+            }, new
+            {
+               @class = "button delete-button",
+               style = "width:70px;"
+            })
+            : Html.ActionLink("Approve", "approve", new
+            {
+               id = mu.ProviderUserKey
+            }, new
+            {
+               @class = "button add-button",
+               style = "width:70px;"
+            })
+                 )
+         </td>
+         <td class="text-right">
+            @(
+         !mu.IsLockedOut
+            ? Html.ActionLink("Lock", "lock", new
+            {
+               id = mu.ProviderUserKey
+            }, new
+            {
+               @class = "button delete-button",
+               style = "width:70px;"
+            })
+            : Html.ActionLink("Unlock", "unlock", new
+            {
+               id = mu.ProviderUserKey
+            }, new
+            {
+               @class = "button add-button",
+               style = "width:70px;"
+            })
+                 )
+         </td>
+      </tr>
+   }
    </tbody>
 </table>

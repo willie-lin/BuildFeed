@@ -67,7 +67,8 @@ namespace BuildFeed.Areas.admin.Controllers
 
          foreach (MembershipUser user in users)
          {
-            if (!user.IsApproved && (user.CreationDate.AddDays(30) < DateTime.Now))
+            if (!user.IsApproved
+               && (user.CreationDate.AddDays(30) < DateTime.Now))
             {
                Membership.DeleteUser(user.UserName);
             }

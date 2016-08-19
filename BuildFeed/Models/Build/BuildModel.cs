@@ -141,7 +141,8 @@ namespace BuildFeed.Models
             {
                return ProjectFamily.Windows7;
             }
-            if (MajorVersion == 6 && Number >= 5000)
+            if (MajorVersion == 6
+               && Number >= 5000)
             {
                return ProjectFamily.WindowsVista;
             }
@@ -149,15 +150,18 @@ namespace BuildFeed.Models
             {
                return ProjectFamily.Longhorn;
             }
-            if (MajorVersion == 5 && Number >= 3000)
+            if (MajorVersion == 5
+               && Number >= 3000)
             {
                return ProjectFamily.Server2003;
             }
-            if (MajorVersion == 5 && Number >= 2205)
+            if (MajorVersion == 5
+               && Number >= 2205)
             {
                return ProjectFamily.WindowsXP;
             }
-            if (MajorVersion == 5 && MinorVersion == 50)
+            if (MajorVersion == 5
+               && MinorVersion == 50)
             {
                return ProjectFamily.Neptune;
             }
@@ -168,9 +172,6 @@ namespace BuildFeed.Models
             return ProjectFamily.None;
          }
       }
-
-      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-')
-                                                   .ToLower();
 
       public string SourceDetailsFiltered
       {
@@ -190,5 +191,7 @@ namespace BuildFeed.Models
             return SourceDetails;
          }
       }
+
+      public string GenerateLabUrl() => (Lab ?? "").Replace('/', '-').ToLower();
    }
 }

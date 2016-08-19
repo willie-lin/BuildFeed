@@ -10,9 +10,9 @@ namespace MongoAuth
 
       static DatabaseConfig()
       {
-         Host = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoHost"]) ?
-            ConfigurationManager.AppSettings["data:MongoHost"] :
-            "localhost";
+         Host = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoHost"])
+            ? ConfigurationManager.AppSettings["data:MongoHost"]
+            : "localhost";
 
          int _port;
          bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out _port);
@@ -22,9 +22,9 @@ namespace MongoAuth
          }
          Port = _port;
 
-         Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"]) ?
-            ConfigurationManager.AppSettings["data:MongoDB"] :
-            "MongoAuth";
+         Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])
+            ? ConfigurationManager.AppSettings["data:MongoDB"]
+            : "MongoAuth";
       }
    }
 }
