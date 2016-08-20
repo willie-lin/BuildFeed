@@ -7,14 +7,14 @@ using MongoDB.Driver;
 
 namespace BuildFeed.Model
 {
-   public partial class Build
+   public partial class BuildRepository
    {
       public async Task<int[]> SelectAllYears(int limit = -1, int skip = 0)
       {
          IAggregateFluent<BsonDocument> query =
             _buildCollection.Aggregate()
-               .Match(Builders<BuildModel>.Filter.Ne(b => b.BuildTime, null))
-               .Group(new BsonDocument("_id", new BsonDocument("$year", $"${nameof(BuildModel.BuildTime)}")))
+               .Match(Builders<Build>.Filter.Ne(b => b.BuildTime, null))
+               .Group(new BsonDocument("_id", new BsonDocument("$year", $"${nameof(Build.BuildTime)}")))
                .Sort(new BsonDocument("_id", -1))
                .Skip(skip);
 
@@ -32,16 +32,16 @@ namespace BuildFeed.Model
 
       public async Task<long> SelectAllYearsCount()
       {
-         List<BsonDocument> query = await _buildCollection.Aggregate().Match(Builders<BuildModel>.Filter.Ne(b => b.BuildTime, null)).Group(new BsonDocument("_id", new BsonDocument("$year", $"${nameof(BuildModel.BuildTime)}"))).ToListAsync();
+         List<BsonDocument> query = await _buildCollection.Aggregate().Match(Builders<Build>.Filter.Ne(b => b.BuildTime, null)).Group(new BsonDocument("_id", new BsonDocument("$year", $"${nameof(Build.BuildTime)}"))).ToListAsync();
 
          return query.Count;
       }
 
-      public async Task<List<BuildModel>> SelectYear(int year, int limit = -1, int skip = 0)
+      public async Task<List<Build>> SelectYear(int year, int limit = -1, int skip = 0)
       {
-         IFindFluent<BuildModel, BuildModel> query =
-            _buildCollection.Find(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Gte(b => b.BuildTime, new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc)),
-               Builders<BuildModel>.Filter.Lte(b => b.BuildTime, new DateTime(year, 12, 31, 23, 59, 59, DateTimeKind.Utc)))).Sort(sortByCompileDate).Skip(skip);
+         IFindFluent<Build, Build> query =
+            _buildCollection.Find(Builders<Build>.Filter.And(Builders<Build>.Filter.Gte(b => b.BuildTime, new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc)),
+               Builders<Build>.Filter.Lte(b => b.BuildTime, new DateTime(year, 12, 31, 23, 59, 59, DateTimeKind.Utc)))).Sort(sortByCompileDate).Skip(skip);
 
          if (limit > 0)
          {
@@ -54,7 +54,7 @@ namespace BuildFeed.Model
       public async Task<long> SelectYearCount(int year)
          =>
             await
-               _buildCollection.CountAsync(Builders<BuildModel>.Filter.And(Builders<BuildModel>.Filter.Gte(b => b.BuildTime, new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc)),
-                  Builders<BuildModel>.Filter.Lte(b => b.BuildTime, new DateTime(year, 12, 31, 23, 59, 59, DateTimeKind.Utc))));
+               _buildCollection.CountAsync(Builders<Build>.Filter.And(Builders<Build>.Filter.Gte(b => b.BuildTime, new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc)),
+                  Builders<Build>.Filter.Lte(b => b.BuildTime, new DateTime(year, 12, 31, 23, 59, 59, DateTimeKind.Utc))));
    }
 }

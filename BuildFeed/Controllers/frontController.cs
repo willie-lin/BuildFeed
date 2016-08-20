@@ -18,12 +18,12 @@ namespace BuildFeed.Controllers
    {
       public const int PAGE_SIZE = 72;
 
-      private readonly Build _bModel;
+      private readonly BuildRepository _bModel;
       private readonly MetaItem _mModel;
 
       public FrontController()
       {
-         _bModel = new Build();
+         _bModel = new BuildRepository();
          _mModel = new MetaItem();
       }
 
@@ -71,7 +71,7 @@ namespace BuildFeed.Controllers
             Revision = revision
          };
 
-         List<BuildModel> builds = await _bModel.SelectGroup(bg);
+         List<Build> builds = await _bModel.SelectGroup(bg);
 
          return builds.Count() == 1
             ? RedirectToAction(nameof(ViewBuild),
@@ -79,7 +79,7 @@ namespace BuildFeed.Controllers
                {
                   id = builds.Single().Id
                }) as ActionResult
-            : View(new Tuple<BuildGroup, List<BuildModel>>(bg, builds));
+            : View(new Tuple<BuildGroup, List<Build>>(bg, builds));
       }
 
       [Route("build/{id:guid}/", Name = "Build")]
@@ -88,7 +88,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> ViewBuild(Guid id)
       {
-         BuildModel b = await _bModel.SelectById(id);
+         Build b = await _bModel.SelectById(id);
          if (b == null)
          {
             return new HttpNotFoundResult();
@@ -99,7 +99,7 @@ namespace BuildFeed.Controllers
       [Route("build/{id:long}/", Name = "Build (Legacy)")]
       public async Task<ActionResult> ViewBuild(long id)
       {
-         BuildModel b = await _bModel.SelectByLegacyId(id);
+         Build b = await _bModel.SelectByLegacyId(id);
          if (b == null)
          {
             return new HttpNotFoundResult();
@@ -118,7 +118,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> TwitterCard(Guid id)
       {
-         BuildModel b = await _bModel.SelectById(id);
+         Build b = await _bModel.SelectById(id);
          if (b == null)
          {
             return new HttpNotFoundResult();
@@ -170,7 +170,7 @@ namespace BuildFeed.Controllers
       [Route("twitter/{id:long}/", Name = "Twitter (Legacy)")]
       public async Task<ActionResult> TwitterCard(long id)
       {
-         BuildModel b = await _bModel.SelectByLegacyId(id);
+         Build b = await _bModel.SelectByLegacyId(id);
          if (b == null)
          {
             return new HttpNotFoundResult();
@@ -203,7 +203,7 @@ namespace BuildFeed.Controllers
             Value = lab
          });
 
-         List<BuildModel> builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+         List<Build> builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.ItemId = builds.FirstOrDefault()?.Lab;
          ViewBag.PageNumber = page;
@@ -239,7 +239,7 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = MvcExtensions.GetDisplayTextForEnum(source);
 
-         List<BuildModel> builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+         List<Build> builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
@@ -274,7 +274,7 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = year.ToString();
 
-         List<BuildModel> builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+         List<Build> builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
@@ -310,7 +310,7 @@ namespace BuildFeed.Controllers
          });
          ViewBag.ItemId = valueString;
 
-         List<BuildModel> builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+         List<Build> builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
@@ -326,7 +326,7 @@ namespace BuildFeed.Controllers
       [Route("add/"), Authorize]
       public ActionResult AddBuild()
       {
-         BuildModel b = new BuildModel
+         Build b = new Build
          {
             SourceType = TypeOfSource.PrivateLeak
          };
@@ -334,7 +334,7 @@ namespace BuildFeed.Controllers
       }
 
       [Route("add/"), Authorize, HttpPost]
-      public async Task<ActionResult> AddBuild(BuildModel build)
+      public async Task<ActionResult> AddBuild(Build build)
       {
          if (ModelState.IsValid)
          {
@@ -368,12 +368,12 @@ namespace BuildFeed.Controllers
       [Route("edit/{id}/"), Authorize]
       public async Task<ActionResult> EditBuild(Guid id)
       {
-         BuildModel b = await _bModel.SelectById(id);
+         Build b = await _bModel.SelectById(id);
          return View(b);
       }
 
       [Route("edit/{id}/"), Authorize, HttpPost]
-      public async Task<ActionResult> EditBuild(Guid id, BuildModel build)
+      public async Task<ActionResult> EditBuild(Guid id, Build build)
       {
          if (ModelState.IsValid)
          {

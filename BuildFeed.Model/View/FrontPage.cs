@@ -2,8 +2,8 @@
 {
    public class FrontPage
    {
-      public BuildModel CurrentCanary { get; set; }
-      public BuildModel CurrentInsider { get; set; }
-      public BuildModel CurrentRelease { get; set; }
+      public Build CurrentCanary { get; set; }
+      public Build CurrentInsider { get; set; }
+      public Build CurrentRelease { get; set; }
    }
 }

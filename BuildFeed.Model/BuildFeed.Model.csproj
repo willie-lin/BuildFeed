@@ -95,9 +95,9 @@
     <Compile Include="Build-Source.cs" />
     <Compile Include="Build-Version.cs" />
     <Compile Include="Build-Year.cs" />
-    <Compile Include="Build.cs" />
+    <Compile Include="BuildRepository.cs" />
     <Compile Include="BuildGroup.cs" />
-    <Compile Include="BuildModel.cs" />
+    <Compile Include="Build.cs" />
     <Compile Include="BuildVersion.cs" />
     <Compile Include="MetaItem.cs" />
     <Compile Include="MongoConfig.cs" />

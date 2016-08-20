@@ -7,11 +7,11 @@ using MongoDB.Driver;
 
 namespace BuildFeed.Model
 {
-   public partial class Build
+   public partial class BuildRepository
    {
       public async Task<string[]> SelectAllLabs(int limit = -1, int skip = 0)
       {
-         IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Group(new BsonDocument("_id", $"${nameof(BuildModel.Lab)}")).Sort(new BsonDocument("_id", 1)).Skip(skip);
+         IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Group(new BsonDocument("_id", $"${nameof(Build.Lab)}")).Sort(new BsonDocument("_id", 1)).Skip(skip);
 
          if (limit > 0)
          {
@@ -29,9 +29,9 @@ namespace BuildFeed.Model
       {
          IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Match(new BsonDocument
          {
-            new BsonElement(nameof(BuildModel.MajorVersion), major),
-            new BsonElement(nameof(BuildModel.MinorVersion), minor)
-         }).Group(new BsonDocument("_id", $"${nameof(BuildModel.Lab)}")).Sort(new BsonDocument("_id", 1));
+            new BsonElement(nameof(Build.MajorVersion), major),
+            new BsonElement(nameof(Build.MinorVersion), minor)
+         }).Group(new BsonDocument("_id", $"${nameof(Build.Lab)}")).Sort(new BsonDocument("_id", 1));
 
          List<BsonDocument> grouping = await query.ToListAsync();
 
@@ -52,16 +52,16 @@ namespace BuildFeed.Model
 
       public async Task<long> SelectAllLabsCount()
       {
-         IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Group(new BsonDocument("_id", new BsonDocument(nameof(BuildModel.Lab), $"${nameof(BuildModel.Lab)}"))).Sort(new BsonDocument("_id", 1));
+         IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Group(new BsonDocument("_id", new BsonDocument(nameof(Build.Lab), $"${nameof(Build.Lab)}"))).Sort(new BsonDocument("_id", 1));
 
          List<BsonDocument> grouping = await query.ToListAsync();
 
          return grouping.Count;
       }
 
-      public async Task<List<BuildModel>> SelectLab(string lab, int limit = -1, int skip = 0)
+      public async Task<List<Build>> SelectLab(string lab, int limit = -1, int skip = 0)
       {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument(nameof(BuildModel.LabUrl), lab)).Sort(sortByCompileDate).Skip(skip);
+         IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument(nameof(Build.LabUrl), lab)).Sort(sortByCompileDate).Skip(skip);
 
          if (limit > 0)
          {
@@ -71,6 +71,6 @@ namespace BuildFeed.Model
          return await query.ToListAsync();
       }
 
-      public async Task<long> SelectLabCount(string lab) => await _buildCollection.CountAsync(new BsonDocument(nameof(BuildModel.LabUrl), lab));
+      public async Task<long> SelectLabCount(string lab) => await _buildCollection.CountAsync(new BsonDocument(nameof(Build.LabUrl), lab));
    }
 }

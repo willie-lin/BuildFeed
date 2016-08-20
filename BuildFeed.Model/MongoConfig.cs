@@ -29,7 +29,7 @@ namespace BuildFeed.Model
 
       public static void SetupIndexes()
       {
-         Build b = new Build();
+         BuildRepository b = new BuildRepository();
          b.SetupIndexes();
       }
    }

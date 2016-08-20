@@ -14,13 +14,13 @@ namespace BuildFeed.Controllers
 {
    public class ApiController : System.Web.Http.ApiController
    {
-      private readonly Build _bModel;
+      private readonly BuildRepository _bModel;
 
-      public ApiController() { _bModel = new Build(); }
+      public ApiController() { _bModel = new BuildRepository(); }
 
-      public async Task<BuildModel[]> GetBuilds(int limit = 20, int skip = 0)
+      public async Task<Build[]> GetBuilds(int limit = 20, int skip = 0)
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByOrder(limit, skip);
+         List<Build> builds = await _bModel.SelectBuildsByOrder(limit, skip);
          return builds.ToArray();
       }
 
@@ -30,9 +30,9 @@ namespace BuildFeed.Controllers
          return bgroups.ToArray();
       }
 
-      public async Task<BuildModel[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
+      public async Task<Build[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
       {
-         List<BuildModel> builds = await _bModel.SelectGroup(new BuildGroup
+         List<Build> builds = await _bModel.SelectGroup(new BuildGroup
          {
             Major = major,
             Minor = minor,
@@ -43,9 +43,9 @@ namespace BuildFeed.Controllers
          return builds.ToArray();
       }
 
-      public async Task<BuildModel[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
+      public async Task<Build[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
       {
-         List<BuildModel> builds = await _bModel.SelectLab(lab, limit, skip);
+         List<Build> builds = await _bModel.SelectLab(lab, limit, skip);
          return builds.ToArray();
       }
 
@@ -67,7 +67,7 @@ namespace BuildFeed.Controllers
          }
          if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
          {
-            await _bModel.InsertAll(apiModel.NewBuilds.Select(nb => new BuildModel
+            await _bModel.InsertAll(apiModel.NewBuilds.Select(nb => new Build
             {
                MajorVersion = nb.MajorVersion,
                MinorVersion = nb.MinorVersion,

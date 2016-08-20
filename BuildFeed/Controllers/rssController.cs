@@ -12,14 +12,14 @@ namespace BuildFeed.Controllers
    public class RssController : BaseController
    {
       private const int RSS_SIZE = 25;
-      private readonly Build _bModel;
+      private readonly BuildRepository _bModel;
 
-      public RssController() { _bModel = new Build(); }
+      public RssController() { _bModel = new BuildRepository(); }
 
       [Route("rss/compiled")]
       public async Task<ActionResult> Index()
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByCompileDate(RSS_SIZE);
+         List<Build> builds = await _bModel.SelectBuildsByCompileDate(RSS_SIZE);
 
          Feed feed = new Feed
          {
@@ -49,7 +49,7 @@ namespace BuildFeed.Controllers
       [Route("rss/added")]
       public async Task<ActionResult> Added()
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByAddedDate(RSS_SIZE);
+         List<Build> builds = await _bModel.SelectBuildsByAddedDate(RSS_SIZE);
 
          Feed feed = new Feed
          {
@@ -79,7 +79,7 @@ namespace BuildFeed.Controllers
       [Route("rss/leaked")]
       public async Task<ActionResult> Leaked()
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByLeakedDate(RSS_SIZE);
+         List<Build> builds = await _bModel.SelectBuildsByLeakedDate(RSS_SIZE);
 
          Feed feed = new Feed
          {
@@ -109,7 +109,7 @@ namespace BuildFeed.Controllers
       [Route("rss/version")]
       public async Task<ActionResult> Version()
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByOrder(RSS_SIZE);
+         List<Build> builds = await _bModel.SelectBuildsByOrder(RSS_SIZE);
 
          Feed feed = new Feed
          {
@@ -138,7 +138,7 @@ namespace BuildFeed.Controllers
       [Route("rss/lab/{lab}")]
       public async Task<ActionResult> Lab(string lab)
       {
-         List<BuildModel> builds = await _bModel.SelectLab(lab, RSS_SIZE);
+         List<Build> builds = await _bModel.SelectLab(lab, RSS_SIZE);
 
          Feed feed = new Feed
          {

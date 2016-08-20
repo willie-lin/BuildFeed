@@ -34,7 +34,7 @@ namespace BuildFeed.Model
 
       private readonly MongoClient _dbClient;
       private readonly IMongoCollection<MetaItemModel> _metaCollection;
-      private readonly Build bModel;
+      private readonly BuildRepository bModel;
 
       public MetaItem()
       {
@@ -44,7 +44,7 @@ namespace BuildFeed.Model
          });
 
          _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
-         bModel = new Build();
+         bModel = new BuildRepository();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]

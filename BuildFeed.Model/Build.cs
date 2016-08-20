@@ -1,249 +1,187 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
-using BuildFeed.Model.View;
-using MongoDB.Bson;
-using MongoDB.Driver;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Text;
+using System.Web.Mvc;
+using BuildFeed.Local;
+using HtmlAgilityPack;
+using MongoDB.Bson.Serialization.Attributes;
+using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Model
 {
-   public partial class Build
+   [DataObject, BsonIgnoreExtraElements]
+   public class Build
    {
-      private const string BUILD_COLLECTION_NAME = "builds";
-      private static readonly BsonDocument sortByAddedDate = new BsonDocument(nameof(BuildModel.Added), -1);
-      private static readonly BsonDocument sortByCompileDate = new BsonDocument(nameof(BuildModel.BuildTime), -1);
-      private static readonly BsonDocument sortByLeakedDate = new BsonDocument(nameof(BuildModel.LeakDate), -1);
+      [Key, BsonId]
+      public Guid Id { get; set; }
 
-      private static readonly BsonDocument sortByOrder = new BsonDocument
+      public long? LegacyId { get; set; }
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MajorVersion))]
+      public uint MajorVersion { get; set; }
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MinorVersion))]
+      public uint MinorVersion { get; set; }
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildNumber))]
+      public uint Number { get; set; }
+
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Revision))]
+      [DisplayFormat(ConvertEmptyStringToNull = true)]
+      public uint? Revision { get; set; }
+
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LabString))]
+      public string Lab { get; set; }
+
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildTime))]
+      [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
+      public DateTime? BuildTime { get; set; }
+
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Added))]
+      public DateTime Added { get; set; }
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Modified))]
+      public DateTime Modified { get; set; }
+
+      [@Required]
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceType))]
+      [EnumDataType(typeof(TypeOfSource))]
+      public TypeOfSource SourceType { get; set; }
+
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceDetails))]
+      [AllowHtml]
+      public string SourceDetails { get; set; }
+
+      [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LeakDate))]
+      [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true)]
+      public DateTime? LeakDate { get; set; }
+
+      public string LabUrl { get; set; }
+
+      public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR || SourceType == TypeOfSource.UpdateLDR;
+
+      public string FullBuildString
       {
-         new BsonElement(nameof(BuildModel.MajorVersion), -1),
-         new BsonElement(nameof(BuildModel.MinorVersion), -1),
-         new BsonElement(nameof(BuildModel.Number), -1),
-         new BsonElement(nameof(BuildModel.Revision), -1),
-         new BsonElement(nameof(BuildModel.BuildTime), -1)
-      };
-
-      private readonly IMongoCollection<BuildModel> _buildCollection;
-      private readonly IMongoDatabase _buildDatabase;
-      private readonly MongoClient _dbClient;
-
-      public Build()
-      {
-         _dbClient = new MongoClient(new MongoClientSettings
+         get
          {
-            Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-         });
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
 
-         _buildDatabase = _dbClient.GetDatabase(MongoConfig.Database);
-         _buildCollection = _buildDatabase.GetCollection<BuildModel>(BUILD_COLLECTION_NAME);
-      }
-
-      public async Task SetupIndexes()
-      {
-         List<BsonDocument> indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
-         if (indexes.All(i => i["name"] != "_idx_group"))
-         {
-            await
-               _buildCollection.Indexes.CreateOneAsync(
-                  Builders<BuildModel>.IndexKeys.Combine(Builders<BuildModel>.IndexKeys.Descending(b => b.MajorVersion),
-                     Builders<BuildModel>.IndexKeys.Descending(b => b.MinorVersion),
-                     Builders<BuildModel>.IndexKeys.Descending(b => b.Number),
-                     Builders<BuildModel>.IndexKeys.Descending(b => b.Revision)),
-                  new CreateIndexOptions
-                  {
-                     Name = "_idx_group"
-                  });
-         }
-
-         if (indexes.All(i => i["name"] != "_idx_legacy"))
-         {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.LegacyId),
-               new CreateIndexOptions
-               {
-                  Name = "_idx_legacy"
-               });
-         }
-
-         if (indexes.All(i => i["name"] != "_idx_lab"))
-         {
-            await _buildCollection.Indexes.CreateOneAsync(Builders<BuildModel>.IndexKeys.Ascending(b => b.Lab),
-               new CreateIndexOptions
-               {
-                  Name = "_idx_lab"
-               });
-         }
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Select, true)]
-      public async Task<List<BuildModel>> Select() => await _buildCollection.Find(new BsonDocument()).ToListAsync();
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<BuildModel> SelectById(Guid id) => await _buildCollection.Find(Builders<BuildModel>.Filter.Eq(b => b.Id, id)).SingleOrDefaultAsync();
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<BuildModel> SelectByLegacyId(long id) => await _buildCollection.Find(Builders<BuildModel>.Filter.Eq(b => b.LegacyId, id)).SingleOrDefaultAsync();
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<BuildModel>> SelectBuildsByOrder(int limit = -1, int skip = 0)
-      {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByOrder).Skip(skip);
-
-         if (limit > 0)
-         {
-            query = query.Limit(limit);
-         }
-
-         return await query.ToListAsync();
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<FrontPage> SelectFrontPage()
-      {
-         FrontPage fp = new FrontPage();
-
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
-         {
+            if (Revision.HasValue)
             {
-               nameof(BuildModel.LabUrl), new BsonDocument
-               {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';')) }
-               }
+               sb.Append($".{Revision}");
             }
-         }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentCanary = await query.FirstOrDefaultAsync();
-
-         query = _buildCollection.Find(new BsonDocument
-         {
+            if (!string.IsNullOrWhiteSpace(Lab))
             {
-               nameof(BuildModel.LabUrl), new BsonDocument
-               {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
-               }
-            },
-            {
-               nameof(BuildModel.SourceType), new BsonDocument
-               {
-                  {
-                     "$in", new BsonArray
-                     {
-                        TypeOfSource.PublicRelease,
-                        TypeOfSource.UpdateGDR
-                     }
-                  }
-               }
+               sb.Append($".{Lab}");
             }
-         }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentInsider = await query.FirstOrDefaultAsync();
-
-         query = _buildCollection.Find(new BsonDocument
-         {
+            if (BuildTime.HasValue)
             {
-               nameof(BuildModel.LabUrl), new BsonDocument
-               {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
-               }
-            },
-            {
-               nameof(BuildModel.SourceType), new BsonDocument
-               {
-                  {
-                     "$in", new BsonArray
-                     {
-                        TypeOfSource.PublicRelease,
-                        TypeOfSource.UpdateGDR
-                     }
-                  }
-               }
+               sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
             }
-         }).Sort(sortByCompileDate).Limit(1);
 
-         fp.CurrentRelease = await query.FirstOrDefaultAsync();
-
-         return fp;
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<BuildModel>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
-      {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);
-
-         if (limit > 0)
-         {
-            query = query.Limit(limit);
+            return sb.ToString();
          }
-
-         return await query.ToListAsync();
       }
 
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<BuildModel>> SelectBuildsByAddedDate(int limit = -1, int skip = 0)
+      public ProjectFamily Family
       {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByAddedDate).Skip(skip);
-
-         if (limit > 0)
+         get
          {
-            query = query.Limit(limit);
+            if (Number >= 14800)
+            {
+               return ProjectFamily.Redstone2;
+            }
+            if (Number >= 11000)
+            {
+               return ProjectFamily.Redstone;
+            }
+            if (Number >= 10500)
+            {
+               return ProjectFamily.Threshold2;
+            }
+            if (Number >= 9700)
+            {
+               return ProjectFamily.Threshold;
+            }
+            if (Number >= 9250)
+            {
+               return ProjectFamily.Windows81;
+            }
+            if (Number >= 7650)
+            {
+               return ProjectFamily.Windows8;
+            }
+            if (Number >= 6020)
+            {
+               return ProjectFamily.Windows7;
+            }
+            if (MajorVersion == 6
+               && Number >= 5000)
+            {
+               return ProjectFamily.WindowsVista;
+            }
+            if (MajorVersion == 6)
+            {
+               return ProjectFamily.Longhorn;
+            }
+            if (MajorVersion == 5
+               && Number >= 3000)
+            {
+               return ProjectFamily.Server2003;
+            }
+            if (MajorVersion == 5
+               && Number >= 2205)
+            {
+               return ProjectFamily.WindowsXP;
+            }
+            if (MajorVersion == 5
+               && MinorVersion == 50)
+            {
+               return ProjectFamily.Neptune;
+            }
+            if (MajorVersion == 5)
+            {
+               return ProjectFamily.Windows2000;
+            }
+            return ProjectFamily.None;
          }
-
-         return await query.ToListAsync();
       }
 
-      [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<List<BuildModel>> SelectBuildsByLeakedDate(int limit = -1, int skip = 0)
+      public string SourceDetailsFiltered
       {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument()).Sort(sortByLeakedDate).Skip(skip);
-
-         if (limit > 0)
+         get
          {
-            query = query.Limit(limit);
+            HtmlDocument hDoc = new HtmlDocument();
+            hDoc.LoadHtml($"<div>{SourceDetails}</div>");
+
+            if (string.IsNullOrWhiteSpace(hDoc.DocumentNode.InnerText))
+            {
+               return "";
+            }
+
+            if (Uri.IsWellFormedUriString(hDoc.DocumentNode.InnerText, UriKind.Absolute))
+            {
+               Uri uri = new Uri(hDoc.DocumentNode.InnerText, UriKind.Absolute);
+               return $"<a href=\"{uri}\" target=\"_blank\">{VariantTerms.Model_ExternalLink} <i class=\"fa fa-external-link\"></i></a>";
+            }
+
+            return SourceDetails;
          }
-
-         return await query.ToListAsync();
       }
 
-      [DataObjectMethod(DataObjectMethodType.Insert, true)]
-      public async Task Insert(BuildModel item)
-      {
-         item.Id = Guid.NewGuid();
-         item.LabUrl = item.GenerateLabUrl();
-         await _buildCollection.InsertOneAsync(item);
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Insert, false)]
-      public async Task InsertAll(IEnumerable<BuildModel> items)
-      {
-         List<BuildModel> generatedItems = new List<BuildModel>();
-         foreach (BuildModel item in items)
-         {
-            item.Id = Guid.NewGuid();
-            item.LabUrl = item.GenerateLabUrl();
-
-            generatedItems.Add(item);
-         }
-
-         await _buildCollection.InsertManyAsync(generatedItems);
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Update, true)]
-      public async Task Update(BuildModel item)
-      {
-         BuildModel old = await SelectById(item.Id);
-         item.Added = old.Added;
-         item.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
-         item.LabUrl = item.GenerateLabUrl();
-
-         await _buildCollection.ReplaceOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, item.Id), item);
-      }
-
-      [DataObjectMethod(DataObjectMethodType.Delete, true)]
-      public async Task DeleteById(Guid id)
-      {
-         await _buildCollection.DeleteOneAsync(Builders<BuildModel>.Filter.Eq(b => b.Id, id));
-      }
+      public string GenerateLabUrl() => !string.IsNullOrEmpty(Lab)
+         ? Lab.Replace('/', '-').ToLower()
+         : "";
    }
 }

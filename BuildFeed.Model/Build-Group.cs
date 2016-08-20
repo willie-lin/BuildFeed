@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace BuildFeed.Model
 {
-   public partial class Build
+   public partial class BuildRepository
    {
       public async Task<FrontBuildGroup[]> SelectAllGroups(int limit = -1, int skip = 0)
       {
@@ -16,12 +16,12 @@ namespace BuildFeed.Model
             new BsonElement("_id",
                new BsonDocument
                {
-                  new BsonElement(nameof(BuildGroup.Major), $"${nameof(BuildModel.MajorVersion)}"),
-                  new BsonElement(nameof(BuildGroup.Minor), $"${nameof(BuildModel.MinorVersion)}"),
-                  new BsonElement(nameof(BuildGroup.Build), $"${nameof(BuildModel.Number)}"),
-                  new BsonElement(nameof(BuildGroup.Revision), $"${nameof(BuildModel.Revision)}")
+                  new BsonElement(nameof(BuildGroup.Major), $"${nameof(Build.MajorVersion)}"),
+                  new BsonElement(nameof(BuildGroup.Minor), $"${nameof(Build.MinorVersion)}"),
+                  new BsonElement(nameof(BuildGroup.Build), $"${nameof(Build.Number)}"),
+                  new BsonElement(nameof(BuildGroup.Revision), $"${nameof(Build.Revision)}")
                }),
-            new BsonElement("date", new BsonDocument("$max", $"${nameof(BuildModel.BuildTime)}")),
+            new BsonElement("date", new BsonDocument("$max", $"${nameof(Build.BuildTime)}")),
             new BsonElement("count", new BsonDocument("$sum", 1))
          }).Sort(new BsonDocument
          {
@@ -60,26 +60,26 @@ namespace BuildFeed.Model
             new BsonElement("_id",
                new BsonDocument
                {
-                  new BsonElement(nameof(BuildGroup.Major), $"${nameof(BuildModel.MajorVersion)}"),
-                  new BsonElement(nameof(BuildGroup.Minor), $"${nameof(BuildModel.MinorVersion)}"),
-                  new BsonElement(nameof(BuildGroup.Build), $"${nameof(BuildModel.Number)}"),
-                  new BsonElement(nameof(BuildGroup.Revision), $"${nameof(BuildModel.Revision)}")
+                  new BsonElement(nameof(BuildGroup.Major), $"${nameof(Build.MajorVersion)}"),
+                  new BsonElement(nameof(BuildGroup.Minor), $"${nameof(Build.MinorVersion)}"),
+                  new BsonElement(nameof(BuildGroup.Build), $"${nameof(Build.Number)}"),
+                  new BsonElement(nameof(BuildGroup.Revision), $"${nameof(Build.Revision)}")
                })
          }).ToListAsync();
          return grouping.Count;
       }
 
-      public async Task<List<BuildModel>> SelectGroup(BuildGroup group, int limit = -1, int skip = 0)
+      public async Task<List<Build>> SelectGroup(BuildGroup group, int limit = -1, int skip = 0)
       {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
+         IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument
          {
-            new BsonElement(nameof(BuildModel.MajorVersion), group.Major),
-            new BsonElement(nameof(BuildModel.MinorVersion), group.Minor),
-            new BsonElement(nameof(BuildModel.Number), group.Build),
-            new BsonElement(nameof(BuildModel.Revision), group.Revision)
+            new BsonElement(nameof(Build.MajorVersion), group.Major),
+            new BsonElement(nameof(Build.MinorVersion), group.Minor),
+            new BsonElement(nameof(Build.Number), group.Build),
+            new BsonElement(nameof(Build.Revision), group.Revision)
          }).Sort(new BsonDocument
          {
-            new BsonElement(nameof(BuildModel.BuildTime), 1)
+            new BsonElement(nameof(Build.BuildTime), 1)
          }).Skip(skip);
 
          if (limit > 0)
@@ -92,10 +92,10 @@ namespace BuildFeed.Model
 
       public async Task<long> SelectGroupCount(BuildGroup group) => await _buildCollection.CountAsync(new BsonDocument
       {
-         new BsonElement(nameof(BuildModel.MajorVersion), @group.Major),
-         new BsonElement(nameof(BuildModel.MinorVersion), @group.Minor),
-         new BsonElement(nameof(BuildModel.Number), @group.Build),
-         new BsonElement(nameof(BuildModel.Revision), @group.Revision)
+         new BsonElement(nameof(Build.MajorVersion), @group.Major),
+         new BsonElement(nameof(Build.MinorVersion), @group.Minor),
+         new BsonElement(nameof(Build.Number), @group.Build),
+         new BsonElement(nameof(Build.Revision), @group.Revision)
       });
    }
 }

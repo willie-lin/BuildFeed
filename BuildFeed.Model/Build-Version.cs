@@ -6,15 +6,15 @@ using MongoDB.Driver;
 
 namespace BuildFeed.Model
 {
-   public partial class Build
+   public partial class BuildRepository
    {
       public async Task<BuildVersion[]> SelectAllVersions(int limit = -1, int skip = 0)
       {
          IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate().Group(new BsonDocument("_id",
             new BsonDocument
             {
-               new BsonElement(nameof(BuildVersion.Major), $"${nameof(BuildModel.MajorVersion)}"),
-               new BsonElement(nameof(BuildVersion.Minor), $"${nameof(BuildModel.MinorVersion)}")
+               new BsonElement(nameof(BuildVersion.Major), $"${nameof(Build.MajorVersion)}"),
+               new BsonElement(nameof(BuildVersion.Minor), $"${nameof(Build.MinorVersion)}")
             })).Sort(new BsonDocument
             {
                new BsonElement($"_id.{nameof(BuildVersion.Major)}", -1),
@@ -41,18 +41,18 @@ namespace BuildFeed.Model
          List<BsonDocument> query = await _buildCollection.Aggregate().Group(new BsonDocument("_id",
             new BsonDocument
             {
-               new BsonElement(nameof(BuildVersion.Major), $"${nameof(BuildModel.MajorVersion)}"),
-               new BsonElement(nameof(BuildVersion.Minor), $"${nameof(BuildModel.MinorVersion)}")
+               new BsonElement(nameof(BuildVersion.Major), $"${nameof(Build.MajorVersion)}"),
+               new BsonElement(nameof(BuildVersion.Minor), $"${nameof(Build.MinorVersion)}")
             })).ToListAsync();
          return query.Count;
       }
 
-      public async Task<List<BuildModel>> SelectVersion(uint major, uint minor, int limit = -1, int skip = 0)
+      public async Task<List<Build>> SelectVersion(uint major, uint minor, int limit = -1, int skip = 0)
       {
-         IFindFluent<BuildModel, BuildModel> query = _buildCollection.Find(new BsonDocument
+         IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument
          {
-            new BsonElement(nameof(BuildModel.MajorVersion), major),
-            new BsonElement(nameof(BuildModel.MinorVersion), minor)
+            new BsonElement(nameof(Build.MajorVersion), major),
+            new BsonElement(nameof(Build.MinorVersion), minor)
          }).Sort(sortByOrder).Skip(skip);
 
          if (limit > 0)
@@ -65,8 +65,8 @@ namespace BuildFeed.Model
 
       public async Task<long> SelectVersionCount(uint major, uint minor) => await _buildCollection.CountAsync(new BsonDocument
       {
-         new BsonElement(nameof(BuildModel.MajorVersion), major),
-         new BsonElement(nameof(BuildModel.MinorVersion), minor)
+         new BsonElement(nameof(Build.MajorVersion), major),
+         new BsonElement(nameof(Build.MinorVersion), minor)
       });
    }
 }

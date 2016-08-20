@@ -1,7 +1,7 @@
 ﻿@using BuildFeed.Code
 @using BuildFeed.Model
 @using Humanizer
-@model IEnumerable<BuildModel>
+@model IEnumerable<Build>
 @{
    ViewBag.Title = $"{InvariantTerms.ProductName} {ViewBag.ItemId}{(ViewBag.PageNumber == 1 ? "" : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber))} | {InvariantTerms.SiteName}";
 }
@@ -31,7 +31,7 @@
 <div class="addthis_sharing_toolbox"></div>
 <h3>@VariantTerms.Front_Listing</h3>
 <div class="build-group-listing">
-   @foreach (BuildModel build in Model)
+   @foreach (Build build in Model)
    {
       <div class="build-group">
          <h3 class="build-group-title no-wrapping" title="@build.Lab">

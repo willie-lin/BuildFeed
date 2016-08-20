@@ -16,9 +16,9 @@ namespace BuildFeed.Controllers
 {
    public class SupportController : BaseController
    {
-      private readonly Build _bModel;
+      private readonly BuildRepository _bModel;
 
-      public SupportController() { _bModel = new Build(); }
+      public SupportController() { _bModel = new BuildRepository(); }
 
       [Route("login/")]
       public ActionResult Login() => View();
@@ -138,7 +138,7 @@ namespace BuildFeed.Controllers
 #endif
       public async Task<ActionResult> Sitemap()
       {
-         List<BuildModel> builds = await _bModel.SelectBuildsByOrder();
+         List<Build> builds = await _bModel.SelectBuildsByOrder();
          Dictionary<string, SitemapPagedAction[]> actions = new Dictionary<string, SitemapPagedAction[]>
          {
             {
@@ -291,7 +291,7 @@ namespace BuildFeed.Controllers
          home.Add(new XElement(xn + "changefreq", "daily"));
          xlist.Add(home);
 
-         foreach (BuildModel b in await _bModel.Select())
+         foreach (Build b in await _bModel.Select())
          {
             XElement url = new XElement(xn + "url");
             url.Add(new XElement(xn + "loc",

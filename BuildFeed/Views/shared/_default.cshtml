@@ -3,6 +3,15 @@
 @using BuildFeed.Controllers
 @{
    bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+
+   Response.PushPromise("/res/css/default.min.css");
+   Response.PushPromise(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath));
+   if (isRtl)
+   {
+      Response.PushPromise("/res/css/rtl.min.css");
+   }
+
+   Response.PushPromise("/res/ts/bfs.min.js");
 }
 <!DOCTYPE html>
 <html dir="@(isRtl
@@ -219,7 +228,7 @@
    </div>
 
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js"></script>
-   <script type="text/javascript" src="~/res/ts/bfs.min.js"></script>
+   <script type="text/javascript" src="/res/ts/bfs.min.js"></script>
    @RenderSection("scripts", false)
    <script id="result-template" type="text/x-jsrender">
       <a href="{{:Url}}" class="search-result-item" title="{{:Title}}">
