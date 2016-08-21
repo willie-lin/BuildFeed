@@ -192,6 +192,7 @@
     <Compile Include="Code\MvcIntrinsics.cs" />
     <Compile Include="Code\Options\Locale.cs" />
     <Compile Include="Code\Options\Theme.cs" />
+    <Compile Include="Code\OutputCachePushAttribute.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FrontController.cs" />
