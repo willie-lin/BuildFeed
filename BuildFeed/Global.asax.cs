@@ -37,6 +37,7 @@ namespace BuildFeed
       {
          string[] parts = custom.Split(';');
          List<string> varyParts = new List<string>();
+         HttpContextWrapper contextWrapper = new HttpContextWrapper(context);
 
          foreach (string part in parts)
          {
@@ -46,10 +47,10 @@ namespace BuildFeed
                   varyParts.Add($"user:{context.User.Identity.Name}");
                   break;
                case "lang":
-                  varyParts.Add($"lang:{CultureInfo.CurrentUICulture.LCID}");
+                  varyParts.Add($"lang:{Locale.DetectCulture(contextWrapper).LCID}");
                   break;
                case "theme":
-                  varyParts.Add($"theme:{Theme.DetectTheme(new HttpContextWrapper(context))}");
+                  varyParts.Add($"theme:{Theme.DetectTheme(contextWrapper)}");
                   break;
             }
          }

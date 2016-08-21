@@ -9,31 +9,11 @@ namespace BuildFeed.Controllers
 {
    public class BaseController : Controller
    {
-      private const string LANG_COOKIE_NAME = "bf_lang";
-
       protected override void Initialize(RequestContext requestContext)
       {
-         string langCookie = requestContext.HttpContext.Request.Cookies[LANG_COOKIE_NAME]?.Value;
-
-         if (!string.IsNullOrEmpty(langCookie))
-         {
-            try
-            {
-               CultureInfo ci = (CultureInfo)CultureInfo.GetCultureInfo(langCookie).Clone();
-
-               // Get Gregorian Calendar in locale if available
-               Calendar gc = ci.OptionalCalendars.FirstOrDefault(c => c is GregorianCalendar && ((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized);
-               if (gc != null)
-               {
-                  ci.DateTimeFormat.Calendar = gc;
-               }
-
-               CultureInfo.CurrentCulture = ci;
-               CultureInfo.CurrentUICulture = ci;
-            }
-
-            catch (CultureNotFoundException) { }
-         }
+         CultureInfo ci = Locale.DetectCulture(requestContext.HttpContext);
+         CultureInfo.CurrentCulture = ci;
+         CultureInfo.CurrentUICulture = ci;
 
          ViewBag.Theme = new Theme(Theme.DetectTheme(requestContext.HttpContext));
 
