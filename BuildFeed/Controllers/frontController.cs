@@ -29,7 +29,7 @@ namespace BuildFeed.Controllers
 
       [Route("", Order = 1)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> Index()
       {
@@ -39,7 +39,7 @@ namespace BuildFeed.Controllers
 
       [Route("page-{page:int:min(1)}/", Order = 0)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> IndexPage(int page)
       {
@@ -59,7 +59,7 @@ namespace BuildFeed.Controllers
       [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
       [Route("group/{major}.{minor}.{number}/", Order = 5)] // for when there is no revision
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewGroup(uint major, uint minor, uint number, uint? revision = null)
       {
@@ -73,7 +73,7 @@ namespace BuildFeed.Controllers
 
          List<Build> builds = await _bModel.SelectGroup(bg);
 
-         return builds.Count() == 1
+         return builds.Count == 1
             ? RedirectToAction(nameof(ViewBuild),
                new
                {
@@ -84,7 +84,7 @@ namespace BuildFeed.Controllers
 
       [Route("build/{id:guid}/", Name = "Build")]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewBuild(Guid id)
       {
@@ -184,7 +184,7 @@ namespace BuildFeed.Controllers
 
       [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewLab(string lab)
       {
@@ -193,7 +193,7 @@ namespace BuildFeed.Controllers
 
       [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewLabPage(string lab, int page)
       {
@@ -219,7 +219,7 @@ namespace BuildFeed.Controllers
 
       [Route("source/{source}/", Order = 1, Name = "Source Root")]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewSource(TypeOfSource source)
       {
@@ -228,7 +228,7 @@ namespace BuildFeed.Controllers
 
       [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewSourcePage(TypeOfSource source, int page)
       {
@@ -254,7 +254,7 @@ namespace BuildFeed.Controllers
 
       [Route("year/{year}/", Order = 1, Name = "Year Root")]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewYear(int year)
       {
@@ -263,7 +263,7 @@ namespace BuildFeed.Controllers
 
       [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewYearPage(int year, int page)
       {
@@ -289,7 +289,7 @@ namespace BuildFeed.Controllers
 
       [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewVersion(uint major, uint minor)
       {
@@ -298,7 +298,7 @@ namespace BuildFeed.Controllers
 
       [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-   //      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> ViewVersionPage(uint major, uint minor, int page)
       {

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Web;
 using BuildFeed.Local;
 
 namespace BuildFeed.Code.Options
 {
    public class Theme
    {
+      private const string THEME_COOKIE_NAME = "bf_theme";
+
       public static Theme[] AvailableThemes = (from st in Enum.GetValues(typeof(SiteTheme)).Cast<SiteTheme>()
                                                select new Theme(st)).ToArray();
 
@@ -17,6 +20,18 @@ namespace BuildFeed.Code.Options
       public string DisplayName => MvcExtensions.GetDisplayTextForEnum(_siteTheme);
 
       public Theme(SiteTheme st) { _siteTheme = st; }
+
+      public static SiteTheme DetectTheme(HttpContextBase context)
+      {
+         string themeCookie = context.Request.Cookies[THEME_COOKIE_NAME]?.Value;
+         SiteTheme theme = SiteTheme.Dark;
+         if (!string.IsNullOrEmpty(themeCookie))
+         {
+            Enum.TryParse(themeCookie, out theme);
+         }
+
+         return theme;
+      }
    }
 
    public enum SiteTheme

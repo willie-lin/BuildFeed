@@ -90,11 +90,11 @@
   <ItemGroup>
     <Compile Include="Api\NewBuild.cs" />
     <Compile Include="Api\SearchResult.cs" />
-    <Compile Include="Build-Group.cs" />
-    <Compile Include="Build-Lab.cs" />
-    <Compile Include="Build-Source.cs" />
-    <Compile Include="Build-Version.cs" />
-    <Compile Include="Build-Year.cs" />
+    <Compile Include="BuildRepository-Group.cs" />
+    <Compile Include="BuildRepository-Lab.cs" />
+    <Compile Include="BuildRepository-Source.cs" />
+    <Compile Include="BuildRepository-Version.cs" />
+    <Compile Include="BuildRepository-Year.cs" />
     <Compile Include="BuildRepository.cs" />
     <Compile Include="BuildGroup.cs" />
     <Compile Include="Build.cs" />

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using BuildFeed.Code.Options;
 using BuildFeed.Model;
 
 namespace BuildFeed
@@ -32,15 +35,26 @@ namespace BuildFeed
 
       public override string GetVaryByCustomString(HttpContext context, string custom)
       {
-         switch (custom)
+         string[] parts = custom.Split(';');
+         List<string> varyParts = new List<string>();
+
+         foreach (string part in parts)
          {
-            case "userName":
-               return context.User.Identity.Name.ToLower();
-            case "lang":
-               return context.Request.Cookies["lang"]?.Value ?? CultureInfo.CurrentUICulture.IetfLanguageTag;
+            switch (part)
+            {
+               case "userName":
+                  varyParts.Add($"user:{context.User.Identity.Name}");
+                  break;
+               case "lang":
+                  varyParts.Add($"lang:{CultureInfo.CurrentUICulture.LCID}");
+                  break;
+               case "theme":
+                  varyParts.Add($"theme:{Theme.DetectTheme(new HttpContextWrapper(context))}");
+                  break;
+            }
          }
 
-         return "";
+         return string.Join(";", varyParts.OrderBy(s => s));
       }
    }
 }

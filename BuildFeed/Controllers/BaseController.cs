@@ -10,7 +10,6 @@ namespace BuildFeed.Controllers
    public class BaseController : Controller
    {
       private const string LANG_COOKIE_NAME = "bf_lang";
-      private const string THEME_COOKIE_NAME = "bf_theme";
 
       protected override void Initialize(RequestContext requestContext)
       {
@@ -36,13 +35,7 @@ namespace BuildFeed.Controllers
             catch (CultureNotFoundException) { }
          }
 
-         string themeCookie = requestContext.HttpContext.Request.Cookies[THEME_COOKIE_NAME]?.Value;
-         SiteTheme theme = SiteTheme.Dark;
-         if (!string.IsNullOrEmpty(themeCookie))
-         {
-            Enum.TryParse(themeCookie, out theme);
-         }
-         ViewBag.Theme = new Theme(theme);
+         ViewBag.Theme = new Theme(Theme.DetectTheme(requestContext.HttpContext));
 
          base.Initialize(requestContext);
       }
