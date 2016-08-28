@@ -121,7 +121,7 @@
     <value>BuildFeed priklauso ir yra prižiūrimas grupės entuziastų. Microsoft nėra niekaip susijusi su šiuo tinklapiu. Mes iki šiol nesulaukėme oficialaus Microsoft skundo dėl šio tinklapio, nors esame įsitikinę, kad Microsoft apie jį žino. Žinoma, Microsoft nori išlaikyti privačią informaciją privačia. Jie ne kartą uždarė mūsų šaltinius praeityje ir mes neabejojame, jog jie tą darys ir ateityje.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>Puikus bandymas, Dona, bet aš nesivelsiu į tai. BuildFeed daro viską, kad užtikrintų, jog visos komponavimo versijos pateiktos tinklapyje yra teisėtos ir teisingos. Mes turime ne vieną šaltinį, kad galėtume atlikti patikrą ir nenukentėtume, jeigu Microsoft uždarytų vieną iš mūsų šaltinių.</value>
+    <value>Puikus bandymas, Dona, bet aš neužkibsiu. BuildFeed daro viską, kad užtikrintų, jog visos komponavimo versijos pateiktos tinklapyje yra teisėtos ir teisingos. Mes turime ne vieną šaltinį, kad galėtume atlikti patikrą ir nenukentėtume, jeigu Microsoft uždarytų vieną iš mūsų šaltinių.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
     <value>Yra keli būdai. Galite diskutuoti apie komponavimo versijas naudodami disqus komentarų sistemą kiekvienos komponavimo versijos puslapyje. Taip pat galite prisidėti prie tinklapio kūrimo pranešdami apie klaidas mūsų GitHub puslapyje. Galiausiai galite padėti išversti BuildFeed į Jūsų gimtąją kalbą naudodami Traslation portal.</value>
@@ -202,13 +202,13 @@
     <value>Komentarai</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Dabartinė Canary</value>
+    <value>Naujausia Canary komponavimo versija</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Dabartinė Insider</value>
+    <value>Naujausia Insider komponavimo versija</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Dabartinė Release</value>
+    <value>Naujausia Release komponavimo versija</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Ištrinti</value>
@@ -241,13 +241,13 @@
     <value>Sąrašas</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>Rasti daugiau komponavimo versijų {0}</value>
+    <value>Rasti daugiau {0} komponavimo versijų</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>Rasti daugiau komponavimo versijų nuo {0}</value>
+    <value>Rasti daugiau {0} komponavimo versijų</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Rasti daugiau komponavimo versijų sugeneruotų {0}</value>
+    <value>Rasti daugiau komponavimo versijų sugeneruotų {0} m.</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
     <value>Nėra laboratorijos pavadinimo</value>
@@ -334,16 +334,16 @@
     <value>Dokumentacija</value>
   </data>
   <data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>Nutekėjimas į viešumą</value>
+    <value>viešų nutekėjusių</value>
   </data>
   <data name="Model_Source_Logging" xml:space="preserve">
     <value>Sekimas</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>Privatus nutekėjimas</value>
+    <value>privačių nutekėjusių</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>Viešas leidimas</value>
+    <value>viešai išleistų</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
     <value>Naujinimas (GDR)</value>
@@ -433,7 +433,7 @@
     <value>Nesenai pateko į viešumą</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Užsiregistruoti</value>
+    <value>Registruotis</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Prisiminti mane</value>
