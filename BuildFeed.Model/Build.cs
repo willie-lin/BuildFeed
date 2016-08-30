@@ -94,6 +94,34 @@ namespace BuildFeed.Model
          }
       }
 
+      public string AlternateBuildString
+      {
+         get
+         {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
+
+            if (Revision.HasValue)
+            {
+               sb.Append($".{Revision}");
+            }
+
+            if (!string.IsNullOrWhiteSpace(Lab))
+            {
+               sb.Append($" ({Lab}");
+
+               if (BuildTime.HasValue)
+               {
+                  sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
+               }
+
+               sb.Append(")");
+            }
+
+            return sb.ToString();
+         }
+      }
+
       public ProjectFamily Family
       {
          get

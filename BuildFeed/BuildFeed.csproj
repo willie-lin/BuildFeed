@@ -206,10 +206,13 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
-    <Content Include="content\card\Redstone2.png" />
-    <Content Include="content\card\Redstone.png" />
-    <Content Include="content\card\Threshold2.png" />
-    <Content Include="content\card\Threshold.png" />
+    <Content Include="res\card\Longhorn.png" />
+    <Content Include="res\card\Redstone2.png" />
+    <Content Include="res\card\Redstone.png" />
+    <Content Include="res\card\Threshold2.png" />
+    <Content Include="res\card\Threshold.png" />
+    <Content Include="res\card\Windows7.png" />
+    <Content Include="res\card\WindowsVista.png" />
     <Content Include="res\css\dark.css">
       <DependentUpon>dark.scss</DependentUpon>
     </Content>

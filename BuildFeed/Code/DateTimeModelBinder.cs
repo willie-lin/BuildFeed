@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Web.Mvc;
 
-namespace BuildFeed
+namespace BuildFeed.Code
 {
    public class DateTimeModelBinder : DefaultModelBinder
    {

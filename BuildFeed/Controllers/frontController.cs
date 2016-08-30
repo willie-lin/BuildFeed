@@ -48,16 +48,13 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectAllGroupsCount()) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
 
          return View("Pages", buildGroups);
       }
 
-      [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
-      [Route("group/{major}.{minor}.{number}/", Order = 5)] // for when there is no revision
+      [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1), Route("group/{major}.{minor}.{number}/", Order = 5)]
+      // for when there is no revision
 #if !DEBUG
       [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
 #endif
@@ -89,10 +86,7 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewBuild(Guid id)
       {
          Build b = await _bModel.SelectById(id);
-         if (b == null)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (b == null) return new HttpNotFoundResult();
          return View(b);
       }
 
@@ -100,10 +94,7 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewBuild(long id)
       {
          Build b = await _bModel.SelectByLegacyId(id);
-         if (b == null)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (b == null) return new HttpNotFoundResult();
          return RedirectToAction(nameof(ViewBuild),
             new
             {
@@ -119,12 +110,9 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> TwitterCard(Guid id)
       {
          Build b = await _bModel.SelectById(id);
-         if (b == null)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (b == null) return new HttpNotFoundResult();
 
-         string path = Path.Combine(Server.MapPath("~/content/card/"), $"{b.Family}.png");
+         string path = Path.Combine(Server.MapPath("~/res/card/"), $"{b.Family}.png");
          bool backExists = System.IO.File.Exists(path);
 
          using (Bitmap bm = backExists
@@ -133,7 +121,6 @@ namespace BuildFeed.Controllers
          {
             using (Graphics gr = Graphics.FromImage(bm))
             {
-               GraphicsPath gp = new GraphicsPath();
                gr.CompositingMode = CompositingMode.SourceOver;
                gr.CompositingQuality = CompositingQuality.HighQuality;
                gr.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -141,23 +128,52 @@ namespace BuildFeed.Controllers
                gr.SmoothingMode = SmoothingMode.HighQuality;
                gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-               if (!backExists)
+               if (!backExists) gr.FillRectangle(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 0, 0, 1120, 600);
+
+               int left = 40;
+               using (GraphicsPath gp = new GraphicsPath())
                {
-                  gr.FillRectangle(new SolidBrush(Color.FromArgb(0x27, 0x2b, 0x30)), 0, 0, 1120, 600);
+                  foreach (char c in "BUILDFEED")
+                  {
+                     gp.AddString(c.ToString(), new FontFamily("Segoe UI Semibold"), 0, 32, new Point(left, 32), StringFormat.GenericTypographic);
+
+                     RectangleF bounds = gp.GetBounds();
+                     left = Convert.ToInt32(bounds.Width);
+                     left += 52;
+                  }
+
+                  gr.FillPath(Brushes.White, gp);
                }
 
-               gp.AddString("BUILDFEED", new FontFamily("Segoe UI"), (int)FontStyle.Bold, 32, new Point(40, 32), StringFormat.GenericTypographic);
-               gp.AddString($"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (WinNT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
-               gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 280, new Point(32, 96), StringFormat.GenericTypographic);
-               gp.AddString(b.BuildTime.HasValue
-                  ? $"{b.Lab}\r\n{b.BuildTime.Value:yyyy/MM/dd HH:mm}"
-                  : $"{b.Lab}",
-                  new FontFamily("Segoe UI"),
-                  0,
-                  44,
-                  new Point(40, 440),
-                  StringFormat.GenericTypographic);
-               gr.FillPath(Brushes.White, gp);
+               using (GraphicsPath gp = new GraphicsPath())
+               {
+                  gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 260, new Point(32, 114), StringFormat.GenericTypographic);
+
+                  RectangleF bounds = gp.GetBounds();
+                  left = Convert.ToInt32(bounds.Width);
+                  left += 44;
+
+                  if (b.Revision.HasValue) gp.AddString($".{b.Revision}", new FontFamily("Segoe UI Light"), 0, 160, new Point(left, 220), StringFormat.GenericTypographic);
+
+                  gr.DrawPath(new Pen(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 4), gp);
+                  gr.FillPath(Brushes.White, gp);
+               }
+
+               using (GraphicsPath gp = new GraphicsPath())
+               {
+                  gp.AddString($"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (NT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI Light"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
+
+                  gp.AddString(char.ConvertFromUtf32(0xf126), new FontFamily("FontAwesome"), 0, 28, new Point(46, 468), StringFormat.GenericTypographic);
+                  gp.AddString(b.Lab, new FontFamily("Segoe UI Light"), 0, 40, new Point(88, 450), StringFormat.GenericTypographic);
+
+                  if (b.BuildTime.HasValue)
+                  {
+                     gp.AddString(char.ConvertFromUtf32(0xf017), new FontFamily("FontAwesome"), 0, 28, new Point(40, 538), StringFormat.GenericTypographic);
+                     gp.AddString($"{b.BuildTime.Value.ToShortTimeString()} on {b.BuildTime.Value.ToLongDateString()}", new FontFamily("Segoe UI Light"), 0, 40, new Point(88, 520), StringFormat.GenericTypographic);
+                  }
+
+                  gr.FillPath(Brushes.White, gp);
+               }
 
                Response.ContentType = "image/png";
                bm.Save(Response.OutputStream, ImageFormat.Png);
@@ -171,10 +187,7 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> TwitterCard(long id)
       {
          Build b = await _bModel.SelectByLegacyId(id);
-         if (b == null)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (b == null) return new HttpNotFoundResult();
          return RedirectToAction(nameof(TwitterCard),
             new
             {
@@ -209,10 +222,7 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
 
          return View("viewLab", builds);
       }
@@ -244,10 +254,7 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
 
          return View("viewSource", builds);
       }
@@ -279,10 +286,7 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
 
          return View("viewYear", builds);
       }
@@ -315,10 +319,7 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount)
-         {
-            return new HttpNotFoundResult();
-         }
+         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
 
          return View("viewVersion", builds);
       }
@@ -342,14 +343,8 @@ namespace BuildFeed.Controllers
             {
                build.Added = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
                build.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
-               if (build.BuildTime.HasValue)
-               {
-                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
-               }
-               if (build.LeakDate.HasValue)
-               {
-                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
-               }
+               if (build.BuildTime.HasValue) build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               if (build.LeakDate.HasValue) build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                await _bModel.Insert(build);
             }
             catch
@@ -379,14 +374,8 @@ namespace BuildFeed.Controllers
          {
             try
             {
-               if (build.BuildTime.HasValue)
-               {
-                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
-               }
-               if (build.LeakDate.HasValue)
-               {
-                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
-               }
+               if (build.BuildTime.HasValue) build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               if (build.LeakDate.HasValue) build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                await _bModel.Update(build);
             }
             catch

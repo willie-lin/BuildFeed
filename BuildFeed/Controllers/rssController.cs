@@ -28,7 +28,7 @@ namespace BuildFeed.Controllers
             Items = (from build in builds
                      select new Item
                      {
-                        Title = build.FullBuildString,
+                        Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
                         Categories = {
@@ -58,7 +58,7 @@ namespace BuildFeed.Controllers
             Items = (from build in builds
                      select new Item
                      {
-                        Title = build.FullBuildString,
+                        Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
                         Categories = {
@@ -88,7 +88,7 @@ namespace BuildFeed.Controllers
             Items = (from build in builds
                      select new Item
                      {
-                        Title = build.FullBuildString,
+                        Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
                         Categories = {
@@ -118,7 +118,7 @@ namespace BuildFeed.Controllers
             Items = (from build in builds
                      select new Item
                      {
-                        Title = build.FullBuildString,
+                        Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
                         Categories = {
@@ -147,7 +147,7 @@ namespace BuildFeed.Controllers
             Items = (from build in builds
                      select new Item
                      {
-                        Title = build.FullBuildString,
+                        Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
                         Categories = {
