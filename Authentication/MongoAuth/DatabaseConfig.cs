@@ -7,6 +7,8 @@ namespace MongoAuth
       public static string Host { get; }
       public static int Port { get; }
       public static string Database { get; }
+      public static string Username { get; }
+      public static string Password { get; }
 
       static DatabaseConfig()
       {
@@ -25,6 +27,9 @@ namespace MongoAuth
          Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])
             ? ConfigurationManager.AppSettings["data:MongoDB"]
             : "MongoAuth";
+
+         Username = ConfigurationManager.AppSettings["data:MongoUser"] ?? "";
+         Password = ConfigurationManager.AppSettings["data:MongoPass"] ?? "";
       }
    }
 }

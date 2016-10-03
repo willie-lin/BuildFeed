@@ -118,7 +118,7 @@
       {
          @Html.LabelFor(model => model.LeakDate)
          <div class="build-details-flex-value">
-            <time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToString("dddd, d MMMM yyyy")">@Html.DisplayFor(model => model.LeakDate, "{0:dd/MM/yyyy}")</time>
+            <time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToLongDateString()">@Model.LeakDate.Value.ToShortDateString()</time>
          </div>
       }
    </div>

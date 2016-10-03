@@ -23,7 +23,6 @@ namespace MongoAuth
       private int _passwordAttemptWindow = 60;
       private bool _requiresUniqueEmail = true;
 
-      private MongoClient _dbClient;
       private IMongoCollection<MongoMember> _memberCollection;
 
       public override string ApplicationName { get; set; }
@@ -64,11 +63,23 @@ namespace MongoAuth
          _passwordAttemptWindow = TryReadInt(config["passwordAttemptWindow"], _passwordAttemptWindow);
          _requiresUniqueEmail = TryReadBool(config["requiresUniqueEmail"], _requiresUniqueEmail);
 
-         _dbClient = new MongoClient(new MongoClientSettings
+
+         MongoClientSettings settings = new MongoClientSettings
          {
             Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
-         });
-         _memberCollection = _dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
+         };
+
+         if (!string.IsNullOrEmpty(DatabaseConfig.Username) && !string.IsNullOrEmpty(DatabaseConfig.Password))
+         {
+            settings.Credentials = new List<MongoCredential>
+            {
+               MongoCredential.CreateCredential(DatabaseConfig.Database, DatabaseConfig.Username, DatabaseConfig.Password)
+            };
+         }
+
+         MongoClient dbClient = new MongoClient(settings);
+
+         _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
       }
 
       public override bool ChangePassword(string username, string oldPassword, string newPassword)

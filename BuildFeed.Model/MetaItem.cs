@@ -30,21 +30,30 @@ namespace BuildFeed.Model
 
    public class MetaItem
    {
-      private const string _metaCollectionName = "metaitem";
+      private const string META_COLLECTION_NAME = "metaitem";
 
-      private readonly MongoClient _dbClient;
       private readonly IMongoCollection<MetaItemModel> _metaCollection;
-      private readonly BuildRepository bModel;
+      private readonly BuildRepository _bModel;
 
       public MetaItem()
       {
-         _dbClient = new MongoClient(new MongoClientSettings
+         MongoClientSettings settings = new MongoClientSettings
          {
             Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-         });
+         };
 
-         _metaCollection = _dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(_metaCollectionName);
-         bModel = new BuildRepository();
+         if (!string.IsNullOrEmpty(MongoConfig.Username) && !string.IsNullOrEmpty(MongoConfig.Password))
+         {
+            settings.Credentials = new List<MongoCredential>
+            {
+               MongoCredential.CreateCredential(MongoConfig.Database, MongoConfig.Username, MongoConfig.Password)
+            };
+         }
+
+         MongoClient dbClient = new MongoClient(settings);
+
+         _metaCollection = dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(META_COLLECTION_NAME);
+         _bModel = new BuildRepository();
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
@@ -59,7 +68,7 @@ namespace BuildFeed.Model
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedLabs()
       {
-         string[] labs = await bModel.SelectAllLabs();
+         string[] labs = await _bModel.SelectAllLabs();
 
          List<MetaItemModel> usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
 
@@ -71,7 +80,7 @@ namespace BuildFeed.Model
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedVersions()
       {
-         BuildVersion[] versions = await bModel.SelectAllVersions();
+         BuildVersion[] versions = await _bModel.SelectAllVersions();
 
          List<MetaItemModel> usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
 
@@ -83,7 +92,7 @@ namespace BuildFeed.Model
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedYears()
       {
-         int[] years = await bModel.SelectAllYears();
+         int[] years = await _bModel.SelectAllYears();
 
          List<MetaItemModel> usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
 

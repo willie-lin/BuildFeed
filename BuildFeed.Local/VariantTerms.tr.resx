@@ -121,7 +121,7 @@
     <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bununla beraber, Microsoft açıkça, gizli bilgileri gizli tutmayı istiyor, ve daha önce onlar tarafından kapatılan kaynaklara sahiptik, bunu yapmaya devam edeceklerinden de eminim.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu siteye gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
+    <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu sitede gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
     <value>Birkaç yol var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımızdan kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
@@ -169,13 +169,13 @@
     <value>Tema</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSS beslemesi</value>
+    <value>RSS beslemeleri</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>Site haritası</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Karanlık</value>
+    <value>Koyu</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>Açık</value>
@@ -196,7 +196,7 @@
     <value>{0} hakkında</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>{0} laboratuvar etiketinden yapılar</value>
+    <value>Şundan yapılar: {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
     <value>Yorumlar</value>
@@ -226,13 +226,13 @@
     <value>Editör eylemleri</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>Bütün Windows Yapıları listesini gör</value>
+    <value>Bütün Windows yapıları listesini gör...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
     <value>Windows yapıları izleyicisi: {0}</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} Yapı Listesi</value>
+    <value>{0} yapı listesi</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>En Son Yapılar</value>
@@ -241,7 +241,7 @@
     <value>Liste</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>{0} laboratuvar etiketinden daha fazla yapı bul</value>
+    <value>Şundan daha fazla yapı bul: {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
     <value>{0} kaynaklı daha fazla yapı bul</value>
@@ -253,7 +253,7 @@
     <value>Laboratuvar etiketi yok</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} Yapı</value>
+    <value>{0} yapı</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
     <value>Özel</value>
@@ -283,7 +283,7 @@
     <value>{1} kaynaklı {0} Windows yapısını keşfet. BuildFeed, Windows yapılarını geliştirme süreci boyunca izler.</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>Windows geliştirme laboratuvarlarından çıkan bütün bilinen Windows yapılarını, beraber oluşturulan BuildFeed ile keşfedin</value>
+    <value>{0} Windows geliştirme laboratuvarından çıkan bütün bilinen yapıları, işbirlikçi Windows yapı listesi, BuildFeed üzerinden kontrol edin.</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
     <value>Beraber oluşturulan BuildFeed ile, {0} tarihinde derlenen bütün Windows yapılarının bir listesini görüntüleyin ve Windows'un zamanla nasıl durmadan geliştiğini izleyin</value>
@@ -295,7 +295,7 @@
     <value>Yapı numarası</value>
   </data>
   <data name="Model_BuildTime" xml:space="preserve">
-    <value>Yapı zamanı</value>
+    <value>Yapının çıkış tarihi</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
     <value>Dış bağlantı:</value>
@@ -352,7 +352,7 @@
     <value>Güncelleme (LDR)</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
-    <value>Yapı:</value>
+    <value>Yapı</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
     <value>BuildFeed'i Araştır...</value>
@@ -388,7 +388,7 @@
     <value>BuildFeed'e eklemeler:</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>Derlenen Yapılar:</value>
+    <value>Derlenen yapılar</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
     <value>Parolanızı değiştirin:</value>
@@ -412,7 +412,7 @@
     <value>Parolayı girin</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>En yüksek sürüm:</value>
+    <value>En yüksek sürüm</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
     <value>Laboratuvarlar</value>

@@ -17,7 +17,6 @@ namespace MongoAuth
    {
       private const string MEMBER_COLLECTION_NAME = "members";
       private const string ROLE_COLLECTION_NAME = "roles";
-      private MongoClient _dbClient;
       private IMongoCollection<MongoRole> _roleCollection;
       private IMongoCollection<MongoMember> _memberCollection;
 
@@ -31,13 +30,23 @@ namespace MongoAuth
       {
          base.Initialize(name, config);
 
-         _dbClient = new MongoClient(new MongoClientSettings
+         MongoClientSettings settings = new MongoClientSettings
          {
             Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
-         });
+         };
 
-         _roleCollection = _dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoRole>(ROLE_COLLECTION_NAME);
-         _memberCollection = _dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
+         if (!string.IsNullOrEmpty(DatabaseConfig.Username) && !string.IsNullOrEmpty(DatabaseConfig.Password))
+         {
+            settings.Credentials = new List<MongoCredential>
+            {
+               MongoCredential.CreateCredential(DatabaseConfig.Database, DatabaseConfig.Username, DatabaseConfig.Password)
+            };
+         }
+
+         MongoClient dbClient = new MongoClient(settings);
+
+         _roleCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoRole>(ROLE_COLLECTION_NAME);
+         _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
       }
 
       public override void AddUsersToRoles(string[] usernames, string[] roleNames)

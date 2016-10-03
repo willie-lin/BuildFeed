@@ -30,10 +30,20 @@ namespace BuildFeed.Model
 
       public BuildRepository()
       {
-         MongoClient dbClient = new MongoClient(new MongoClientSettings
+         MongoClientSettings settings = new MongoClientSettings
          {
             Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
-         });
+         };
+
+         if (!string.IsNullOrEmpty(MongoConfig.Username) && !string.IsNullOrEmpty(MongoConfig.Password))
+         {
+            settings.Credentials = new List<MongoCredential>
+            {
+               MongoCredential.CreateCredential(MongoConfig.Database, MongoConfig.Username, MongoConfig.Password)
+            };
+         }
+
+         MongoClient dbClient = new MongoClient(settings);
 
          IMongoDatabase buildDatabase = dbClient.GetDatabase(MongoConfig.Database);
          _buildCollection = buildDatabase.GetCollection<Build>(BUILD_COLLECTION_NAME);
@@ -117,7 +127,7 @@ namespace BuildFeed.Model
             {
                nameof(Build.LabUrl), new BsonDocument
                {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';')) }
+                  {"$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';'))}
                }
             }
          }).Sort(sortByCompileDate).Limit(1);
@@ -128,7 +138,7 @@ namespace BuildFeed.Model
             {
                nameof(Build.LabUrl), new BsonDocument
                {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';')) }
+                  {"$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';'))}
                }
             },
             {
@@ -151,7 +161,7 @@ namespace BuildFeed.Model
             {
                nameof(Build.LabUrl), new BsonDocument
                {
-                  { "$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';')) }
+                  {"$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';'))}
                }
             },
             {

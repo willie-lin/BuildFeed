@@ -187,7 +187,8 @@
             <p>
                <a href="@Url.Action(nameof(SupportController.Sitemap), new
                         {
-                           controller = "Support"
+                           controller = "Support",
+                           area = ""
                         })">@VariantTerms.Common_Sitemap</a>
                </p>
                <p>
@@ -195,7 +196,8 @@
                   @CultureInfo.CurrentUICulture.NativeName
                   (<a href="@Url.Action(nameof(SupportController.Credits), new
                         {
-                           controller = "Support"
+                           controller = "Support",
+                           area = ""
                         })">
                      @VariantTerms.Common_Credits
                   </a>)

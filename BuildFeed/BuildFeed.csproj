@@ -406,6 +406,9 @@
     <Content Include="Scripts\trumbowyg\ui\sass\_sprite-white.scss" />
     <Content Include="Views\front\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <Content Include="settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
