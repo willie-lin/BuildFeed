@@ -84,7 +84,8 @@
          }
       }
 
-      $(function() {
+      $(function()
+      {
          var btnsGrps = $.trumbowyg.btnsGrps;
 
          $("#@Html.IdFor(model => model.PageContent)")
@@ -101,7 +102,8 @@
             });
 
          $("#@Html.IdFor(model => model.MetaDescription)")
-            .keyup(function() {
+            .keyup(function()
+            {
                updateMetaCount();
             });
 

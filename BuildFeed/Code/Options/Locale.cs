@@ -6,7 +6,10 @@ namespace BuildFeed.Code.Options
 {
    public class Locale
    {
-      public static readonly Locale[] AvailableLocales = {
+      private const string LANG_COOKIE_NAME = "bf_lang";
+
+      public static readonly Locale[] AvailableLocales =
+      {
          new Locale("ar"),
          //new Locale("bn"),
          new Locale("cs"),
@@ -41,8 +44,6 @@ namespace BuildFeed.Code.Options
          new Locale("zh-hant")
       };
 
-      private const string LANG_COOKIE_NAME = "bf_lang";
-
       public string DisplayName => Info.NativeName;
 
       public CultureInfo Info { get; set; }
@@ -65,7 +66,7 @@ namespace BuildFeed.Code.Options
                CultureInfo ci = (CultureInfo)CultureInfo.GetCultureInfo(langCookie).Clone();
 
                // Get Gregorian Calendar in locale if available
-               Calendar gc = ci.OptionalCalendars.FirstOrDefault(c => c is GregorianCalendar && ((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized);
+               Calendar gc = ci.OptionalCalendars.FirstOrDefault(c => c is GregorianCalendar && (((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized));
                if (gc != null)
                {
                   ci.DateTimeFormat.Calendar = gc;
@@ -74,7 +75,9 @@ namespace BuildFeed.Code.Options
                return ci;
             }
 
-            catch (CultureNotFoundException) { }
+            catch (CultureNotFoundException)
+            {
+            }
          }
 
          return CultureInfo.CurrentCulture;

@@ -9,7 +9,10 @@ namespace BuildFeed.Areas.admin.Controllers
    {
       [Authorize(Roles = "Administrators")]
       // GET: admin/base
-      public ActionResult index() { return View(); }
+      public ActionResult index()
+      {
+         return View();
+      }
 
       [Authorize(Users = "hounsell")]
       public ActionResult setup()
@@ -27,6 +30,9 @@ namespace BuildFeed.Areas.admin.Controllers
       }
 
       [Authorize(Users = "hounsell")]
-      public ActionResult exception() { throw new Exception("This is a test exception"); }
+      public ActionResult exception()
+      {
+         throw new Exception("This is a test exception");
+      }
    }
 }

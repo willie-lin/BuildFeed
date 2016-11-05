@@ -61,46 +61,42 @@
                  : mu.LastLockoutDate.Humanize())
          </td>
          <td class="text-right">
-            @(
-         mu.IsApproved
-            ? Html.ActionLink("Unapprove", "unapprove", new
-            {
-               id = mu.ProviderUserKey
-            }, new
-            {
-               @class = "button delete-button",
-               style = "width:70px;"
-            })
-            : Html.ActionLink("Approve", "approve", new
-            {
-               id = mu.ProviderUserKey
-            }, new
-            {
-               @class = "button add-button",
-               style = "width:70px;"
-            })
-                 )
+            @(mu.IsApproved
+                 ? Html.ActionLink("Unapprove", "unapprove", new
+                 {
+                    id = mu.ProviderUserKey
+                 }, new
+                 {
+                    @class = "button delete-button",
+                    style = "width:70px;"
+                 })
+                 : Html.ActionLink("Approve", "approve", new
+                 {
+                    id = mu.ProviderUserKey
+                 }, new
+                 {
+                    @class = "button add-button",
+                    style = "width:70px;"
+                 }))
          </td>
          <td class="text-right">
-            @(
-         !mu.IsLockedOut
-            ? Html.ActionLink("Lock", "lock", new
-            {
-               id = mu.ProviderUserKey
-            }, new
-            {
-               @class = "button delete-button",
-               style = "width:70px;"
-            })
-            : Html.ActionLink("Unlock", "unlock", new
-            {
-               id = mu.ProviderUserKey
-            }, new
-            {
-               @class = "button add-button",
-               style = "width:70px;"
-            })
-                 )
+            @(!mu.IsLockedOut
+                 ? Html.ActionLink("Lock", "lock", new
+                 {
+                    id = mu.ProviderUserKey
+                 }, new
+                 {
+                    @class = "button delete-button",
+                    style = "width:70px;"
+                 })
+                 : Html.ActionLink("Unlock", "unlock", new
+                 {
+                    id = mu.ProviderUserKey
+                 }, new
+                 {
+                    @class = "button add-button",
+                    style = "width:70px;"
+                 }))
          </td>
       </tr>
    }

@@ -16,10 +16,10 @@ namespace BuildFeed.Model
                new BsonElement(nameof(BuildVersion.Major), $"${nameof(Build.MajorVersion)}"),
                new BsonElement(nameof(BuildVersion.Minor), $"${nameof(Build.MinorVersion)}")
             })).Sort(new BsonDocument
-            {
-               new BsonElement($"_id.{nameof(BuildVersion.Major)}", -1),
-               new BsonElement($"_id.{nameof(BuildVersion.Minor)}", -1)
-            }).Skip(skip);
+         {
+            new BsonElement($"_id.{nameof(BuildVersion.Major)}", -1),
+            new BsonElement($"_id.{nameof(BuildVersion.Minor)}", -1)
+         }).Skip(skip);
 
          if (limit > 0)
          {

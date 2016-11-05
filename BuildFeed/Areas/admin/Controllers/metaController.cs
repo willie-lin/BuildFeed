@@ -12,7 +12,10 @@ namespace BuildFeed.Areas.admin.Controllers
    {
       private readonly MetaItem _mModel;
 
-      public metaController() { _mModel = new MetaItem(); }
+      public metaController()
+      {
+         _mModel = new MetaItem();
+      }
 
       // GET: admin/meta
       public async Task<ActionResult> index()

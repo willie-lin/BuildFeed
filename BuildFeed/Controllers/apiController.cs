@@ -6,8 +6,8 @@ using System.Web.Http;
 using System.Web.Security;
 using BuildFeed.Code;
 using BuildFeed.Local;
-using BuildFeed.Model.Api;
 using BuildFeed.Model;
+using BuildFeed.Model.Api;
 using BuildFeed.Model.View;
 
 namespace BuildFeed.Controllers
@@ -16,7 +16,10 @@ namespace BuildFeed.Controllers
    {
       private readonly BuildRepository _bModel;
 
-      public ApiController() { _bModel = new BuildRepository(); }
+      public ApiController()
+      {
+         _bModel = new BuildRepository();
+      }
 
       public async Task<Build[]> GetBuilds(int limit = 20, int skip = 0)
       {
@@ -51,7 +54,7 @@ namespace BuildFeed.Controllers
 
       public async Task<IEnumerable<string>> GetWin10Labs()
       {
-         List<string> labs = new List<string>();
+         var labs = new List<string>();
          labs.AddRange(await _bModel.SelectLabsForVersion(6, 4));
          labs.AddRange(await _bModel.SelectLabsForVersion(10, 0));
 
@@ -94,7 +97,7 @@ namespace BuildFeed.Controllers
          }
 
          const int maxResults = 16;
-         List<SearchResult> results = new List<SearchResult>();
+         var results = new List<SearchResult>();
 
          results.AddRange(from s in (from c in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>()
                                      select new
@@ -118,7 +121,10 @@ namespace BuildFeed.Controllers
                              Group = VariantTerms.Search_Source
                           });
 
-         if (results.Count >= maxResults) return results.Take(maxResults);
+         if (results.Count >= maxResults)
+         {
+            return results.Take(maxResults);
+         }
 
          results.AddRange(from v in await _bModel.SelectAllVersions()
                           where $"{v.Major}.{v.Minor}".StartsWith(id)
@@ -138,7 +144,10 @@ namespace BuildFeed.Controllers
                              Group = VariantTerms.Search_Version
                           });
 
-         if (results.Count >= maxResults) return results.Take(maxResults);
+         if (results.Count >= maxResults)
+         {
+            return results.Take(maxResults);
+         }
 
          results.AddRange(from y in await _bModel.SelectAllYears()
                           where y.ToString().Contains(id)
@@ -157,7 +166,10 @@ namespace BuildFeed.Controllers
                              Group = VariantTerms.Search_Year
                           });
 
-         if (results.Count >= maxResults) return results.Take(maxResults);
+         if (results.Count >= maxResults)
+         {
+            return results.Take(maxResults);
+         }
 
          results.AddRange(from l in await _bModel.SearchLabs(id)
                           select new SearchResult
@@ -174,7 +186,10 @@ namespace BuildFeed.Controllers
                              Group = VariantTerms.Search_Lab
                           });
 
-         if (results.Count >= maxResults) return results.Take(maxResults);
+         if (results.Count >= maxResults)
+         {
+            return results.Take(maxResults);
+         }
 
          results.AddRange(from b in await _bModel.Select()
                           where b.FullBuildString.ToLower().Contains(id.ToLower())

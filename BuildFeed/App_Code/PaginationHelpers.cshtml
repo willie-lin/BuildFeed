@@ -3,10 +3,10 @@
 @using BuildFeed.Code
 @helper PaginationBlock(int currentPage, int totalPages, string view, RouteValueDictionary rd)
 {
-string multiView = view + "Page";
+   string multiView = view + "Page";
 
-if (totalPages > 1)
-{
+   if (totalPages > 1)
+   {
       <div class="text-center">
          <ul class="pagination">
             @if (currentPage == 2)
@@ -69,7 +69,10 @@ if (totalPages > 1)
                   ["page"] = i
                };
 
-               <li @(i == currentPage ? "class=active" : "")>@MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
+               <li @(i == currentPage
+                        ? "class=active"
+                        : "")>
+                  @MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
             }
 
 
@@ -99,5 +102,5 @@ if (totalPages > 1)
             }
          </ul>
       </div>
-    }
+   }
 }

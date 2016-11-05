@@ -14,7 +14,10 @@ namespace BuildFeed.Controllers
       private const int RSS_SIZE = 25;
       private readonly BuildRepository _bModel;
 
-      public RssController() { _bModel = new BuildRepository(); }
+      public RssController()
+      {
+         _bModel = new BuildRepository();
+      }
 
       [Route("rss/compiled")]
       public async Task<ActionResult> Index()
@@ -31,7 +34,8 @@ namespace BuildFeed.Controllers
                         Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
-                        Categories = {
+                        Categories =
+                        {
                            build.Family.ToString()
                         },
                         PublishDate = DateTime.SpecifyKind(build.BuildTime.GetValueOrDefault(), DateTimeKind.Utc)
@@ -61,7 +65,8 @@ namespace BuildFeed.Controllers
                         Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
-                        Categories = {
+                        Categories =
+                        {
                            build.Family.ToString()
                         },
                         PublishDate = DateTime.SpecifyKind(build.Added, DateTimeKind.Utc)
@@ -91,7 +96,8 @@ namespace BuildFeed.Controllers
                         Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
-                        Categories = {
+                        Categories =
+                        {
                            build.Family.ToString()
                         },
                         PublishDate = DateTime.SpecifyKind(build.LeakDate.GetValueOrDefault(), DateTimeKind.Utc)
@@ -121,7 +127,8 @@ namespace BuildFeed.Controllers
                         Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
-                        Categories = {
+                        Categories =
+                        {
                            build.Family.ToString()
                         }
                      }).ToList()
@@ -150,7 +157,8 @@ namespace BuildFeed.Controllers
                         Title = build.AlternateBuildString,
                         Link = new Uri($"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}"),
                         Permalink = $"{Request.Url.Scheme}://{Request.Url.Authority}{Url.Action(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}",
-                        Categories = {
+                        Categories =
+                        {
                            build.Family.ToString()
                         }
                      }).ToList()

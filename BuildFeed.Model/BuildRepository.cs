@@ -232,7 +232,7 @@ namespace BuildFeed.Model
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
       public async Task InsertAll(IEnumerable<Build> items)
       {
-         List<Build> generatedItems = new List<Build>();
+         var generatedItems = new List<Build>();
          foreach (Build item in items)
          {
             item.Id = Guid.NewGuid();

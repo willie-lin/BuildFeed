@@ -15,11 +15,11 @@ namespace BuildFeed.Code
          bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
          Theme theme = new Theme(Theme.DetectTheme(filterContext.HttpContext));
 
-         filterContext.HttpContext.Response.PushPromise("/res/css/default.min.css");
+         filterContext.HttpContext.Response.PushPromise("/res/css/default.css");
          filterContext.HttpContext.Response.PushPromise(VirtualPathUtility.ToAbsolute(theme.CssPath));
          if (isRtl)
          {
-            filterContext.HttpContext.Response.PushPromise("/res/css/rtl.min.css");
+            filterContext.HttpContext.Response.PushPromise("/res/css/rtl.css");
          }
          filterContext.HttpContext.Response.PushPromise("/res/ts/bfs.min.js");
       }

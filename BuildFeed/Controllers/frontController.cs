@@ -29,7 +29,8 @@ namespace BuildFeed.Controllers
 
       [Route("", Order = 1)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> Index()
       {
@@ -39,7 +40,8 @@ namespace BuildFeed.Controllers
 
       [Route("page-{page:int:min(1)}/", Order = 0)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> IndexPage(int page)
       {
@@ -48,15 +50,20 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectAllGroupsCount()) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
+         if (ViewBag.PageNumber > ViewBag.PageCount)
+         {
+            return new HttpNotFoundResult();
+         }
 
          return View("Pages", buildGroups);
       }
 
-      [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1), Route("group/{major}.{minor}.{number}/", Order = 5)]
+      [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
+      [Route("group/{major}.{minor}.{number}/", Order = 5)]
       // for when there is no revision
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewGroup(uint major, uint minor, uint number, uint? revision = null)
       {
@@ -81,12 +88,17 @@ namespace BuildFeed.Controllers
 
       [Route("build/{id:guid}/", Name = "Build")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewBuild(Guid id)
       {
          Build b = await _bModel.SelectById(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
+
          return View(b);
       }
 
@@ -94,7 +106,11 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> ViewBuild(long id)
       {
          Build b = await _bModel.SelectByLegacyId(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
+
          return RedirectToAction(nameof(ViewBuild),
             new
             {
@@ -104,13 +120,16 @@ namespace BuildFeed.Controllers
 
       [Route("twitter/{id:guid}/", Name = "Twitter")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none")]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
       [CustomContentType(ContentType = "image/png", Order = 2)]
 #endif
       public async Task<ActionResult> TwitterCard(Guid id)
       {
          Build b = await _bModel.SelectById(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
 
          string path = Path.Combine(Server.MapPath("~/res/card/"), $"{b.Family}.png");
          bool backExists = System.IO.File.Exists(path);
@@ -128,7 +147,10 @@ namespace BuildFeed.Controllers
                gr.SmoothingMode = SmoothingMode.HighQuality;
                gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-               if (!backExists) gr.FillRectangle(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 0, 0, 1120, 600);
+               if (!backExists)
+               {
+                  gr.FillRectangle(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 0, 0, 1120, 600);
+               }
 
                int left = 40;
                using (GraphicsPath gp = new GraphicsPath())
@@ -153,7 +175,10 @@ namespace BuildFeed.Controllers
                   left = Convert.ToInt32(bounds.Width);
                   left += 44;
 
-                  if (b.Revision.HasValue) gp.AddString($".{b.Revision}", new FontFamily("Segoe UI Light"), 0, 160, new Point(left, 220), StringFormat.GenericTypographic);
+                  if (b.Revision.HasValue)
+                  {
+                     gp.AddString($".{b.Revision}", new FontFamily("Segoe UI Light"), 0, 160, new Point(left, 220), StringFormat.GenericTypographic);
+                  }
 
                   gr.DrawPath(new Pen(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 4), gp);
                   gr.FillPath(Brushes.White, gp);
@@ -187,7 +212,11 @@ namespace BuildFeed.Controllers
       public async Task<ActionResult> TwitterCard(long id)
       {
          Build b = await _bModel.SelectByLegacyId(id);
-         if (b == null) return new HttpNotFoundResult();
+         if (b == null)
+         {
+            return new HttpNotFoundResult();
+         }
+
          return RedirectToAction(nameof(TwitterCard),
             new
             {
@@ -197,7 +226,8 @@ namespace BuildFeed.Controllers
 
       [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewLab(string lab)
       {
@@ -206,7 +236,8 @@ namespace BuildFeed.Controllers
 
       [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewLabPage(string lab, int page)
       {
@@ -222,14 +253,18 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
+         if (ViewBag.PageNumber > ViewBag.PageCount)
+         {
+            return new HttpNotFoundResult();
+         }
 
          return View("viewLab", builds);
       }
 
       [Route("source/{source}/", Order = 1, Name = "Source Root")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewSource(TypeOfSource source)
       {
@@ -238,7 +273,8 @@ namespace BuildFeed.Controllers
 
       [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewSourcePage(TypeOfSource source, int page)
       {
@@ -254,14 +290,18 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
+         if (ViewBag.PageNumber > ViewBag.PageCount)
+         {
+            return new HttpNotFoundResult();
+         }
 
          return View("viewSource", builds);
       }
 
       [Route("year/{year}/", Order = 1, Name = "Year Root")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewYear(int year)
       {
@@ -270,7 +310,8 @@ namespace BuildFeed.Controllers
 
       [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewYearPage(int year, int page)
       {
@@ -286,14 +327,18 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
+         if (ViewBag.PageNumber > ViewBag.PageCount)
+         {
+            return new HttpNotFoundResult();
+         }
 
          return View("viewYear", builds);
       }
 
       [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewVersion(uint major, uint minor)
       {
@@ -302,7 +347,8 @@ namespace BuildFeed.Controllers
 
       [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
 #if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme"), OutputCachePush(Order = 2)]
+      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+      [OutputCachePush(Order = 2)]
 #endif
       public async Task<ActionResult> ViewVersionPage(uint major, uint minor, int page)
       {
@@ -319,12 +365,16 @@ namespace BuildFeed.Controllers
          ViewBag.PageNumber = page;
          ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
 
-         if (ViewBag.PageNumber > ViewBag.PageCount) return new HttpNotFoundResult();
+         if (ViewBag.PageNumber > ViewBag.PageCount)
+         {
+            return new HttpNotFoundResult();
+         }
 
          return View("viewVersion", builds);
       }
 
-      [Route("add/"), Authorize]
+      [Route("add/")]
+      [Authorize]
       public ActionResult AddBuild()
       {
          Build b = new Build
@@ -334,7 +384,9 @@ namespace BuildFeed.Controllers
          return View("EditBuild", b);
       }
 
-      [Route("add/"), Authorize, HttpPost]
+      [Route("add/")]
+      [Authorize]
+      [HttpPost]
       public async Task<ActionResult> AddBuild(Build build)
       {
          if (ModelState.IsValid)
@@ -343,8 +395,16 @@ namespace BuildFeed.Controllers
             {
                build.Added = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
                build.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
-               if (build.BuildTime.HasValue) build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
-               if (build.LeakDate.HasValue) build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               if (build.BuildTime.HasValue)
+               {
+                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               }
+
+               if (build.LeakDate.HasValue)
+               {
+                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               }
+
                await _bModel.Insert(build);
             }
             catch
@@ -360,22 +420,33 @@ namespace BuildFeed.Controllers
          return View("EditBuild", build);
       }
 
-      [Route("edit/{id}/"), Authorize]
+      [Route("edit/{id}/")]
+      [Authorize]
       public async Task<ActionResult> EditBuild(Guid id)
       {
          Build b = await _bModel.SelectById(id);
          return View(b);
       }
 
-      [Route("edit/{id}/"), Authorize, HttpPost]
+      [Route("edit/{id}/")]
+      [Authorize]
+      [HttpPost]
       public async Task<ActionResult> EditBuild(Guid id, Build build)
       {
          if (ModelState.IsValid)
          {
             try
             {
-               if (build.BuildTime.HasValue) build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
-               if (build.LeakDate.HasValue) build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               if (build.BuildTime.HasValue)
+               {
+                  build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
+               }
+
+               if (build.LeakDate.HasValue)
+               {
+                  build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
+               }
+
                await _bModel.Update(build);
             }
             catch
@@ -392,7 +463,8 @@ namespace BuildFeed.Controllers
          return View(build);
       }
 
-      [Route("delete/{id}/"), Authorize(Roles = "Administrators")]
+      [Route("delete/{id}/")]
+      [Authorize(Roles = "Administrators")]
       public async Task<ActionResult> DeleteBuild(Guid id)
       {
          await _bModel.DeleteById(id);

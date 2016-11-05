@@ -31,9 +31,9 @@ namespace BuildFeed.Model
    public class MetaItem
    {
       private const string META_COLLECTION_NAME = "metaitem";
+      private readonly BuildRepository _bModel;
 
       private readonly IMongoCollection<MetaItemModel> _metaCollection;
-      private readonly BuildRepository _bModel;
 
       public MetaItem()
       {
@@ -57,13 +57,22 @@ namespace BuildFeed.Model
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<IEnumerable<MetaItemModel>> Select() { return await _metaCollection.Find(new BsonDocument()).ToListAsync(); }
+      public async Task<IEnumerable<MetaItemModel>> Select()
+      {
+         return await _metaCollection.Find(new BsonDocument()).ToListAsync();
+      }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
-      public async Task<IEnumerable<MetaItemModel>> SelectByType(MetaType type) { return await _metaCollection.Find(f => f.Id.Type == type).ToListAsync(); }
+      public async Task<IEnumerable<MetaItemModel>> SelectByType(MetaType type)
+      {
+         return await _metaCollection.Find(f => f.Id.Type == type).ToListAsync();
+      }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
-      public async Task<MetaItemModel> SelectById(MetaItemKey id) { return await _metaCollection.Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value).SingleOrDefaultAsync(); }
+      public async Task<MetaItemModel> SelectById(MetaItemKey id)
+      {
+         return await _metaCollection.Find(f => (f.Id.Type == id.Type) && (f.Id.Value == id.Value)).SingleOrDefaultAsync();
+      }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<IEnumerable<string>> SelectUnusedLabs()
@@ -102,16 +111,28 @@ namespace BuildFeed.Model
       }
 
       [DataObjectMethod(DataObjectMethodType.Insert, true)]
-      public async Task Insert(MetaItemModel item) { await _metaCollection.InsertOneAsync(item); }
+      public async Task Insert(MetaItemModel item)
+      {
+         await _metaCollection.InsertOneAsync(item);
+      }
 
       [DataObjectMethod(DataObjectMethodType.Update, true)]
-      public async Task Update(MetaItemModel item) { await _metaCollection.ReplaceOneAsync(f => f.Id.Type == item.Id.Type && f.Id.Value == item.Id.Value, item); }
+      public async Task Update(MetaItemModel item)
+      {
+         await _metaCollection.ReplaceOneAsync(f => (f.Id.Type == item.Id.Type) && (f.Id.Value == item.Id.Value), item);
+      }
 
       [DataObjectMethod(DataObjectMethodType.Insert, false)]
-      public async Task InsertAll(IEnumerable<MetaItemModel> items) { await _metaCollection.InsertManyAsync(items); }
+      public async Task InsertAll(IEnumerable<MetaItemModel> items)
+      {
+         await _metaCollection.InsertManyAsync(items);
+      }
 
       [DataObjectMethod(DataObjectMethodType.Delete, true)]
-      public async Task DeleteById(MetaItemKey id) { await _metaCollection.DeleteOneAsync(f => f.Id.Type == id.Type && f.Id.Value == id.Value); }
+      public async Task DeleteById(MetaItemKey id)
+      {
+         await _metaCollection.DeleteOneAsync(f => (f.Id.Type == id.Type) && (f.Id.Value == id.Value));
+      }
    }
 
    public class MetaItemKey
@@ -119,7 +140,9 @@ namespace BuildFeed.Model
       public MetaType Type { get; set; }
       public string Value { get; set; }
 
-      public MetaItemKey() { }
+      public MetaItemKey()
+      {
+      }
 
       public MetaItemKey(string id)
       {
@@ -128,7 +151,10 @@ namespace BuildFeed.Model
          Value = items[1];
       }
 
-      public override string ToString() { return $"{Type}:{Value}"; }
+      public override string ToString()
+      {
+         return $"{Type}:{Value}";
+      }
    }
 
    public enum MetaType

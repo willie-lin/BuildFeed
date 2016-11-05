@@ -46,6 +46,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
@@ -206,6 +219,7 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
+    <Content Include="gulpfile.js" />
     <Content Include="res\card\Longhorn.png" />
     <Content Include="res\card\Redstone2.png" />
     <Content Include="res\card\Redstone.png" />
@@ -213,32 +227,8 @@
     <Content Include="res\card\Threshold.png" />
     <Content Include="res\card\Windows7.png" />
     <Content Include="res\card\WindowsVista.png" />
-    <Content Include="res\css\dark.css">
-      <DependentUpon>dark.scss</DependentUpon>
-    </Content>
-    <Content Include="res\css\dark.min.css">
-      <DependentUpon>dark.css</DependentUpon>
-    </Content>
-    <Content Include="res\css\default.css">
-      <DependentUpon>default.scss</DependentUpon>
-    </Content>
-    <Content Include="res\css\default.min.css">
-      <DependentUpon>default.css</DependentUpon>
-    </Content>
     <Content Include="content\icons-2x.png" />
     <Content Include="content\icons.png" />
-    <Content Include="res\css\light.css">
-      <DependentUpon>light.scss</DependentUpon>
-    </Content>
-    <Content Include="res\css\light.min.css">
-      <DependentUpon>light.css</DependentUpon>
-    </Content>
-    <Content Include="res\css\rtl.css">
-      <DependentUpon>rtl.scss</DependentUpon>
-    </Content>
-    <Content Include="res\css\rtl.min.css">
-      <DependentUpon>rtl.css</DependentUpon>
-    </Content>
     <Content Include="content\tile\wide.png" />
     <Content Include="content\tile\large.png" />
     <Content Include="content\tile\square.png" />
@@ -257,16 +247,37 @@
     <Content Include="Areas\admin\Views\users\admins.cshtml" />
     <Content Include="Areas\admin\Views\meta\index.cshtml" />
     <Content Include="Areas\admin\Views\meta\create.cshtml" />
+    <Content Include="res\css\dark.css">
+      <DependentUpon>dark.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\dark.css.map">
+      <DependentUpon>dark.css</DependentUpon>
+    </Content>
+    <Content Include="res\css\default.css">
+      <DependentUpon>default.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\default.css.map">
+      <DependentUpon>default.css</DependentUpon>
+    </Content>
+    <Content Include="res\css\light.css">
+      <DependentUpon>light.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\light.css.map">
+      <DependentUpon>light.css</DependentUpon>
+    </Content>
+    <Content Include="res\css\rtl.css">
+      <DependentUpon>rtl.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\rtl.css.map">
+      <DependentUpon>rtl.css</DependentUpon>
+    </Content>
     <Content Include="robots.txt" />
     <Content Include="App_Code\PaginationHelpers.cshtml" />
     <Content Include="res\css\default.scss" />
     <None Include="bundleconfig.json" />
-    <None Include="compilerconfig.json" />
-    <None Include="compilerconfig.json.defaults">
-      <DependentUpon>compilerconfig.json</DependentUpon>
-    </None>
     <Content Include="res\css\rtl.scss" />
     <Content Include="res\css\dark.scss" />
+    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
     <Content Include="res\ts\bfs.js">
       <DependentUpon>bfs.ts</DependentUpon>
@@ -445,12 +456,11 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>
-    </TypeScriptModuleKind>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
     <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
     <TypeScriptOutFile />
     <TypeScriptOutDir />

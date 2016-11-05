@@ -11,10 +11,12 @@ using Required = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace BuildFeed.Model
 {
-   [DataObject, BsonIgnoreExtraElements]
+   [DataObject]
+   [BsonIgnoreExtraElements]
    public class Build
    {
-      [Key, BsonId]
+      [Key]
+      [BsonId]
       public Guid Id { get; set; }
 
       public long? LegacyId { get; set; }
@@ -66,7 +68,7 @@ namespace BuildFeed.Model
 
       public string LabUrl { get; set; }
 
-      public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR || SourceType == TypeOfSource.UpdateLDR;
+      public bool IsLeaked => (SourceType == TypeOfSource.PublicRelease) || (SourceType == TypeOfSource.InternalLeak) || (SourceType == TypeOfSource.UpdateGDR) || (SourceType == TypeOfSource.UpdateLDR);
 
       public string FullBuildString
       {
@@ -154,8 +156,8 @@ namespace BuildFeed.Model
             {
                return ProjectFamily.Windows7;
             }
-            if (MajorVersion == 6
-               && Number >= 5000)
+            if ((MajorVersion == 6)
+               && (Number >= 5000))
             {
                return ProjectFamily.WindowsVista;
             }
@@ -163,18 +165,18 @@ namespace BuildFeed.Model
             {
                return ProjectFamily.Longhorn;
             }
-            if (MajorVersion == 5
-               && Number >= 3000)
+            if ((MajorVersion == 5)
+               && (Number >= 3000))
             {
                return ProjectFamily.Server2003;
             }
-            if (MajorVersion == 5
-               && Number >= 2205)
+            if ((MajorVersion == 5)
+               && (Number >= 2205))
             {
                return ProjectFamily.WindowsXP;
             }
-            if (MajorVersion == 5
-               && MinorVersion == 50)
+            if ((MajorVersion == 5)
+               && (MinorVersion == 50))
             {
                return ProjectFamily.Neptune;
             }

@@ -4,11 +4,11 @@
 @{
    bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 
-   Response.PushPromise("/res/css/default.min.css");
+   Response.PushPromise("/res/css/default.css");
    Response.PushPromise(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath));
    if (isRtl)
    {
-      Response.PushPromise("/res/css/rtl.min.css");
+      Response.PushPromise("/res/css/rtl.css");
    }
 
    Response.PushPromise("/res/ts/bfs.min.js");
@@ -29,11 +29,11 @@
    <link rel="canonical" href="@Url.Action()" />
    <meta name="application-name" content="@InvariantTerms.SiteName" />
 
-   <link href="/res/css/default.min.css" rel="stylesheet" type="text/css" />
+   <link href="/res/css/default.css" rel="stylesheet" type="text/css" />
    <link href="@(VirtualPathUtility.ToAbsolute(((Theme) ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
-      <link href="/res/css/rtl.min.css" rel="stylesheet" type="text/css" />
+      <link href="/res/css/rtl.css" rel="stylesheet" type="text/css" />
    }
    <title>@ViewBag.Title</title>
    @RenderSection("head", false)

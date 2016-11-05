@@ -22,7 +22,8 @@ module BuildFeed
       link.parentElement.classList.toggle("open");
    }
 
-   export function SwitchTheme(ev: MouseEvent) {
+   export function SwitchTheme(ev: MouseEvent)
+   {
       ev.preventDefault();
 
       const link = this as HTMLAnchorElement;
@@ -138,7 +139,8 @@ module BuildFeed
       }
 
       const ddThemes = document.getElementById("settings-theme-menu").getElementsByTagName("a");
-      for (let i = 0; i < ddThemes.length; i++) {
+      for (let i = 0; i < ddThemes.length; i++)
+      {
          ddThemes[i].addEventListener("click", SwitchTheme);
       }
 

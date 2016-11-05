@@ -18,12 +18,16 @@ namespace BuildFeed.Controllers
    {
       private readonly BuildRepository _bModel;
 
-      public SupportController() { _bModel = new BuildRepository(); }
+      public SupportController()
+      {
+         _bModel = new BuildRepository();
+      }
 
       [Route("login/")]
       public ActionResult Login() => View();
 
-      [HttpPost, Route("login/")]
+      [HttpPost]
+      [Route("login/")]
       public ActionResult Login(LoginUser ru)
       {
          if (ModelState.IsValid)
@@ -57,10 +61,13 @@ namespace BuildFeed.Controllers
          return View(ru);
       }
 
-      [Authorize, Route("password/")]
+      [Authorize]
+      [Route("password/")]
       public ActionResult Password() => View();
 
-      [HttpPost, Authorize, Route("password/")]
+      [HttpPost]
+      [Authorize]
+      [Route("password/")]
       public ActionResult Password(ChangePassword cp)
       {
          if (ModelState.IsValid)
@@ -92,7 +99,8 @@ namespace BuildFeed.Controllers
       [Route("register/")]
       public ActionResult Register() => View();
 
-      [HttpPost, Route("register/")]
+      [HttpPost]
+      [Route("register/")]
       public ActionResult Register(RegistrationUser ru)
       {
          if (ModelState.IsValid)
@@ -134,12 +142,12 @@ namespace BuildFeed.Controllers
 
       [Route("sitemap/")]
 #if !DEBUG
-   //      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> Sitemap()
       {
          List<Build> builds = await _bModel.SelectBuildsByOrder();
-         Dictionary<string, SitemapPagedAction[]> actions = new Dictionary<string, SitemapPagedAction[]>
+         var actions = new Dictionary<string, SitemapPagedAction[]>
          {
             {
                "Pages", new[]
@@ -278,12 +286,12 @@ namespace BuildFeed.Controllers
 
       [Route("xml-sitemap/")]
 #if !DEBUG
-   //      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName")]
+      [OutputCache(Duration = 3600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
 #endif
       public async Task<ActionResult> XmlSitemap()
       {
          XNamespace xn = XNamespace.Get("http://www.sitemaps.org/schemas/sitemap/0.9");
-         List<XElement> xlist = new List<XElement>();
+         var xlist = new List<XElement>();
 
          // home page
          XElement home = new XElement(xn + "url");
