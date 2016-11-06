@@ -14,9 +14,9 @@
    @if (Model.CurrentCanary != null)
    {
       <a href="@Url.Action("ViewBuild", new
-            {
-               Model.CurrentCanary.Id
-            })" class="latest-flex-item latest-flex-red">
+               {
+                  Model.CurrentCanary.Id
+               })" class="latest-flex-item latest-flex-red">
          <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
          <div class="latest-flex-detail">
             <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>

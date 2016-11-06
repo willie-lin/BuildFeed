@@ -1,6 +1,6 @@
 ﻿namespace BuildFeed.Model
 {
-   public class BuildGroup
+   public struct BuildGroup
    {
       public uint Major { get; set; }
       public uint Minor { get; set; }

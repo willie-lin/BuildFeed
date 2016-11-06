@@ -15,13 +15,13 @@
    <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
    <link rel="shortcut icon" href="~/favicon.ico" />
    <link rel="icon" href="~/favicon.ico" />
    <meta name="application-name" content="@InvariantTerms.SiteName" />
 
    <link href="/res/css/default.css" rel="stylesheet" type="text/css" />
-   <link href="@(VirtualPathUtility.ToAbsolute(((Theme) ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
+   <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
       <link href="/res/css/rtl.css" rel="stylesheet" type="text/css" />
@@ -56,10 +56,10 @@
       <div class="container">
          <h1>
             @Html.ActionLink(InvariantTerms.SiteName, nameof(FrontController.Index), new
-             {
-                controller = "Front",
-                area = ""
-             })
+            {
+               controller = "Front",
+               area = ""
+            })
          </h1>
       </div>
    </header>
@@ -96,7 +96,10 @@
                         @foreach (Locale locale in Locale.AvailableLocales)
                         {
                            <li>
-                              <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft ? "rtl" : "ltr")">@locale.DisplayName</a>
+                              <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
+                                                                                 ? "rtl"
+                                                                                 : "ltr")">
+                                 @locale.DisplayName</a>
                            </li>
                         }
                      </ul>
@@ -112,9 +115,15 @@
          <p>
             @string.Format(VariantTerms.Common_ErrorContent, "<a href=\"https://github.com/hounsell/BuildFeed/issues\">GitHub</a>")
          </p>
-         <p>Controller: <code>@Model.ControllerName</code></p>
-         <p>Action: <code>@Model.ActionName</code></p>
-         <p>Error: <code>@Model.Exception.Message</code></p>
+         <p>
+            Controller: <code>@Model.ControllerName</code>
+         </p>
+         <p>
+            Action: <code>@Model.ActionName</code>
+         </p>
+         <p>
+            Error: <code>@Model.Exception.Message</code>
+         </p>
       </div>
    </article>
    <footer id="page-footer">
@@ -140,9 +149,8 @@
          </div>
       </div>
    </footer>
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js"></script>
+   <script type="text/javascript"t src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js" integrity="sha256-3UBtL0tzgKVuJU8ZZiWLXEWGEjXEr6Z023rpauMnBUE=" crossorigin="anonymous"></script>
    <script type="text/javascript" src="~/res/ts/bfs.min.js"></script>
    @RenderSection("scripts", false)
 </body>
 </html>
-

@@ -22,8 +22,8 @@
                                                                                      })">
    @{
       string metaDesc = Model.BuildTime.HasValue
-                           ? string.Format(VariantTerms.Meta_BuildDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToLongDateWithoutDay())
-                           : string.Format(VariantTerms.Meta_BuildNoDate, Model.Number, Model.Lab);
+         ? string.Format(VariantTerms.Meta_BuildDate, Model.Number, Model.Lab, Model.BuildTime.Value.ToLongDateWithoutDay())
+         : string.Format(VariantTerms.Meta_BuildNoDate, Model.Number, Model.Lab);
    }
    <meta name="description" content="@metaDesc" />
    <meta property="og:description" content="@metaDesc" />
@@ -105,9 +105,9 @@
       <div class="build-details-flex-value">
          @Html.DisplayFor(model => model.SourceType, "Enumeration")<br />
          <a href="@Url.Action("ViewSource", new
-                     {
-                        source = Model.SourceType
-                     })" class="more-link">
+                  {
+                     source = Model.SourceType
+                  })" class="more-link">
             <i class="fa fa-plus-square-o fa-sm"></i>&nbsp;
             @string.Format(VariantTerms.Front_MoreFromSource, MvcExtensions.GetDisplayTextForEnum(Model.SourceType))
          </a>
@@ -165,7 +165,8 @@
       var disqus_shortname = 'buildfeed';
       var disqus_url = 'https://buildfeed.net/actions/info/@((object)Model.LegacyId ?? Model.Id)/';
 
-      (function () {
+      (function()
+      {
          var dsq = document.createElement('script');
          dsq.type = 'text/javascript';
          dsq.async = true;

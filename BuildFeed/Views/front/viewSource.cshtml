@@ -1,11 +1,11 @@
 ﻿@using BuildFeed.Code
 @using BuildFeed.Model
 @using Humanizer
-@model IEnumerable<Build>
+@model IEnumerable<BuildFeed.Model.Build>
 @{
    ViewBag.Title = string.Format("{0}{1} | {2}", ViewBag.ItemId, ViewBag.PageNumber == 1
-                                                                    ? ""
-                                                                    : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber), InvariantTerms.SiteName);
+      ? ""
+      : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber), InvariantTerms.SiteName);
 }
 
 @section head
@@ -23,7 +23,7 @@
 }
 
 <h1>@ViewBag.ItemId</h1>
-@if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
+@if ((ViewBag.MetaItem != null) && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
    <h3>@VariantTerms.Front_About</h3>
    @Html.Raw(ViewBag.MetaItem.PageContent)
@@ -88,5 +88,10 @@
          </p>
       </div>
    }
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
 </div>
 @PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewSource", ViewContext.RouteData.Values)

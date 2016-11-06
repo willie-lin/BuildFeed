@@ -18,12 +18,12 @@ namespace MongoAuth
 
       private bool _enablePasswordReset = true;
       private int _maxInvalidPasswordAttempts = 5;
+
+      private IMongoCollection<MongoMember> _memberCollection;
       private int _minRequiredNonAlphanumericCharacters = 1;
       private int _minRequriedPasswordLength = 12;
       private int _passwordAttemptWindow = 60;
       private bool _requiresUniqueEmail = true;
-
-      private IMongoCollection<MongoMember> _memberCollection;
 
       public override string ApplicationName { get; set; }
 
@@ -97,7 +97,7 @@ namespace MongoAuth
                return false;
             }
 
-            byte[] salt = new byte[24];
+            var salt = new byte[24];
             byte[] hash = CalculateHash(newPassword, ref salt);
 
             mm.PassSalt = salt;
@@ -112,7 +112,10 @@ namespace MongoAuth
          return false;
       }
 
-      public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer) { throw new NotImplementedException(); }
+      public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
+      {
+         throw new NotImplementedException();
+      }
 
       public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
       {
@@ -139,7 +142,7 @@ namespace MongoAuth
          }
          else
          {
-            byte[] salt = new byte[24];
+            var salt = new byte[24];
             byte[] hash = CalculateHash(password, ref salt);
 
             MongoMember mm = new MongoMember
@@ -179,12 +182,18 @@ namespace MongoAuth
          Task<DeleteResult> task = _memberCollection.DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
          task.Wait();
 
-         return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
+         return task.Result.IsAcknowledged && (task.Result.DeletedCount == 1);
       }
 
-      public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords) { throw new NotImplementedException(); }
+      public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
+      {
+         throw new NotImplementedException();
+      }
 
-      public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords) { throw new NotImplementedException(); }
+      public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
+      {
+         throw new NotImplementedException();
+      }
 
       public override MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
       {
@@ -208,9 +217,15 @@ namespace MongoAuth
          return muc;
       }
 
-      public override int GetNumberOfUsersOnline() { throw new NotImplementedException(); }
+      public override int GetNumberOfUsersOnline()
+      {
+         throw new NotImplementedException();
+      }
 
-      public override string GetPassword(string username, string answer) { throw new NotImplementedException(); }
+      public override string GetPassword(string username, string answer)
+      {
+         throw new NotImplementedException();
+      }
 
       public override MembershipUser GetUser(string username, bool userIsOnline)
       {
@@ -244,7 +259,10 @@ namespace MongoAuth
          return task.Result.UserName;
       }
 
-      public override string ResetPassword(string username, string answer) { throw new NotImplementedException(); }
+      public override string ResetPassword(string username, string answer)
+      {
+         throw new NotImplementedException();
+      }
 
       public void ChangeApproval(Guid id, bool newStatus)
       {
@@ -254,8 +272,10 @@ namespace MongoAuth
 
       public void ChangeLockStatus(Guid id, bool newStatus)
       {
-         List<UpdateDefinition<MongoMember>> updateDefinition = new List<UpdateDefinition<MongoMember>>();
-         updateDefinition.Add(Builders<MongoMember>.Update.Set(u => u.IsLockedOut, newStatus));
+         var updateDefinition = new List<UpdateDefinition<MongoMember>>
+         {
+            Builders<MongoMember>.Update.Set(u => u.IsLockedOut, newStatus)
+         };
 
          if (newStatus)
          {
@@ -276,10 +296,13 @@ namespace MongoAuth
          Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(m => m.UserName.ToLower(), userName.ToLower()), Builders<MongoMember>.Update.Set(m => m.IsLockedOut, false));
          task.Wait();
 
-         return task.Result.IsAcknowledged && task.Result.ModifiedCount == 1;
+         return task.Result.IsAcknowledged && (task.Result.ModifiedCount == 1);
       }
 
-      public override void UpdateUser(MembershipUser user) { throw new NotImplementedException(); }
+      public override void UpdateUser(MembershipUser user)
+      {
+         throw new NotImplementedException();
+      }
 
       public override bool ValidateUser(string username, string password)
       {
@@ -287,7 +310,7 @@ namespace MongoAuth
          task.Wait();
          MongoMember mm = task.Result;
 
-         if (mm == null
+         if ((mm == null)
             || !(mm.IsApproved && !mm.IsLockedOut))
          {
             return false;
@@ -353,7 +376,7 @@ namespace MongoAuth
 
          byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
 
-         byte[] hashPlaintext = new byte[salt.Length + passwordBytes.Length];
+         var hashPlaintext = new byte[salt.Length + passwordBytes.Length];
 
          passwordBytes.CopyTo(hashPlaintext, 0);
          salt.CopyTo(hashPlaintext, passwordBytes.Length);

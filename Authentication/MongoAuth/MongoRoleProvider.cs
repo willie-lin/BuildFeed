@@ -17,8 +17,8 @@ namespace MongoAuth
    {
       private const string MEMBER_COLLECTION_NAME = "members";
       private const string ROLE_COLLECTION_NAME = "roles";
-      private IMongoCollection<MongoRole> _roleCollection;
       private IMongoCollection<MongoMember> _memberCollection;
+      private IMongoCollection<MongoRole> _roleCollection;
 
       public override string ApplicationName
       {
@@ -61,7 +61,7 @@ namespace MongoAuth
 
          for (int i = 0; i < roles.Count; i++)
          {
-            List<Guid> newUsers = new List<Guid>();
+            var newUsers = new List<Guid>();
 
             if (roles[i].Users != null)
             {
@@ -98,8 +98,8 @@ namespace MongoAuth
          Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
          role.Wait();
 
-         if (role.Result != null
-            && role.Result.Users.Length > 0
+         if ((role.Result != null)
+            && (role.Result.Users.Length > 0)
             && throwOnPopulatedRole)
          {
             throw new ProviderException(Resources.RoleNotEmpty);
@@ -145,7 +145,7 @@ namespace MongoAuth
             return Array.Empty<string>();
          }
 
-         Task<List<MongoRole>> role = _roleCollection.Find(r => r.Users != null && r.Users.Contains(user.Result.Id)).ToListAsync();
+         Task<List<MongoRole>> role = _roleCollection.Find(r => (r.Users != null) && r.Users.Contains(user.Result.Id)).ToListAsync();
          role.Wait();
 
          return role.Result.Select(r => r.RoleName).ToArray();
@@ -174,8 +174,8 @@ namespace MongoAuth
          user.Wait();
          role.Wait();
 
-         if (user.Result == null
-            || role.Result?.Users == null)
+         if ((user.Result == null)
+            || (role.Result?.Users == null))
          {
             return false;
          }

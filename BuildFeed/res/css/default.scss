@@ -194,7 +194,7 @@ nav#page-navigation
       position: absolute;
       left: -15px;
       right: -15px;
-      max-width: 1240px;
+      max-width: 1270px;
       padding: 15px;
       text-align: left;
       z-index: 10;
@@ -613,6 +613,7 @@ ul.pagination
       {
          display: block;
          border-radius: 0.5em;
+         text-decoration: none;
       }
 
       > span
