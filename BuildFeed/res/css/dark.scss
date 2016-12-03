@@ -62,8 +62,6 @@ table thead th
 .dropdown-menu
 {
    background-color: #242423;
-   -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
    a:hover,
@@ -76,8 +74,6 @@ table thead th
 
 article
 {
-   -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
-   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
    box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
 
    h1, h3

@@ -14,7 +14,6 @@ gulp.task("sass-compile",
             .pipe(sourceMaps.init())
             .pipe(sass())
             .pipe(autoprefixer({
-                browsers: ["> 1% in GB", "IE 8"],
                 cascade: false
             }))
             .pipe(cleanCss())

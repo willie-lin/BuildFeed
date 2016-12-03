@@ -4,8 +4,6 @@
    font-size: 10pt;
    line-height: 1.6;
    margin: 0;
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
    box-sizing: border-box;
 }
 
@@ -79,8 +77,6 @@ table
 
 .no-wrapping
 {
-   -ms-text-overflow: ellipsis;
-   -o-text-overflow: ellipsis;
    text-overflow: ellipsis;
    overflow: hidden;
    white-space: nowrap;
@@ -88,7 +84,6 @@ table
 
 .eager-wrapping
 {
-   -ms-word-wrap: break-word;
    word-wrap: break-word;
 }
 
@@ -108,8 +103,6 @@ input[type=submit].button
    background-color: #1274B2;
    color: #fff;
    text-decoration: none;
-   -moz-border-radius: #{(1em / 6)};
-   -webkit-border-radius: #{(1em / 6)};
    border-radius: #{(1em / 6)};
    text-align: center;
 
@@ -187,8 +180,6 @@ nav#page-navigation
 {
    .dropdown-menu
    {
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: none;
       position: absolute;
@@ -296,8 +287,6 @@ article
    .build-group-listing
    {
       display: flex;
-      -ms-flex-wrap: wrap;
-      -webkit-flex-wrap: wrap;
       flex-wrap: wrap;
       justify-content: center;
       margin: 0 -0.75em;
@@ -342,8 +331,6 @@ article
 .latest-flex
 {
    display: flex;
-   -ms-flex-wrap: wrap;
-   -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
    justify-content: space-between;
    margin: 2em -2em 0 0;
@@ -351,8 +338,6 @@ article
    .latest-flex-item
    {
       width: 240px;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       background: #fff;
       flex-grow: 1;
@@ -456,8 +441,6 @@ article
 {
    display: flex;
    font-size: 1.1em;
-   -ms-flex-wrap: wrap;
-   -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
 
    .build-details-flex-item
@@ -509,13 +492,9 @@ article
       input, textarea, select
       {
          width: 100%;
-         -moz-box-sizing: border-box;
-         -webkit-box-sizing: border-box;
          box-sizing: border-box;
          border: 1px solid;
          padding: #{(1em / 3)} #{(1em / 2)};
-         -moz-border-radius: 2px;
-         -webkit-border-radius: 2px;
          border-radius: 2px;
          line-height: 1em;
       }
@@ -535,8 +514,6 @@ article
          background-color: #12B23F;
          color: #fff;
          text-decoration: none;
-         -moz-border-radius: #{(1em / 6)};
-         -webkit-border-radius: #{(1em / 6)};
          border-radius: #{(1em / 6)};
          border: 0;
          line-height: 1.6;
@@ -563,8 +540,6 @@ article
 .credits-wrapper
 {
    display: flex;
-   -ms-flex-wrap: wrap;
-   -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
 
    .credits-list
@@ -631,8 +606,6 @@ footer#page-footer
    .footer-flex
    {
       display: flex;
-      -ms-flex-wrap: wrap;
-      -webkit-flex-wrap: wrap;
       flex-wrap: wrap;
 
       .footer-flex-item
@@ -668,9 +641,6 @@ footer#page-footer
    bottom: 0;
    left: 0;
    right: 0;
-   -moz-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
-   -o-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
-   -webkit-transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
    transition: background-color linear 0.6s, -webkit-backdrop-filter linear 0.6s, backdrop-filter linear 0.6s;
    background-color: rgba(0,0,0, 0);
    -webkit-backdrop-filter: blur(0);
@@ -694,11 +664,7 @@ footer#page-footer
       max-height: 70%;
       overflow: auto;
       padding: 2em;
-      -moz-border-radius: 2px;
-      -webkit-border-radius: 2px;
       border-radius: 2px;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       border: 1px solid #ccc;
 
@@ -718,8 +684,6 @@ footer#page-footer
             display: inline-block;
             height: 2.5em;
             padding: 0.5em;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             border: 1px solid;
          }
