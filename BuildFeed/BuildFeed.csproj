@@ -28,6 +28,7 @@
     </NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -271,24 +272,20 @@
     <Content Include="res\css\rtl.css.map">
       <DependentUpon>rtl.css</DependentUpon>
     </Content>
+    <Content Include="res\ts\bfs.js">
+      <DependentUpon>bfs.ts</DependentUpon>
+    </Content>
+    <Content Include="res\ts\bfs.js.map">
+      <DependentUpon>bfs.js</DependentUpon>
+    </Content>
     <Content Include="robots.txt" />
     <Content Include="App_Code\PaginationHelpers.cshtml" />
     <Content Include="res\css\default.scss" />
-    <None Include="bundleconfig.json" />
     <Content Include="res\css\rtl.scss" />
     <Content Include="res\css\dark.scss" />
     <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
-    <Content Include="res\ts\bfs.js">
-      <DependentUpon>bfs.ts</DependentUpon>
-    </Content>
     <Content Include="res\Web.config" />
-    <Content Include="res\ts\bfs.js.map">
-      <DependentUpon>bfs.ts</DependentUpon>
-    </Content>
-    <Content Include="res\ts\bfs.min.js">
-      <DependentUpon>bfs.js</DependentUpon>
-    </Content>
     <Content Include="res\css\light.scss" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
