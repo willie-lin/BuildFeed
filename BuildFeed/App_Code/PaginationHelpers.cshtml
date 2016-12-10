@@ -7,100 +7,98 @@
 
    if (totalPages > 1)
    {
-      <div class="text-center">
-         <ul class="pagination">
-            @if (currentPage == 2)
-            {
-               RouteValueDictionary rvd = new RouteValueDictionary(rd);
-               rvd.Remove("page");
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, rvd)</li>
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&lsaquo;"), view, rvd)</li>
-            }
-            else if (currentPage > 2)
-            {
-               RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-               firstRvd.Remove("page");
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, firstRvd)</li>
+      <ul class="pagination">
+         @if (currentPage == 2)
+         {
+            RouteValueDictionary rvd = new RouteValueDictionary(rd);
+            rvd.Remove("page");
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, rvd)</li>
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&lsaquo;"), view, rvd)</li>
+         }
+         else if (currentPage > 2)
+         {
+            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
+            firstRvd.Remove("page");
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&laquo;"), view, firstRvd)</li>
 
-               RouteValueDictionary rvd = new RouteValueDictionary(rd)
-               {
-                  ["page"] = currentPage - 1
-               };
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&lsaquo;"), multiView, rvd)</li>
-            }
-            else
+            RouteValueDictionary rvd = new RouteValueDictionary(rd)
             {
-               <li class="disabled">
-                  <span>&laquo;</span>
-               </li>
-               <li class="disabled">
-                  <span>&lsaquo;</span>
-               </li>
-            }
-
-
-            @{
-               RouteValueDictionary rvdIndex = new RouteValueDictionary(rd);
-               rvdIndex.Remove("page");
-               IEnumerable<int> pages;
-            }
-
-            @if (totalPages <= 7)
-            {
-               pages = Enumerable.Range(1, totalPages);
-            }
-            else if (currentPage <= 4)
-            {
-               pages = Enumerable.Range(1, 7);
-            }
-            else if (currentPage >= totalPages - 2)
-            {
-               pages = Enumerable.Range(totalPages - 6, 7);
-            }
-            else
-            {
-               pages = Enumerable.Range(currentPage - 3, 7);
-            }
-
-            @foreach (int i in pages)
-            {
-               RouteValueDictionary rvd = new RouteValueDictionary(rd)
-               {
-                  ["page"] = i
-               };
-
-               <li @(i == currentPage
-                        ? "class=active"
-                        : "")>
-                  @MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
-            }
+               ["page"] = currentPage - 1
+            };
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&lsaquo;"), multiView, rvd)</li>
+         }
+         else
+         {
+            <li class="disabled">
+               <span>&laquo;</span>
+            </li>
+            <li class="disabled">
+               <span>&lsaquo;</span>
+            </li>
+         }
 
 
-            @if (currentPage < totalPages)
-            {
-               RouteValueDictionary rvd = new RouteValueDictionary(rd)
-               {
-                  ["page"] = currentPage + 1
-               };
+         @{
+            RouteValueDictionary rvdIndex = new RouteValueDictionary(rd);
+            rvdIndex.Remove("page");
+            IEnumerable<int> pages;
+         }
 
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&rsaquo;"), multiView, rvd)</li>
+         @if (totalPages <= 7)
+         {
+            pages = Enumerable.Range(1, totalPages);
+         }
+         else if (currentPage <= 4)
+         {
+            pages = Enumerable.Range(1, 7);
+         }
+         else if (currentPage >= totalPages - 2)
+         {
+            pages = Enumerable.Range(totalPages - 6, 7);
+         }
+         else
+         {
+            pages = Enumerable.Range(currentPage - 3, 7);
+         }
 
-               RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
-               {
-                  ["page"] = totalPages
-               };
-               <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), multiView, lastRvd)</li>
-            }
-            else
+         @foreach (int i in pages)
+         {
+            RouteValueDictionary rvd = new RouteValueDictionary(rd)
             {
-               <li class="disabled">
-                  <span>&rsaquo;</span>
-               </li>
-               <li class="disabled">
-                  <span>&raquo;</span>
-               </li>
-            }
-         </ul>
-      </div>
+               ["page"] = i
+            };
+
+            <li @( i == currentPage
+                      ? "class=active"
+                      : "")>
+               @MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
+         }
+
+
+         @if (currentPage < totalPages)
+         {
+            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+            {
+               ["page"] = currentPage + 1
+            };
+
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&rsaquo;"), multiView, rvd)</li>
+
+            RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
+            {
+               ["page"] = totalPages
+            };
+            <li>@MvcIntrinsics.Html.ActionLink(HttpUtility.HtmlDecode("&raquo;"), multiView, lastRvd)</li>
+         }
+         else
+         {
+            <li class="disabled">
+               <span>&rsaquo;</span>
+            </li>
+            <li class="disabled">
+               <span>&raquo;</span>
+            </li>
+         }
+      </ul>
    }
 }

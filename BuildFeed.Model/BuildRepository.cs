@@ -93,6 +93,24 @@ namespace BuildFeed.Model
                   Name = "_idx_date"
                });
          }
+
+         if (indexes.All(i => i["name"] != "_idx_bstr"))
+         {
+            await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.FullBuildString),
+               new CreateIndexOptions
+               {
+                  Name = "_idx_bstr"
+               });
+         }
+
+         if (indexes.All(i => i["name"] != "_idx_alt_bstr"))
+         {
+            await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.AlternateBuildString),
+               new CreateIndexOptions
+               {
+                  Name = "_idx_alt_bstr"
+               });
+         }
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, true)]
@@ -183,6 +201,19 @@ namespace BuildFeed.Model
       }
 
       [DataObjectMethod(DataObjectMethodType.Select, false)]
+      public async Task<List<Build>> SelectBuildsByStringSearch(string term, int limit = -1)
+      {
+         IAggregateFluent<Build> query = _buildCollection.Aggregate().Match(b => b.FullBuildString != null).Match(b => b.FullBuildString != "").Match(b => b.FullBuildString.ToLower().Contains(term.ToLower()));
+
+         if (limit > 0)
+         {
+            query = query.Limit(limit);
+         }
+
+         return await query.ToListAsync();
+      }
+
+      [DataObjectMethod(DataObjectMethodType.Select, false)]
       public async Task<List<Build>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
       {
          IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);
@@ -226,6 +257,9 @@ namespace BuildFeed.Model
       {
          item.Id = Guid.NewGuid();
          item.LabUrl = item.GenerateLabUrl();
+         item.FullBuildString = item.GenerateFullBuildString();
+         item.AlternateBuildString = item.GenerateAlternateBuildString();
+
          await _buildCollection.InsertOneAsync(item);
       }
 
@@ -237,6 +271,8 @@ namespace BuildFeed.Model
          {
             item.Id = Guid.NewGuid();
             item.LabUrl = item.GenerateLabUrl();
+            item.FullBuildString = item.GenerateFullBuildString();
+            item.AlternateBuildString = item.GenerateAlternateBuildString();
 
             generatedItems.Add(item);
          }
@@ -251,6 +287,8 @@ namespace BuildFeed.Model
          item.Added = old.Added;
          item.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
          item.LabUrl = item.GenerateLabUrl();
+         item.FullBuildString = item.GenerateFullBuildString();
+         item.AlternateBuildString = item.GenerateAlternateBuildString();
 
          await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, item.Id), item);
       }

@@ -99,7 +99,7 @@ namespace BuildFeed.Controllers
          const int maxResults = 16;
          var results = new List<SearchResult>();
 
-         results.AddRange(from s in (from c in Enum.GetValues(typeof(TypeOfSource)).Cast<TypeOfSource>()
+         results.AddRange(from s in (from c in await _bModel.SelectAllSources()
                                      select new
                                      {
                                         Text = MvcExtensions.GetDisplayTextForEnum(c),
@@ -191,9 +191,7 @@ namespace BuildFeed.Controllers
             return results.Take(maxResults);
          }
 
-         results.AddRange(from b in await _bModel.Select()
-                          where b.FullBuildString.ToLower().Contains(id.ToLower())
-                          orderby b.FullBuildString.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending, b.BuildTime descending
+         results.AddRange(from b in await _bModel.SelectBuildsByStringSearch(id, maxResults)
                           select new SearchResult
                           {
                              Url = Url.Route("Build",

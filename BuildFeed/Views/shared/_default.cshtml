@@ -11,7 +11,7 @@
       Response.PushPromise("/res/css/rtl.css");
    }
 
-   Response.PushPromise("/res/ts/bfs.min.js");
+   Response.PushPromise("/res/ts/bfs.js");
 }
 <!DOCTYPE html>
 <html dir="@(isRtl
@@ -39,7 +39,7 @@
    @RenderSection("head", false)
    <script type="text/javascript">
       var appInsights = window.appInsights || function (config) {
-         function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
+         function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t;
       }({
          instrumentationKey: "4632419f-7a2f-4ab5-8374-34384b650f42"
       });
@@ -49,201 +49,201 @@
    </script>
 </head>
 <body>
-<script>
-      (function (i, s, o, g, r, a, m) {
-         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-         }, i[r].l = 1 * new Date(); a = s.createElement(o),
-         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+   <script>
+         (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+               (i[r].q = i[r].q || []).push(arguments);
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-   ga('create', 'UA-55417692-1', 'auto');
-   ga('require', 'displayfeatures');
-   ga('require', 'linkid', 'linkid.js');
-   ga('send', 'pageview');
-</script>
-<header id="page-header">
-   <div class="container">
-      <h1>
-         @Html.ActionLink(InvariantTerms.SiteName, nameof(FrontController.Index), new
-         {
-            controller = "Front",
-            area = ""
-         })
-      </h1>
-   </div>
-</header>
-<nav id="page-navigation" role="navigation">
-   <div class="container">
-      <button id="page-navigation-toggle">
-         <i class="fa fa-bars"></i>&ensp;@VariantTerms.Common_ToggleNavigation
-      </button>
-      <ul id="page-navigation-links">
-         @if (!User.Identity.IsAuthenticated)
-         {
-            <li>
-               <a href="@Url.Action(nameof(SupportController.Login), new
-                        {
-                           controller = "Support",
-                           area = ""
-                        })" title="@VariantTerms.Common_LogIn">
-                  <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
-               </a>
-            </li>
-         }
-         else
-         {
-            if (Roles.IsUserInRole("Administrators"))
+      ga('create', 'UA-55417692-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+   </script>
+   <header id="page-header">
+      <div class="container">
+         <h1>
+            @Html.ActionLink(InvariantTerms.SiteName, nameof(FrontController.Index), new
+            {
+               controller = "Front",
+               area = ""
+            })
+         </h1>
+      </div>
+   </header>
+   <nav id="page-navigation" role="navigation">
+      <div class="container">
+         <button id="page-navigation-toggle">
+            <i class="fa fa-bars"></i>&ensp;@VariantTerms.Common_ToggleNavigation
+         </button>
+         <ul id="page-navigation-links">
+            @if (!User.Identity.IsAuthenticated)
             {
                <li>
-                  <a href="@Url.Action("index", new
+                  <a href="@Url.Action(nameof(SupportController.Login), new
                            {
-                              controller = "base",
-                              area = "admin"
-                           })" title="@VariantTerms.Common_Admin">
-                     <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
+                              controller = "Support",
+                              area = ""
+                           })" title="@VariantTerms.Common_LogIn">
+                     <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
+                  </a>
+               </li>
+            }
+            else
+            {
+               if (Roles.IsUserInRole("Administrators"))
+               {
+                  <li>
+                     <a href="@Url.Action("index", new
+                              {
+                                 controller = "base",
+                                 area = "admin"
+                              })" title="@VariantTerms.Common_Admin">
+                        <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
+                     </a>
+                  </li>
+               }
+               <li>
+                  <a href="@Url.Action(nameof(FrontController.AddBuild), new
+                           {
+                              controller = "Front",
+                              area = ""
+                           })" title="@VariantTerms.Common_AddBuild">
+                     <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
+                  </a>
+               </li>
+               <li>
+                  <a href="@Url.Action(nameof(SupportController.Logout), new
+                           {
+                              controller = "Support",
+                              area = ""
+                           })" title="@VariantTerms.Common_LogOut">
+                     <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
                   </a>
                </li>
             }
             <li>
-               <a href="@Url.Action(nameof(FrontController.AddBuild), new
-                        {
-                           controller = "Front",
-                           area = ""
-                        })" title="@VariantTerms.Common_AddBuild">
-                  <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
+               <a href="#" id="page-navigation-search" title="@VariantTerms.Search_Title">
+                  <i class="fa fa-fw fa-search"></i> @VariantTerms.Search_Title
                </a>
             </li>
             <li>
-               <a href="@Url.Action(nameof(SupportController.Logout), new
+               <a href="@Url.Action(nameof(SupportController.Rss), new
                         {
                            controller = "Support",
                            area = ""
-                        })" title="@VariantTerms.Common_LogOut">
-                  <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
+                        })" title="@VariantTerms.Common_RssFeeds">
+                  <i class="fa fa-fw fa-rss"></i> @VariantTerms.Common_RssFeeds
                </a>
             </li>
-         }
-         <li>
-            <a href="#" id="page-navigation-search" title="@VariantTerms.Search_Title">
-               <i class="fa fa-fw fa-search"></i> @VariantTerms.Search_Title
-            </a>
-         </li>
-         <li>
-            <a href="@Url.Action(nameof(SupportController.Rss), new
-                     {
-                        controller = "Support",
-                        area = ""
-                     })" title="@VariantTerms.Common_RssFeeds">
-               <i class="fa fa-fw fa-rss"></i> @VariantTerms.Common_RssFeeds
-            </a>
-         </li>
-         <li>
-            <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank">
-               <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
-            </a>
-         </li>
-         <li class="dropdown-parent">
-            <a href="#">
-               <i class="fa fa-gear"></i>
-            </a>
-            <ul class="dropdown-menu">
-               <li id="settings-theme-menu" class="dropdown-menu-block">
-                  <h4>@VariantTerms.Common_NavigationTheme</h4>
-                  <ul>
-                     @foreach (Theme item in Theme.AvailableThemes)
-                     {
-                        <li>
-                           <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
-                        </li>
-                     }
-                  </ul>
-               </li>
-               <li id="settings-lang-menu" class="dropdown-menu-block">
-                  <h4>@VariantTerms.Common_NavigationLanguage</h4>
-                  <ul>
-                     @foreach (Locale locale in Locale.AvailableLocales)
-                     {
-                        <li>
-                           <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
-                                                                              ? "rtl"
-                                                                              : "ltr")">
-                              @locale.DisplayName</a>
-                        </li>
-                     }
-                  </ul>
-               </li>
-            </ul>
-         </li>
-      </ul>
-   </div>
-</nav>
-<article id="page-content">
-   <div class="container">
-      @RenderBody()
-   </div>
-</article>
-<footer id="page-footer">
-   <div class="container">
-      <div class="footer-flex">
-         <div class="footer-flex-item">
-            <p>
-               <a href="@Url.Action(nameof(SupportController.Sitemap), new
+            <li>
+               <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank">
+                  <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
+               </a>
+            </li>
+            <li class="dropdown-parent">
+               <a href="#">
+                  <i class="fa fa-gear"></i>
+               </a>
+               <ul class="dropdown-menu">
+                  <li id="settings-theme-menu" class="dropdown-menu-block">
+                     <h4>@VariantTerms.Common_NavigationTheme</h4>
+                     <ul>
+                        @foreach (Theme item in Theme.AvailableThemes)
                         {
-                           controller = "Support",
-                           area = ""
-                        })">
-                  @VariantTerms.Common_Sitemap</a>
-            </p>
-            <p>
-               <i class="fa fa-language"></i>&ensp;
-               @CultureInfo.CurrentUICulture.NativeName
-               (<a href="@Url.Action(nameof(SupportController.Credits), new
-                         {
-                            controller = "Support",
-                            area = ""
-                         })">
-                  @VariantTerms.Common_Credits
-               </a>)
-            </p>
-         </div>
-         <div class="footer-flex-item">
-            <p>
-               &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
-            </p>
-            <p>
-               @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\">{InvariantTerms.DeveloperName}</a>"))
-            </p>
-            <p>
-               @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
-            </p>
+                           <li>
+                              <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
+                           </li>
+                        }
+                     </ul>
+                  </li>
+                  <li id="settings-lang-menu" class="dropdown-menu-block">
+                     <h4>@VariantTerms.Common_NavigationLanguage</h4>
+                     <ul>
+                        @foreach (Locale locale in Locale.AvailableLocales)
+                        {
+                           <li>
+                              <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
+                                                                                 ? "rtl"
+                                                                                 : "ltr")">
+                                 @locale.DisplayName</a>
+                           </li>
+                        }
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <article id="page-content">
+      <div class="container">
+         @RenderBody()
+      </div>
+   </article>
+   <footer id="page-footer">
+      <div class="container">
+         <div class="footer-flex">
+            <div class="footer-flex-item">
+               <p>
+                  <a href="@Url.Action(nameof(SupportController.Sitemap), new
+                           {
+                              controller = "Support",
+                              area = ""
+                           })">
+                     @VariantTerms.Common_Sitemap</a>
+               </p>
+               <p>
+                  <i class="fa fa-language"></i>&ensp;
+                  @CultureInfo.CurrentUICulture.NativeName
+                  (<a href="@Url.Action(nameof(SupportController.Credits), new
+                            {
+                               controller = "Support",
+                               area = ""
+                            })">
+                     @VariantTerms.Common_Credits
+                  </a>)
+               </p>
+            </div>
+            <div class="footer-flex-item">
+               <p>
+                  &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
+               </p>
+               <p>
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\">{InvariantTerms.DeveloperName}</a>"))
+               </p>
+               <p>
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
+               </p>
+            </div>
          </div>
       </div>
-   </div>
-</footer>
+   </footer>
 
-<div id="modal-search-overlay">
-   <div id="modal-search">
-      <h3>@VariantTerms.Search_BuildFeed</h3>
-      <div id="modal-search-box">
-         <input id="modal-search-input" type="text" placeholder="@VariantTerms.Search_TypePlaceholder" />
-         <button id="modal-search-button">
-            <i class="fa fa-search"></i>
-         </button>
+   <div id="modal-search-overlay">
+      <div id="modal-search">
+         <h3>@VariantTerms.Search_BuildFeed</h3>
+         <div id="modal-search-box">
+            <input id="modal-search-input" type="text" placeholder="@VariantTerms.Search_TypePlaceholder" />
+            <button id="modal-search-button">
+               <i class="fa fa-search"></i>
+            </button>
+         </div>
+         <div id="modal-search-result"></div>
       </div>
-      <div id="modal-search-result"></div>
    </div>
-</div>
 
-<script type="text/javascript" t src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js" integrity="sha256-3UBtL0tzgKVuJU8ZZiWLXEWGEjXEr6Z023rpauMnBUE=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/res/ts/bfs.js"></script>
-@RenderSection("scripts", false)
-<script id="result-template" type="text/x-jsrender">
+   <script type="text/javascript" t src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-rc.70/jsrender.min.js" integrity="sha256-3UBtL0tzgKVuJU8ZZiWLXEWGEjXEr6Z023rpauMnBUE=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="/res/ts/bfs.js"></script>
+   @RenderSection("scripts", false)
+   <script id="result-template" type="text/x-jsrender">
    <a href="{{:Url}}" class="search-result-item" title="{{:Title}}">
       <h4 class="search-result-heading no-wrapping">{{:Label}}</h4>
       <p class="search-result-text">{{:Group}}</p>
    </a>
 </script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
+   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 </body>
 </html>

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 using BuildFeed.Code.Options;
 
 namespace BuildFeed.Code
 {
-   public class OutputCachePushAttribute: ActionFilterAttribute
+   public class OutputCachePushAttribute : ActionFilterAttribute
    {
       public override void OnResultExecuted(ResultExecutedContext filterContext)
       {
@@ -21,7 +18,7 @@ namespace BuildFeed.Code
          {
             filterContext.HttpContext.Response.PushPromise("/res/css/rtl.css");
          }
-         filterContext.HttpContext.Response.PushPromise("/res/ts/bfs.min.js");
+         filterContext.HttpContext.Response.PushPromise("/res/ts/bfs.js");
       }
    }
 }

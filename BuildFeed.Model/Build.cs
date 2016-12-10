@@ -68,61 +68,11 @@ namespace BuildFeed.Model
 
       public string LabUrl { get; set; }
 
-      public bool IsLeaked => (SourceType == TypeOfSource.PublicRelease) || (SourceType == TypeOfSource.InternalLeak) || (SourceType == TypeOfSource.UpdateGDR) || (SourceType == TypeOfSource.UpdateLDR);
+      public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR || SourceType == TypeOfSource.UpdateLDR;
 
-      public string FullBuildString
-      {
-         get
-         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
+      public string FullBuildString { get; set; }
 
-            if (Revision.HasValue)
-            {
-               sb.Append($".{Revision}");
-            }
-
-            if (!string.IsNullOrWhiteSpace(Lab))
-            {
-               sb.Append($".{Lab}");
-            }
-
-            if (BuildTime.HasValue)
-            {
-               sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
-            }
-
-            return sb.ToString();
-         }
-      }
-
-      public string AlternateBuildString
-      {
-         get
-         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
-
-            if (Revision.HasValue)
-            {
-               sb.Append($".{Revision}");
-            }
-
-            if (!string.IsNullOrWhiteSpace(Lab))
-            {
-               sb.Append($" ({Lab}");
-
-               if (BuildTime.HasValue)
-               {
-                  sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
-               }
-
-               sb.Append(")");
-            }
-
-            return sb.ToString();
-         }
-      }
+      public string AlternateBuildString { get; set; }
 
       public ProjectFamily Family
       {
@@ -156,8 +106,8 @@ namespace BuildFeed.Model
             {
                return ProjectFamily.Windows7;
             }
-            if ((MajorVersion == 6)
-               && (Number >= 5000))
+            if (MajorVersion == 6
+               && Number >= 5000)
             {
                return ProjectFamily.WindowsVista;
             }
@@ -165,18 +115,18 @@ namespace BuildFeed.Model
             {
                return ProjectFamily.Longhorn;
             }
-            if ((MajorVersion == 5)
-               && (Number >= 3000))
+            if (MajorVersion == 5
+               && Number >= 3000)
             {
                return ProjectFamily.Server2003;
             }
-            if ((MajorVersion == 5)
-               && (Number >= 2205))
+            if (MajorVersion == 5
+               && Number >= 2205)
             {
                return ProjectFamily.WindowsXP;
             }
-            if ((MajorVersion == 5)
-               && (MinorVersion == 50))
+            if (MajorVersion == 5
+               && MinorVersion == 50)
             {
                return ProjectFamily.Neptune;
             }
@@ -208,6 +158,54 @@ namespace BuildFeed.Model
 
             return SourceDetails;
          }
+      }
+
+      public string GenerateFullBuildString()
+      {
+         StringBuilder sb = new StringBuilder();
+         sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
+
+         if (Revision.HasValue)
+         {
+            sb.Append($".{Revision}");
+         }
+
+         if (!string.IsNullOrWhiteSpace(Lab))
+         {
+            sb.Append($".{Lab}");
+         }
+
+         if (BuildTime.HasValue)
+         {
+            sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
+         }
+
+         return sb.ToString();
+      }
+
+      public string GenerateAlternateBuildString()
+      {
+         StringBuilder sb = new StringBuilder();
+         sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
+
+         if (Revision.HasValue)
+         {
+            sb.Append($".{Revision}");
+         }
+
+         if (!string.IsNullOrWhiteSpace(Lab))
+         {
+            sb.Append($" ({Lab}");
+
+            if (BuildTime.HasValue)
+            {
+               sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
+            }
+
+            sb.Append(")");
+         }
+
+         return sb.ToString();
       }
 
       public string GenerateLabUrl() => !string.IsNullOrEmpty(Lab)
