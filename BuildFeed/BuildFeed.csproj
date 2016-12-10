@@ -224,7 +224,7 @@
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
-    <Content Include="gulpfile.js" />
+    <None Include="gulpfile.js" />
     <Content Include="res\card\Longhorn.png" />
     <Content Include="res\card\Redstone2.png" />
     <Content Include="res\card\Redstone.png" />
@@ -287,7 +287,7 @@
     <Content Include="res\css\default.scss" />
     <Content Include="res\css\rtl.scss" />
     <Content Include="res\css\dark.scss" />
-    <Content Include="package.json" />
+    <None Include="package.json" />
     <None Include="Properties\PublishProfiles\Milestone 1 [DEV].pubxml" />
     <Content Include="res\Web.config" />
     <Content Include="res\css\light.scss" />

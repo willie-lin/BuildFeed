@@ -2,7 +2,7 @@
 /// <reference path="../../scripts/typings/jsrender/jsrender.d.ts" />
 "use strict";
 
-export module BuildFeed
+module BuildFeed
 {
    let ajax: XMLHttpRequest;
    let timeout: number;

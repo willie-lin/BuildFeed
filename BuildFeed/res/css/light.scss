@@ -35,6 +35,7 @@ table thead th
 {
    background-color: #e6e5e3;
    color: #373736;
+   border-bottom-color: #373736;
 
    button
    {
@@ -62,6 +63,7 @@ table thead th
 .dropdown-menu
 {
    background-color: #e6e5e3;
+   border-color: #373736;
    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
    a:hover,
