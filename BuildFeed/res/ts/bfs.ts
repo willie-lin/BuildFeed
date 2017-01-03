@@ -21,6 +21,23 @@ module BuildFeed
 
       const link = this as HTMLAnchorElement;
       link.parentElement.classList.toggle("open");
+
+      const menuClickCapture = document.getElementById("menu-open-overlay") as HTMLDivElement;
+      menuClickCapture.classList.add("open");
+   }
+
+   export function CloseDropdowns(ev: MouseEvent)
+   {
+      ev.preventDefault();
+
+      const ddParents = document.getElementsByClassName("dropdown-parent");
+      for (let i = 0; i < ddParents.length; i++)
+      {
+         ddParents[i].classList.remove("open");
+      }
+
+      const menuClickCapture = document.getElementById("menu-open-overlay") as HTMLDivElement;
+      menuClickCapture.classList.remove("open");
    }
 
    export function SwitchTheme(ev: MouseEvent)
@@ -138,6 +155,9 @@ module BuildFeed
             }
          }
       }
+
+      const menuClickCapture = document.getElementById("menu-open-overlay") as HTMLDivElement;
+      menuClickCapture.addEventListener("click", CloseDropdowns);
 
       const ddThemes = document.getElementById("settings-theme-menu").getElementsByTagName("a");
       for (let i = 0; i < ddThemes.length; i++)

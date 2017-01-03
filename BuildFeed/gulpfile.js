@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='sass-compile' ProjectOpened='watch-sass' />
+﻿/// <binding BeforeBuild='sass-compile, typescript' ProjectOpened='watch-sass' />
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var cleanCss = require("gulp-clean-css");
@@ -25,14 +25,13 @@ gulp.task("sass-compile",
 gulp.task("typescript",
    function()
    {
-      var result = gulp.src("./res/ts/*.ts")
+      return gulp.src("./res/ts/*.ts")
          .pipe(sourceMaps.init())
          .pipe(ts({
             target: "es5",
             sourceMap: false
-         }));
-
-      return result.js
+         }))
+         .js
          .pipe(uglify())
          .pipe(sourceMaps.write("./"))
          .pipe(gulp.dest("./res/ts/"));

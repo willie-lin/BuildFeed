@@ -140,6 +140,8 @@ nav#page-navigation
 {
    border-bottom-width: 1px;
    border-bottom-style: solid;
+   position: relative;
+   z-index: 10;
 
    #page-navigation-links
    {
@@ -656,7 +658,7 @@ footer#page-footer
    &.open
    {
       display: block;
-      background-color: rgba(0,0,0, 0.6);
+      background-color: rgba(0,0,0, 0.75);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
    }
@@ -725,6 +727,22 @@ footer#page-footer
             }
          }
       }
+   }
+}
+
+#menu-open-overlay
+{
+   display: none;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 5;
+
+   &.open
+   {
+      display: block;
    }
 }
 
