@@ -100,7 +100,11 @@ namespace BuildFeed.Controllers
                         AppId = Guid.Parse(ConfigurationManager.AppSettings["push:AppId"]),
                         IncludedSegments = new List<string>
                         {
+#if DEBUG
+                            "Testers"
+#else
                             "All"
+#endif
                         },
                         Headings =
                         {
@@ -110,12 +114,7 @@ namespace BuildFeed.Controllers
                         {
                             {LanguageCodes.English, build.AlternateBuildString}
                         },
-                        Url = "https://www.buildfeed.net" + Url.Route(nameof(FrontController.ViewBuild),
-                            new
-                            {
-                                controller = "Front",
-                                id = build.Id
-                            })
+                        Url = $"https://buildfeed.net{Url.Route(nameof(FrontController.ViewBuild), new { controller = "Front", id = build.Id })}?utm_source=notification&utm_campaign=new_build"
                     });
                 }
                 return true;

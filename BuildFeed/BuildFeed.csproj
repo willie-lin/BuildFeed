@@ -192,6 +192,7 @@
     <Compile Include="Areas\admin\Controllers\baseController.cs" />
     <Compile Include="Areas\admin\Controllers\metaController.cs" />
     <Compile Include="Areas\admin\Models\ViewModel\MetaListing.cs" />
+    <Compile Include="Code\AiHandleErrorAttribute.cs" />
     <Compile Include="Code\CustomContentTypeAttribute.cs" />
     <Compile Include="Code\DateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
