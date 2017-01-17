@@ -7,7 +7,7 @@
     "icons": [
         {
             "src": "https://buildfeed.net/content/tile/notify.png",
-            "sizes": "any"
+            "sizes": "2048x2048"
         }
     ],
     "start_url": "https://buildfeed.net/",
