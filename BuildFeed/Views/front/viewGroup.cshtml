@@ -13,7 +13,7 @@
    @foreach (Build build in Model.Item2)
    {
       <div class="build-group">
-         <h3 class="build-group-title no-wrapping" title="@build.Lab">
+         <h3 class="build-group-title no-wrapping" title="@build.AlternateBuildString">
             <a href="@Url.Action("ViewBuild", new
                      {
                         id = build.Id
