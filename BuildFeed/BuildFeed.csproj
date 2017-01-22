@@ -301,6 +301,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ar.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\bg.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ca.min.js" />
     <Content Include="Scripts\trumbowyg\langs\cs.min.js" />
     <Content Include="Scripts\trumbowyg\langs\da.min.js" />
@@ -312,6 +313,7 @@
     <Content Include="Scripts\trumbowyg\langs\fi.min.js" />
     <Content Include="Scripts\trumbowyg\langs\fr.min.js" />
     <Content Include="Scripts\trumbowyg\langs\he.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\hr.min.js" />
     <Content Include="Scripts\trumbowyg\langs\hu.min.js" />
     <Content Include="Scripts\trumbowyg\langs\id.min.js" />
     <Content Include="Scripts\trumbowyg\langs\it.min.js" />
@@ -319,6 +321,8 @@
     <Content Include="Scripts\trumbowyg\langs\ko.min.js" />
     <Content Include="Scripts\trumbowyg\langs\my.min.js" />
     <Content Include="Scripts\trumbowyg\langs\nl.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\no_nb.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\ph.min.js" />
     <Content Include="Scripts\trumbowyg\langs\pl.min.js" />
     <Content Include="Scripts\trumbowyg\langs\pt.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ro.min.js" />
@@ -334,32 +338,33 @@
     <Content Include="Scripts\trumbowyg\langs\zh_tw.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.js" />
     <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.js" />
+    <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\Gulpfile.js" />
+    <Content Include="Scripts\trumbowyg\plugins\colors\Gulpfile.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-black-2x.png" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-black.png" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-white-2x.png" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\images\icons-white.png" />
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.css" />
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.min.css" />
-    <Content Include="Scripts\trumbowyg\plugins\editlink\trumbowyg.editlink.js" />
-    <Content Include="Scripts\trumbowyg\plugins\editlink\trumbowyg.editlink.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\emoji\trumbowyg.emoji.js" />
+    <Content Include="Scripts\trumbowyg\plugins\emoji\trumbowyg.emoji.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\insertaudio\trumbowyg.insertaudio.js" />
+    <Content Include="Scripts\trumbowyg\plugins\insertaudio\trumbowyg.insertaudio.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\noembed\trumbowyg.noembed.js" />
+    <Content Include="Scripts\trumbowyg\plugins\noembed\trumbowyg.noembed.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\pasteimage\trumbowyg.pasteimage.js" />
+    <Content Include="Scripts\trumbowyg\plugins\pasteimage\trumbowyg.pasteimage.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\preformatted\trumbowyg.preformatted.js" />
     <Content Include="Scripts\trumbowyg\plugins\preformatted\trumbowyg.preformatted.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\images\icons-black-2x.png" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\images\icons-black.png" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\images\icons-white-2x.png" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\images\icons-white.png" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\trumbowyg.preformatted.css" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\trumbowyg.preformatted.min.css" />
+    <Content Include="Scripts\trumbowyg\plugins\table\trumbowyg.table.js" />
+    <Content Include="Scripts\trumbowyg\plugins\table\trumbowyg.table.min.js" />
+    <Content Include="Scripts\trumbowyg\plugins\template\trumbowyg.template.js" />
+    <Content Include="Scripts\trumbowyg\plugins\template\trumbowyg.template.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.js" />
     <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.min.js" />
     <Content Include="Scripts\trumbowyg\trumbowyg.js" />
     <Content Include="Scripts\trumbowyg\trumbowyg.min.js" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons-black-2x.png" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons-black.png" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons-white-2x.png" />
-    <Content Include="Scripts\trumbowyg\ui\images\icons-white.png" />
+    <Content Include="Scripts\trumbowyg\ui\icons.svg" />
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.css" />
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="yandex_702baad42b020be7.html" />
@@ -401,26 +406,12 @@
     <Content Include="Views\front\ViewVersion.cshtml" />
     <Content Include="Views\support\credits.cshtml" />
     <Content Include="Views\shared\error.cshtml" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\trumbowyg.colors.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\_sprite-black-2x.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\_sprite-black.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\_sprite-white-2x.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\_sprite-white.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\sass\trumbowyg.preformatted.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\sass\_sprite-black-2x.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\sass\_sprite-black.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\sass\_sprite-white-2x.scss" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\ui\sass\_sprite-white.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\mixins\_sprite-pos.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\_sprite-black-2x.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\_sprite-black.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\_sprite-white-2x.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\_sprite-white.scss" />
     <Content Include="Views\front\Index.cshtml" />
     <Content Include="settings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\trumbowyg.colors.scss" />
+    <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

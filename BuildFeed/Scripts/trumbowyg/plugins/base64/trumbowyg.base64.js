@@ -9,12 +9,22 @@
 (function ($) {
     'use strict';
 
+    var isSupported = function () {
+        return typeof FileReader !== 'undefined';
+    };
+
+    var isValidImage = function (type) {
+        return /^data:image\/[a-z]?/i.test(type);
+    };
+
     $.extend(true, $.trumbowyg, {
         langs: {
+            // jshint camelcase:false
             en: {
                 base64: 'Image as base64',
                 file: 'File',
-                errFileReaderNotSupported: 'FileReader is not supported by your browser.'
+                errFileReaderNotSupported: 'FileReader is not supported by your browser.',
+                errInvalidImage: 'Invalid image file.'
             },
             fr: {
                 base64: 'Image en base64',
@@ -23,57 +33,75 @@
             cs: {
                 base64: 'Vložit obrázek',
                 file: 'Soubor'
+            },
+            zh_cn: {
+                base64: '图片（Base64编码）',
+                file: '文件'
+            },
+            nl: {
+                errFileReaderNotSupported: 'Uw browser ondersteunt deze functionaliteit niet.',
+                errInvalidImage: 'De gekozen afbeelding is ongeldig.'
             }
         },
+        // jshint camelcase:true
 
-        opts: {
-            btnsDef: {
-                base64: {
-                    isSupported: function () {
-                        if (typeof FileReader === 'undefined') {
-                            if (window.console !== undefined) {
-                                console.err('[Trumbowyg - Plugin base64] FileReader is not supported by your browser.');
-                            }
-                            return false;
-                        }
-                        return true;
-                    },
-                    func: function (params, tbw) {
-                        var file;
-                        tbw.openModalInsert(
-                            // Title
-                            tbw.lang.base64,
+        plugins: {
+            base64: {
+                shouldInit: isSupported,
+                init: function (trumbowyg) {
+                    var btnDef = {
+                        isSupported: isSupported,
+                        fn: function () {
+                            trumbowyg.saveRange();
 
-                            // Fields
-                            {
-                                file: {
-                                    type: 'file',
-                                    required: true
+                            var file;
+                            var $modal = trumbowyg.openModalInsert(
+                                // Title
+                                trumbowyg.lang.base64,
+
+                                // Fields
+                                {
+                                    file: {
+                                        type: 'file',
+                                        required: true,
+                                        attributes: {
+                                            accept: 'image/*'
+                                        }
+                                    },
+                                    alt: {
+                                        label: 'description',
+                                        value: trumbowyg.getRangeText()
+                                    }
                                 },
-                                alt: {
-                                    label: 'description'
+
+                                // Callback
+                                function (values) {
+                                    var fReader = new FileReader();
+
+                                    fReader.onloadend = function (e) {
+                                        if (isValidImage(e.target.result)) {
+                                            trumbowyg.execCmd('insertImage', fReader.result);
+                                            $(['img[src="', fReader.result, '"]:not([alt])'].join(''), trumbowyg.$box).attr('alt', values.alt);
+                                            trumbowyg.closeModal();
+                                        } else {
+                                            trumbowyg.addErrorOnModalField(
+                                                $('input[type=file]', $modal),
+                                                trumbowyg.lang.errInvalidImage
+                                            );
+                                        }
+                                    };
+
+                                    fReader.readAsDataURL(file);
                                 }
-                            },
+                            );
 
-                            // Callback
-                            function (values) {
-                                var fReader = new FileReader();
+                            $('input[type=file]').on('change', function (e) {
+                                file = e.target.files[0];
+                            });
+                        }
+                    };
 
-                                fReader.onloadend = function () {
-                                    tbw.execCmd('insertImage', fReader.result);
-                                    $(['img[src="', fReader.result, '"]:not([alt])'].join(''), tbw.$box).attr('alt', values.alt);
-                                    tbw.closeModal();
-                                };
-
-                                fReader.readAsDataURL(file);
-                            }
-                        );
-
-                        $('input[type=file]').on('change', function (e) {
-                            file = e.target.files[0];
-                        });
-                    },
-                    ico: 'insertImage'
+                    trumbowyg.addBtnDef('base64', btnDef);
                 }
             }
         }

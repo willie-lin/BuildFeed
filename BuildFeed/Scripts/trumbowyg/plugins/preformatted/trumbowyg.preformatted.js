@@ -12,6 +12,7 @@
 
     $.extend(true, $.trumbowyg, {
         langs: {
+            // jshint camelcase:false
             en: {
                 preformatted: 'Code sample <pre>'
             },
@@ -20,30 +21,40 @@
             },
             it: {
                 preformatted: 'Codice <pre>'
+            },
+            zh_cn: {
+                preformatted: '代码示例 <pre>'
             }
         },
-        opts: {
-            btnsDef: {
-                preformatted: {
-                    func: function (params, tbw) {
-                        var text = String(tbw.doc.getSelection());
-                        if (text.replace(/\s/g, '') !== '') {
-                            try {
-                                var curtag = getSelectionParentElement().tagName.toLowerCase();
-                                if (curtag == 'code' || curtag == 'pre') {
-                                    return unwrapCode();
+        // jshint camelcase:true
+
+        plugins: {
+            preformatted: {
+                init: function (trumbowyg) {
+                    var btnDef = {
+                        fn: function () {
+                            trumbowyg.saveRange();
+                            var text = trumbowyg.getRangeText();
+                            if (text.replace(/\s/g, '') !== '') {
+                                try {
+                                    var curtag = getSelectionParentElement().tagName.toLowerCase();
+                                    if (curtag === 'code' || curtag === 'pre') {
+                                        return unwrapCode();
+                                    }
+                                    else {
+                                        trumbowyg.execCmd('insertHTML', '<pre><code>' + strip(text) + '</code></pre>');
+                                    }
+                                } catch (e) {
                                 }
-                                else {
-                                    tbw.execCmd('insertHTML', '<pre><code>' + strip(text) + '</code></pre>');
-                                }
-                            } catch (e) {
                             }
-                        }
-                    },
-                    ico: 'insertCode'
+                        },
+                        tag: 'pre'
+                    };
+
+                    trumbowyg.addBtnDef('preformatted', btnDef);
                 }
             }
-        },
+        }
     });
 
     /*
@@ -51,17 +62,17 @@
      */
     function getSelectionParentElement() {
         var parentEl = null,
-            sel;
+            selection;
         if (window.getSelection) {
-            sel = window.getSelection();
-            if (sel.rangeCount) {
-                parentEl = sel.getRangeAt(0).commonAncestorContainer;
-                if (parentEl.nodeType != 1) {
+            selection = window.getSelection();
+            if (selection.rangeCount) {
+                parentEl = selection.getRangeAt(0).commonAncestorContainer;
+                if (parentEl.nodeType !== 1) {
                     parentEl = parentEl.parentNode;
                 }
             }
-        } else if ((sel = document.selection) && sel.type != 'Control') {
-            parentEl = sel.createRange().parentElement();
+        } else if ((selection = document.selection) && selection.type !== 'Control') {
+            parentEl = selection.createRange().parentElement();
         }
         return parentEl;
     }
@@ -83,12 +94,13 @@
      */
     function unwrapCode() {
         var container = null;
-        if (document.selection) //for IE
+        if (document.selection) { //for IE
             container = document.selection.createRange().parentElement();
-        else {
+        } else {
             var select = window.getSelection();
-            if (select.rangeCount > 0)
+            if (select.rangeCount > 0) {
                 container = select.getRangeAt(0).startContainer.parentNode;
+            }
         }
         //'paranoic' unwrap
         var ispre = $(container).contents().closest('pre').length;
@@ -101,6 +113,5 @@
             $(container).contents().unwrap('code');
         }
     }
-
 
 })(jQuery);

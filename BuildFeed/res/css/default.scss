@@ -556,8 +556,9 @@ article
             width: auto;
         }
 
-        input[type=submit],
-        button
+        > input[type=submit],
+        > button,
+        .group-input-button > button
         {
             display: inline-block;
             vertical-align: middle;

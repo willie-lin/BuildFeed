@@ -1,14 +1,15 @@
-﻿@using BuildFeed.Model
+﻿@using BuildFeed.Controllers
+@using BuildFeed.Model
 @model BuildFeed.Model.Build
 @{
-    ViewBag.Title = (string)ViewContext.RouteData.Values["action"] == "addBuild"
+    ViewBag.Title = (string)ViewContext.RouteData.Values["action"] == nameof(FrontController.AddBuild)
         ? $"{VariantTerms.Common_AddBuild} | {InvariantTerms.SiteName}"
         : $"{VariantTerms.Front_EditBuild} {Model.FullBuildString} | {InvariantTerms.SiteName}";
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
 }
 
-@if ((string)ViewContext.RouteData.Values["action"] == "addBuild")
+@if ((string)ViewContext.RouteData.Values["action"] == nameof(FrontController.AddBuild))
 {
     <h1>@VariantTerms.Common_AddBuild</h1>
 }
@@ -154,40 +155,33 @@ else
 
         $(function()
         {
-            var btnsGrps = $.trumbowyg.btnsGrps;
 
             $("#@Html.IdFor(model => model.SourceDetails)")
                 .trumbowyg({
-                    semantic: true,
                     autogrow: true,
                     btns: [
-                        'viewHTML',
-                        '|', 'strong', 'em',
+                        [ 'strong', 'em' ],
                         '|', 'link',
-                        '|', btnsGrps.justify,
-                        '|', btnsGrps.lists
+                        '|', 'btnGrp-lists',
+                        '|', 'btnGrp-justify',
+                        '|', 'viewHTML',
+                        '|'
                     ]
                 });
 
             $(".trumbowyg").addClass("trumbowyg-black");
 
             $("#quickpaste")
-                .change(function()
-                {
-                    var regex = /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?\.([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)/;
+                .change(function() {
+                    var regex = /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?(\.| \()([a-zA-Z][a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)?/;
                     var result = regex.exec($("#quickpaste").val());
-                    if (result === null)
-                    {
-                        regex = /(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?\s+\(([a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)/;
-                        result = regex.exec($("#quickpaste").val());
-                    }
 
                     $("#MajorVersion").val(result[2]);
                     $("#MinorVersion").val(result[3]);
                     $("#Number").val(result[4]);
                     $("#Revision").val(result[6]);
-                    $("#Lab").val(result[7]);
-                    $("#BuildTime").val(result[8]);
+                    $("#Lab").val(result[8]);
+                    $("#BuildTime").val(result[9]);
                 });
         });
     </script>
