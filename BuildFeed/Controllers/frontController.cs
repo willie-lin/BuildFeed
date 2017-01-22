@@ -448,6 +448,21 @@ namespace BuildFeed.Controllers
             return View("EditBuild", build);
         }
 
+        [Route("bulk/")]
+        [Authorize]
+        public ActionResult AddBulk()
+        {
+            return View();
+        }
+
+        [Route("bulk/")]
+        [Authorize]
+        [HttpPost]
+        public async Task<ActionResult> AddBulk(AddBulk builds)
+        {
+            return View(builds);
+        }
+
         [Route("edit/{id}/")]
         [Authorize]
         public async Task<ActionResult> EditBuild(Guid id)

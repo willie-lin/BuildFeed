@@ -341,7 +341,7 @@ article
 
         .build-group-empty
         {
-            width: 255px;
+            width: 270px;
             flex-grow: 1;
             margin: 0 0.75em;
             box-sizing: border-box;
@@ -401,6 +401,16 @@ article
             h3.latest-flex-title
             {
                 background: #FF9F19;
+            }
+        }
+
+        &.latest-flex-blue
+        {
+            border: #{(1em / 4)} solid #0A81CC;
+
+            h3.latest-flex-title
+            {
+                background: #0A81CC;
             }
         }
 

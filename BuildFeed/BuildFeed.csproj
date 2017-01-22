@@ -412,6 +412,7 @@
     </Content>
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\trumbowyg.colors.scss" />
     <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
+    <Content Include="Views\front\AddBulk.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

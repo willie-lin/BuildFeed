@@ -136,6 +136,15 @@
                     </a>
                 </li>
                 <li>
+                    <a href="@Url.Action(nameof(FrontController.AddBulk), new
+                             {
+                                 controller = "Front",
+                                 area = ""
+                             })" title="@VariantTerms.Common_AddBulk">
+                        <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
+                    </a>
+                </li>
+                <li>
                     <a href="@Url.Action(nameof(SupportController.Logout), new
                              {
                                  controller = "Support",

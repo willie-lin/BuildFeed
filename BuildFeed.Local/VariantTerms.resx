@@ -138,6 +138,9 @@
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Add build</value>
   </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Add bulk</value>
+  </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
@@ -209,6 +212,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Current Release</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Current Xbox</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Delete</value>
@@ -447,5 +453,4 @@
   <data name="Support_Week" xml:space="preserve">
     <value>Week</value>
   </data>
-
 </root>

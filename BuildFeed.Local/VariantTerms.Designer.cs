@@ -124,6 +124,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add bulk.
+        /// </summary>
+        public static string Common_AddBulk {
+            get {
+                return ResourceManager.GetString("Common_AddBulk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string Common_Admin {
@@ -336,6 +345,15 @@ namespace BuildFeed.Local {
         public static string Front_CurrentRelease {
             get {
                 return ResourceManager.GetString("Front_CurrentRelease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Xbox.
+        /// </summary>
+        public static string Front_CurrentXbox {
+            get {
+                return ResourceManager.GetString("Front_CurrentXbox", resourceCulture);
             }
         }
         
