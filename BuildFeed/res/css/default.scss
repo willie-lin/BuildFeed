@@ -874,3 +874,11 @@ footer#page-footer
         }
     }
 }
+
+@media (max-width: 1300px)
+{
+    .latest-flex .latest-flex-item
+    {
+        min-width: calc(50% - 2em);
+    }
+}

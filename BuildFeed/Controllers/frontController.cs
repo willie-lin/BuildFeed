@@ -5,8 +5,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BuildFeed.Code;
@@ -458,9 +460,84 @@ namespace BuildFeed.Controllers
         [Route("bulk/")]
         [Authorize]
         [HttpPost]
-        public async Task<ActionResult> AddBulk(AddBulk builds)
+        public async Task<ActionResult> AddBulk(FormCollection values)
         {
-            return View(builds);
+            OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
+            var success = new List<Build>();
+            var failed = new List<string>();
+            bool notify = bool.Parse(values[nameof(BulkAddition.SendNotifications)].Split(',')[0]);
+
+            foreach (string line in values[nameof(BulkAddition.Builds)].Split(new[]
+                {
+                    '\r',
+                    '\n'
+                },
+                StringSplitOptions.RemoveEmptyEntries))
+            {
+                Match m = Regex.Match(line, @"(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?(\.| \()([a-zA-Z][a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)?");
+                if (m.Success)
+                {
+                    try
+                    {
+                        Build b = new Build
+                        {
+                            MajorVersion = uint.Parse(m.Groups[2].Value),
+                            MinorVersion = uint.Parse(m.Groups[3].Value),
+                            Number = uint.Parse(m.Groups[4].Value),
+                            Revision = string.IsNullOrEmpty(m.Groups[6].Value)
+                                ? null
+                                : uint.Parse(m.Groups[6].Value) as uint?,
+                            Lab = m.Groups[8].Value,
+                            BuildTime = string.IsNullOrEmpty(m.Groups[9].Value)
+                                ? null
+                                : DateTime.SpecifyKind(DateTime.ParseExact(m.Groups[9].Value, "yyMMdd-HHmm", CultureInfo.CurrentCulture.DateTimeFormat), DateTimeKind.Utc) as DateTime?,
+                            Added = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
+                            Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
+                            SourceType = TypeOfSource.PrivateLeak
+                        };
+
+                        await _bModel.Insert(b);
+
+                        if (notify)
+                        {
+                            osc.Notifications.Create(new NotificationCreateOptions
+                            {
+                                AppId = Guid.Parse(ConfigurationManager.AppSettings["push:AppId"]),
+                                IncludedSegments = new List<string>
+                                {
+#if DEBUG
+                                    "Testers"
+#else
+                        "All"
+#endif
+                                },
+                                Headings =
+                                {
+                                    {LanguageCodes.English, "A new build has been added to BuildFeed!"}
+                                },
+                                Contents =
+                                {
+                                    {LanguageCodes.English, b.AlternateBuildString}
+                                },
+                                Url = $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build"
+                            });
+                        }
+
+                        success.Add(b);
+                    }
+                    catch (Exception)
+                    {
+                        failed.Add(line);
+                    }
+                }
+            }
+
+            ViewBag.Results = success.ToArray();
+            return View(new BulkAddition
+            {
+                Builds = string.Join("\r\n", failed),
+                SendNotifications = notify
+            });
         }
 
         [Route("edit/{id}/")]

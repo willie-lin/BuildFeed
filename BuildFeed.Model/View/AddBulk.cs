@@ -1,6 +1,6 @@
 ﻿namespace BuildFeed.Model.View
 {
-    public class AddBulk
+    public class BulkAddition
     {
         public string Builds { get; set; }
 

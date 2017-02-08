@@ -1,4 +1,6 @@
-﻿@model BuildFeed.Model.View.AddBulk
+﻿@using BuildFeed.Controllers
+@using BuildFeed.Model
+@model BuildFeed.Model.View.BulkAddition
 
 @{
     ViewBag.Title = $"{VariantTerms.Common_AddBulk} | {InvariantTerms.SiteName}";
@@ -6,10 +8,28 @@
 
 <h1>Add builds in bulk</h1>
 
+@if (ViewBag.Results != null)
+{
+    <p>These builds have been added successfully.</p>
+    <ul>
+        @foreach (Build b in ViewBag.Results)
+        {
+            <li>
+                <a href="@Url.Action(nameof(FrontController.ViewBuild), new
+                         {
+                             id = b.Id
+                         })" target="_blank">
+                    @b.AlternateBuildString</a>
+            </li>
+        }
+    </ul>
+}
+
+<p>Add multiple builds below by typing the full build string out each on one line. All builds added via this page will have a Source Type of "Private Leak".</p>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
 
     <div class="form-group">
         <label for="@Html.IdFor(m => m.Builds)">Builds</label>
