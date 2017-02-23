@@ -94,27 +94,7 @@ namespace BuildFeed.Controllers
                     await _bModel.Insert(build);
 
                     OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
-                    osc.Notifications.Create(new NotificationCreateOptions
-                    {
-                        AppId = Guid.Parse(ConfigurationManager.AppSettings["push:AppId"]),
-                        IncludedSegments = new List<string>
-                        {
-#if DEBUG
-                            "Testers"
-#else
-                            "All"
-#endif
-                        },
-                        Headings =
-                        {
-                            {LanguageCodes.English, "A new build has been added to BuildFeed!"}
-                        },
-                        Contents =
-                        {
-                            {LanguageCodes.English, build.AlternateBuildString}
-                        },
-                        Url = $"https://buildfeed.net{Url.Route("Build", new { controller = "Front", action = nameof(FrontController.ViewBuild), id = build.Id, area = "", httproute = "" })}?utm_source=notification&utm_campaign=new_build"
-                    });
+                    osc.PushNewBuild(build, $"https://buildfeed.net{Url.Route("Build", new { controller = "Front", action = nameof(FrontController.ViewBuild), id = build.Id, area = "", httproute = "" })}?utm_source=notification&utm_campaign=new_build");
                 }
                 return true;
             }

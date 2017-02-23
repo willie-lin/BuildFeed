@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Jak mogę pomóc?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Dodaj buildy</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Buildy</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Dodaj wiele buildów poniżej poprzez wpisywanie pełnej nazwy w każdej linii. Każdy build dodany z tej strony będzie miał typ źródła: "Prywatny wyciek".</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Wyślij powiadomienia</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Sukces! Buildy zostały dodane.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Dodaj build</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Dodaj wiele</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrator</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Aktualna wersja</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Aktualny Xbox</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Usuń</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Aktualizacja (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Nowy build został dodany do {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>

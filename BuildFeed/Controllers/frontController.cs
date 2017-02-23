@@ -419,27 +419,7 @@ namespace BuildFeed.Controllers
                 }
 
                 OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
-                osc.Notifications.Create(new NotificationCreateOptions
-                {
-                    AppId = Guid.Parse(ConfigurationManager.AppSettings["push:AppId"]),
-                    IncludedSegments = new List<string>
-                    {
-#if DEBUG
-                        "Testers"
-#else
-                        "All"
-#endif
-                    },
-                    Headings =
-                    {
-                        {LanguageCodes.English, "A new build has been added to BuildFeed!"}
-                    },
-                    Contents =
-                    {
-                        {LanguageCodes.English, build.AlternateBuildString}
-                    },
-                    Url = $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = build.Id })}?utm_source=notification&utm_campaign=new_build"
-                });
+                osc.PushNewBuild(build, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = build.Id })}?utm_source=notification&utm_campaign=new_build");
 
                 return RedirectToAction(nameof(ViewBuild),
                     new
@@ -500,27 +480,7 @@ namespace BuildFeed.Controllers
 
                         if (notify)
                         {
-                            osc.Notifications.Create(new NotificationCreateOptions
-                            {
-                                AppId = Guid.Parse(ConfigurationManager.AppSettings["push:AppId"]),
-                                IncludedSegments = new List<string>
-                                {
-#if DEBUG
-                                    "Testers"
-#else
-                        "All"
-#endif
-                                },
-                                Headings =
-                                {
-                                    {LanguageCodes.English, "A new build has been added to BuildFeed!"}
-                                },
-                                Contents =
-                                {
-                                    {LanguageCodes.English, b.AlternateBuildString}
-                                },
-                                Url = $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build"
-                            });
+                            osc.PushNewBuild(b, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build");
                         }
 
                         success.Add(b);

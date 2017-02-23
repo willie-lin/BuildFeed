@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bununla beraber, Microsoft açıkça, gizli bilgileri gizli tutmayı istiyor, ve daha önce onlar tarafından kapatılan kaynaklara sahiptik, bunu yapmaya devam edeceklerinden de eminim.</value>
+    <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bunlar söylenmişken, Microsoft açıkça gizli bilgileri gizli tutmayı istiyor, ve geçmişte onlar tarafından kapatılan kaynaklara sahiplik ettik, ve gelecekte yapacaklarından da eminim.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu sitede gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Birkaç yol var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımızdan kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
+    <value>Birkaç yol var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımız üzerinden kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>BuildFeed'i kim yürütüyor? Bu resmi bir Microsoft sitesi mi?</value>
+    <value>BuildFeed'i kim çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
     <value>BuildFeed verilerini tam olarak nasıl alıyor?</value>
@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Nasıl dahil olabilirim?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Yapılar ekle</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Yapılar</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Aşağıda her bir satıra tam yapı metnini girerek çoklu yapı ekleyin. Bu sayfa ile eklenen bütün yapılar "Özel Sızdırma" Kaynak Türü'ne sahip olacaktır.</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Bildirimler gönder</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Bu yapılar başarıyla eklendi.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Yapı ekle</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Yığın ekle</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Yönetici</value>
@@ -154,7 +172,7 @@
     <value>Hata</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Bir şeyler kırıldı. Belki tuhaf bir şey yaptığından dolayı. Muhtemelen benim tuhaf bir şey yaptığımdan dolayı. Bu hatayı almaya devam edersen, {0} ile hata raporu gönder.</value>
+    <value>Bir şeyler kırıldı. Belki tuhaf bir şey yaptığından dolayı. Muhtemelen benim tuhaf bir şey yaptığımdan dolayı. Bu hatayı almaya devam edersen, {0} ile bir hata raporu gönder.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>Giriş yap</value>
@@ -175,10 +193,10 @@
     <value>Site haritası</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Koyu</value>
+    <value>Karanlık</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Açık</value>
+    <value>Aydınlık</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>Sayfa {0}</value>
@@ -210,6 +228,9 @@
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Şimdiki Dağıtım</value>
   </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Şimdiki Xbox</value>
+  </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Sil</value>
   </data>
@@ -220,7 +241,7 @@
     <value>Düzenle</value>
   </data>
   <data name="Front_EditBuild" xml:space="preserve">
-    <value>Yapıyı Düzenle</value>
+    <value>Yapıyı düzenle</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
     <value>Editör eylemleri</value>
@@ -235,7 +256,7 @@
     <value>{0} yapı listesi</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
-    <value>En Son Yapılar</value>
+    <value>Son yapılar</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
     <value>Liste</value>
@@ -244,7 +265,7 @@
     <value>Şundan daha fazla yapı bul: {0}</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>{0} kaynaklı daha fazla yapı bul</value>
+    <value>Şundan kaynaklanmış daha fazla yapı bul: {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
     <value>{0} içinde derlenmiş daha fazla yapı bul</value>
@@ -256,13 +277,13 @@
     <value>{0} yapı</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>Özel</value>
+    <value>Gizli</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
     <value>Herkese açık</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Hızlı yapıştır</value>
+    <value>Hızlı-yapıştır</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
     <value>Yapı listesine geri dön</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Güncelleme (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Şuna bir yeni yapı eklendi: {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Yapı</value>

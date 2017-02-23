@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>كيف بإمكانني المشاركة بالموقع والتفاعل معه؟</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>إضافة نسخة جديدة</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>النسخ</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>يمكنك إضافة عدة نسخ دفعة واحدة أدناه بكتابة بيانات كل نسخة في سطر ، متضمنةً رقم ومختبر وتاريخ النسخة. جميع النسخ التي ستضاف في هذه الصفحة سيتم تعيينها كنسخ خاصة.</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>إرسال تنبيهات</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>تم إضافة النسخ بنجاح.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>إضافة نسخة</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>إضافة مجموعة نسخ</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>أدوات المسؤول</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>النسخة المنشورة حالياً</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>نسخة XBox الحالية</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>حذف</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>تحديث محدود بخاصية (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>هناك نسخة جديدة قد أضيفت مؤخراً إلى {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>نسخة</value>

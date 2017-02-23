@@ -6,11 +6,11 @@
     ViewBag.Title = $"{VariantTerms.Common_AddBulk} | {InvariantTerms.SiteName}";
 }
 
-<h1>Add builds in bulk</h1>
+<h1>@VariantTerms.Common_AddBulk</h1>
 
 @if (ViewBag.Results != null)
 {
-    <p>These builds have been added successfully.</p>
+    <p>@VariantTerms.Bulk_Success</p>
     <ul>
         @foreach (Build b in ViewBag.Results)
         {
@@ -25,14 +25,14 @@
     </ul>
 }
 
-<p>Add multiple builds below by typing the full build string out each on one line. All builds added via this page will have a Source Type of "Private Leak".</p>
+<p>@VariantTerms.Bulk_Instructions</p>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        <label for="@Html.IdFor(m => m.Builds)">Builds</label>
+        <label for="@Html.IdFor(m => m.Builds)">@VariantTerms.Bulk_Builds</label>
         <div>
             @Html.TextAreaFor(m => m.Builds, new
             {
@@ -46,7 +46,7 @@
         <div>
             <label>
                 @Html.CheckBoxFor(m => m.SendNotifications)
-                Send notifications
+                @VariantTerms.Bulk_SendNotifications
             </label>
         </div>
     </div>
@@ -54,7 +54,7 @@
     <div class="form-group">
         <label></label>
         <div>
-            <input type="submit" value="Add builds" class="button" />
+            <input type="submit" value="@VariantTerms.Bulk_AddBuilds" class="button" />
         </div>
     </div>
 }

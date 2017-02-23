@@ -115,6 +115,51 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add builds.
+        /// </summary>
+        public static string Bulk_AddBuilds {
+            get {
+                return ResourceManager.GetString("Bulk_AddBuilds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Builds.
+        /// </summary>
+        public static string Bulk_Builds {
+            get {
+                return ResourceManager.GetString("Bulk_Builds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add multiple builds below by typing the full build string out each on one line. All builds added via this page will have a Source Type of &quot;Private Leak&quot;..
+        /// </summary>
+        public static string Bulk_Instructions {
+            get {
+                return ResourceManager.GetString("Bulk_Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send notifications.
+        /// </summary>
+        public static string Bulk_SendNotifications {
+            get {
+                return ResourceManager.GetString("Bulk_SendNotifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These builds have been added successfully..
+        /// </summary>
+        public static string Bulk_Success {
+            get {
+                return ResourceManager.GetString("Bulk_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add build.
         /// </summary>
         public static string Common_AddBuild {
@@ -777,6 +822,15 @@ namespace BuildFeed.Local {
         public static string Model_SourceType {
             get {
                 return ResourceManager.GetString("Model_SourceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new build has been added to {0}!.
+        /// </summary>
+        public static string Notification_NewBuild {
+            get {
+                return ResourceManager.GetString("Notification_NewBuild", resourceCulture);
             }
         }
         

@@ -135,6 +135,21 @@
   <data name="About_Q3" xml:space="preserve">
     <value>How can I get involved?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Add builds</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Builds</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Add multiple builds below by typing the full build string out each on one line. All builds added via this page will have a Source Type of "Private Leak".</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Send notifications</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>These builds have been added successfully.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Add build</value>
   </data>
@@ -356,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Update (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>A new build has been added to {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>

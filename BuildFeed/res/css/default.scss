@@ -183,81 +183,86 @@ nav#page-navigation
 
 .dropdown-parent
 {
-    .dropdown-menu
-    {
-        box-sizing: border-box;
-        display: none;
-        position: absolute;
-        left: -15px;
-        right: -15px;
-        max-width: 1270px;
-        padding: 15px;
-        text-align: left;
-        z-index: 10;
-        border-width: 1px;
-        border-style: solid;
-        border-top-width: 0;
+   .dropdown-menu
+   {
+      box-sizing: border-box;
+      display: none;
+      position: absolute;
+      left: -15px;
+      right: -15px;
+      max-width: 1270px;
+      padding: 15px 15px 0;
+      text-align: left;
+      z-index: 10;
+      border-width: 1px;
+      border-style: solid;
+      border-top-width: 0;
+      flex-wrap: wrap;
 
-        h4
-        {
-            margin: 0 0 .5em;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
+      h4
+      {
+         margin: 0 0 .5em;
+         font-size: 1.2em;
+         font-weight: 500;
+      }
 
-        .dropdown-menu-block
-        {
-            float: left;
-            display: inline-block;
+      .dropdown-menu-block
+      {
+         display: inline-block;
+         vertical-align: top;
+         margin-bottom: 15px;
+         flex-grow: 1;
+
+         ul
+         {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+         }
+
+         li
+         {
+            list-style-type: none;
+            line-height: 2em;
+            width: 133px;
             vertical-align: top;
+            flex-grow: 1;
 
-            ul
+            > a
             {
-                padding: 0;
+               display: block;
+               padding: 0 1em;
+
+               &:hover,
+               &:active,
+               &:focus
+               {
+                  text-decoration: none;
+               }
             }
+         }
+      }
 
-            li
-            {
-                list-style-type: none;
-                line-height: 2em;
-                float: left;
-                width: 20%;
-                min-width: 100px;
-                vertical-align: top;
+      #settings-theme-menu
+      {
+         width: 120px;
+         flex-grow: 1;
+      }
 
-                > a
-                {
-                    display: block;
-                    padding: 0 1em;
+      #settings-lang-menu
+      {
+         width: 320px;
+         flex-grow: 1000;
+      }
+   }
 
-                    &:hover,
-                    &:active,
-                    &:focus
-                    {
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-
-        #settings-theme-menu
-        {
-            width: 120px;
-        }
-
-        #settings-lang-menu
-        {
-            width: calc(100% - 120px);
-        }
-    }
-
-    &.open
-    {
-        .dropdown-menu
-        {
-            display: block;
-        }
-    }
+   &.open
+   {
+      .dropdown-menu
+      {
+         display: flex;
+      }
+   }
 }
 
 article

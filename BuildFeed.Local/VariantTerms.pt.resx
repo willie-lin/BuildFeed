@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Como me posso envolver ?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Adicionar compilações</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Compilações</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Adicione múltiplas compilações em baixo escrevendo a string completa da compilação, cada um em cada linha. Todas as compilações adicionadas por esta página serão consideradas do tipo de fonte " Vazamento Privado".</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Enviar Notificações</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Estas compilações foram adicionadas com sucesso.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>Adicionar Compilação</value>
+    <value>Adicionar compilação</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Adicionar em Massa</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrador</value>
@@ -210,6 +228,9 @@
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Atualmente na Prévia de Lançamento</value>
   </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Atualmente no Xbox</value>
+  </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Eliminar</value>
   </data>
@@ -250,7 +271,7 @@
     <value>Veja mais compilações compiladas em {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
-    <value>Sem informações acerca do laboratório</value>
+    <value>Sem string do Laboratório</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
     <value>{0} Compilações</value>
@@ -307,10 +328,10 @@
     <value>Data de lançamento ou vazamento</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
-    <value>Versão principal</value>
+    <value>Versão Principal</value>
   </data>
   <data name="Model_MinorVersion" xml:space="preserve">
-    <value>Versão minoritaria</value>
+    <value>Versão Minoritaria</value>
   </data>
   <data name="Model_Modified" xml:space="preserve">
     <value>Tempo de modificação</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Atualização (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Uma nova compilação foi adicionada a {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Compilação</value>
@@ -433,7 +457,7 @@
     <value>Vazado Recentemente</value>
   </data>
   <data name="Support_Register" xml:space="preserve">
-    <value>Resgistrar</value>
+    <value>Registrar</value>
   </data>
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Lembrar-se de mim</value>

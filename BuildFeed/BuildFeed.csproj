@@ -204,6 +204,7 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\usersController.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
+    <Compile Include="Code\OneSignalHelper.cs" />
     <Compile Include="Code\Options\Locale.cs" />
     <Compile Include="Code\Options\Theme.cs" />
     <Compile Include="Code\OutputCachePushAttribute.cs" />
