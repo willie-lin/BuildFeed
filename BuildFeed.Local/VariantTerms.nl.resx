@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Hoe kan ik meedoen?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Build toevoegen</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Builds</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Voeg meerdere builds toe door het noteren van de volledige buildstring op elke regel. Alle builds zullen dan worden toegevoegd met de bron type "prive lek"</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Notificaties verzenden</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Deze builds zijn succesvol toegevoegd.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Build toevoegen</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Meerderheid toevoegen</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrator</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Huidige release</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Huidige Xbox</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Verwijderen</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Update (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Een nieuwe build is toegevoegd op {0}</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>

@@ -132,12 +132,9 @@
   <data name="About_A3" xml:space="preserve">
     <value>たくさんの巻き添えの方はあります。ビルド下にコメントシステムはコメントしましょう。GitHubはバグと問題を報告できます。そして、翻訳ポータルにこのサイトを翻訳できます。</value>
   </data>
-  
-<!--
-<data name="About_Q1" xml:space="preserve">
-    <value>[!!! Wλô řúñƨ ßúïℓδFèèδ? Ìƨ ƭλïƨ áñ ôƒƒïçïáℓ Mïçřôƨôƒƭ ƨïƭè? ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  <data name="About_Q1" xml:space="preserve">
+    <value>このサイトは誰が動けますか。マイクロソフト係のサイトですか。</value>
   </data>
--->
   <data name="About_Q2" xml:space="preserve">
     <value>ビルドフィート(BuildFeed)の資料源は何ですか。</value>
   </data>
@@ -162,18 +159,12 @@
     <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Bulk_SendNotifications" xml:space="preserve">
-    <value>[!!! §èñδ ñôƭïƒïçáƭïôñƨ ℓô !!!]</value>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>通知を送信する。</value>
   </data>
--->
-  
-<!--
-<data name="Bulk_Success" xml:space="preserve">
-    <value>[!!! Tλèƨè βúïℓδƨ λáƲè βèèñ áδδèδ ƨúççèƨƨƒúℓℓ¥. ℓôřè₥ !!!]</value>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>ビルドの追加は完了しました。</value>
   </data>
--->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>ビルドに追加。</value>
   </data>
@@ -193,7 +184,7 @@
   </data>
 -->
   <data name="Common_Credits" xml:space="preserve">
-    <value>ヘルプがありがとうございます。</value>
+    <value>ヘルプでありがとうございます。</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
     <value>開発者：{0}</value>
@@ -261,12 +252,9 @@
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>今の安定なリリースビルド</value>
   </data>
-  
-<!--
-<data name="Front_CurrentXbox" xml:space="preserve">
-    <value>[!!! Çúřřèñƭ Xβôж ℓ !!!]</value>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>今のXboxリリース</value>
   </data>
--->
   <data name="Front_Delete" xml:space="preserve">
     <value>削除</value>
   </data>
@@ -297,18 +285,12 @@
   <data name="Front_Listing" xml:space="preserve">
     <value>一覧表</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromLab" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromLab" xml:space="preserve">
+    <value>{0}からその他のビルドを見つけて。</value>
   </data>
--->
-  
-<!--
-<data name="Front_MoreFromSource" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ ƨôúřçèδ ƒřô₥ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromSource" xml:space="preserve">
+    <value>出所{0}からのビルドを見つけて。</value>
   </data>
--->
   
 <!--
 <data name="Front_MoreFromYear" xml:space="preserve">

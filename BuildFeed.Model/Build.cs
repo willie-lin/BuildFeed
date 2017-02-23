@@ -74,10 +74,15 @@ namespace BuildFeed.Model
 
         public string AlternateBuildString { get; set; }
 
+        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Search_Version))]
         public ProjectFamily Family
         {
             get
             {
+                if (Number >= 15140)
+                {
+                    return ProjectFamily.Redstone3;
+                }
                 if (Number >= 14800)
                 {
                     return ProjectFamily.Redstone2;

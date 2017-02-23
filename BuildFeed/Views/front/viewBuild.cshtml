@@ -63,6 +63,12 @@
 </div>
 <div class="build-details-flex">
    <div class="build-details-flex-item">
+      @Html.LabelFor(model => model.Family)
+      <div class="build-details-flex-value">
+         @Html.DisplayFor(model => model.Family, "Enumeration")
+      </div>
+   </div>
+   <div class="build-details-flex-item">
       @Html.LabelFor(model => model.Lab)
       <p class="build-details-flex-value">
          @if (string.IsNullOrEmpty(Model.Lab))
@@ -82,6 +88,8 @@
          }
       </p>
    </div>
+</div>
+<div class="build-details-flex">
    <div class="build-details-flex-item">
       @Html.LabelFor(model => model.BuildTime)
       <p class="build-details-flex-value">
@@ -99,6 +107,15 @@
          }
       </p>
    </div>
+   <div class="build-details-flex-item">
+      @if (Model.LeakDate.HasValue)
+      {
+         @Html.LabelFor(model => model.LeakDate)
+         <div class="build-details-flex-value">
+            <time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToLongDateString()">@Model.LeakDate.Value.ToShortDateString()</time>
+         </div>
+      }
+   </div>
 </div>
 <div class="build-details-flex">
    <div class="build-details-flex-item">
@@ -113,15 +130,6 @@
             @string.Format(VariantTerms.Front_MoreFromSource, MvcExtensions.GetDisplayTextForEnum(Model.SourceType))
          </a>
       </div>
-   </div>
-   <div class="build-details-flex-item">
-      @if (Model.LeakDate.HasValue)
-      {
-         @Html.LabelFor(model => model.LeakDate)
-         <div class="build-details-flex-value">
-            <time datetime="@Model.LeakDate.Value.ToString("yyyy-MM-dd")" title="@Model.LeakDate.Value.ToLongDateString()">@Model.LeakDate.Value.ToShortDateString()</time>
-         </div>
-      }
    </div>
 </div>
 <br />

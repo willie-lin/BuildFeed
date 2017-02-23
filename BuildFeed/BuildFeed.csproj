@@ -226,6 +226,7 @@
     <Content Include="OneSignalSDKUpdaterWorker.js" />
     <Content Include="OneSignalSDKWorker.js" />
     <Content Include="res\card\Longhorn.png" />
+    <Content Include="res\card\Redstone3.png" />
     <Content Include="res\card\Redstone2.png" />
     <Content Include="res\card\Redstone.png" />
     <Content Include="res\card\Threshold2.png" />
