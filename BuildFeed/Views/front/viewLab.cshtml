@@ -4,107 +4,107 @@
 @using Humanizer
 @model IEnumerable<BuildFeed.Model.Build>
 @{
-    ViewBag.Title = string.Format("{0}{1} | {2}", string.Format(VariantTerms.Front_BuildsFrom, ViewBag.ItemId), ViewBag.PageNumber == 1
-        ? ""
-        : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber), InvariantTerms.SiteName);
+   ViewBag.Title = string.Format("{0}{1} | {2}", string.Format(VariantTerms.Front_BuildsFrom, ViewBag.ItemId), ViewBag.PageNumber == 1
+      ? ""
+      : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber), InvariantTerms.SiteName);
 }
 
 @section head
 {
-    @if (ViewBag.MetaItem != null)
-    {
-        <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
-        <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
-    }
-    else
-    {
-        string metaDesc = string.Format(VariantTerms.Meta_LabGeneric, ViewBag.ItemId);
-        <meta name="description" content="@metaDesc" />
-        <meta property="og:description" content="@metaDesc" />
-    }
+   @if (ViewBag.MetaItem != null)
+   {
+      <meta name="description" content="@ViewBag.MetaItem.MetaDescription" />
+      <meta property="og:description" content="@ViewBag.MetaItem.MetaDescription" />
+   }
+   else
+   {
+      string metaDesc = string.Format(VariantTerms.Meta_LabGeneric, ViewBag.ItemId);
+      <meta name="description" content="@metaDesc" />
+      <meta property="og:description" content="@metaDesc" />
+   }
 
-    @if (ViewBag.PageNumber != 1)
-    {
-        <meta name="robots" content="noindex, follow" />
-    }
+   @if (ViewBag.PageNumber != 1)
+   {
+      <meta name="robots" content="noindex, follow" />
+   }
 }
 
 <h1 class="eager-wrapping">@string.Format(VariantTerms.Front_BuildsFrom, ViewBag.ItemId)</h1>
 @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
-    <h3>@VariantTerms.Front_About</h3>
-    @Html.Raw(ViewBag.MetaItem.PageContent)
+   <h3>@VariantTerms.Front_About</h3>
+   @Html.Raw(ViewBag.MetaItem.PageContent)
 }
 <h3>@VariantTerms.Front_Share</h3>
 <div class="addthis_sharing_toolbox"></div>
 <br />
 <h3>@VariantTerms.Front_Listing</h3>
 <div class="build-group-listing">
-    @foreach (Build build in Model)
-    {
-        <div class="build-group">
-            <h3 class="build-group-title" title="@build.AlternateBuildString">
-                <a href="@Url.Action("ViewBuild", new
-                         {
-                             id = build.Id
-                         })">
-                    @($"{build.MajorVersion}.{build.MinorVersion}.{build.Number}.{build.Revision}")
-                </a>
-            </h3>
-            @if (build.BuildTime.HasValue)
-            {
-                <p class="build-group-p">
-                    <span title="@build.BuildTime.Value.Humanize()">
-                        <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()
-                    </span>
-                </p>
-                <p class="build-group-p">
-                    <span title="@build.BuildTime.Value.Humanize()">
-                        <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()
-                    </span>
-                </p>
-            }
-            @if (build.IsLeaked)
-            {
-                <p class="build-group-p">
-                    <span>
-                        <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public</span>
-                </p>
-            }
-            else
-            {
-                <p class="build-group-p">
-                    <span>
-                        <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
-                </p>
-            }
-            @if (User.Identity.IsAuthenticated)
-            {
-                <p>
-                    <a href="@Url.Action(nameof(FrontController.EditBuild), new
-                             {
-                                 id = build.Id
-                             })" class="button edit-button">
-                        @VariantTerms.Front_Edit
-                    </a>
-                    &nbsp;
-                    @if (Roles.IsUserInRole("Administrators"))
-                    {
-                        <a href="@Url.Action(nameof(FrontController.DeleteBuild), new
-                                 {
-                                     id = build.Id
-                                 })" class="button delete-button">
-                            @VariantTerms.Front_Delete
-                        </a>
-                    }
-                </p>
-            }
-        </div>
-    }
-    <div class="build-group-empty"></div>
-    <div class="build-group-empty"></div>
-    <div class="build-group-empty"></div>
-    <div class="build-group-empty"></div>
-    <div class="build-group-empty"></div>
+   @foreach (Build build in Model)
+   {
+      <div class="build-group">
+         <h3 class="build-group-title" title="@build.AlternateBuildString">
+            <a href="@Url.Action("ViewBuild", new
+                     {
+                        id = build.Id
+                     })">
+               @($"{build.MajorVersion}.{build.MinorVersion}.{build.Number}.{build.Revision}")
+            </a>
+         </h3>
+         @if (build.BuildTime.HasValue)
+         {
+            <p class="build-group-p">
+               <span title="@build.BuildTime.Value.Humanize()">
+                  <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()
+               </span>
+            </p>
+            <p class="build-group-p">
+               <span title="@build.BuildTime.Value.Humanize()">
+                  <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()
+               </span>
+            </p>
+         }
+         @if (build.IsLeaked)
+         {
+            <p class="build-group-p">
+               <span>
+                  <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public</span>
+            </p>
+         }
+         else
+         {
+            <p class="build-group-p">
+               <span>
+                  <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
+            </p>
+         }
+         @if (User.Identity.IsAuthenticated)
+         {
+            <p>
+               <a href="@Url.Action(nameof(FrontController.EditBuild), new
+                        {
+                           id = build.Id
+                        })" class="button edit-button">
+                  @VariantTerms.Front_Edit
+               </a>
+               &nbsp;
+               @if (Roles.IsUserInRole("Administrators"))
+               {
+                  <a href="@Url.Action(nameof(FrontController.DeleteBuild), new
+                           {
+                              id = build.Id
+                           })" class="button delete-button">
+                     @VariantTerms.Front_Delete
+                  </a>
+               }
+            </p>
+         }
+      </div>
+   }
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
+   <div class="build-group-empty"></div>
 </div>
 @PaginationHelpers.PaginationBlock((int)ViewBag.PageNumber, (int)ViewBag.PageCount, "viewLab", ViewContext.RouteData.Values)

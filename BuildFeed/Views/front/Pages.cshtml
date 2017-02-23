@@ -35,11 +35,13 @@
                   DateTime maxDate = group.LastBuild.Value;
                   if (maxDate.AddDays(28) > DateTime.Now)
                   {
-                     <span title="@maxDate.ToLongDateWithoutDay()"><i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
+                     <span title="@maxDate.ToLongDateWithoutDay()">
+                        <i class="fa fa-calendar fa-fw"></i> @maxDate.Humanize()</span>
                   }
                   else
                   {
-                     <span title="@maxDate.Humanize()"><i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
+                     <span title="@maxDate.Humanize()">
+                        <i class="fa fa-calendar fa-fw"></i> @maxDate.ToLongDateWithoutDay()</span>
                   }
                }
             </p>

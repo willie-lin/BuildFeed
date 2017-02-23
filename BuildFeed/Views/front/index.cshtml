@@ -1,78 +1,78 @@
 ﻿@model BuildFeed.Model.View.FrontPage
 @{
-    ViewBag.Title = $"{InvariantTerms.SiteName} | Windows 10 Build Tracker";
+   ViewBag.Title = $"{InvariantTerms.SiteName} | Windows 10 Build Tracker";
 }
 @section Head
 {
-    <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
+   <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
 }
 
 <h1>@string.Format(VariantTerms.Front_HomeH1, InvariantTerms.SiteName)</h1>
 
 <h3>@VariantTerms.Front_LatestBuilds</h3>
 <div class="latest-flex">
-    @if (Model.CurrentCanary != null)
-    {
-        <a href="@Url.Action("ViewBuild", new
-                 {
-                     Model.CurrentCanary.Id
-                 })" class="latest-flex-item latest-flex-red">
-            <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
-            <div class="latest-flex-detail">
-                <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
-                <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
-                <p class="latest-flex-time">@(Model.CurrentCanary.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
-            </div>
-        </a>
-    }
-    @if (Model.CurrentInsider != null)
-    {
-        <a href="@Url.Action("ViewBuild", new
-                 {
-                     Model.CurrentInsider.Id
-                 })" class="latest-flex-item latest-flex-yellow">
-            <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
-            <div class="latest-flex-detail">
-                <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
-                <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
-                <p class="latest-flex-time">@(Model.CurrentInsider.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
-            </div>
-        </a>
-    }
-    @if (Model.CurrentRelease != null)
-    {
-        <a href="@Url.Action("ViewBuild", new
-                 {
-                     Model.CurrentRelease.Id
-                 })" class="latest-flex-item latest-flex-blue">
-            <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
-            <div class="latest-flex-detail">
-                <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
-                <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
-                <p class="latest-flex-time">@(Model.CurrentRelease.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
-            </div>
-        </a>
-    }
-    @if (Model.CurrentXbox != null)
-    {
-        <a href="@Url.Action("ViewBuild", new
-                 {
-                     Model.CurrentXbox.Id
-                 })" class="latest-flex-item latest-flex-green">
-            <h3 class="latest-flex-title">@VariantTerms.Front_CurrentXbox</h3>
-            <div class="latest-flex-detail">
-                <p class="latest-flex-build">@(Model.CurrentXbox.MajorVersion).@(Model.CurrentXbox.MinorVersion).@(Model.CurrentXbox.Number).@(Model.CurrentXbox.Revision)</p>
-                <p class="latest-flex-lab">@Model.CurrentXbox.Lab</p>
-                <p class="latest-flex-time">@(Model.CurrentXbox.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
-            </div>
-        </a>
-    }
+   @if (Model.CurrentCanary != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentCanary.Id
+               })" class="latest-flex-item latest-flex-red">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentCanary.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
+   @if (Model.CurrentInsider != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentInsider.Id
+               })" class="latest-flex-item latest-flex-yellow">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentInsider.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
+   @if (Model.CurrentRelease != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentRelease.Id
+               })" class="latest-flex-item latest-flex-blue">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentRelease.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
+   @if (Model.CurrentXbox != null)
+   {
+      <a href="@Url.Action("ViewBuild", new
+               {
+                  Model.CurrentXbox.Id
+               })" class="latest-flex-item latest-flex-green">
+         <h3 class="latest-flex-title">@VariantTerms.Front_CurrentXbox</h3>
+         <div class="latest-flex-detail">
+            <p class="latest-flex-build">@(Model.CurrentXbox.MajorVersion).@(Model.CurrentXbox.MinorVersion).@(Model.CurrentXbox.Number).@(Model.CurrentXbox.Revision)</p>
+            <p class="latest-flex-lab">@Model.CurrentXbox.Lab</p>
+            <p class="latest-flex-time">@(Model.CurrentXbox.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
+         </div>
+      </a>
+   }
 </div>
 <a href="@Url.Action("IndexPage", new
          {
-             Page = 1
+            Page = 1
          })" class="latest-full">
-    @VariantTerms.Front_FullBuildListing
+   @VariantTerms.Front_FullBuildListing
 </a>
 <h3>@VariantTerms.Front_Share</h3>
 <div class="addthis_sharing_toolbox"></div>

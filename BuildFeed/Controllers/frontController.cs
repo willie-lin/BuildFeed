@@ -15,8 +15,6 @@ using BuildFeed.Code;
 using BuildFeed.Model;
 using BuildFeed.Model.View;
 using OneSignal.CSharp.SDK;
-using OneSignal.CSharp.SDK.Resources;
-using OneSignal.CSharp.SDK.Resources.Notifications;
 
 namespace BuildFeed.Controllers
 {

@@ -11,8 +11,6 @@ using BuildFeed.Model;
 using BuildFeed.Model.Api;
 using BuildFeed.Model.View;
 using OneSignal.CSharp.SDK;
-using OneSignal.CSharp.SDK.Resources;
-using OneSignal.CSharp.SDK.Resources.Notifications;
 
 namespace BuildFeed.Controllers
 {
@@ -94,7 +92,8 @@ namespace BuildFeed.Controllers
                     await _bModel.Insert(build);
 
                     OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
-                    osc.PushNewBuild(build, $"https://buildfeed.net{Url.Route("Build", new { controller = "Front", action = nameof(FrontController.ViewBuild), id = build.Id, area = "", httproute = "" })}?utm_source=notification&utm_campaign=new_build");
+                    osc.PushNewBuild(build,
+                        $"https://buildfeed.net{Url.Route("Build", new { controller = "Front", action = nameof(FrontController.ViewBuild), id = build.Id, area = "", httproute = "" })}?utm_source=notification&utm_campaign=new_build");
                 }
                 return true;
             }

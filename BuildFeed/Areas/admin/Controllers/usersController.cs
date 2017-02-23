@@ -8,73 +8,73 @@ using MongoAuth;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
-   [Authorize(Roles = "Administrators")]
-   public class usersController : BaseController
-   {
-      // GET: admin/users
-      public ActionResult index() => View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));
+    [Authorize(Roles = "Administrators")]
+    public class usersController : BaseController
+    {
+        // GET: admin/users
+        public ActionResult index() => View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));
 
-      public ActionResult admins()
-      {
-         List<MembershipUser> admins = Roles.GetUsersInRole("Administrators").Select(Membership.GetUser).ToList();
+        public ActionResult admins()
+        {
+            List<MembershipUser> admins = Roles.GetUsersInRole("Administrators").Select(Membership.GetUser).ToList();
 
-         return View(admins.OrderByDescending(m => m.UserName));
-      }
+            return View(admins.OrderByDescending(m => m.UserName));
+        }
 
-      public ActionResult promote(string id)
-      {
-         Roles.AddUserToRole(id, "Administrators");
-         return RedirectToAction("Index");
-      }
+        public ActionResult promote(string id)
+        {
+            Roles.AddUserToRole(id, "Administrators");
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult demote(string id)
-      {
-         Roles.RemoveUserFromRole(id, "Administrators");
-         return RedirectToAction("Index");
-      }
+        public ActionResult demote(string id)
+        {
+            Roles.RemoveUserFromRole(id, "Administrators");
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult approve(Guid id)
-      {
-         MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
-         provider?.ChangeApproval(id, true);
-         return RedirectToAction("Index");
-      }
+        public ActionResult approve(Guid id)
+        {
+            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            provider?.ChangeApproval(id, true);
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult unapprove(Guid id)
-      {
-         MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
-         provider?.ChangeApproval(id, false);
-         return RedirectToAction("Index");
-      }
+        public ActionResult unapprove(Guid id)
+        {
+            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            provider?.ChangeApproval(id, false);
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult @lock(Guid id)
-      {
-         MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
-         provider?.ChangeLockStatus(id, true);
-         return RedirectToAction("Index");
-      }
+        public ActionResult @lock(Guid id)
+        {
+            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            provider?.ChangeLockStatus(id, true);
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult unlock(Guid id)
-      {
-         MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
-         provider?.ChangeLockStatus(id, false);
-         return RedirectToAction("Index");
-      }
+        public ActionResult unlock(Guid id)
+        {
+            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            provider?.ChangeLockStatus(id, false);
+            return RedirectToAction("Index");
+        }
 
-      public ActionResult cleanup()
-      {
-         MembershipUserCollection users = Membership.GetAllUsers();
+        public ActionResult cleanup()
+        {
+            MembershipUserCollection users = Membership.GetAllUsers();
 
-         foreach (MembershipUser user in users)
-         {
-            if (!user.IsApproved
-               && (user.CreationDate.AddDays(30) < DateTime.Now))
+            foreach (MembershipUser user in users)
             {
-               Membership.DeleteUser(user.UserName);
+                if (!user.IsApproved
+                    && user.CreationDate.AddDays(30) < DateTime.Now)
+                {
+                    Membership.DeleteUser(user.UserName);
+                }
             }
-         }
 
-         return RedirectToAction("index");
-      }
-   }
+            return RedirectToAction("index");
+        }
+    }
 }

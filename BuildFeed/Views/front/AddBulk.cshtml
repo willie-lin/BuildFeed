@@ -3,58 +3,58 @@
 @model BuildFeed.Model.View.BulkAddition
 
 @{
-    ViewBag.Title = $"{VariantTerms.Common_AddBulk} | {InvariantTerms.SiteName}";
+   ViewBag.Title = $"{VariantTerms.Common_AddBulk} | {InvariantTerms.SiteName}";
 }
 
 <h1>@VariantTerms.Common_AddBulk</h1>
 
 @if (ViewBag.Results != null)
 {
-    <p>@VariantTerms.Bulk_Success</p>
-    <ul>
-        @foreach (Build b in ViewBag.Results)
-        {
-            <li>
-                <a href="@Url.Action(nameof(FrontController.ViewBuild), new
-                         {
-                             id = b.Id
-                         })" target="_blank">
-                    @b.AlternateBuildString</a>
-            </li>
-        }
-    </ul>
+   <p>@VariantTerms.Bulk_Success</p>
+   <ul>
+      @foreach (Build b in ViewBag.Results)
+      {
+         <li>
+            <a href="@Url.Action(nameof(FrontController.ViewBuild), new
+                     {
+                        id = b.Id
+                     })" target="_blank">
+               @b.AlternateBuildString</a>
+         </li>
+      }
+   </ul>
 }
 
 <p>@VariantTerms.Bulk_Instructions</p>
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+   @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        <label for="@Html.IdFor(m => m.Builds)">@VariantTerms.Bulk_Builds</label>
-        <div>
-            @Html.TextAreaFor(m => m.Builds, new
-            {
-                rows = 10
-            })
-        </div>
-    </div>
+   <div class="form-group">
+      <label for="@Html.IdFor(m => m.Builds)">@VariantTerms.Bulk_Builds</label>
+      <div>
+         @Html.TextAreaFor(m => m.Builds, new
+         {
+            rows = 10
+         })
+      </div>
+   </div>
 
-    <div class="form-group">
-        <label></label>
-        <div>
-            <label>
-                @Html.CheckBoxFor(m => m.SendNotifications)
-                @VariantTerms.Bulk_SendNotifications
-            </label>
-        </div>
-    </div>
+   <div class="form-group">
+      <label></label>
+      <div>
+         <label>
+            @Html.CheckBoxFor(m => m.SendNotifications)
+            @VariantTerms.Bulk_SendNotifications
+         </label>
+      </div>
+   </div>
 
-    <div class="form-group">
-        <label></label>
-        <div>
-            <input type="submit" value="@VariantTerms.Bulk_AddBuilds" class="button" />
-        </div>
-    </div>
+   <div class="form-group">
+      <label></label>
+      <div>
+         <input type="submit" value="@VariantTerms.Bulk_AddBuilds" class="button" />
+      </div>
+   </div>
 }

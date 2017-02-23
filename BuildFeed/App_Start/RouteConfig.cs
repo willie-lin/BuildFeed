@@ -4,22 +4,22 @@ using System.Web.Routing;
 
 namespace BuildFeed
 {
-   public class RouteConfig
-   {
-      public static void RegisterRoutes(RouteCollection routes)
-      {
-         routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+    public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-         routes.AppendTrailingSlash = true;
-         routes.MapHttpRoute("API",
-            "api/{action}/{id}",
-            new
-            {
-               controller = "api",
-               action = "GetBuilds",
-               id = UrlParameter.Optional
-            });
-         routes.MapMvcAttributeRoutes();
-      }
-   }
+            routes.AppendTrailingSlash = true;
+            routes.MapHttpRoute("API",
+                "api/{action}/{id}",
+                new
+                {
+                    controller = "api",
+                    action = "GetBuilds",
+                    id = UrlParameter.Optional
+                });
+            routes.MapMvcAttributeRoutes();
+        }
+    }
 }

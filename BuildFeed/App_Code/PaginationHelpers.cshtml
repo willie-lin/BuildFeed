@@ -12,28 +12,48 @@
          {
             RouteValueDictionary rvd = new RouteValueDictionary(rd);
             rvd.Remove("page");
-            <li><a href="@MvcIntrinsics.Url.Action(view, rvd)"><i class="fa fa-angle-double-left"></i></a></li>
-            <li><a href="@MvcIntrinsics.Url.Action(view, rvd)"><i class="fa fa-angle-left"></i></a></li>
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(view, rvd)">
+                  <i class="fa fa-angle-double-left"></i>
+               </a>
+            </li>
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(view, rvd)">
+                  <i class="fa fa-angle-left"></i>
+               </a>
+            </li>
          }
          else if (currentPage > 2)
          {
-             RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-             firstRvd.Remove("page");
-            <li><a href="@MvcIntrinsics.Url.Action(view, firstRvd)"><i class="fa fa-angle-double-left"></i></a></li>
+            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
+            firstRvd.Remove("page");
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(view, firstRvd)">
+                  <i class="fa fa-angle-double-left"></i>
+               </a>
+            </li>
 
-             RouteValueDictionary rvd = new RouteValueDictionary(rd)
-             {
-                 ["page"] = currentPage - 1
-             };
-            <li><a href="@MvcIntrinsics.Url.Action(multiView, rvd)"><i class="fa fa-angle-left"></i></a></li>
+            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+            {
+               ["page"] = currentPage - 1
+            };
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
+                  <i class="fa fa-angle-left"></i>
+               </a>
+            </li>
          }
          else
          {
             <li class="disabled">
-               <span><i class="fa fa-angle-double-left"></i></span>
+               <span>
+                  <i class="fa fa-angle-double-left"></i>
+               </span>
             </li>
             <li class="disabled">
-               <span><i class="fa fa-angle-left"></i></span>
+               <span>
+                  <i class="fa fa-angle-left"></i>
+               </span>
             </li>
          }
 
@@ -77,26 +97,38 @@
 
          @if (currentPage < totalPages)
          {
-             RouteValueDictionary rvd = new RouteValueDictionary(rd)
-             {
-                 ["page"] = currentPage + 1
-             };
+            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+            {
+               ["page"] = currentPage + 1
+            };
 
-            <li><a href="@MvcIntrinsics.Url.Action(multiView, rvd)"><i class="fa fa-angle-right"></i></a></li>
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
+                  <i class="fa fa-angle-right"></i>
+               </a>
+            </li>
 
-             RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
-             {
-                 ["page"] = totalPages
-             };
-            <li><a href="@MvcIntrinsics.Url.Action(multiView, lastRvd)"><i class="fa fa-angle-double-right"></i></a></li>
+            RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
+            {
+               ["page"] = totalPages
+            };
+            <li>
+               <a href="@MvcIntrinsics.Url.Action(multiView, lastRvd)">
+                  <i class="fa fa-angle-double-right"></i>
+               </a>
+            </li>
          }
          else
          {
             <li class="disabled">
-               <span><i class="fa fa-angle-right"></i></span>
+               <span>
+                  <i class="fa fa-angle-right"></i>
+               </span>
             </li>
             <li class="disabled">
-               <span><i class="fa fa-angle-double-right"></i></span>
+               <span>
+                  <i class="fa fa-angle-double-right"></i>
+               </span>
             </li>
          }
       </ul>
