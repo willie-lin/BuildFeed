@@ -117,87 +117,63 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
-<!--
-<data name="About_A1" xml:space="preserve">
-    <value>[!!! ßúïℓδFèèδ ïƨ řáñ áñδ ₥áïñƭáïñèδ β¥ á ϱřôúƥ ôƒ èñƭλúƨïáƨƭƨ. Mïçřôƨôƒƭ ářè ñôƭ ïñƲôℓƲèδ ïñ ƭλè ƨïƭè ïñ áñ¥ ωá¥. Wè'Ʋè çèřƭáïñℓ¥ λáδ ñô ƒôř₥áℓ çô₥ƥℓáïñƭ ƒřô₥ Mïçřôƨôƒƭ áβôúƭ ƭλè ƨïƭè, èƲèñ ƭλôúϱλ ωè ářè çèřƭáïñ ƭλè¥ ářè áωářè ôƒ ƭλè ƨïƭè. Tλáƭ ƨáïδ, Mïçřôƨôƒƭ ôβƲïôúƨℓ¥ ωïƨλ ƭô ƙèèƥ ƥřïƲáƭè ïñƒôř₥áƭïôñ ƥřïƲáƭè, áñδ ƨô ωè'Ʋè λáδ ƨôúřçèƨ ƨλúƭ δôωñ β¥ ƭλè₥ ïñ ƭλè ƥáƨƭ, áñδ Ì'₥ ƨúřè ƭλè¥ ωïℓℓ ïñ ƭλè ƒúƭúřè. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ, δáƥïβúƨ èℓïƭ. Ìñ úƭ  !!!]</value>
+  <data name="About_A1" xml:space="preserve">
+    <value>BuildFeed は愛好家のグループによって運営、維持されています。Microsoft は一切サイトに参加していません。我々は、Microsoft がこのサイトを認識していると確信しているにもかかわらず、Microsoft からこのサイトに関して苦情を受け取ったことはありません。ですが、Microsoft は明らかに秘密の情報は秘密のままにしておきたいと思っているでしょうから、過去に彼らに閉鎖された我々の情報源もありますし、これからも彼らに閉鎖されるものと思います。</value>
   </data>
--->
-  
-<!--
-<data name="About_A2" xml:space="preserve">
-    <value>[!!! Nïçè ƭř¥, Ðôñá, βúƭ Ì'₥ ñôƭ ƒáℓℓïñϱ ƒôř ƭλïƨ ôñè. Wλáƭ Ì çáñ ƨá¥ ïƨ ƭλïƨ. ßúïℓδFèèδ ₥áƙèƨ áƨ çèřƭáïñ áƨ ïƨ ƥôƨƨïβℓè ƭλáƭ áℓℓ βúïℓδƨ ƥôƨƭèδ ôñ ƭλè ƨïƭè ářè çôřřèçƭ áñδ ℓèϱïƭï₥áƭè. Wè λáƲè á ñú₥βèř ôƒ δïƒƒèřèñƭ ƨôúřçèƨ, ƭô ₥áƙè Ʋèřïƒïçáƭïôñ ₥ôřè řèℓïáβℓè áñδ ƭô ϱïƲè úƨ ƨô₥è řèδúñδáñç¥ ƨλôúℓδ Mïçřôƨôƒƭ ƨλúƭ δôωñ ôñè ôƒ ôúř ƨôúřçèƨ. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥èƭ, çôñƨèçƭèƭúř áδïƥïƨçïñϱ èℓïƭ. Núñç èϱèƭ úřñá ℓáôřèèƭ, áççú₥ƨáñ ƒèℓïƨ áƭ !!!]</value>
+  <data name="About_A2" xml:space="preserve">
+    <value>いい質問です、ドナ。でもそれには引っかかりませんよ。しかし、これだけは言えます。BuildFeed はサイトに投稿されたすべてのビルドが正しい、正当なものであることを可能な限り確実にします。我々は複数の情報源を持っているので、検証がより信頼できるものになりますし、Microsoft が我々の情報源を 1 つ閉鎖したとしても対応できる冗長性があります。</value>
   </data>
--->
   <data name="About_A3" xml:space="preserve">
-    <value>たくさんの巻き添えの方はあります。ビルド下にコメントシステムはコメントしましょう。GitHubはバグと問題を報告できます。そして、翻訳ポータルにこのサイトを翻訳できます。</value>
+    <value>参加する方法はたくさんあります。ビルド下のコメントシステムにコメントしましょう。GitHub ではバグと問題を報告できます。そして、我々の翻訳ポータルを使ってこのサイトの翻訳を手助けすることもできます。</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>このサイトは誰が動けますか。マイクロソフト係のサイトですか。</value>
+    <value>このサイトは誰が運営していますか。Microsoft 公式のサイトですか。</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
-    <value>ビルドフィート(BuildFeed)の資料源は何ですか。</value>
+    <value>ビルドフィード (BuildFeed) のソースは何ですか。</value>
   </data>
   <data name="About_Q3" xml:space="preserve">
-    <value>わたしの巻き添いの方は？</value>
+    <value>わたしはどうやって参加できますか？</value>
   </data>
-  
-<!--
-<data name="Bulk_AddBuilds" xml:space="preserve">
-    <value>[!!! Âδδ βúïℓδƨ ℓ !!!]</value>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>ビルドを複数追加する</value>
   </data>
--->
-  
-<!--
-<data name="Bulk_Builds" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ  !!!]</value>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>ビルド</value>
   </data>
--->
-  
-<!--
-<data name="Bulk_Instructions" xml:space="preserve">
-    <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>下に複数のビルドを追加するには、それぞれのビルド文字列を 1 行ずつ入力します。このページで追加されたすべてのビルドは、ソースの種類が「非公開リーク」になります。</value>
   </data>
--->
   <data name="Bulk_SendNotifications" xml:space="preserve">
-    <value>通知を送信する。</value>
+    <value>通知を送信する</value>
   </data>
   <data name="Bulk_Success" xml:space="preserve">
-    <value>ビルドの追加は完了しました。</value>
+    <value>ビルドは正しく追加されました。</value>
   </data>
   <data name="Common_AddBuild" xml:space="preserve">
-    <value>ビルドに追加。</value>
+    <value>ビルドを追加する</value>
   </data>
-  
-<!--
-<data name="Common_AddBulk" xml:space="preserve">
-    <value>[!!! Âδδ βúℓƙ  !!!]</value>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>複数追加する</value>
   </data>
--->
   <data name="Common_Admin" xml:space="preserve">
-    <value>アドミン</value>
+    <value>管理者</value>
   </data>
-  
-<!--
-<data name="Common_ContributeOn" xml:space="preserve">
-    <value>[!!! Çôñƭřïβúƭè ôñ {0}  !!!]</value>
+  <data name="Common_ContributeOn" xml:space="preserve">
+    <value>{0} で貢献</value>
   </data>
--->
   <data name="Common_Credits" xml:space="preserve">
-    <value>ヘルプでありがとうございます。</value>
+    <value>クレジット</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
-    <value>開発者：{0}</value>
+    <value>開発者: {0}</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
     <value>エラー</value>
   </data>
-  
-<!--
-<data name="Common_ErrorContent" xml:space="preserve">
-    <value>[!!! §ô₥èƭλïñϱ'ƨ βřôƙè. Má¥βè ïƭ'ƨ βèçáúƨè ¥ôú δïδ ƨô₥èƭλïñϱ ωèïřδ. Þřôβáβℓ¥ ïƭ'ƨ βèçáúƨè Ì δïδ ƨô₥èƭλïñϱ ωèïřδ. Ìƒ ¥ôú ƙèèƥ ϱèƭƭïñϱ ƭλïƨ èřřôř, ƨúβ₥ïƭ á βúϱ řèƥôřƭ Ʋïá {0}. ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ á₥ !!!]</value>
+  <data name="Common_ErrorContent" xml:space="preserve">
+    <value>何かがおかしいです。あなたが何か変わったことをしたからかもしれませんが、たぶんわたしがなにか変わったことをしたからです。このエラーが発生し続ける場合は、{0} でバグレポートを送信してください。</value>
   </data>
--->
   <data name="Common_LogIn" xml:space="preserve">
     <value>ログイン</value>
   </data>
@@ -205,13 +181,13 @@
     <value>ログアウト</value>
   </data>
   <data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>言語を選択 (Language switcher)</value>
+    <value>言語を選択 (Language)</value>
   </data>
   <data name="Common_NavigationTheme" xml:space="preserve">
     <value>テーマ</value>
   </data>
   <data name="Common_RssFeeds" xml:space="preserve">
-    <value>RSSフィート</value>
+    <value>RSS フィード</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
     <value>サイトマップ</value>
@@ -223,37 +199,37 @@
     <value>ライトテーマ</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
-    <value>ページ{0}</value>
+    <value>ページ {0}</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
     <value>ナビをトグル</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
-    <value>ツイッター</value>
+    <value>Twitter</value>
   </data>
   <data name="Front_About" xml:space="preserve">
-    <value>ビルドフィートについて</value>
+    <value>BuildFeed について</value>
   </data>
   <data name="Front_AboutSite" xml:space="preserve">
-    <value>{0}について</value>
+    <value>{0} について</value>
   </data>
   <data name="Front_BuildsFrom" xml:space="preserve">
-    <value>ビルドの出所は{0}です。</value>
+    <value>ソース: {0}</value>
   </data>
   <data name="Front_Comments" xml:space="preserve">
     <value>コメント</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>今の内部なビルド</value>
+    <value>現在の内部ビルド</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>今のインサイダービルド</value>
+    <value>現在のインサイダービルド</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>今の安定なリリースビルド</value>
+    <value>現在の安定版リリースビルド</value>
   </data>
   <data name="Front_CurrentXbox" xml:space="preserve">
-    <value>今のXboxリリース</value>
+    <value>現在の Xbox リリース</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>削除</value>
@@ -268,16 +244,16 @@
     <value>ビルドを編集</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>編集者の動作</value>
+    <value>編集者の操作</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>全部ビルドを見る</value>
+    <value>全てのビルドを見る</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>{0}：ウィンドウズビルドのトラッカー</value>
+    <value>{0}: Windows ビルドのトラッカー</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0}ビルド一覧表</value>
+    <value>{0} ビルド一覧表</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>最新のビルド</value>
@@ -286,43 +262,34 @@
     <value>一覧表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
-    <value>{0}からその他のビルドを見つけて。</value>
+    <value>{0} からのその他のビルドを探す</value>
   </data>
   <data name="Front_MoreFromSource" xml:space="preserve">
-    <value>出所{0}からのビルドを見つけて。</value>
+    <value>ソース {0} からのその他のビルドを探す</value>
   </data>
-  
-<!--
-<data name="Front_MoreFromYear" xml:space="preserve">
-    <value>[!!! Fïñδ ₥ôřè βúïℓδƨ çô₥ƥïℓèδ ïñ {0} ℓô !!!]</value>
+  <data name="Front_MoreFromYear" xml:space="preserve">
+    <value>{0} 年にコンパイルされたその他のビルドを探す</value>
   </data>
--->
-  
-<!--
-<data name="Front_NoLabString" xml:space="preserve">
-    <value>[!!! Nô ℓáβ ƨƭřïñϱ  !!!]</value>
+  <data name="Front_NoLabString" xml:space="preserve">
+    <value>ラボ文字列がありません</value>
   </data>
--->
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>ビルド　{0}</value>
+    <value>ビルド {0}</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
-    <value>プライベート</value>
+    <value>非公開</value>
   </data>
   <data name="Front_Public" xml:space="preserve">
-    <value>パブリック</value>
+    <value>公開</value>
   </data>
-  
-<!--
-<data name="Front_QuickPaste" xml:space="preserve">
-    <value>[!!! Qúïçƙ-ƥáƨƭè  !!!]</value>
+  <data name="Front_QuickPaste" xml:space="preserve">
+    <value>クイックペースト</value>
   </data>
--->
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>ビルド一覧に戻す</value>
+    <value>ビルド一覧に戻る</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
-    <value>ビルド一覧に戻す。</value>
+    <value>ビルド概要に戻る</value>
   </data>
   <data name="Front_Share" xml:space="preserve">
     <value>共有</value>
@@ -330,353 +297,178 @@
   <data name="Front_Today" xml:space="preserve">
     <value>今日</value>
   </data>
-  
-<!--
-<data name="Meta_BuildDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1} áñδ çô₥ƥïℓèδ ôñ {2}. ℓôřè₥ !!!]</value>
+  <data name="Meta_BuildDate" xml:space="preserve">
+    <value>{1} からの {2} にコンパイルされた Windows ビルド {0} について知る</value>
   </data>
--->
-  
-<!--
-<data name="Meta_BuildNoDate" xml:space="preserve">
-    <value>[!!! ÐïƨçôƲèř áβôúƭ Wïñδôωƨ ßúïℓδ {0}, ƒřô₥ {1}. ßúïℓδFèèδ ƭřáçƙƨ Wïñδôωƨ βúïℓδƨ ƭλřôúϱλôúƭ ƭλè δèƲèℓôƥ₥èñƭ ƥřôçèƨƨ. ℓôřè₥ ïƥƨú !!!]</value>
+  <data name="Meta_BuildNoDate" xml:space="preserve">
+    <value>{1} からの Windows ビルド {0} について知る。BuildFeed は開発プロセスをずっと追跡しています。</value>
   </data>
--->
-  
-<!--
-<data name="Meta_LabGeneric" xml:space="preserve">
-    <value>[!!! Çλèçƙ ôúƭ áℓℓ ƭλè ƙñôωñ βúïℓδƨ ƭô çô₥è ôúƭ ôƒ ƭλè Wïñδôωƨ δèƲèℓôƥ₥èñƭ ℓáβ {0} ƭλřôúϱλ ßúïℓδFèèδ, á çôℓℓáβôřáƭïƲè Wïñδôωƨ βúïℓδ ℓïƨƭ ℓôřè₥ ïƥƨú₥  !!!]</value>
+  <data name="Meta_LabGeneric" xml:space="preserve">
+    <value>Windows 開発ラボ {0} が作成したすべての既知のビルドを BuildFeed (Windows の共同ビルドリスト) でチェック。</value>
   </data>
--->
-  
-<!--
-<data name="Meta_YearGeneric" xml:space="preserve">
-    <value>[!!! Vïèω á ℓïƨƭ ôƒ áℓℓ Wïñδôωƨ βúïℓδƨ çô₥ƥïℓèδ ïñ {0}, áñδ ωáƭçλ λôω Wïñδôωƨ δèƲèℓôƥèδ ƨƭèáδïℓ¥ ôƲèř ƭï₥è, ƭλřôúϱλ ƭλè çôℓℓáβôřáƭïƲè βúïℓδ ℓïƨƭ, ßúïℓδFèèδ ℓôřè₥ ïƥƨú₥ δô !!!]</value>
+  <data name="Meta_YearGeneric" xml:space="preserve">
+    <value>BuildFeed (Windows の共同ビルドリスト) で {0} でコンパイルされたすべての Windows ビルドのリストを表示し、どのようにして着々と開発されたのかを見てください。</value>
   </data>
--->
-  
-<!--
-<data name="Model_Added" xml:space="preserve">
-    <value>[!!! Tï₥è çřèáƭèδ  !!!]</value>
+  <data name="Model_Added" xml:space="preserve">
+    <value>作成日時</value>
   </data>
--->
-  
-<!--
-<data name="Model_BuildNumber" xml:space="preserve">
-    <value>[!!! ßúïℓδ ñú₥βèř  !!!]</value>
+  <data name="Model_BuildNumber" xml:space="preserve">
+    <value>ビルド番号</value>
   </data>
--->
-  
-<!--
-<data name="Model_BuildTime" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭï₥è  !!!]</value>
+  <data name="Model_BuildTime" xml:space="preserve">
+    <value>ビルド時刻</value>
   </data>
--->
-  
-<!--
-<data name="Model_ExternalLink" xml:space="preserve">
-    <value>[!!! Éжƭèřñáℓ £ïñƙ ℓ !!!]</value>
+  <data name="Model_ExternalLink" xml:space="preserve">
+    <value>外部リンク</value>
   </data>
--->
-  
-<!--
-<data name="Model_LabString" xml:space="preserve">
-    <value>[!!! £áβ ƨƭřïñϱ  !!!]</value>
+  <data name="Model_LabString" xml:space="preserve">
+    <value>ラボ文字列</value>
   </data>
--->
-  
-<!--
-<data name="Model_LeakDate" xml:space="preserve">
-    <value>[!!! £èáƙ ôř řèℓèáƨè δáƭè ℓ !!!]</value>
+  <data name="Model_LeakDate" xml:space="preserve">
+    <value>リーク日時</value>
   </data>
--->
-  
-<!--
-<data name="Model_MajorVersion" xml:space="preserve">
-    <value>[!!! MáJôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MajorVersion" xml:space="preserve">
+    <value>メジャーバージョン</value>
   </data>
--->
-  
-<!--
-<data name="Model_MinorVersion" xml:space="preserve">
-    <value>[!!! Mïñôř Ʋèřƨïôñ  !!!]</value>
+  <data name="Model_MinorVersion" xml:space="preserve">
+    <value>マイナーバージョン</value>
   </data>
--->
-  
-<!--
-<data name="Model_Modified" xml:space="preserve">
-    <value>[!!! Tï₥è ₥ôδïƒïèδ  !!!]</value>
+  <data name="Model_Modified" xml:space="preserve">
+    <value>変更日時</value>
   </data>
--->
-  
-<!--
-<data name="Model_Revision" xml:space="preserve">
-    <value>[!!! ßúïℓδ řèƲïƨïôñ  !!!]</value>
+  <data name="Model_Revision" xml:space="preserve">
+    <value>リビジョン</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceDetails" xml:space="preserve">
-    <value>[!!! §ôúřçè δèƭáïℓƨ  !!!]</value>
+  <data name="Model_SourceDetails" xml:space="preserve">
+    <value>ソースの詳細</value>
   </data>
--->
-  
-<!--
-<data name="Model_SourceType" xml:space="preserve">
-    <value>[!!! §ôúřçè ƭ¥ƥè  !!!]</value>
+  <data name="Model_SourceType" xml:space="preserve">
+    <value>ソースの種類</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_AppPackage" xml:space="preserve">
-    <value>[!!! Âƥƥ ƥáçƙáϱè  !!!]</value>
+  <data name="Model_Source_AppPackage" xml:space="preserve">
+    <value>アプリのパッケージ</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_BuildTools" xml:space="preserve">
-    <value>[!!! ßúïℓδ ƭôôℓƨ  !!!]</value>
+  <data name="Model_Source_BuildTools" xml:space="preserve">
+    <value>ビルドツール</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Documentation" xml:space="preserve">
-    <value>[!!! Ðôçú₥èñƭáƭïôñ  !!!]</value>
+  <data name="Model_Source_Documentation" xml:space="preserve">
+    <value>ドキュメンテーション</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_InternalLeak" xml:space="preserve">
-    <value>[!!! Þúβℓïç ℓèáƙ  !!!]</value>
+  <data name="Model_Source_InternalLeak" xml:space="preserve">
+    <value>公開リーク</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_Logging" xml:space="preserve">
-    <value>[!!! £ôϱϱïñϱ  !!!]</value>
+  <data name="Model_Source_Logging" xml:space="preserve">
+    <value>ロギング</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>[!!! ÞřïƲáƭè ℓèáƙ  !!!]</value>
+  <data name="Model_Source_PrivateLeak" xml:space="preserve">
+    <value>非公開リーク</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>[!!! Þúβℓïç řèℓèáƨè  !!!]</value>
+  <data name="Model_Source_PublicRelease" xml:space="preserve">
+    <value>一般公開リリース</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateGDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (GÐR)  !!!]</value>
+  <data name="Model_Source_UpdateGDR" xml:space="preserve">
+    <value>アップデート (GDR)</value>
   </data>
--->
-  
-<!--
-<data name="Model_Source_UpdateLDR" xml:space="preserve">
-    <value>[!!! Ûƥδáƭè (£ÐR)  !!!]</value>
+  <data name="Model_Source_UpdateLDR" xml:space="preserve">
+    <value>アップデート (LDR)</value>
   </data>
--->
-  
-<!--
-<data name="Notification_NewBuild" xml:space="preserve">
-    <value>[!!! Â ñèω βúïℓδ λáƨ βèèñ áδδèδ ƭô {0}! ℓôřè !!!]</value>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>{0} に新しいビルドが追加されました!</value>
   </data>
--->
-  
-<!--
-<data name="Search_Build" xml:space="preserve">
-    <value>[!!! ßúïℓδ ℓ !!!]</value>
+  <data name="Search_Build" xml:space="preserve">
+    <value>ビルド</value>
   </data>
--->
-  
-<!--
-<data name="Search_BuildFeed" xml:space="preserve">
-    <value>[!!! §èářçλ ßúïℓδFèèδ... ℓ !!!]</value>
+  <data name="Search_BuildFeed" xml:space="preserve">
+    <value>BuildFeed を検索</value>
   </data>
--->
-  
-<!--
-<data name="Search_Empty" xml:space="preserve">
-    <value>[!!! Nô řèƨúℓƭƨ ƒôúñδ ℓ !!!]</value>
+  <data name="Search_Empty" xml:space="preserve">
+    <value>結果がありません</value>
   </data>
--->
-  
-<!--
-<data name="Search_Lab" xml:space="preserve">
-    <value>[!!! £áβ  !!!]</value>
+  <data name="Search_Lab" xml:space="preserve">
+    <value>ラボ</value>
   </data>
--->
-  
-<!--
-<data name="Search_Query" xml:space="preserve">
-    <value>[!!! §èářçλ 9úèř¥  !!!]</value>
+  <data name="Search_Query" xml:space="preserve">
+    <value>検索ワード</value>
   </data>
--->
-  
-<!--
-<data name="Search_Source" xml:space="preserve">
-    <value>[!!! §ôúrçè l !!!]</value>
+  <data name="Search_Source" xml:space="preserve">
+    <value>ソース</value>
   </data>
--->
-  
-<!--
-<data name="Search_Title" xml:space="preserve">
-    <value>[!!! §èářçλ  !!!]</value>
+  <data name="Search_Title" xml:space="preserve">
+    <value>検索</value>
   </data>
--->
-  
-<!--
-<data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>[!!! ƭ¥ƥè ƭô ƨèářçλ... ℓ !!!]</value>
+  <data name="Search_TypePlaceholder" xml:space="preserve">
+    <value>検索ワードを入力 ...</value>
   </data>
--->
-  
-<!--
-<data name="Search_Version" xml:space="preserve">
-    <value>[!!! Vèřƨïôñ ℓ !!!]</value>
+  <data name="Search_Version" xml:space="preserve">
+    <value>バージョン</value>
   </data>
--->
-  
-<!--
-<data name="Search_Year" xml:space="preserve">
-    <value>[!!! Ýèář  !!!]</value>
+  <data name="Search_Year" xml:space="preserve">
+    <value>年</value>
   </data>
--->
-  
-<!--
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>すべてのアカウントは管理者によって検証されますので、しばらくお待ちいただきますようお願いします。</value>
   </data>
--->
-  
-<!--
-<data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
+  <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
+    <value>BuildFeed に追加</value>
   </data>
--->
-  
-<!--
-<data name="Support_BuildsCompiled" xml:space="preserve">
-    <value>[!!! ßúïℓδƨ Çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_BuildsCompiled" xml:space="preserve">
+    <value>ビルドがコンパイルされました</value>
   </data>
--->
-  
-<!--
-<data name="Support_ChangePassword" xml:space="preserve">
-    <value>[!!! Çλáñϱè ¥ôúř ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ChangePassword" xml:space="preserve">
+    <value>あなたのパスワードを変更</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmNewPassword" xml:space="preserve">
+    <value>新しいパスワードを確認</value>
   </data>
--->
-  
-<!--
-<data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>[!!! Çôñƒïř₥ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_ConfirmPassword" xml:space="preserve">
+    <value>パスワードを確認</value>
   </data>
--->
-  
-<!--
-<data name="Support_EmailAddress" xml:space="preserve">
-    <value>[!!! É₥áïℓ áδδřèƨƨ  !!!]</value>
+  <data name="Support_EmailAddress" xml:space="preserve">
+    <value>E メールアドレス</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř çúřřèñƭ ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterCurrentPassword" xml:space="preserve">
+    <value>現在のパスワードを入力</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ñèω ƥáƨƨωôřδ ℓ !!!]</value>
+  <data name="Support_EnterNewPassword" xml:space="preserve">
+    <value>新しいパスワードを入力</value>
   </data>
--->
-  
-<!--
-<data name="Support_EnterPassword" xml:space="preserve">
-    <value>[!!! Éñƭèř ƥáƨƨωôřδ  !!!]</value>
+  <data name="Support_EnterPassword" xml:space="preserve">
+    <value>パスワードを入力</value>
   </data>
--->
-  
-<!--
-<data name="Support_HighestVersion" xml:space="preserve">
-    <value>[!!! Hïϱλèƨƭ Ʋèřƨïôñ ℓ !!!]</value>
+  <data name="Support_HighestVersion" xml:space="preserve">
+    <value>いちばん新しいバージョン</value>
   </data>
--->
-  
-<!--
-<data name="Support_Labs" xml:space="preserve">
-    <value>[!!! £áβƨ !!!]</value>
+  <data name="Support_Labs" xml:space="preserve">
+    <value>ラボ</value>
   </data>
--->
-  
-<!--
-<data name="Support_Login" xml:space="preserve">
-    <value>[!!! £ôϱ ïñ  !!!]</value>
+  <data name="Support_Login" xml:space="preserve">
+    <value>ログイン</value>
   </data>
--->
-  
-<!--
-<data name="Support_Password" xml:space="preserve">
-    <value>[!!! Þáƨƨωôřδ  !!!]</value>
+  <data name="Support_Password" xml:space="preserve">
+    <value>パスワード</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyAdded" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ áδδèδ  !!!]</value>
+  <data name="Support_RecentlyAdded" xml:space="preserve">
+    <value>最近追加された</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyCompiled" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ çô₥ƥïℓèδ ℓ !!!]</value>
+  <data name="Support_RecentlyCompiled" xml:space="preserve">
+    <value>最近コンパイルされた</value>
   </data>
--->
-  
-<!--
-<data name="Support_RecentlyLeaked" xml:space="preserve">
-    <value>[!!! Rèçèñƭℓ¥ ℓèáƙèδ ℓ !!!]</value>
+  <data name="Support_RecentlyLeaked" xml:space="preserve">
+    <value>最近リークされた</value>
   </data>
--->
-  
-<!--
-<data name="Support_Register" xml:space="preserve">
-    <value>[!!! Rèϱïƨƭèř  !!!]</value>
+  <data name="Support_Register" xml:space="preserve">
+    <value>登録</value>
   </data>
--->
-  
-<!--
-<data name="Support_RememberMe" xml:space="preserve">
-    <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
+  <data name="Support_RememberMe" xml:space="preserve">
+    <value>ログインを記憶する</value>
   </data>
--->
-  
-<!--
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>登録ありがとうございます。</value>
   </data>
--->
-  
-<!--
-<data name="Support_UserName" xml:space="preserve">
-    <value>[!!! Ûƨèřñá₥è  !!!]</value>
+  <data name="Support_UserName" xml:space="preserve">
+    <value>ユーザー名</value>
   </data>
--->
-  
-<!--
-<data name="Support_Week" xml:space="preserve">
-    <value>[!!! Wèèƙ !!!]</value>
+  <data name="Support_Week" xml:space="preserve">
+    <value>週</value>
   </data>
--->
-
 </root>
