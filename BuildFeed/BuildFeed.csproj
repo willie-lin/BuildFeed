@@ -345,8 +345,6 @@
     <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.js" />
     <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\Gulpfile.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\Gulpfile.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.min.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.css" />
@@ -415,9 +413,9 @@
     <Content Include="settings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\front\AddBulk.cshtml" />
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\trumbowyg.colors.scss" />
     <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
-    <Content Include="Views\front\AddBulk.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
