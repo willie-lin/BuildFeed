@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed jest prowadzony i zarządzany przez grupę entuzjastów. Microsoft nie jest powiązany z tą stroną w żaden możliwy sposób. Nie mamy też żadnych roszczeń dotyczących strony od Microsoftu, choć jesteśmy pewni że wiedzą o jej istnieniu. Microsoft oczywiście chce część informacji mieć prywatnych, mieliśmy kilka źródeł zamkniętych w przeszłości, nie wykluczone, że mogą też zamknąć inne źródła w przyszłości.</value>
+    <value>BuildFeed jest prowadzony i zarządzany przez grupę entuzjastów. Microsoft nie jest powiązany z tą stroną w żaden możliwy sposób. Nie mamy też żadnych roszczeń dotyczących strony od Microsoftu, choć jesteśmy pewni że wiedzą o jej istnieniu. Microsoft oczywiście chce zachować niektóre informacje tylko dla siebie, dlatego też zdarzało się nam utracić nasze źródła i nie wykluczone, że w przyszłości stracimy kolejne.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>Niezła próba, dona, ale nie powiem dużo na ten temat. To co mogę powiedzieć to, to że wszystkie buildy podane na BuildFeed są prawdziwe. Mamy kilka różnych źródeł, aby weryfikacja była bardziej niezawodna Microsoft powinien zamknąć jedno z naszych źródeł.</value>
+    <value>Niezła próba, Dona, ale nie dam się nabrać. Mogę jedynie zapewnić, że BuildFeed dokłada wszelkich starań, by wszystkie tutaj zamieszczone informacje o buildach były rzetelne i zgodne z prawdą. Mamy szereg różnych informatorów, by zapewnić lepszą wiarygodność informacji oraz mieć zapas w razie gdyby Microsoft odebrał nam dostęp do któregoś źródła.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Jest wiele sposobów. Możesz dyskutować o buildach w sekcji komentarzy na każdej stronie opisującej build. Możesz też wspierać rozwój strony, poprzez raportowanie błędów, lub współtworzyć kod na stronie GitHub. Możesz również wspomóc tłumaczenie strony na swój język.</value>
+    <value>Jest wiele sposobów. Możesz dyskutować o buildach w sekcji komentarzy na każdej stronie opisującej build. Możesz też wspierać rozwój strony poprzez raportowanie błędów lub współtworzyć kod na stronie GitHub. Wreszcie, możesz wspomóc tłumaczenie strony na swój język.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
     <value>Kto prowadzi BuildFeed? czy to oficjalna strona Microsoftu?</value>
