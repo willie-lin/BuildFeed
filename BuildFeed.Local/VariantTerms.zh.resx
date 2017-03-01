@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>我怎么才能参与进来呢？</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>添加版本</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>要添加多个版本可以填写多行，在每一行内填写一个版本的完整信息。所有由此页添加的版本的信息来源将会归为“私密泄露”。</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>发送通知</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>已成功添加这些版本。</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>添加版本号</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>批量添加</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>管理员</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>当前正式版本</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>当前 Xbox 版本</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>删除</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>更新(LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>一个新版本已添加到 {0}！</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>版本</value>

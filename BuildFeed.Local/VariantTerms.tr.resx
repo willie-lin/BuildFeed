@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bunlar söylenmişken, Microsoft açıkça gizli bilgileri gizli tutmayı istiyor, ve geçmişte onlar tarafından kapatılan kaynaklara sahiplik ettik, ve gelecekte yapacaklarından da eminim.</value>
+    <value>BuildFeed bir meraklılar topluluğu tarafından işletilmekte ve bakılmaktadır. Microsoft'un bu siteyle hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bunlar söylenmişken, Microsoft açıkça bilgilerini gizli tutmayı istiyor, ve geçmişte onlar tarafından kapatılan kaynaklara sahiplik ettik ve gelecekte yapacaklarından da eminim.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu sitede gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Birkaç yol var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımız üzerinden kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
+    <value>Birkaç yolu var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımız üzerinden kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>BuildFeed'i kim çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
+    <value>BuildFeed'i kimler çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
     <value>BuildFeed verilerini tam olarak nasıl alıyor?</value>
@@ -136,7 +136,7 @@
     <value>Nasıl dahil olabilirim?</value>
   </data>
   <data name="Bulk_AddBuilds" xml:space="preserve">
-    <value>Yapılar ekle</value>
+    <value>Yapı ekle</value>
   </data>
   <data name="Bulk_Builds" xml:space="preserve">
     <value>Yapılar</value>
@@ -145,7 +145,7 @@
     <value>Aşağıda her bir satıra tam yapı metnini girerek çoklu yapı ekleyin. Bu sayfa ile eklenen bütün yapılar "Özel Sızdırma" Kaynak Türü'ne sahip olacaktır.</value>
   </data>
   <data name="Bulk_SendNotifications" xml:space="preserve">
-    <value>Bildirimler gönder</value>
+    <value>Bildirimleri gönder</value>
   </data>
   <data name="Bulk_Success" xml:space="preserve">
     <value>Bu yapılar başarıyla eklendi.</value>
@@ -193,10 +193,10 @@
     <value>Site haritası</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
-    <value>Karanlık</value>
+    <value>Siyah</value>
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
-    <value>Aydınlık</value>
+    <value>Beyaz</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>Sayfa {0}</value>
@@ -283,7 +283,7 @@
     <value>Herkese açık</value>
   </data>
   <data name="Front_QuickPaste" xml:space="preserve">
-    <value>Hızlı-yapıştır</value>
+    <value>Hızlı yapıştır</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
     <value>Yapı listesine geri dön</value>
@@ -379,7 +379,7 @@
     <value>Yapı</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>BuildFeed'i Araştır...</value>
+    <value>BuildFeed'de ara...</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
     <value>Hiçbir sonuç bulunamadı</value>
@@ -394,7 +394,7 @@
     <value>Kaynak</value>
   </data>
   <data name="Search_Title" xml:space="preserve">
-    <value>Ara</value>
+    <value>Arama</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
     <value>Aramak için yazın...</value>
@@ -406,7 +406,7 @@
     <value>Yıl</value>
   </data>
   <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olup sonra tekrar kontrol ediniz.</value>
+    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olun ve daha sonra tekrar kontrol ediniz.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>BuildFeed'e eklemeler:</value>
