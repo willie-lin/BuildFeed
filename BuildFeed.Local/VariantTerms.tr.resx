@@ -244,7 +244,7 @@
     <value>Yapıyı düzenle</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Editör eylemleri</value>
+    <value>Yayımcı eylemleri</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Bütün Windows yapıları listesini gör...</value>
@@ -409,28 +409,28 @@
     <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olun ve daha sonra tekrar kontrol ediniz.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>BuildFeed'e eklemeler:</value>
+    <value>BuildFeed'e eklemeler</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
     <value>Derlenen yapılar</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Parolanızı değiştirin:</value>
+    <value>Parolanızı değiştirin</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Yeni parolayı onaylayın:</value>
+    <value>Yeni parolayı onaylayın</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Parolayı onaylayın:</value>
+    <value>Parolayı onaylayın</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>E-posta adresi</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Şu anki parolayı girin:</value>
+    <value>Şu anki parolayı girin</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Yeni parola girin:</value>
+    <value>Yeni parola girin</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Parolayı girin</value>

@@ -100,14 +100,13 @@ namespace BuildFeed.Controllers
             return false;
         }
 
-        public async Task<IEnumerable<SearchResult>> GetSearchResult(string id)
+        public async Task<IEnumerable<SearchResult>> GetSearchResult(string id, int maxResults = 16)
         {
             if (string.IsNullOrWhiteSpace(id))
             {
                 return new SearchResult[0];
             }
 
-            const int maxResults = 16;
             var results = new List<SearchResult>();
 
             results.AddRange(from s in (from c in await _bModel.SelectAllSources()
