@@ -292,6 +292,7 @@
     <None Include="package.json" />
     <Content Include="res\Web.config" />
     <Content Include="res\css\light.scss" />
+    <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy %28Private%29.pubxml" />
     <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

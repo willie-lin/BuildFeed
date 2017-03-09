@@ -226,6 +226,12 @@ namespace BuildFeed.Model
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public async Task<Build> SelectBuildByFullBuildString(string build)
+        {
+            return await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.FullBuildString, build)).SingleOrDefaultAsync();
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
         {
             IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);

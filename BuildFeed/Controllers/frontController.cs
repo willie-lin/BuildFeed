@@ -474,14 +474,24 @@ namespace BuildFeed.Controllers
                             SourceType = TypeOfSource.PrivateLeak
                         };
 
-                        await _bModel.Insert(b);
+                        string buildString = b.GenerateFullBuildString();
+                        Build existing = await _bModel.SelectBuildByFullBuildString(buildString);
 
-                        if (notify)
+                        if (existing == null)
                         {
-                            osc.PushNewBuild(b, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build");
-                        }
+                            await _bModel.Insert(b);
 
-                        success.Add(b);
+                            if (notify)
+                            {
+                                osc.PushNewBuild(b, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build");
+                            }
+
+                            success.Add(b);
+                        }
+                        else
+                        {
+                            failed.Add(line);
+                        }
                     }
                     catch (Exception)
                     {
