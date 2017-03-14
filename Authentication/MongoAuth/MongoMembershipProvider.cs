@@ -21,7 +21,7 @@ namespace MongoAuth
 
       private IMongoCollection<MongoMember> _memberCollection;
       private int _minRequiredNonAlphanumericCharacters = 1;
-      private int _minRequriedPasswordLength = 12;
+      private int _minRequriedPasswordLength = 8;
       private int _passwordAttemptWindow = 60;
       private bool _requiresUniqueEmail = true;
 
