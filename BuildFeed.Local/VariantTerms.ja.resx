@@ -226,7 +226,7 @@
     <value>現在のインサイダービルド</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>現在の安定版リリースビルド</value>
+    <value>現在の安定版リリース</value>
   </data>
   <data name="Front_CurrentXbox" xml:space="preserve">
     <value>現在の Xbox リリース</value>
