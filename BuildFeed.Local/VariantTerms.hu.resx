@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>A BuildFeedet egy csoport készítette és gondozza. Microsofthoz semmi közze ehhez az oldalhoz. Nem kaptunk még hivatalos panaszt tőlük az oldallal kapcsolatban, pedig tudnak az oldal létezéséről. Microsoft természetesen szeretné a privát információit titkosnak tartani, és már állítottak le információszerző forrásokat a múltban, és biztosak vagyunk benne hogy még fognak a jövőben.</value>
+    <value>A BuildFeedet egy csoport készítette és gondozza. Microsoftnak semmi közze ehhez az oldalhoz. Nem kaptunk még hivatalos panaszt tőlük az oldallal kapcsolatban, pedig tudnak az oldal létezéséről. Microsoft természetesen szeretné a privát információit titkosnak tartani, és már állítottak le információszerző forrásokat a múltban, és biztosak vagyunk benne hogy még fognak a jövőben.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>Szép próbálkozás, Dona, de nem adok meg pontos információkat. Amit mondhatunk, a BuildFeed annyira biztos, amennyire lehet, hogy minden build listázva az oldalon helyes és nem hamis. Sok bizonyos forrásunk van, hogy az ellenőrzést biztosabbá tegyék.</value>
@@ -135,9 +135,45 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Hogyan tudok segíteni?</value>
   </data>
+  
+<!--
+<data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>[!!! Âδδ βúïℓδƨ ℓ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_Builds" xml:space="preserve">
+    <value>[!!! ßúïℓδƨ  !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_Instructions" xml:space="preserve">
+    <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>[!!! §èñδ ñôƭïƒïçáƭïôñƨ ℓô !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_Success" xml:space="preserve">
+    <value>[!!! Tλèƨè βúïℓδƨ λáƲè βèèñ áδδèδ ƨúççèƨƨƒúℓℓ¥. ℓôřè₥ !!!]</value>
+  </data>
+-->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Build hozzáadása</value>
   </data>
+  
+<!--
+<data name="Common_AddBulk" xml:space="preserve">
+    <value>[!!! Âδδ βúℓƙ  !!!]</value>
+  </data>
+-->
   <data name="Common_Admin" xml:space="preserve">
     <value>Rendszergazda</value>
   </data>
@@ -210,6 +246,12 @@
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Jelenlegi Release</value>
   </data>
+  
+<!--
+<data name="Front_CurrentXbox" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Xβôж ℓ !!!]</value>
+  </data>
+-->
   <data name="Front_Delete" xml:space="preserve">
     <value>Törlés</value>
   </data>
@@ -351,6 +393,12 @@
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Frissítés (LDR)</value>
   </data>
+  
+<!--
+<data name="Notification_NewBuild" xml:space="preserve">
+    <value>[!!! Â ñèω βúïℓδ λáƨ βèèñ áδδèδ ƭô {0}! ℓôřè !!!]</value>
+  </data>
+-->
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>
   </data>
