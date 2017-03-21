@@ -2,7 +2,7 @@
 @using BuildFeed.Controllers
 @using BuildFeed.Model
 @using Humanizer
-@model IEnumerable<BuildFeed.Model.Build>
+@model IEnumerable<Build>
 @{
    ViewBag.Title = $"{InvariantTerms.ProductName} {ViewBag.ItemId} {(ViewBag.PageNumber == 1 ? "" : string.Format(VariantTerms.Common_TitlePage, ViewBag.PageNumber))} | {InvariantTerms.SiteName}";
 }

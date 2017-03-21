@@ -135,9 +135,30 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Come posso aiutare?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Aggiungere build</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Aggiungi varie string complete delle build qui separandole andando a capo. Tutte le build inserite tramite questa pagina saranno considerate come "fuga privata".</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Invia notifiche</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Le build sono state aggiunte con successo!</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Aggiungi build</value>
   </data>
+  
+<!--
+<data name="Common_AddBulk" xml:space="preserve">
+    <value>[!!! Âδδ βúℓƙ  !!!]</value>
+  </data>
+-->
   <data name="Common_Admin" xml:space="preserve">
     <value>Amministratore</value>
   </data>
@@ -209,6 +230,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Release attuale</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Release attuale XBox</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Cancella</value>
@@ -350,6 +374,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Aggiornamento (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Una nuova build è stata aggiunta a {0}</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>

@@ -64,13 +64,35 @@
             IEnumerable<int> pages;
          }
 
-         @if (totalPages <= 7)
+         @if (totalPages == 1)
          {
-            pages = Enumerable.Range(1, totalPages);
+            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
+            firstRvd.Remove("page");
+            pages = Array.Empty<int>();
+
+            <li @( 1 == currentPage ? "class=active" : "")>
+               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+            </li>
+         }
+         else if (totalPages <= 7 && totalPages >= 2)
+         {
+            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
+            firstRvd.Remove("page");
+            pages = Enumerable.Range(2, totalPages);
+
+            <li @( 1 == currentPage ? "class=active" : "")>
+               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+            </li>
          }
          else if (currentPage <= 4)
          {
-            pages = Enumerable.Range(1, 7);
+            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
+            firstRvd.Remove("page");
+            pages = Enumerable.Range(2, 7);
+
+            <li @( 1 == currentPage ? "class=active" : "")>
+               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+            </li>
          }
          else if (currentPage >= totalPages - 2)
          {

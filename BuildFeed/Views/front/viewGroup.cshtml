@@ -2,7 +2,7 @@
 @using BuildFeed.Controllers
 @using BuildFeed.Model
 @using Humanizer
-@model Tuple<BuildFeed.Model.BuildGroup, List<BuildFeed.Model.Build>>
+@model Tuple<BuildGroup, List<Build>>
 @{
    ViewBag.Title = $"{Model.Item1} | {InvariantTerms.SiteName}";
 }

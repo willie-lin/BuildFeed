@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>¿Cómo puedo involucrarme?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Añadir compilaciones</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Compilaciones</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Añada varias compilaciones abajo escribiendo una cadena de compilación completa por línea. Todas las compilaciones añadidas mediante esta página tendrán como tipo de fuente "filtración privada".</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Enviar notificaciones</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Las compilaciones han sido añadidas con éxito</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Añadir compilación</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Añadir en bloque</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrador</value>
@@ -208,7 +226,10 @@
     <value>Última compilación "Insider"</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>Última complación pública</value>
+    <value>Última compilación pública</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Última compilación XBox</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Borrar</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Actualización LDR (Privada)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Una nueva compilación ha sido añadida a {0}</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Compilación</value>
