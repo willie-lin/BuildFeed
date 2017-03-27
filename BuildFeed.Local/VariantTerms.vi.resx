@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed được điều hành và bảo trì bởi một nhóm những người có niềm đam mê. Microsoft không tham gia vào trang web này dưới bất cứ hình thức nào. Chúng tôi chắc chắn rằng không có những than phiền từ Microsoft về trang web này, kể cả khi chúng tôi chắc chắn họ biết về trang web này. Điều đó nói rằng, Microsoft chắc chắn muốn giữ những thông tin mật, và chúng tôi đã bị đóng cửa bởi họ trong quá khứ, và chúng tôi chắc họ cũng sẽ vậy trong tương lai.</value>
+    <value>BuildFeed được điều hành và bảo trì bởi một nhóm những người có niềm đam mê. Microsoft không tham gia vào trang web này dưới bất cứ hình thức nào. Chúng tôi chắc chắn rằng không có những than phiền từ Microsoft về trang web này, kể cả khi chúng tôi chắc chắn họ biết về trang web này. Có thể nói, Microsoft chắc chắn muốn giữ những thông tin được bảo mật, vì vậy trong quá khứ, những nguồn tin của chúng tôi đã bị đóng cửa bởi họ ,và chúng tôi chắc họ cũng sẽ làm như vậy trong tương lai.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>Cố gắng tốt lắm, Dona, nhưng chúng tôi sẽ không sụp đổ vì điều này. Chúng tôi có thể nói gì về điều này. BuildFeed chắc chắn sẽ làm hết sức có thể để tất cả những bản dựng đều được đưa lên trang web đều đúng và hợp pháp. Chúng tôi có rất nhiều nguồn tin, để xác thực độ đáng tin cậy hơn và cung cấp cho chúng tôi một vài dự phòng khi mà Microsoft đóng cửa một trong số nguồn tin của chúng tôi.</value>
+    <value>Cố gắng tốt lắm, Dona, nhưng chúng tôi sẽ không tin đâu. Chúng tôi có thể nói gì về điều này. BuildFeed chắc chắn sẽ làm hết sức có thể để tất cả những bản dựng đều được đưa lên trang web đều đúng và hợp pháp. Chúng tôi có rất nhiều nguồn tin, để xác thực độ đáng tin cậy hơn và cung cấp cho chúng tôi một vài sự đề phòng khi mà Microsoft đóng cửa một trong số nguồn tin của chúng tôi.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Có rất nhiều cách. Bạn có thể thảo luận về bản dựng trong hệ thống bình luận trong mỗi trang bản dựng. Bạn cũng có thể đóng góp vào sự phát triển của trang web bằng cách góp ý về những lỗi hoặc góp ý cho chúng tôi trên GitHub. Cuối cùng, bạn có thể giúp dịch BuildFeed sang ngôn ngữ mẹ đẻ của bạn thông qua cổng thông tin dịch của chúng tôi.</value>
+    <value>Có rất nhiều cách. Bạn có thể thảo luận về bản dựng trong hệ thống bình luận trong mỗi trang bản dựng. Bạn cũng có thể đóng góp vào sự phát triển của trang web bằng cách góp ý về những lỗi đề ra những yêu cầu cho chúng tôi trên GitHub. Cuối cùng, bạn có thể giúp dịch BuildFeed sang ngôn ngữ bản địa của bạn thông qua cổng Dịch của chúng tôi.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
     <value>Ai là người điều hành và chịu trách nhiệm cho BuildFeed? Đây có phải là trang chính thức của Microsoft hay không?</value>
@@ -135,8 +135,29 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Tôi có thể tham gia như thế nào?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Thêm những bản dựng</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Các bản dựng</value>
+  </data>
+  
+<!--
+<data name="Bulk_Instructions" xml:space="preserve">
+    <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
+  </data>
+-->
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Gửi thông báo</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Những bản dựng đã được thêm vào thành công.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Thêm bản dựng</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Thêm số lượng lớn</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Quản trị viên</value>
@@ -172,7 +193,7 @@
     <value>Nguồn cấp dữ liệu RSS</value>
   </data>
   <data name="Common_Sitemap" xml:space="preserve">
-    <value>Biểu đồ trang web</value>
+    <value>Biểu đồ Web</value>
   </data>
   <data name="Common_ThemeDark" xml:space="preserve">
     <value>Tối</value>
@@ -202,13 +223,16 @@
     <value>Các bình luận</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>Phiên bản đang được xây dựng hiện tại</value>
+    <value>Phiên bản được xây dựng hiện tại</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
     <value>Phiên bản xem trước hiện tại</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Phiên bản ra mắt hiện tại</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Bản dựng Xbox hiện tại</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Xóa</value>
@@ -247,7 +271,7 @@
     <value>Tìm thêm nhiều nguồn của bản dựng {0}</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>Tìm thêm nhiều bản dựng đã được biên soạn trong {0}</value>
+    <value>Tìm thêm nhiều bản dựng đã được tạo trong {0}</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
     <value>Không có chuỗi thử nghiệm</value>
@@ -286,7 +310,7 @@
     <value>Kiểm tra tất cả các bản dựng có từ nhánh phát triển Windows {0} thông qua BuildFeed, một danh sách bản dựng Windows thống nhất</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>Hiển thị tất cả danh sách của những bản dựng Windows được tổng hợp từ{0}, và xem xem rằng thế nào mà Windows lại có thể phát triển vững chắc qua thời gian, thông qua tính tổng hợp của danh sách các bản dựng, BuildFeed</value>
+    <value>Hiển thị tất cả danh sách của những bản dựng Windows được tổng hợp từ{0}, và xem để biết bằng cách nào mà Windows lại có thể phát triển vững chắc qua thời gian, thông qua tính tổng hợp của danh sách các bản dựng, BuildFeed</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
     <value>Thời gian khởi tạo</value>
@@ -298,13 +322,13 @@
     <value>Thời gian của bản dựng</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Địa chỉ ngoài</value>
+    <value>Liên kết ngoài</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
     <value>Chuỗi thử nghiệm</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Ngày rò rỉ hay ra mắt</value>
+    <value>Ngày rò rỉ hoặc ra mắt</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
     <value>Phiên bản chính</value>
@@ -351,6 +375,9 @@
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Cập nhật (LDR)</value>
   </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Một bản dựng mới đã được thêm vào {0}!</value>
+  </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Bản dựng</value>
   </data>
@@ -394,13 +421,13 @@
     <value>Đổi mật khẩu của bạn</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Xác nhận mật khẩu</value>
+    <value>Xác nhận mật khẩu mới</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
     <value>Xác nhận mật khẩu</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
-    <value>Địa chỉ email</value>
+    <value>Địa chỉ Email</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Nhập mật khẩu hiện tại</value>

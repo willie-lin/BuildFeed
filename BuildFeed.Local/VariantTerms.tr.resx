@@ -244,7 +244,7 @@
     <value>Yapıyı düzenle</value>
   </data>
   <data name="Front_EditorActions" xml:space="preserve">
-    <value>Yayımcı eylemleri</value>
+    <value>Editör eylemleri</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
     <value>Bütün Windows yapıları listesini gör...</value>

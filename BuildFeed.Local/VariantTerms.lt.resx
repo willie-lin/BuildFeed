@@ -135,8 +135,26 @@
   <data name="About_Q3" xml:space="preserve">
     <value>Kaip galiu prisidėti?</value>
   </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Pridėti komponavimo versijas</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>Komponavimo versijos</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Pridėkite kelias komponavimo versijas apačioje, įvesdami pilną komponavimo versijos numerį. Visos komponavimo versijos pridėtos šiame puslapyje bus pažymėtos kaip "Private Leak"</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>Siųsti pranešimus</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>Šios komponavimo versijos buvo pridėtos sėkmingai.</value>
+  </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Pridėti komponavimo versiją</value>
+  </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>Pridėti bulk</value>
   </data>
   <data name="Common_Admin" xml:space="preserve">
     <value>Administratorius</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Naujausia Release komponavimo versija</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>Naujausia Xbox komponavimo versija</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>Ištrinti</value>
@@ -350,6 +371,9 @@
   </data>
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Naujinimas (LDR)</value>
+  </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>Nauja komponavimo versija buvo pridėta į {0}!</value>
   </data>
   <data name="Search_Build" xml:space="preserve">
     <value>Komponavimo versija</value>
