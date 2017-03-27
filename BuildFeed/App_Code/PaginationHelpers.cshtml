@@ -78,7 +78,7 @@
          {
             RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
             firstRvd.Remove("page");
-            pages = Enumerable.Range(2, totalPages);
+            pages = Enumerable.Range(2, totalPages - 1);
 
             <li @( 1 == currentPage ? "class=active" : "")>
                @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
@@ -88,7 +88,7 @@
          {
             RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
             firstRvd.Remove("page");
-            pages = Enumerable.Range(2, 7);
+            pages = Enumerable.Range(2, 6);
 
             <li @( 1 == currentPage ? "class=active" : "")>
                @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
