@@ -187,7 +187,7 @@
    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
 <p>
-   <a href="@Url.Action("ViewGroup", new
+   <a href="@Url.Action(nameof(FrontController.ViewGroup), new
             {
                major = Model.MajorVersion,
                minor = Model.MinorVersion,
@@ -197,5 +197,8 @@
       @VariantTerms.Front_ReturnToOverview
    </a>
    &ensp;
-   <a href="@Url.Action("Index")" class="button">@VariantTerms.Front_ReturnToListing</a>
+   <a href="@Url.Action(nameof(FrontController.IndexPage), new
+            {
+               page = 1
+            })" class="button">@VariantTerms.Front_ReturnToListing</a>
 </p>

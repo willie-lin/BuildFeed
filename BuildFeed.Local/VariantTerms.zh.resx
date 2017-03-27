@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>Buildfeed 由一群爱好者运行和维护，微软官方和本网站没有任何关系。虽然他们一定已经知道这个网站的存在，但我们现在还没有收到微软发来的正式投诉。显然，微软不想让内部信息到处传播。之前我们的信息源被微软封掉过，我敢肯定他们今后也会继续。</value>
+    <value>Buildfeed 由一群爱好者运行维护，微软官方和本网站没有任何联系。我们敢肯定微软知道这里，但现在还没有收到正式投诉。总之，微软不想让内部信息到处传播，之前我们的线人被微软封杀过，也许今后也会。</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>问得好，唐娜姐，但我不会上你的当的。我可以说的是 BuildFeed 尽力保证所有记录在本网站的版本信息都是正确且真实的。为了确保数据的可靠度，我们的数据来自许多不同的来源。同时，如果微软封掉某些信息源的话，我们也有其他的信息源可用。</value>
+    <value>问得好，唐娜姐，但我不会上你的当的。我可以说的是 BuildFeed 尽力保证所有记录在本网站的版本信息都是正确且真实的。我们的数据来自许多不同的来源，以确保数据的可靠度，同时防止微软的封杀。</value>
   </data>
   <data name="About_A3" xml:space="preserve">
     <value>有好几种方式。你可以在每个版本页下的 Disqus 讨论系统中进行讨论，也可以在我们的 Github 中提 Bug 或者发起 Pull Request 来贡献你的一份力。最后你还能通过我们的翻译中心来帮助我们将 BuildFeed 翻译到你的母语。</value>
