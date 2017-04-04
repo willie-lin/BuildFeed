@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed được điều hành và bảo trì bởi một nhóm những người có niềm đam mê. Microsoft không tham gia vào trang web này dưới bất cứ hình thức nào. Chúng tôi chắc chắn rằng không có những than phiền từ Microsoft về trang web này, kể cả khi chúng tôi chắc chắn họ biết về trang web này. Có thể nói, Microsoft chắc chắn muốn giữ những thông tin được bảo mật, vì vậy trong quá khứ, những nguồn tin của chúng tôi đã bị đóng cửa bởi họ ,và chúng tôi chắc họ cũng sẽ làm như vậy trong tương lai.</value>
+    <value>BuildFeed được điều hành và bảo trì bởi một nhóm những người có niềm đam mê. Microsoft không tham gia vào trang web này dưới bất cứ hình thức nào. Chúng tôi chắc chắn rằng không có những than phiền từ Microsoft về trang Web này mặc dù họ cũng biết về nó đi chăng nữa. Có thể nói, Microsoft luôn muốn giữ những thông tin của họ được bảo mật tuyệt đối. Trong quá khứ, những nguồn tin tức của chúng tôi đã bị đóng cửa bởi họ ,và chúng tôi nghĩ rằng họ sẽ có thể tiếp tục làm như vậy trong tương lai.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>Cố gắng tốt lắm, Dona, nhưng chúng tôi sẽ không tin đâu. Chúng tôi có thể nói gì về điều này. BuildFeed chắc chắn sẽ làm hết sức có thể để tất cả những bản dựng đều được đưa lên trang web đều đúng và hợp pháp. Chúng tôi có rất nhiều nguồn tin, để xác thực độ đáng tin cậy hơn và cung cấp cho chúng tôi một vài sự đề phòng khi mà Microsoft đóng cửa một trong số nguồn tin của chúng tôi.</value>
+    <value>Cố gắng tốt lắm, Dona, nhưng chúng tôi sẽ không tin đâu. Chúng tôi có thể nói gì về điều này. BuildFeed chắc chắn sẽ làm hết sức có thể để tất cả những bản dựng đều được đưa lên trang Web một cách đúng đắn và hợp pháp. Chúng tôi có rất nhiều nguồn tin để xác thực độ tin cậy hơn cũng như cung cấp cho chúng tôi một vài sự đề phòng khi mà Microsoft đóng cửa một trong số những nguồn tin của chúng tôi.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Có rất nhiều cách. Bạn có thể thảo luận về bản dựng trong hệ thống bình luận trong mỗi trang bản dựng. Bạn cũng có thể đóng góp vào sự phát triển của trang web bằng cách góp ý về những lỗi đề ra những yêu cầu cho chúng tôi trên GitHub. Cuối cùng, bạn có thể giúp dịch BuildFeed sang ngôn ngữ bản địa của bạn thông qua cổng Dịch của chúng tôi.</value>
+    <value>Có rất nhiều cách. Bạn có thể thảo luận về các bản dựng trong hệ thống bình luận Disqus trên mỗi trang bản dựng. Bạn cũng có thể đóng góp vào sự phát triển của trang web bằng cách góp ý về các lỗi cũng như sai sót, đặt ra những yêu cầu hay câu hỏi cho chúng tôi trên GitHub. Cuối cùng, bạn có thể giúp dịch BuildFeed sang ngôn ngữ bản địa của bạn thông qua cổng Dịch của chúng tôi.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
     <value>Ai là người điều hành và chịu trách nhiệm cho BuildFeed? Đây có phải là trang chính thức của Microsoft hay không?</value>
@@ -141,12 +141,9 @@
   <data name="Bulk_Builds" xml:space="preserve">
     <value>Các bản dựng</value>
   </data>
-  
-<!--
-<data name="Bulk_Instructions" xml:space="preserve">
-    <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>Thêm nhiều bản dựng dưới đây bằng cách gõ ra một cách đầy đủ tên chuỗi của nó trên mỗi dòng. Tất cả những bản dựng được thêm vào thông qua trang này sẽ có Loại Nguồn được đánh dấu "Private Leak" (Rò rỉ mật)</value>
   </data>
--->
   <data name="Bulk_SendNotifications" xml:space="preserve">
     <value>Gửi thông báo</value>
   </data>
@@ -163,10 +160,10 @@
     <value>Quản trị viên</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
-    <value>Đóng góp vào {0}</value>
+    <value>Đóng góp bởi {0}</value>
   </data>
   <data name="Common_Credits" xml:space="preserve">
-    <value>Sự đóng góp từ</value>
+    <value>Những thành viên hỗ trợ bản dịch</value>
   </data>
   <data name="Common_DevelopedBy" xml:space="preserve">
     <value>Phát triển bởi {0}</value>
