@@ -14,19 +14,22 @@
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-   <link rel="shortcut icon" href="~/favicon.ico" />
-   <link rel="icon" href="~/favicon.ico" />
-   <meta name="application-name" content="@InvariantTerms.SiteName" />
-
+   <title>@VariantTerms.Common_Error | @InvariantTerms.SiteName</title>
    <link href="/res/css/default.css" rel="stylesheet" type="text/css" />
    <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
       <link href="/res/css/rtl.css" rel="stylesheet" type="text/css" />
    }
-   <title>@VariantTerms.Common_Error | @InvariantTerms.SiteName</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css" />
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+   <link rel="manifest" href="~/manifest.json">
+   <link rel="shortcut icon" href="~/favicon.ico" />
+   <link rel="icon" href="~/favicon.ico" />
+   <meta name="theme-color" content="#373736">
+   <meta name="application-name" content="@InvariantTerms.SiteName" />
+   <meta name="twitter:site" content="@("@")buildfeed">
+
    <script type="text/javascript">
       var appInsights = window.appInsights || function (config) {
          function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
@@ -70,7 +73,7 @@
          </button>
          <ul id="page-navigation-links">
             <li>
-               <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank">
+               <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank" rel="noopener">
                   <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
                </a>
             </li>
@@ -140,10 +143,10 @@
                   &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\">{InvariantTerms.DeveloperName}</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
                </p>
             </div>
          </div>
