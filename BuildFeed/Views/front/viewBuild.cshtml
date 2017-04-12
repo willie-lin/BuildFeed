@@ -143,7 +143,7 @@
 <div class="addthis_sharing_toolbox"></div>
 <br />
 
-@if (User.Identity.IsAuthenticated)
+@if (Roles.IsUserInRole("Editors") || Roles.IsUserInRole("Administrators"))
 {
    <h3>@VariantTerms.Front_EditorActions</h3>
    <p class="build-details-flex-value">

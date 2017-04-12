@@ -187,6 +187,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        public static string Common_ChangePassword {
+            get {
+                return ResourceManager.GetString("Common_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contribute on {0}.
         /// </summary>
         public static string Common_ContributeOn {
@@ -327,6 +336,32 @@ namespace BuildFeed.Local {
         public static string Common_Twitter {
             get {
                 return ResourceManager.GetString("Common_Twitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for registering to {0}.
+        ///
+        ///Please verify your email address by clicking the link below, or by copying and pasting it into your browser.
+        ///{1}
+        ///
+        ///If you did not register to {0}, you can ignore this email.
+        ///
+        ///Thanks,
+        ///The {0} Team..
+        /// </summary>
+        public static string Email_Registration_Body {
+            get {
+                return ResourceManager.GetString("Email_Registration_Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Please verify your email address.
+        /// </summary>
+        public static string Email_Registration_Subject {
+            get {
+                return ResourceManager.GetString("Email_Registration_Subject", resourceCulture);
             }
         }
         
@@ -925,15 +960,6 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Every account is validated by an administrator, so be patient and check again later.
-        /// </summary>
-        public static string Support_AccountValidation {
-            get {
-                return ResourceManager.GetString("Support_AccountValidation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Additions to BuildFeed.
         /// </summary>
         public static string Support_AdditionsToBuildFeed {
@@ -988,6 +1014,24 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An validation link has been sent to your email address. Please click the link in the email to verify the account..
+        /// </summary>
+        public static string Support_EmailValidationContent {
+            get {
+                return ResourceManager.GetString("Support_EmailValidationContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please verify your email address.
+        /// </summary>
+        public static string Support_EmailValidationTitle {
+            get {
+                return ResourceManager.GetString("Support_EmailValidationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter current password.
         /// </summary>
         public static string Support_EnterCurrentPassword {
@@ -1011,6 +1055,51 @@ namespace BuildFeed.Local {
         public static string Support_EnterPassword {
             get {
                 return ResourceManager.GetString("Support_EnterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred when attempting to change your password..
+        /// </summary>
+        public static string Support_Error_ChangingPasswordFail {
+            get {
+                return ResourceManager.GetString("Support_Error_ChangingPasswordFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A user account with this email address already exists..
+        /// </summary>
+        public static string Support_Error_DuplicateEmail {
+            get {
+                return ResourceManager.GetString("Support_Error_DuplicateEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A user account with this user name already exists..
+        /// </summary>
+        public static string Support_Error_DuplicateUserName {
+            get {
+                return ResourceManager.GetString("Support_Error_DuplicateUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password you have entered is invalid..
+        /// </summary>
+        public static string Support_Error_InvalidPassword {
+            get {
+                return ResourceManager.GetString("Support_Error_InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error has occurred..
+        /// </summary>
+        public static string Support_Error_UnknownError {
+            get {
+                return ResourceManager.GetString("Support_Error_UnknownError", resourceCulture);
             }
         }
         
@@ -1096,20 +1185,47 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thank you for registering.
-        /// </summary>
-        public static string Support_ThanksRegister {
-            get {
-                return ResourceManager.GetString("Support_ThanksRegister", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string Support_UserName {
             get {
                 return ResourceManager.GetString("Support_UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check the validation link in your email and try again..
+        /// </summary>
+        public static string Support_ValidationFailureContent {
+            get {
+                return ResourceManager.GetString("Support_ValidationFailureContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We were unable to validate your account..
+        /// </summary>
+        public static string Support_ValidationFailureTitle {
+            get {
+                return ResourceManager.GetString("Support_ValidationFailureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You will now be able to log in using your username and password..
+        /// </summary>
+        public static string Support_ValidationSuccessContent {
+            get {
+                return ResourceManager.GetString("Support_ValidationSuccessContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have successfully validated your account..
+        /// </summary>
+        public static string Support_ValidationSuccessTitle {
+            get {
+                return ResourceManager.GetString("Support_ValidationSuccessTitle", resourceCulture);
             }
         }
         

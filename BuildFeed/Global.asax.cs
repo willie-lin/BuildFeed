@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
 using BuildFeed.Code;
 using BuildFeed.Code.Options;
 using BuildFeed.Model;
@@ -29,6 +30,10 @@ namespace BuildFeed
 
             ModelBinders.Binders.Add(typeof(DateTime), db);
             ModelBinders.Binders.Add(typeof(DateTime?), db);
+
+            Roles.CreateRole("Administrators");
+            Roles.CreateRole("Editors");
+            Roles.CreateRole("Users");
 
             MongoConfig.SetupIndexes();
         }

@@ -1,4 +1,5 @@
-﻿@model BuildFeed.Model.View.LoginUser
+﻿@using BuildFeed.Controllers
+@model BuildFeed.Model.View.LoginUser
 
 @{
    ViewBag.Title = $"{VariantTerms.Support_Login} | {InvariantTerms.SiteName}";
@@ -57,9 +58,9 @@
       <div class="form-group">
          <div>
             <input type="submit" value="@VariantTerms.Support_Login" class="btn btn-primary" /> &ensp;
-            @Html.ActionLink(VariantTerms.Support_Register, "register", new
+            @Html.ActionLink(VariantTerms.Support_Register, nameof(AccountController.Register), new
             {
-               controller = "Support"
+               controller = "Account"
             }, new
             {
                @class = "btn btn-default"

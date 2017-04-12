@@ -13,214 +13,221 @@ using MongoDB.Driver;
 
 namespace MongoAuth
 {
-   public class MongoRoleProvider : RoleProvider
-   {
-      private const string MEMBER_COLLECTION_NAME = "members";
-      private const string ROLE_COLLECTION_NAME = "roles";
-      private IMongoCollection<MongoMember> _memberCollection;
-      private IMongoCollection<MongoRole> _roleCollection;
+    public class MongoRoleProvider : RoleProvider
+    {
+        private const string MEMBER_COLLECTION_NAME = "members";
+        private const string ROLE_COLLECTION_NAME = "roles";
+        private IMongoCollection<MongoMember> _memberCollection;
+        private IMongoCollection<MongoRole> _roleCollection;
 
-      public override string ApplicationName
-      {
-         get { return ""; }
-         set { }
-      }
+        public override string ApplicationName
+        {
+            get { return ""; }
+            set { }
+        }
 
-      public override void Initialize(string name, NameValueCollection config)
-      {
-         base.Initialize(name, config);
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            base.Initialize(name, config);
 
-         MongoClientSettings settings = new MongoClientSettings
-         {
-            Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
-         };
-
-         if (!string.IsNullOrEmpty(DatabaseConfig.Username) && !string.IsNullOrEmpty(DatabaseConfig.Password))
-         {
-            settings.Credentials = new List<MongoCredential>
+            MongoClientSettings settings = new MongoClientSettings
             {
-               MongoCredential.CreateCredential(DatabaseConfig.Database, DatabaseConfig.Username, DatabaseConfig.Password)
+                Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
             };
-         }
 
-         MongoClient dbClient = new MongoClient(settings);
-
-         _roleCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoRole>(ROLE_COLLECTION_NAME);
-         _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
-      }
-
-      public override void AddUsersToRoles(string[] usernames, string[] roleNames)
-      {
-         Task<List<MongoRole>> roleTask = _roleCollection.Find(r => roleNames.Contains(r.RoleName)).ToListAsync();
-         roleTask.Wait();
-         List<MongoRole> roles = roleTask.Result;
-
-         Task<List<MongoMember>> userTask = _memberCollection.Find(u => usernames.Contains(u.UserName)).ToListAsync();
-         userTask.Wait();
-         List<MongoMember> users = userTask.Result;
-
-         for (int i = 0; i < roles.Count; i++)
-         {
-            var newUsers = new List<Guid>();
-
-            if (roles[i].Users != null)
+            if (!string.IsNullOrEmpty(DatabaseConfig.Username) && !string.IsNullOrEmpty(DatabaseConfig.Password))
             {
-               newUsers.AddRange(roles[i].Users);
+                settings.Credentials = new List<MongoCredential>
+                {
+                    MongoCredential.CreateCredential(DatabaseConfig.Database, DatabaseConfig.Username, DatabaseConfig.Password)
+                };
             }
 
-            IEnumerable<Guid> usersToAdd = from u in users
-                                           where newUsers.All(v => v != u.Id)
-                                           select u.Id;
+            MongoClient dbClient = new MongoClient(settings);
 
-            newUsers.AddRange(usersToAdd);
+            _roleCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoRole>(ROLE_COLLECTION_NAME);
+            _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
+        }
 
-            roles[i].Users = newUsers.ToArray();
+        public override void AddUsersToRoles(string[] usernames, string[] roleNames)
+        {
+            Task<List<MongoRole>> roleTask = _roleCollection.Find(r => roleNames.Contains(r.RoleName)).ToListAsync();
+            roleTask.Wait();
+            List<MongoRole> roles = roleTask.Result;
 
-            Task<ReplaceOneResult> update = _roleCollection.ReplaceOneAsync(Builders<MongoRole>.Filter.Eq(r => r.Id, roles[i].Id), roles[i]);
-            update.Wait();
-         }
-      }
+            Task<List<MongoMember>> userTask = _memberCollection.Find(u => usernames.Contains(u.UserName)).ToListAsync();
+            userTask.Wait();
+            List<MongoMember> users = userTask.Result;
 
-      public override void CreateRole(string roleName)
-      {
-         MongoRole r = new MongoRole
-         {
-            Id = Guid.NewGuid(),
-            RoleName = roleName
-         };
+            for (int i = 0; i < roles.Count; i++)
+            {
+                var newUsers = new List<Guid>();
 
-         Task task = _roleCollection.InsertOneAsync(r);
-         task.Wait();
-      }
+                if (roles[i].Users != null)
+                {
+                    newUsers.AddRange(roles[i].Users);
+                }
 
-      public override bool DeleteRole(string roleName, bool throwOnPopulatedRole)
-      {
-         Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
-         role.Wait();
+                IEnumerable<Guid> usersToAdd = from u in users
+                                               where newUsers.All(v => v != u.Id)
+                                               select u.Id;
 
-         if ((role.Result != null)
-            && (role.Result.Users.Length > 0)
-            && throwOnPopulatedRole)
-         {
-            throw new ProviderException(Resources.RoleNotEmpty);
-         }
+                newUsers.AddRange(usersToAdd);
 
-         Task<DeleteResult> task = _roleCollection.DeleteOneAsync(r => r.RoleName == roleName);
-         task.Wait();
+                roles[i].Users = newUsers.ToArray();
 
-         return true;
-      }
+                Task<ReplaceOneResult> update = _roleCollection.ReplaceOneAsync(Builders<MongoRole>.Filter.Eq(r => r.Id, roles[i].Id), roles[i]);
+                update.Wait();
+            }
+        }
 
-      public override string[] FindUsersInRole(string roleName, string usernameToMatch)
-      {
-         Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
-         role.Wait();
+        public override void CreateRole(string roleName)
+        {
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            role.Wait();
+            if (role.Result != null)
+            {
+                return;
+            }
 
-         if (role.Result == null)
-         {
-            return Array.Empty<string>();
-         }
+            MongoRole mr = new MongoRole
+            {
+                Id = Guid.NewGuid(),
+                RoleName = roleName
+            };
 
-         Task<List<MongoMember>> users = _memberCollection.Find(u => role.Result.Users.Contains(u.Id) && u.UserName.ToLower().Contains(usernameToMatch.ToLower())).ToListAsync();
-         users.Wait();
+            Task task = _roleCollection.InsertOneAsync(mr);
+            task.Wait();
+        }
 
-         return users.Result.Select(r => r.UserName).ToArray();
-      }
+        public override bool DeleteRole(string roleName, bool throwOnPopulatedRole)
+        {
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            role.Wait();
 
-      public override string[] GetAllRoles()
-      {
-         Task<List<MongoRole>> roles = _roleCollection.Find(new BsonDocument()).ToListAsync();
-         roles.Wait();
+            if (role.Result != null
+                && role.Result.Users.Length > 0
+                && throwOnPopulatedRole)
+            {
+                throw new ProviderException(Resources.RoleNotEmpty);
+            }
 
-         return roles.Result.Select(r => r.RoleName).ToArray();
-      }
+            Task<DeleteResult> task = _roleCollection.DeleteOneAsync(r => r.RoleName == roleName);
+            task.Wait();
 
-      public override string[] GetRolesForUser(string username)
-      {
-         Task<MongoMember> user = _memberCollection.Find(u => u.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
-         user.Wait();
+            return true;
+        }
 
-         if (user.Result == null)
-         {
-            return Array.Empty<string>();
-         }
+        public override string[] FindUsersInRole(string roleName, string usernameToMatch)
+        {
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            role.Wait();
 
-         Task<List<MongoRole>> role = _roleCollection.Find(r => (r.Users != null) && r.Users.Contains(user.Result.Id)).ToListAsync();
-         role.Wait();
+            if (role.Result == null)
+            {
+                return Array.Empty<string>();
+            }
 
-         return role.Result.Select(r => r.RoleName).ToArray();
-      }
+            Task<List<MongoMember>> users = _memberCollection.Find(u => role.Result.Users.Contains(u.Id) && u.UserName.ToLower().Contains(usernameToMatch.ToLower())).ToListAsync();
+            users.Wait();
 
-      public override string[] GetUsersInRole(string roleName)
-      {
-         Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
-         role.Wait();
+            return users.Result.Select(r => r.UserName).ToArray();
+        }
 
-         if (role.Result == null)
-         {
-            return Array.Empty<string>();
-         }
+        public override string[] GetAllRoles()
+        {
+            Task<List<MongoRole>> roles = _roleCollection.Find(new BsonDocument()).ToListAsync();
+            roles.Wait();
 
-         Task<List<MongoMember>> users = _memberCollection.Find(u => role.Result.Users.Contains(u.Id)).ToListAsync();
-         users.Wait();
+            return roles.Result.Select(r => r.RoleName).ToArray();
+        }
 
-         return users.Result.Select(u => u.UserName).ToArray();
-      }
+        public override string[] GetRolesForUser(string username)
+        {
+            Task<MongoMember> user = _memberCollection.Find(u => u.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
+            user.Wait();
 
-      public override bool IsUserInRole(string username, string roleName)
-      {
-         Task<MongoMember> user = _memberCollection.Find(u => u.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
-         Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
-         user.Wait();
-         role.Wait();
+            if (user.Result == null)
+            {
+                return Array.Empty<string>();
+            }
 
-         if ((user.Result == null)
-            || (role.Result?.Users == null))
-         {
-            return false;
-         }
+            Task<List<MongoRole>> role = _roleCollection.Find(r => r.Users != null && r.Users.Contains(user.Result.Id)).ToListAsync();
+            role.Wait();
 
-         return role.Result.Users.Contains(user.Result.Id);
-      }
+            return role.Result.Select(r => r.RoleName).ToArray();
+        }
 
-      public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
-      {
-         Task<List<MongoRole>> roleTask = _roleCollection.Find(r => roleNames.Contains(r.RoleName)).ToListAsync();
-         roleTask.Wait();
-         List<MongoRole> roles = roleTask.Result;
+        public override string[] GetUsersInRole(string roleName)
+        {
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            role.Wait();
 
-         Task<List<MongoMember>> userTask = _memberCollection.Find(u => usernames.Contains(u.UserName)).ToListAsync();
-         userTask.Wait();
-         List<MongoMember> users = userTask.Result;
+            if (role.Result == null)
+            {
+                return Array.Empty<string>();
+            }
 
-         foreach (MongoRole t in roles)
-         {
-            t.Users = (from u in t.Users
-                       where users.All(v => v.Id != u)
-                       select u).ToArray();
+            Task<List<MongoMember>> users = _memberCollection.Find(u => role.Result.Users.Contains(u.Id)).ToListAsync();
+            users.Wait();
 
-            Task<ReplaceOneResult> update = _roleCollection.ReplaceOneAsync(Builders<MongoRole>.Filter.Eq(r => r.Id, t.Id), t);
-            update.Wait();
-         }
-      }
+            return users.Result.Select(u => u.UserName).ToArray();
+        }
 
-      public override bool RoleExists(string roleName)
-      {
-         Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
-         role.Wait();
+        public override bool IsUserInRole(string username, string roleName)
+        {
+            Task<MongoMember> user = _memberCollection.Find(u => u.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            user.Wait();
+            role.Wait();
 
-         return role.Result != null;
-      }
-   }
+            if (user.Result == null
+                || role.Result?.Users == null)
+            {
+                return false;
+            }
 
-   [DataObject]
-   public class MongoRole
-   {
-      [BsonId]
-      public Guid Id { get; set; }
+            return role.Result.Users.Contains(user.Result.Id);
+        }
 
-      public string RoleName { get; set; }
+        public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
+        {
+            Task<List<MongoRole>> roleTask = _roleCollection.Find(r => roleNames.Contains(r.RoleName)).ToListAsync();
+            roleTask.Wait();
+            List<MongoRole> roles = roleTask.Result;
 
-      public Guid[] Users { get; set; }
-   }
+            Task<List<MongoMember>> userTask = _memberCollection.Find(u => usernames.Contains(u.UserName)).ToListAsync();
+            userTask.Wait();
+            List<MongoMember> users = userTask.Result;
+
+            foreach (MongoRole t in roles)
+            {
+                t.Users = (from u in t.Users
+                           where users.All(v => v.Id != u)
+                           select u).ToArray();
+
+                Task<ReplaceOneResult> update = _roleCollection.ReplaceOneAsync(Builders<MongoRole>.Filter.Eq(r => r.Id, t.Id), t);
+                update.Wait();
+            }
+        }
+
+        public override bool RoleExists(string roleName)
+        {
+            Task<MongoRole> role = _roleCollection.Find(r => r.RoleName == roleName).SingleOrDefaultAsync();
+            role.Wait();
+
+            return role.Result != null;
+        }
+    }
+
+    [DataObject]
+    public class MongoRole
+    {
+        [BsonId]
+        public Guid Id { get; set; }
+
+        public string RoleName { get; set; }
+
+        public Guid[] Users { get; set; }
+    }
 }

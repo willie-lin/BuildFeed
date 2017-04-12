@@ -378,7 +378,7 @@ namespace BuildFeed.Controllers
         }
 
         [Route("add/")]
-        [Authorize]
+        [Authorize(Roles = "Administrators,Editors")]
         public ActionResult AddBuild()
         {
             Build b = new Build
@@ -389,7 +389,8 @@ namespace BuildFeed.Controllers
         }
 
         [Route("add/")]
-        [Authorize]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrators,Editors")]
         [HttpPost]
         public async Task<ActionResult> AddBuild(Build build)
         {
@@ -429,14 +430,15 @@ namespace BuildFeed.Controllers
         }
 
         [Route("bulk/")]
-        [Authorize]
+        [Authorize(Roles = "Administrators")]
         public ActionResult AddBulk()
         {
             return View();
         }
 
         [Route("bulk/")]
-        [Authorize]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrators")]
         [HttpPost]
         public async Task<ActionResult> AddBulk(FormCollection values)
         {
@@ -509,7 +511,7 @@ namespace BuildFeed.Controllers
         }
 
         [Route("edit/{id}/")]
-        [Authorize]
+        [Authorize(Roles = "Administrators,Editors")]
         public async Task<ActionResult> EditBuild(Guid id)
         {
             Build b = await _bModel.SelectById(id);
@@ -517,7 +519,8 @@ namespace BuildFeed.Controllers
         }
 
         [Route("edit/{id}/")]
-        [Authorize]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrators,Editors")]
         [HttpPost]
         public async Task<ActionResult> EditBuild(Guid id, Build build)
         {

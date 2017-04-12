@@ -46,17 +46,15 @@
             <a href="mailto:@mu.Email">@mu.Email</a>
          </td>
          <td>
-            @(mu.CreationDate == default(DateTime)
-                 ? "Never"
-                 : mu.CreationDate.Humanize())
+            @mu.CreationDate.Humanize()
          </td>
          <td>
-            @(mu.LastLoginDate == default(DateTime)
+            @(mu.LastLoginDate == DateTime.MinValue
                  ? "Never"
                  : mu.LastLoginDate.Humanize())
          </td>
          <td>
-            @(mu.LastLockoutDate == default(DateTime)
+            @(mu.LastLockoutDate == DateTime.MinValue
                  ? "Never"
                  : mu.LastLockoutDate.Humanize())
          </td>

@@ -78,7 +78,7 @@
                   <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
             </p>
          }
-         @if (User.Identity.IsAuthenticated)
+         @if (Roles.IsUserInRole("Editors") || Roles.IsUserInRole("Administrators"))
          {
             <p>
                <a href="@Url.Action(nameof(FrontController.EditBuild), new

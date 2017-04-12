@@ -12,6 +12,7 @@ using BuildFeed.Model.Api;
 using BuildFeed.Model.View;
 using OneSignal.CSharp.SDK;
 
+#pragma warning disable SG0016 // Controller method is vulnerable to CSRF - Not relevant for API
 namespace BuildFeed.Controllers
 {
     public class ApiController : System.Web.Http.ApiController
@@ -70,7 +71,7 @@ namespace BuildFeed.Controllers
             {
                 return false;
             }
-            if (Membership.ValidateUser(apiModel.Username, apiModel.Password))
+            if (Membership.ValidateUser(apiModel.Username, apiModel.Password) && (Roles.IsUserInRole(apiModel.Username, "Editors") || Roles.IsUserInRole(apiModel.Username, "Administrators")))
             {
                 IEnumerable<Build> builds = apiModel.NewBuilds.Select(nb => new Build
                 {

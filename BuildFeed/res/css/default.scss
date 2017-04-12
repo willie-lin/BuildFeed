@@ -87,7 +87,8 @@ table
     word-wrap: break-word;
 }
 
-.field-validation-error
+.field-validation-error,
+.text-danger
 {
     display: block;
     margin: #{(1em / 3)} 0;
@@ -145,7 +146,7 @@ nav#page-navigation
 
     #page-navigation-links
     {
-        margin: 0 -15px;
+        margin: 0 -15px #{(1px / 3)}; /* bottom margin fixes Chrome in 4k */
         padding: 0;
         text-align: right;
 
