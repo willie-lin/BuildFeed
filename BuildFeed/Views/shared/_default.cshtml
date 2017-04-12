@@ -136,6 +136,9 @@
                         <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
                      </a>
                   </li>
+               }
+               if (Roles.IsUserInRole("Administrators"))
+               {
                   <li>
                      <a href="@Url.Action(nameof(FrontController.AddBulk), new
                               {

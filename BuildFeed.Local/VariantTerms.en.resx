@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>Contribute on {0}</value>
   </data>
@@ -206,6 +209,20 @@
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>Thank you for registering to {0}.
+
+Please verify your email address by clicking the link below, or by copying and pasting it into your browser.
+{1}
+
+If you did not register to {0}, you can ignore this email.
+
+Thanks,
+The {0} Team.</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}: Please verify your email address</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>About</value>
@@ -405,9 +422,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>Year</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Every account is validated by an administrator, so be patient and check again later</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>Additions to BuildFeed</value>
   </data>
@@ -426,6 +440,12 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>Email address</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>An validation link has been sent to your email address. Please click the link in the email to verify the account.</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>Please verify your email address</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Enter current password</value>
   </data>
@@ -434,6 +454,21 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Enter password</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>An error occurred when attempting to change your password.</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>A user account with this email address already exists.</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>A user account with this user name already exists.</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>The password you have entered is invalid.</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>An unknown error has occurred.</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>Highest version</value>
@@ -462,11 +497,20 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Remember me</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Thank you for registering</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>Please check the validation link in your email and try again.</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>We were unable to validate your account.</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>You will now be able to log in using your username and password.</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>You have successfully validated your account.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Week</value>
