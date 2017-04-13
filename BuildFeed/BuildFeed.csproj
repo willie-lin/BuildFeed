@@ -422,6 +422,7 @@
     <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
     <Content Include="Views\account\validate-success.cshtml" />
     <Content Include="Views\account\validate-failure.cshtml" />
+    <None Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
