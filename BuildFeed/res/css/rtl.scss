@@ -13,9 +13,18 @@
    text-align: right;
 }
 
-.form-group label
+.form-group
 {
-   text-align: left;
+   label
+   {
+      text-align: left;
+   }
+
+   > label
+   {
+      margin-right: 0;
+      margin-left: 1em;
+   }
 }
 
 footer#page-footer .footer-flex .footer-flex-item
