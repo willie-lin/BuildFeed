@@ -960,6 +960,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Every account is validated by an administrator, so be patient and check again later.
+        /// </summary>
+        public static string Support_AccountValidation {
+            get {
+                return ResourceManager.GetString("Support_AccountValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additions to BuildFeed.
         /// </summary>
         public static string Support_AdditionsToBuildFeed {
@@ -1014,7 +1023,7 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An validation link has been sent to your email address. Please click the link in the email to verify the account..
+        ///   Looks up a localized string similar to A validation link has been sent to your email address. Please click the link in the email to verify the account..
         /// </summary>
         public static string Support_EmailValidationContent {
             get {
@@ -1181,6 +1190,15 @@ namespace BuildFeed.Local {
         public static string Support_RememberMe {
             get {
                 return ResourceManager.GetString("Support_RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for registering.
+        /// </summary>
+        public static string Support_ThanksRegister {
+            get {
+                return ResourceManager.GetString("Support_ThanksRegister", resourceCulture);
             }
         }
         

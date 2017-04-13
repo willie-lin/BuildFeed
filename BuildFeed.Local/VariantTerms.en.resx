@@ -441,7 +441,7 @@ The {0} Team.</value>
     <value>Email address</value>
   </data>
   <data name="Support_EmailValidationContent" xml:space="preserve">
-    <value>An validation link has been sent to your email address. Please click the link in the email to verify the account.</value>
+    <value>A validation link has been sent to your email address. Please click the link in the email to verify the account.</value>
   </data>
   <data name="Support_EmailValidationTitle" xml:space="preserve">
     <value>Please verify your email address</value>
@@ -514,5 +514,12 @@ The {0} Team.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Week</value>
+  </data>
+
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>Every account is validated by an administrator, so be patient and check again later</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Thank you for registering</value>
   </data>
 </root>

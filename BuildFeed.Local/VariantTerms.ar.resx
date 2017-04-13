@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>أدوات المسؤول</value>
   </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>ساهم بالتطوير عبر {0}</value>
   </data>
@@ -206,6 +209,20 @@
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>شكراً لكم على التسجيل في {0}
+
+يرجى تأكيد البريد الإلكتروني عبر الضغط على الرابط أدناه ، أو نسخ العنوان كاملاً إلى المتصفح.
+{1}
+
+إذا لم تكن قد سجلت في {0} يرجى تجاهل هذه الرسالة.
+
+وشكراً،
+فريق {0}</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}: يرجى تأكيد البريد الإلكتروني.</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>عن الموقع</value>
@@ -405,9 +422,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>السنة</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>جميع الحسابات يتم تفعيلها يدوياً من مسؤول الموقع. اصبروا علينا وزورونا مرة أخرى لاحقاً.</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>الإضافات إلى BuildFeed</value>
   </data>
@@ -426,6 +440,12 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>الإيميل الإلكتروني</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>تم إرسال رابط تأكيد الحساب إلى البريد الإلكتروني. يرجى فتح الرسالة والضغط على الرابط لتفعيل حسابك.</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>يرجى تأكيد البريد الإلكتروني الخاص بك</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>أدخل كلمة السر الحالية</value>
   </data>
@@ -434,6 +454,21 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>أدخل كلمة السر</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>حدث خطأ عند محاولة تغيير كلمة المرور.</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>تم العثور على حساب سابق مسجل بنفس البريد الإلكتروني.</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>تم العثور على حساب سابق بنفس الإسم المستخدم.</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>كلمة السر التي أدخلتها غير صالحة.</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>حدث خطأ غير معروف.</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>أعلى إصدار</value>
@@ -462,14 +497,29 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>تذكرني</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>شكراً لك على التسجيل بالموقع</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>اسم المستخدم</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>يرجى مراجعة رابط التفعيل في بريدك الإلكتروني والمحاولة مجدداً.</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>لم نتمكن من تفعيل حسابك.</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>أصبح بإمكانك الآن تسجيل الدخول إلى حسابك بإستخدام الإسم وكلمة المرور.</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>تم تفعيل حسابك بنجاح.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>الأسبوع</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>جميع الحسابات يتم تفعيلها يدوياً من مسؤول الموقع. اصبروا علينا وزورونا مرة أخرى لاحقاً.</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>شكراً لك على التسجيل بالموقع</value>
+  </data>
 </root>

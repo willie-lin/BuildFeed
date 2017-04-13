@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Yönetici</value>
   </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>Şifreyi değiştir</value>
+  </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>Şuna katkıda bulun: {0}</value>
   </data>
@@ -206,6 +209,20 @@
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>{0}'e kayıt olduğunuz için teşekkür ederim.
+
+Lütfen aşağıdaki bağlantıya tıklayarak, veya kopyalayıp tarayıcınıza yapıştırarak e-posta adresinizi doğrulayın.
+{1}
+
+Eğer {0}'e kayıt olmadıysanız, bu e-postayı yoksayabilirsiniz.
+
+Teşekkürler,
+{0} Takımı.</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}: Lütfen e-posta adresinizi doğrulayın</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>Hakkında</value>
@@ -405,9 +422,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>Yıl</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olun ve daha sonra tekrar kontrol ediniz.</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>BuildFeed'e eklemeler</value>
   </data>
@@ -426,6 +440,12 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>E-posta adresi</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>Bir doğrulama bağlantısı e-posta adresinize gönderildi. Lütfen hesabınızı doğrulamak için e-postadaki bağlantıya tıklayın.</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>Lütfen e-posta adresinizi doğrulayın</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Şu anki parolayı girin</value>
   </data>
@@ -434,6 +454,21 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Parolayı girin</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>Şifrenizi değiştirmeye kalkarken bir hata oluştu.</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>Bu e-posta adresi ile bir kullanıcı hesabı hâlihazırda var.</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>Bu kullanıcı adı ile bir kullanıcı hesabı hâlihazırda var.</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>Girmiş olduğunuz şifre geçersiz.</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>Bilinmeyen bir hata oluştu.</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>En yüksek sürüm</value>
@@ -462,14 +497,29 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Beni hatırla</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Kaydolduğunuz için teşekkür ederiz!</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Kullanıcı adı</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>Lütfen e-postanızdaki doğrulama bağlantısını kontrol edin ve tekrar deneyin.</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>Hesabınızı doğrulayamadık.</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>Artık kullanıcı adınızı ve şifrenizi kullanarak oturum açabilirsiniz.</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>Hesabınızı başarıyla doğruladınız.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Hafta</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olun ve daha sonra tekrar kontrol ediniz.</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Kaydolduğunuz için teşekkür ederiz!</value>
+  </data>
 </root>

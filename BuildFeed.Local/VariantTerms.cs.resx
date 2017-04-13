@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>Změnit heslo</value>
+  </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>Přispějte na {0}u</value>
   </data>
@@ -206,6 +209,20 @@
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>Děkujeme vám za registraci na {0}.
+
+Ověřte svou e-mailovou adresu otevřením následujícího odkazu nebo jeho zkopírovaním a vložením do webového prohlížeče.
+{1}
+
+Jestliže jste se na {0} neregistrovali, tento e-mail ignorujte.
+
+Děkujeme,
+Tým {0}.</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}: Ověřte svou e-mailovou adresu</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>O</value>
@@ -405,9 +422,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>Rok</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>Nově přidané na BuildFeed</value>
   </data>
@@ -426,6 +440,12 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>Na uvedenou e-mailovou adresu byl zaslán e-mail s odkazem pro ověření vašeho účtu.</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>Ověřte svou e-mailovou adresu</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Zadejte stávající heslo</value>
   </data>
@@ -434,6 +454,21 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Zadejte heslo</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>Při změně hesla došlo k chybě.</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>Účet s uvedenou e-mailovou adresou už existuje.</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>Uživatelské jméno je již použité.</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>Zadané heslo není platné.</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>Nastala neznámá chyba.</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>Nejvyšší verze</value>
@@ -462,14 +497,29 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Pamatovat si mě</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Děkujeme vám za registraci</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Uživatelské jméno</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>Otevřte odkaz pro ověření účtu, který byl poslán na vaši e-mailovou adresu a poté to zkuste znova.</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>Nemohli jsme ověřit váš účet.</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>Nyní se můžete přihlásit pomocí vašeho uživatelského jména a hesla.</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>Úspěšně jste ověřili svůj účet.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Týden</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>Každý účet je ověřován administrátorem. Buďte trpěliví a podívejte se zase za chvíli.</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Děkujeme vám za registraci</value>
+  </data>
 </root>

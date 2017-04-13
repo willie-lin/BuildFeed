@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Administrator</value>
   </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>Zmień hasło</value>
+  </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>Współtwórz na {0}</value>
   </data>
@@ -206,6 +209,20 @@
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>Dziękujemy za rejestrację w {0}.
+
+Proszę zweryfikować swój adres email klikając w poniższy link, lub poprzez skopiowanie go do przeglądarki.
+{1}
+
+Jeżeli nie rejestrowałeś się w {0}, zignoruj ten email.
+
+Pozdrawiamy,
+Zespół {0}.</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}: Zweryfikuj swój adres email</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>Około</value>
@@ -405,9 +422,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>rok</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Każde konto jest sprawdzane przez Administratora, więc proszę uzbroić się w cierpliwość i sprawdzić ponownie później.</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>Dodatki do BuildFeed</value>
   </data>
@@ -426,6 +440,12 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>Adres E-mail</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>Link weryfikacyjny został wysłany na twój adres email. Kliknij go aby zweryfikować swoje konto.</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>Zweryfikuj swój adres email</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Wprowadź aktualne hasło</value>
   </data>
@@ -434,6 +454,21 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Wprowadź hasło</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>Wystąpił błąd podczas próby zmiany hasła.</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>Konto o tym adresie email już istnieje.</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>Konto o tej nazwie użytkownika już istnieje.</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>Podane hasło jest nieprawidłowe.</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>Wystąpił nieznany błąd.</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>Najwyższa wersja</value>
@@ -462,14 +497,29 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Zapamiętaj mnie</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Dziękujemy za rejestrację</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Nazwa użytkownika</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>Kliknij link podany w mailu i spróbuj ponownie.</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>Nie mogliśmy zweryfikować twojego konta.</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>Będziesz mógł się zalogować używając swojej nazwy użytkownika i hasła.</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>Twoje konto zostało zweryfikowane.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Tydzień</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>Każde konto jest sprawdzane przez Administratora, więc proszę uzbroić się w cierpliwość i sprawdzić ponownie później.</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Dziękujemy za rejestrację</value>
+  </data>
 </root>
