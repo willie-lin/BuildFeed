@@ -13,6 +13,7 @@ using BuildFeed.Model.View;
 using OneSignal.CSharp.SDK;
 
 #pragma warning disable SG0016 // Controller method is vulnerable to CSRF - Not relevant for API
+
 namespace BuildFeed.Controllers
 {
     public class ApiController : System.Web.Http.ApiController
@@ -73,6 +74,25 @@ namespace BuildFeed.Controllers
             }
             if (Membership.ValidateUser(apiModel.Username, apiModel.Password) && (Roles.IsUserInRole(apiModel.Username, "Editors") || Roles.IsUserInRole(apiModel.Username, "Administrators")))
             {
+                var generateOldItem = new Func<NewBuild, Build>(nb =>
+                {
+                    Build bi = new Build
+                    {
+                        MajorVersion = nb.MajorVersion,
+                        MinorVersion = nb.MinorVersion,
+                        Number = nb.Number,
+                        Revision = nb.Revision,
+                        Lab = nb.Lab,
+                        BuildTime = nb.BuildTime.HasValue
+                            ? DateTime.SpecifyKind(nb.BuildTime.Value, DateTimeKind.Utc)
+                            : null as DateTime?
+                    };
+
+                    bi.RegenerateCachedProperties();
+
+                    return bi;
+                });
+
                 IEnumerable<Build> builds = apiModel.NewBuilds.Select(nb => new Build
                 {
                     MajorVersion = nb.MajorVersion,
@@ -85,7 +105,18 @@ namespace BuildFeed.Controllers
                         : null as DateTime?,
                     Added = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
                     Modified = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
-                    SourceType = TypeOfSource.PrivateLeak
+                    SourceType = TypeOfSource.PrivateLeak,
+
+                    History = new List<ItemHistory<Build>>
+                    {
+                        new ItemHistory<Build>
+                        {
+                            Type = ItemHistoryType.Added,
+                            Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+                            UserName = apiModel.Username,
+                            Item = generateOldItem(nb)
+                        }
+                    }
                 });
 
                 foreach (Build build in builds)
@@ -117,7 +148,7 @@ namespace BuildFeed.Controllers
                                             Value = c
                                         })
                              where s.Text.ToLower().Contains(id.ToLower())
-                             orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal) ascending
+                             orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal)
                              select new SearchResult
                              {
                                  Url = Url.Route("Source Root",

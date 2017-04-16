@@ -410,6 +410,33 @@ namespace BuildFeed.Controllers
                         build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                     }
 
+                    build.RegenerateCachedProperties();
+
+
+                    Build bi = new Build
+                    {
+                        MajorVersion = build.MajorVersion,
+                        MinorVersion = build.MinorVersion,
+                        Number = build.Number,
+                        Revision = build.Revision,
+                        Lab = build.Lab,
+                        BuildTime = build.BuildTime.HasValue
+                            ? DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc)
+                            : null as DateTime?
+                    };
+                    bi.RegenerateCachedProperties();
+
+                    build.History = new List<ItemHistory<Build>>
+                    {
+                        new ItemHistory<Build>
+                        {
+                            Type = ItemHistoryType.Added,
+                            Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+                            UserName = User.Identity.Name,
+                            Item = bi
+                        }
+                    };
+
                     await _bModel.Insert(build);
                 }
                 catch
@@ -447,12 +474,13 @@ namespace BuildFeed.Controllers
             var failed = new List<string>();
             bool notify = bool.Parse(values[nameof(BulkAddition.SendNotifications)].Split(',')[0]);
 
-            foreach (string line in values[nameof(BulkAddition.Builds)].Split(new[]
-                {
-                    '\r',
-                    '\n'
-                },
-                StringSplitOptions.RemoveEmptyEntries))
+            foreach (string line in values[nameof(BulkAddition.Builds)]
+                .Split(new[]
+                    {
+                        '\r',
+                        '\n'
+                    },
+                    StringSplitOptions.RemoveEmptyEntries))
             {
                 Match m = Regex.Match(line, @"(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?(\.| \()([a-zA-Z][a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)?");
                 if (m.Success)
@@ -475,8 +503,33 @@ namespace BuildFeed.Controllers
                             Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
                             SourceType = TypeOfSource.PrivateLeak
                         };
+                        b.RegenerateCachedProperties();
 
-                        string buildString = b.GenerateFullBuildString();
+                        Build bi = new Build
+                        {
+                            MajorVersion = b.MajorVersion,
+                            MinorVersion = b.MinorVersion,
+                            Number = b.Number,
+                            Revision = b.Revision,
+                            Lab = b.Lab,
+                            BuildTime = b.BuildTime.HasValue
+                                ? DateTime.SpecifyKind(b.BuildTime.Value, DateTimeKind.Utc)
+                                : null as DateTime?
+                        };
+                        bi.RegenerateCachedProperties();
+
+                        b.History = new List<ItemHistory<Build>>
+                        {
+                            new ItemHistory<Build>
+                            {
+                                Type = ItemHistoryType.Added,
+                                Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+                                UserName = User.Identity.Name,
+                                Item = bi
+                            }
+                        };
+
+                        string buildString = b.FullBuildString;
                         Build existing = await _bModel.SelectBuildByFullBuildString(buildString);
 
                         if (existing == null)
@@ -528,6 +581,8 @@ namespace BuildFeed.Controllers
             {
                 try
                 {
+                    Build b = await _bModel.SelectById(id);
+
                     if (build.BuildTime.HasValue)
                     {
                         build.BuildTime = DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc);
@@ -537,6 +592,33 @@ namespace BuildFeed.Controllers
                     {
                         build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                     }
+
+                    Build bi = new Build
+                    {
+                        MajorVersion = build.MajorVersion,
+                        MinorVersion = build.MinorVersion,
+                        Number = build.Number,
+                        Revision = build.Revision,
+                        Lab = build.Lab,
+                        BuildTime = build.BuildTime.HasValue
+                            ? DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc)
+                            : null as DateTime?
+                    };
+                    bi.RegenerateCachedProperties();
+
+                    build.History = b.History;
+                    if (build.History == null || build.History.Count == 0)
+                    {
+                        build.History = new List<ItemHistory<Build>>();
+                    }
+
+                    build.History.Add(new ItemHistory<Build>
+                    {
+                        Type = ItemHistoryType.Edited,
+                        Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+                        UserName = User.Identity.Name,
+                        Item = bi
+                    });
 
                     await _bModel.Update(build);
                 }

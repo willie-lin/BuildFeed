@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Security;
 using BuildFeed.Controllers;
+using BuildFeed.Model;
 
 namespace BuildFeed.Areas.admin.Controllers
 {
@@ -33,6 +35,15 @@ namespace BuildFeed.Areas.admin.Controllers
         public ActionResult exception()
         {
             throw new Exception("This is a test exception");
+        }
+
+        [Authorize(Users = "hounsell")]
+        public async Task<ActionResult> migrate()
+        {
+            BuildRepository _bModel = new BuildRepository();
+            await _bModel.MigrateAddedModifiedToHistory();
+
+            return RedirectToAction("index");
         }
     }
 }

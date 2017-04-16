@@ -100,6 +100,8 @@
     <Compile Include="BuildGroup.cs" />
     <Compile Include="Build.cs" />
     <Compile Include="BuildVersion.cs" />
+    <Compile Include="ItemHistory.cs" />
+    <Compile Include="ItemHistoryType.cs" />
     <Compile Include="MetaItem.cs" />
     <Compile Include="MongoConfig.cs" />
     <Compile Include="ProjectFamily.cs" />

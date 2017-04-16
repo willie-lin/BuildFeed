@@ -274,9 +274,7 @@ namespace BuildFeed.Model
         public async Task Insert(Build item)
         {
             item.Id = Guid.NewGuid();
-            item.LabUrl = item.GenerateLabUrl();
-            item.FullBuildString = item.GenerateFullBuildString();
-            item.AlternateBuildString = item.GenerateAlternateBuildString();
+            item.RegenerateCachedProperties();
 
             await _buildCollection.InsertOneAsync(item);
         }
@@ -288,9 +286,7 @@ namespace BuildFeed.Model
             foreach (Build item in items)
             {
                 item.Id = Guid.NewGuid();
-                item.LabUrl = item.GenerateLabUrl();
-                item.FullBuildString = item.GenerateFullBuildString();
-                item.AlternateBuildString = item.GenerateAlternateBuildString();
+                item.RegenerateCachedProperties();
 
                 generatedItems.Add(item);
             }
@@ -304,9 +300,7 @@ namespace BuildFeed.Model
             Build old = await SelectById(item.Id);
             item.Added = old.Added;
             item.Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
-            item.LabUrl = item.GenerateLabUrl();
-            item.FullBuildString = item.GenerateFullBuildString();
-            item.AlternateBuildString = item.GenerateAlternateBuildString();
+            item.RegenerateCachedProperties();
 
             await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, item.Id), item);
         }
@@ -315,6 +309,58 @@ namespace BuildFeed.Model
         public async Task DeleteById(Guid id)
         {
             await _buildCollection.DeleteOneAsync(Builders<Build>.Filter.Eq(b => b.Id, id));
+        }
+
+        public async Task MigrateAddedModifiedToHistory()
+        {
+            List<Build> builds = await Select();
+            foreach (Build bd in builds)
+            {
+                Build item = new Build
+                {
+                    MajorVersion = bd.MajorVersion,
+                    MinorVersion = bd.MinorVersion,
+                    Number = bd.Number,
+                    Revision = bd.Revision,
+                    Lab = bd.Lab,
+                    BuildTime = bd.BuildTime,
+                    SourceType = bd.SourceType,
+                    LeakDate = bd.LeakDate,
+                    History = null
+                };
+                item.RegenerateCachedProperties();
+
+                if (bd.Added == DateTime.MinValue)
+                {
+                    continue;
+                }
+
+                bd.History = new List<ItemHistory<Build>>
+                {
+                    new ItemHistory<Build>
+                    {
+                        Type = ItemHistoryType.Added,
+                        Time = bd.Added,
+                        UserName = "",
+                        Item = bd.Added == bd.Modified
+                            ? item
+                            : null
+                    }
+                };
+
+                if (bd.Modified != DateTime.MinValue && bd.Added != bd.Modified)
+                {
+                    bd.History.Add(new ItemHistory<Build>
+                    {
+                        Type = ItemHistoryType.Edited,
+                        Time = bd.Modified,
+                        UserName = "",
+                        Item = item
+                    });
+                }
+
+                await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, bd.Id), bd);
+            }
         }
     }
 }

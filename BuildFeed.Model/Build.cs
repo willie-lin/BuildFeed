@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -44,7 +45,6 @@ namespace BuildFeed.Model
         [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
         public DateTime? BuildTime { get; set; }
 
-
         [@Required]
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Added))]
         public DateTime Added { get; set; }
@@ -66,13 +66,15 @@ namespace BuildFeed.Model
         [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true)]
         public DateTime? LeakDate { get; set; }
 
-        public string LabUrl { get; set; }
+        public string LabUrl { get; private set; }
 
-        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR || SourceType == TypeOfSource.UpdateLDR;
+        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR;
 
-        public string FullBuildString { get; set; }
+        public string FullBuildString { get; private set; }
 
-        public string AlternateBuildString { get; set; }
+        public string AlternateBuildString { get; private set; }
+
+        public List<ItemHistory<Build>> History { get; set; }
 
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Search_Version))]
         public ProjectFamily Family
@@ -165,7 +167,14 @@ namespace BuildFeed.Model
             }
         }
 
-        public string GenerateFullBuildString()
+        public void RegenerateCachedProperties()
+        {
+            GenerateFullBuildString();
+            GenerateAlternateBuildString();
+            GenerateLabUrl();
+        }
+
+        private void GenerateFullBuildString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
@@ -185,10 +194,10 @@ namespace BuildFeed.Model
                 sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
             }
 
-            return sb.ToString();
+            FullBuildString = sb.ToString();
         }
 
-        public string GenerateAlternateBuildString()
+        private void GenerateAlternateBuildString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
@@ -210,11 +219,16 @@ namespace BuildFeed.Model
                 sb.Append(")");
             }
 
-            return sb.ToString();
+            AlternateBuildString = sb.ToString();
         }
 
-        public string GenerateLabUrl() => !string.IsNullOrEmpty(Lab)
-            ? Lab.Replace('/', '-').ToLower()
-            : "";
+        private void GenerateLabUrl()
+        {
+            string url = !string.IsNullOrEmpty(Lab)
+                ? Lab.Replace('/', '-').ToLower()
+                : "";
+
+            LabUrl = url;
+        }
     }
 }
