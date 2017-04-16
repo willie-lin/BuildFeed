@@ -316,7 +316,7 @@ namespace BuildFeed.Model
             List<Build> builds = await Select();
             foreach (Build bd in builds)
             {
-                Build item = new Build
+                BuildDetails item = new BuildDetails
                 {
                     MajorVersion = bd.MajorVersion,
                     MinorVersion = bd.MinorVersion,
@@ -326,18 +326,17 @@ namespace BuildFeed.Model
                     BuildTime = bd.BuildTime,
                     SourceType = bd.SourceType,
                     LeakDate = bd.LeakDate,
-                    History = null
+                    SourceDetails = bd.SourceDetails
                 };
-                item.RegenerateCachedProperties();
 
                 if (bd.Added == DateTime.MinValue)
                 {
                     continue;
                 }
 
-                bd.History = new List<ItemHistory<Build>>
+                bd.History = new List<ItemHistory<BuildDetails>>
                 {
-                    new ItemHistory<Build>
+                    new ItemHistory<BuildDetails>
                     {
                         Type = ItemHistoryType.Added,
                         Time = bd.Added,
@@ -350,7 +349,7 @@ namespace BuildFeed.Model
 
                 if (bd.Modified != DateTime.MinValue && bd.Added != bd.Modified)
                 {
-                    bd.History.Add(new ItemHistory<Build>
+                    bd.History.Add(new ItemHistory<BuildDetails>
                     {
                         Type = ItemHistoryType.Edited,
                         Time = bd.Modified,

@@ -413,7 +413,7 @@ namespace BuildFeed.Controllers
                     build.RegenerateCachedProperties();
 
 
-                    Build bi = new Build
+                    BuildDetails bi = new BuildDetails
                     {
                         MajorVersion = build.MajorVersion,
                         MinorVersion = build.MinorVersion,
@@ -422,13 +422,14 @@ namespace BuildFeed.Controllers
                         Lab = build.Lab,
                         BuildTime = build.BuildTime.HasValue
                             ? DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc)
-                            : null as DateTime?
+                            : null as DateTime?,
+                        SourceType = build.SourceType,
+                        SourceDetails = build.SourceDetails
                     };
-                    bi.RegenerateCachedProperties();
 
-                    build.History = new List<ItemHistory<Build>>
+                    build.History = new List<ItemHistory<BuildDetails>>
                     {
-                        new ItemHistory<Build>
+                        new ItemHistory<BuildDetails>
                         {
                             Type = ItemHistoryType.Added,
                             Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
@@ -505,7 +506,7 @@ namespace BuildFeed.Controllers
                         };
                         b.RegenerateCachedProperties();
 
-                        Build bi = new Build
+                        BuildDetails bi = new BuildDetails
                         {
                             MajorVersion = b.MajorVersion,
                             MinorVersion = b.MinorVersion,
@@ -514,13 +515,14 @@ namespace BuildFeed.Controllers
                             Lab = b.Lab,
                             BuildTime = b.BuildTime.HasValue
                                 ? DateTime.SpecifyKind(b.BuildTime.Value, DateTimeKind.Utc)
-                                : null as DateTime?
+                                : null as DateTime?,
+                            SourceType = b.SourceType,
+                            SourceDetails = b.SourceDetails
                         };
-                        bi.RegenerateCachedProperties();
 
-                        b.History = new List<ItemHistory<Build>>
+                        b.History = new List<ItemHistory<BuildDetails>>
                         {
-                            new ItemHistory<Build>
+                            new ItemHistory<BuildDetails>
                             {
                                 Type = ItemHistoryType.Added,
                                 Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
@@ -593,7 +595,7 @@ namespace BuildFeed.Controllers
                         build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                     }
 
-                    Build bi = new Build
+                    BuildDetails bi = new BuildDetails
                     {
                         MajorVersion = build.MajorVersion,
                         MinorVersion = build.MinorVersion,
@@ -602,17 +604,18 @@ namespace BuildFeed.Controllers
                         Lab = build.Lab,
                         BuildTime = build.BuildTime.HasValue
                             ? DateTime.SpecifyKind(build.BuildTime.Value, DateTimeKind.Utc)
-                            : null as DateTime?
+                            : null as DateTime?,
+                        SourceType = build.SourceType,
+                        SourceDetails = build.SourceDetails
                     };
-                    bi.RegenerateCachedProperties();
 
                     build.History = b.History;
                     if (build.History == null || build.History.Count == 0)
                     {
-                        build.History = new List<ItemHistory<Build>>();
+                        build.History = new List<ItemHistory<BuildDetails>>();
                     }
 
-                    build.History.Add(new ItemHistory<Build>
+                    build.History.Add(new ItemHistory<BuildDetails>
                     {
                         Type = ItemHistoryType.Edited,
                         Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),

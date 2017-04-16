@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Text;
-using System.Web.Mvc;
 using BuildFeed.Local;
 using HtmlAgilityPack;
 using MongoDB.Bson.Serialization.Attributes;
@@ -14,36 +13,13 @@ namespace BuildFeed.Model
 {
     [DataObject]
     [BsonIgnoreExtraElements]
-    public class Build
+    public class Build : BuildDetails
     {
         [Key]
         [BsonId]
         public Guid Id { get; set; }
 
         public long? LegacyId { get; set; }
-
-        [@Required]
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MajorVersion))]
-        public uint MajorVersion { get; set; }
-
-        [@Required]
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MinorVersion))]
-        public uint MinorVersion { get; set; }
-
-        [@Required]
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildNumber))]
-        public uint Number { get; set; }
-
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Revision))]
-        [DisplayFormat(ConvertEmptyStringToNull = true)]
-        public uint? Revision { get; set; }
-
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LabString))]
-        public string Lab { get; set; }
-
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildTime))]
-        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true, DataFormatString = "{0:yyMMdd-HHmm}")]
-        public DateTime? BuildTime { get; set; }
 
         [@Required]
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Added))]
@@ -53,19 +29,6 @@ namespace BuildFeed.Model
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_Modified))]
         public DateTime Modified { get; set; }
 
-        [@Required]
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceType))]
-        [EnumDataType(typeof(TypeOfSource))]
-        public TypeOfSource SourceType { get; set; }
-
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_SourceDetails))]
-        [AllowHtml]
-        public string SourceDetails { get; set; }
-
-        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_LeakDate))]
-        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true)]
-        public DateTime? LeakDate { get; set; }
-
         public string LabUrl { get; private set; }
 
         public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR;
@@ -74,7 +37,7 @@ namespace BuildFeed.Model
 
         public string AlternateBuildString { get; private set; }
 
-        public List<ItemHistory<Build>> History { get; set; }
+        public List<ItemHistory<BuildDetails>> History { get; set; }
 
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Search_Version))]
         public ProjectFamily Family

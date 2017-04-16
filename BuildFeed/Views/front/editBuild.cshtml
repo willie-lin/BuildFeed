@@ -109,7 +109,7 @@ else
    <div class="form-group">
       <label></label>
       <div>
-         <input type="submit" value="@((string)ViewContext.RouteData.Values["action"] == "addBuild"
+         <input type="submit" value="@((string)ViewContext.RouteData.Values["action"] == nameof(FrontController.AddBuild)
                                           ? VariantTerms.Common_AddBuild
                                           : VariantTerms.Front_EditBuild)" class="btn btn-primary" />
          &ensp;

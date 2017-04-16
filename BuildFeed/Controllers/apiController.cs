@@ -74,9 +74,9 @@ namespace BuildFeed.Controllers
             }
             if (Membership.ValidateUser(apiModel.Username, apiModel.Password) && (Roles.IsUserInRole(apiModel.Username, "Editors") || Roles.IsUserInRole(apiModel.Username, "Administrators")))
             {
-                var generateOldItem = new Func<NewBuild, Build>(nb =>
+                var generateOldItem = new Func<NewBuild, BuildDetails>(nb =>
                 {
-                    Build bi = new Build
+                    BuildDetails bi = new BuildDetails
                     {
                         MajorVersion = nb.MajorVersion,
                         MinorVersion = nb.MinorVersion,
@@ -85,10 +85,9 @@ namespace BuildFeed.Controllers
                         Lab = nb.Lab,
                         BuildTime = nb.BuildTime.HasValue
                             ? DateTime.SpecifyKind(nb.BuildTime.Value, DateTimeKind.Utc)
-                            : null as DateTime?
+                            : null as DateTime?,
+                        SourceType = TypeOfSource.PrivateLeak
                     };
-
-                    bi.RegenerateCachedProperties();
 
                     return bi;
                 });
@@ -107,9 +106,9 @@ namespace BuildFeed.Controllers
                     Modified = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
                     SourceType = TypeOfSource.PrivateLeak,
 
-                    History = new List<ItemHistory<Build>>
+                    History = new List<ItemHistory<BuildDetails>>
                     {
-                        new ItemHistory<Build>
+                        new ItemHistory<BuildDetails>
                         {
                             Type = ItemHistoryType.Added,
                             Time = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),

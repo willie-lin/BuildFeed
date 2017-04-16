@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Api\NewBuild.cs" />
     <Compile Include="Api\SearchResult.cs" />
+    <Compile Include="BuildDetails.cs" />
     <Compile Include="BuildRepository-Group.cs" />
     <Compile Include="BuildRepository-Lab.cs" />
     <Compile Include="BuildRepository-Source.cs" />
