@@ -40,73 +40,7 @@ namespace BuildFeed.Model
         public List<ItemHistory<BuildDetails>> History { get; set; }
 
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Search_Version))]
-        public ProjectFamily Family
-        {
-            get
-            {
-                if (Number >= 15140)
-                {
-                    return ProjectFamily.Redstone3;
-                }
-                if (Number >= 14800)
-                {
-                    return ProjectFamily.Redstone2;
-                }
-                if (Number >= 11000)
-                {
-                    return ProjectFamily.Redstone;
-                }
-                if (Number >= 10500)
-                {
-                    return ProjectFamily.Threshold2;
-                }
-                if (Number >= 9700)
-                {
-                    return ProjectFamily.Threshold;
-                }
-                if (Number >= 9250)
-                {
-                    return ProjectFamily.Windows81;
-                }
-                if (Number >= 7650)
-                {
-                    return ProjectFamily.Windows8;
-                }
-                if (Number >= 6020)
-                {
-                    return ProjectFamily.Windows7;
-                }
-                if (MajorVersion == 6
-                    && Number >= 5000)
-                {
-                    return ProjectFamily.WindowsVista;
-                }
-                if (MajorVersion == 6)
-                {
-                    return ProjectFamily.Longhorn;
-                }
-                if (MajorVersion == 5
-                    && Number >= 3000)
-                {
-                    return ProjectFamily.Server2003;
-                }
-                if (MajorVersion == 5
-                    && Number >= 2205)
-                {
-                    return ProjectFamily.WindowsXP;
-                }
-                if (MajorVersion == 5
-                    && MinorVersion == 50)
-                {
-                    return ProjectFamily.Neptune;
-                }
-                if (MajorVersion == 5)
-                {
-                    return ProjectFamily.Windows2000;
-                }
-                return ProjectFamily.None;
-            }
-        }
+        public ProjectFamily Family { get; private set; }
 
         public string SourceDetailsFiltered
         {
@@ -135,6 +69,7 @@ namespace BuildFeed.Model
             GenerateFullBuildString();
             GenerateAlternateBuildString();
             GenerateLabUrl();
+            GenerateFamily();
         }
 
         private void GenerateFullBuildString()
@@ -192,6 +127,91 @@ namespace BuildFeed.Model
                 : "";
 
             LabUrl = url;
+        }
+
+        private void GenerateFamily()
+        {
+            // start with lab-based overrides
+            if (string.Equals(Lab ?? "", "feature2"))
+            {
+                Family = ProjectFamily.Feature2;
+            }
+            else if (Lab?.StartsWith("rs2", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            {
+                Family = ProjectFamily.Redstone2;
+            }
+            else if(Lab?.StartsWith("rs1", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            {
+                Family = ProjectFamily.Redstone;
+            }
+            else if (Lab?.StartsWith("th2", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            {
+                Family = ProjectFamily.Threshold2;
+            }
+
+            // move on to version number guesses
+            else if (Number >= 15140)
+            {
+                Family = ProjectFamily.Redstone3;
+            }
+            else if (Number >= 14800)
+            {
+                Family = ProjectFamily.Redstone2;
+            }
+            else if (Number >= 11000)
+            {
+                Family = ProjectFamily.Redstone;
+            }
+            else if (Number >= 10500)
+            {
+                Family = ProjectFamily.Threshold2;
+            }
+            else if (Number >= 9650)
+            {
+                Family = ProjectFamily.Threshold;
+            }
+            else if (Number >= 9250)
+            {
+                Family = ProjectFamily.WindowsBlue;
+            }
+            else if (Number >= 7650)
+            {
+                Family = ProjectFamily.Windows8;
+            }
+            else if (Number >= 6400)
+            {
+                Family = ProjectFamily.Windows7;
+            }
+            else if (MajorVersion == 6 && Number >= 5000)
+            {
+                Family = ProjectFamily.WindowsVista;
+            }
+            else if (MajorVersion == 6)
+            {
+                Family = ProjectFamily.Longhorn;
+            }
+            else if (MajorVersion == 5 && Number >= 3000)
+            {
+                Family = ProjectFamily.Server2003;
+            }
+            else if (MajorVersion == 5 && Number >= 2205)
+            {
+                Family = ProjectFamily.WindowsXP;
+            }
+            else if (MajorVersion == 5 && MinorVersion == 50)
+            {
+                Family = ProjectFamily.Neptune;
+            }
+            else if (MajorVersion == 5)
+            {
+                Family = ProjectFamily.Windows2000;
+            }
+
+            // ¯\_(ツ)_/¯
+            else
+            {
+                Family = ProjectFamily.None;
+            }
         }
     }
 }

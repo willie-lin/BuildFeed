@@ -361,5 +361,15 @@ namespace BuildFeed.Model
                 await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, bd.Id), bd);
             }
         }
+
+        public async Task RegenerateCachedProperties()
+        {
+            List<Build> builds = await Select();
+            foreach (Build bd in builds)
+            {
+                bd.RegenerateCachedProperties();
+                await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, bd.Id), bd);
+            }
+        }
     }
 }

@@ -45,5 +45,14 @@ namespace BuildFeed.Areas.admin.Controllers
 
             return RedirectToAction("index");
         }
+
+        [Authorize(Users = "hounsell")]
+        public async Task<ActionResult> cache()
+        {
+            BuildRepository _bModel = new BuildRepository();
+            await _bModel.RegenerateCachedProperties();
+
+            return RedirectToAction("index");
+        }
     }
 }
