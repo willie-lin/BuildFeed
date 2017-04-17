@@ -81,6 +81,33 @@ namespace MongoAuth
             MongoClient dbClient = new MongoClient(settings);
 
             _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
+
+#pragma warning disable 4014
+            SetupIndexes();
+#pragma warning restore 4014
+        }
+
+        public async Task SetupIndexes()
+        {
+            List<BsonDocument> indexes = await (await _memberCollection.Indexes.ListAsync()).ToListAsync();
+
+            if (indexes.All(i => i["name"] != "_idx_username"))
+            {
+                await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.UserName),
+                    new CreateIndexOptions
+                    {
+                        Name = "_idx_username"
+                    });
+            }
+
+            if (indexes.All(i => i["name"] != "_idx_email"))
+            {
+                await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.EmailAddress),
+                    new CreateIndexOptions
+                    {
+                        Name = "_idx_email"
+                    });
+            }
         }
 
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
@@ -200,7 +227,7 @@ namespace MongoAuth
         {
             MembershipUserCollection muc = new MembershipUserCollection();
 
-            IFindFluent<MongoMember, MongoMember> users = _memberCollection.Find(new BsonDocument());
+            IFindFluent<MongoMember, MongoMember> users = _memberCollection.Find(new BsonDocument()).Sort(Builders<MongoMember>.Sort.Ascending(m => m.UserName));
 
             Task<long> totalRecordsTask = users.CountAsync();
             totalRecordsTask.Wait();
@@ -433,8 +460,7 @@ namespace MongoAuth
 
         private static bool TryReadBool(string config, bool defaultValue)
         {
-            bool temp;
-            bool success = bool.TryParse(config, out temp);
+            bool success = bool.TryParse(config, out bool temp);
             return success
                 ? temp
                 : defaultValue;
@@ -442,8 +468,7 @@ namespace MongoAuth
 
         private static int TryReadInt(string config, int defaultValue)
         {
-            int temp;
-            bool success = int.TryParse(config, out temp);
+            bool success = int.TryParse(config, out int temp);
             return success
                 ? temp
                 : defaultValue;

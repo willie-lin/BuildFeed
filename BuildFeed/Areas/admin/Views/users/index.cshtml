@@ -13,7 +13,7 @@
    <li>@Html.ActionLink("Return to admin panel", "index", "base")</li>
 </ul>
 
-<table>
+<table id="user-table">
    <thead>
    <tr>
       <th>
@@ -43,7 +43,7 @@
             @mu.UserName
          </td>
          <td>
-            <a href="mailto:@mu.Email">@mu.Email</a>
+            <a href="mailto:@mu.Email" title="@mu.Email">@mu.Email</a>
          </td>
          <td>
             @mu.CreationDate.Humanize()

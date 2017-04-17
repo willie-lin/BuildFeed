@@ -98,8 +98,7 @@ namespace BuildFeed.Controllers
         {
             if (ModelState.IsValid)
             {
-                MembershipCreateStatus status;
-                MembershipUser mu = Membership.CreateUser(ru.UserName, ru.Password, ru.EmailAddress, "{IGNORE}", "{IGNORE}", false, out status);
+                MembershipUser mu = Membership.CreateUser(ru.UserName, ru.Password, ru.EmailAddress, "{IGNORE}", "{IGNORE}", false, out MembershipCreateStatus status);
 
                 switch (status)
                 {

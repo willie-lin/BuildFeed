@@ -10,8 +10,7 @@ namespace BuildFeed.Code
         {
             ValueProviderResult value = bindingContext.ValueProvider.GetValue(bindingContext.ModelName);
 
-            DateTime retValue;
-            bool success = DateTime.TryParse(value.AttemptedValue, CultureInfo.CurrentUICulture.DateTimeFormat, DateTimeStyles.AllowWhiteSpaces, out retValue);
+            bool success = DateTime.TryParse(value.AttemptedValue, CultureInfo.CurrentUICulture.DateTimeFormat, DateTimeStyles.AllowWhiteSpaces, out DateTime retValue);
 
             if (!success)
             {

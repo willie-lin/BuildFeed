@@ -16,8 +16,7 @@ namespace MongoAuth
                 ? ConfigurationManager.AppSettings["data:MongoHost"]
                 : "localhost";
 
-            int port;
-            bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out port);
+            bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out int port);
             if (!success)
             {
                 port = 27017; // mongo default port

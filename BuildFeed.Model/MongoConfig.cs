@@ -16,13 +16,12 @@ namespace BuildFeed.Model
                 ? ConfigurationManager.AppSettings["data:MongoHost"]
                 : "localhost";
 
-            int _port;
-            bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out _port);
+            bool success = int.TryParse(ConfigurationManager.AppSettings["data:MongoPort"], out int port);
             if (!success)
             {
-                _port = 27017; // mongo default port
+                port = 27017; // mongo default port
             }
-            Port = _port;
+            Port = port;
 
             Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])
                 ? ConfigurationManager.AppSettings["data:MongoDB"]
@@ -35,7 +34,9 @@ namespace BuildFeed.Model
         public static void SetupIndexes()
         {
             BuildRepository b = new BuildRepository();
+#pragma warning disable 4014
             b.SetupIndexes();
+#pragma warning restore 4014
         }
     }
 }
