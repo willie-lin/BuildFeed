@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\ApiBuild.cs" />
     <Compile Include="Api\NewBuild.cs" />
     <Compile Include="Api\SearchResult.cs" />
     <Compile Include="BuildDetails.cs" />

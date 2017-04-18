@@ -25,10 +25,33 @@ namespace BuildFeed.Controllers
             _bModel = new BuildRepository();
         }
 
-        public async Task<Build[]> GetBuilds(int limit = 20, int skip = 0)
+        public async Task<ApiBuild[]> GetBuilds(int limit = 20, int skip = 0)
         {
             List<Build> builds = await _bModel.SelectBuildsByOrder(limit, skip);
-            return builds.ToArray();
+            return (from b in builds
+                   select new ApiBuild
+                   {
+                       Id = b.Id,
+
+                       MajorVersion = b.MajorVersion,
+                       MinorVersion = b.MinorVersion,
+                       Number = b.Number,
+                       Revision = b.Revision,
+
+                       Lab = b.Lab,
+                       BuildTime = b.BuildTime,
+
+                       SourceType = b.SourceType,
+                       SourceDetails = b.SourceDetails,
+                       LeakDate = b.LeakDate,
+
+                       FullBuildString = b.FullBuildString,
+                       AlternateBuildString = b.AlternateBuildString,
+                       LabUrl = b.LabUrl,
+
+                       Added = b.Added,
+                       Modified = b.Modified
+                   }).ToArray();
         }
 
         public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 0)
@@ -37,7 +60,7 @@ namespace BuildFeed.Controllers
             return bgroups.ToArray();
         }
 
-        public async Task<Build[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
+        public async Task<ApiBuild[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
         {
             List<Build> builds = await _bModel.SelectGroup(new BuildGroup
             {
@@ -47,13 +70,60 @@ namespace BuildFeed.Controllers
                 Revision = revision
             });
 
-            return builds.ToArray();
+            return (from b in builds
+                    select new ApiBuild
+                    {
+                        Id = b.Id,
+
+                        MajorVersion = b.MajorVersion,
+                        MinorVersion = b.MinorVersion,
+                        Number = b.Number,
+                        Revision = b.Revision,
+
+                        Lab = b.Lab,
+                        BuildTime = b.BuildTime,
+
+                        SourceType = b.SourceType,
+                        SourceDetails = b.SourceDetails,
+                        LeakDate = b.LeakDate,
+
+                        FullBuildString = b.FullBuildString,
+                        AlternateBuildString = b.AlternateBuildString,
+                        LabUrl = b.LabUrl,
+
+                        Added = b.Added,
+                        Modified = b.Modified
+                    }).ToArray();
         }
 
-        public async Task<Build[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
+        public async Task<ApiBuild[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
         {
             List<Build> builds = await _bModel.SelectLab(lab, limit, skip);
-            return builds.ToArray();
+
+            return (from b in builds
+                    select new ApiBuild
+                    {
+                        Id = b.Id,
+
+                        MajorVersion = b.MajorVersion,
+                        MinorVersion = b.MinorVersion,
+                        Number = b.Number,
+                        Revision = b.Revision,
+
+                        Lab = b.Lab,
+                        BuildTime = b.BuildTime,
+
+                        SourceType = b.SourceType,
+                        SourceDetails = b.SourceDetails,
+                        LeakDate = b.LeakDate,
+
+                        FullBuildString = b.FullBuildString,
+                        AlternateBuildString = b.AlternateBuildString,
+                        LabUrl = b.LabUrl,
+
+                        Added = b.Added,
+                        Modified = b.Modified
+                    }).ToArray();
         }
 
         public async Task<IEnumerable<string>> GetWin10Labs()
