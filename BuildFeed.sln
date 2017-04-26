@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeed", "BuildFeed\BuildFeed.csproj", "{CDDCF754-ECAA-4A66-ADAA-62957A57A51B}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "BuildFeedApp-Westminster", "Mobile\BuildFeedApp-Westminster\BuildFeedApp-Westminster.jsproj", "{5CAADB66-1FC2-4492-B766-36354687120D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{53344C34-3493-4D0E-8425-FB18C0CC59D0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{938956E0-6FA0-4432-A238-DAE704686F26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{2B646675-44D1-4722-8A86-8C64876C8FB7}"
 EndProject
