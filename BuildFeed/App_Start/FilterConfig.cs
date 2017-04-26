@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using BuildFeed.Code;
 
 namespace BuildFeed
 {
@@ -7,7 +6,7 @@ namespace BuildFeed
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new AiHandleErrorAttribute());
+            filters.Add(new HandleErrorAttribute());
         }
     }
 }
