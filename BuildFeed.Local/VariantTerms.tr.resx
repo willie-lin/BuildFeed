@@ -211,12 +211,12 @@
     <value>Twitter</value>
   </data>
   <data name="Email_Registration_Body" xml:space="preserve">
-    <value>{0}'e kayıt olduğunuz için teşekkür ederim.
+    <value>{0}'e kayıt olduğunuz için teşekkür ederiz.
 
-Lütfen aşağıdaki bağlantıya tıklayarak, veya kopyalayıp tarayıcınıza yapıştırarak e-posta adresinizi doğrulayın.
+Lütfen aşağıdaki bağlantıya tıklayarak veya aşağıdaki bağlantıyı kopyalayıp tarayıcınıza yapıştırarak e-posta adresinizi doğrulayın.
 {1}
 
-Eğer {0}'e kayıt olmadıysanız, bu e-postayı yoksayabilirsiniz.
+Eğer {0}'e kayıt olmadıysanız, bu e-postayı yok sayabilirsiniz.
 
 Teşekkürler,
 {0} Takımı.</value>
@@ -441,7 +441,7 @@ Teşekkürler,
     <value>E-posta adresi</value>
   </data>
   <data name="Support_EmailValidationContent" xml:space="preserve">
-    <value>Bir doğrulama bağlantısı e-posta adresinize gönderildi. Lütfen hesabınızı doğrulamak için e-postadaki bağlantıya tıklayın.</value>
+    <value>Bir doğrulama bağlantısı e-posta adresinize gönderildi. Lütfen hesabınızı doğrulamak için e-postadaki bağlantıya tıklayınız.</value>
   </data>
   <data name="Support_EmailValidationTitle" xml:space="preserve">
     <value>Lütfen e-posta adresinizi doğrulayın</value>
@@ -456,13 +456,13 @@ Teşekkürler,
     <value>Parolayı girin</value>
   </data>
   <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
-    <value>Şifrenizi değiştirmeye kalkarken bir hata oluştu.</value>
+    <value>Şifrenizi değiştirmeye çalışırken bir hata oluştu.</value>
   </data>
   <data name="Support_Error_DuplicateEmail" xml:space="preserve">
-    <value>Bu e-posta adresi ile bir kullanıcı hesabı hâlihazırda var.</value>
+    <value>Bu e-posta adresiyle bir kullanıcı hesabı hâlihazırda var.</value>
   </data>
   <data name="Support_Error_DuplicateUserName" xml:space="preserve">
-    <value>Bu kullanıcı adı ile bir kullanıcı hesabı hâlihazırda var.</value>
+    <value>Bu kullanıcı adıyla bir kullanıcı hesabı hâlihazırda var.</value>
   </data>
   <data name="Support_Error_InvalidPassword" xml:space="preserve">
     <value>Girmiş olduğunuz şifre geçersiz.</value>
@@ -501,7 +501,7 @@ Teşekkürler,
     <value>Kullanıcı adı</value>
   </data>
   <data name="Support_ValidationFailureContent" xml:space="preserve">
-    <value>Lütfen e-postanızdaki doğrulama bağlantısını kontrol edin ve tekrar deneyin.</value>
+    <value>Lütfen e-postanızdaki doğrulama bağlantısını kontrol ediniz ve tekrar deneyiniz.</value>
   </data>
   <data name="Support_ValidationFailureTitle" xml:space="preserve">
     <value>Hesabınızı doğrulayamadık.</value>
