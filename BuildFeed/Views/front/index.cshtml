@@ -19,7 +19,7 @@
                })" class="latest-flex-item latest-flex-red">
          <h3 class="latest-flex-title">@VariantTerms.Front_CurrentCanary</h3>
          <div class="latest-flex-detail">
-            <p class="latest-flex-build">@(Model.CurrentCanary.MajorVersion).@(Model.CurrentCanary.MinorVersion).@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
+            <p class="latest-flex-build">@(Model.CurrentCanary.Number).@(Model.CurrentCanary.Revision)</p>
             <p class="latest-flex-lab">@Model.CurrentCanary.Lab</p>
             <p class="latest-flex-time">@(Model.CurrentCanary.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
          </div>
@@ -33,7 +33,7 @@
                })" class="latest-flex-item latest-flex-yellow">
          <h3 class="latest-flex-title">@VariantTerms.Front_CurrentInsider</h3>
          <div class="latest-flex-detail">
-            <p class="latest-flex-build">@(Model.CurrentInsider.MajorVersion).@(Model.CurrentInsider.MinorVersion).@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
+            <p class="latest-flex-build">@(Model.CurrentInsider.Number).@(Model.CurrentInsider.Revision)</p>
             <p class="latest-flex-lab">@Model.CurrentInsider.Lab</p>
             <p class="latest-flex-time">@(Model.CurrentInsider.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
          </div>
@@ -47,7 +47,7 @@
                })" class="latest-flex-item latest-flex-blue">
          <h3 class="latest-flex-title">@VariantTerms.Front_CurrentRelease</h3>
          <div class="latest-flex-detail">
-            <p class="latest-flex-build">@(Model.CurrentRelease.MajorVersion).@(Model.CurrentRelease.MinorVersion).@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
+            <p class="latest-flex-build">@(Model.CurrentRelease.Number).@(Model.CurrentRelease.Revision)</p>
             <p class="latest-flex-lab">@Model.CurrentRelease.Lab</p>
             <p class="latest-flex-time">@(Model.CurrentRelease.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
          </div>
@@ -61,7 +61,7 @@
                })" class="latest-flex-item latest-flex-green">
          <h3 class="latest-flex-title">@VariantTerms.Front_CurrentXbox</h3>
          <div class="latest-flex-detail">
-            <p class="latest-flex-build">@(Model.CurrentXbox.MajorVersion).@(Model.CurrentXbox.MinorVersion).@(Model.CurrentXbox.Number).@(Model.CurrentXbox.Revision)</p>
+            <p class="latest-flex-build">@(Model.CurrentXbox.Number).@(Model.CurrentXbox.Revision)</p>
             <p class="latest-flex-lab">@Model.CurrentXbox.Lab</p>
             <p class="latest-flex-time">@(Model.CurrentXbox.BuildTime?.ToString("HH:mm, dddd dd MMMM yyyy"))</p>
          </div>
