@@ -105,7 +105,7 @@ table
 
 .container
 {
-   width: 1340px;
+   width: $container-width;
    max-width: 80%;
    margin: 0 auto;
    position: relative;
@@ -194,7 +194,7 @@ nav#page-navigation
          > a
          {
             display: block;
-            padding: 15px 10px;
+            padding: 14px 14px 11px;
 
             &:hover,
             &:active,
@@ -227,7 +227,7 @@ nav#page-navigation
       position: absolute;
       left: -15px;
       right: -15px;
-      max-width: 1270px;
+      max-width: #{($container-width + 30px)};
       padding: 15px 15px 0;
       text-align: left;
       z-index: 10;
@@ -332,6 +332,16 @@ article
    h4
    {
       margin: 1em 0 0;
+   }
+
+   ul
+   {
+      margin-bottom: 1em;
+
+      > li
+      {
+         margin-bottom: 0.5em;
+      }
    }
 
    .build-group-listing
@@ -477,8 +487,9 @@ article
          .latest-flex-build
          {
             font-size: #{(7em / 3)};
-            margin: #{(1em / 3)} 0 #{(1em / 6)};
+            margin: #{(1em / 2)} 0 0;
             font-weight: normal;
+            line-height: 1;
          }
 
          .latest-flex-lab
@@ -669,10 +680,10 @@ article
       margin-left: 0;
    }
 
-   dd + dt
-   {
-      margin-top: 1.5em;
-   }
+      dd + dt
+      {
+         margin-top: 1.5em;
+      }
 }
 
 ul.pagination
