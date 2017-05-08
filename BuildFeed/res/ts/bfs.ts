@@ -20,10 +20,17 @@ module BuildFeed
       ev.preventDefault();
 
       const link = this as HTMLAnchorElement;
-      link.parentElement.classList.toggle("open");
+      const alreadyOpen = link.parentElement.classList.contains("open");
 
-      const menuClickCapture = document.getElementById("menu-open-overlay") as HTMLDivElement;
-      menuClickCapture.classList.add("open");
+      CloseDropdowns(ev);
+
+      if (!alreadyOpen)
+      {
+         link.parentElement.classList.toggle("open");
+
+         const menuClickCapture = document.getElementById("menu-open-overlay") as HTMLDivElement;
+         menuClickCapture.classList.add("open");
+      }
    }
 
    export function CloseDropdowns(ev: MouseEvent)

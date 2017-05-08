@@ -1,45 +1,47 @@
-﻿body
+﻿@import "inc/variables.scss";
+
+body
 {
-   background-color: #373736;
-   color: #f6f5f3;
+   background-color: $nord0;
+   color: $nord6;
 }
 
 a
 {
-   color: #000;
+   color: $nord0;
 }
 
 h1 > a,
 #page-footer a
 {
-   color: #f6f5f3;
+   color: $nord6;
 }
 
 table thead th
 {
-   border-bottom-color: #373736;
+   border-bottom-color: $nord0;
 }
 
 #page-content
 {
-   background-color: #f6f5f3;
-   color: #373736;
+   background-color: $nord6;
+   color: $nord0;
 
    h3
    {
-      border-bottom-color: #ccc;
+      border-bottom-color: $nord4;
    }
 }
 
 #page-navigation
 {
-   background-color: #e6e5e3;
-   color: #373736;
-   border-bottom-color: #373736;
+   background-color: $nord1;
+   color: $nord5;
+   border-bottom-color: $nord0;
 
    button
    {
-      color: #373736;
+      color: $nord5;
    }
 
    #page-navigation-links
@@ -48,13 +50,13 @@ table thead th
       {
          a
          {
-            color: #373736;
+            color: $nord5;
          }
 
          &.open > a,
          > a:hover
          {
-            background-color: #f6f5f3;
+            background-color: $nord2;
          }
       }
    }
@@ -62,32 +64,37 @@ table thead th
 
 .dropdown-menu
 {
-   background-color: #e6e5e3;
-   border-color: #373736;
+   background-color: $nord2;
+   border-color: $nord0;
    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
    a:hover,
    a:focus,
    a:active
    {
-      background-color: #f6f5f3;
+      background-color: $nord3;
    }
 }
 
 article
 {
-   box-shadow: none;
+   box-shadow: 0 0 15px rgba(0,0,0,0.15) inset;
 
    h1, h3
    {
-      color: #242423;
+      color: $nord3;
    }
 
    .build-group > h3 > a,
    a.more-link,
    .build-details-comments a
    {
-      color: #242423;
+      color: $nord3;
+   }
+
+   .build-group-listing .build-group
+   {
+      background-color: #fff;
    }
 }
 
@@ -95,33 +102,46 @@ ul.pagination
 {
    > li.active > a
    {
-      background: #373736;
-      color: #e6e5e3 !important;
+      background: $nord0;
+      color: $nord5 !important;
    }
 
    > li:hover:not(.disabled) > a,
    > li:focus:not(.disabled) > a,
    > li:active:not(.disabled) > a
    {
-      background: #242423;
-      color: #f6f5f3 !important;
+      background: $nord3;
+      color: $nord6 !important;
+   }
+}
+
+.latest-flex
+{
+   .latest-flex-item
+   {
+      background: #fff;
+
+      .latest-flex-detail
+      {
+         color: $nord3;
+      }
    }
 }
 
 #modal-search-overlay #modal-search
 {
-   background-color: #f6f5f3;
+   background-color: $nord6;
 
    h3
    {
-      color: #373736;
+      color: $nord0;
    }
 
    > #modal-search-box > #modal-search-input,
    > #modal-search-box > #modal-search-button
    {
       background-color: #fff;
-      color: #373736;
-      border-color: #242423;
+      color: $nord0;
+      border-color: $nord3;
    }
 }

@@ -89,75 +89,6 @@
             <i class="fa fa-bars"></i>&ensp;@VariantTerms.Common_ToggleNavigation
          </button>
          <ul id="page-navigation-links">
-            @if (!User.Identity.IsAuthenticated)
-            {
-               <li>
-                  <a href="@Url.Action(nameof(AccountController.Login), new
-                             {
-                                 controller = "Account",
-                                 area = ""
-                             })" title="@VariantTerms.Common_LogIn">
-                     <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
-                  </a>
-               </li>
-            }
-            else
-            {
-               if (Roles.IsUserInRole("Administrators"))
-               {
-                  <li>
-                     <a href="@Url.Action("index", new
-                                 {
-                                     controller = "base",
-                                     area = "admin"
-                                 })" title="@VariantTerms.Common_Admin">
-                        <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
-                     </a>
-                  </li>
-               }
-               if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
-               {
-                  <li>
-                     <a href="@Url.Action(nameof(FrontController.AddBuild), new
-                              {
-                                 controller = "Front",
-                                 area = ""
-                              })" title="@VariantTerms.Common_AddBuild">
-                        <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
-                     </a>
-                  </li>
-               }
-               if (Roles.IsUserInRole("Administrators"))
-               {
-                  <li>
-                     <a href="@Url.Action(nameof(FrontController.AddBulk), new
-                              {
-                                 controller = "Front",
-                                 area = ""
-                              })" title="@VariantTerms.Common_AddBulk">
-                        <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
-                     </a>
-                  </li>
-               }
-               <li>
-                  <a href="@Url.Action(nameof(AccountController.Logout), new
-                             {
-                                 controller = "Account",
-                                 area = ""
-                             })" title="@VariantTerms.Common_LogOut">
-                     <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
-                  </a>
-               </li>
-               <li>
-                  <a href="@Url.Action(nameof(AccountController.Password), new
-                           {
-                              controller = "Account",
-                              area = ""
-                           })" title="@VariantTerms.Common_ChangePassword">
-                     <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
-                  </a>
-               </li>
-            }
             <li>
                <a href="#" id="page-navigation-search" title="@VariantTerms.Search_Title">
                   <i class="fa fa-fw fa-search"></i> @VariantTerms.Search_Title
@@ -179,7 +110,87 @@
             </li>
             <li class="dropdown-parent">
                <a href="#">
-                  <i class="fa fa-gear"></i>
+                  <i class="fa fa-fw fa-user"></i>
+               </a>
+               <ul class="dropdown-menu">
+                  <li id="user-action-menu" class="dropdown-menu-block">
+                     <ul>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                           <li>
+                              <a href="@Url.Action(nameof(AccountController.Login), new
+                                       {
+                                          controller = "Account",
+                                          area = ""
+                                       })" title="@VariantTerms.Common_LogIn">
+                                 <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
+                              </a>
+                           </li>
+                        }
+                        else
+                        {
+                           if (Roles.IsUserInRole("Administrators"))
+                           {
+                              <li>
+                                 <a href="@Url.Action("index", new
+                                          {
+                                             controller = "base",
+                                             area = "admin"
+                                          })" title="@VariantTerms.Common_Admin">
+                                    <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
+                                 </a>
+                              </li>
+                           }
+                           if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
+                           {
+                              <li>
+                                 <a href="@Url.Action(nameof(FrontController.AddBuild), new
+                                          {
+                                             controller = "Front",
+                                             area = ""
+                                          })" title="@VariantTerms.Common_AddBuild">
+                                    <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
+                                 </a>
+                              </li>
+                           }
+                           if (Roles.IsUserInRole("Administrators"))
+                           {
+                              <li>
+                                 <a href="@Url.Action(nameof(FrontController.AddBulk), new
+                                          {
+                                             controller = "Front",
+                                             area = ""
+                                          })" title="@VariantTerms.Common_AddBulk">
+                                    <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
+                                 </a>
+                              </li>
+                           }
+                           <li>
+                              <a href="@Url.Action(nameof(AccountController.Logout), new
+                                       {
+                                          controller = "Account",
+                                          area = ""
+                                       })" title="@VariantTerms.Common_LogOut">
+                                 <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
+                              </a>
+                           </li>
+                           <li>
+                              <a href="@Url.Action(nameof(AccountController.Password), new
+                                       {
+                                          controller = "Account",
+                                          area = ""
+                                       })" title="@VariantTerms.Common_ChangePassword">
+                                 <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
+                              </a>
+                           </li>
+                        }
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li class="dropdown-parent">
+               <a href="#">
+                  <i class="fa fa-gear fa-fw"></i>
                </a>
                <ul class="dropdown-menu">
                   <li id="settings-theme-menu" class="dropdown-menu-block">
@@ -238,15 +249,17 @@
                   </a>
                </p>
                <p>
+                  <a href="@Url.Action(nameof(SupportController.Credits), new
+                           {
+                              controller = "Support",
+                              area = ""
+                           })">
+                     @VariantTerms.Common_Credits
+                  </a>
+               </p>
+               <p>
                   <i class="fa fa-language"></i>&ensp;
                   @CultureInfo.CurrentUICulture.NativeName
-                  (<a href="@Url.Action(nameof(SupportController.Credits), new
-                              {
-                                  controller = "Support",
-                                  area = ""
-                              })">
-                     @VariantTerms.Common_Credits
-                  </a>)
                </p>
             </div>
             <div class="footer-flex-item">

@@ -1,7 +1,9 @@
-﻿body
+﻿@import "inc/variables.scss";
+
+body
 {
-   background-color: #f6f5f3;
-   color: #373736;
+   background-color: $nord1;
+   color: $nord6;
 }
 
 a
@@ -12,34 +14,34 @@ a
 h1 > a,
 #page-footer a
 {
-   color: #373736;
+   color: $nord6;
 }
 
 table thead th
 {
-   border-bottom-color: #f6f5f3;
+   border-bottom-color: $nord6;
 }
 
 #page-content
 {
-   background-color: #373736;
-   color: #f6f5f3;
+   background-color: $nord0;
+   color: $nord6;
 
    h3
    {
-      border-bottom-color: #ccc;
+      border-bottom-color: $nord4;
    }
 }
 
 #page-navigation
 {
-   background-color: #242423;
-   color: #f6f5f3;
-   border-bottom-color: #f6f5f3;
+   background-color: $nord2;
+   color: $nord5;
+   border-bottom-color: $nord0;
 
    button
    {
-      color: #f6f5f3;
+      color: $nord5;
    }
 
    #page-navigation-links
@@ -48,13 +50,13 @@ table thead th
       {
          a
          {
-            color: #f6f5f3;
+            color: $nord5;
          }
 
          &.open > a,
          > a:hover
          {
-            background-color: #373736;
+            background-color: $nord3;
          }
       }
    }
@@ -62,32 +64,50 @@ table thead th
 
 .dropdown-menu
 {
-   background-color: #242423;
-   border-color: #f6f5f3;
+   background-color: $nord3;
+   border-color: $nord0;
    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
    a:hover,
    a:focus,
    a:active
    {
-      background-color: #373736;
+      background-color: $nord2;
    }
 }
 
 article
 {
-   box-shadow: 0 5px 10px rgba(0,0,0,0.15) inset;
+   box-shadow: 0 0 15px rgba(0,0,0,0.15) inset;
 
    h1, h3
    {
-      color: #f6f5f3;
+      color: $nord6;
    }
 
    .build-group > h3 > a,
    a.more-link,
    .build-details-comments a
    {
-      color: #d6d5d3;
+      color: $nord5;
+   }
+
+   .build-group-listing .build-group
+   {
+      background-color: $nord3;
+   }
+}
+
+.latest-flex
+{
+   .latest-flex-item
+   {
+      background: $nord3;
+
+      .latest-flex-detail
+      {
+         color: #fff;
+      }
    }
 }
 
@@ -95,33 +115,33 @@ ul.pagination
 {
    > li.active > a
    {
-      background: #f6f5f3;
-      color: #242423 !important;
+      background: $nord6;
+      color: $nord1 !important;
    }
 
    > li:hover:not(.disabled) > a,
    > li:focus:not(.disabled) > a,
    > li:active:not(.disabled) > a
    {
-      background: #d6d5d3;
-      color: #373736 !important;
+      background: $nord5;
+      color: $nord0 !important;
    }
 }
 
 #modal-search-overlay #modal-search
 {
-   background-color: #242423;
+   background-color: $nord1;
 
    h3
    {
-      color: #f6f5f3;
+      color: $nord6;
    }
 
    > #modal-search-box > #modal-search-input,
    > #modal-search-box > #modal-search-button
    {
-      background-color: #373736;
-      color: #f6f5f3;
-      border-color: #d6d5d3;
+      background-color: $nord0;
+      color: $nord6;
+      border-color: $nord5;
    }
 }

@@ -261,6 +261,7 @@
     <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy %28Private%29.pubxml" />
     <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy.pubxml" />
     <Content Include="res\css\inc\variables.scss" />
+    <Content Include="res\css\inc\nord.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

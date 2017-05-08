@@ -1,8 +1,8 @@
 {
    "name": "BuildFeed",
    "short_name": "BuildFeed",
-   "background_color": "#373736",
-   "theme_color": "#373736",
+   "background_color": "#2E3440",
+   "theme_color": "#2E3440",
    "description": "Learn what Dona Sarkar won't tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker.",
    "icons": [
       {

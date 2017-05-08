@@ -31,8 +31,8 @@
       <th>
          Last Lockout Time
       </th>
-      <th style="width: 108px;"></th>
-      <th style="width: 108px;"></th>
+      <th style="width: 100px;"></th>
+      <th style="width: 100px;"></th>
    </tr>
    </thead>
    <tbody>
@@ -65,16 +65,14 @@
                     id = mu.ProviderUserKey
                  }, new
                  {
-                    @class = "button delete-button",
-                    style = "width:70px;"
+                    @class = "button delete-button"
                  })
                  : Html.ActionLink("Approve", "approve", new
                  {
                     id = mu.ProviderUserKey
                  }, new
                  {
-                    @class = "button add-button",
-                    style = "width:70px;"
+                    @class = "button add-button"
                  }))
          </td>
          <td class="text-right">
@@ -84,16 +82,14 @@
                     id = mu.ProviderUserKey
                  }, new
                  {
-                    @class = "button delete-button",
-                    style = "width:70px;"
+                    @class = "button delete-button"
                  })
                  : Html.ActionLink("Unlock", "unlock", new
                  {
                     id = mu.ProviderUserKey
                  }, new
                  {
-                    @class = "button add-button",
-                    style = "width:70px;"
+                    @class = "button add-button"
                  }))
          </td>
       </tr>

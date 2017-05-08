@@ -43,7 +43,12 @@ table
    {
       margin: 0;
       border: 0;
-      padding: 4px 6px;
+      padding: 4px;
+
+      .button
+      {
+         display: block;
+      }
    }
 
    thead th
@@ -106,7 +111,7 @@ table
 .container
 {
    width: $container-width;
-   max-width: 80%;
+   max-width: 88%;
    margin: 0 auto;
    position: relative;
 }
@@ -128,7 +133,7 @@ table
 {
    display: block;
    margin: #{(1em / 3)} 0;
-   color: #FF2626;
+   color: $strong-red;
 }
 
 a.button,
@@ -136,8 +141,8 @@ input[type=submit].button
 {
    display: inline-block;
    vertical-align: middle;
-   padding: #{(1em / 3)} 1em;
-   background-color: #0A81CC;
+   padding: #{(1em / 2)} 1em #{(1em / 3)};
+   background-color: $nord10;
    color: #fff;
    text-decoration: none;
    border-radius: $border-size;
@@ -145,17 +150,17 @@ input[type=submit].button
 
    &.edit-button
    {
-      background-color: #FF9F19;
+      background-color: $strong-yellow;
    }
 
    &.delete-button
    {
-      background-color: #FF2626;
+      background-color: $strong-red;
    }
 
    &.add-button
    {
-      background-color: #12B23F;
+      background-color: $strong-green;
    }
 }
 
@@ -175,7 +180,7 @@ header#page-header
 
 nav#page-navigation
 {
-   border-bottom-width: $border-size;
+   border-bottom-width: 0;
    border-bottom-style: solid;
    position: relative;
    z-index: 10;
@@ -231,9 +236,7 @@ nav#page-navigation
       padding: 15px 15px 0;
       text-align: left;
       z-index: 10;
-      border-width: $border-size;
-      border-style: solid;
-      border-top-width: 0;
+      border-width: 0;
       flex-wrap: wrap;
 
       h4
@@ -249,7 +252,10 @@ nav#page-navigation
          vertical-align: top;
          margin-bottom: 15px;
          flex-grow: 1;
+      }
 
+      .dropdown-menu-block
+      {
          ul
          {
             padding: 0;
@@ -268,7 +274,7 @@ nav#page-navigation
             > a
             {
                display: block;
-               padding: 0 1em;
+               padding: #{(1em / 3)} 1em #{(1em / 6)};
 
                &:hover,
                &:active,
@@ -291,6 +297,20 @@ nav#page-navigation
          width: 320px;
          flex-grow: 1000;
       }
+
+      #user-action-menu
+      {
+         ul
+         {
+            justify-content: flex-start;
+            text-align: center;
+         }
+
+         .fa
+         {
+            vertical-align: 1px;
+         }
+      }
    }
 
    &.open
@@ -304,7 +324,7 @@ nav#page-navigation
 
 article
 {
-   padding: 2em 0;
+   padding: 3em 0;
 
    h1
    {
@@ -357,12 +377,12 @@ article
          flex-grow: 1;
          margin: 0 #{(3em / 2)} 3em;
          box-sizing: border-box;
-         border: $border-size solid #0A81CC;
+         border: $border-size solid $nord10;
          padding: 0.5em 1.5em;
 
          h3
          {
-            background-color: #0A81CC;
+            background-color: $nord10;
             color: #fff;
             margin: -0.25em -0.75em 0.75em;
             font-size: 2em;
@@ -379,7 +399,7 @@ article
                color: #fff;
                text-decoration: none !important;
                display: block;
-               padding: 0.25em 0;
+               padding: #{(1em / 3)} 0;
             }
          }
 
@@ -412,7 +432,6 @@ article
    {
       width: 240px;
       box-sizing: border-box;
-      background: #fff;
       flex-grow: 1;
       margin: 0 2em 2em 0;
       border: $border-size solid;
@@ -439,47 +458,46 @@ article
 
       &.latest-flex-red
       {
-         border-color: #FF2626;
+         border-color: $strong-red;
 
          h3.latest-flex-title
          {
-            background: #FF2626;
+            background: $strong-red;
          }
       }
 
       &.latest-flex-yellow
       {
-         border-color: #FF9F19;
+         border-color: $strong-yellow;
 
          h3.latest-flex-title
          {
-            background: #FF9F19;
+            background: $strong-yellow;
          }
       }
 
       &.latest-flex-blue
       {
-         border-color: #0A81CC;
+         border-color: $strong-blue;
 
          h3.latest-flex-title
          {
-            background: #0A81CC;
+            background: $strong-blue;
          }
       }
 
       &.latest-flex-green
       {
-         border-color: #12B23F;
+         border-color: $strong-green;
 
          h3.latest-flex-title
          {
-            background: #12B23F;
+            background: $strong-green;
          }
       }
 
       .latest-flex-detail
       {
-         color: #373736;
          text-align: center;
          font-weight: 300;
          line-height: #{(3 / 2)};
@@ -509,7 +527,7 @@ article
 .latest-full
 {
    display: block;
-   background: #0A81CC;
+   background: $nord10;
    font-weight: normal;
    text-align: center;
    color: #fff;
@@ -629,7 +647,7 @@ article
          display: inline-block;
          vertical-align: middle;
          padding: #{(1em / 3)} 1em;
-         background-color: #12B23F;
+         background-color: $strong-green;
          color: #fff;
          text-decoration: none;
          border-radius: #{(1em / 6)};
@@ -680,10 +698,10 @@ article
       margin-left: 0;
    }
 
-      dd + dt
-      {
-         margin-top: 1.5em;
-      }
+   dd + dt
+   {
+      margin-top: 1.5em;
+   }
 }
 
 ul.pagination
@@ -707,6 +725,7 @@ ul.pagination
          display: block;
          border-radius: #{(1em / 3)};
          text-decoration: none;
+         padding-top: 0.15em;
       }
 
       > span
@@ -882,6 +901,7 @@ footer#page-footer
       #page-navigation-links
       {
          display: none;
+         padding-bottom: 1em;
 
          &.open
          {
@@ -891,6 +911,22 @@ footer#page-footer
          > li
          {
             display: block;
+            text-align: left;
+         }
+      }
+   }
+
+   .dropdown-parent .dropdown-menu
+   {
+      position: static;
+
+      .dropdown-menu-block
+      {
+         min-width: 100%;
+
+         li
+         {
+            min-width: 50%;
             text-align: left;
          }
       }
