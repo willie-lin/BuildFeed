@@ -276,7 +276,7 @@
     <value>最新組建</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>清單</value>
+    <value>組建一覽表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>尋找更多來自 {0} 的組建</value>
