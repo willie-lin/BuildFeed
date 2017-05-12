@@ -213,7 +213,7 @@
   <data name="Email_Registration_Body" xml:space="preserve">
     <value>感謝您註冊 {0}。
 
-Please verify your email address by clicking the link below, or by copying and pasting it into your browser.
+請按一下下方的連結或是將其複製貼上到瀏覽器中來驗證您的電子郵件地址。
 {1}
 
 如果您沒有註冊到 {0}，請忽略此電子郵件。
@@ -291,7 +291,7 @@ Please verify your email address by clicking the link below, or by copying and p
     <value>缺少 Lab 字串</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} 組建</value>
+    <value>{0} 個組建</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
     <value>私密</value>
@@ -471,7 +471,7 @@ Please verify your email address by clicking the link below, or by copying and p
     <value>發生未知的錯誤。</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
-    <value>最高版本</value>
+    <value>最新版本</value>
   </data>
   <data name="Support_Labs" xml:space="preserve">
     <value>Labs</value>
