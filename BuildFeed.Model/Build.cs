@@ -140,7 +140,7 @@ namespace BuildFeed.Model
             {
                 Family = ProjectFamily.Redstone2;
             }
-            else if(Lab?.StartsWith("rs1", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            else if (Lab?.StartsWith("rs1", StringComparison.InvariantCultureIgnoreCase) ?? false)
             {
                 Family = ProjectFamily.Redstone;
             }

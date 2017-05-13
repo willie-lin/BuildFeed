@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using BuildFeed.Model.View;
@@ -142,7 +141,7 @@ namespace BuildFeed.Model
 
             IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument
             {
-                { "$where", "!this.LabUrl.contains(\"xbox\")"},
+                {"$where", "!this.LabUrl.contains(\"xbox\")"},
                 {
                     nameof(Build.Family), family
                 }
@@ -151,7 +150,7 @@ namespace BuildFeed.Model
 
             query = _buildCollection.Find(new BsonDocument
             {
-                { "$where", "!this.LabUrl.contains(\"xbox\")"},
+                {"$where", "!this.LabUrl.contains(\"xbox\")"},
                 {
                     nameof(Build.Family), family
                 },
@@ -175,7 +174,7 @@ namespace BuildFeed.Model
 
             query = _buildCollection.Find(new BsonDocument
             {
-                { "$where", "((this.MajorVersion === 10 && this.LabUrl.contains(\"_release\")) || this.MajorVersion < 10) && !this.LabUrl.contains(\"xbox\")"},
+                {"$where", "((this.MajorVersion === 10 && this.LabUrl.contains(\"_release\")) || this.MajorVersion < 10) && !this.LabUrl.contains(\"xbox\")"},
                 {
                     nameof(Build.Family), family
                 },
@@ -196,7 +195,7 @@ namespace BuildFeed.Model
 
             query = _buildCollection.Find(new BsonDocument
             {
-                { "$where", "this.LabUrl.contains(\"xbox\")"},
+                {"$where", "this.LabUrl.contains(\"xbox\")"},
                 {
                     nameof(Build.Family), family
                 }

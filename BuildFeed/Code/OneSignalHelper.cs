@@ -22,7 +22,7 @@ namespace BuildFeed.Code
 #if DEBUG
                     "Testers"
 #else
-                        "All"
+                    "All"
 #endif
                 },
                 Headings =
