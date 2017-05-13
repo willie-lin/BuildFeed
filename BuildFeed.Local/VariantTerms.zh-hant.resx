@@ -118,28 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed是由一群熱心的人士管理和維護。微軟是不參與的。當然我們沒有收到來自微軟對這個網站的正式投訴，即使我們確信他們是知道這個網站的。這就是說，微軟顯然希望保持私有信息的私密性，所以在過去我們的消息人士曽經停止提供資料，我敢肯定他們今後也會。</value>
+    <value>BuildFeed 是由一群熱心人士運作和維護。微軟沒有以任何方式參與此網站。雖然我們確信他們知道該網站，但我們確實沒有收到來自微軟對這個網站正式的投訴。這就是說，微軟顯然希望保有私有資訊，所以在過去我們的消息人士曽經停止提供資料，我敢肯定他們今後也會。</value>
   </data>
   <data name="About_A2" xml:space="preserve">
-    <value>Dona做得好, 但我不會弄壞這個。我只能說。 BuildFeed已經盡能力確保在這個網站的組建信息是正確無誤的。我們有許多不同的消息來源，能有更可靠的消息驗證，也能在微軟停止我們的消息來源時給我們一些冗餘。</value>
+    <value>好的嘗試，Dona姐，但我不會上你的當的。我可以這麼說。BuildFeed 使本網站上張貼的所有版本都是正確無誤的。我們有許多不同的來源，以確保資料更可靠，同時防止微軟的封殺。</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>有許多方法，您可以在每個頁面上的disqus評論系統進行討論。您還可以通過報告網站錯誤或在我們的GitHub上提供幫助。 最後，你可以在翻譯中心幫忙翻譯BuildFeed到你的母語。</value>
+    <value>有很多方法。您可以在每個組建頁面上的 Disqus 評論系統中進行討論。您也可以透過回報 Bug 或在我們的 GitHub 上提出 Pull Request 來為此貢獻您的一份心力。最後，您可以透過翻譯中心來協助我們將 BuildFeed 翻譯成你的母語。</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
-    <value>誰人管理BuildFeed？ 它是否一個微軟的官方網站？</value>
+    <value>是誰在運作 BuildFeed？這是微軟的官方網站嗎？</value>
   </data>
   <data name="About_Q2" xml:space="preserve">
-    <value>BuildFeed是如何取得數據？</value>
+    <value>BuildFeed 是如何準確地取得其資料？</value>
   </data>
   <data name="About_Q3" xml:space="preserve">
-    <value>我怎樣才能參與？</value>
+    <value>我怎麼樣才能參與？</value>
+  </data>
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>新增組建</value>
+  </data>
+  <data name="Bulk_Builds" xml:space="preserve">
+    <value>組建</value>
+  </data>
+  <data name="Bulk_Instructions" xml:space="preserve">
+    <value>在下方新增多個組建，每一行內填寫一個組建的完整資訊。透過此頁新增的所有組建都將具有「私密洩漏」的來源類型。</value>
+  </data>
+  <data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>傳送通知</value>
+  </data>
+  <data name="Bulk_Success" xml:space="preserve">
+    <value>這些組建已成功新增。</value>
   </data>
   <data name="Common_AddBuild" xml:space="preserve">
     <value>新增組建</value>
   </data>
+  <data name="Common_AddBulk" xml:space="preserve">
+    <value>大量新增</value>
+  </data>
   <data name="Common_Admin" xml:space="preserve">
-    <value>管理</value>
+    <value>管理員</value>
+  </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>變更密碼</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>貢獻於 {0}</value>
@@ -154,7 +175,7 @@
     <value>錯誤</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>有東西壞掉了，這或許是因為你做了甚麼奇怪的事，也有可能是我做了甚麼奇怪的事。如果你不斷遇上這個問題，請透過 {0} 回報問題。</value>
+    <value>有些東西壞了。這或許是因為你做了甚麼奇怪的事，也可能是因為我做了一些奇怪的事情。如果您繼續收到此錯誤，請透過 {0} 提出錯誤報告。</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>登入</value>
@@ -184,10 +205,24 @@
     <value>|第 {0} 頁</value>
   </data>
   <data name="Common_ToggleNavigation" xml:space="preserve">
-    <value>切換導航</value>
+    <value>切換導覽</value>
   </data>
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
+  </data>
+  <data name="Email_Registration_Body" xml:space="preserve">
+    <value>感謝您註冊 {0}。
+
+請按一下下方的連結或是將其複製貼上到瀏覽器中來驗證您的電子郵件地址。
+{1}
+
+如果您沒有註冊到 {0}，請忽略此電子郵件。
+
+謝謝，
+{0} 團隊</value>
+  </data>
+  <data name="Email_Registration_Subject" xml:space="preserve">
+    <value>{0}：請驗證您的電子郵件地址</value>
   </data>
   <data name="Front_About" xml:space="preserve">
     <value>關於</value>
@@ -202,19 +237,22 @@
     <value>留言</value>
   </data>
   <data name="Front_CurrentCanary" xml:space="preserve">
-    <value>當前內部開發版本</value>
+    <value>目前內部開發版本</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>當前公眾預覽版本</value>
+    <value>目前公眾預覽版本</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
-    <value>當前正式發行版本</value>
+    <value>目前正式發行版本</value>
+  </data>
+  <data name="Front_CurrentXbox" xml:space="preserve">
+    <value>目前 Xbox 版本</value>
   </data>
   <data name="Front_Delete" xml:space="preserve">
     <value>刪除</value>
   </data>
   <data name="Front_Details" xml:space="preserve">
-    <value>詳情</value>
+    <value>詳細資料</value>
   </data>
   <data name="Front_Edit" xml:space="preserve">
     <value>編輯</value>
@@ -226,19 +264,19 @@
     <value>編輯操作</value>
   </data>
   <data name="Front_FullBuildListing" xml:space="preserve">
-    <value>查看完整 Windows 組建列表...</value>
+    <value>檢視完整 Windows 組建清單...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
     <value>{0}: Windows 組建追蹤器</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
-    <value>{0} 組建列表</value>
+    <value>{0} 組建清單</value>
   </data>
   <data name="Front_LatestBuilds" xml:space="preserve">
     <value>最新組建</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>列表</value>
+    <value>組建一覽表</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>尋找更多來自 {0} 的組建</value>
@@ -253,7 +291,7 @@
     <value>缺少 Lab 字串</value>
   </data>
   <data name="Front_NumOfBuilds" xml:space="preserve">
-    <value>{0} 組建</value>
+    <value>{0} 個組建</value>
   </data>
   <data name="Front_Private" xml:space="preserve">
     <value>私密</value>
@@ -265,7 +303,7 @@
     <value>快速貼上</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>返回組建列表</value>
+    <value>返回組建清單</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
     <value>返回組建概觀</value>
@@ -283,10 +321,10 @@
     <value>了解更多關於來自 {1} 分支的 Windows 組建 {0}，BuildFeed 會在開發過程中全程追蹤 Windows 組建的發展。</value>
   </data>
   <data name="Meta_LabGeneric" xml:space="preserve">
-    <value>透過 BuildFeed，一個協作 Windows 組建清單查看來自 {0} 分支的所有已知組建。</value>
+    <value>透過 BuildFeed，一個協作 Windows 組建清單檢視來自 {0} 分支的所有已知組建。</value>
   </data>
   <data name="Meta_YearGeneric" xml:space="preserve">
-    <value>透過 BuildFeed，一個基於社群協作的 Windows 組建列表，查看所有來自 {0} 分支的所有已知組建，並從中觀察 Windows 隨著時間持續發展的過程。</value>
+    <value>透過 BuildFeed，一個基於社群協作的 Windows 組建清單，檢視所有來自 {0} 分支的所有已知組建，並從中觀察 Windows 隨著時間持續發展的過程。</value>
   </data>
   <data name="Model_Added" xml:space="preserve">
     <value>建立時間</value>
@@ -304,7 +342,7 @@
     <value>Lab 字串</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>洩漏或發佈日期</value>
+    <value>洩漏或發布日期</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
     <value>主要版本</value>
@@ -319,7 +357,7 @@
     <value>修訂版號</value>
   </data>
   <data name="Model_SourceDetails" xml:space="preserve">
-    <value>資料來源詳情</value>
+    <value>來源詳細資料</value>
   </data>
   <data name="Model_SourceType" xml:space="preserve">
     <value>來源類型</value>
@@ -340,10 +378,10 @@
     <value>記錄檔</value>
   </data>
   <data name="Model_Source_PrivateLeak" xml:space="preserve">
-    <value>私下洩漏</value>
+    <value>私密洩漏</value>
   </data>
   <data name="Model_Source_PublicRelease" xml:space="preserve">
-    <value>公開發佈</value>
+    <value>公開發布</value>
   </data>
   <data name="Model_Source_UpdateGDR" xml:space="preserve">
     <value>更新 (GDR)</value>
@@ -351,11 +389,14 @@
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>更新 (LDR)</value>
   </data>
+  <data name="Notification_NewBuild" xml:space="preserve">
+    <value>新的組建已新增到 {0}！</value>
+  </data>
   <data name="Search_Build" xml:space="preserve">
     <value>組建</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>搜尋 BuildFeed</value>
+    <value>在 BuildFeed 上搜尋</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
     <value>沒有找到任何結果</value>
@@ -364,7 +405,7 @@
     <value>Lab</value>
   </data>
   <data name="Search_Query" xml:space="preserve">
-    <value>搜索查詢</value>
+    <value>搜尋查詢</value>
   </data>
   <data name="Search_Source" xml:space="preserve">
     <value>來源</value>
@@ -373,7 +414,7 @@
     <value>搜尋</value>
   </data>
   <data name="Search_TypePlaceholder" xml:space="preserve">
-    <value>請輸入搜尋...</value>
+    <value>輸入以搜尋...</value>
   </data>
   <data name="Search_Version" xml:space="preserve">
     <value>版本</value>
@@ -381,17 +422,14 @@
   <data name="Search_Year" xml:space="preserve">
     <value>年份</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>所有帳戶均須經過管理員審核，請耐心等候並稍後再試。</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
-    <value>BuildFeed 補充資訊</value>
+    <value>新增到 BuildFeed 補充資訊</value>
   </data>
   <data name="Support_BuildsCompiled" xml:space="preserve">
     <value>已編譯的組建</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>更改你的密碼</value>
+    <value>變更你的密碼</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
     <value>確認新密碼</value>
@@ -402,14 +440,35 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>電子郵件地址</value>
   </data>
+  <data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>驗證連結已發送到您的電子郵件地址。請按一下電子郵件中的連結以驗證帳戶。</value>
+  </data>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>請驗證您的電子郵件地址</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>輸入原密碼</value>
+    <value>輸入目前密碼</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
     <value>輸入新密碼</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>輸入密碼</value>
+  </data>
+  <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>試圖變更密碼時發生錯誤。</value>
+  </data>
+  <data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>具有此電子郵件地址的使用者帳戶已存在。</value>
+  </data>
+  <data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>具有此使用者名稱的使用者帳戶已存在。</value>
+  </data>
+  <data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>您所輸入的密碼無效。</value>
+  </data>
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>發生未知的錯誤。</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>最新版本</value>
@@ -438,14 +497,29 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>記住我</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>感謝註冊</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>使用者名稱</value>
+  </data>
+  <data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>請檢查電子郵件中的驗證連結, 然後再試一次。</value>
+  </data>
+  <data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>我們無法驗證您的帳戶。</value>
+  </data>
+  <data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>您現在能夠使用您的使用者名稱和密碼來登錄。</value>
+  </data>
+  <data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>您已成功驗證了您的帳戶。</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>週</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>每個帳號都由管理員進行驗證，因此請耐心等待並稍後再檢查。</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>感謝您的註冊</value>
+  </data>
 </root>
