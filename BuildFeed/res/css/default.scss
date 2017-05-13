@@ -107,6 +107,10 @@ table
    }
 }
 
+.trim-wrapper
+{
+   overflow: hidden;
+}
 
 .container
 {
@@ -114,7 +118,6 @@ table
    max-width: 88%;
    margin: 0 auto;
    position: relative;
-   overflow: hidden;
 }
 
 .no-wrapping
@@ -340,6 +343,17 @@ article
       }
    }
 
+   h2
+   {
+      text-align: center;
+      font-size: 3em;
+      font-weight: bold;
+      margin: 1em 0 #{(2em / 3)};
+      text-transform: uppercase;
+      letter-spacing: #{(1em / 6)};
+      border-bottom: $border-size solid;
+   }
+
    h3
    {
       font-size: 2em;
@@ -422,12 +436,33 @@ article
    }
 }
 
+.latest-family-wrapper
+{
+   display: flex;
+   flex-wrap: wrap;
+   margin-right: -4em;
+   overflow: hidden;
+
+   .latest-family
+   {
+      flex-grow: 1;
+      margin-right: 4em;
+
+      > h3
+      {
+         margin-bottom: 0.5em;
+         text-transform: none;
+         letter-spacing: 2px;
+      }
+   }
+}
+
 .latest-flex
 {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
-   margin: 2em -2em 0 0;
+   justify-content: flex-start;
+   margin: 0 -2em 0 0;
 
    .latest-flex-item
    {
@@ -444,8 +479,10 @@ article
          text-decoration: none;
       }
 
-      h3.latest-flex-title
+      h4.latest-flex-title
       {
+         text-transform: uppercase;
+         letter-spacing: #{(1em / 4)};
          border-bottom: 0;
          margin: 0;
          padding: 0;
@@ -461,7 +498,7 @@ article
       {
          border-color: $strong-red;
 
-         h3.latest-flex-title
+         h4.latest-flex-title
          {
             background: $strong-red;
          }
@@ -471,7 +508,7 @@ article
       {
          border-color: $strong-yellow;
 
-         h3.latest-flex-title
+         h4.latest-flex-title
          {
             background: $strong-yellow;
          }
@@ -481,7 +518,7 @@ article
       {
          border-color: $strong-blue;
 
-         h3.latest-flex-title
+         h4.latest-flex-title
          {
             background: $strong-blue;
          }
@@ -491,7 +528,7 @@ article
       {
          border-color: $strong-green;
 
-         h3.latest-flex-title
+         h4.latest-flex-title
          {
             background: $strong-green;
          }
@@ -532,7 +569,7 @@ article
    font-weight: normal;
    text-align: center;
    color: #fff;
-   margin: 0 0 2em;
+   margin: 0;
    padding: #{(2em / 3)};
 
    &:hover,

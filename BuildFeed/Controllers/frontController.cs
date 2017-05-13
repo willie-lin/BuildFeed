@@ -38,8 +38,14 @@ namespace BuildFeed.Controllers
 #endif
         public async Task<ActionResult> Index()
         {
-            FrontPage fp = await _bModel.SelectFrontPage();
-            return View("Index", fp);
+            var items = new Dictionary<ProjectFamily, FrontPage>
+            {
+                {ProjectFamily.Redstone3, await _bModel.SelectFrontPage(ProjectFamily.Redstone3)},
+                {ProjectFamily.Feature2, await _bModel.SelectFrontPage(ProjectFamily.Feature2)},
+                {ProjectFamily.Redstone2, await _bModel.SelectFrontPage(ProjectFamily.Redstone2)},
+                {ProjectFamily.Redstone, await _bModel.SelectFrontPage(ProjectFamily.Redstone)}
+            };
+            return View(nameof(Index), items);
         }
 
         [Route("page-{page:int:min(1)}/", Order = 0)]
