@@ -86,7 +86,9 @@ namespace BuildFeed.Code
             {
                 returnArray[arrayIndex++] = ValueToChar(nextChar);
                 while (arrayIndex != charCount)
+                {
                     returnArray[arrayIndex++] = '='; //padding
+                }
             }
 
             return new string(returnArray);

@@ -29,7 +29,8 @@ namespace BuildFeed.Model
         public string Lab { get; set; }
 
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildTime))]
-        [DisplayFormat(ConvertEmptyStringToNull = true, ApplyFormatInEditMode = true,
+        [DisplayFormat(ConvertEmptyStringToNull = true,
+            ApplyFormatInEditMode = true,
             DataFormatString = "{0:yyMMdd-HHmm}")]
         public DateTime? BuildTime { get; set; }
 

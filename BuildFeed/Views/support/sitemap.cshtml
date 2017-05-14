@@ -1,4 +1,5 @@
-﻿@using BuildFeed.Model.View
+﻿@using BuildFeed.Controllers
+@using BuildFeed.Model.View
 @model BuildFeed.Model.View.SitemapData
 @{
    ViewBag.Title = $"{VariantTerms.Common_Sitemap} | {InvariantTerms.SiteName}";
@@ -8,11 +9,11 @@
 
 <ul>
    <li>
-      @Html.ActionLink("BuildFeed", "index", "build")
+      @Html.ActionLink("BuildFeed", nameof(FrontController.Index), "Front")
       <ul>
          <li>
-            <a href="#sitemap-builds" data-toggle="collapse">Builds</a>
-            <ul id="sitemap-builds" class="collapse">
+            <a href="#sitemap-builds">Builds</a>
+            <ul id="sitemap-builds">
                @foreach (SitemapDataBuildGroup buildGroup in Model.Builds)
                {
                   <li>
@@ -42,8 +43,8 @@
          @foreach (KeyValuePair<string, SitemapPagedAction[]> item in Model.Actions)
          {
             <li>
-               <a href="#sitemap-@item.Key.ToLower()" data-toggle="collapse">@item.Key</a>
-               <ul id="sitemap-@item.Key.ToLower()" class="collapse">
+               <a href="#sitemap-@item.Key.ToLower()">@item.Key</a>
+               <ul id="sitemap-@item.Key.ToLower()">
                   @foreach (SitemapPagedAction action in item.Value)
                   {
                      if (string.IsNullOrEmpty(action.Name))
@@ -59,8 +60,8 @@
                      else
                      {
                         <li>
-                           <a href="#sitemap-@action.UniqueId" data-toggle="collapse">@action.Name</a>
-                           <ul id="sitemap-@action.UniqueId" class="collapse">
+                           <a href="#sitemap-@action.UniqueId">@action.Name</a>
+                           <ul id="sitemap-@action.UniqueId">
                               <li>@Html.ActionLink("Page 1", action.Action, action.UrlParams)</li>
                               @for (int i = 2; i <= action.Pages; i++)
                               {
@@ -76,8 +77,8 @@
             </li>
          }
          <li>
-            <a href="#sitemap-rss" data-toggle="collapse">@VariantTerms.Common_RssFeeds</a>
-            <ul id="sitemap-rss" class="collapse">
+            <a href="#sitemap-rss">@VariantTerms.Common_RssFeeds</a>
+            <ul id="sitemap-rss">
                <li>
                   <a href="@Url.Action("Index", new
                            {
@@ -107,8 +108,8 @@
                      <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_HighestVersion</a>
                </li>
                <li>
-                  <a href="#rss-labs" data-toggle="collapse">@VariantTerms.Model_LabString</a>
-                  <ul id="rss-labs" class="collapse">
+                  <a href="#rss-labs">@VariantTerms.Model_LabString</a>
+                  <ul id="rss-labs">
                      @foreach (string lab in Model.Labs)
                      {
                         <li>

@@ -4,8 +4,8 @@
 @{
     bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 
-    Response.PushPromise("/res/css/default.css");
-    Response.PushPromise(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath));
+    Response.PushPromise("/res/css/default.css?20170517");
+    Response.PushPromise(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath) + "?20170517");
     if (isRtl)
     {
        Response.PushPromise("/res/css/rtl.css");
@@ -23,8 +23,8 @@
    <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <title>@ViewBag.Title</title>
-   <link href="/res/css/default.css" rel="stylesheet" type="text/css" />
-   <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
+   <link href="/res/css/default.css?20170517" rel="stylesheet" type="text/css" />
+   <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))?20170517" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
       <link href="/res/css/rtl.css" rel="stylesheet" type="text/css" />

@@ -10,7 +10,8 @@ namespace BuildFeed.Code
 {
     public static class MvcExtensions
     {
-        public static IHtmlString CheckboxListForEnum<T>(this HtmlHelper html, string id, T currentItem) where T : struct
+        public static IHtmlString CheckboxListForEnum<T>(this HtmlHelper html, string id, T currentItem)
+            where T : struct
         {
             StringBuilder sb = new StringBuilder();
 
@@ -53,7 +54,12 @@ namespace BuildFeed.Code
         public static string GetDisplayTextForEnum(object o)
         {
             string result = null;
-            DisplayAttribute display = o.GetType().GetMember(o.ToString()).First().GetCustomAttributes(false).OfType<DisplayAttribute>().LastOrDefault();
+            DisplayAttribute display = o.GetType()
+                .GetMember(o.ToString())
+                .First()
+                .GetCustomAttributes(false)
+                .OfType<DisplayAttribute>()
+                .LastOrDefault();
 
             if (display != null)
             {

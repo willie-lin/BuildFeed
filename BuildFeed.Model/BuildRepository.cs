@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using BuildFeed.Model.View;
@@ -136,28 +135,27 @@ namespace BuildFeed.Model
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public async Task<FrontPage> SelectFrontPage()
+        public async Task<FrontPage> SelectFrontPage(ProjectFamily family)
         {
             FrontPage fp = new FrontPage();
 
             IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument
             {
+                {"$where", "!this.LabUrl.contains(\"xbox\")"},
                 {
-                    nameof(Build.LabUrl), new BsonDocument
-                    {
-                        {"$in", new BsonArray(ConfigurationManager.AppSettings["site:OSGLab"].Split(';'))}
-                    }
+                    nameof(Build.Family), family
                 }
             }).Sort(sortByCompileDate).Limit(1);
             fp.CurrentCanary = await query.FirstOrDefaultAsync();
 
             query = _buildCollection.Find(new BsonDocument
             {
+                {"$where", "!this.LabUrl.contains(\"xbox\")"},
                 {
-                    nameof(Build.LabUrl), new BsonDocument
-                    {
-                        {"$in", new BsonArray(ConfigurationManager.AppSettings["site:InsiderLab"].Split(';'))}
-                    }
+                    nameof(Build.Family), family
+                },
+                {
+                    nameof(Build.MajorVersion), 10
                 },
                 {
                     nameof(Build.SourceType), new BsonDocument
@@ -176,11 +174,9 @@ namespace BuildFeed.Model
 
             query = _buildCollection.Find(new BsonDocument
             {
+                {"$where", "((this.MajorVersion === 10 && this.LabUrl.contains(\"_release\")) || this.MajorVersion < 10) && !this.LabUrl.contains(\"xbox\")"},
                 {
-                    nameof(Build.LabUrl), new BsonDocument
-                    {
-                        {"$in", new BsonArray(ConfigurationManager.AppSettings["site:ReleaseLab"].Split(';'))}
-                    }
+                    nameof(Build.Family), family
                 },
                 {
                     nameof(Build.SourceType), new BsonDocument
@@ -197,14 +193,11 @@ namespace BuildFeed.Model
             }).Sort(sortByCompileDate).Limit(1);
             fp.CurrentRelease = await query.FirstOrDefaultAsync();
 
-
             query = _buildCollection.Find(new BsonDocument
             {
+                {"$where", "this.LabUrl.contains(\"xbox\")"},
                 {
-                    nameof(Build.LabUrl), new BsonDocument
-                    {
-                        {"$in", new BsonArray(ConfigurationManager.AppSettings["site:XboxLab"].Split(';'))}
-                    }
+                    nameof(Build.Family), family
                 }
             }).Sort(sortByCompileDate).Limit(1);
             fp.CurrentXbox = await query.FirstOrDefaultAsync();
