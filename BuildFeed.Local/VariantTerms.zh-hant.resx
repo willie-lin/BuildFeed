@@ -285,7 +285,7 @@
     <value>尋找更多由 {0} 提供的組建</value>
   </data>
   <data name="Front_MoreFromYear" xml:space="preserve">
-    <value>尋找更多編譯於 {0} 的組建</value>
+    <value>尋找更多編譯於 {0} 年的組建</value>
   </data>
   <data name="Front_NoLabString" xml:space="preserve">
     <value>缺少 Lab 字串</value>
