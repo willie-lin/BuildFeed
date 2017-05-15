@@ -153,11 +153,47 @@
     <value>[!!! Hôω çáñ Ì ϱèƭ ïñƲôℓƲèδ? ℓôřè₥  !!!]</value>
   </data>
 -->
+  <data name="Bulk_AddBuilds" xml:space="preserve">
+    <value>Tambahkan Build</value>
+  </data>
+  
+<!--
+<data name="Bulk_Builds" xml:space="preserve">
+    <value>[!!! ßúïℓδƨ  !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_Instructions" xml:space="preserve">
+    <value>[!!! Âδδ ₥úℓƭïƥℓè βúïℓδƨ βèℓôω β¥ ƭ¥ƥïñϱ ƭλè ƒúℓℓ βúïℓδ ƨƭřïñϱ ôúƭ èáçλ ôñ ôñè ℓïñè. Âℓℓ βúïℓδƨ áδδèδ Ʋïá ƭλïƨ ƥáϱè ωïℓℓ λáƲè á §ôúřçè T¥ƥè ôƒ "ÞřïƲáƭè £èáƙ". ℓôřè₥ ïƥƨú₥ δôℓôř ƨïƭ  !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_SendNotifications" xml:space="preserve">
+    <value>[!!! §èñδ ñôƭïƒïçáƭïôñƨ ℓô !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Bulk_Success" xml:space="preserve">
+    <value>[!!! Tλèƨè βúïℓδƨ λáƲè βèèñ áδδèδ ƨúççèƨƨƒúℓℓ¥. ℓôřè₥ !!!]</value>
+  </data>
+-->
   <data name="Common_AddBuild" xml:space="preserve">
     <value>Tambah Build</value>
   </data>
+  
+<!--
+<data name="Common_AddBulk" xml:space="preserve">
+    <value>[!!! Âδδ βúℓƙ  !!!]</value>
+  </data>
+-->
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
+  </data>
+  <data name="Common_ChangePassword" xml:space="preserve">
+    <value>Ubah kata sandi</value>
   </data>
   <data name="Common_ContributeOn" xml:space="preserve">
     <value>Kontribusi di {0}</value>
@@ -183,12 +219,9 @@
   <data name="Common_LogOut" xml:space="preserve">
     <value>Keluar</value>
   </data>
-  
-<!--
-<data name="Common_NavigationLanguage" xml:space="preserve">
-    <value>[!!! £áñϱúáϱè ℓ !!!]</value>
+  <data name="Common_NavigationLanguage" xml:space="preserve">
+    <value>Bahasa</value>
   </data>
--->
   
 <!--
 <data name="Common_NavigationTheme" xml:space="preserve">
@@ -222,6 +255,26 @@
   <data name="Common_Twitter" xml:space="preserve">
     <value>Twitter</value>
   </data>
+  
+<!--
+<data name="Email_Registration_Body" xml:space="preserve">
+    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ƭô {0}. ℓôřè !!!]
+[!!!  !!!]
+[!!! Þℓèáƨè Ʋèřïƒ¥ ¥ôúř è₥áïℓ áδδřèƨƨ β¥ çℓïçƙïñϱ ƭλè ℓïñƙ βèℓôω, ôř β¥ çôƥ¥ïñϱ áñδ ƥáƨƭïñϱ ïƭ ïñƭô ¥ôúř βřôωƨèř. ℓôřè₥ ïƥƨú₥ δôℓ !!!]
+[!!! {1} !!!]
+[!!!  !!!]
+[!!! Ìƒ ¥ôú δïδ ñôƭ řèϱïƨƭèř ƭô {0}, ¥ôú çáñ ïϱñôřè ƭλïƨ è₥áïℓ. ℓôřè₥ ïƥ !!!]
+[!!!  !!!]
+[!!! Tλáñƙƨ,  !!!]
+[!!! Tλè {0} Tèá₥. ℓ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Email_Registration_Subject" xml:space="preserve">
+    <value>[!!! {0}: Þℓèáƨè Ʋèřïƒ¥ ¥ôúř è₥áïℓ áδδřèƨƨ ℓôřè₥ !!!]</value>
+  </data>
+-->
   <data name="Front_About" xml:space="preserve">
     <value>Tentang</value>
   </data>
@@ -250,6 +303,12 @@
 <!--
 <data name="Front_CurrentRelease" xml:space="preserve">
     <value>[!!! Çúřřèñƭ Rèℓèáƨè ℓ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Front_CurrentXbox" xml:space="preserve">
+    <value>[!!! Çúřřèñƭ Xβôж ℓ !!!]</value>
   </data>
 -->
   <data name="Front_Delete" xml:space="preserve">
@@ -408,6 +467,12 @@
   <data name="Model_Source_UpdateLDR" xml:space="preserve">
     <value>Pembaruan (LDR)</value>
   </data>
+  
+<!--
+<data name="Notification_NewBuild" xml:space="preserve">
+    <value>[!!! Â ñèω βúïℓδ λáƨ βèèñ áδδèδ ƭô {0}! ℓôřè !!!]</value>
+  </data>
+-->
   <data name="Search_Build" xml:space="preserve">
     <value>Build</value>
   </data>
@@ -438,9 +503,6 @@
   <data name="Search_Year" xml:space="preserve">
     <value>Tahun</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Setiap akun divalidasi oleh Administrator, silakan tunggu beberapa saat dan coba lagi</value>
-  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>Tambahan untuk BuildFeed</value>
   </data>
@@ -459,6 +521,15 @@
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>Alamat Email</value>
   </data>
+  
+<!--
+<data name="Support_EmailValidationContent" xml:space="preserve">
+    <value>[!!! Âñ Ʋáℓïδáƭïôñ ℓïñƙ λáƨ βèèñ ƨèñƭ ƭô ¥ôúř è₥áïℓ áδδřèƨƨ. Þℓèáƨè çℓïçƙ ƭλè ℓïñƙ ïñ ƭλè è₥áïℓ ƭô Ʋèřïƒ¥ ƭλè áççôúñƭ. ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+  </data>
+-->
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>Silakan verifikasi email Anda</value>
+  </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Masukkan sandi lama</value>
   </data>
@@ -467,6 +538,33 @@
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
     <value>Masukkan sandi</value>
+  </data>
+  
+<!--
+<data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
+    <value>[!!! Âñ èřřôř ôççúřřèδ ωλèñ áƭƭè₥ƥƭïñϱ ƭô çλáñϱè ¥ôúř ƥáƨƨωôřδ. ℓôřè₥ ïƥ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_Error_DuplicateEmail" xml:space="preserve">
+    <value>[!!! Â úƨèř áççôúñƭ ωïƭλ ƭλïƨ è₥áïℓ áδδřèƨƨ áℓřèáδ¥ èжïƨƭƨ. ℓôřè₥ ï !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_Error_DuplicateUserName" xml:space="preserve">
+    <value>[!!! Â úƨèř áççôúñƭ ωïƭλ ƭλïƨ úƨèř ñá₥è áℓřèáδ¥ èжïƨƭƨ. ℓôřè₥ ï !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_Error_InvalidPassword" xml:space="preserve">
+    <value>[!!! Tλè ƥáƨƨωôřδ ¥ôú λáƲè èñƭèřèδ ïƨ ïñƲáℓïδ. ℓôřè₥ !!!]</value>
+  </data>
+-->
+  <data name="Support_Error_UnknownError" xml:space="preserve">
+    <value>Sebuah kesalahan tidak di ketahui telah terjadi</value>
   </data>
   <data name="Support_HighestVersion" xml:space="preserve">
     <value>Versi yang lebih tinggi</value>
@@ -495,14 +593,41 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>Ingatkan saya</value>
   </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-    <value>Terima kasih telah mendaftar</value>
-  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>Nama pengguna</value>
   </data>
+  
+<!--
+<data name="Support_ValidationFailureContent" xml:space="preserve">
+    <value>[!!! Þℓèáƨè çλèçƙ ƭλè Ʋáℓïδáƭïôñ ℓïñƙ ïñ ¥ôúř è₥áïℓ áñδ ƭř¥ áϱáïñ. ℓôřè₥ ïƥ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_ValidationFailureTitle" xml:space="preserve">
+    <value>[!!! Wè ωèřè úñáβℓè ƭô Ʋáℓïδáƭè ¥ôúř áççôúñƭ. ℓôřè₥ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_ValidationSuccessContent" xml:space="preserve">
+    <value>[!!! Ýôú ωïℓℓ ñôω βè áβℓè ƭô ℓôϱ ïñ úƨïñϱ ¥ôúř úƨèřñá₥è áñδ ƥáƨƨωôřδ. ℓôřè₥ ïƥƨ !!!]</value>
+  </data>
+-->
+  
+<!--
+<data name="Support_ValidationSuccessTitle" xml:space="preserve">
+    <value>[!!! Ýôú λáƲè ƨúççèƨƨƒúℓℓ¥ Ʋáℓïδáƭèδ ¥ôúř áççôúñƭ. ℓôřè₥  !!!]</value>
+  </data>
+-->
   <data name="Support_Week" xml:space="preserve">
     <value>Pekan</value>
   </data>
 
+<data name="Support_AccountValidation" xml:space="preserve">
+    <value>Setiap akun divalidasi oleh Administrator, silakan tunggu beberapa saat dan coba lagi</value>
+  </data>
+<data name="Support_ThanksRegister" xml:space="preserve">
+    <value>Terima kasih telah mendaftar</value>
+  </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About_A1" xml:space="preserve">
-    <value>BuildFeed bir meraklılar topluluğu tarafından işletilmekte ve bakılmaktadır. Microsoft'un bu siteyle hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bunlar söylenmişken, Microsoft açıkça bilgilerini gizli tutmayı istiyor, ve geçmişte onlar tarafından kapatılan kaynaklara sahiplik ettik ve gelecekte yapacaklarından da eminim.</value>
+    <value>BuildFeed bir meraklılar topluluğu tarafından işletilir ve bakılır. Microsoft'un bu site ile hiçbir şekilde ilgisi yoktur. Onların bu sitenin farkında olduğundan emin olsak da, site hakkında Microsoft'tan kesinlikle hiçbir resmi şikayete sahip değiliz. Bunlar söylenmişken, Microsoft açıkça özel bilgileri özel tutmayı istiyor, ve geçmişte onlar tarafından kapatılan kaynaklara sahiplik ettik, ve gelecekte yapacaklarından da eminim.</value>
   </data>
   <data name="About_A2" xml:space="preserve">
     <value>İyi denemeydi Dona, ama bu seferkine düşmüyorum. Şunu söyleyebilirim. BuildFeed, bu sitede gönderilen yapıların doğru ve geçerli olmasını mümkün olduğu kadar kesin hale getirir. Birkaç farklı kaynağımız var, doğrulamayı daha güvenilir yapmak ve Microsoft kaynaklarımızdan birini kaldırırsa diye biraz fazlalık sağlaması için.</value>
   </data>
   <data name="About_A3" xml:space="preserve">
-    <value>Birkaç yolu var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsiniz. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsiniz. Son olarak, BuildFeed'i Çeviri portalımız üzerinden kendi anadilinize çevirmek için yardım edebilirsiniz.</value>
+    <value>Birkaç yolu var. Her yapı sayfasında, Disqus yorum sisteminde yapılar hakkında tartışabilirsin. Sitenin gelişimine hata bildirerek veya GitHub sayfamızdan çekme isteğinde bulunarak katkıda bulunabilirsin. Son olarak, BuildFeed'i Çeviri portalımız üzerinden kendi anadiline çevirmek için yardım edebilirsin.</value>
   </data>
   <data name="About_Q1" xml:space="preserve">
     <value>BuildFeed'i kimler çalıştırıyor? Bu resmi bir Microsoft sitesi mi?</value>
@@ -142,7 +142,7 @@
     <value>Yapılar</value>
   </data>
   <data name="Bulk_Instructions" xml:space="preserve">
-    <value>Aşağıda her bir satıra tam yapı metnini girerek çoklu yapı ekleyin. Bu sayfa ile eklenen bütün yapılar "Özel Sızdırma" Kaynak Türü'ne sahip olacaktır.</value>
+    <value>Aşağıda her bir satıra tam yapı metnini girerek çoklu yapı ekle. Bu sayfa ile eklenen bütün yapılar "Özel Sızdırma" Kaynak Türü'ne sahip olacak.</value>
   </data>
   <data name="Bulk_SendNotifications" xml:space="preserve">
     <value>Bildirimleri gönder</value>
@@ -175,7 +175,7 @@
     <value>Hata</value>
   </data>
   <data name="Common_ErrorContent" xml:space="preserve">
-    <value>Bir şeyler kırıldı. Belki tuhaf bir şey yaptığından dolayı. Muhtemelen benim tuhaf bir şey yaptığımdan dolayı. Bu hatayı almaya devam edersen, {0} ile bir hata raporu gönder.</value>
+    <value>Bir şeyler kırıldı. Belki tuhaf bir şey yaptığından dolayı. Muhtemelen ben tuhaf bir şey yaptığımdan dolayı. Bu hatayı almaya devam edersen, {0} ile bir hata raporu gönder.</value>
   </data>
   <data name="Common_LogIn" xml:space="preserve">
     <value>Giriş yap</value>
@@ -211,12 +211,12 @@
     <value>Twitter</value>
   </data>
   <data name="Email_Registration_Body" xml:space="preserve">
-    <value>{0}'e kayıt olduğunuz için teşekkür ederiz.
+    <value>{0}'e kayıt olduğun için teşekkür ederim.
 
-Lütfen aşağıdaki bağlantıya tıklayarak veya aşağıdaki bağlantıyı kopyalayıp tarayıcınıza yapıştırarak e-posta adresinizi doğrulayın.
+Lütfen aşağıdaki bağlantıya tıklayarak veya aşağıdaki bağlantıyı kopyalayıp tarayıcına yapıştırarak e-posta adresini doğrula.
 {1}
 
-Eğer {0}'e kayıt olmadıysanız, bu e-postayı yok sayabilirsiniz.
+Eğer {0}'e kayıt olmadıysan, bu e-postayı yok sayabilirsin.
 
 Teşekkürler,
 {0} Takımı.</value>
@@ -240,7 +240,7 @@ Teşekkürler,
     <value>Şimdiki Kanarya</value>
   </data>
   <data name="Front_CurrentInsider" xml:space="preserve">
-    <value>Şimdiki Insider</value>
+    <value>Şimdiki İnsider</value>
   </data>
   <data name="Front_CurrentRelease" xml:space="preserve">
     <value>Şimdiki Dağıtım</value>
@@ -267,7 +267,7 @@ Teşekkürler,
     <value>Bütün Windows yapıları listesini gör...</value>
   </data>
   <data name="Front_HomeH1" xml:space="preserve">
-    <value>Windows yapıları izleyicisi: {0}</value>
+    <value>Windows yapı izleyicisi: {0}</value>
   </data>
   <data name="Front_HomepageH1" xml:space="preserve">
     <value>{0} yapı listesi</value>
@@ -276,7 +276,7 @@ Teşekkürler,
     <value>Son yapılar</value>
   </data>
   <data name="Front_Listing" xml:space="preserve">
-    <value>Liste</value>
+    <value>Listeleme</value>
   </data>
   <data name="Front_MoreFromLab" xml:space="preserve">
     <value>Şundan daha fazla yapı bul: {0}</value>
@@ -336,7 +336,7 @@ Teşekkürler,
     <value>Yapının çıkış tarihi</value>
   </data>
   <data name="Model_ExternalLink" xml:space="preserve">
-    <value>Dış bağlantı:</value>
+    <value>Dış bağlantı</value>
   </data>
   <data name="Model_LabString" xml:space="preserve">
     <value>Laboratuvar etiketi</value>
@@ -444,7 +444,7 @@ Teşekkürler,
     <value>Bir doğrulama bağlantısı e-posta adresinize gönderildi. Lütfen hesabınızı doğrulamak için e-postadaki bağlantıya tıklayınız.</value>
   </data>
   <data name="Support_EmailValidationTitle" xml:space="preserve">
-    <value>Lütfen e-posta adresinizi doğrulayın</value>
+    <value>Lütfen e-posta adresini doğrula</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>Şu anki parolayı girin</value>
@@ -456,7 +456,7 @@ Teşekkürler,
     <value>Parolayı girin</value>
   </data>
   <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
-    <value>Şifrenizi değiştirmeye çalışırken bir hata oluştu.</value>
+    <value>Şifreni değiştirmeye teşebbüs ederken bir hata oluştu.</value>
   </data>
   <data name="Support_Error_DuplicateEmail" xml:space="preserve">
     <value>Bu e-posta adresiyle bir kullanıcı hesabı hâlihazırda var.</value>
@@ -465,7 +465,7 @@ Teşekkürler,
     <value>Bu kullanıcı adıyla bir kullanıcı hesabı hâlihazırda var.</value>
   </data>
   <data name="Support_Error_InvalidPassword" xml:space="preserve">
-    <value>Girmiş olduğunuz şifre geçersiz.</value>
+    <value>Girmiş olduğun şifre geçersiz.</value>
   </data>
   <data name="Support_Error_UnknownError" xml:space="preserve">
     <value>Bilinmeyen bir hata oluştu.</value>
@@ -501,16 +501,16 @@ Teşekkürler,
     <value>Kullanıcı adı</value>
   </data>
   <data name="Support_ValidationFailureContent" xml:space="preserve">
-    <value>Lütfen e-postanızdaki doğrulama bağlantısını kontrol ediniz ve tekrar deneyiniz.</value>
+    <value>Lütfen e-postandaki doğrulama bağlantısını kontrol et ve tekrar dene.</value>
   </data>
   <data name="Support_ValidationFailureTitle" xml:space="preserve">
     <value>Hesabınızı doğrulayamadık.</value>
   </data>
   <data name="Support_ValidationSuccessContent" xml:space="preserve">
-    <value>Artık kullanıcı adınızı ve şifrenizi kullanarak oturum açabilirsiniz.</value>
+    <value>Şimdi kullanıcı adını ve şifreni kullanarak giriş yapabileceksin.</value>
   </data>
   <data name="Support_ValidationSuccessTitle" xml:space="preserve">
-    <value>Hesabınızı başarıyla doğruladınız.</value>
+    <value>Hesabını başarıyla doğruladın.</value>
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>Hafta</value>
