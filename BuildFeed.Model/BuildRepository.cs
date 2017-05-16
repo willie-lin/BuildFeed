@@ -110,6 +110,24 @@ namespace BuildFeed.Model
                         Name = "_idx_alt_bstr"
                     });
             }
+
+            if (indexes.All(i => i["name"] != "_idx_source"))
+            {
+                await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.SourceType),
+                    new CreateIndexOptions
+                    {
+                        Name = "_idx_source"
+                    });
+            }
+
+            if (indexes.All(i => i["name"] != "_idx_family"))
+            {
+                await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.Family),
+                    new CreateIndexOptions
+                    {
+                        Name = "_idx_family"
+                    });
+            }
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, true)]
