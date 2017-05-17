@@ -38,13 +38,7 @@ namespace BuildFeed.Controllers
 #endif
         public async Task<ActionResult> Index()
         {
-            var items = new Dictionary<ProjectFamily, FrontPage>
-            {
-                {ProjectFamily.Redstone3, await _bModel.SelectFrontPage(ProjectFamily.Redstone3)},
-                {ProjectFamily.Feature2, await _bModel.SelectFrontPage(ProjectFamily.Feature2)},
-                {ProjectFamily.Redstone2, await _bModel.SelectFrontPage(ProjectFamily.Redstone2)},
-                {ProjectFamily.Redstone, await _bModel.SelectFrontPage(ProjectFamily.Redstone)}
-            };
+            Dictionary<ProjectFamily, FrontPage> items = await _bModel.SelectFrontPage();
             return View(nameof(Index), items);
         }
 

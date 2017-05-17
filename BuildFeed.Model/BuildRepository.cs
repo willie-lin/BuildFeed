@@ -153,74 +153,90 @@ namespace BuildFeed.Model
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public async Task<FrontPage> SelectFrontPage(ProjectFamily family)
+        public async Task<Dictionary<ProjectFamily, FrontPage>> SelectFrontPage()
         {
-            FrontPage fp = new FrontPage();
+            var families = new Dictionary<ProjectFamily, FrontPage>();
 
-            IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument
-            {
-                {"$where", "!this.LabUrl.contains(\"xbox\")"},
+            IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate()
+                .Match(new BsonDocument
                 {
-                    nameof(Build.Family), family
-                }
-            }).Sort(sortByCompileDate).Limit(1);
-            fp.CurrentCanary = await query.FirstOrDefaultAsync();
-
-            query = _buildCollection.Find(new BsonDocument
-            {
-                {"$where", "!this.LabUrl.contains(\"xbox\")"},
-                {
-                    nameof(Build.Family), family
-                },
-                {
-                    nameof(Build.MajorVersion), 10
-                },
-                {
-                    nameof(Build.SourceType), new BsonDocument
                     {
+                        nameof(Build.Family), new BsonDocument
                         {
-                            "$in", new BsonArray
+                            {"$gte", 30}
+                        }
+                    }
+                })
+                .Group(new BsonDocument
+                {
+                    {
+                        "_id", new BsonDocument
+                        {
+                            {nameof(Build.Family), $"${nameof(Build.Family)}"},
+                            {nameof(Build.LabUrl), $"${nameof(Build.LabUrl)}"},
+                            {nameof(Build.SourceType), $"${nameof(Build.SourceType)}"}
+                        }
+                    },
+                    {
+                        "items", new BsonDocument
+                        {
                             {
-                                TypeOfSource.PublicRelease,
-                                TypeOfSource.UpdateGDR
+                                "$push", new BsonDocument
+                                {
+                                    {nameof(Build.Id), "$_id"},
+                                    {nameof(Build.MajorVersion), $"${nameof(Build.MajorVersion)}"},
+                                    {nameof(Build.MinorVersion), $"${nameof(Build.MinorVersion)}"},
+                                    {nameof(Build.Number), $"${nameof(Build.Number)}"},
+                                    {nameof(Build.Revision), $"${nameof(Build.Revision)}"},
+                                    {nameof(Build.Lab), $"${nameof(Build.Lab)}"},
+                                    {nameof(Build.BuildTime), $"${nameof(Build.BuildTime)}"}
+                                }
                             }
                         }
                     }
-                }
-            }).Sort(sortByCompileDate).Limit(1);
-            fp.CurrentInsider = await query.FirstOrDefaultAsync();
+                });
 
-            query = _buildCollection.Find(new BsonDocument
+            var dbResults = await query.ToListAsync();
+
+            var results = from g in dbResults
+                          select new
+                          {
+                              Key = new
+                              {
+                                  Family = (ProjectFamily)g["_id"].AsBsonDocument[nameof(Build.Family)].AsInt32,
+                                  LabUrl = g["_id"].AsBsonDocument[nameof(Build.LabUrl)].AsString,
+                                  SourceType = (TypeOfSource)g["_id"].AsBsonDocument[nameof(Build.SourceType)].AsInt32
+                              },
+
+                              Items = from i in g["items"].AsBsonArray
+                                      select new FrontPageBuild
+                                      {
+                                          Id = i[nameof(Build.Id)].AsGuid,
+                                          MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
+                                          MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
+                                          Number = (uint)i[nameof(Build.Number)].AsInt32,
+                                          Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
+                                          Lab = i[nameof(Build.Lab)].AsString,
+                                          BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
+                                      }
+                          };
+
+            IEnumerable<ProjectFamily> listOfFamilies = results.GroupBy(g => g.Key.Family).Select(g => g.Key);
+
+            foreach (ProjectFamily family in listOfFamilies)
             {
-                {"$where", "((this.MajorVersion === 10 && this.LabUrl.contains(\"_release\")) || this.MajorVersion < 10) && !this.LabUrl.contains(\"xbox\")"},
+                FrontPage fp = new FrontPage
                 {
-                    nameof(Build.Family), family
-                },
-                {
-                    nameof(Build.SourceType), new BsonDocument
-                    {
-                        {
-                            "$in", new BsonArray
-                            {
-                                TypeOfSource.PublicRelease,
-                                TypeOfSource.UpdateGDR
-                            }
-                        }
-                    }
-                }
-            }).Sort(sortByCompileDate).Limit(1);
-            fp.CurrentRelease = await query.FirstOrDefaultAsync();
+                    CurrentCanary = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentInsider = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentRelease = results.Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("_release") && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentXbox = results.Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault()
+                };
 
-            query = _buildCollection.Find(new BsonDocument
-            {
-                {"$where", "this.LabUrl.contains(\"xbox\")"},
-                {
-                    nameof(Build.Family), family
-                }
-            }).Sort(sortByCompileDate).Limit(1);
-            fp.CurrentXbox = await query.FirstOrDefaultAsync();
+                families.Add(family, fp);
+            }
 
-            return fp;
+            return families;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
