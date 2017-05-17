@@ -221,7 +221,7 @@ namespace BuildFeed.Model
                                       }
                           };
 
-            IEnumerable<ProjectFamily> listOfFamilies = results.GroupBy(g => g.Key.Family).Select(g => g.Key);
+            IEnumerable<ProjectFamily> listOfFamilies = results.GroupBy(g => g.Key.Family).Select(g => g.Key).OrderByDescending(k => k);
 
             foreach (ProjectFamily family in listOfFamilies)
             {
