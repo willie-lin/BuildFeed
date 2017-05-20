@@ -6,62 +6,66 @@ using System.Web.Security;
 using BuildFeed.Controllers;
 using MongoAuth;
 
-namespace BuildFeed.Areas.admin.Controllers
+namespace BuildFeed.Admin.Controllers
 {
     [Authorize(Roles = "Administrators")]
-    public class usersController : BaseController
+    [RouteArea("admin")]
+    [RoutePrefix("users")]
+    public class UsersController : BaseController
     {
-        // GET: admin/users
-        public ActionResult index() => View(Membership.GetAllUsers().Cast<MembershipUser>().OrderByDescending(m => m.IsApproved).ThenBy(m => m.UserName));
+        [Route]
+        public ActionResult Index() => View(Membership.GetAllUsers().Cast<MembershipUser>());
 
-        public ActionResult admins()
+        [Route("admins")]
+        public ActionResult Admins()
         {
             List<MembershipUser> admins = Roles.GetUsersInRole("Administrators").Select(Membership.GetUser).ToList();
 
             return View(admins.OrderByDescending(m => m.UserName));
         }
 
-        public ActionResult promote(string id)
-        {
-            Roles.AddUserToRole(id, "Administrators");
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult demote(string id)
-        {
-            Roles.RemoveUserFromRole(id, "Administrators");
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult approve(Guid id)
+        [Route("approve/{id:guid}")]
+        public ActionResult Approve(Guid id)
         {
             MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeApproval(id, true);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-        public ActionResult unapprove(Guid id)
+        [Route("unapprove/{id:guid}")]
+        public ActionResult Unapprove(Guid id)
         {
             MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeApproval(id, false);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-        public ActionResult @lock(Guid id)
+        [Route("lock/{id:guid}")]
+        public ActionResult Lock(Guid id)
         {
             MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeLockStatus(id, true);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-        public ActionResult unlock(Guid id)
+        [Route("unlock/{id:guid}")]
+        public ActionResult Unlock(Guid id)
         {
             MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeLockStatus(id, false);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-        public ActionResult cleanup()
+        [Route("delete/{id:guid}")]
+        public ActionResult Delete(Guid id)
+        {
+            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            provider?.DeleteUser(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Route("cleanup")]
+        public ActionResult Cleanup()
         {
             MembershipUserCollection users = Membership.GetAllUsers();
 
@@ -74,7 +78,7 @@ namespace BuildFeed.Areas.admin.Controllers
                 }
             }
 
-            return RedirectToAction("index");
+            return RedirectToAction(nameof(Index));
         }
     }
 }

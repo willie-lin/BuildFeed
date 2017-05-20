@@ -158,17 +158,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\admin\Controllers\baseController.cs" />
-    <Compile Include="Areas\admin\Controllers\metaController.cs" />
-    <Compile Include="Areas\admin\Models\ViewModel\MetaListing.cs" />
+    <Compile Include="Areas\Admin\Controllers\RootController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModel\MetaListing.cs" />
     <Compile Include="Code\Base32Encoding.cs" />
     <Compile Include="Code\CustomContentTypeAttribute.cs" />
     <Compile Include="Code\DateTimeModelBinder.cs" />
     <Compile Include="Code\DisplayHelpers.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
-    <Compile Include="Areas\admin\Controllers\usersController.cs" />
+    <Compile Include="Areas\Admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Code\EmailManager\EmailManager.cs" />
     <Compile Include="Code\EmailManager\RegistrationEmail.cs" />
     <Compile Include="Code\MvcIntrinsics.cs" />
@@ -210,14 +210,14 @@
     <Content Include="content\tile\tiny.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\admin\Views\web.config" />
-    <Content Include="Areas\admin\Views\users\index.cshtml" />
-    <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Users\index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="content\Web.config" />
-    <Content Include="Areas\admin\Views\base\index.cshtml" />
-    <Content Include="Areas\admin\Views\users\admins.cshtml" />
-    <Content Include="Areas\admin\Views\meta\index.cshtml" />
-    <Content Include="Areas\admin\Views\meta\create.cshtml" />
+    <Content Include="Areas\Admin\Views\Root\index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\admins.cshtml" />
+    <Content Include="Areas\Admin\Views\Meta\index.cshtml" />
+    <Content Include="Areas\Admin\Views\Meta\create.cshtml" />
     <Content Include="res\css\dark.css">
       <DependentUpon>dark.scss</DependentUpon>
     </Content>

@@ -9,6 +9,11 @@ body
    box-sizing: border-box;
 }
 
+input, textarea, select
+{
+   font-family: 'Fira Sans', sans-serif;
+}
+
 a
 {
    text-decoration: none;
@@ -135,9 +140,18 @@ table
 .field-validation-error,
 .text-danger
 {
-   display: block;
-   margin: #{(1em / 3)} 0;
    color: $strong-red;
+}
+
+.text-success
+{
+   color: $strong-green;
+}
+
+.field-validation-error
+{
+   margin: #{(1em / 3)} 0;
+   display: block;
 }
 
 a.button,
@@ -616,27 +630,35 @@ article
    display: flex;
    flex-wrap: wrap;
 
-   > label
+   > label,
+   > .label-placeholder
    {
       width: 20%;
-      max-width: 240px;
-      min-width: 120px;
+      max-width: 280px;
+      min-width: 160px;
       text-align: left;
       font-weight: bold;
       margin-right: 1em;
-      display: inline-block;
+      display: block;
       vertical-align: top;
       margin-top: #{(1em / 4)};
       flex-grow: 1;
+      text-align: right;
+
+      @media(max-width: 479px)
+      {
+         width: 100%;
+         max-width: none;
+         text-align: left;
+      }
    }
 
    > div
    {
-      margin-left: calc(20% + 1em);
       width: 40%;
       min-width: 240px;
       max-width: 560px;
-      display: inline-block;
+      display: block;
       vertical-align: top;
       flex-grow: 2;
 
@@ -647,6 +669,7 @@ article
          border: $border-size solid;
          padding: #{(1em / 3)} #{(1em / 2)};
          border-radius: #{(1em / 6)};
+         font-size: 1em;
          line-height: 1em;
          border-color: #888;
       }
@@ -684,13 +707,22 @@ article
       {
          display: inline-block;
          vertical-align: middle;
-         padding: #{(1em / 3)} 1em;
+         padding: #{(1em / 2)} 1em #{(1em / 3)};
          background-color: $strong-green;
          color: #fff;
          text-decoration: none;
          border-radius: #{(1em / 6)};
          border: 0;
          line-height: 1.6;
+         font-size: 1em;
+      }
+
+      a.button
+      {
+         vertical-align: middle;
+         padding: #{(1em / 2)} 1em #{(1em / 3)};
+         line-height: 1.6;
+         font-size: 1em;
       }
 
       &.wide-group

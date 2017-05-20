@@ -2,15 +2,15 @@
 @model BuildFeed.Areas.admin.Models.ViewModel.MetaListing
 
 @{
-   ViewBag.Title = "Metadata | BuildFeed";
+   ViewBag.Title = $"Manage metadata | {InvariantTerms.SiteName}";
 }
 
 <h1>Manage metadata</h1>
 <ul>
-   <li>@Html.ActionLink("Return to admin panel", "index", "base")</li>
+   <li>@Html.ActionLink("Return to admin panel", nameof(RootController.Index), "Root")</li>
 </ul>
 <h3>Current items</h3>
-<table class="table table-striped table-bordered table-admin">
+<table>
    <thead>
    <tr>
       <th>Name</th>
@@ -30,7 +30,7 @@
          <tr>
             <td>@item.Id.Value</td>
             <td>
-               @Html.ActionLink("Edit", "edit", new
+               @Html.ActionLink("Edit", nameof(MetaController.Edit), new
                {
                   type = item.Id.Type,
                   value = item.Id.Value
@@ -44,8 +44,8 @@
    }
    </tbody>
 </table>
-<h3>Add new metadata</h3>
-<table class="table table-striped table-bordered table-admin">
+<h3>Add new items</h3>
+<table>
    <thead>
    <tr>
       <th>Name</th>
@@ -65,7 +65,7 @@
          <tr>
             <td>@item.Id.Value</td>
             <td>
-               @Html.ActionLink("Create", "create", new
+               @Html.ActionLink("Create", nameof(MetaController.Create), new
                {
                   type = item.Id.Type,
                   value = item.Id.Value

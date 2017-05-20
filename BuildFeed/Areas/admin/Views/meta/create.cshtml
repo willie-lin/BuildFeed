@@ -1,9 +1,9 @@
 ﻿@model BuildFeed.Model.MetaItemModel
 @{
-   ViewBag.Title = $"Add metadata for {Model.Id.Value} | BuildFeed";
+   ViewBag.Title = $"Add metadata for {Model.Id.Value} | {InvariantTerms.SiteName}";
 }
 
-<h1>@($"Add metadata for {Model.Id.Value}") </h1>
+<h1>@($"Add metadata for {Model.Id.Value}")</h1>
 
 
 @using (Html.BeginForm())
@@ -13,45 +13,34 @@
    @Html.HiddenFor(model => model.Id.Type)
    @Html.HiddenFor(model => model.Id.Value)
 
-   <div class="form-horizontal">
-      <div class="form-group">
-         @Html.LabelFor(model => model.MetaDescription, new
+   <div class="form-group">
+      @Html.LabelFor(model => model.MetaDescription)
+      <div class="wide-group">
+         @Html.TextAreaFor(model => model.MetaDescription, new
          {
-            @class = "control-label"
+            rows = "4"
          })
-         <div class="wide-group">
-            @Html.TextAreaFor(model => model.MetaDescription, new
-            {
-               @class = "form-control",
-               rows = "4"
-            })
-            <div class="help-block">
-               <span id="meta-count">0</span> characters
-               @Html.ValidationMessageFor(model => model.MetaDescription)
-            </div>
-         </div>
-      </div>
-
-      <div class="form-group">
-         @Html.LabelFor(model => model.PageContent, new
-         {
-            @class = "control-label"
-         })
-         <div class="wide-group">
-            @Html.TextAreaFor(model => model.PageContent, new
-            {
-               @class = "form-control"
-            })
-            <div class="help-block">
-               @Html.ValidationMessageFor(model => model.PageContent)
-            </div>
-         </div>
-      </div>
-
-      <div class="form-group">
          <div>
-            <input type="submit" value="Add metadata" class="btn btn-primary" />
+            <span id="meta-count">0</span> characters
+            @Html.ValidationMessageFor(model => model.MetaDescription)
          </div>
+      </div>
+   </div>
+
+   <div class="form-group">
+      @Html.LabelFor(model => model.PageContent)
+      <div class="wide-group">
+         @Html.TextAreaFor(model => model.PageContent)
+         <div>
+            @Html.ValidationMessageFor(model => model.PageContent)
+         </div>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <span class="label-placeholder"></span>
+      <div>
+         <input type="submit" value="Add metadata" />
       </div>
    </div>
 }

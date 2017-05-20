@@ -137,8 +137,8 @@ namespace BuildFeed.Model
 
     public class MetaItemKey
     {
-        public MetaType Type { get; set; }
         public string Value { get; set; }
+        public MetaType Type { get; set; }
 
         public MetaItemKey()
         {

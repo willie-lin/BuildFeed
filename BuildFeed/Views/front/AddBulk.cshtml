@@ -25,11 +25,17 @@
    </ul>
 }
 
-<p>@VariantTerms.Bulk_Instructions</p>
 
 @using (Html.BeginForm())
 {
    @Html.AntiForgeryToken()
+
+   <div class="form-group">
+      <span class="label-placeholder"></span>
+      <div>
+         @VariantTerms.Bulk_Instructions
+      </div>
+   </div>
 
    <div class="form-group">
       <label for="@Html.IdFor(m => m.Builds)">@VariantTerms.Bulk_Builds</label>
@@ -42,9 +48,9 @@
    </div>
 
    <div class="form-group">
-      <label></label>
+      <span class="label-placeholder"></span>
       <div>
-         <label>
+         <label for="@Html.IdFor(m => m.SendNotifications)">
             @Html.CheckBoxFor(m => m.SendNotifications)
             @VariantTerms.Bulk_SendNotifications
          </label>
@@ -52,7 +58,7 @@
    </div>
 
    <div class="form-group">
-      <label></label>
+      <span class="label-placeholder"></span>
       <div>
          <input type="submit" value="@VariantTerms.Bulk_AddBuilds" class="button" />
       </div>

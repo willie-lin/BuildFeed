@@ -108,7 +108,7 @@ namespace BuildFeed.Controllers
 
                         MongoMembershipProvider provider = (MongoMembershipProvider)Membership.Provider;
                         Guid id = (Guid)mu.ProviderUserKey;
-                        string hash = (await provider.GenerateValidationHash(id)).ToLower();
+                        string hash = (await provider.GenerateValidationHash(id)).ToLowerInvariant();
 
                         string fullUrl = Request.Url?.GetLeftPart(UriPartial.Authority) + Url.Action("Validate",
                             "Account",

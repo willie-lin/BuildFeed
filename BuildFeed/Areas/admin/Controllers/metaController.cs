@@ -5,20 +5,22 @@ using BuildFeed.Areas.admin.Models.ViewModel;
 using BuildFeed.Controllers;
 using BuildFeed.Model;
 
-namespace BuildFeed.Areas.admin.Controllers
+namespace BuildFeed.Admin.Controllers
 {
     [Authorize(Roles = "Administrators")]
-    public class metaController : BaseController
+    [RouteArea("admin")]
+    [RoutePrefix("meta")]
+    public class MetaController : BaseController
     {
         private readonly MetaItem _mModel;
 
-        public metaController()
+        public MetaController()
         {
             _mModel = new MetaItem();
         }
 
-        // GET: admin/meta
-        public async Task<ActionResult> index()
+        [Route("")]
+        public async Task<ActionResult> Index()
         {
             return View(new MetaListing
             {
@@ -27,6 +29,7 @@ namespace BuildFeed.Areas.admin.Controllers
                                into b
                                orderby b.Key.ToString()
                                select b,
+
                 NewItems = from i in (from l in await _mModel.SelectUnusedLabs()
                                       select new MetaItemModel
                                       {
@@ -59,7 +62,8 @@ namespace BuildFeed.Areas.admin.Controllers
             });
         }
 
-        public ActionResult create(MetaType type, string value)
+        [Route("create/{type}/{value}")]
+        public ActionResult Create(MetaType type, string value)
         {
             return View(new MetaItemModel
             {
@@ -72,20 +76,23 @@ namespace BuildFeed.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> create(MetaItemModel meta)
+        [ValidateAntiForgeryToken]
+        [Route("create/{type}/{value}")]
+        public async Task<ActionResult> Create(MetaItemModel meta)
         {
             if (ModelState.IsValid)
             {
                 await _mModel.Insert(meta);
-                return RedirectToAction("index");
+                return RedirectToAction(nameof(Index));
             }
 
             return View(meta);
         }
 
-        public async Task<ActionResult> edit(MetaType type, string value)
+        [Route("edit/{type}/{value}")]
+        public async Task<ActionResult> Edit(MetaType type, string value)
         {
-            return View("create",
+            return View(nameof(Create),
                 await _mModel.SelectById(new MetaItemKey
                 {
                     Type = type,
@@ -94,15 +101,17 @@ namespace BuildFeed.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> edit(MetaItemModel meta)
+        [ValidateAntiForgeryToken]
+        [Route("edit/{type}/{value}")]
+        public async Task<ActionResult> Edit(MetaItemModel meta)
         {
             if (ModelState.IsValid)
             {
                 await _mModel.Update(meta);
-                return RedirectToAction("index");
+                return RedirectToAction("Index");
             }
 
-            return View("create", meta);
+            return View(nameof(Create), meta);
         }
     }
 }

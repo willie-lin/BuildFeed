@@ -24,7 +24,6 @@ else
       <input id="quickpaste" type="text" />
    </div>
 </div>
-
 @using (Html.BeginForm())
 {
    @Html.AntiForgeryToken()
@@ -107,11 +106,11 @@ else
    </div>
 
    <div class="form-group">
-      <label></label>
+      <span class="label-placeholder"></span>
       <div>
          <input type="submit" value="@((string)ViewContext.RouteData.Values["action"] == nameof(FrontController.AddBuild)
                                           ? VariantTerms.Common_AddBuild
-                                          : VariantTerms.Front_EditBuild)" class="btn btn-primary" />
+                                          : VariantTerms.Front_EditBuild)" />
          &ensp;
          <a href="/" onclick="window.history.back();return false;" class="button">
             @VariantTerms.Front_ReturnToListing

@@ -2,15 +2,15 @@
 @model IEnumerable<MembershipUser>
 
 @{
-   ViewBag.Title = "Manage users | BuildFeed";
+   ViewBag.Title = $"Manage users | {InvariantTerms.SiteName}";
 }
 
 <h1>Manage users</h1>
 
 <ul>
-   <li>@Html.ActionLink("View administrators", "admins")</li>
-   <li>@Html.ActionLink("Clean-up old unapproved users", "cleanup")</li>
-   <li>@Html.ActionLink("Return to admin panel", "index", "base")</li>
+   <li>@Html.ActionLink("View administrators", "Admins")</li>
+   <li>@Html.ActionLink("Clean-up old unapproved users", "Cleanup")</li>
+   <li>@Html.ActionLink("Return to admin panel", "Index", "Root")</li>
 </ul>
 
 <table id="user-table">
@@ -31,6 +31,7 @@
       <th>
          Last Lockout Time
       </th>
+      <th style="width: 100px;"></th>
       <th style="width: 100px;"></th>
       <th style="width: 100px;"></th>
    </tr>
@@ -60,14 +61,14 @@
          </td>
          <td class="text-right">
             @(mu.IsApproved
-                 ? Html.ActionLink("Unapprove", "unapprove", new
+                 ? Html.ActionLink("Unapprove", nameof(UsersController.Unapprove), new
                  {
                     id = mu.ProviderUserKey
                  }, new
                  {
                     @class = "button delete-button"
                  })
-                 : Html.ActionLink("Approve", "approve", new
+                 : Html.ActionLink("Approve", nameof(UsersController.Approve), new
                  {
                     id = mu.ProviderUserKey
                  }, new
@@ -77,20 +78,30 @@
          </td>
          <td class="text-right">
             @(!mu.IsLockedOut
-                 ? Html.ActionLink("Lock", "lock", new
+                 ? Html.ActionLink("Lock", nameof(UsersController.Lock), new
                  {
                     id = mu.ProviderUserKey
                  }, new
                  {
                     @class = "button delete-button"
                  })
-                 : Html.ActionLink("Unlock", "unlock", new
+                 : Html.ActionLink("Unlock", nameof(UsersController.Unlock), new
                  {
                     id = mu.ProviderUserKey
                  }, new
                  {
                     @class = "button add-button"
                  }))
+         </td>
+         <td>
+            @Html.ActionLink("Delete", nameof(UsersController.Delete), new
+            {
+               id = mu.ProviderUserKey
+            }, new
+            {
+               @class = "button delete-button",
+               onclick = @"return !(confirm(""Are you sure you want to delete this user?"") === false);"
+            })
          </td>
       </tr>
    }

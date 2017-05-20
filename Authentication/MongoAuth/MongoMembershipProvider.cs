@@ -213,6 +213,14 @@ namespace MongoAuth
             return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
         }
 
+        public bool DeleteUser(Guid id)
+        {
+            Task<DeleteResult> task = _memberCollection.DeleteOneAsync(m => m.Id == id);
+            task.Wait();
+
+            return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
+        }
+
         public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
         {
             throw new NotImplementedException();
@@ -404,7 +412,7 @@ namespace MongoAuth
 
             using (SHA256 sha = SHA256.Create())
             {
-                string content = $"{mm.Id}.{mm.PassSalt}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
+                string content = $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
                 byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
 
                 return Base32Encoding.ToString(hashBytes);
@@ -421,11 +429,10 @@ namespace MongoAuth
 
             using (SHA256 sha = SHA256.Create())
             {
-                string content = $"{mm.Id}.{mm.PassSalt}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
+                string content = $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
                 byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
 
                 string expected = Base32Encoding.ToString(hashBytes);
-
                 bool success = string.Equals(expected, validate, StringComparison.InvariantCultureIgnoreCase);
 
                 if (success)

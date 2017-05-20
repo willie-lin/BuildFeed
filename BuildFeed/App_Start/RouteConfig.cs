@@ -19,6 +19,7 @@ namespace BuildFeed
                     action = "GetBuilds",
                     id = UrlParameter.Optional
                 });
+
             routes.MapMvcAttributeRoutes();
         }
     }
