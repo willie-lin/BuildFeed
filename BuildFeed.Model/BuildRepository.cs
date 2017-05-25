@@ -196,30 +196,30 @@ namespace BuildFeed.Model
                     }
                 });
 
-            var dbResults = await query.ToListAsync();
+            List<BsonDocument> dbResults = await query.ToListAsync();
 
-            var results = from g in dbResults
-                          select new
-                          {
-                              Key = new
-                              {
-                                  Family = (ProjectFamily)g["_id"].AsBsonDocument[nameof(Build.Family)].AsInt32,
-                                  LabUrl = g["_id"].AsBsonDocument[nameof(Build.LabUrl)].AsString,
-                                  SourceType = (TypeOfSource)g["_id"].AsBsonDocument[nameof(Build.SourceType)].AsInt32
-                              },
+            var results = (from g in dbResults
+                           select new
+                           {
+                               Key = new
+                               {
+                                   Family = (ProjectFamily)g["_id"].AsBsonDocument[nameof(Build.Family)].AsInt32,
+                                   LabUrl = g["_id"].AsBsonDocument[nameof(Build.LabUrl)].AsString,
+                                   SourceType = (TypeOfSource)g["_id"].AsBsonDocument[nameof(Build.SourceType)].AsInt32
+                               },
 
-                              Items = from i in g["items"].AsBsonArray
-                                      select new FrontPageBuild
-                                      {
-                                          Id = i[nameof(Build.Id)].AsGuid,
-                                          MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
-                                          MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
-                                          Number = (uint)i[nameof(Build.Number)].AsInt32,
-                                          Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
-                                          Lab = i[nameof(Build.Lab)].AsString,
-                                          BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
-                                      }
-                          };
+                               Items = from i in g["items"].AsBsonArray
+                                       select new FrontPageBuild
+                                       {
+                                           Id = i[nameof(Build.Id)].AsGuid,
+                                           MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
+                                           MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
+                                           Number = (uint)i[nameof(Build.Number)].AsInt32,
+                                           Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
+                                           Lab = i[nameof(Build.Lab)].AsString,
+                                           BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
+                                       }
+                           }).ToArray();
 
             IEnumerable<ProjectFamily> listOfFamilies = results.GroupBy(g => g.Key.Family).Select(g => g.Key).OrderByDescending(k => k);
 
@@ -228,8 +228,11 @@ namespace BuildFeed.Model
                 FrontPage fp = new FrontPage
                 {
                     CurrentCanary = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
-                    CurrentInsider = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
-                    CurrentRelease = results.Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("_release") && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentInsider = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items)
+                        .OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentRelease = results
+                        .Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("_release") && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR))
+                        .SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
                     CurrentXbox = results.Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault()
                 };
 

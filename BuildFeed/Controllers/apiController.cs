@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Security;
+using AutoMapper;
 using BuildFeed.Code;
 using BuildFeed.Local;
 using BuildFeed.Model;
 using BuildFeed.Model.Api;
 using BuildFeed.Model.View;
-using MongoDB.Bson;
 using OneSignal.CSharp.SDK;
 
 #pragma warning disable SG0016 // Controller method is vulnerable to CSRF - Not relevant for API
@@ -28,31 +28,8 @@ namespace BuildFeed.Controllers
 
         public async Task<ApiBuild[]> GetBuilds(int limit = 20, int skip = 0)
         {
-            List<Build> builds = await _bModel.SelectBuildsByOrder(limit, skip);
-            return (from b in builds
-                   select new ApiBuild
-                   {
-                       Id = b.Id,
-
-                       MajorVersion = b.MajorVersion,
-                       MinorVersion = b.MinorVersion,
-                       Number = b.Number,
-                       Revision = b.Revision,
-
-                       Lab = b.Lab,
-                       BuildTime = b.BuildTime,
-
-                       SourceType = b.SourceType,
-                       SourceDetails = b.SourceDetails,
-                       LeakDate = b.LeakDate,
-
-                       FullBuildString = b.FullBuildString,
-                       AlternateBuildString = b.AlternateBuildString,
-                       LabUrl = b.LabUrl,
-
-                       Added = b.Added,
-                       Modified = b.Modified
-                   }).ToArray();
+            return (from b in await _bModel.SelectBuildsByOrder(limit, skip)
+                    select Mapper.Map<ApiBuild>(b)).ToArray();
         }
 
         public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 0)
@@ -63,68 +40,20 @@ namespace BuildFeed.Controllers
 
         public async Task<ApiBuild[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
         {
-            List<Build> builds = await _bModel.SelectGroup(new BuildGroup
-            {
-                Major = major,
-                Minor = minor,
-                Build = number,
-                Revision = revision
-            });
-
-            return (from b in builds
-                    select new ApiBuild
+            return (from b in await _bModel.SelectGroup(new BuildGroup
                     {
-                        Id = b.Id,
-
-                        MajorVersion = b.MajorVersion,
-                        MinorVersion = b.MinorVersion,
-                        Number = b.Number,
-                        Revision = b.Revision,
-
-                        Lab = b.Lab,
-                        BuildTime = b.BuildTime,
-
-                        SourceType = b.SourceType,
-                        SourceDetails = b.SourceDetails,
-                        LeakDate = b.LeakDate,
-
-                        FullBuildString = b.FullBuildString,
-                        AlternateBuildString = b.AlternateBuildString,
-                        LabUrl = b.LabUrl,
-
-                        Added = b.Added,
-                        Modified = b.Modified
-                    }).ToArray();
+                        Major = major,
+                        Minor = minor,
+                        Build = number,
+                        Revision = revision
+                    })
+                    select Mapper.Map<ApiBuild>(b)).ToArray();
         }
 
         public async Task<ApiBuild[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
         {
-            List<Build> builds = await _bModel.SelectLab(lab, limit, skip);
-
-            return (from b in builds
-                    select new ApiBuild
-                    {
-                        Id = b.Id,
-
-                        MajorVersion = b.MajorVersion,
-                        MinorVersion = b.MinorVersion,
-                        Number = b.Number,
-                        Revision = b.Revision,
-
-                        Lab = b.Lab,
-                        BuildTime = b.BuildTime,
-
-                        SourceType = b.SourceType,
-                        SourceDetails = b.SourceDetails,
-                        LeakDate = b.LeakDate,
-
-                        FullBuildString = b.FullBuildString,
-                        AlternateBuildString = b.AlternateBuildString,
-                        LabUrl = b.LabUrl,
-
-                        Added = b.Added,
-                        Modified = b.Modified
-                    }).ToArray();
+            return (from b in await _bModel.SelectLab(lab, limit, skip)
+                    select Mapper.Map<ApiBuild>(b)).ToArray();
         }
 
         public async Task<List<FamilyOverview>> GetFamilyOverviews()
@@ -211,7 +140,7 @@ namespace BuildFeed.Controllers
         {
             if (string.IsNullOrWhiteSpace(id))
             {
-                return new SearchResult[0];
+                return Array.Empty<SearchResult>();
             }
 
             var results = new List<SearchResult>();

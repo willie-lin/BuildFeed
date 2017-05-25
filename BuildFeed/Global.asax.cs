@@ -31,6 +31,8 @@ namespace BuildFeed
             ModelBinders.Binders.Add(typeof(DateTime), db);
             ModelBinders.Binders.Add(typeof(DateTime?), db);
 
+            ModelMappings.Initialise();
+
             Roles.CreateRole("Administrators");
             Roles.CreateRole("Editors");
             Roles.CreateRole("Users");
