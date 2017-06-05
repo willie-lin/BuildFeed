@@ -16,20 +16,35 @@
 <!DOCTYPE html>
 <html dir="@(isRtl
                  ? "rtl"
-                 : "ltr")" lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+                 : "ltr")" lang="@CultureInfo.CurrentUICulture.IetfLanguageTag">
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <title>@ViewBag.Title</title>
-   <link href="/res/css/default.css?20170517" rel="stylesheet" type="text/css" />
-   <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))?20170517" rel="stylesheet" type="text/css" />
+   <link href="/res/css/default.css" rel="stylesheet" type="text/css" />
+   <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
    @if (isRtl)
    {
       <link href="/res/css/rtl.css" rel="stylesheet" type="text/css" />
    }
-   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&amp;subset=cyrillic,greek,vietnamese" rel="stylesheet" type="text/css" />
+   @switch (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)
+   {
+       case "ru":
+       case "uk":
+           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet" type="text/css" />
+           break;
+       case "el":
+           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&amp;subset=greek" rel="stylesheet" type="text/css" />
+           break;
+       case "vi":
+           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&amp;subset=vietnamese" rel="stylesheet" type="text/css" />
+           break;
+       default:
+           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700" rel="stylesheet" type="text/css" />
+           break;
+   }
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
    <link rel="manifest" href="~/manifest.json">
    <link rel="shortcut icon" href="~/favicon.ico" />

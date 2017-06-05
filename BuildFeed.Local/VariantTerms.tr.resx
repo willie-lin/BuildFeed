@@ -303,7 +303,7 @@ Teşekkürler,
     <value>Hızlı yapıştır</value>
   </data>
   <data name="Front_ReturnToListing" xml:space="preserve">
-    <value>Yapı listesine geri dön</value>
+    <value>Yapı listelemesine geri dön</value>
   </data>
   <data name="Front_ReturnToOverview" xml:space="preserve">
     <value>Yapı genel bakışına geri dön</value>
@@ -342,7 +342,7 @@ Teşekkürler,
     <value>Laboratuvar etiketi</value>
   </data>
   <data name="Model_LeakDate" xml:space="preserve">
-    <value>Sızdırılma veya yayınlanma tarihi:</value>
+    <value>Sızdırılma veya yayınlanma tarihi</value>
   </data>
   <data name="Model_MajorVersion" xml:space="preserve">
     <value>Büyük sürüm</value>
@@ -396,7 +396,7 @@ Teşekkürler,
     <value>Yapı</value>
   </data>
   <data name="Search_BuildFeed" xml:space="preserve">
-    <value>BuildFeed'de ara...</value>
+    <value>BuildFeed'i ara</value>
   </data>
   <data name="Search_Empty" xml:space="preserve">
     <value>Hiçbir sonuç bulunamadı</value>
@@ -429,13 +429,13 @@ Teşekkürler,
     <value>Derlenen yapılar</value>
   </data>
   <data name="Support_ChangePassword" xml:space="preserve">
-    <value>Parolanızı değiştirin</value>
+    <value>Parolanı değiştir</value>
   </data>
   <data name="Support_ConfirmNewPassword" xml:space="preserve">
-    <value>Yeni parolayı onaylayın</value>
+    <value>Yeni parolayı onayla</value>
   </data>
   <data name="Support_ConfirmPassword" xml:space="preserve">
-    <value>Parolayı onaylayın</value>
+    <value>Parolayı onayla</value>
   </data>
   <data name="Support_EmailAddress" xml:space="preserve">
     <value>E-posta adresi</value>
@@ -447,13 +447,13 @@ Teşekkürler,
     <value>Lütfen e-posta adresini doğrula</value>
   </data>
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
-    <value>Şu anki parolayı girin</value>
+    <value>Şu anki parolayı gir</value>
   </data>
   <data name="Support_EnterNewPassword" xml:space="preserve">
-    <value>Yeni parola girin</value>
+    <value>Yeni parola gir</value>
   </data>
   <data name="Support_EnterPassword" xml:space="preserve">
-    <value>Parolayı girin</value>
+    <value>Parolayı gir</value>
   </data>
   <data name="Support_Error_ChangingPasswordFail" xml:space="preserve">
     <value>Şifreni değiştirmeye teşebbüs ederken bir hata oluştu.</value>
@@ -504,7 +504,7 @@ Teşekkürler,
     <value>Lütfen e-postandaki doğrulama bağlantısını kontrol et ve tekrar dene.</value>
   </data>
   <data name="Support_ValidationFailureTitle" xml:space="preserve">
-    <value>Hesabınızı doğrulayamadık.</value>
+    <value>Hesabını doğrulayamadık.</value>
   </data>
   <data name="Support_ValidationSuccessContent" xml:space="preserve">
     <value>Şimdi kullanıcı adını ve şifreni kullanarak giriş yapabileceksin.</value>
@@ -517,7 +517,7 @@ Teşekkürler,
   </data>
 
 <data name="Support_AccountValidation" xml:space="preserve">
-    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı olun ve daha sonra tekrar kontrol ediniz.</value>
+    <value>Her hesap bir yönetici tarafından doğrulanır, bu yüzden sabırlı ol ve daha sonra tekrar kontrol et.</value>
   </data>
 <data name="Support_ThanksRegister" xml:space="preserve">
     <value>Kaydolduğunuz için teşekkür ederiz!</value>
