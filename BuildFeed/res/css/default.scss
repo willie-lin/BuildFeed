@@ -9,6 +9,26 @@ body
    box-sizing: border-box;
 }
 
+html[lang='zh-Hant'] > body
+{
+    font-family: Fira Sans, 'Microsoft JhengHei','微軟正黑體', sans-serif;
+}
+
+html[lang='zh-Hans'] > body
+{
+    font-family: Fira Sans, 'Microsoft YaHei','微软雅黑', sans-serif;
+}
+
+html[lang^='ko'] > body
+{
+    font-family: Fira Sans, 'Malgun Gothic','맑은 고딕', sans-serif;
+}
+
+html[lang^='ja'] > body
+{
+    font-family: Fira Sans, 'Meiryo','メイリオ', sans-serif;
+}
+
 input, textarea, select
 {
    font-family: 'Fira Sans', sans-serif;

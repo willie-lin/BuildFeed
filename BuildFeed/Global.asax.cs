@@ -54,7 +54,7 @@ namespace BuildFeed
                         varyParts.Add($"user:{context.User.Identity.Name}");
                         break;
                     case "lang":
-                        varyParts.Add($"lang:{Locale.DetectCulture(contextWrapper).LCID}");
+                        varyParts.Add($"lang:{Locale.DetectCulture(contextWrapper).IetfLanguageTag}");
                         break;
                     case "theme":
                         varyParts.Add($"theme:{Theme.DetectTheme(contextWrapper)}");
