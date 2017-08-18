@@ -11,22 +11,22 @@ body
 
 html[lang='zh-Hant'] > body
 {
-    font-family: Fira Sans, 'Microsoft JhengHei UI','Microsoft JhengHei','微軟正黑體', sans-serif;
+    font-family: Fira Sans, 'Noto Sans TC','Microsoft JhengHei UI','Microsoft JhengHei','微軟正黑體', sans-serif;
 }
 
 html[lang='zh-Hans'] > body
 {
-    font-family: Fira Sans, 'Microsoft YaHei UI','Microsoft YaHei','微软雅黑', sans-serif;
+    font-family: Fira Sans, 'Noto Sans SC','Microsoft YaHei UI','Microsoft YaHei','微软雅黑', sans-serif;
 }
 
 html[lang^='ko'] > body
 {
-    font-family: Fira Sans, 'Malgun Gothic','맑은 고딕', sans-serif;
+    font-family: Fira Sans, 'Noto Sans KR','Malgun Gothic','맑은 고딕', sans-serif;
 }
 
 html[lang^='ja'] > body
 {
-    font-family: Fira Sans, 'Meiryo UI','Meiryo','メイリオ', sans-serif;
+    font-family: Fira Sans, 'Noto Sans JP','Meiryo UI','Meiryo','メイリオ', sans-serif;
 }
 
 input, textarea, select
