@@ -132,7 +132,11 @@ namespace BuildFeed.Model
         private void GenerateFamily()
         {
             // start with lab-based overrides
-            if (string.Equals(Lab ?? "", "feature2"))
+            if (Lab?.StartsWith("rs3", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            {
+                Family = ProjectFamily.Redstone3;
+            }
+            else if (Lab?.StartsWith("feature2", StringComparison.InvariantCultureIgnoreCase) ?? false)
             {
                 Family = ProjectFamily.Feature2;
             }
@@ -150,6 +154,10 @@ namespace BuildFeed.Model
             }
 
             // move on to version number guesses
+            else if (Number >= 16350)
+            {
+                Family = ProjectFamily.Redstone4;
+            }
             else if (Number >= 15140)
             {
                 Family = ProjectFamily.Redstone3;

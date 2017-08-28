@@ -49,6 +49,9 @@ namespace BuildFeed.Model
         Feature2 = 41,
 
         [Display(Name = "Redstone 3", Description = "Windows 10 (Fall Creators Update)")]
-        Redstone3 = 50
+        Redstone3 = 50,
+
+        [Display(Name = "Redstone 4")]
+        Redstone4 = 60
     }
 }

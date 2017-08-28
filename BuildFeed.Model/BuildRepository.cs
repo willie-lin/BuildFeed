@@ -335,6 +335,16 @@ namespace BuildFeed.Model
             await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, item.Id), item);
         }
 
+        public async Task RegenerateCachedProperties()
+        {
+            List<Build> builds = await Select();
+            foreach (Build bd in builds)
+            {
+                bd.RegenerateCachedProperties();
+                await _buildCollection.ReplaceOneAsync(Builders<Build>.Filter.Eq(b => b.Id, bd.Id), bd);
+            }
+        }
+
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
         public async Task DeleteById(Guid id)
         {

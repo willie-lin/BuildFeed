@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.Web.Security;
 using BuildFeed.Controllers;
+using BuildFeed.Model;
 
 namespace BuildFeed.Admin.Controllers
 {
@@ -27,6 +29,16 @@ namespace BuildFeed.Admin.Controllers
             {
                 Roles.AddUserToRole("hounsell", "Administrators");
             }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize(Roles = "Administrators")]
+        [Route("regen-cache")]
+        public async Task<ActionResult> RegenerateCache()
+        {
+            BuildRepository bRepo = new BuildRepository();
+            await bRepo.RegenerateCachedProperties();
 
             return RedirectToAction(nameof(Index));
         }

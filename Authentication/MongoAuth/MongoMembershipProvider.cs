@@ -96,7 +96,8 @@ namespace MongoAuth
                 await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.UserName),
                     new CreateIndexOptions
                     {
-                        Name = "_idx_username"
+                        Name = "_idx_username",
+                        Unique = true
                     });
             }
 
@@ -105,7 +106,8 @@ namespace MongoAuth
                 await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.EmailAddress),
                     new CreateIndexOptions
                     {
-                        Name = "_idx_email"
+                        Name = "_idx_email",
+                        Unique = true
                     });
             }
         }

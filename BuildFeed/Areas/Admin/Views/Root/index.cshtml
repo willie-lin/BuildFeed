@@ -14,6 +14,9 @@
    <li>
       @Html.ActionLink("Manage metadata", nameof(MetaController.Index), "Meta")
    </li>
+    <li>
+        @Html.ActionLink("Regenerate cached properties", nameof(RootController.RegenerateCache), "Root")
+    </li>
    @if (User.Identity.Name == "hounsell")
    {
       <li>@Html.ActionLink("Initial setup", nameof(RootController.Setup))</li>
