@@ -4,12 +4,12 @@
    "private": true,
    "devDependencies": {
       "gulp": "^3.9.1",
+      "gulp-autoprefixer": "^4.0.0",
+      "gulp-clean-css": "^3.9.0",
       "gulp-sass": "^3.1.0",
-      "gulp-clean-css": "^3.7.0",
       "gulp-sourcemaps": "^2.6.1",
       "gulp-typescript": "^3.2.2",
-      "typescript": "^2.5.1",
       "gulp-uglify": "^3.0.0",
-      "gulp-autoprefixer": "^4.0.0"
+      "typescript": "^2.5.2"
    }
 }

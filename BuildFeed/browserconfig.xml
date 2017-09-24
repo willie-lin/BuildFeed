@@ -7,7 +7,7 @@
          <square150x150logo src="content/tile/square.png" />
          <wide310x150logo src="content/tile/wide.png" />
          <square310x310logo src="content/tile/large.png" />
-         <TileColor>#272b30</TileColor>
+         <TileColor>#2E3440</TileColor>
       </tile>
       <notification>
          <polling-uri src="http://notifications.buildmypinnedsite.com/?feed=https://buildfeed.net/rss/Added/&amp;id=1" />

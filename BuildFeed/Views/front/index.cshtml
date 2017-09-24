@@ -8,7 +8,8 @@
 }
 @section Head
 {
-   <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
+    <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
+    <link rel="alternate" type="application/rss+xml" title="Latest additions - RSS" href="@Url.Action(nameof(RssController.Added), "Rss")" />
 }
 
 <h1>@string.Format(VariantTerms.Front_HomeH1, InvariantTerms.SiteName)</h1>

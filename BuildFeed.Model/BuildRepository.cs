@@ -155,6 +155,9 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<Dictionary<ProjectFamily, FrontPage>> SelectFrontPage()
         {
+            const int currentFamily = (int)ProjectFamily.Redstone;
+            const int currentXbox = (int)ProjectFamily.Redstone2;
+
             var families = new Dictionary<ProjectFamily, FrontPage>();
 
             IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate()
@@ -163,7 +166,7 @@ namespace BuildFeed.Model
                     {
                         nameof(Build.Family), new BsonDocument
                         {
-                            {"$gte", 30}
+                            {"$gte", currentFamily}
                         }
                     }
                 })
@@ -233,7 +236,7 @@ namespace BuildFeed.Model
                     CurrentRelease = results
                         .Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("_release") && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR))
                         .SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
-                    CurrentXbox = results.Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault()
+                    CurrentXbox = results.Where(g => (int)g.Key.Family >= currentXbox && g.Key.Family == family && g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault()
                 };
 
                 families.Add(family, fp);
