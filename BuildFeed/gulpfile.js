@@ -4,7 +4,7 @@ var sass = require("gulp-sass");
 var cleanCss = require("gulp-clean-css");
 var sourceMaps = require("gulp-sourcemaps");
 var ts = require("gulp-typescript");
-var uglify = require("gulp-uglify");
+var uglify = require("gulp-uglify-es").default;
 var autoprefixer = require("gulp-autoprefixer");
 
 gulp.task("sass-compile",
@@ -28,7 +28,7 @@ gulp.task("typescript",
       return gulp.src("./res/ts/*.ts")
          .pipe(sourceMaps.init())
          .pipe(ts({
-            target: "es5",
+            target: "es6",
             sourceMap: false
          }))
          .js
@@ -40,6 +40,6 @@ gulp.task("typescript",
 gulp.task("watch-sass",
    function()
    {
-      gulp.watch("./res/scss/*.scss", ["sass-compile"]);
+      gulp.watch("./res/css/**.scss", ["sass-compile"]);
       gulp.watch("./res/ts/*.ts", ["typescript"]);
    });

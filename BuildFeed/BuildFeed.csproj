@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -29,7 +29,7 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,14 +67,14 @@
     <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.5.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.5.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="HtmlAgilityPack, Version=1.6.3.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.3\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -266,7 +266,14 @@
     <Content Include="BingSiteAuth.xml" />
     <Content Include="browserconfig.xml" />
     <None Include="gulpfile.js" />
-    <Content Include="content\tile\notify.png" />
+    <None Include="res\css\inc\_christmas.scss" />
+    <Content Include="res\css\winter.css">
+      <DependentUpon>winter.scss</DependentUpon>
+    </Content>
+    <Content Include="res\css\winter.css.map">
+      <DependentUpon>winter.css</DependentUpon>
+    </Content>
+    <Content Include="res\ico\notify.png" />
     <Content Include="OneSignalSDKUpdaterWorker.js" />
     <Content Include="OneSignalSDKWorker.js" />
     <Content Include="res\card\Longhorn.png" />
@@ -280,18 +287,15 @@
     <Content Include="res\card\Windows8.png" />
     <Content Include="res\card\WindowsBlue.png" />
     <Content Include="res\card\WindowsVista.png" />
-    <Content Include="content\icons-2x.png" />
-    <Content Include="content\icons.png" />
-    <Content Include="content\tile\wide.png" />
-    <Content Include="content\tile\large.png" />
-    <Content Include="content\tile\square.png" />
-    <Content Include="content\tile\tiny.png" />
+    <Content Include="res\ico\wide.png" />
+    <Content Include="res\ico\large.png" />
+    <Content Include="res\ico\square.png" />
+    <Content Include="res\ico\tiny.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Users\index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="content\Web.config" />
     <Content Include="Areas\Admin\Views\Root\index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\admins.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\index.cshtml" />
@@ -327,6 +331,12 @@
     <Content Include="res\ts\bfs.js.map">
       <DependentUpon>bfs.js</DependentUpon>
     </Content>
+    <Content Include="res\ts\christmas.js">
+      <DependentUpon>christmas.ts</DependentUpon>
+    </Content>
+    <Content Include="res\ts\christmas.js.map">
+      <DependentUpon>christmas.js</DependentUpon>
+    </Content>
     <Content Include="robots.txt" />
     <Content Include="App_Code\PaginationHelpers.cshtml" />
     <Content Include="res\css\default.scss" />
@@ -339,8 +349,9 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy %28Private%29.pubxml" />
     <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy.pubxml" />
-    <Content Include="res\css\inc\variables.scss" />
-    <Content Include="res\css\inc\nord.scss" />
+    <Content Include="res\css\inc\_variables.scss" />
+    <Content Include="res\css\inc\_nord.scss" />
+    <Content Include="res\css\winter.scss" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -355,6 +366,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ar.min.js" />
     <Content Include="Scripts\trumbowyg\langs\bg.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\by.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ca.min.js" />
     <Content Include="Scripts\trumbowyg\langs\cs.min.js" />
     <Content Include="Scripts\trumbowyg\langs\da.min.js" />
@@ -372,12 +384,14 @@
     <Content Include="Scripts\trumbowyg\langs\it.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ja.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ko.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\mn.min.js" />
     <Content Include="Scripts\trumbowyg\langs\my.min.js" />
     <Content Include="Scripts\trumbowyg\langs\nl.min.js" />
     <Content Include="Scripts\trumbowyg\langs\no_nb.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ph.min.js" />
     <Content Include="Scripts\trumbowyg\langs\pl.min.js" />
     <Content Include="Scripts\trumbowyg\langs\pt.min.js" />
+    <Content Include="Scripts\trumbowyg\langs\pt_br.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ro.min.js" />
     <Content Include="Scripts\trumbowyg\langs\rs.min.js" />
     <Content Include="Scripts\trumbowyg\langs\rs_latin.min.js" />
@@ -389,34 +403,21 @@
     <Content Include="Scripts\trumbowyg\langs\vi.min.js" />
     <Content Include="Scripts\trumbowyg\langs\zh_cn.min.js" />
     <Content Include="Scripts\trumbowyg\langs\zh_tw.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.js" />
     <Content Include="Scripts\trumbowyg\plugins\base64\trumbowyg.base64.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.js" />
     <Content Include="Scripts\trumbowyg\plugins\cleanpaste\trumbowyg.cleanpaste.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.js" />
     <Content Include="Scripts\trumbowyg\plugins\colors\trumbowyg.colors.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.css" />
     <Content Include="Scripts\trumbowyg\plugins\colors\ui\trumbowyg.colors.min.css" />
-    <Content Include="Scripts\trumbowyg\plugins\emoji\trumbowyg.emoji.js" />
     <Content Include="Scripts\trumbowyg\plugins\emoji\trumbowyg.emoji.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\insertaudio\trumbowyg.insertaudio.js" />
+    <Content Include="Scripts\trumbowyg\plugins\emoji\ui\trumbowyg.emoji.min.css" />
     <Content Include="Scripts\trumbowyg\plugins\insertaudio\trumbowyg.insertaudio.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\noembed\trumbowyg.noembed.js" />
     <Content Include="Scripts\trumbowyg\plugins\noembed\trumbowyg.noembed.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\pasteimage\trumbowyg.pasteimage.js" />
     <Content Include="Scripts\trumbowyg\plugins\pasteimage\trumbowyg.pasteimage.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\preformatted\trumbowyg.preformatted.js" />
     <Content Include="Scripts\trumbowyg\plugins\preformatted\trumbowyg.preformatted.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\table\trumbowyg.table.js" />
     <Content Include="Scripts\trumbowyg\plugins\table\trumbowyg.table.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\template\trumbowyg.template.js" />
     <Content Include="Scripts\trumbowyg\plugins\template\trumbowyg.template.min.js" />
-    <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.js" />
     <Content Include="Scripts\trumbowyg\plugins\upload\trumbowyg.upload.min.js" />
-    <Content Include="Scripts\trumbowyg\trumbowyg.js" />
     <Content Include="Scripts\trumbowyg\trumbowyg.min.js" />
     <Content Include="Scripts\trumbowyg\ui\icons.svg" />
-    <Content Include="Scripts\trumbowyg\ui\trumbowyg.css" />
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="yandex_702baad42b020be7.html" />
     <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
@@ -462,8 +463,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\front\AddBulk.cshtml" />
-    <Content Include="Scripts\trumbowyg\plugins\colors\ui\sass\trumbowyg.colors.scss" />
-    <Content Include="Scripts\trumbowyg\ui\sass\trumbowyg.scss" />
     <Content Include="Views\account\validate-success.cshtml" />
     <Content Include="Views\account\validate-failure.cshtml" />
     <None Include="tsconfig.json" />
@@ -471,6 +470,7 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="res\ts\bfs.ts" />
+    <TypeScriptCompile Include="res\ts\christmas.ts" />
     <TypeScriptCompile Include="Scripts\typings\google.analytics\ga.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jsrender\jsrender.d.ts" />
@@ -540,11 +540,11 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets'))" />
   </Target>
-  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

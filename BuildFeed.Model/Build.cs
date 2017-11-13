@@ -31,7 +31,9 @@ namespace BuildFeed.Model
 
         public string LabUrl { get; private set; }
 
-        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR;
+        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease ||
+                                SourceType == TypeOfSource.InternalLeak ||
+                                SourceType == TypeOfSource.UpdateGDR;
 
         public string FullBuildString { get; private set; }
 
@@ -46,7 +48,7 @@ namespace BuildFeed.Model
         {
             get
             {
-                HtmlDocument hDoc = new HtmlDocument();
+                var hDoc = new HtmlDocument();
                 hDoc.LoadHtml($"<div>{SourceDetails}</div>");
 
                 if (string.IsNullOrWhiteSpace(hDoc.DocumentNode.InnerText))
@@ -56,8 +58,9 @@ namespace BuildFeed.Model
 
                 if (Uri.IsWellFormedUriString(hDoc.DocumentNode.InnerText, UriKind.Absolute))
                 {
-                    Uri uri = new Uri(hDoc.DocumentNode.InnerText, UriKind.Absolute);
-                    return $"<a href=\"{uri}\" target=\"_blank\">{VariantTerms.Model_ExternalLink} <i class=\"fa fa-external-link\"></i></a>";
+                    var uri = new Uri(hDoc.DocumentNode.InnerText, UriKind.Absolute);
+                    return
+                        $"<a href=\"{uri}\" target=\"_blank\">{VariantTerms.Model_ExternalLink} <i class=\"fa fa-external-link\"></i></a>";
                 }
 
                 return SourceDetails;
@@ -74,7 +77,7 @@ namespace BuildFeed.Model
 
         private void GenerateFullBuildString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
 
             if (Revision.HasValue)
@@ -97,7 +100,7 @@ namespace BuildFeed.Model
 
         private void GenerateAlternateBuildString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append($"{MajorVersion}.{MinorVersion}.{Number}");
 
             if (Revision.HasValue)
@@ -111,7 +114,8 @@ namespace BuildFeed.Model
 
                 if (BuildTime.HasValue)
                 {
-                    sb.Append($".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
+                    sb.Append(
+                        $".{BuildTime.Value.ToString("yyMMdd-HHmm", CultureInfo.InvariantCulture.DateTimeFormat)}");
                 }
 
                 sb.Append(")");

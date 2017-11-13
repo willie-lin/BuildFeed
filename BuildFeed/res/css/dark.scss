@@ -1,147 +1,157 @@
-﻿@import "inc/variables.scss";
+﻿@import "inc/_variables.scss";
 
 body
 {
-   background-color: $nord1;
-   color: $nord6;
+    background-color: $nord1;
+    color: $nord6;
 }
 
 a
 {
-   color: #fff;
+    color: #fff;
 }
 
 h1 > a,
 #page-footer a
 {
-   color: $nord6;
+    color: $nord6;
 }
 
 table thead th
 {
-   border-bottom-color: $nord6;
+    border-bottom-color: $nord6;
 }
 
 #page-content
 {
-   background-color: $nord0;
-   color: $nord6;
+    background-color: $nord0;
+    color: $nord6;
 
-   h3
-   {
-      border-bottom-color: $nord4;
-   }
+    h3
+    {
+        border-bottom-color: $nord4;
+    }
 }
 
 #page-navigation
 {
-   background-color: $nord2;
-   color: $nord5;
-   border-bottom-color: $nord0;
+    background-color: $nord2;
+    color: $nord5;
+    border-bottom-color: $nord0;
 
-   button
-   {
-      color: $nord5;
-   }
+    button
+    {
+        color: $nord5;
+    }
 
-   #page-navigation-links
-   {
-      > li
-      {
-         a
-         {
-            color: $nord5;
-         }
+    #page-navigation-links
+    {
+        > li
+        {
+            a
+            {
+                color: $nord5;
+            }
 
-         &.open > a,
-         > a:hover
-         {
-            background-color: $nord3;
-         }
-      }
-   }
+            &.open > a,
+            > a:hover
+            {
+                background-color: $nord3;
+            }
+        }
+    }
 }
 
 .dropdown-menu
 {
-   background-color: $nord3;
-   border-color: $nord0;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    background-color: $nord3;
+    border-color: $nord0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
-   a:hover,
-   a:focus,
-   a:active
-   {
-      background-color: $nord2;
-   }
+    a:hover,
+    a:focus,
+    a:active
+    {
+        background-color: $nord2;
+    }
 }
 
 article
 {
-   box-shadow: 0 0 15px rgba(0,0,0,0.15) inset;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15) inset;
 
-   h1, h3
-   {
-      color: $nord6;
-   }
+    h1, h3
+    {
+        color: $nord6;
+    }
 
-   .build-group > h3 > a,
-   a.more-link,
-   .build-details-comments a
-   {
-      color: $nord5;
-   }
+    .build-group > h3 > a,
+    a.more-link,
+    .build-details-comments a
+    {
+        color: $nord5;
+    }
 
-   .build-group-listing .build-group
-   {
-      background-color: $nord3;
-   }
+    .build-group-listing .build-group
+    {
+        background-color: $nord3;
+
+        &:hover
+        {
+            @include standard-box-shadow(black);
+        }
+    }
 }
 
 .latest-flex
 {
-   .latest-flex-item
-   {
-      background: $nord3;
+    .latest-flex-item
+    {
+        background: $nord3;
 
-      .latest-flex-detail
-      {
-         color: #fff;
-      }
-   }
+        .latest-flex-detail
+        {
+            color: #fff;
+        }
+
+        &:hover
+        {
+            @include standard-box-shadow(black);
+        }
+    }
 }
 
 ul.pagination
 {
-   > li.active > a
-   {
-      background: $nord6;
-      color: $nord1 !important;
-   }
+    > li.active > a
+    {
+        background: $nord6;
+        color: $nord1 !important;
+    }
 
-   > li:hover:not(.disabled) > a,
-   > li:focus:not(.disabled) > a,
-   > li:active:not(.disabled) > a
-   {
-      background: $nord5;
-      color: $nord0 !important;
-   }
+    > li:hover:not(.disabled) > a,
+    > li:focus:not(.disabled) > a,
+    > li:active:not(.disabled) > a
+    {
+        background: $nord5;
+        color: $nord0 !important;
+    }
 }
 
 #modal-search-overlay #modal-search
 {
-   background-color: $nord1;
+    background-color: $nord1;
 
-   h3
-   {
-      color: $nord6;
-   }
+    h3
+    {
+        color: $nord6;
+    }
 
-   > #modal-search-box > #modal-search-input,
-   > #modal-search-box > #modal-search-button
-   {
-      background-color: $nord0;
-      color: $nord6;
-      border-color: $nord5;
-   }
+    > #modal-search-box > #modal-search-input,
+    > #modal-search-box > #modal-search-button
+    {
+        background-color: $nord0;
+        color: $nord6;
+        border-color: $nord5;
+    }
 }

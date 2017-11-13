@@ -1,0 +1,21 @@
+﻿.snow-container
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none;
+
+    > div
+    {
+        width: 2px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        will-change: transform;
+        transition: transform linear 125ms;
+    }
+}

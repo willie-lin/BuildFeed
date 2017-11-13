@@ -10,6 +10,7 @@ namespace BuildFeed.Model
     public class BuildDetails
     {
         [Required]
+        [Range(1, int.MaxValue)]
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_MajorVersion))]
         public uint MajorVersion { get; set; }
 
@@ -18,6 +19,7 @@ namespace BuildFeed.Model
         public uint MinorVersion { get; set; }
 
         [Required]
+        [Range(1, int.MaxValue)]
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Model_BuildNumber))]
         public uint Number { get; set; }
 

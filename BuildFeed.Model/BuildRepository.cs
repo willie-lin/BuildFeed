@@ -29,7 +29,7 @@ namespace BuildFeed.Model
 
         public BuildRepository()
         {
-            MongoClientSettings settings = new MongoClientSettings
+            var settings = new MongoClientSettings
             {
                 Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
             };
@@ -42,7 +42,7 @@ namespace BuildFeed.Model
                 };
             }
 
-            MongoClient dbClient = new MongoClient(settings);
+            var dbClient = new MongoClient(settings);
 
             IMongoDatabase buildDatabase = dbClient.GetDatabase(MongoConfig.Database);
             _buildCollection = buildDatabase.GetCollection<Build>(BUILD_COLLECTION_NAME);
@@ -50,7 +50,7 @@ namespace BuildFeed.Model
 
         public async Task SetupIndexes()
         {
-            List<BsonDocument> indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
+            var indexes = await (await _buildCollection.Indexes.ListAsync()).ToListAsync();
 
             if (indexes.All(i => i["name"] != "_idx_group"))
             {
@@ -95,7 +95,8 @@ namespace BuildFeed.Model
 
             if (indexes.All(i => i["name"] != "_idx_bstr"))
             {
-                await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.FullBuildString),
+                await _buildCollection.Indexes.CreateOneAsync(
+                    Builders<Build>.IndexKeys.Ascending(b => b.FullBuildString),
                     new CreateIndexOptions
                     {
                         Name = "_idx_bstr"
@@ -104,7 +105,8 @@ namespace BuildFeed.Model
 
             if (indexes.All(i => i["name"] != "_idx_alt_bstr"))
             {
-                await _buildCollection.Indexes.CreateOneAsync(Builders<Build>.IndexKeys.Ascending(b => b.AlternateBuildString),
+                await _buildCollection.Indexes.CreateOneAsync(
+                    Builders<Build>.IndexKeys.Ascending(b => b.AlternateBuildString),
                     new CreateIndexOptions
                     {
                         Name = "_idx_alt_bstr"
@@ -134,15 +136,18 @@ namespace BuildFeed.Model
         public async Task<List<Build>> Select() => await _buildCollection.Find(new BsonDocument()).ToListAsync();
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public async Task<Build> SelectById(Guid id) => await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.Id, id)).SingleOrDefaultAsync();
+        public async Task<Build> SelectById(Guid id)
+            => await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.Id, id)).SingleOrDefaultAsync();
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public async Task<Build> SelectByLegacyId(long id) => await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.LegacyId, id)).SingleOrDefaultAsync();
+        public async Task<Build> SelectByLegacyId(long id) => await _buildCollection
+            .Find(Builders<Build>.Filter.Eq(b => b.LegacyId, id))
+            .SingleOrDefaultAsync();
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByOrder(int limit = -1, int skip = 0)
         {
-            IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByOrder).Skip(skip);
+            var query = _buildCollection.Find(new BsonDocument()).Sort(sortByOrder).Skip(skip);
 
             if (limit > 0)
             {
@@ -155,18 +160,33 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<Dictionary<ProjectFamily, FrontPage>> SelectFrontPage()
         {
-            const int currentFamily = (int)ProjectFamily.Redstone;
-            const int currentXbox = (int)ProjectFamily.Redstone2;
+            const int currentLongTerm = (int)ProjectFamily.Redstone;
+            const int currentFamily = (int)ProjectFamily.Redstone3;
+            const int currentXbox = (int)ProjectFamily.Redstone3;
 
             var families = new Dictionary<ProjectFamily, FrontPage>();
 
-            IAggregateFluent<BsonDocument> query = _buildCollection.Aggregate()
+            var query = _buildCollection.Aggregate()
                 .Match(new BsonDocument
                 {
                     {
-                        nameof(Build.Family), new BsonDocument
+                        "$or", new BsonArray
                         {
-                            {"$gte", currentFamily}
+                            new BsonDocument
+                            {
+                                {
+                                    nameof(Build.Family), new BsonDocument
+                                    {
+                                        {"$gte", currentFamily}
+                                    }
+                                }
+                            },
+                            new BsonDocument
+                            {
+                                {
+                                    nameof(Build.Family), currentLongTerm
+                                }
+                            }
                         }
                     }
                 })
@@ -199,44 +219,67 @@ namespace BuildFeed.Model
                     }
                 });
 
-            List<BsonDocument> dbResults = await query.ToListAsync();
+            var dbResults = await query.ToListAsync();
 
             var results = (from g in dbResults
-                           select new
-                           {
-                               Key = new
-                               {
-                                   Family = (ProjectFamily)g["_id"].AsBsonDocument[nameof(Build.Family)].AsInt32,
-                                   LabUrl = g["_id"].AsBsonDocument[nameof(Build.LabUrl)].AsString,
-                                   SourceType = (TypeOfSource)g["_id"].AsBsonDocument[nameof(Build.SourceType)].AsInt32
-                               },
+                select new
+                {
+                    Key = new
+                    {
+                        Family = (ProjectFamily)g["_id"].AsBsonDocument[nameof(Build.Family)].AsInt32,
+                        LabUrl = g["_id"].AsBsonDocument[nameof(Build.LabUrl)].AsString,
+                        SourceType = (TypeOfSource)g["_id"].AsBsonDocument[nameof(Build.SourceType)].AsInt32
+                    },
 
-                               Items = from i in g["items"].AsBsonArray
-                                       select new FrontPageBuild
-                                       {
-                                           Id = i[nameof(Build.Id)].AsGuid,
-                                           MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
-                                           MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
-                                           Number = (uint)i[nameof(Build.Number)].AsInt32,
-                                           Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
-                                           Lab = i[nameof(Build.Lab)].AsString,
-                                           BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
-                                       }
-                           }).ToArray();
+                    Items = from i in g["items"].AsBsonArray
+                    select new FrontPageBuild
+                    {
+                        Id = i[nameof(Build.Id)].AsGuid,
+                        MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
+                        MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
+                        Number = (uint)i[nameof(Build.Number)].AsInt32,
+                        Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
+                        Lab = i[nameof(Build.Lab)].AsString,
+                        BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
+                    }
+                }).ToArray();
 
-            IEnumerable<ProjectFamily> listOfFamilies = results.GroupBy(g => g.Key.Family).Select(g => g.Key).OrderByDescending(k => k);
+            IEnumerable<ProjectFamily> listOfFamilies =
+                results.GroupBy(g => g.Key.Family).Select(g => g.Key).OrderByDescending(k => k);
 
             foreach (ProjectFamily family in listOfFamilies)
             {
-                FrontPage fp = new FrontPage
+                var fp = new FrontPage
                 {
-                    CurrentCanary = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
-                    CurrentInsider = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR)).SelectMany(g => g.Items)
-                        .OrderByDescending(b => b.BuildTime).FirstOrDefault(),
+                    CurrentCanary = results.Where(g => g.Key.Family == family && !g.Key.LabUrl.Contains("xbox"))
+                        .SelectMany(g => g.Items)
+                        .OrderByDescending(b => b.BuildTime)
+                        .FirstOrDefault(),
+                    CurrentInsider = results
+                        .Where(g => g.Key.Family == family &&
+                                    !g.Key.LabUrl.Contains("xbox") &&
+                                    (g.Key.SourceType == TypeOfSource.PublicRelease ||
+                                     g.Key.SourceType == TypeOfSource.UpdateGDR))
+                        .SelectMany(g => g.Items)
+                        .OrderByDescending(b => b.BuildTime)
+                        .FirstOrDefault(),
                     CurrentRelease = results
-                        .Where(g => g.Key.Family == family && g.Key.LabUrl.Contains("_release") && !g.Key.LabUrl.Contains("xbox") && (g.Key.SourceType == TypeOfSource.PublicRelease || g.Key.SourceType == TypeOfSource.UpdateGDR))
-                        .SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault(),
-                    CurrentXbox = results.Where(g => (int)g.Key.Family >= currentXbox && g.Key.Family == family && g.Key.LabUrl.Contains("xbox")).SelectMany(g => g.Items).OrderByDescending(b => b.BuildTime).FirstOrDefault()
+                        .Where(g => g.Key.Family == family &&
+                                    g.Key.LabUrl.Contains("_release") &&
+                                    !g.Key.LabUrl.Contains("xbox") &&
+                                    (g.Key.SourceType == TypeOfSource.PublicRelease ||
+                                     g.Key.SourceType == TypeOfSource.UpdateGDR))
+                        .SelectMany(g => g.Items)
+                        .OrderByDescending(b => b.BuildTime)
+                        .FirstOrDefault(),
+                    CurrentXbox =
+                        results.Where(g
+                                => (int)g.Key.Family >= currentXbox &&
+                                   g.Key.Family == family &&
+                                   g.Key.LabUrl.Contains("xbox"))
+                            .SelectMany(g => g.Items)
+                            .OrderByDescending(b => b.BuildTime)
+                            .FirstOrDefault()
                 };
 
                 families.Add(family, fp);
@@ -248,7 +291,10 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByStringSearch(string term, int limit = -1)
         {
-            IAggregateFluent<Build> query = _buildCollection.Aggregate().Match(b => b.FullBuildString != null).Match(b => b.FullBuildString != "").Match(b => b.FullBuildString.ToLower().Contains(term.ToLower()));
+            var query = _buildCollection.Aggregate()
+                .Match(b => b.FullBuildString != null)
+                .Match(b => b.FullBuildString != "")
+                .Match(b => b.FullBuildString.ToLower().Contains(term.ToLower()));
 
             if (limit > 0)
             {
@@ -261,13 +307,14 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<Build> SelectBuildByFullBuildString(string build)
         {
-            return await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.FullBuildString, build)).SingleOrDefaultAsync();
+            return await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.FullBuildString, build))
+                .SingleOrDefaultAsync();
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
         {
-            IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);
+            var query = _buildCollection.Find(new BsonDocument()).Sort(sortByCompileDate).Skip(skip);
 
             if (limit > 0)
             {
@@ -280,7 +327,7 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByAddedDate(int limit = -1, int skip = 0)
         {
-            IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByAddedDate).Skip(skip);
+            var query = _buildCollection.Find(new BsonDocument()).Sort(sortByAddedDate).Skip(skip);
 
             if (limit > 0)
             {
@@ -293,7 +340,7 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByLeakedDate(int limit = -1, int skip = 0)
         {
-            IFindFluent<Build, Build> query = _buildCollection.Find(new BsonDocument()).Sort(sortByLeakedDate).Skip(skip);
+            var query = _buildCollection.Find(new BsonDocument()).Sort(sortByLeakedDate).Skip(skip);
 
             if (limit > 0)
             {
@@ -340,7 +387,7 @@ namespace BuildFeed.Model
 
         public async Task RegenerateCachedProperties()
         {
-            List<Build> builds = await Select();
+            var builds = await Select();
             foreach (Build bd in builds)
             {
                 bd.RegenerateCachedProperties();
