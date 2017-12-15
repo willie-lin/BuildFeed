@@ -161,7 +161,7 @@ namespace BuildFeed.Model
         public async Task<Dictionary<ProjectFamily, FrontPage>> SelectFrontPage()
         {
             const int currentLongTerm = (int)ProjectFamily.Redstone;
-            const int currentFamily = (int)ProjectFamily.Redstone3;
+            const int currentFamily = (int)ProjectFamily.Feature2;
             const int currentXbox = (int)ProjectFamily.Redstone3;
 
             var families = new Dictionary<ProjectFamily, FrontPage>();

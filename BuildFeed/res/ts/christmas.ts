@@ -90,6 +90,16 @@ module BuildFeed.Christmas
     {
         snowContainer = document.createElement("div");
         snowContainer.className = "snow-container";
+
+        const match = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
+        const ver = match ? parseInt(match[1]) : 0;
+
+        if (ver >= 57)
+        {
+            // workaround shitty firefox quantum
+            snowContainer.className += " quantum-snow-container";
+        }
+
         document.body.appendChild(snowContainer);
 
         window.requestAnimationFrame(animate);

@@ -18,4 +18,9 @@
         will-change: transform;
         transition: transform linear 125ms;
     }
+
+    &.quantum-snow-container > div
+    {
+        transition: none;
+    }
 }
