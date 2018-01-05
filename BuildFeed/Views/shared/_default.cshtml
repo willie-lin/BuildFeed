@@ -285,10 +285,10 @@ if (Roles.IsUserInRole("Administrators"))
             </div>
             <div class="footer-flex-item">
                 <p>
-                    &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
+                    <span dir="ltr">@InvariantTerms.SiteName @($"v{ViewBag.Version}")</span>
                 </p>
                 <p>
-                    @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/buildfeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
+                    &copy; 2013 - @DateTime.Now.Year.ToString(), @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/buildfeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
                 </p>
                 <p>
                     @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/BuildFeed/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))

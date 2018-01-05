@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.props" Condition="Exists('..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
@@ -17,7 +18,8 @@
     <RootNamespace>BuildFeed</RootNamespace>
     <AssemblyName>BuildFeed</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <EnableUpdateable>false</EnableUpdateable>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -31,6 +33,8 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
     <Use64BitIISExpress />
+    <MSBuildGitHashValidate>False</MSBuildGitHashValidate>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -279,6 +283,10 @@
     <Content Include="browserconfig.xml" />
     <None Include="gulpfile.js" />
     <None Include="res\css\inc\_christmas.scss" />
+    <None Include="package-lock.json">
+      <DependentUpon>package.json</DependentUpon>
+    </None>
+    <Content Include="res\card\Feature2.png" />
     <Content Include="res\css\winter.css">
       <DependentUpon>winter.scss</DependentUpon>
     </Content>
@@ -359,8 +367,6 @@
     <Content Include="res\Web.config" />
     <Content Include="res\css\light.scss" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy %28Private%29.pubxml" />
-    <None Include="Properties\PublishProfiles\Milestone 1 WebDeploy.pubxml" />
     <Content Include="res\css\inc\_variables.scss" />
     <Content Include="res\css\inc\_nord.scss" />
     <Content Include="res\css\winter.scss" />
@@ -433,7 +439,6 @@
     <Content Include="Scripts\trumbowyg\ui\trumbowyg.min.css" />
     <Content Include="yandex_702baad42b020be7.html" />
     <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
-    <None Include="Properties\PublishProfiles\Milestone 1 FTP.pubxml" />
     <Content Include="googleacffc6da14c53e15.html" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -555,8 +560,14 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets'))" />
   </Target>
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets" Condition="Exists('..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>attrib +H $(ProjectDir)node_modules /D</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

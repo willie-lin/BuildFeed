@@ -1,4 +1,4 @@
-Copyright © 2015-2018, The BuildFeed Team.
+Copyright © 2013 - 2018, The BuildFeed Team.
 
 All rights reserved.
 

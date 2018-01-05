@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeed", "BuildFeed\BuildFeed.csproj", "{CDDCF754-ECAA-4A66-ADAA-62957A57A51B}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -21,6 +21,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeed.Local", "BuildFeed.Local\BuildFeed.Local.csproj", "{3485B33A-6C3A-4535-9D85-4696914AD504}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildFeed.Model", "BuildFeed.Model\BuildFeed.Model.csproj", "{7E2B4F61-1C11-4471-AF80-5480E94C0664}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{948A2168-A092-4958-A465-427271563061}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,5 +135,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7C67BFB9-1B3B-4676-A58D-10573DA82CFE} = {53344C34-3493-4D0E-8425-FB18C0CC59D0}
 		{5CAADB66-1FC2-4492-B766-36354687120D} = {2B646675-44D1-4722-8A86-8C64876C8FB7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A6DB9E7-436C-4AE8-AFDA-47F01C431810}
 	EndGlobalSection
 EndGlobal
