@@ -44,6 +44,7 @@ namespace BuildFeed.Code.Options
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Common_ThemeLight))]
         Light,
 
+        [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Common_ThemeWinter))]
         Winter
     }
 }

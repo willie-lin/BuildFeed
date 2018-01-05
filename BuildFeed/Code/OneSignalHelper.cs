@@ -4,9 +4,9 @@ using System.Configuration;
 using System.Globalization;
 using BuildFeed.Local;
 using BuildFeed.Model;
-using OneSignal.CSharp.SDK;
-using OneSignal.CSharp.SDK.Resources;
-using OneSignal.CSharp.SDK.Resources.Notifications;
+using OneSignal.RestAPIv3.Client;
+using OneSignal.RestAPIv3.Client.Resources;
+using OneSignal.RestAPIv3.Client.Resources.Notifications;
 
 namespace BuildFeed.Code
 {

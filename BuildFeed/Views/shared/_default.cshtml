@@ -16,7 +16,7 @@
 <html dir="@(isRtl
                  ? "rtl"
                  : "ltr")" lang="@CultureInfo.CurrentUICulture.IetfLanguageTag">
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
@@ -120,6 +120,11 @@
                 </a>
             </li>
             <li>
+                <a href="https://blog.buildfeed.net/" title="@VariantTerms.Common_Blog" target="_blank" rel="noopener">
+                    <i class="fa fa-fw fa-book"></i> @VariantTerms.Common_Blog
+                </a>
+            </li>
+            <li>
                 <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank" rel="noopener">
                     <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
                 </a>
@@ -132,74 +137,74 @@
                     <li id="user-action-menu" class="dropdown-menu-block">
                         <ul>
                             @if (!User.Identity.IsAuthenticated)
-                            {
-                                <li>
-                                    <a href="@Url.Action(nameof(AccountController.Login), new
+                    {
+                        <li>
+                            <a href="@Url.Action(nameof(AccountController.Login), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_LogIn">
-                                        <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
-                                    </a>
-                                </li>
-                            }
-                            else
-                            {
-                                if (Roles.IsUserInRole("Administrators"))
-                                {
-                                    <li>
-                                        <a href="@Url.Action("Index", new
+                                <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
+                            </a>
+                        </li>
+            }
+            else
+            {
+                if (Roles.IsUserInRole("Administrators"))
+                {
+                    <li>
+                        <a href="@Url.Action("Index", new
                                                  {
                                                      controller = "Root",
                                                      area = "admin"
                                                  })" title="@VariantTerms.Common_Admin">
-                                            <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
-                                        </a>
-                                    </li>
-                                }
-                                if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
-                                {
-                                    <li>
-                                        <a href="@Url.Action(nameof(FrontController.AddBuild), new
+                            <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
+                        </a>
+                    </li>
+        }
+        if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
+        {
+            <li>
+                <a href="@Url.Action(nameof(FrontController.AddBuild), new
                                                  {
                                                      controller = "Front",
                                                      area = ""
                                                  })" title="@VariantTerms.Common_AddBuild">
-                                            <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
-                                        </a>
-                                    </li>
-                                }
-                                if (Roles.IsUserInRole("Administrators"))
-                                {
-                                    <li>
-                                        <a href="@Url.Action(nameof(FrontController.AddBulk), new
+                    <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
+                </a>
+            </li>
+}
+if (Roles.IsUserInRole("Administrators"))
+{
+        <li>
+            <a href="@Url.Action(nameof(FrontController.AddBulk), new
                                                  {
                                                      controller = "Front",
                                                      area = ""
                                                  })" title="@VariantTerms.Common_AddBulk">
-                                            <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
-                                        </a>
-                                    </li>
-                                }
-                                <li>
-                                    <a href="@Url.Action(nameof(AccountController.Logout), new
+                <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
+            </a>
+        </li>
+}
+        <li>
+            <a href="@Url.Action(nameof(AccountController.Logout), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_LogOut">
-                                        <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action(nameof(AccountController.Password), new
+                <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(nameof(AccountController.Password), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_ChangePassword">
-                                        <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
-                                    </a>
-                                </li>
-                            }
+                <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
+            </a>
+        </li>
+}
                         </ul>
                     </li>
                 </ul>
@@ -213,26 +218,26 @@
                         <h4>@VariantTerms.Common_NavigationTheme</h4>
                         <ul>
                             @foreach (Theme item in Theme.AvailableThemes)
-                            {
-                                <li>
-                                    <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
-                                </li>
-                            }
+                    {
+                        <li>
+                            <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
+                        </li>
+            }
                         </ul>
                     </li>
                     <li id="settings-lang-menu" class="dropdown-menu-block">
                         <h4>@VariantTerms.Common_NavigationLanguage</h4>
                         <ul>
                             @foreach (Locale locale in Locale.AvailableLocales)
-                            {
-                                <li>
-                                    <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
+                    {
+                        <li>
+                            <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
                                                                                         ? "rtl"
                                                                                         : "ltr")">
-                                        @locale.DisplayName
-                                    </a>
-                                </li>
-                            }
+                                @locale.DisplayName
+                            </a>
+                        </li>
+            }
                             <li></li>
                             <li></li>
                             <li></li>
@@ -283,10 +288,10 @@
                     &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
                 </p>
                 <p>
-                    @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
+                    @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/buildfeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
                 </p>
                 <p>
-                    @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
+                    @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/BuildFeed/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
                 </p>
             </div>
         </div>

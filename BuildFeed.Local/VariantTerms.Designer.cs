@@ -19,7 +19,7 @@ namespace BuildFeed.Local {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class VariantTerms {
@@ -187,6 +187,15 @@ namespace BuildFeed.Local {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string Common_Blog {
+            get {
+                return ResourceManager.GetString("Common_Blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change password.
         /// </summary>
         public static string Common_ChangePassword {
@@ -309,6 +318,15 @@ namespace BuildFeed.Local {
         public static string Common_ThemeLight {
             get {
                 return ResourceManager.GetString("Common_ThemeLight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter.
+        /// </summary>
+        public static string Common_ThemeWinter {
+            get {
+                return ResourceManager.GetString("Common_ThemeWinter", resourceCulture);
             }
         }
         

@@ -44,10 +44,8 @@ namespace BuildFeed.Model
 
             if (!string.IsNullOrEmpty(MongoConfig.Username) && !string.IsNullOrEmpty(MongoConfig.Password))
             {
-                settings.Credentials = new List<MongoCredential>
-                {
-                    MongoCredential.CreateCredential(MongoConfig.Database, MongoConfig.Username, MongoConfig.Password)
-                };
+                settings.Credential =
+                    MongoCredential.CreateCredential(MongoConfig.Database, MongoConfig.Username, MongoConfig.Password);
             }
 
             MongoClient dbClient = new MongoClient(settings);

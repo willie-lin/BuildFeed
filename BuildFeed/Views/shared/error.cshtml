@@ -63,6 +63,11 @@
          </button>
          <ul id="page-navigation-links">
             <li>
+                <a href="https://blog.buildfeed.net/" title="@VariantTerms.Common_Blog" target="_blank" rel="noopener">
+                    <i class="fa fa-fw fa-book"></i> @VariantTerms.Common_Blog
+                </a>
+            </li>
+            <li>
                <a href="https://twitter.com/buildfeed" title="@VariantTerms.Common_Twitter" target="_blank" rel="noopener">
                   <i class="fa fa-fw fa-twitter"></i> @VariantTerms.Common_Twitter
                </a>
@@ -74,7 +79,7 @@
       <div class="container">
          <h1>@VariantTerms.Common_Error</h1>
          <p>
-            @Html.Raw(string.Format(VariantTerms.Common_ErrorContent, "<a href=\"https://github.com/hounsell/BuildFeed/issues\">GitHub</a>"))
+            @Html.Raw(string.Format(VariantTerms.Common_ErrorContent, "<a href=\"https://github.com/BuildFeed/BuildFeed/issues\">GitHub</a>"))
          </p>
          <p>
             Controller: <code>@Model.ControllerName</code>
@@ -101,10 +106,10 @@
                   &copy; 2013 - @DateTime.Now.Year.ToString(), <span dir="ltr">@InvariantTerms.SiteName</span>
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/tomhounsell\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_DevelopedBy, $"<a href=\"https://twitter.com/buildfeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\">{InvariantTerms.DeveloperName}</a>"))
                </p>
                <p>
-                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/hounsell/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
+                  @Html.Raw(string.Format(VariantTerms.Common_ContributeOn, "<a href=\"https://github.com/BuildFeed/BuildFeed\" target=\"_blank\" dir=\"ltr\" rel=\"noopener\"><i class=\"fa fa-github\"></i>&ensp;GitHub</a>"))
                </p>
             </div>
          </div>

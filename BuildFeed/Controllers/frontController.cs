@@ -14,7 +14,7 @@ using System.Web.Mvc;
 using BuildFeed.Code;
 using BuildFeed.Model;
 using BuildFeed.Model.View;
-using OneSignal.CSharp.SDK;
+using OneSignal.RestAPIv3.Client;
 
 namespace BuildFeed.Controllers
 {

@@ -72,10 +72,9 @@ namespace MongoAuth
 
             if (!string.IsNullOrEmpty(DatabaseConfig.Username) && !string.IsNullOrEmpty(DatabaseConfig.Password))
             {
-                settings.Credentials = new List<MongoCredential>
-                {
-                    MongoCredential.CreateCredential(DatabaseConfig.Database, DatabaseConfig.Username, DatabaseConfig.Password)
-                };
+                settings.Credential = MongoCredential.CreateCredential(DatabaseConfig.Database,
+                    DatabaseConfig.Username,
+                    DatabaseConfig.Password);
             }
 
             MongoClient dbClient = new MongoClient(settings);

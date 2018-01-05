@@ -1,4 +1,4 @@
-Copyright © 2017, Thomas Hounsell.
+Copyright © 2015-2018, The BuildFeed Team.
 
 All rights reserved.
 
