@@ -6,6 +6,7 @@
 @{
     ViewBag.Title = string.Format(VariantTerms.Front_HomeH1, InvariantTerms.SiteName);
 }
+
 @section Head
 {
     <meta name="description" content="Learn what Dona Sarkar won&apos;t tell you. Keep up to date with the latest Microsoft Windows developments with BuildFeed, the comprehensive build tracker." />
@@ -89,6 +90,88 @@
                 </div>
             </div>
         }
+    </div>
+</div>
+<h3>@VariantTerms.Search_BuildFeed</h3>
+<div class="build-group-listing">
+    <div class="build-group">
+        <h3 class="build-group-title">
+            <span>@VariantTerms.Search_Version</span>
+        </h3>
+        <div class="form-group">
+            <div class="group-input-button">
+                <select id="search-version">
+                    @{
+                        BuildVersion[] versions = ViewBag.Versions;
+                        foreach (BuildVersion version in versions)
+                        {
+                            <option value="@Url.Action(nameof(FrontController.ViewVersion), "Front", new
+                                           {
+                                               major = version.Major,
+                                               minor = version.Minor
+                                           })">
+                                @version.ToString()
+                            </option>
+                        }
+                    }
+                </select>
+                <button onclick="window.location = document.getElementById('search-version').value; return false;">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="build-group">
+        <h3 class="build-group-title">
+            <span>@VariantTerms.Search_Year</span>
+        </h3>
+        <div class="form-group">
+            <div class="group-input-button">
+                <select id="search-year">
+                    @{
+                        int[] years = ViewBag.Years;
+                        foreach (int year in years)
+                        {
+                            <option value="@Url.Action(nameof(FrontController.ViewYear), "Front", new
+                                           {
+                                               year
+                                           })">
+                                @year
+                            </option>
+                        }
+                    }
+                </select>
+                <button onclick="window.location = document.getElementById('search-year').value;return false;">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="build-group">
+        <h3 class="build-group-title">
+            <span>@VariantTerms.Search_Source</span>
+        </h3>
+        <div class="form-group">
+            <div class="group-input-button">
+                <select id="search-source">
+                    @{
+                        TypeOfSource[] sources = ViewBag.Sources;
+                        foreach (TypeOfSource source in sources)
+                        {
+                            <option value="@Url.Action(nameof(FrontController.ViewSource), "Front", new
+                                           {
+                                               source
+                                           })">
+                                @MvcExtensions.GetDisplayTextForEnum(source)
+                            </option>
+                        }
+                    }
+                </select>
+                <button onclick="window.location = document.getElementById('search-source').value;return false;">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <h3>@VariantTerms.Front_Share</h3>

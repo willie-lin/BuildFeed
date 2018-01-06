@@ -566,7 +566,8 @@
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets" Condition="Exists('..\packages\MSBuildGitHash.0.2.0\build\MSBuildGitHash.targets')" />
   <PropertyGroup>
-    <PreBuildEvent>attrib +H $(ProjectDir)node_modules /D</PreBuildEvent>
+    <PreBuildEvent>attrib +H $(ProjectDir)node_modules /D
+attrib +H $(ProjectDir)obj /D</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

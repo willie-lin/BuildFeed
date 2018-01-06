@@ -444,12 +444,13 @@ article
                 text-transform: lowercase;
                 text-align: center;
 
-                a
+                a, span
                 {
                     color: #fff;
                     text-decoration: none !important;
                     display: block;
                     padding: #{(1em / 3)} 0;
+                    text-transform: uppercase;
                 }
             }
 
@@ -685,61 +686,6 @@ article
         vertical-align: top;
         flex-grow: 2;
 
-        input, textarea, select
-        {
-            width: 100%;
-            box-sizing: border-box;
-            border: $border-size solid;
-            padding: #{(1em / 3)} #{(1em / 2)};
-            border-radius: #{(1em / 6)};
-            font-size: 1em;
-            line-height: 1em;
-            border-color: #888;
-        }
-
-        input[type=submit],
-        input[type=checkbox]
-        {
-            width: auto;
-        }
-
-        > input[type=submit],
-        > button,
-        .group-input-button > button
-        {
-            display: inline-block;
-            vertical-align: middle;
-            padding: #{(1em / 2)} 1em #{(1em / 3)};
-            background-color: $strong-green;
-            color: #fff;
-            text-decoration: none;
-            border-radius: #{(1em / 6)};
-            border: 0;
-            line-height: 1.6;
-            font-size: 1em;
-        }
-
-        .group-input-button
-        {
-            display: flex;
-
-            input
-            {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-                border-right: 0;
-            }
-
-            button
-            {
-                width: 120px;
-                border: $border-size solid #888;
-                border-left: 0;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-        }
-
         a.button
         {
             vertical-align: middle;
@@ -763,6 +709,62 @@ article
     > label + div
     {
         margin-left: 0;
+    }
+
+    input, textarea, select
+    {
+        width: 100%;
+        box-sizing: border-box;
+        border: $border-size solid;
+        padding: #{(1em / 3)} #{(1em / 2)};
+        border-radius: #{(1em / 6)};
+        font-size: 1em;
+        line-height: 1em;
+        border-color: #888;
+    }
+
+    input[type=submit],
+    input[type=checkbox]
+    {
+        width: auto;
+    }
+
+    input[type=submit],
+    button,
+    .group-input-button > button
+    {
+        display: inline-block;
+        vertical-align: middle;
+        padding: #{(1em / 2)} 1em #{(1em / 3)};
+        background-color: $strong-green;
+        color: #fff;
+        text-decoration: none;
+        border-radius: #{(1em / 6)};
+        border: 0;
+        line-height: 1.6;
+        font-size: 1em;
+    }
+
+    .group-input-button
+    {
+        display: flex;
+
+        input
+        {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+
+        button
+        {
+            width: 120px;
+            border: $border-size solid #888;
+            border-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 0 1em;
+        }
     }
 
     .trumbowyg-button-pane

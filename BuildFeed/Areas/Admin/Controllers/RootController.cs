@@ -17,22 +17,6 @@ namespace BuildFeed.Admin.Controllers
             return View();
         }
 
-        [Authorize(Users = "hounsell")]
-        [Route("setup")]
-        public ActionResult Setup()
-        {
-            if (!Roles.RoleExists("Administrators"))
-            {
-                Roles.CreateRole("Administrators");
-            }
-            if (!Roles.IsUserInRole("hounsell", "Administrators"))
-            {
-                Roles.AddUserToRole("hounsell", "Administrators");
-            }
-
-            return RedirectToAction(nameof(Index));
-        }
-
         [Authorize(Roles = "Administrators")]
         [Route("regen-cache")]
         public async Task<ActionResult> RegenerateCache()

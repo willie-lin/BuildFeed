@@ -38,6 +38,10 @@ namespace BuildFeed.Controllers
 #endif
         public async Task<ActionResult> Index()
         {
+            ViewBag.Versions = await _bModel.SelectAllVersions();
+            ViewBag.Years = await _bModel.SelectAllYears();
+            ViewBag.Sources = await _bModel.SelectAllSources();
+
             Dictionary<ProjectFamily, FrontPage> items = await _bModel.SelectFrontPage();
             return View(nameof(Index), items);
         }
