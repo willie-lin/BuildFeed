@@ -452,6 +452,12 @@ article
                     padding: #{(1em / 3)} 0;
                     text-transform: uppercase;
                 }
+
+                span
+                {
+                    font-size: 0.675em;
+                    letter-spacing: .25em;
+                }
             }
 
             p
@@ -459,6 +465,11 @@ article
                 font-size: 1.1em;
                 font-weight: 300;
                 margin: 0 0 #{(2em / 3)};
+            }
+
+            .group-input-button button
+            {
+                width: 48px;
             }
         }
 
@@ -748,6 +759,8 @@ article
     .group-input-button
     {
         display: flex;
+        min-width: 160px;
+        max-width: none;
 
         input
         {
