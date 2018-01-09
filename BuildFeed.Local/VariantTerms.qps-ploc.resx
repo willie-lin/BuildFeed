@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>[!!! Âδ₥ïñ  !!!]</value>
   </data>
+  <data name="Common_Blog" xml:space="preserve">
+    <value>[!!! ßℓôϱ  !!!]</value>
+  </data>
   <data name="Common_ChangePassword" xml:space="preserve">
     <value>[!!! Çλáñϱè ƥáƨƨωôřδ ℓ !!!]</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>[!!! £ïϱλƭ ℓ !!!]</value>
+  </data>
+  <data name="Common_ThemeWinter" xml:space="preserve">
+    <value>[!!! Wïñƭèř  !!!]</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>[!!! | Þáϱè {0}  !!!]</value>
@@ -422,6 +428,9 @@
   <data name="Search_Year" xml:space="preserve">
     <value>[!!! Ýèář  !!!]</value>
   </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
+  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>[!!! Âδδïƭïôñƨ ƭô ßúïℓδFèèδ ℓ !!!]</value>
   </data>
@@ -497,6 +506,9 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>[!!! Rè₥è₥βèř ₥è  !!!]</value>
   </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
+  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>[!!! Ûƨèřñá₥è  !!!]</value>
   </data>
@@ -514,12 +526,5 @@
   </data>
   <data name="Support_Week" xml:space="preserve">
     <value>[!!! Wèèƙ !!!]</value>
-  </data>
-
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>[!!! ÉƲèř¥ áççôúñƭ ïƨ Ʋáℓïδáƭèδ β¥ áñ Âδ₥ïñïƨƭřáƭôř, ƨô βè ƥáƭïèñƭ áñδ çλèçƙ áϱáïñ ℓáƭèř. ℓôřè₥ ï !!!]</value>
-  </data>
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>[!!! Tλáñƙ ¥ôú ƒôř řèϱïƨƭèřïñϱ ℓô !!!]</value>
   </data>
 </root>
