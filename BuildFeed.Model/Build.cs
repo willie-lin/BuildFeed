@@ -202,6 +202,10 @@ namespace BuildFeed.Model
             {
                 Family = ProjectFamily.Longhorn;
             }
+            else if (MajorVersion == 5 && MinorVersion == 50)
+            {
+                Family = ProjectFamily.Neptune;
+            }
             else if (MajorVersion == 5 && Number >= 3000)
             {
                 Family = ProjectFamily.Server2003;
@@ -209,10 +213,6 @@ namespace BuildFeed.Model
             else if (MajorVersion == 5 && Number >= 2205)
             {
                 Family = ProjectFamily.WindowsXP;
-            }
-            else if (MajorVersion == 5 && MinorVersion == 50)
-            {
-                Family = ProjectFamily.Neptune;
             }
             else if (MajorVersion == 5)
             {
