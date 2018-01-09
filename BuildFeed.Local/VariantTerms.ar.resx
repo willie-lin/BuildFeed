@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>أدوات المسؤول</value>
   </data>
+  <data name="Common_Blog" xml:space="preserve">
+    <value>مقالات وأخبار</value>
+  </data>
   <data name="Common_ChangePassword" xml:space="preserve">
     <value>تغيير كلمة المرور</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>مضيء</value>
+  </data>
+  <data name="Common_ThemeWinter" xml:space="preserve">
+    <value>سمة الشتاء</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| الصفحة {0}</value>
@@ -422,6 +428,9 @@
   <data name="Search_Year" xml:space="preserve">
     <value>السنة</value>
   </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>جميع الحسابات يتم تفعيلها يدوياً من مسؤول الموقع. اصبروا علينا وزورونا مرة أخرى لاحقاً.</value>
+  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>الإضافات إلى BuildFeed</value>
   </data>
@@ -497,6 +506,9 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>تذكرني</value>
   </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>شكراً لك على التسجيل بالموقع</value>
+  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>اسم المستخدم</value>
   </data>
@@ -516,10 +528,4 @@
     <value>الأسبوع</value>
   </data>
 
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>جميع الحسابات يتم تفعيلها يدوياً من مسؤول الموقع. اصبروا علينا وزورونا مرة أخرى لاحقاً.</value>
-  </data>
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>شكراً لك على التسجيل بالموقع</value>
-  </data>
 </root>
