@@ -136,7 +136,11 @@ namespace BuildFeed.Model
         private void GenerateFamily()
         {
             // start with lab-based overrides
-            if (Lab?.StartsWith("rs3", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            if (Lab?.StartsWith("rs4", StringComparison.InvariantCultureIgnoreCase) ?? false)
+            {
+                Family = ProjectFamily.Redstone4;
+            }
+            else if (Lab?.StartsWith("rs3", StringComparison.InvariantCultureIgnoreCase) ?? false)
             {
                 Family = ProjectFamily.Redstone3;
             }
