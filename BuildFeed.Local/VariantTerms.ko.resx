@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>관리</value>
   </data>
+  <data name="Common_Blog" xml:space="preserve">
+    <value>블로그</value>
+  </data>
   <data name="Common_ChangePassword" xml:space="preserve">
     <value>패스워드 변경</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>밝음</value>
+  </data>
+  <data name="Common_ThemeWinter" xml:space="preserve">
+    <value>겨울</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| 페이지 {0}</value>
@@ -420,7 +426,10 @@
     <value>버전</value>
   </data>
   <data name="Search_Year" xml:space="preserve">
-    <value>년</value>
+    <value>연도</value>
+  </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>모든 계정은 먼저 관리자가 확인합니다. 잠시만 기다려 주시기 바랍니다.</value>
   </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>BuildFeed에 추가</value>
@@ -497,6 +506,9 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>로그인 상태 유지</value>
   </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>가입해 주셔서 감사합니다!</value>
+  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>사용자 이름 (ID)</value>
   </data>
@@ -515,10 +527,4 @@
   <data name="Support_Week" xml:space="preserve">
     <value>주</value>
   </data>
-  <data name="Support_AccountValidation" xml:space="preserve">
-      <value>모든 게정은 관리자에 의해 확인됩니다. 기다려주시고 나중에 다시 확인해 주세요.</value>
-    </data>
-  <data name="Support_ThanksRegister" xml:space="preserve">
-      <value>가입해 주셔서 감사합니다!</value>
-   </data>
 </root>
