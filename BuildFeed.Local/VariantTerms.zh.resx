@@ -159,6 +159,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>管理员</value>
   </data>
+  <data name="Common_Blog" xml:space="preserve">
+    <value>博客</value>
+  </data>
   <data name="Common_ChangePassword" xml:space="preserve">
     <value>更改密码</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>浅色</value>
+  </data>
+  <data name="Common_ThemeWinter" xml:space="preserve">
+    <value>冬季</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| 第 {0}</value>
@@ -422,6 +428,9 @@
   <data name="Search_Year" xml:space="preserve">
     <value>年</value>
   </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>由于每个账号都要由管理员验证，所以请耐心等待并稍后重新查看。</value>
+  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>新增到 BuildFeed 的记录数</value>
   </data>
@@ -497,6 +506,9 @@
   <data name="Support_RememberMe" xml:space="preserve">
     <value>记住我</value>
   </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>感谢您的注册</value>
+  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>用户名</value>
   </data>
@@ -516,10 +528,4 @@
     <value>周</value>
   </data>
 
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>由于每个账号都要由管理员验证，所以请耐心等待并稍后重新查看。</value>
-  </data>
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>感谢您的注册</value>
-  </data>
 </root>
