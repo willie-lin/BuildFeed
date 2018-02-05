@@ -69,6 +69,24 @@ namespace BuildFeed.Code
             return result ?? o.ToString();
         }
 
+        public static string GetDisplayDescriptionForEnum(object o)
+        {
+            string result = null;
+            DisplayAttribute display = o.GetType()
+                .GetMember(o.ToString())
+                .First()
+                .GetCustomAttributes(false)
+                .OfType<DisplayAttribute>()
+                .LastOrDefault();
+
+            if (display != null)
+            {
+                result = display.GetDescription() ?? display.GetName();
+            }
+
+            return result ?? o.ToString();
+        }
+
         public static string ToLongDateWithoutDay(this DateTime dt)
         {
             string s = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;

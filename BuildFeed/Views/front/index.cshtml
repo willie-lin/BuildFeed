@@ -102,15 +102,14 @@
             <div class="group-input-button">
                 <select id="search-version">
                     @{
-                        BuildVersion[] versions = ViewBag.Versions;
-                        foreach (BuildVersion version in versions)
+                        ProjectFamily[] versions = ViewBag.Versions;
+                        foreach (ProjectFamily version in versions)
                         {
-                            <option value="@Url.Action(nameof(FrontController.ViewVersion), "Front", new
+                            <option value="@Url.Action(nameof(FrontController.ViewFamily), "Front", new
                                            {
-                                               major = version.Major,
-                                               minor = version.Minor
+                                               family = version
                                            })">
-                                @version.ToString()
+                                @MvcExtensions.GetDisplayDescriptionForEnum(version)
                             </option>
                         }
                     }

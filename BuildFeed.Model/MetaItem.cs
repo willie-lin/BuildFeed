@@ -37,7 +37,7 @@ namespace BuildFeed.Model
 
         public MetaItem()
         {
-            MongoClientSettings settings = new MongoClientSettings
+            var settings = new MongoClientSettings
             {
                 Server = new MongoServerAddress(MongoConfig.Host, MongoConfig.Port)
             };
@@ -48,17 +48,16 @@ namespace BuildFeed.Model
                     MongoCredential.CreateCredential(MongoConfig.Database, MongoConfig.Username, MongoConfig.Password);
             }
 
-            MongoClient dbClient = new MongoClient(settings);
+            var dbClient = new MongoClient(settings);
 
-            _metaCollection = dbClient.GetDatabase(MongoConfig.Database).GetCollection<MetaItemModel>(META_COLLECTION_NAME);
+            _metaCollection = dbClient.GetDatabase(MongoConfig.Database)
+                .GetCollection<MetaItemModel>(META_COLLECTION_NAME);
             _bModel = new BuildRepository();
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<IEnumerable<MetaItemModel>> Select()
-        {
-            return await _metaCollection.Find(new BsonDocument()).ToListAsync();
-        }
+            => await _metaCollection.Find(new BsonDocument()).ToListAsync();
 
         [DataObjectMethod(DataObjectMethodType.Select, true)]
         public async Task<IEnumerable<MetaItemModel>> SelectByType(MetaType type)
@@ -69,43 +68,56 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<MetaItemModel> SelectById(MetaItemKey id)
         {
-            return await _metaCollection.Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value).SingleOrDefaultAsync();
+            return await _metaCollection.Find(f => f.Id.Type == id.Type && f.Id.Value == id.Value)
+                .SingleOrDefaultAsync();
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<IEnumerable<string>> SelectUnusedLabs()
         {
-            string[] labs = await _bModel.SelectAllLabs();
+            var labs = await _bModel.SelectAllLabs();
 
-            List<MetaItemModel> usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
+            var usedLabs = await _metaCollection.Find(f => f.Id.Type == MetaType.Lab).ToListAsync();
 
             return from l in labs
-                   where usedLabs.All(ul => ul.Id.Value != l)
-                   select l;
+                where usedLabs.All(ul => ul.Id.Value != l)
+                select l;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<IEnumerable<string>> SelectUnusedVersions()
         {
-            BuildVersion[] versions = await _bModel.SelectAllVersions();
+            var versions = await _bModel.SelectAllVersions();
 
-            List<MetaItemModel> usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
+            var usedVersions = await _metaCollection.Find(f => f.Id.Type == MetaType.Version).ToListAsync();
 
             return from v in versions
-                   where usedVersions.All(ul => ul.Id.Value != v.ToString())
-                   select v.ToString();
+                where usedVersions.All(ul => ul.Id.Value != v.ToString())
+                select v.ToString();
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<IEnumerable<string>> SelectUnusedYears()
         {
-            int[] years = await _bModel.SelectAllYears();
+            var years = await _bModel.SelectAllYears();
 
-            List<MetaItemModel> usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
+            var usedYears = await _metaCollection.Find(f => f.Id.Type == MetaType.Year).ToListAsync();
 
             return from y in years
-                   where usedYears.All(ul => ul.Id.Value != y.ToString())
-                   select y.ToString();
+                where usedYears.All(ul => ul.Id.Value != y.ToString())
+                select y.ToString();
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public async Task<IEnumerable<string>> SelectUnusedFamilies()
+        {
+            var families = await _bModel.SelectAllFamilies();
+
+            var usedFamilies = await _metaCollection.Find(f => f.Id.Type == MetaType.Family).ToListAsync();
+
+            return from y in families
+                where usedFamilies.All(ul => ul.Id.Value != y.ToString())
+                select y.ToString();
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
@@ -144,15 +156,12 @@ namespace BuildFeed.Model
 
         public MetaItemKey(string id)
         {
-            string[] items = id.Split(':');
+            var items = id.Split(':');
             Type = (MetaType)Enum.Parse(typeof(MetaType), items[0]);
             Value = items[1];
         }
 
-        public override string ToString()
-        {
-            return $"{Type}:{Value}";
-        }
+        public override string ToString() => $"{Type}:{Value}";
     }
 
     public enum MetaType
@@ -160,6 +169,7 @@ namespace BuildFeed.Model
         Lab,
         Version,
         Source,
-        Year
+        Year,
+        Family
     }
 }

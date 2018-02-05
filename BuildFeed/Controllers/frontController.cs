@@ -32,31 +32,32 @@ namespace BuildFeed.Controllers
         }
 
         [Route("", Order = 1)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> Index()
         {
-            ViewBag.Versions = await _bModel.SelectAllVersions();
+            ViewBag.Versions = await _bModel.SelectAllFamilies();
             ViewBag.Years = await _bModel.SelectAllYears();
             ViewBag.Sources = await _bModel.SelectAllSources();
 
-            Dictionary<ProjectFamily, FrontPage> items = await _bModel.SelectFrontPage();
+            var items = await _bModel.SelectFrontPage();
             return View(nameof(Index), items);
         }
 
         [Route("page-{page:int:min(1)}/", Order = 0)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> IndexPage(int page)
         {
-            FrontBuildGroup[] buildGroups = await _bModel.SelectAllGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
+            var buildGroups = await _bModel.SelectAllGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectAllGroupsCount()) / Convert.ToDouble(PAGE_SIZE));
+            ViewBag.PageCount =
+                Math.Ceiling(Convert.ToDouble(await _bModel.SelectAllGroupsCount()) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
@@ -69,13 +70,13 @@ namespace BuildFeed.Controllers
         [Route("group/{major}.{minor}.{number}.{revision}/", Order = 1)]
         [Route("group/{major}.{minor}.{number}/", Order = 5)]
         // for when there is no revision
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewGroup(uint major, uint minor, uint number, uint? revision = null)
         {
-            BuildGroup bg = new BuildGroup
+            var bg = new BuildGroup
             {
                 Major = major,
                 Minor = minor,
@@ -83,7 +84,7 @@ namespace BuildFeed.Controllers
                 Revision = revision
             };
 
-            List<Build> builds = await _bModel.SelectGroup(bg);
+            var builds = await _bModel.SelectGroup(bg);
 
             return builds.Count == 1
                 ? RedirectToAction(nameof(ViewBuild),
@@ -95,10 +96,10 @@ namespace BuildFeed.Controllers
         }
 
         [Route("build/{id:guid}/", Name = "Build")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewBuild(Guid id)
         {
             Build b = await _bModel.SelectById(id);
@@ -127,10 +128,10 @@ namespace BuildFeed.Controllers
         }
 
         [Route("twitter/{id:guid}/", Name = "Twitter")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [CustomContentType(ContentType = "image/png", Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [CustomContentType(ContentType = "image/png", Order = 2)]
+        #endif
         public async Task<ActionResult> TwitterCard(Guid id)
         {
             Build b = await _bModel.SelectById(id);
@@ -161,11 +162,16 @@ namespace BuildFeed.Controllers
                     }
 
                     int left = 40;
-                    using (GraphicsPath gp = new GraphicsPath())
+                    using (var gp = new GraphicsPath())
                     {
                         foreach (char c in "BUILDFEED")
                         {
-                            gp.AddString(c.ToString(), new FontFamily("Segoe UI Semibold"), 0, 32, new Point(left, 32), StringFormat.GenericTypographic);
+                            gp.AddString(c.ToString(),
+                                new FontFamily("Segoe UI Semibold"),
+                                0,
+                                32,
+                                new Point(left, 32),
+                                StringFormat.GenericTypographic);
 
                             RectangleF bounds = gp.GetBounds();
                             left = Convert.ToInt32(bounds.Width);
@@ -175,9 +181,14 @@ namespace BuildFeed.Controllers
                         gr.FillPath(Brushes.White, gp);
                     }
 
-                    using (GraphicsPath gp = new GraphicsPath())
+                    using (var gp = new GraphicsPath())
                     {
-                        gp.AddString(b.Number.ToString(), new FontFamily("Segoe UI Light"), 0, 260, new Point(32, 114), StringFormat.GenericTypographic);
+                        gp.AddString(b.Number.ToString(),
+                            new FontFamily("Segoe UI Light"),
+                            0,
+                            260,
+                            new Point(32, 114),
+                            StringFormat.GenericTypographic);
 
                         RectangleF bounds = gp.GetBounds();
                         left = Convert.ToInt32(bounds.Width);
@@ -185,24 +196,56 @@ namespace BuildFeed.Controllers
 
                         if (b.Revision.HasValue)
                         {
-                            gp.AddString($".{b.Revision}", new FontFamily("Segoe UI Light"), 0, 160, new Point(left, 220), StringFormat.GenericTypographic);
+                            gp.AddString($".{b.Revision}",
+                                new FontFamily("Segoe UI Light"),
+                                0,
+                                160,
+                                new Point(left, 220),
+                                StringFormat.GenericTypographic);
                         }
 
                         gr.DrawPath(new Pen(new SolidBrush(Color.FromArgb(0x24, 0x24, 0x23)), 4), gp);
                         gr.FillPath(Brushes.White, gp);
                     }
 
-                    using (GraphicsPath gp = new GraphicsPath())
+                    using (var gp = new GraphicsPath())
                     {
-                        gp.AddString($"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (NT {b.MajorVersion}.{b.MinorVersion})", new FontFamily("Segoe UI Light"), 0, 48, new Point(40, 80), StringFormat.GenericTypographic);
+                        gp.AddString(
+                            $"{MvcExtensions.GetDisplayTextForEnum(b.Family)} (NT {b.MajorVersion}.{b.MinorVersion})",
+                            new FontFamily("Segoe UI Light"),
+                            0,
+                            48,
+                            new Point(40, 80),
+                            StringFormat.GenericTypographic);
 
-                        gp.AddString(char.ConvertFromUtf32(0xf126), new FontFamily("FontAwesome"), 0, 28, new Point(46, 468), StringFormat.GenericTypographic);
-                        gp.AddString(b.Lab, new FontFamily("Segoe UI Light"), 0, 40, new Point(88, 450), StringFormat.GenericTypographic);
+                        gp.AddString(char.ConvertFromUtf32(0xf126),
+                            new FontFamily("FontAwesome"),
+                            0,
+                            28,
+                            new Point(46, 468),
+                            StringFormat.GenericTypographic);
+                        gp.AddString(b.Lab,
+                            new FontFamily("Segoe UI Light"),
+                            0,
+                            40,
+                            new Point(88, 450),
+                            StringFormat.GenericTypographic);
 
                         if (b.BuildTime.HasValue)
                         {
-                            gp.AddString(char.ConvertFromUtf32(0xf017), new FontFamily("FontAwesome"), 0, 28, new Point(40, 538), StringFormat.GenericTypographic);
-                            gp.AddString($"{b.BuildTime.Value.ToShortTimeString()} on {b.BuildTime.Value.ToLongDateString()}", new FontFamily("Segoe UI Light"), 0, 40, new Point(88, 520), StringFormat.GenericTypographic);
+                            gp.AddString(char.ConvertFromUtf32(0xf017),
+                                new FontFamily("FontAwesome"),
+                                0,
+                                28,
+                                new Point(40, 538),
+                                StringFormat.GenericTypographic);
+                            gp.AddString(
+                                $"{b.BuildTime.Value.ToShortTimeString()} on {b.BuildTime.Value.ToLongDateString()}",
+                                new FontFamily("Segoe UI Light"),
+                                0,
+                                40,
+                                new Point(88, 520),
+                                StringFormat.GenericTypographic);
                         }
 
                         gr.FillPath(Brushes.White, gp);
@@ -232,21 +275,59 @@ namespace BuildFeed.Controllers
                 });
         }
 
+        [Route("family/{family}/", Order = 1, Name = "Family Root")]
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
+        public async Task<ActionResult> ViewFamily(ProjectFamily family)
+        {
+            return await ViewFamilyPage(family, 1);
+        }
+
+        [Route("family/{family}/page-{page:int:min(2)}/", Order = 0)]
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
+        public async Task<ActionResult> ViewFamilyPage(ProjectFamily family, int page)
+        {
+            ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
+            {
+                Type = MetaType.Family,
+                Value = family.ToString()
+            });
+            ViewBag.ItemId = MvcExtensions.GetDisplayDescriptionForEnum(family);
+
+            var builds = await _bModel.SelectFamily(family, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+
+            ViewBag.PageNumber = page;
+            ViewBag.PageCount =
+                Math.Ceiling(Convert.ToDouble(await _bModel.SelectFamilyCount(family)) / Convert.ToDouble(PAGE_SIZE));
+
+            if (ViewBag.PageNumber > ViewBag.PageCount)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            return View("viewFamily", builds);
+        }
+
         [Route("lab/{lab}/", Order = 1, Name = "Lab Root")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewLab(string lab)
         {
             return await ViewLabPage(lab, 1);
         }
 
         [Route("lab/{lab}/page-{page:int:min(2)}/", Order = 0)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewLabPage(string lab, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -255,11 +336,12 @@ namespace BuildFeed.Controllers
                 Value = lab
             });
 
-            List<Build> builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+            var builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
             ViewBag.ItemId = builds.FirstOrDefault()?.Lab;
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
+            ViewBag.PageCount =
+                Math.Ceiling(Convert.ToDouble(await _bModel.SelectLabCount(lab)) / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
@@ -270,20 +352,20 @@ namespace BuildFeed.Controllers
         }
 
         [Route("source/{source}/", Order = 1, Name = "Source Root")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewSource(TypeOfSource source)
         {
             return await ViewSourcePage(source, 1);
         }
 
         [Route("source/{source}/page-{page:int:min(2)}/", Order = 0)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewSourcePage(TypeOfSource source, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -293,10 +375,11 @@ namespace BuildFeed.Controllers
             });
             ViewBag.ItemId = MvcExtensions.GetDisplayTextForEnum(source);
 
-            List<Build> builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+            var builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source)) / Convert.ToDouble(PAGE_SIZE));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectSourceCount(source))
+                / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
@@ -307,20 +390,20 @@ namespace BuildFeed.Controllers
         }
 
         [Route("year/{year}/", Order = 1, Name = "Year Root")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewYear(int year)
         {
             return await ViewYearPage(year, 1);
         }
 
         [Route("year/{year}/page-{page:int:min(2)}/", Order = 0)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewYearPage(int year, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -330,7 +413,7 @@ namespace BuildFeed.Controllers
             });
             ViewBag.ItemId = year.ToString();
 
-            List<Build> builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+            var builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
             ViewBag.PageNumber = page;
             ViewBag.PageCount = Math.Ceiling(await _bModel.SelectYearCount(year) / Convert.ToDouble(PAGE_SIZE));
@@ -344,20 +427,20 @@ namespace BuildFeed.Controllers
         }
 
         [Route("version/{major}.{minor}/", Order = 1, Name = "Version Root")]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewVersion(uint major, uint minor)
         {
             return await ViewVersionPage(major, minor, 1);
         }
 
         [Route("version/{major}.{minor}/page-{page:int:min(2)}/", Order = 0)]
-#if !DEBUG
-      [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
-      [OutputCachePush(Order = 2)]
-#endif
+        #if !DEBUG
+        [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
+        [OutputCachePush(Order = 2)]
+        #endif
         public async Task<ActionResult> ViewVersionPage(uint major, uint minor, int page)
         {
             string valueString = $"{major}.{minor}";
@@ -368,10 +451,11 @@ namespace BuildFeed.Controllers
             });
             ViewBag.ItemId = valueString;
 
-            List<Build> builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
+            var builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
             ViewBag.PageNumber = page;
-            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor)) / Convert.ToDouble(PAGE_SIZE));
+            ViewBag.PageCount = Math.Ceiling(Convert.ToDouble(await _bModel.SelectVersionCount(major, minor))
+                / Convert.ToDouble(PAGE_SIZE));
 
             if (ViewBag.PageNumber > ViewBag.PageCount)
             {
@@ -385,7 +469,7 @@ namespace BuildFeed.Controllers
         [Authorize(Roles = "Administrators,Editors")]
         public ActionResult AddBuild()
         {
-            Build b = new Build
+            var b = new Build
             {
                 SourceType = TypeOfSource.PrivateLeak
             };
@@ -417,7 +501,7 @@ namespace BuildFeed.Controllers
                     build.RegenerateCachedProperties();
 
 
-                    BuildDetails bi = new BuildDetails
+                    var bi = new BuildDetails
                     {
                         MajorVersion = build.MajorVersion,
                         MinorVersion = build.MinorVersion,
@@ -449,8 +533,9 @@ namespace BuildFeed.Controllers
                     return View("EditBuild", build);
                 }
 
-                OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
-                osc.PushNewBuild(build, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = build.Id })}?utm_source=notification&utm_campaign=new_build");
+                var osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
+                osc.PushNewBuild(build,
+                    $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = build.Id })}?utm_source=notification&utm_campaign=new_build");
 
                 return RedirectToAction(nameof(ViewBuild),
                     new
@@ -458,15 +543,13 @@ namespace BuildFeed.Controllers
                         id = build.Id
                     });
             }
+
             return View("EditBuild", build);
         }
 
         [Route("bulk/")]
         [Authorize(Roles = "Administrators")]
-        public ActionResult AddBulk()
-        {
-            return View();
-        }
+        public ActionResult AddBulk() => View();
 
         [Route("bulk/")]
         [ValidateAntiForgeryToken]
@@ -474,7 +557,7 @@ namespace BuildFeed.Controllers
         [HttpPost]
         public async Task<ActionResult> AddBulk(FormCollection values)
         {
-            OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
+            var osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
             var success = new List<Build>();
             var failed = new List<string>();
             bool notify = bool.Parse(values[nameof(BulkAddition.SendNotifications)].Split(',')[0]);
@@ -487,12 +570,13 @@ namespace BuildFeed.Controllers
                     },
                     StringSplitOptions.RemoveEmptyEntries))
             {
-                Match m = Regex.Match(line, @"(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?(\.| \()([a-zA-Z][a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)?");
+                Match m = Regex.Match(line,
+                    @"(([\d]{1,2})\.([\d]{1,2})\.)?([\d]{4,5})(\.([\d]{1,5}))?(\.| \()([a-zA-Z][a-zA-Z0-9._\(\)-]+?)\.(\d\d\d\d\d\d-\d\d\d\d)\)?");
                 if (m.Success)
                 {
                     try
                     {
-                        Build b = new Build
+                        var b = new Build
                         {
                             MajorVersion = uint.Parse(m.Groups[2].Value),
                             MinorVersion = uint.Parse(m.Groups[3].Value),
@@ -503,14 +587,17 @@ namespace BuildFeed.Controllers
                             Lab = m.Groups[8].Value,
                             BuildTime = string.IsNullOrEmpty(m.Groups[9].Value)
                                 ? null
-                                : DateTime.SpecifyKind(DateTime.ParseExact(m.Groups[9].Value, "yyMMdd-HHmm", CultureInfo.CurrentCulture.DateTimeFormat), DateTimeKind.Utc) as DateTime?,
+                                : DateTime.SpecifyKind(DateTime.ParseExact(m.Groups[9].Value,
+                                        "yyMMdd-HHmm",
+                                        CultureInfo.CurrentCulture.DateTimeFormat),
+                                    DateTimeKind.Utc) as DateTime?,
                             Added = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
                             Modified = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
                             SourceType = TypeOfSource.PrivateLeak
                         };
                         b.RegenerateCachedProperties();
 
-                        BuildDetails bi = new BuildDetails
+                        var bi = new BuildDetails
                         {
                             MajorVersion = b.MajorVersion,
                             MinorVersion = b.MinorVersion,
@@ -544,7 +631,8 @@ namespace BuildFeed.Controllers
 
                             if (notify)
                             {
-                                osc.PushNewBuild(b, $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build");
+                                osc.PushNewBuild(b,
+                                    $"https://buildfeed.net{Url.Action(nameof(ViewBuild), new { id = b.Id })}?utm_source=notification&utm_campaign=new_build");
                             }
 
                             success.Add(b);
@@ -599,7 +687,7 @@ namespace BuildFeed.Controllers
                         build.LeakDate = DateTime.SpecifyKind(build.LeakDate.Value, DateTimeKind.Utc);
                     }
 
-                    BuildDetails bi = new BuildDetails
+                    var bi = new BuildDetails
                     {
                         MajorVersion = build.MajorVersion,
                         MinorVersion = build.MinorVersion,
@@ -640,6 +728,7 @@ namespace BuildFeed.Controllers
                         id = build.Id
                     });
             }
+
             return View(build);
         }
 

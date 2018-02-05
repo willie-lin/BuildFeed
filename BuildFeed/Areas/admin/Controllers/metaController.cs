@@ -20,60 +20,64 @@ namespace BuildFeed.Admin.Controllers
         }
 
         [Route("")]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index() => View(new MetaListing
         {
-            return View(new MetaListing
-            {
-                CurrentItems = from i in await _mModel.Select()
-                               group i by i.Id.Type
-                               into b
-                               orderby b.Key.ToString()
-                               select b,
+            CurrentItems = from i in await _mModel.Select()
+                group i by i.Id.Type
+                into b
+                orderby b.Key.ToString()
+                select b,
 
-                NewItems = from i in (from l in await _mModel.SelectUnusedLabs()
-                                      select new MetaItemModel
-                                      {
-                                          Id = new MetaItemKey
-                                          {
-                                              Type = MetaType.Lab,
-                                              Value = l
-                                          }
-                                      }).Concat(from v in await _mModel.SelectUnusedVersions()
-                                                select new MetaItemModel
-                                                {
-                                                    Id = new MetaItemKey
-                                                    {
-                                                        Type = MetaType.Version,
-                                                        Value = v
-                                                    }
-                                                }).Concat(from y in await _mModel.SelectUnusedYears()
-                                                          select new MetaItemModel
-                                                          {
-                                                              Id = new MetaItemKey
-                                                              {
-                                                                  Type = MetaType.Year,
-                                                                  Value = y
-                                                              }
-                                                          })
-                           group i by i.Id.Type
-                           into b
-                           orderby b.Key.ToString()
-                           select b
-            });
-        }
+            NewItems = from i in (from l in await _mModel.SelectUnusedLabs()
+                        select new MetaItemModel
+                        {
+                            Id = new MetaItemKey
+                            {
+                                Type = MetaType.Lab,
+                                Value = l
+                            }
+                        }).Concat(from v in await _mModel.SelectUnusedVersions()
+                        select new MetaItemModel
+                        {
+                            Id = new MetaItemKey
+                            {
+                                Type = MetaType.Version,
+                                Value = v
+                            }
+                        })
+                    .Concat(from y in await _mModel.SelectUnusedYears()
+                        select new MetaItemModel
+                        {
+                            Id = new MetaItemKey
+                            {
+                                Type = MetaType.Year,
+                                Value = y
+                            }
+                        })
+                    .Concat(from y in await _mModel.SelectUnusedFamilies()
+                        select new MetaItemModel
+                        {
+                            Id = new MetaItemKey
+                            {
+                                Type = MetaType.Family,
+                                Value = y
+                            }
+                        })
+                group i by i.Id.Type
+                into b
+                orderby b.Key.ToString()
+                select b
+        });
 
         [Route("create/{type}/{value}")]
-        public ActionResult Create(MetaType type, string value)
+        public ActionResult Create(MetaType type, string value) => View(new MetaItemModel
         {
-            return View(new MetaItemModel
+            Id = new MetaItemKey
             {
-                Id = new MetaItemKey
-                {
-                    Type = type,
-                    Value = value
-                }
-            });
-        }
+                Type = type,
+                Value = value
+            }
+        });
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -90,15 +94,12 @@ namespace BuildFeed.Admin.Controllers
         }
 
         [Route("edit/{type}/{value}")]
-        public async Task<ActionResult> Edit(MetaType type, string value)
-        {
-            return View(nameof(Create),
-                await _mModel.SelectById(new MetaItemKey
-                {
-                    Type = type,
-                    Value = value
-                }));
-        }
+        public async Task<ActionResult> Edit(MetaType type, string value) => View(nameof(Create),
+            await _mModel.SelectById(new MetaItemKey
+            {
+                Type = type,
+                Value = value
+            }));
 
         [HttpPost]
         [ValidateAntiForgeryToken]

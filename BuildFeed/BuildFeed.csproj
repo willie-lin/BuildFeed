@@ -484,6 +484,7 @@
     <Content Include="Views\account\validate-success.cshtml" />
     <Content Include="Views\account\validate-failure.cshtml" />
     <None Include="tsconfig.json" />
+    <Content Include="Views\front\ViewFamily.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
