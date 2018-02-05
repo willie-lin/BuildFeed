@@ -177,6 +177,9 @@
   <data name="Common_Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="Common_Blog" xml:space="preserve">
+    <value>בלוג</value>
+  </data>
   <data name="Common_ChangePassword" xml:space="preserve">
     <value>החלף סיסמה</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="Common_ThemeLight" xml:space="preserve">
     <value>בהיר</value>
+  </data>
+  <data name="Common_ThemeWinter" xml:space="preserve">
+    <value>חורף</value>
   </data>
   <data name="Common_TitlePage" xml:space="preserve">
     <value>| דף {0}</value>
@@ -450,6 +456,9 @@ BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך
   <data name="Search_Year" xml:space="preserve">
     <value>שנה</value>
   </data>
+  <data name="Support_AccountValidation" xml:space="preserve">
+    <value>כל חשבון נבדק ע"י מנהל המערכת, התאזר בסבלנות וחזור מאוחר יותר.</value>
+  </data>
   <data name="Support_AdditionsToBuildFeed" xml:space="preserve">
     <value>תוספות ל- BuildFeed</value>
   </data>
@@ -471,15 +480,12 @@ BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך
   
 <!--
 <data name="Support_EmailValidationContent" xml:space="preserve">
-    <value>[!!! Âñ Ʋáℓïδáƭïôñ ℓïñƙ λáƨ βèèñ ƨèñƭ ƭô ¥ôúř è₥áïℓ áδδřèƨƨ. Þℓèáƨè çℓïçƙ ƭλè ℓïñƙ ïñ ƭλè è₥áïℓ ƭô Ʋèřïƒ¥ ƭλè áççôúñƭ. ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
+    <value>[!!! Â Ʋáℓïδáƭïôñ ℓïñƙ λáƨ βèèñ ƨèñƭ ƭô ¥ôúř è₥áïℓ áδδřèƨƨ. Þℓèáƨè çℓïçƙ ƭλè ℓïñƙ ïñ ƭλè è₥áïℓ ƭô Ʋèřïƒ¥ ƭλè áççôúñƭ. ℓôřè₥ ïƥƨú₥ δôℓô !!!]</value>
   </data>
 -->
-  
-<!--
-<data name="Support_EmailValidationTitle" xml:space="preserve">
-    <value>[!!! Þℓèáƨè Ʋèřïƒ¥ ¥ôúř è₥áïℓ áδδřèƨƨ ℓôřè !!!]</value>
+  <data name="Support_EmailValidationTitle" xml:space="preserve">
+    <value>נא אמת את כתובת הדוא"ל שלך.</value>
   </data>
--->
   <data name="Support_EnterCurrentPassword" xml:space="preserve">
     <value>הזן סיסמה נוכחית</value>
   </data>
@@ -546,6 +552,9 @@ BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך
   <data name="Support_RememberMe" xml:space="preserve">
     <value>זכור אותי</value>
   </data>
+  <data name="Support_ThanksRegister" xml:space="preserve">
+    <value>תודה על ההרשמה</value>
+  </data>
   <data name="Support_UserName" xml:space="preserve">
     <value>שם משתמש</value>
   </data>
@@ -577,10 +586,4 @@ BuildFeed עוקב אחרי בילדים של Windows לאורך כל תהליך
     <value>שבוע</value>
   </data>
 
-<data name="Support_AccountValidation" xml:space="preserve">
-    <value>כל חשבון נבדק ע"י מנהל המערכת, התאזר בסבלנות וחזור מאוחר יותר.</value>
-  </data>
-<data name="Support_ThanksRegister" xml:space="preserve">
-    <value>תודה על ההרשמה</value>
-  </data>
 </root>
