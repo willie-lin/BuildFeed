@@ -162,6 +162,10 @@ namespace BuildFeed.Model
             }
 
             // move on to version number guesses
+            else if (Number >= 17600)
+            {
+                Family = ProjectFamily.Redstone5;
+            }
             else if (Number >= 16350)
             {
                 Family = ProjectFamily.Redstone4;

@@ -52,6 +52,9 @@ namespace BuildFeed.Model
         Redstone3 = 50,
 
         [Display(Name = "Redstone 4")]
-        Redstone4 = 60
+        Redstone4 = 60,
+
+        [Display(Name = "Redstone 5")]
+        Redstone5 = 70
     }
 }
