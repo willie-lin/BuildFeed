@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -19,7 +18,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("admins")]
         public ActionResult Admins()
         {
-            List<MembershipUser> admins = Roles.GetUsersInRole("Administrators").Select(Membership.GetUser).ToList();
+            var admins = Roles.GetUsersInRole("Administrators").Select(Membership.GetUser).ToList();
 
             return View(admins.OrderByDescending(m => m.UserName));
         }
@@ -27,7 +26,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("approve/{id:guid}")]
         public ActionResult Approve(Guid id)
         {
-            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            var provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeApproval(id, true);
             return RedirectToAction(nameof(Index));
         }
@@ -35,7 +34,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("unapprove/{id:guid}")]
         public ActionResult Unapprove(Guid id)
         {
-            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            var provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeApproval(id, false);
             return RedirectToAction(nameof(Index));
         }
@@ -43,7 +42,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("lock/{id:guid}")]
         public ActionResult Lock(Guid id)
         {
-            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            var provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeLockStatus(id, true);
             return RedirectToAction(nameof(Index));
         }
@@ -51,7 +50,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("unlock/{id:guid}")]
         public ActionResult Unlock(Guid id)
         {
-            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            var provider = Membership.Provider as MongoMembershipProvider;
             provider?.ChangeLockStatus(id, false);
             return RedirectToAction(nameof(Index));
         }
@@ -59,7 +58,7 @@ namespace BuildFeed.Admin.Controllers
         [Route("delete/{id:guid}")]
         public ActionResult Delete(Guid id)
         {
-            MongoMembershipProvider provider = Membership.Provider as MongoMembershipProvider;
+            var provider = Membership.Provider as MongoMembershipProvider;
             provider?.DeleteUser(id);
             return RedirectToAction(nameof(Index));
         }

@@ -3,156 +3,162 @@
 @using BuildFeed.Code
 @helper PaginationBlock(int currentPage, int totalPages, string view, RouteValueDictionary rd)
 {
-   string multiView = view + "Page";
+    string multiView = view + "Page";
 
-   if (totalPages > 1)
-   {
-      <ul class="pagination">
-         @if (currentPage == 2)
-         {
-            RouteValueDictionary rvd = new RouteValueDictionary(rd);
-            rvd.Remove("page");
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(view, rvd)">
-                  <i class="fa fa-angle-double-left"></i>
-               </a>
-            </li>
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(view, rvd)">
-                  <i class="fa fa-angle-left"></i>
-               </a>
-            </li>
-         }
-         else if (currentPage > 2)
-         {
-            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-            firstRvd.Remove("page");
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(view, firstRvd)">
-                  <i class="fa fa-angle-double-left"></i>
-               </a>
-            </li>
-
-            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+    if (totalPages > 1)
+    {
+        <ul class="pagination">
+            @if (currentPage == 2)
             {
-               ["page"] = currentPage - 1
-            };
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
-                  <i class="fa fa-angle-left"></i>
-               </a>
-            </li>
-         }
-         else
-         {
-            <li class="disabled">
-               <span>
-                  <i class="fa fa-angle-double-left"></i>
-               </span>
-            </li>
-            <li class="disabled">
-               <span>
-                  <i class="fa fa-angle-left"></i>
-               </span>
-            </li>
-         }
-
-
-         @{
-            RouteValueDictionary rvdIndex = new RouteValueDictionary(rd);
-            rvdIndex.Remove("page");
-            IEnumerable<int> pages;
-         }
-
-         @if (totalPages == 1)
-         {
-            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-            firstRvd.Remove("page");
-            pages = Array.Empty<int>();
-
-            <li @( 1 == currentPage ? "class=active" : "")>
-               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
-            </li>
-         }
-         else if (totalPages <= 7 && totalPages >= 2)
-         {
-            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-            firstRvd.Remove("page");
-            pages = Enumerable.Range(2, totalPages - 1);
-
-            <li @( 1 == currentPage ? "class=active" : "")>
-               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
-            </li>
-         }
-         else if (currentPage <= 4)
-         {
-            RouteValueDictionary firstRvd = new RouteValueDictionary(rd);
-            firstRvd.Remove("page");
-            pages = Enumerable.Range(2, 6);
-
-            <li @( 1 == currentPage ? "class=active" : "")>
-               @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
-            </li>
-         }
-         else if (currentPage >= totalPages - 2)
-         {
-            pages = Enumerable.Range(totalPages - 6, 7);
-         }
-         else
-         {
-            pages = Enumerable.Range(currentPage - 3, 7);
-         }
-
-         @foreach (int i in pages)
-         {
-            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+                var rvd = new RouteValueDictionary(rd);
+                rvd.Remove("page");
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(view, rvd)">
+                        <i class="fa fa-angle-double-left"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(view, rvd)">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                </li>
+            }
+            else if (currentPage > 2)
             {
-               ["page"] = i
-            };
+                var firstRvd = new RouteValueDictionary(rd);
+                firstRvd.Remove("page");
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(view, firstRvd)">
+                        <i class="fa fa-angle-double-left"></i>
+                    </a>
+                </li>
 
-            <li @( i == currentPage
-                      ? "class=active"
-                      : "")>
-               @MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
-         }
-
-
-         @if (currentPage < totalPages)
-         {
-            RouteValueDictionary rvd = new RouteValueDictionary(rd)
+                var rvd = new RouteValueDictionary(rd)
+                {
+                    ["page"] = currentPage - 1
+                };
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                </li>
+            }
+            else
             {
-               ["page"] = currentPage + 1
-            };
+                <li class="disabled">
+                    <span>
+                        <i class="fa fa-angle-double-left"></i>
+                    </span>
+                </li>
+                <li class="disabled">
+                    <span>
+                        <i class="fa fa-angle-left"></i>
+                    </span>
+                </li>
+            }
 
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
-                  <i class="fa fa-angle-right"></i>
-               </a>
-            </li>
 
-            RouteValueDictionary lastRvd = new RouteValueDictionary(rd)
+            @{
+                var rvdIndex = new RouteValueDictionary(rd);
+                rvdIndex.Remove("page");
+                IEnumerable<int> pages;
+            }
+
+            @if (totalPages == 1)
             {
-               ["page"] = totalPages
-            };
-            <li>
-               <a href="@MvcIntrinsics.Url.Action(multiView, lastRvd)">
-                  <i class="fa fa-angle-double-right"></i>
-               </a>
-            </li>
-         }
-         else
-         {
-            <li class="disabled">
-               <span>
-                  <i class="fa fa-angle-right"></i>
-               </span>
-            </li>
-            <li class="disabled">
-               <span>
-                  <i class="fa fa-angle-double-right"></i>
-               </span>
-            </li>
-         }
-      </ul>
-   }
+                var firstRvd = new RouteValueDictionary(rd);
+                firstRvd.Remove("page");
+                pages = Array.Empty<int>();
+
+                <li @( 1 == currentPage
+                           ? "class=active"
+                           : "")>
+                    @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+                </li>
+            }
+            else if (totalPages <= 7 && totalPages >= 2)
+            {
+                var firstRvd = new RouteValueDictionary(rd);
+                firstRvd.Remove("page");
+                pages = Enumerable.Range(2, totalPages - 1);
+
+                <li @( 1 == currentPage
+                           ? "class=active"
+                           : "")>
+                    @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+                </li>
+            }
+            else if (currentPage <= 4)
+            {
+                var firstRvd = new RouteValueDictionary(rd);
+                firstRvd.Remove("page");
+                pages = Enumerable.Range(2, 6);
+
+                <li @( 1 == currentPage
+                           ? "class=active"
+                           : "")>
+                    @MvcIntrinsics.Html.ActionLink(1.ToString(), view, firstRvd)
+                </li>
+            }
+            else if (currentPage >= totalPages - 2)
+            {
+                pages = Enumerable.Range(totalPages - 6, 7);
+            }
+            else
+            {
+                pages = Enumerable.Range(currentPage - 3, 7);
+            }
+
+            @foreach (int i in pages)
+            {
+                var rvd = new RouteValueDictionary(rd)
+                {
+                    ["page"] = i
+                };
+
+                <li @( i == currentPage
+                           ? "class=active"
+                           : "")>
+                    @MvcIntrinsics.Html.ActionLink(i.ToString(), multiView, rvd)</li>
+            }
+
+
+            @if (currentPage < totalPages)
+            {
+                var rvd = new RouteValueDictionary(rd)
+                {
+                    ["page"] = currentPage + 1
+                };
+
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(multiView, rvd)">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </li>
+
+                var lastRvd = new RouteValueDictionary(rd)
+                {
+                    ["page"] = totalPages
+                };
+                <li>
+                    <a href="@MvcIntrinsics.Url.Action(multiView, lastRvd)">
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="disabled">
+                    <span>
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                </li>
+                <li class="disabled">
+                    <span>
+                        <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </li>
+            }
+        </ul>
+    }
 }

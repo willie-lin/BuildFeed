@@ -12,7 +12,9 @@ namespace BuildFeed.Model.Api
 
         public string LabUrl { get; set; }
 
-        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease || SourceType == TypeOfSource.InternalLeak || SourceType == TypeOfSource.UpdateGDR;
+        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease
+            || SourceType == TypeOfSource.InternalLeak
+            || SourceType == TypeOfSource.UpdateGDR;
 
         public DateTime Added { get; set; }
 

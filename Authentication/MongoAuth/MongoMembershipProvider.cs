@@ -59,13 +59,14 @@ namespace MongoAuth
 
             _enablePasswordReset = TryReadBool(config["enablePasswordReset"], _enablePasswordReset);
             _maxInvalidPasswordAttempts = TryReadInt(config["maxInvalidPasswordAttempts"], _maxInvalidPasswordAttempts);
-            _minRequiredNonAlphanumericCharacters = TryReadInt(config["minRequiredNonAlphanumericCharacters"], _minRequiredNonAlphanumericCharacters);
+            _minRequiredNonAlphanumericCharacters = TryReadInt(config["minRequiredNonAlphanumericCharacters"],
+                _minRequiredNonAlphanumericCharacters);
             _minRequriedPasswordLength = TryReadInt(config["minRequriedPasswordLength"], _minRequriedPasswordLength);
             _passwordAttemptWindow = TryReadInt(config["passwordAttemptWindow"], _passwordAttemptWindow);
             _requiresUniqueEmail = TryReadBool(config["requiresUniqueEmail"], _requiresUniqueEmail);
 
 
-            MongoClientSettings settings = new MongoClientSettings
+            var settings = new MongoClientSettings
             {
                 Server = new MongoServerAddress(DatabaseConfig.Host, DatabaseConfig.Port)
             };
@@ -77,22 +78,24 @@ namespace MongoAuth
                     DatabaseConfig.Password);
             }
 
-            MongoClient dbClient = new MongoClient(settings);
+            var dbClient = new MongoClient(settings);
 
-            _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database).GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
+            _memberCollection = dbClient.GetDatabase(DatabaseConfig.Database)
+                .GetCollection<MongoMember>(MEMBER_COLLECTION_NAME);
 
-#pragma warning disable 4014
+            #pragma warning disable 4014
             SetupIndexes();
-#pragma warning restore 4014
+            #pragma warning restore 4014
         }
 
         public async Task SetupIndexes()
         {
-            List<BsonDocument> indexes = await (await _memberCollection.Indexes.ListAsync()).ToListAsync();
+            var indexes = await (await _memberCollection.Indexes.ListAsync()).ToListAsync();
 
             if (indexes.All(i => i["name"] != "_idx_username"))
             {
-                await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.UserName),
+                await _memberCollection.Indexes.CreateOneAsync(
+                    Builders<MongoMember>.IndexKeys.Ascending(b => b.UserName),
                     new CreateIndexOptions
                     {
                         Name = "_idx_username",
@@ -102,7 +105,8 @@ namespace MongoAuth
 
             if (indexes.All(i => i["name"] != "_idx_email"))
             {
-                await _memberCollection.Indexes.CreateOneAsync(Builders<MongoMember>.IndexKeys.Ascending(b => b.EmailAddress),
+                await _memberCollection.Indexes.CreateOneAsync(
+                    Builders<MongoMember>.IndexKeys.Ascending(b => b.EmailAddress),
                     new CreateIndexOptions
                     {
                         Name = "_idx_email",
@@ -117,7 +121,8 @@ namespace MongoAuth
 
             if (isAuthenticated)
             {
-                Task<MongoMember> task = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower()).SingleOrDefaultAsync();
+                var task = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower())
+                    .SingleOrDefaultAsync();
                 task.Wait();
                 MongoMember mm = task.Result;
 
@@ -127,12 +132,12 @@ namespace MongoAuth
                 }
 
                 var salt = new byte[24];
-                byte[] hash = CalculateHash(newPassword, ref salt);
+                var hash = CalculateHash(newPassword, ref salt);
 
                 mm.PassSalt = salt;
                 mm.PassHash = hash;
 
-                Task<ReplaceOneResult> replaceTask = _memberCollection.ReplaceOneAsync(m => m.Id == mm.Id, mm);
+                var replaceTask = _memberCollection.ReplaceOneAsync(m => m.Id == mm.Id, mm);
                 replaceTask.Wait();
 
                 return replaceTask.IsCompleted;
@@ -141,12 +146,12 @@ namespace MongoAuth
             return false;
         }
 
-        public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
-        {
-            throw new NotImplementedException();
-        }
+        public override bool ChangePasswordQuestionAndAnswer(string username, string password,
+            string newPasswordQuestion, string newPasswordAnswer) => throw new NotImplementedException();
 
-        public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
+        public override MembershipUser CreateUser(string username, string password, string email,
+            string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey,
+            out MembershipCreateStatus status)
         {
             if (password.Length < MinRequiredPasswordLength)
             {
@@ -156,8 +161,8 @@ namespace MongoAuth
 
             MembershipUser mu = null;
 
-            Task<long> dupeUsers = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower()).CountAsync();
-            Task<long> dupeEmails = _memberCollection.Find(m => m.EmailAddress.ToLower() == email.ToLower()).CountAsync();
+            var dupeUsers = _memberCollection.Find(m => m.UserName.ToLower() == username.ToLower()).CountAsync();
+            var dupeEmails = _memberCollection.Find(m => m.EmailAddress.ToLower() == email.ToLower()).CountAsync();
             dupeUsers.Wait();
             dupeEmails.Wait();
 
@@ -172,9 +177,9 @@ namespace MongoAuth
             else
             {
                 var salt = new byte[24];
-                byte[] hash = CalculateHash(password, ref salt);
+                var hash = CalculateHash(password, ref salt);
 
-                MongoMember mm = new MongoMember
+                var mm = new MongoMember
                 {
                     Id = Guid.NewGuid(),
                     UserName = username,
@@ -195,7 +200,19 @@ namespace MongoAuth
                 if (insertTask.Status == TaskStatus.RanToCompletion)
                 {
                     status = MembershipCreateStatus.Success;
-                    mu = new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, mm.CreationDate, mm.LastLoginDate, mm.LastActivityDate, DateTime.MinValue, mm.LastLockoutDate);
+                    mu = new MembershipUser(Name,
+                        mm.UserName,
+                        mm.Id,
+                        mm.EmailAddress,
+                        "",
+                        "",
+                        mm.IsApproved,
+                        mm.IsLockedOut,
+                        mm.CreationDate,
+                        mm.LastLoginDate,
+                        mm.LastActivityDate,
+                        DateTime.MinValue,
+                        mm.LastLockoutDate);
                 }
                 else
                 {
@@ -208,7 +225,7 @@ namespace MongoAuth
 
         public override bool DeleteUser(string username, bool deleteAllRelatedData)
         {
-            Task<DeleteResult> task = _memberCollection.DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
+            var task = _memberCollection.DeleteOneAsync(m => m.UserName.ToLower() == username.ToLower());
             task.Wait();
 
             return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
@@ -216,94 +233,119 @@ namespace MongoAuth
 
         public bool DeleteUser(Guid id)
         {
-            Task<DeleteResult> task = _memberCollection.DeleteOneAsync(m => m.Id == id);
+            var task = _memberCollection.DeleteOneAsync(m => m.Id == id);
             task.Wait();
 
             return task.Result.IsAcknowledged && task.Result.DeletedCount == 1;
         }
 
-        public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
-        {
-            throw new NotImplementedException();
-        }
+        public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize,
+            out int totalRecords) => throw new NotImplementedException();
 
-        public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
-        {
-            throw new NotImplementedException();
-        }
+        public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize,
+            out int totalRecords) => throw new NotImplementedException();
 
         public override MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
         {
-            MembershipUserCollection muc = new MembershipUserCollection();
+            var muc = new MembershipUserCollection();
 
-            IFindFluent<MongoMember, MongoMember> users = _memberCollection.Find(new BsonDocument()).Sort(Builders<MongoMember>.Sort.Ascending(m => m.UserName));
+            var users = _memberCollection.Find(new BsonDocument())
+                .Sort(Builders<MongoMember>.Sort.Ascending(m => m.UserName));
 
-            Task<long> totalRecordsTask = users.CountAsync();
+            var totalRecordsTask = users.CountAsync();
             totalRecordsTask.Wait();
             totalRecords = Convert.ToInt32(totalRecordsTask.Result);
 
             users = users.Skip(pageIndex * pageSize).Limit(pageSize);
-            Task<List<MongoMember>> pageItemsTask = users.ToListAsync();
+            var pageItemsTask = users.ToListAsync();
             pageItemsTask.Wait();
 
             foreach (MongoMember mm in pageItemsTask.Result)
             {
-                muc.Add(new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, FixupDatesFromMongo(mm.CreationDate), FixupDatesFromMongo(mm.LastLoginDate), FixupDatesFromMongo(mm.LastActivityDate), DateTime.MinValue, FixupDatesFromMongo(mm.LastLockoutDate)));
+                muc.Add(new MembershipUser(Name,
+                    mm.UserName,
+                    mm.Id,
+                    mm.EmailAddress,
+                    "",
+                    "",
+                    mm.IsApproved,
+                    mm.IsLockedOut,
+                    FixupDatesFromMongo(mm.CreationDate),
+                    FixupDatesFromMongo(mm.LastLoginDate),
+                    FixupDatesFromMongo(mm.LastActivityDate),
+                    DateTime.MinValue,
+                    FixupDatesFromMongo(mm.LastLockoutDate)));
             }
 
             return muc;
         }
 
-        public override int GetNumberOfUsersOnline()
-        {
-            throw new NotImplementedException();
-        }
+        public override int GetNumberOfUsersOnline() => throw new NotImplementedException();
 
-        public override string GetPassword(string username, string answer)
-        {
-            throw new NotImplementedException();
-        }
+        public override string GetPassword(string username, string answer) => throw new NotImplementedException();
 
         public override MembershipUser GetUser(string username, bool userIsOnline)
         {
-            Task<MongoMember> task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
+            var task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
             task.Wait();
 
             MongoMember mm = task.Result;
 
             return mm == null
                 ? null
-                : new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, FixupDatesFromMongo(mm.CreationDate), FixupDatesFromMongo(mm.LastLoginDate), FixupDatesFromMongo(mm.LastActivityDate), DateTime.MinValue, FixupDatesFromMongo(mm.LastLockoutDate));
+                : new MembershipUser(Name,
+                    mm.UserName,
+                    mm.Id,
+                    mm.EmailAddress,
+                    "",
+                    "",
+                    mm.IsApproved,
+                    mm.IsLockedOut,
+                    FixupDatesFromMongo(mm.CreationDate),
+                    FixupDatesFromMongo(mm.LastLoginDate),
+                    FixupDatesFromMongo(mm.LastActivityDate),
+                    DateTime.MinValue,
+                    FixupDatesFromMongo(mm.LastLockoutDate));
         }
 
         public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
         {
-            Task<MongoMember> task = _memberCollection.Find(f => f.Id == (Guid)providerUserKey).FirstOrDefaultAsync();
+            var task = _memberCollection.Find(f => f.Id == (Guid)providerUserKey).FirstOrDefaultAsync();
             task.Wait();
 
             MongoMember mm = task.Result;
 
             return mm == null
                 ? null
-                : new MembershipUser(Name, mm.UserName, mm.Id, mm.EmailAddress, "", "", mm.IsApproved, mm.IsLockedOut, FixupDatesFromMongo(mm.CreationDate), FixupDatesFromMongo(mm.LastLoginDate), FixupDatesFromMongo(mm.LastActivityDate), DateTime.MinValue, FixupDatesFromMongo(mm.LastLockoutDate));
+                : new MembershipUser(Name,
+                    mm.UserName,
+                    mm.Id,
+                    mm.EmailAddress,
+                    "",
+                    "",
+                    mm.IsApproved,
+                    mm.IsLockedOut,
+                    FixupDatesFromMongo(mm.CreationDate),
+                    FixupDatesFromMongo(mm.LastLoginDate),
+                    FixupDatesFromMongo(mm.LastActivityDate),
+                    DateTime.MinValue,
+                    FixupDatesFromMongo(mm.LastLockoutDate));
         }
 
         public override string GetUserNameByEmail(string email)
         {
-            Task<MongoMember> task = _memberCollection.Find(f => f.EmailAddress.ToLower() == email.ToLower()).FirstOrDefaultAsync();
+            var task = _memberCollection.Find(f => f.EmailAddress.ToLower() == email.ToLower()).FirstOrDefaultAsync();
             task.Wait();
 
             return task.Result.UserName;
         }
 
-        public override string ResetPassword(string username, string answer)
-        {
-            throw new NotImplementedException();
-        }
+        public override string ResetPassword(string username, string answer) => throw new NotImplementedException();
 
         public void ChangeApproval(Guid id, bool newStatus)
         {
-            Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id), Builders<MongoMember>.Update.Set(u => u.IsApproved, newStatus));
+            var task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id),
+                Builders<MongoMember>.Update.Set(u => u.IsApproved, newStatus));
             task.Wait();
         }
 
@@ -324,13 +366,16 @@ namespace MongoAuth
                 updateDefinition.Add(Builders<MongoMember>.Update.Set(u => u.LastLockoutDate, DateTime.MinValue));
             }
 
-            Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id), Builders<MongoMember>.Update.Combine(updateDefinition));
+            var task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, id),
+                Builders<MongoMember>.Update.Combine(updateDefinition));
             task.Wait();
         }
 
         public override bool UnlockUser(string userName)
         {
-            Task<UpdateResult> task = _memberCollection.UpdateOneAsync(Builders<MongoMember>.Filter.Eq(m => m.UserName.ToLower(), userName.ToLower()), Builders<MongoMember>.Update.Set(m => m.IsLockedOut, false));
+            var task = _memberCollection.UpdateOneAsync(
+                Builders<MongoMember>.Filter.Eq(m => m.UserName.ToLower(), userName.ToLower()),
+                Builders<MongoMember>.Update.Set(m => m.IsLockedOut, false));
             task.Wait();
 
             return task.Result.IsAcknowledged && task.Result.ModifiedCount == 1;
@@ -343,7 +388,7 @@ namespace MongoAuth
 
         public override bool ValidateUser(string username, string password)
         {
-            Task<MongoMember> task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
+            var task = _memberCollection.Find(f => f.UserName.ToLower() == username.ToLower()).FirstOrDefaultAsync();
             task.Wait();
             MongoMember mm = task.Result;
 
@@ -353,8 +398,8 @@ namespace MongoAuth
                 return false;
             }
 
-            byte[] salt = mm.PassSalt;
-            byte[] hash = CalculateHash(password, ref salt);
+            var salt = mm.PassSalt;
+            var hash = CalculateHash(password, ref salt);
 
             bool isFail = false;
 
@@ -397,7 +442,7 @@ namespace MongoAuth
                 mm.LockoutWindowAttempts = 0;
             }
 
-            Task<ReplaceOneResult> updTask = _memberCollection.ReplaceOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, mm.Id), mm);
+            var updTask = _memberCollection.ReplaceOneAsync(Builders<MongoMember>.Filter.Eq(u => u.Id, mm.Id), mm);
             updTask.Wait();
 
             return !isFail;
@@ -405,7 +450,8 @@ namespace MongoAuth
 
         public async Task<string> GenerateValidationHash(Guid id)
         {
-            MongoMember mm = await _memberCollection.Find(Builders<MongoMember>.Filter.Eq(u => u.Id, id)).FirstOrDefaultAsync();
+            MongoMember mm = await _memberCollection.Find(Builders<MongoMember>.Filter.Eq(u => u.Id, id))
+                .FirstOrDefaultAsync();
             if (mm == null)
             {
                 return null;
@@ -413,8 +459,9 @@ namespace MongoAuth
 
             using (SHA256 sha = SHA256.Create())
             {
-                string content = $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
-                byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
+                string content =
+                    $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
+                var hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
 
                 return Base32Encoding.ToString(hashBytes);
             }
@@ -422,7 +469,8 @@ namespace MongoAuth
 
         public async Task<bool> ValidateUserFromHash(Guid id, string validate)
         {
-            MongoMember mm = await _memberCollection.Find(Builders<MongoMember>.Filter.Eq(u => u.Id, id)).FirstOrDefaultAsync();
+            MongoMember mm = await _memberCollection.Find(Builders<MongoMember>.Filter.Eq(u => u.Id, id))
+                .FirstOrDefaultAsync();
             if (mm == null)
             {
                 return false;
@@ -430,8 +478,9 @@ namespace MongoAuth
 
             using (SHA256 sha = SHA256.Create())
             {
-                string content = $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
-                byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
+                string content =
+                    $"{mm.Id}.{Convert.ToBase64String(mm.PassSalt)}.{ConfigurationManager.AppSettings["data:SecretKey"]}";
+                var hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(content));
 
                 string expected = Base32Encoding.ToString(hashBytes);
                 bool success = string.Equals(expected, validate, StringComparison.InvariantCultureIgnoreCase);
@@ -449,19 +498,19 @@ namespace MongoAuth
         {
             if (!salt.Any(v => v != 0))
             {
-                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+                var rng = new RNGCryptoServiceProvider();
                 rng.GetBytes(salt);
             }
 
-            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            var passwordBytes = Encoding.UTF8.GetBytes(password);
 
             var hashPlaintext = new byte[salt.Length + passwordBytes.Length];
 
             passwordBytes.CopyTo(hashPlaintext, 0);
             salt.CopyTo(hashPlaintext, passwordBytes.Length);
 
-            SHA512CryptoServiceProvider sha = new SHA512CryptoServiceProvider();
-            byte[] hash = sha.ComputeHash(hashPlaintext);
+            var sha = new SHA512CryptoServiceProvider();
+            var hash = sha.ComputeHash(hashPlaintext);
 
             return hash;
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -31,9 +30,9 @@ namespace BuildFeed.Controllers
                         ? 129600
                         : 60;
 
-                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(ru.UserName, true, expiryLength);
+                    var ticket = new FormsAuthenticationTicket(ru.UserName, true, expiryLength);
                     string encryptedTicket = FormsAuthentication.Encrypt(ticket);
-                    HttpCookie cookieTicket = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
+                    var cookieTicket = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
                     {
                         Expires = DateTime.Now.AddMinutes(expiryLength),
                         Path = FormsAuthentication.FormsCookiePath
@@ -98,7 +97,13 @@ namespace BuildFeed.Controllers
         {
             if (ModelState.IsValid)
             {
-                MembershipUser mu = Membership.CreateUser(ru.UserName, ru.Password, ru.EmailAddress, "{IGNORE}", "{IGNORE}", false, out MembershipCreateStatus status);
+                MembershipUser mu = Membership.CreateUser(ru.UserName,
+                    ru.Password,
+                    ru.EmailAddress,
+                    "{IGNORE}",
+                    "{IGNORE}",
+                    false,
+                    out MembershipCreateStatus status);
 
                 switch (status)
                 {
@@ -106,17 +111,18 @@ namespace BuildFeed.Controllers
                     {
                         Roles.AddUserToRole(mu.UserName, "Users");
 
-                        MongoMembershipProvider provider = (MongoMembershipProvider)Membership.Provider;
-                        Guid id = (Guid)mu.ProviderUserKey;
+                        var provider = (MongoMembershipProvider)Membership.Provider;
+                        var id = (Guid)mu.ProviderUserKey;
                         string hash = (await provider.GenerateValidationHash(id)).ToLowerInvariant();
 
-                        string fullUrl = Request.Url?.GetLeftPart(UriPartial.Authority) + Url.Action("Validate",
-                            "Account",
-                            new
-                            {
-                                id,
-                                hash
-                            });
+                        string fullUrl = Request.Url?.GetLeftPart(UriPartial.Authority)
+                            + Url.Action("Validate",
+                                "Account",
+                                new
+                                {
+                                    id,
+                                    hash
+                                });
                         await EmailManager.SendRegistrationEmail(mu, fullUrl);
                         return RedirectToAction(nameof(RegisterThanks));
                     }
@@ -144,7 +150,7 @@ namespace BuildFeed.Controllers
         [Route("validate/{id:guid}/{hash}/")]
         public async Task<ActionResult> Validate(Guid id, string hash)
         {
-            MongoMembershipProvider provider = (MongoMembershipProvider)Membership.Provider;
+            var provider = (MongoMembershipProvider)Membership.Provider;
             bool success = await provider.ValidateUserFromHash(id, hash);
 
             return View(success

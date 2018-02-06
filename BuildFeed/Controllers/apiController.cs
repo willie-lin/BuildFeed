@@ -27,39 +27,30 @@ namespace BuildFeed.Controllers
         }
 
         public async Task<ApiBuild[]> GetBuilds(int limit = 20, int skip = 0)
-        {
-            return (from b in await _bModel.SelectBuildsByOrder(limit, skip)
-                    select Mapper.Map<ApiBuild>(b)).ToArray();
-        }
+            => (from b in await _bModel.SelectBuildsByOrder(limit, skip)
+                select Mapper.Map<ApiBuild>(b)).ToArray();
 
         public async Task<FrontBuildGroup[]> GetBuildGroups(int limit = 20, int skip = 0)
         {
-            FrontBuildGroup[] bgroups = await _bModel.SelectAllGroups(limit, skip);
+            var bgroups = await _bModel.SelectAllGroups(limit, skip);
             return bgroups.ToArray();
         }
 
         public async Task<ApiBuild[]> GetBuildsForBuildGroup(uint major, uint minor, uint number, uint? revision = null)
-        {
-            return (from b in await _bModel.SelectGroup(new BuildGroup
-                    {
-                        Major = major,
-                        Minor = minor,
-                        Build = number,
-                        Revision = revision
-                    })
-                    select Mapper.Map<ApiBuild>(b)).ToArray();
-        }
+            => (from b in await _bModel.SelectGroup(new BuildGroup
+                {
+                    Major = major,
+                    Minor = minor,
+                    Build = number,
+                    Revision = revision
+                })
+                select Mapper.Map<ApiBuild>(b)).ToArray();
 
         public async Task<ApiBuild[]> GetBuildsByLab(string lab, int limit = 20, int skip = 0)
-        {
-            return (from b in await _bModel.SelectLab(lab, limit, skip)
-                    select Mapper.Map<ApiBuild>(b)).ToArray();
-        }
+            => (from b in await _bModel.SelectLab(lab, limit, skip)
+                select Mapper.Map<ApiBuild>(b)).ToArray();
 
-        public async Task<List<FamilyOverview>> GetFamilyOverviews()
-        {
-            return await _bModel.SelectFamilyOverviews();
-        }
+        public async Task<List<FamilyOverview>> GetFamilyOverviews() => await _bModel.SelectFamilyOverviews();
 
         public async Task<IEnumerable<string>> GetWin10Labs()
         {
@@ -77,11 +68,14 @@ namespace BuildFeed.Controllers
             {
                 return false;
             }
-            if (Membership.ValidateUser(apiModel.Username, apiModel.Password) && (Roles.IsUserInRole(apiModel.Username, "Editors") || Roles.IsUserInRole(apiModel.Username, "Administrators")))
+
+            if (Membership.ValidateUser(apiModel.Username, apiModel.Password)
+                && (Roles.IsUserInRole(apiModel.Username, "Editors")
+                    || Roles.IsUserInRole(apiModel.Username, "Administrators")))
             {
                 var generateOldItem = new Func<NewBuild, BuildDetails>(nb =>
                 {
-                    BuildDetails bi = new BuildDetails
+                    var bi = new BuildDetails
                     {
                         MajorVersion = nb.MajorVersion,
                         MinorVersion = nb.MinorVersion,
@@ -97,7 +91,7 @@ namespace BuildFeed.Controllers
                     return bi;
                 });
 
-                IEnumerable<Build> builds = apiModel.NewBuilds.Select(nb => new Build
+                var builds = apiModel.NewBuilds.Select(nb => new Build
                 {
                     MajorVersion = nb.MajorVersion,
                     MinorVersion = nb.MinorVersion,
@@ -127,12 +121,14 @@ namespace BuildFeed.Controllers
                 {
                     await _bModel.Insert(build);
 
-                    OneSignalClient osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
+                    var osc = new OneSignalClient(ConfigurationManager.AppSettings["push:OneSignalApiKey"]);
                     osc.PushNewBuild(build,
                         $"https://buildfeed.net{Url.Route("Build", new { controller = "Front", action = nameof(FrontController.ViewBuild), id = build.Id, area = "", httproute = "" })}?utm_source=notification&utm_campaign=new_build");
                 }
+
                 return true;
             }
+
             return false;
         }
 
@@ -146,26 +142,26 @@ namespace BuildFeed.Controllers
             var results = new List<SearchResult>();
 
             results.AddRange(from s in (from c in await _bModel.SelectAllSources()
-                                        select new
-                                        {
-                                            Text = MvcExtensions.GetDisplayTextForEnum(c),
-                                            Value = c
-                                        })
-                             where s.Text.ToLower().Contains(id.ToLower())
-                             orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal)
-                             select new SearchResult
-                             {
-                                 Url = Url.Route("Source Root",
-                                     new
-                                     {
-                                         controller = "Front",
-                                         action = "ViewSource",
-                                         source = s.Value
-                                     }),
-                                 Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
-                                 Title = s.Text,
-                                 Group = VariantTerms.Search_Source
-                             });
+                    select new
+                    {
+                        Text = MvcExtensions.GetDisplayTextForEnum(c),
+                        Value = c
+                    })
+                where s.Text.ToLower().Contains(id.ToLower())
+                orderby s.Text.ToLower().IndexOf(id.ToLower(), StringComparison.Ordinal)
+                select new SearchResult
+                {
+                    Url = Url.Route("Source Root",
+                        new
+                        {
+                            controller = "Front",
+                            action = "ViewSource",
+                            source = s.Value
+                        }),
+                    Label = s.Text.Replace(id, "<strong>" + id + "</strong>"),
+                    Title = s.Text,
+                    Group = VariantTerms.Search_Source
+                });
 
             if (results.Count >= maxResults)
             {
@@ -173,22 +169,22 @@ namespace BuildFeed.Controllers
             }
 
             results.AddRange(from v in await _bModel.SelectAllVersions()
-                             where $"{v.Major}.{v.Minor}".StartsWith(id)
-                             orderby v.Major descending, v.Minor descending
-                             select new SearchResult
-                             {
-                                 Url = Url.Route("Version Root",
-                                     new
-                                     {
-                                         controller = "Front",
-                                         action = "ViewVersion",
-                                         major = v.Major,
-                                         minor = v.Minor
-                                     }),
-                                 Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
-                                 Title = "",
-                                 Group = VariantTerms.Search_Version
-                             });
+                where $"{v.Major}.{v.Minor}".StartsWith(id)
+                orderby v.Major descending, v.Minor descending
+                select new SearchResult
+                {
+                    Url = Url.Route("Version Root",
+                        new
+                        {
+                            controller = "Front",
+                            action = "ViewVersion",
+                            major = v.Major,
+                            minor = v.Minor
+                        }),
+                    Label = $"{v.Major}.{v.Minor}".Replace(id, "<strong>" + id + "</strong>"),
+                    Title = "",
+                    Group = VariantTerms.Search_Version
+                });
 
             if (results.Count >= maxResults)
             {
@@ -196,21 +192,21 @@ namespace BuildFeed.Controllers
             }
 
             results.AddRange(from y in await _bModel.SelectAllYears()
-                             where y.ToString().Contains(id)
-                             orderby y descending
-                             select new SearchResult
-                             {
-                                 Url = Url.Route("Year Root",
-                                     new
-                                     {
-                                         controller = "Front",
-                                         action = "ViewYear",
-                                         year = y
-                                     }),
-                                 Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
-                                 Title = "",
-                                 Group = VariantTerms.Search_Year
-                             });
+                where y.ToString().Contains(id)
+                orderby y descending
+                select new SearchResult
+                {
+                    Url = Url.Route("Year Root",
+                        new
+                        {
+                            controller = "Front",
+                            action = "ViewYear",
+                            year = y
+                        }),
+                    Label = y.ToString().Replace(id, "<strong>" + id + "</strong>"),
+                    Title = "",
+                    Group = VariantTerms.Search_Year
+                });
 
             if (results.Count >= maxResults)
             {
@@ -218,19 +214,19 @@ namespace BuildFeed.Controllers
             }
 
             results.AddRange(from l in await _bModel.SearchLabs(id)
-                             select new SearchResult
-                             {
-                                 Url = Url.Route("Lab Root",
-                                     new
-                                     {
-                                         controller = "Front",
-                                         action = "ViewLab",
-                                         lab = l.Replace('/', '-')
-                                     }),
-                                 Label = l.Replace(id, $"<strong>{id}</strong>"),
-                                 Title = l,
-                                 Group = VariantTerms.Search_Lab
-                             });
+                select new SearchResult
+                {
+                    Url = Url.Route("Lab Root",
+                        new
+                        {
+                            controller = "Front",
+                            action = "ViewLab",
+                            lab = l.Replace('/', '-')
+                        }),
+                    Label = l.Replace(id, $"<strong>{id}</strong>"),
+                    Title = l,
+                    Group = VariantTerms.Search_Lab
+                });
 
             if (results.Count >= maxResults)
             {
@@ -238,19 +234,19 @@ namespace BuildFeed.Controllers
             }
 
             results.AddRange(from b in await _bModel.SelectBuildsByStringSearch(id, maxResults)
-                             select new SearchResult
-                             {
-                                 Url = Url.Route("Build",
-                                     new
-                                     {
-                                         controller = "Front",
-                                         action = "ViewBuild",
-                                         id = b.Id
-                                     }),
-                                 Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
-                                 Title = b.FullBuildString,
-                                 Group = VariantTerms.Search_Build
-                             });
+                select new SearchResult
+                {
+                    Url = Url.Route("Build",
+                        new
+                        {
+                            controller = "Front",
+                            action = "ViewBuild",
+                            id = b.Id
+                        }),
+                    Label = b.FullBuildString.Replace(id, $"<strong>{id}</strong>"),
+                    Title = b.FullBuildString,
+                    Group = VariantTerms.Search_Build
+                });
 
             if (results.Count == 0)
             {

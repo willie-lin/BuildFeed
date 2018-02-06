@@ -2,7 +2,7 @@
 using System.Linq;
 using BuildFeed.Model;
 
-namespace BuildFeed.Areas.admin.Models.ViewModel
+namespace BuildFeed.Admin.Models.ViewModel
 {
     public class MetaListing
     {

@@ -1,52 +1,52 @@
 ﻿@{
-   ViewBag.Title = $"{VariantTerms.Common_RssFeeds} | {InvariantTerms.SiteName}";
+    ViewBag.Title = $"{VariantTerms.Common_RssFeeds} | {InvariantTerms.SiteName}";
 }
 
 <h1>@VariantTerms.Common_RssFeeds</h1>
 
 <ul>
-   <li>
-      <a href="@Url.Action("Index", new
-               {
-                  controller = "Rss"
-               })" title="@VariantTerms.Support_RecentlyCompiled">
-         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyCompiled</a>
-   </li>
-   <li>
-      <a href="@Url.Action("Leaked", new
-               {
-                  controller = "Rss"
-               })" title="@VariantTerms.Support_RecentlyLeaked">
-         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyLeaked</a>
-   </li>
-   <li>
-      <a href="@Url.Action("Added", new
-               {
-                  controller = "Rss"
-               })" title="@VariantTerms.Support_RecentlyAdded">
-         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyAdded</a>
-   </li>
-   <li>
-      <a href="@Url.Action("Version", new
-               {
-                  controller = "Rss"
-               })" title="@VariantTerms.Support_HighestVersion">
-         <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_HighestVersion</a>
-   </li>
-   <li>
-      <a href="#rss-labs" data-toggle="collapse">@VariantTerms.Search_Lab</a>
-      <ul id="rss-labs" class="collapse">
-         @foreach (string lab in ViewBag.Labs)
-         {
-            <li>
-               <a href="@Url.Action("Lab", new
-                        {
-                           controller = "Rss",
-                           lab
-                        })" title="@lab">
-                  <i class="fa fa-sm fa-rss"></i> @lab</a>
-            </li>
-         }
-      </ul>
-   </li>
+    <li>
+        <a href="@Url.Action("Index", new
+                 {
+                     controller = "Rss"
+                 })" title="@VariantTerms.Support_RecentlyCompiled">
+            <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyCompiled</a>
+    </li>
+    <li>
+        <a href="@Url.Action("Leaked", new
+                 {
+                     controller = "Rss"
+                 })" title="@VariantTerms.Support_RecentlyLeaked">
+            <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyLeaked</a>
+    </li>
+    <li>
+        <a href="@Url.Action("Added", new
+                 {
+                     controller = "Rss"
+                 })" title="@VariantTerms.Support_RecentlyAdded">
+            <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_RecentlyAdded</a>
+    </li>
+    <li>
+        <a href="@Url.Action("Version", new
+                 {
+                     controller = "Rss"
+                 })" title="@VariantTerms.Support_HighestVersion">
+            <i class="fa fa-sm fa-rss"></i> @VariantTerms.Support_HighestVersion</a>
+    </li>
+    <li>
+        <a href="#rss-labs" data-toggle="collapse">@VariantTerms.Search_Lab</a>
+        <ul id="rss-labs" class="collapse">
+            @foreach (string lab in ViewBag.Labs)
+            {
+                <li>
+                    <a href="@Url.Action("Lab", new
+                             {
+                                 controller = "Rss",
+                                 lab
+                             })" title="@lab">
+                        <i class="fa fa-sm fa-rss"></i> @lab</a>
+                </li>
+            }
+        </ul>
+    </li>
 </ul>

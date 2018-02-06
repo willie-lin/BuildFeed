@@ -17,7 +17,7 @@ namespace BuildFeed.Code
             var returnArray = new byte[byteCount];
 
             byte curByte = 0,
-                 bitsRemaining = 8;
+                bitsRemaining = 8;
 
             int arrayIndex = 0;
 
@@ -62,7 +62,7 @@ namespace BuildFeed.Code
             var returnArray = new char[charCount];
 
             byte nextChar = 0,
-                 bitsRemaining = 5;
+                bitsRemaining = 5;
             int arrayIndex = 0;
 
             foreach (byte b in input)
@@ -103,11 +103,13 @@ namespace BuildFeed.Code
             {
                 return value - 65;
             }
+
             //50-55 == numbers 2-7
             if (value < 56 && value > 49)
             {
                 return value - 24;
             }
+
             //97-122 == lowercase letters
             if (value < 123 && value > 96)
             {

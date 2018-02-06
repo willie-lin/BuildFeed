@@ -1,19 +1,19 @@
 ﻿@{
-   ViewBag.Title = $"Administration | {InvariantTerms.SiteName}";
+    ViewBag.Title = $"Administration | {InvariantTerms.SiteName}";
 }
 
 <h1>Administration</h1>
 
 <ul>
-   <li>
-      @Html.ActionLink("Manage users", nameof(UsersController.Index), "Users")
-      <ul>
-         <li>@Html.ActionLink("View administrators", nameof(UsersController.Admins), "Users")</li>
-      </ul>
-   </li>
-   <li>
-      @Html.ActionLink("Manage metadata", nameof(MetaController.Index), "Meta")
-   </li>
+    <li>
+        @Html.ActionLink("Manage users", nameof(UsersController.Index), "Users")
+        <ul>
+            <li>@Html.ActionLink("View administrators", nameof(UsersController.Admins), "Users")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Manage metadata", nameof(MetaController.Index), "Meta")
+    </li>
     <li>
         @Html.ActionLink("Regenerate cached properties", nameof(RootController.RegenerateCache), "Root")
     </li>

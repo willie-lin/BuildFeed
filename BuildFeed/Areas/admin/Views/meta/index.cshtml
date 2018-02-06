@@ -1,81 +1,82 @@
-﻿@using BuildFeed.Model
-@model BuildFeed.Areas.admin.Models.ViewModel.MetaListing
+﻿@using BuildFeed.Admin.Models.ViewModel
+@using BuildFeed.Model
+@model MetaListing
 
 @{
-   ViewBag.Title = $"Manage metadata | {InvariantTerms.SiteName}";
+    ViewBag.Title = $"Manage metadata | {InvariantTerms.SiteName}";
 }
 
 <h1>Manage metadata</h1>
 <ul>
-   <li>@Html.ActionLink("Return to admin panel", nameof(RootController.Index), "Root")</li>
+    <li>@Html.ActionLink("Return to admin panel", nameof(RootController.Index), "Root")</li>
 </ul>
 <h3>Current items</h3>
 <table>
-   <thead>
-   <tr>
-      <th>Name</th>
-      <th style="width: 50px"></th>
-   </tr>
-   </thead>
-   <tbody>
-   @foreach (IGrouping<MetaType, MetaItemModel> group in Model.CurrentItems)
-   {
-      <tr>
-         <td colspan="3">
-            <h4>@group.Key</h4>
-         </td>
-      </tr>
-      foreach (MetaItemModel item in group)
-      {
-         <tr>
-            <td>@item.Id.Value</td>
-            <td>
-               @Html.ActionLink("Edit", nameof(MetaController.Edit), new
-               {
-                  type = item.Id.Type,
-                  value = item.Id.Value
-               }, new
-               {
-                  @class = "button",
-                  style = "width:50px"
-               })</td>
-         </tr>
-      }
-   }
-   </tbody>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th style="width: 50px"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var group in Model.CurrentItems)
+    {
+        <tr>
+            <td colspan="3">
+                <h4>@group.Key</h4>
+            </td>
+        </tr>
+        foreach (MetaItemModel item in group)
+        {
+            <tr>
+                <td>@item.Id.Value</td>
+                <td>
+                    @Html.ActionLink("Edit", nameof(MetaController.Edit), new
+                    {
+                        type = item.Id.Type,
+                        value = item.Id.Value
+                    }, new
+                    {
+                        @class = "button",
+                        style = "width:50px"
+                    })</td>
+            </tr>
+        }
+    }
+    </tbody>
 </table>
 <h3>Add new items</h3>
 <table>
-   <thead>
-   <tr>
-      <th>Name</th>
-      <th style="width: 50px"></th>
-   </tr>
-   </thead>
-   <tbody>
-   @foreach (IGrouping<MetaType, MetaItemModel> group in Model.NewItems)
-   {
-      <tr>
-         <td colspan="3">
-            <h4>@group.Key</h4>
-         </td>
-      </tr>
-      foreach (MetaItemModel item in group)
-      {
-         <tr>
-            <td>@item.Id.Value</td>
-            <td>
-               @Html.ActionLink("Create", nameof(MetaController.Create), new
-               {
-                  type = item.Id.Type,
-                  value = item.Id.Value
-               }, new
-               {
-                  @class = "button",
-                  style = "width:50px"
-               })</td>
-         </tr>
-      }
-   }
-   </tbody>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th style="width: 50px"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var group in Model.NewItems)
+    {
+        <tr>
+            <td colspan="3">
+                <h4>@group.Key</h4>
+            </td>
+        </tr>
+        foreach (MetaItemModel item in group)
+        {
+            <tr>
+                <td>@item.Id.Value</td>
+                <td>
+                    @Html.ActionLink("Create", nameof(MetaController.Create), new
+                    {
+                        type = item.Id.Type,
+                        value = item.Id.Value
+                    }, new
+                    {
+                        @class = "button",
+                        style = "width:50px"
+                    })</td>
+            </tr>
+        }
+    }
+    </tbody>
 </table>

@@ -20,7 +20,10 @@ namespace BuildFeed.Model
             }
 
             var valuesWithoutNone = new ProjectFamily[values.Length - 1];
-            for (int i = 0, j = values.Length - 1; j > 0; j--, i++)
+            for (int i = 0,
+                j = values.Length - 1;
+                j > 0;
+                j--, i++)
             {
                 valuesWithoutNone[i] = (ProjectFamily)values.GetValue(j);
             }

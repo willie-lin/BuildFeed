@@ -10,7 +10,7 @@ namespace BuildFeed.Code
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
             bool isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
-            Theme theme = new Theme(Theme.DetectTheme(filterContext.HttpContext));
+            var theme = new Theme(Theme.DetectTheme(filterContext.HttpContext));
 
             filterContext.HttpContext.Response.PushPromise("/res/css/default.css");
             filterContext.HttpContext.Response.PushPromise(VirtualPathUtility.ToAbsolute(theme.CssPath));
@@ -18,6 +18,7 @@ namespace BuildFeed.Code
             {
                 filterContext.HttpContext.Response.PushPromise("/res/css/rtl.css");
             }
+
             filterContext.HttpContext.Response.PushPromise("/res/ts/bfs.js");
         }
     }

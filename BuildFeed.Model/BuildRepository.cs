@@ -230,16 +230,16 @@ namespace BuildFeed.Model
                     },
 
                     Items = from i in g["items"].AsBsonArray
-                    select new FrontPageBuild
-                    {
-                        Id = i[nameof(Build.Id)].AsGuid,
-                        MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
-                        MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
-                        Number = (uint)i[nameof(Build.Number)].AsInt32,
-                        Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
-                        Lab = i[nameof(Build.Lab)].AsString,
-                        BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
-                    }
+                        select new FrontPageBuild
+                        {
+                            Id = i[nameof(Build.Id)].AsGuid,
+                            MajorVersion = (uint)i[nameof(Build.MajorVersion)].AsInt32,
+                            MinorVersion = (uint)i[nameof(Build.MinorVersion)].AsInt32,
+                            Number = (uint)i[nameof(Build.Number)].AsInt32,
+                            Revision = (uint?)i[nameof(Build.Revision)].AsNullableInt32,
+                            Lab = i[nameof(Build.Lab)].AsString,
+                            BuildTime = i[nameof(Build.BuildTime)].ToNullableUniversalTime()
+                        }
                 }).ToArray();
 
             IEnumerable<ProjectFamily> listOfFamilies =

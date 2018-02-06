@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BuildFeed.Areas.admin
+namespace BuildFeed.Admin
 {
     public class AdminAreaRegistration : AreaRegistration
     {

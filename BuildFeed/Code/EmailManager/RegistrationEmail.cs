@@ -9,12 +9,12 @@ namespace BuildFeed.Code
     {
         public static async Task SendRegistrationEmail(MembershipUser mu, string validationLink)
         {
-            using (MailMessage mm = new MailMessage(EMAIL_FROM, mu.Email))
+            using (var mm = new MailMessage(EMAIL_FROM, mu.Email))
             {
                 mm.Subject = string.Format(VariantTerms.Email_Registration_Subject, InvariantTerms.SiteName);
                 mm.Body = string.Format(VariantTerms.Email_Registration_Body, InvariantTerms.SiteName, validationLink);
 
-                using (SmtpClient sc = new SmtpClient())
+                using (var sc = new SmtpClient())
                 {
                     await sc.SendMailAsync(mm);
                 }

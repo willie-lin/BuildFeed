@@ -372,16 +372,6 @@
     <Content Include="res\css\inc\_variables.scss" />
     <Content Include="res\css\inc\_nord.scss" />
     <Content Include="res\css\winter.scss" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\trumbowyg\langs\ar.min.js" />
     <Content Include="Scripts\trumbowyg\langs\bg.min.js" />
     <Content Include="Scripts\trumbowyg\langs\by.min.js" />
@@ -482,8 +472,6 @@
     <Content Include="Views\front\AddBulk.cshtml" />
     <Content Include="Views\account\validate-success.cshtml" />
     <Content Include="Views\account\validate-failure.cshtml" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="tsconfig.json" />
     <Content Include="Views\front\ViewFamily.cshtml" />
   </ItemGroup>

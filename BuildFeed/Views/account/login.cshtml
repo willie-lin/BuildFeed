@@ -1,68 +1,69 @@
 ﻿@using BuildFeed.Controllers
-@model BuildFeed.Model.View.LoginUser
+@using BuildFeed.Model.View
+@model LoginUser
 
 @{
-   ViewBag.Title = $"{VariantTerms.Support_Login} | {InvariantTerms.SiteName}";
-   Html.EnableClientValidation();
-   Html.EnableUnobtrusiveJavaScript();
+    ViewBag.Title = $"{VariantTerms.Support_Login} | {InvariantTerms.SiteName}";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
 }
 
 <h1>@VariantTerms.Support_Login</h1>
 
 @using (Html.BeginForm())
 {
-   @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-   if (ViewData["ErrorMessage"] != null)
-   {
-      <p class="text-danger">
-         @ViewData["ErrorMessage"]
-      </p>
-   }
+    if (ViewData["ErrorMessage"] != null)
+    {
+        <p class="text-danger">
+            @ViewData["ErrorMessage"]
+        </p>
+    }
 
-   <div class="form-group">
-      @Html.LabelFor(model => model.UserName)
-      <div>
-         @Html.TextBoxFor(model => model.UserName)
-         @Html.ValidationMessageFor(model => model.UserName)
-      </div>
-   </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName)
+        <div>
+            @Html.TextBoxFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+    </div>
 
-   <div class="form-group">
-      @Html.LabelFor(model => model.Password)
-      <div>
-         @Html.PasswordFor(model => model.Password)
-         @Html.ValidationMessageFor(model => model.Password)
-      </div>
-   </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        <div>
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    </div>
 
-   <div class="form-group">
-      <span class="label-placeholder"></span>
-      <div>
-         <label for="@Html.IdFor(model => model.RememberMe)">
-            @Html.CheckBoxFor(model => model.RememberMe) @Html.DisplayNameFor(model => model.RememberMe)
-         </label>
-      </div>
-   </div>
+    <div class="form-group">
+        <span class="label-placeholder"></span>
+        <div>
+            <label for="@Html.IdFor(model => model.RememberMe)">
+                @Html.CheckBoxFor(model => model.RememberMe) @Html.DisplayNameFor(model => model.RememberMe)
+            </label>
+        </div>
+    </div>
 
-   <div class="form-group">
-      <span class="label-placeholder"></span>
-      <div>
-         <input type="submit" value="@VariantTerms.Support_Login" /> &ensp;
-         @Html.ActionLink(VariantTerms.Support_Register, nameof(AccountController.Register), new
-         {
-            controller = "Account"
-         }, new
-         {
-            @class = "button"
-         })
-      </div>
-   </div>
+    <div class="form-group">
+        <span class="label-placeholder"></span>
+        <div>
+            <input type="submit" value="@VariantTerms.Support_Login" /> &ensp;
+            @Html.ActionLink(VariantTerms.Support_Register, nameof(AccountController.Register), new
+            {
+                controller = "Account"
+            }, new
+            {
+                @class = "button"
+            })
+        </div>
+    </div>
 }
 
 @section Scripts
 {
-   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-   <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
-   <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" integrity="sha256-F6h55Qw6sweK+t7SiOJX+2bpSAa3b/fnlrVCJvmEj1A=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js" integrity="sha256-g1QKGxqsp+x5JkuN/JjHl96je2wztgS5Wo4h4c7gm9M=" crossorigin="anonymous"></script>
 }

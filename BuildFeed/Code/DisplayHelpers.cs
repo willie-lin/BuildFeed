@@ -13,7 +13,7 @@ namespace BuildFeed.Code
         public static IHtmlString CheckboxListForEnum<T>(this HtmlHelper html, string id, T currentItem)
             where T : struct
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             foreach (T enumItem in Enum.GetValues(typeof(T)).Cast<T>())
             {
@@ -26,16 +26,17 @@ namespace BuildFeed.Code
                     continue;
                 }
 
-                TagBuilder wrapper = new TagBuilder("div");
+                var wrapper = new TagBuilder("div");
                 wrapper.Attributes.Add("class", "checkbox");
 
-                TagBuilder label = new TagBuilder("label");
+                var label = new TagBuilder("label");
 
-                TagBuilder input = new TagBuilder("input");
+                var input = new TagBuilder("input");
                 if ((enumValue & currentValue) != 0)
                 {
                     input.MergeAttribute("checked", "checked");
                 }
+
                 input.MergeAttribute("type", "checkbox");
                 input.MergeAttribute("value", enumValue.ToString());
                 input.MergeAttribute("name", id);

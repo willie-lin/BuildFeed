@@ -35,7 +35,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> Index()
         {
             ViewBag.Versions = await _bModel.SelectAllFamilies();
@@ -50,7 +50,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> IndexPage(int page)
         {
             var buildGroups = await _bModel.SelectAllGroups(PAGE_SIZE, (page - 1) * PAGE_SIZE);
@@ -73,7 +73,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewGroup(uint major, uint minor, uint number, uint? revision = null)
         {
             var bg = new BuildGroup
@@ -99,7 +99,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewBuild(Guid id)
         {
             Build b = await _bModel.SelectById(id);
@@ -131,7 +131,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [CustomContentType(ContentType = "image/png", Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> TwitterCard(Guid id)
         {
             Build b = await _bModel.SelectById(id);
@@ -279,7 +279,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewFamily(ProjectFamily family)
         {
             return await ViewFamilyPage(family, 1);
@@ -289,7 +289,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewFamilyPage(ProjectFamily family, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -317,7 +317,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewLab(string lab)
         {
             return await ViewLabPage(lab, 1);
@@ -327,7 +327,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewLabPage(string lab, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -355,7 +355,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewSource(TypeOfSource source)
         {
             return await ViewSourcePage(source, 1);
@@ -365,7 +365,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewSourcePage(TypeOfSource source, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -393,7 +393,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewYear(int year)
         {
             return await ViewYearPage(year, 1);
@@ -403,7 +403,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "page", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewYearPage(int year, int page)
         {
             ViewBag.MetaItem = await _mModel.SelectById(new MetaItemKey
@@ -430,7 +430,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewVersion(uint major, uint minor)
         {
             return await ViewVersionPage(major, minor, 1);
@@ -440,7 +440,7 @@ namespace BuildFeed.Controllers
         #if !DEBUG
         [OutputCache(Duration = 600, VaryByParam = "none", VaryByCustom = "userName;lang;theme")]
         [OutputCachePush(Order = 2)]
-        #endif
+                #endif
         public async Task<ActionResult> ViewVersionPage(uint major, uint minor, int page)
         {
             string valueString = $"{major}.{minor}";

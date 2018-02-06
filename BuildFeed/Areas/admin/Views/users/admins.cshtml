@@ -2,46 +2,46 @@
 @model IEnumerable<MembershipUser>
 
 @{
-   ViewBag.Title = "View administrators | BuildFeed";
+    ViewBag.Title = "View administrators | BuildFeed";
 }
 
 <h1>View administrators</h1>
 
 <ul>
-   <li>@Html.ActionLink("Manage users", "Index")</li>
-   <li>@Html.ActionLink("Return to admin panel", "Index", "Root")</li>
+    <li>@Html.ActionLink("Manage users", "Index")</li>
+    <li>@Html.ActionLink("Return to admin panel", "Index", "Root")</li>
 </ul>
 
 <table class="table table-striped table-bordered table-admin">
-   <thead>
-   <tr>
-      <th>
-         Username
-      </th>
-      <th>
-         Email Address
-      </th>
-      <th>
-         Last Login Time
-      </th>
-   </tr>
-   </thead>
-   <tbody>
-   @foreach (MembershipUser mu in Model)
-   {
-      <tr>
-         <td>
-            @mu.UserName
-         </td>
-         <td>
-            <a href="mailto:@mu.Email">@mu.Email</a>
-         </td>
-         <td>
-            @(mu.LastLoginDate == default(DateTime)
-                 ? "Never"
-                 : mu.LastLoginDate.Humanize())
-         </td>
-      </tr>
-   }
-   </tbody>
+    <thead>
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Last Login Time
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (MembershipUser mu in Model)
+    {
+        <tr>
+            <td>
+                @mu.UserName
+            </td>
+            <td>
+                <a href="mailto:@mu.Email">@mu.Email</a>
+            </td>
+            <td>
+                @(mu.LastLoginDate == default(DateTime)
+                      ? "Never"
+                      : mu.LastLoginDate.Humanize())
+            </td>
+        </tr>
+    }
+    </tbody>
 </table>

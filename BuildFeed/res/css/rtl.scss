@@ -1,58 +1,58 @@
 ﻿nav#page-navigation #page-navigation-links
 {
-   text-align: left;
+    text-align: left;
 
-   > li > a
-   {
-      text-align: right;
-   }
+    > li > a
+    {
+        text-align: right;
+    }
 }
 
 .dropdown-parent .dropdown-menu
 {
-   text-align: right;
+    text-align: right;
 }
 
 .form-group
 {
-   label
-   {
-      text-align: left;
-   }
+    label
+    {
+        text-align: left;
+    }
 
-   > label
-   {
-      margin-right: 0;
-      margin-left: 1em;
-   }
+    > label
+    {
+        margin-right: 0;
+        margin-left: 1em;
+    }
 }
 
 footer#page-footer .footer-flex .footer-flex-item
 {
 
-   &:last-child
-   {
-      text-align: left;
-   }
+    &:last-child
+    {
+        text-align: left;
+    }
 
-   &:first-child
-   {
-      text-align: right;
-   }
+    &:first-child
+    {
+        text-align: right;
+    }
 }
 
 @media (max-width: 640px)
 {
-   footer#page-footer .footer-flex .footer-flex-item
-   {
-      &:first-child
-      {
-         text-align: center;
-      }
+    footer#page-footer .footer-flex .footer-flex-item
+    {
+        &:first-child
+        {
+            text-align: center;
+        }
 
-      &:last-child
-      {
-         text-align: center;
-      }
-   }
+        &:last-child
+        {
+            text-align: center;
+        }
+    }
 }

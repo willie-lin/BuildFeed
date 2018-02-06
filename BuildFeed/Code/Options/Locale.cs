@@ -64,10 +64,12 @@ namespace BuildFeed.Code.Options
             {
                 try
                 {
-                    CultureInfo ci = (CultureInfo)CultureInfo.GetCultureInfo(langCookie).Clone();
+                    var ci = (CultureInfo)CultureInfo.GetCultureInfo(langCookie).Clone();
 
                     // Get Gregorian Calendar in locale if available
-                    Calendar gc = ci.OptionalCalendars.FirstOrDefault(c => c is GregorianCalendar && ((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized);
+                    Calendar gc = ci.OptionalCalendars.FirstOrDefault(c
+                        => c is GregorianCalendar
+                            && ((GregorianCalendar)c).CalendarType == GregorianCalendarTypes.Localized);
                     if (gc != null)
                     {
                         ci.DateTimeFormat.Calendar = gc;

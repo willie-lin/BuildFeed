@@ -2,108 +2,108 @@
 @model IEnumerable<MembershipUser>
 
 @{
-   ViewBag.Title = $"Manage users | {InvariantTerms.SiteName}";
+    ViewBag.Title = $"Manage users | {InvariantTerms.SiteName}";
 }
 
 <h1>Manage users</h1>
 
 <ul>
-   <li>@Html.ActionLink("View administrators", "Admins")</li>
-   <li>@Html.ActionLink("Clean-up old unapproved users", "Cleanup")</li>
-   <li>@Html.ActionLink("Return to admin panel", "Index", "Root")</li>
+    <li>@Html.ActionLink("View administrators", "Admins")</li>
+    <li>@Html.ActionLink("Clean-up old unapproved users", "Cleanup")</li>
+    <li>@Html.ActionLink("Return to admin panel", "Index", "Root")</li>
 </ul>
 
 <table id="user-table">
-   <thead>
-   <tr>
-      <th>
-         Username
-      </th>
-      <th>
-         Email Address
-      </th>
-      <th>
-         Registration Time
-      </th>
-      <th>
-         Last Login Time
-      </th>
-      <th>
-         Last Lockout Time
-      </th>
-      <th style="width: 100px;"></th>
-      <th style="width: 100px;"></th>
-      <th style="width: 100px;"></th>
-   </tr>
-   </thead>
-   <tbody>
-   @foreach (MembershipUser mu in Model)
-   {
-      <tr>
-         <td>
-            @mu.UserName
-         </td>
-         <td>
-            <a href="mailto:@mu.Email" title="@mu.Email">@mu.Email</a>
-         </td>
-         <td>
-            @mu.CreationDate.Humanize()
-         </td>
-         <td>
-            @(mu.LastLoginDate == DateTime.MinValue
-                 ? "Never"
-                 : mu.LastLoginDate.Humanize())
-         </td>
-         <td>
-            @(mu.LastLockoutDate == DateTime.MinValue
-                 ? "Never"
-                 : mu.LastLockoutDate.Humanize())
-         </td>
-         <td class="text-right">
-            @(mu.IsApproved
-                 ? Html.ActionLink("Unapprove", nameof(UsersController.Unapprove), new
-                 {
+    <thead>
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Registration Time
+        </th>
+        <th>
+            Last Login Time
+        </th>
+        <th>
+            Last Lockout Time
+        </th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (MembershipUser mu in Model)
+    {
+        <tr>
+            <td>
+                @mu.UserName
+            </td>
+            <td>
+                <a href="mailto:@mu.Email" title="@mu.Email">@mu.Email</a>
+            </td>
+            <td>
+                @mu.CreationDate.Humanize()
+            </td>
+            <td>
+                @(mu.LastLoginDate == DateTime.MinValue
+                      ? "Never"
+                      : mu.LastLoginDate.Humanize())
+            </td>
+            <td>
+                @(mu.LastLockoutDate == DateTime.MinValue
+                      ? "Never"
+                      : mu.LastLockoutDate.Humanize())
+            </td>
+            <td class="text-right">
+                @(mu.IsApproved
+                      ? Html.ActionLink("Unapprove", nameof(UsersController.Unapprove), new
+                      {
+                          id = mu.ProviderUserKey
+                      }, new
+                      {
+                          @class = "button delete-button"
+                      })
+                      : Html.ActionLink("Approve", nameof(UsersController.Approve), new
+                      {
+                          id = mu.ProviderUserKey
+                      }, new
+                      {
+                          @class = "button add-button"
+                      }))
+            </td>
+            <td class="text-right">
+                @(!mu.IsLockedOut
+                      ? Html.ActionLink("Lock", nameof(UsersController.Lock), new
+                      {
+                          id = mu.ProviderUserKey
+                      }, new
+                      {
+                          @class = "button delete-button"
+                      })
+                      : Html.ActionLink("Unlock", nameof(UsersController.Unlock), new
+                      {
+                          id = mu.ProviderUserKey
+                      }, new
+                      {
+                          @class = "button add-button"
+                      }))
+            </td>
+            <td>
+                @Html.ActionLink("Delete", nameof(UsersController.Delete), new
+                {
                     id = mu.ProviderUserKey
-                 }, new
-                 {
-                    @class = "button delete-button"
-                 })
-                 : Html.ActionLink("Approve", nameof(UsersController.Approve), new
-                 {
-                    id = mu.ProviderUserKey
-                 }, new
-                 {
-                    @class = "button add-button"
-                 }))
-         </td>
-         <td class="text-right">
-            @(!mu.IsLockedOut
-                 ? Html.ActionLink("Lock", nameof(UsersController.Lock), new
-                 {
-                    id = mu.ProviderUserKey
-                 }, new
-                 {
-                    @class = "button delete-button"
-                 })
-                 : Html.ActionLink("Unlock", nameof(UsersController.Unlock), new
-                 {
-                    id = mu.ProviderUserKey
-                 }, new
-                 {
-                    @class = "button add-button"
-                 }))
-         </td>
-         <td>
-            @Html.ActionLink("Delete", nameof(UsersController.Delete), new
-            {
-               id = mu.ProviderUserKey
-            }, new
-            {
-               @class = "button delete-button",
-               onclick = @"return !(confirm(""Are you sure you want to delete this user?"") === false);"
-            })
-         </td>
-      </tr>
-   }
-   </tbody>
+                }, new
+                {
+                    @class = "button delete-button",
+                    onclick = @"return !(confirm(""Are you sure you want to delete this user?"") === false);"
+                })
+            </td>
+        </tr>
+    }
+    </tbody>
 </table>

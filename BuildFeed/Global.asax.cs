@@ -26,7 +26,7 @@ namespace BuildFeed
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 
-            DateTimeModelBinder db = new DateTimeModelBinder();
+            var db = new DateTimeModelBinder();
 
             ModelBinders.Binders.Add(typeof(DateTime), db);
             ModelBinders.Binders.Add(typeof(DateTime?), db);
@@ -42,9 +42,9 @@ namespace BuildFeed
 
         public override string GetVaryByCustomString(HttpContext context, string custom)
         {
-            string[] parts = custom.Split(';');
+            var parts = custom.Split(';');
             var varyParts = new List<string>();
-            HttpContextWrapper contextWrapper = new HttpContextWrapper(context);
+            var contextWrapper = new HttpContextWrapper(context);
 
             foreach (string part in parts)
             {

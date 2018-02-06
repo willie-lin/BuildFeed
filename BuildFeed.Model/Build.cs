@@ -31,9 +31,9 @@ namespace BuildFeed.Model
 
         public string LabUrl { get; private set; }
 
-        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease ||
-                                SourceType == TypeOfSource.InternalLeak ||
-                                SourceType == TypeOfSource.UpdateGDR;
+        public bool IsLeaked => SourceType == TypeOfSource.PublicRelease
+            || SourceType == TypeOfSource.InternalLeak
+            || SourceType == TypeOfSource.UpdateGDR;
 
         public string FullBuildString { get; private set; }
 

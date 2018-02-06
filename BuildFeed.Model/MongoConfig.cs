@@ -21,6 +21,7 @@ namespace BuildFeed.Model
             {
                 port = 27017; // mongo default port
             }
+
             Port = port;
 
             Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])
@@ -33,10 +34,10 @@ namespace BuildFeed.Model
 
         public static void SetupIndexes()
         {
-            BuildRepository b = new BuildRepository();
-#pragma warning disable 4014
+            var b = new BuildRepository();
+            #pragma warning disable 4014
             b.SetupIndexes();
-#pragma warning restore 4014
+            #pragma warning restore 4014
         }
     }
 }

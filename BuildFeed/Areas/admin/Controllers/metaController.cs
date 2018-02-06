@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BuildFeed.Areas.admin.Models.ViewModel;
+using BuildFeed.Admin.Models.ViewModel;
 using BuildFeed.Controllers;
 using BuildFeed.Model;
 

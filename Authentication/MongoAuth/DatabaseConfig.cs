@@ -21,6 +21,7 @@ namespace MongoAuth
             {
                 port = 27017; // mongo default port
             }
+
             Port = port;
 
             Database = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["data:MongoDB"])

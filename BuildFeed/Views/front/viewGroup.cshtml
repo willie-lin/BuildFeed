@@ -4,77 +4,77 @@
 @using Humanizer
 @model Tuple<BuildGroup, List<Build>>
 @{
-   ViewBag.Title = $"{Model.Item1} | {InvariantTerms.SiteName}";
+    ViewBag.Title = $"{Model.Item1} | {InvariantTerms.SiteName}";
 }
 
 <h1>@Model.Item1.ToString()</h1>
 
 <h3>@VariantTerms.Front_Listing</h3>
 <div class="build-group-listing">
-   @foreach (Build build in Model.Item2)
-   {
-      <div class="build-group">
-         <h3 class="build-group-title" title="@build.AlternateBuildString">
-            <a href="@Url.Action("ViewBuild", new
-                     {
-                        id = build.Id
-                     })" class="no-wrapping">
-               @(string.IsNullOrEmpty(build.Lab)
-                    ? "{Unknown}"
-                    : build.Lab)
-            </a>
-         </h3>
-         @if (build.BuildTime.HasValue)
-         {
-            <p class="build-group-p">
-               <span title="@build.BuildTime.Value.Humanize()">
-                  <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span>
-            </p>
-            <p class="build-group-p">
-               <span title="@build.BuildTime.Value.Humanize()">
-                  <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span>
-            </p>
-         }
-         @if (build.IsLeaked)
-         {
-            <p class="build-group-p">
-               <span>
-                  <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public</span>
-            </p>
-         }
-         else
-         {
-            <p class="build-group-p">
-               <span>
-                  <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
-            </p>
-         }
-         @if (Roles.IsUserInRole("Editors") || Roles.IsUserInRole("Administrators"))
-         {
-            <p>
-               <a href="@Url.Action(nameof(FrontController.EditBuild), new
-                        {
-                           id = build.Id
-                        })" class="button edit-button">
-                  @VariantTerms.Front_Edit
-               </a>
-               &nbsp;
-               @if (Roles.IsUserInRole("Administrators"))
-               {
-                  <a href="@Url.Action(nameof(FrontController.DeleteBuild), new
-                           {
-                              id = build.Id
-                           })" class="button delete-button">
-                     @VariantTerms.Front_Delete
-                  </a>
-               }
-            </p>
-         }
-      </div>
-   }
-   <div class="build-group-empty"></div>
-   <div class="build-group-empty"></div>
-   <div class="build-group-empty"></div>
-   <div class="build-group-empty"></div>
-   <div class="build-group-empty"></div>
+    @foreach (Build build in Model.Item2)
+    {
+        <div class="build-group">
+            <h3 class="build-group-title" title="@build.AlternateBuildString">
+                <a href="@Url.Action("ViewBuild", new
+                         {
+                             id = build.Id
+                         })" class="no-wrapping">
+                    @(string.IsNullOrEmpty(build.Lab)
+                          ? "{Unknown}"
+                          : build.Lab)
+                </a>
+            </h3>
+            @if (build.BuildTime.HasValue)
+            {
+                <p class="build-group-p">
+                    <span title="@build.BuildTime.Value.Humanize()">
+                        <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span>
+                </p>
+                <p class="build-group-p">
+                    <span title="@build.BuildTime.Value.Humanize()">
+                        <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span>
+                </p>
+            }
+            @if (build.IsLeaked)
+            {
+                <p class="build-group-p">
+                    <span>
+                        <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public</span>
+                </p>
+            }
+            else
+            {
+                <p class="build-group-p">
+                    <span>
+                        <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
+                </p>
+            }
+            @if (Roles.IsUserInRole("Editors") || Roles.IsUserInRole("Administrators"))
+            {
+                <p>
+                    <a href="@Url.Action(nameof(FrontController.EditBuild), new
+                             {
+                                 id = build.Id
+                             })" class="button edit-button">
+                        @VariantTerms.Front_Edit
+                    </a>
+                    &nbsp;
+                    @if (Roles.IsUserInRole("Administrators"))
+                    {
+                        <a href="@Url.Action(nameof(FrontController.DeleteBuild), new
+                                 {
+                                     id = build.Id
+                                 })" class="button delete-button">
+                            @VariantTerms.Front_Delete
+                        </a>
+                    }
+                </p>
+            }
+        </div>
+    }
+    <div class="build-group-empty"></div>
+    <div class="build-group-empty"></div>
+    <div class="build-group-empty"></div>
+    <div class="build-group-empty"></div>
+    <div class="build-group-empty"></div>
 </div>
