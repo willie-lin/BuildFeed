@@ -11,6 +11,10 @@ namespace BuildFeed.Model
 {
     public partial class BuildRepository
     {
+        public const int CURRENT_LONG_TERM = (int)ProjectFamily.Redstone;
+        public const int CURRENT_RELEASE = (int)ProjectFamily.Feature2;
+        public const int CURRENT_XBOX = (int)ProjectFamily.Redstone3;
+
         private const string BUILD_COLLECTION_NAME = "builds";
         private static readonly BsonDocument sortByAddedDate = new BsonDocument(nameof(Build.Added), -1);
         private static readonly BsonDocument sortByCompileDate = new BsonDocument(nameof(Build.BuildTime), -1);
@@ -158,10 +162,6 @@ namespace BuildFeed.Model
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<Dictionary<ProjectFamily, FrontPage>> SelectFrontPage()
         {
-            const int currentLongTerm = (int)ProjectFamily.Redstone;
-            const int currentFamily = (int)ProjectFamily.Feature2;
-            const int currentXbox = (int)ProjectFamily.Redstone3;
-
             var families = new Dictionary<ProjectFamily, FrontPage>();
 
             var query = _buildCollection.Aggregate()
@@ -175,14 +175,14 @@ namespace BuildFeed.Model
                                 {
                                     nameof(Build.Family), new BsonDocument
                                     {
-                                        {"$gte", currentFamily}
+                                        { "$gte", CURRENT_RELEASE }
                                     }
                                 }
                             },
                             new BsonDocument
                             {
                                 {
-                                    nameof(Build.Family), currentLongTerm
+                                    nameof(Build.Family), CURRENT_LONG_TERM
                                 }
                             }
                         }
@@ -193,9 +193,9 @@ namespace BuildFeed.Model
                     {
                         "_id", new BsonDocument
                         {
-                            {nameof(Build.Family), $"${nameof(Build.Family)}"},
-                            {nameof(Build.LabUrl), $"${nameof(Build.LabUrl)}"},
-                            {nameof(Build.SourceType), $"${nameof(Build.SourceType)}"}
+                            { nameof(Build.Family), $"${nameof(Build.Family)}" },
+                            { nameof(Build.LabUrl), $"${nameof(Build.LabUrl)}" },
+                            { nameof(Build.SourceType), $"${nameof(Build.SourceType)}" }
                         }
                     },
                     {
@@ -204,13 +204,13 @@ namespace BuildFeed.Model
                             {
                                 "$push", new BsonDocument
                                 {
-                                    {nameof(Build.Id), "$_id"},
-                                    {nameof(Build.MajorVersion), $"${nameof(Build.MajorVersion)}"},
-                                    {nameof(Build.MinorVersion), $"${nameof(Build.MinorVersion)}"},
-                                    {nameof(Build.Number), $"${nameof(Build.Number)}"},
-                                    {nameof(Build.Revision), $"${nameof(Build.Revision)}"},
-                                    {nameof(Build.Lab), $"${nameof(Build.Lab)}"},
-                                    {nameof(Build.BuildTime), $"${nameof(Build.BuildTime)}"}
+                                    { nameof(Build.Id), "$_id" },
+                                    { nameof(Build.MajorVersion), $"${nameof(Build.MajorVersion)}" },
+                                    { nameof(Build.MinorVersion), $"${nameof(Build.MinorVersion)}" },
+                                    { nameof(Build.Number), $"${nameof(Build.Number)}" },
+                                    { nameof(Build.Revision), $"${nameof(Build.Revision)}" },
+                                    { nameof(Build.Lab), $"${nameof(Build.Lab)}" },
+                                    { nameof(Build.BuildTime), $"${nameof(Build.BuildTime)}" }
                                 }
                             }
                         }
@@ -254,27 +254,27 @@ namespace BuildFeed.Model
                         .OrderByDescending(b => b.BuildTime)
                         .FirstOrDefault(),
                     CurrentInsider = results
-                        .Where(g => g.Key.Family == family &&
-                                    !g.Key.LabUrl.Contains("xbox") &&
-                                    (g.Key.SourceType == TypeOfSource.PublicRelease ||
-                                     g.Key.SourceType == TypeOfSource.UpdateGDR))
+                        .Where(g => g.Key.Family == family
+                            && !g.Key.LabUrl.Contains("xbox")
+                            && (g.Key.SourceType == TypeOfSource.PublicRelease
+                                || g.Key.SourceType == TypeOfSource.UpdateGDR))
                         .SelectMany(g => g.Items)
                         .OrderByDescending(b => b.BuildTime)
                         .FirstOrDefault(),
                     CurrentRelease = results
-                        .Where(g => g.Key.Family == family &&
-                                    g.Key.LabUrl.Contains("_release") &&
-                                    !g.Key.LabUrl.Contains("xbox") &&
-                                    (g.Key.SourceType == TypeOfSource.PublicRelease ||
-                                     g.Key.SourceType == TypeOfSource.UpdateGDR))
+                        .Where(g => g.Key.Family == family
+                            && g.Key.LabUrl.Contains("_release")
+                            && !g.Key.LabUrl.Contains("xbox")
+                            && (g.Key.SourceType == TypeOfSource.PublicRelease
+                                || g.Key.SourceType == TypeOfSource.UpdateGDR))
                         .SelectMany(g => g.Items)
                         .OrderByDescending(b => b.BuildTime)
                         .FirstOrDefault(),
                     CurrentXbox =
                         results.Where(g
-                                => (int)g.Key.Family >= currentXbox &&
-                                   g.Key.Family == family &&
-                                   g.Key.LabUrl.Contains("xbox"))
+                                => (int)g.Key.Family >= CURRENT_XBOX
+                                    && g.Key.Family == family
+                                    && g.Key.LabUrl.Contains("xbox"))
                             .SelectMany(g => g.Items)
                             .OrderByDescending(b => b.BuildTime)
                             .FirstOrDefault()

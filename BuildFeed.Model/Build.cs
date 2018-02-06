@@ -44,6 +44,25 @@ namespace BuildFeed.Model
         [Display(ResourceType = typeof(VariantTerms), Name = nameof(VariantTerms.Search_Version))]
         public ProjectFamily Family { get; private set; }
 
+        public string[] RssCategories
+        {
+            get
+            {
+                var categories = new List<string>
+                {
+                    Family.ToString(),
+                    "Windows"
+                };
+
+                if ((int)Family >= BuildRepository.CURRENT_RELEASE)
+                {
+                    categories.Add("WindowsInsiders");
+                }
+
+                return categories.ToArray();
+            }
+        }
+
         public string SourceDetailsFiltered
         {
             get
