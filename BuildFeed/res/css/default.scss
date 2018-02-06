@@ -450,13 +450,13 @@ article
                     text-decoration: none !important;
                     display: block;
                     padding: #{(1em / 3)} 0;
-                    text-transform: uppercase;
                 }
 
                 span
                 {
                     font-size: 0.675em;
                     letter-spacing: .25em;
+                    text-transform: uppercase;
                 }
             }
 

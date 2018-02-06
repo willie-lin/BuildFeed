@@ -288,6 +288,7 @@
       <DependentUpon>package.json</DependentUpon>
     </None>
     <Content Include="res\card\Feature2.png" />
+    <Content Include="res\card\Redstone5.png" />
     <Content Include="res\css\winter.css">
       <DependentUpon>winter.scss</DependentUpon>
     </Content>
