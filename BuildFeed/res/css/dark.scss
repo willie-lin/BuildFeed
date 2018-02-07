@@ -91,15 +91,15 @@ article
     {
         color: $nord5;
     }
+}
 
-    .build-group-listing .build-group
+.build-group-listing .build-group
+{
+    background-color: $nord3;
+
+    &:hover
     {
-        background-color: $nord3;
-
-        &:hover
-        {
-            @include standard-box-shadow(black);
-        }
+        @include standard-box-shadow(black);
     }
 }
 

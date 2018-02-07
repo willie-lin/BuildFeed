@@ -23,11 +23,31 @@
     }
 }
 
+<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-list">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.Index), "Front")">
+            <span itemprop="name">BuildFeed</span>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.ViewSource), "Front", new
+                                                                              {
+                                                                                  source = ViewBag.Item
+                                                                              })">
+            <span itemprop="name">@ViewBag.ItemId</span>
+        </a>
+        <meta itemprop="position" content="2" />
+    </li>
+</ol>
+
 <h1>@ViewBag.ItemId</h1>
 @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
     <h3>@VariantTerms.Front_About</h3>
-    @Html.Raw(ViewBag.MetaItem.PageContent)
+    <div lang="en" dir="ltr">
+        @Html.Raw(ViewBag.MetaItem.PageContent)
+    </div>
 }
 <h3>@VariantTerms.Front_Share</h3>
 <div class="addthis_sharing_toolbox"></div>
@@ -48,31 +68,36 @@
             @if (!string.IsNullOrEmpty(build.Lab))
             {
                 <p class="no-wrapping build-group-p" title="@build.Lab">
-                    <i class="fa fa-code-fork fa-fw"></i> @build.Lab</p>
+                    <i class="fa fa-code-fork fa-fw"></i> @build.Lab
+                </p>
             }
             @if (build.BuildTime.HasValue)
             {
                 <p class="build-group-p">
                     <span title="@build.BuildTime.Value.Humanize()">
-                        <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()</span>
+                        <i class="fa fa-calendar fa-fw"></i> @build.BuildTime.Value.ToLongDateWithoutDay()
+                    </span>
                 </p>
                 <p class="build-group-p">
                     <span title="@build.BuildTime.Value.Humanize()">
-                        <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()</span>
+                        <i class="fa fa-clock-o fa-fw"></i> @build.BuildTime.Value.ToShortTimeString()
+                    </span>
                 </p>
             }
             @if (build.IsLeaked)
             {
                 <p class="build-group-p">
                     <span>
-                        <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public</span>
+                        <i class="fa fa-unlock-alt fa-fw"></i> @VariantTerms.Front_Public
+                    </span>
                 </p>
             }
             else
             {
                 <p class="build-group-p">
                     <span>
-                        <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private</span>
+                        <i class="fa fa-lock fa-fw"></i> @VariantTerms.Front_Private
+                    </span>
                 </p>
             }
             @if (Roles.IsUserInRole("Editors") || Roles.IsUserInRole("Administrators"))

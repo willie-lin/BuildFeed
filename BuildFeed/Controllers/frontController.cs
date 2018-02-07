@@ -297,6 +297,7 @@ namespace BuildFeed.Controllers
                 Type = MetaType.Family,
                 Value = family.ToString()
             });
+            ViewBag.Item = family;
             ViewBag.ItemId = MvcExtensions.GetDisplayDescriptionForEnum(family);
 
             var builds = await _bModel.SelectFamily(family, PAGE_SIZE, (page - 1) * PAGE_SIZE);
@@ -338,6 +339,7 @@ namespace BuildFeed.Controllers
 
             var builds = await _bModel.SelectLab(lab, PAGE_SIZE, (page - 1) * PAGE_SIZE);
 
+            ViewBag.Item = lab;
             ViewBag.ItemId = builds.FirstOrDefault()?.Lab;
             ViewBag.PageNumber = page;
             ViewBag.PageCount =
@@ -373,6 +375,7 @@ namespace BuildFeed.Controllers
                 Type = MetaType.Source,
                 Value = source.ToString()
             });
+            ViewBag.Item = source;
             ViewBag.ItemId = MvcExtensions.GetDisplayTextForEnum(source);
 
             var builds = await _bModel.SelectSource(source, PAGE_SIZE, (page - 1) * PAGE_SIZE);
@@ -411,6 +414,7 @@ namespace BuildFeed.Controllers
                 Type = MetaType.Year,
                 Value = year.ToString()
             });
+            ViewBag.Item = year;
             ViewBag.ItemId = year.ToString();
 
             var builds = await _bModel.SelectYear(year, PAGE_SIZE, (page - 1) * PAGE_SIZE);
@@ -449,6 +453,11 @@ namespace BuildFeed.Controllers
                 Type = MetaType.Version,
                 Value = valueString
             });
+            ViewBag.Item = new
+            {
+                major,
+                minor
+            };
             ViewBag.ItemId = valueString;
 
             var builds = await _bModel.SelectVersion(major, minor, PAGE_SIZE, (page - 1) * PAGE_SIZE);

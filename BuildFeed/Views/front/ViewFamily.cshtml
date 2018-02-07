@@ -23,11 +23,31 @@
     }
 }
 
+<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-list">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.Index), "Front")">
+            <span itemprop="name">BuildFeed</span>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.ViewFamily), "Front", new
+                                                                              {
+                                                                                  family = ViewBag.Item
+                                                                              })">
+            <span itemprop="name">@ViewBag.ItemId</span>
+        </a>
+        <meta itemprop="position" content="2" />
+    </li>
+</ol>
+
 <h1>@ViewBag.ItemId</h1>
 @if (ViewBag.MetaItem != null && !string.IsNullOrWhiteSpace(ViewBag.MetaItem.PageContent))
 {
     <h3>@VariantTerms.Front_About</h3>
-    @Html.Raw(ViewBag.MetaItem.PageContent)
+    <div lang="en" dir="ltr">
+        @Html.Raw(ViewBag.MetaItem.PageContent)
+    </div>
 }
 <h3>@VariantTerms.Front_Share</h3>
 <div class="addthis_sharing_toolbox"></div>

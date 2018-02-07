@@ -360,6 +360,77 @@ nav#page-navigation
     }
 }
 
+.breadcrumb-list
+{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 2em;
+    letter-spacing: 0.5px;
+
+    > li
+    {
+        display: inline-block;
+
+        a
+        {
+            display: inline-block;
+            opacity: 0.7;
+            transition: opacity ease-in-out 0.25s;
+
+            &:hover
+            {
+                text-decoration: none;
+                opacity: 1;
+            }
+        }
+
+        &:after
+        {
+            content: "/";
+            margin: 0 0.5em;
+            opacity: 0.4;
+        }
+
+        &:last-child:after
+        {
+            content: none;
+        }
+    }
+
+    @media(max-width: 540px)
+    {
+        margin: 0 auto 2em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        li
+        {
+            display: inline-block;
+            padding: 0.75em;
+            position: relative;
+
+            &:after
+            {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                border-bottom: 1px solid;
+                width: 20px;
+                margin: 0 auto;
+                transform: translateX(-50%);
+                left: 50%;
+            }
+
+            &:last-child
+            {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
 article
 {
     padding: 3em 0;
@@ -412,74 +483,74 @@ article
             margin-bottom: 0.5em;
         }
     }
+}
 
-    .build-group-listing
+.build-group-listing
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 #{(-3em / 2)};
+
+    .build-group
     {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0 #{(-3em / 2)};
+        width: 240px;
+        flex-grow: 1;
+        margin: 0 #{(3em / 2)} 3em;
+        box-sizing: border-box;
+        border: $border-size solid $nord10;
+        padding: 0.5em 1.5em;
+        transition: box-shadow ease-in-out 0.2s;
 
-        .build-group
+        h3
         {
-            width: 240px;
-            flex-grow: 1;
-            margin: 0 #{(3em / 2)} 3em;
-            box-sizing: border-box;
-            border: $border-size solid $nord10;
-            padding: 0.5em 1.5em;
-            transition: box-shadow ease-in-out 0.2s;
+            background-color: $nord10;
+            color: #fff;
+            margin: -0.25em -0.75em 0.75em;
+            font-size: 2em;
+            line-height: 1em;
+            font-weight: normal;
+            padding: 0;
+            letter-spacing: 0;
+            border-bottom: 0;
+            text-transform: lowercase;
+            text-align: center;
 
-            h3
+            a, span
             {
-                background-color: $nord10;
                 color: #fff;
-                margin: -0.25em -0.75em 0.75em;
-                font-size: 2em;
-                line-height: 1em;
-                font-weight: normal;
-                padding: 0;
-                letter-spacing: 0;
-                border-bottom: 0;
-                text-transform: lowercase;
-                text-align: center;
-
-                a, span
-                {
-                    color: #fff;
-                    text-decoration: none !important;
-                    display: block;
-                    padding: #{(1em / 3)} 0;
-                }
-
-                span
-                {
-                    font-size: 0.675em;
-                    letter-spacing: .25em;
-                    text-transform: uppercase;
-                }
+                text-decoration: none !important;
+                display: block;
+                padding: #{(1em / 3)} 0;
             }
 
-            p
+            span
             {
-                font-size: 1.1em;
-                font-weight: 300;
-                margin: 0 0 #{(2em / 3)};
-            }
-
-            .group-input-button button
-            {
-                width: 48px;
+                font-size: 0.675em;
+                letter-spacing: .25em;
+                text-transform: uppercase;
             }
         }
 
-        .build-group-empty
+        p
         {
-            width: 270px;
-            flex-grow: 1;
-            margin: 0 0.75em;
-            box-sizing: border-box;
+            font-size: 1.1em;
+            font-weight: 300;
+            margin: 0 0 #{(2em / 3)};
         }
+
+        .group-input-button button
+        {
+            width: 48px;
+        }
+    }
+
+    .build-group-empty
+    {
+        width: 270px;
+        flex-grow: 1;
+        margin: 0 0.75em;
+        box-sizing: border-box;
     }
 }
 
