@@ -34,13 +34,13 @@
 
 <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-list">
     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.Index), "Front")">
+        <a itemprop="item" href="@Url.Action(nameof(FrontController.Index), "Front")">
             <span itemprop="name">BuildFeed</span>
         </a>
         <meta itemprop="position" content="1" />
     </li>
     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.ViewFamily), "Front", new
+        <a itemprop="item" href="@Url.Action(nameof(FrontController.ViewFamily), "Front", new
                                                                               {
                                                                                   family = Model.Family
                                                                               })">
@@ -49,7 +49,7 @@
         <meta itemprop="position" content="2" />
     </li>
     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="@Url.Action(nameof(FrontController.ViewBuild), "Front", new
+        <a itemprop="item" href="@Url.Action(nameof(FrontController.ViewBuild), "Front", new
                                                                               {
                                                                                   id = Model.Id
                                                                               })">
