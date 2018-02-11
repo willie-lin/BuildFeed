@@ -22,7 +22,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title</title>
-    <link href="/res/css/default.css?180209" rel="stylesheet" type="text/css" />
+    <link href="/res/css/default.css?180211" rel="stylesheet" type="text/css" />
     <link href="@(VirtualPathUtility.ToAbsolute(((Theme)ViewBag.Theme).CssPath))" rel="stylesheet" type="text/css" />
     @if (isRtl)
     {
@@ -137,74 +137,74 @@
                     <li id="user-action-menu" class="dropdown-menu-block">
                         <ul>
                             @if (!User.Identity.IsAuthenticated)
-                    {
-                        <li>
-                            <a href="@Url.Action(nameof(AccountController.Login), new
+                            {
+                                <li>
+                                    <a href="@Url.Action(nameof(AccountController.Login), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_LogIn">
-                                <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
-                            </a>
-                        </li>
-            }
-            else
-            {
-                if (Roles.IsUserInRole("Administrators"))
-                {
-                    <li>
-                        <a href="@Url.Action("Index", new
+                                        <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogIn
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                if (Roles.IsUserInRole("Administrators"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Index", new
                                                  {
                                                      controller = "Root",
                                                      area = "admin"
                                                  })" title="@VariantTerms.Common_Admin">
-                            <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
-                        </a>
-                    </li>
-        }
-        if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
-        {
-            <li>
-                <a href="@Url.Action(nameof(FrontController.AddBuild), new
+                                            <i class="fa fa-fw fa-cogs"></i> @VariantTerms.Common_Admin
+                                        </a>
+                                    </li>
+                                }
+                                if (Roles.IsUserInRole("Administrators") || Roles.IsUserInRole("Editors"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action(nameof(FrontController.AddBuild), new
                                                  {
                                                      controller = "Front",
                                                      area = ""
                                                  })" title="@VariantTerms.Common_AddBuild">
-                    <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
-                </a>
-            </li>
-}
-if (Roles.IsUserInRole("Administrators"))
-{
-        <li>
-            <a href="@Url.Action(nameof(FrontController.AddBulk), new
+                                            <i class="fa fa-fw fa-plus-square"></i> @VariantTerms.Common_AddBuild
+                                        </a>
+                                    </li>
+                                }
+                                if (Roles.IsUserInRole("Administrators"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action(nameof(FrontController.AddBulk), new
                                                  {
                                                      controller = "Front",
                                                      area = ""
                                                  })" title="@VariantTerms.Common_AddBulk">
-                <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
-            </a>
-        </li>
-}
-        <li>
-            <a href="@Url.Action(nameof(AccountController.Logout), new
+                                            <i class="fa fa-fw fa-database"></i> @VariantTerms.Common_AddBulk
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a href="@Url.Action(nameof(AccountController.Logout), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_LogOut">
-                <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
-            </a>
-        </li>
-        <li>
-            <a href="@Url.Action(nameof(AccountController.Password), new
+                                        <i class="fa fa-fw fa-user"></i> @VariantTerms.Common_LogOut
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action(nameof(AccountController.Password), new
                                              {
                                                  controller = "Account",
                                                  area = ""
                                              })" title="@VariantTerms.Common_ChangePassword">
-                <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
-            </a>
-        </li>
-}
+                                        <i class="fa fa-fw fa-key"></i> @VariantTerms.Common_ChangePassword
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </li>
                 </ul>
@@ -218,26 +218,26 @@ if (Roles.IsUserInRole("Administrators"))
                         <h4>@VariantTerms.Common_NavigationTheme</h4>
                         <ul>
                             @foreach (Theme item in Theme.AvailableThemes)
-                    {
-                        <li>
-                            <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
-                        </li>
-            }
+                            {
+                                <li>
+                                    <a href="#" data-theme="@item.CookieValue">@item.DisplayName</a>
+                                </li>
+                            }
                         </ul>
                     </li>
                     <li id="settings-lang-menu" class="dropdown-menu-block">
                         <h4>@VariantTerms.Common_NavigationLanguage</h4>
                         <ul>
                             @foreach (Locale locale in Locale.AvailableLocales)
-                    {
-                        <li>
-                            <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
+                            {
+                                <li>
+                                    <a href="#" data-lang="@locale.LocaleId" dir="@(locale.Info.TextInfo.IsRightToLeft
                                                                                         ? "rtl"
                                                                                         : "ltr")">
-                                @locale.DisplayName
-                            </a>
-                        </li>
-            }
+                                        @locale.DisplayName
+                                    </a>
+                                </li>
+                            }
                             <li></li>
                             <li></li>
                             <li></li>
@@ -320,11 +320,11 @@ if (Roles.IsUserInRole("Administrators"))
 }
 @RenderSection("scripts", false)
 <script id="result-template" type="text/x-jsrender">
-      <a href="{{:Url}}" class="search-result-item" title="{{:Title}}">
-         <h4 class="search-result-heading no-wrapping">{{:Label}}</h4>
-         <p class="search-result-text">{{:Group}}</p>
-      </a>
-   </script>
+    <a href="{{:Url}}" class="search-result-item" title="{{:Title}}">
+        <h4 class="search-result-heading no-wrapping">{{:Label}}</h4>
+        <p class="search-result-text">{{:Group}}</p>
+    </a>
+</script>
 <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5431719a661cbfd0" async="async"></script>
 </body>
 </html>

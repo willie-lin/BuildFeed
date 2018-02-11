@@ -303,11 +303,9 @@ namespace BuildFeed.Model
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public async Task<Build> SelectBuildByFullBuildString(string build)
-        {
-            return await _buildCollection.Find(Builders<Build>.Filter.Eq(b => b.FullBuildString, build))
-                .SingleOrDefaultAsync();
-        }
+        public async Task<Build> SelectBuildByFullBuildString(string build) => await _buildCollection
+            .Find(Builders<Build>.Filter.Eq(b => b.FullBuildString, build))
+            .SingleOrDefaultAsync();
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public async Task<List<Build>> SelectBuildsByCompileDate(int limit = -1, int skip = 0)
