@@ -262,7 +262,8 @@ namespace BuildFeed.Model
                         .OrderByDescending(b => b.BuildTime)
                         .FirstOrDefault(),
                     CurrentRelease = results
-                        .Where(g => g.Key.Family == family
+                        .Where(g => (int)g.Key.Family <= CURRENT_RELEASE
+                            && g.Key.Family == family
                             && g.Key.LabUrl.Contains("_release")
                             && !g.Key.LabUrl.Contains("xbox")
                             && (g.Key.SourceType == TypeOfSource.PublicRelease
